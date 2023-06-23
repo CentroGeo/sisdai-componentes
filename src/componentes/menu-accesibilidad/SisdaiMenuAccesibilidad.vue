@@ -47,8 +47,9 @@ const eventos = {
 </script>
 
 <script setup>
-import { computed, ref, toRefs } from 'vue'
+import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
+import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
@@ -109,6 +110,60 @@ function alternarEstado() {
 }
 
 defineExpose({ alternarEstado })
+
+/**
+ * Módulo de vista oscura
+ */
+const tema = computed(() => store.state.theme)
+
+const perfil = ref('neutro') // 'neutro' | 'sisdai' | 'gema'
+// const perfil = computed(() => store.state.perfil)
+
+function setThemeInDocument() {
+  // Si la variable del query es dark
+  // y el tema del store es auto
+  // o el tema del store es dark
+  const modoOscuro = ref(
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+      tema.value === 'dark'
+  )
+
+  // Asignar el perfil para el atributo css del query
+  document.documentElement.setAttribute(
+    `data-dark-theme-${perfil.value}`,
+    modoOscuro.value
+  )
+
+  // Reasignando la variable del store
+  // si es que cambia automáticamente con
+  // el perfil del OSystem
+  modoOscuro.value === true
+    ? (store.state.vista_oscura = true)
+    : (store.state.vista_oscura = false)
+}
+
+// Hooks ciclos de vue
+onBeforeMount(() => {
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', setThemeInDocument)
+})
+onMounted(() => {
+  setThemeInDocument()
+
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', setThemeInDocument)
+})
+watch(tema, () => {
+  console.log('tema.value', tema.value)
+  setThemeInDocument()
+})
+if (localStorage.getItem('theme')) {
+  store.state.theme = localStorage.getItem('theme')
+}
 
 /**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la

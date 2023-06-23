@@ -9,6 +9,12 @@
  */
 export default [
   {
+    accion: 'alternarVistaOscura',
+    claseCss: 'a11y-oscura',
+    icono: 'icono-ayuda',
+    titulo: 'Vista Oscura',
+  },
+  {
     accion: 'alternarTipografiaAccesible',
     claseCss: 'a11y-tipografia',
     icono: 'icono-cambio-tipografia',
