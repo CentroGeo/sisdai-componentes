@@ -6,8 +6,8 @@ export default {
     vista_simplificada: false,
     enlaces_subrayados: false,
     vista_oscura: false,
-    theme: 'auto', // 'dark' | 'light' | 'auto'
-    // perfil: 'neutro', // 'neutro' | 'sisdai' | 'gema'
+    theme: 'claro', // 'claro' | 'auto' | 'oscuro'
+    perfil: null, // 'neutro' | 'sisdai' | 'gema'
   },
   getters: {
     clasesAccesibles: state => ({
@@ -20,8 +20,10 @@ export default {
   mutations: {
     alternarVistaOscura(state) {
       //rotar entre estos 3 valores
-      const themes = ['light', 'dark', 'auto']
+      const themes = ['claro', 'auto', 'oscuro']
+      // const themes = ['claro', 'oscuro']
       state.theme = themes[(themes.indexOf(state.theme) + 1) % 3]
+      // state.theme = themes[(themes.indexOf(state.theme) + 1) % 2]
       console.log('state.theme', state.theme)
       //setear el tema del localStorage
       localStorage.setItem('theme', state.theme)
@@ -42,7 +44,7 @@ export default {
       state.vista_simplificada = false
       state.enlaces_subrayados = false
       state.vista_oscura = false
-      state.theme = 'light'
+      state.theme = 'claro'
     },
   },
 }

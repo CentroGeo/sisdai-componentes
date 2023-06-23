@@ -12,7 +12,7 @@ export default [
     accion: 'alternarVistaOscura',
     claseCss: 'a11y-oscura',
     icono: 'icono-ayuda',
-    titulo: 'Vista Oscura',
+    titulo: 'Vista',
   },
   {
     accion: 'alternarTipografiaAccesible',

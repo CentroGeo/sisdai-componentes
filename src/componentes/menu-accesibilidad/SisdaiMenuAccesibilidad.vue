@@ -116,8 +116,23 @@ defineExpose({ alternarEstado })
  */
 const tema = computed(() => store.state.theme)
 
-const perfil = ref('neutro') // 'neutro' | 'sisdai' | 'gema'
-// const perfil = computed(() => store.state.perfil)
+// Documentar que esta variable se debe
+// asignar uno de los perfiles, porque
+// por defecto viene en null
+store.state.perfil = 'neutro' // 'neutro' | 'sisdai' | 'gema'
+const perfil = computed(() => store.state.perfil)
+
+// Computar el nombre actual según
+const nombreTemaActual = computed(() => {
+  const nombres = {
+    // oscuro: 'Clara',
+    // claro: 'Oscura',
+    claro: 'Clara',
+    oscuro: 'Oscura',
+    auto: 'Automática',
+  }
+  return nombres[tema.value]
+})
 
 function setThemeInDocument() {
   // Si la variable del query es dark
@@ -127,14 +142,15 @@ function setThemeInDocument() {
     (window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches &&
       tema.value === 'auto') ||
-      tema.value === 'dark'
+      tema.value === 'oscuro'
   )
 
   // Asignar el perfil para el atributo css del query
-  document.documentElement.setAttribute(
-    `data-dark-theme-${perfil.value}`,
-    modoOscuro.value
-  )
+  if (perfil.value !== null)
+    document.documentElement.setAttribute(
+      `data-dark-theme-${perfil.value}`,
+      modoOscuro.value
+    )
 
   // Reasignando la variable del store
   // si es que cambia automáticamente con
@@ -161,6 +177,9 @@ watch(tema, () => {
   console.log('tema.value', tema.value)
   setThemeInDocument()
 })
+// Para asegurarnos que este item
+// exista en el localStorage.
+// Creo que solo se hace una vez
 if (localStorage.getItem('theme')) {
   store.state.theme = localStorage.getItem('theme')
 }
@@ -200,6 +219,7 @@ const alturaMenuAbierto = computed(
           :class="opcion.icono"
         />
         {{ opcion.titulo }}
+        {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
       </button>
 
       <button
