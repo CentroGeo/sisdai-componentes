@@ -6,7 +6,7 @@ export default {
     vista_simplificada: false,
     enlaces_subrayados: false,
     vista_oscura: false,
-    theme: 'claro', // 'claro' | 'auto' | 'oscuro'
+    tema: 'claro', // 'claro' | 'auto' | 'oscuro'
     perfil: null, // 'neutro' | 'sisdai' | 'gema'
   },
   getters: {
@@ -20,13 +20,13 @@ export default {
   mutations: {
     alternarVistaOscura(state) {
       //rotar entre estos 3 valores
-      const themes = ['claro', 'auto', 'oscuro']
-      // const themes = ['claro', 'oscuro']
-      state.theme = themes[(themes.indexOf(state.theme) + 1) % 3]
-      // state.theme = themes[(themes.indexOf(state.theme) + 1) % 2]
-      console.log('state.theme', state.theme)
+      const temas = ['claro', 'auto', 'oscuro']
+      state.tema = temas[(temas.indexOf(state.tema) + 1) % 3]
+      console.log('state.tema', state.tema)
+
       //setear el tema del localStorage
-      localStorage.setItem('theme', state.theme)
+      localStorage.setItem('tema', state.tema)
+
       //prender y apagar la vista oscura
       state.vista_oscura = !state.vista_oscura
     },
@@ -44,7 +44,7 @@ export default {
       state.vista_simplificada = false
       state.enlaces_subrayados = false
       state.vista_oscura = false
-      state.theme = 'claro'
+      state.tema = 'claro'
     },
   },
 }

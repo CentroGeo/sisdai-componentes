@@ -114,14 +114,10 @@ defineExpose({ alternarEstado })
 /**
  * Módulo de vista oscura
  */
-const tema = computed(() => store.state.theme)
+const tema = computed(() => store.state.tema)
 
-// Documentar que esta variable se debe
-// asignar uno de los perfiles, porque
-// por defecto viene en null
-store.state.perfil = 'neutro' // 'neutro' | 'sisdai' | 'gema'
+store.state.perfil = 'eni' // 'neutro' | 'sisdai' | 'gema'
 const perfil = computed(() => store.state.perfil)
-
 // Computar el nombre actual según
 const nombreTemaActual = computed(() => {
   const nombres = {
@@ -144,23 +140,19 @@ function setThemeInDocument() {
       tema.value === 'auto') ||
       tema.value === 'oscuro'
   )
-
   // Asignar el perfil para el atributo css del query
   if (perfil.value !== null)
     document.documentElement.setAttribute(
+      // se puede nombrar como quieras
       `data-dark-theme-${perfil.value}`,
       modoOscuro.value
     )
-
   // Reasignando la variable del store
-  // si es que cambia automáticamente con
-  // el perfil del OSystem
   modoOscuro.value === true
     ? (store.state.vista_oscura = true)
     : (store.state.vista_oscura = false)
 }
 
-// Hooks ciclos de vue
 onBeforeMount(() => {
   window
     .matchMedia('(prefers-color-scheme: dark)')
@@ -168,7 +160,6 @@ onBeforeMount(() => {
 })
 onMounted(() => {
   setThemeInDocument()
-
   window
     .matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', setThemeInDocument)
@@ -181,7 +172,7 @@ watch(tema, () => {
 // exista en el localStorage.
 // Creo que solo se hace una vez
 if (localStorage.getItem('theme')) {
-  store.state.theme = localStorage.getItem('theme')
+  store.state.tema = localStorage.getItem('theme')
 }
 
 /**
