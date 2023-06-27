@@ -27,6 +27,7 @@ const {
   <nav
     class="navegacion navegacion-conacyt"
     :class="{ 'navegacion-pegada': fija }"
+    aria-label="navegación principal"
   >
     <div class="nav-contenedor-identidad">
       <slot name="identidad">
@@ -49,7 +50,13 @@ const {
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto }"
       >
-        <span class="nav-icono-menu"></span>
+        <span
+          class="nav-icono-menu"
+          aria-hidden="true"
+        ></span>
+        <span class="a11y-solo-lectura"
+          >abrir y cerrar navegacion principal</span
+        >
       </button>
       <div
         class="nav-informacion"

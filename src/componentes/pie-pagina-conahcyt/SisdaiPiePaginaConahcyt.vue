@@ -70,7 +70,10 @@
             target="_blank"
             rel="noopener"
           >
-            <span class="icono-social-facebook icono-3"></span>
+            <span
+              class="icono-social-facebook icono-3"
+              aria-hidden="true"
+            ></span>
             <span class="a11y-solo-lectura">feisbuk,</span>
           </a>
           <a
@@ -79,7 +82,10 @@
             target="_blank"
             rel="noopener"
           >
-            <span class="icono-social-twitter icono-3"></span>
+            <span
+              class="icono-social-twitter icono-3"
+              aria-hidden="true"
+            ></span>
             <span class="a11y-solo-lectura">tuiter,</span>
           </a>
           <a
@@ -88,7 +94,10 @@
             target="_blank"
             rel="noopener"
           >
-            <span class="icono-social-instagram icono-3"></span>
+            <span
+              class="icono-social-instagram icono-3"
+              aria-hidden="true"
+            ></span>
             <span class="a11y-solo-lectura">instagram </span>
           </a>
           <a
@@ -97,7 +106,10 @@
             target="_blank"
             rel="noopener"
           >
-            <span class="icono-social-youtube icono-3"></span>
+            <span
+              class="icono-social-youtube icono-3"
+              aria-hidden="true"
+            ></span>
             <span class="a11y-solo-lectura">y yutub</span>
           </a>
         </p>

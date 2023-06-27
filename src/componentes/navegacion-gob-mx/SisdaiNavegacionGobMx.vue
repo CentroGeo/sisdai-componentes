@@ -1,5 +1,8 @@
 <template>
-  <nav class="navegacion navegacion-gobmx">
+  <nav
+    class="navegacion navegacion-gobmx"
+    aria-label="barra de navegación del gobierno de México"
+  >
     <div class="nav-contenedor-identidad">
       <a
         href="https://www.gob.mx/"
@@ -21,6 +24,9 @@
         :class="{ abierto: menuEstaAbierto }"
       >
         <span class="nav-icono-menu"></span>
+        <span class="a11y-solo-lectura"
+          >abrir y cerrar navegacion del gobierno de México</span
+        >
       </button>
     </div>
     <div
@@ -76,7 +82,12 @@
               class="nav-hipervinculo"
               target="_blank"
               rel="noopener"
-              ><span class="icono-buscar"></span>
+            >
+              <span class="a11y-solo-lectura">ir al buscador</span>
+              <span
+                class="icono-buscar"
+                aria-hidden="true"
+              ></span>
             </a>
           </li>
         </ul>
