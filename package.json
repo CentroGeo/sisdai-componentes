@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "private": true,
   "description": "Biblioteca de componentes de Vue reutilizables",
   "main": "./src/index.js",
