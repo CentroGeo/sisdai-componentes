@@ -128,7 +128,13 @@ const alturaMenuAbierto = computed(
       class="icono-boton-accesibilidad"
       @click="alternarEstado"
     >
-      <span class="icono-accesibilidad icono-5" />
+      <span
+        class="icono-accesibilidad icono-5"
+        aria-hidden="true"
+      />
+      <span class="a11y-solo-lectura"
+        >abrir y cerrar menú de accesibilidad</span
+      >
     </button>
 
     <menu class="menu-accesibilidad">
@@ -143,6 +149,7 @@ const alturaMenuAbierto = computed(
         <span
           class="icono-4"
           :class="opcion.icono"
+          aria-hidden="true"
         />
         {{ opcion.titulo }}
       </button>
@@ -151,7 +158,10 @@ const alturaMenuAbierto = computed(
         class="opcion-accesibilidad"
         @click="restablecer"
       >
-        <span class="icono-4 icono-restablecer" />
+        <span
+          class="icono-4 icono-restablecer"
+          aria-hidden="true"
+        />
         Restablecer
       </button>
     </menu>

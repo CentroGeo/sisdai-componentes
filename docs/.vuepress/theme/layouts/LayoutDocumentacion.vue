@@ -47,6 +47,7 @@ function actualizaContenidoIndice() {
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
 
     <div class="flex">
       <div class="columna-4 columna-1-mov menu-fondo">
@@ -125,7 +126,10 @@ function actualizaContenidoIndice() {
               rel="noopener"
               style="display: grid"
             >
-              <span class="icono-social-github titulo-eni"></span>
+              <span
+                class="icono-social-github titulo-eni"
+                aria-hidden="true"
+              ></span>
               <span> ir a github</span>
             </a>
           </template>
@@ -133,9 +137,6 @@ function actualizaContenidoIndice() {
       </div>
       <div class="columna-12 columna-7-mov">
         <div class="flex contenedor-indice-y-content">
-          <div class="columna-12 contenedor ancho-fijo">
-            <Content />
-          </div>
           <div class="columna-4 columna-8-mov">
             <SisdaiIndiceDeContenido
               class="indice-contenido-documentacion"
@@ -154,6 +155,9 @@ function actualizaContenidoIndice() {
               </template>
             </SisdaiIndiceDeContenido>
           </div>
+          <div class="columna-12 contenedor ancho-fijo">
+            <Content />
+          </div>
         </div>
       </div>
     </div>
@@ -161,8 +165,6 @@ function actualizaContenidoIndice() {
     <SisdaiPiePaginaConahcyt />
 
     <SisdaiPiePaginaGobMx />
-
-    <SisdaiMenuAccesibilidad :objetoStore="store" />
   </div>
 </template>
 
@@ -173,9 +175,9 @@ function actualizaContenidoIndice() {
   top: 50px;
   padding: 28px 0;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .contenedor-indice-y-content {
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
   }
 }
 </style>
