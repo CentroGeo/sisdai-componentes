@@ -55,7 +55,9 @@ defineExpose({ alternarEstado })
         :class="`icono ${
           botonFlotanteEstaAbierto ? 'icono-restar' : 'icono-agregar'
         } icono-3`"
+        aria-hidden="true"
       />
+      <span class="a11y-solo-lectura">abrir o cerrar botón flotante</span>
     </button>
 
     <div
@@ -76,6 +78,7 @@ defineExpose({ alternarEstado })
           :class="`icono ${
             icono === undefined ? 'icono-enlace-externo' : icono
           }`"
+          aria-hidden="true"
         />
         {{ contenido === undefined ? 'Enlace externo' : contenido }}
       </a>

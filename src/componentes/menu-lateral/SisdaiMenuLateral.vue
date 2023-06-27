@@ -1,5 +1,8 @@
 <template>
-  <menu class="menu-lateral-contenedor">
+  <nav
+    class="menu-lateral-contenedor"
+    aria-label="navegación secundaria"
+  >
     <div
       class="menu-mov"
       @click="menu_abierto = !menu_abierto"
@@ -9,11 +12,14 @@
         <span
           v-if="menu_abierto"
           class="icono-angulo-doble-izquierda"
+          aria-hidden="true"
         ></span>
         <span
           v-else
           class="icono-angulo-doble-derecha"
+          aria-hidden="true"
         ></span>
+        <span class="a11y-solo-lectura"> Expandir o colapsar navegación</span>
       </button>
     </div>
     <div
@@ -34,13 +40,16 @@
             rel="noopener"
             target="_blank"
           >
-            <span class="icono-social-github"></span>
+            <span
+              class="icono-social-github"
+              aria-hidden="true"
+            ></span>
             ejemplo github
           </a>
         </slot>
       </div>
     </div>
-  </menu>
+  </nav>
 </template>
 
 <script setup>

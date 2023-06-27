@@ -154,7 +154,10 @@
             target="_blank"
             rel="noopener"
           >
-            <span class="icono-social-facebook icono-3"></span>
+            <span
+              class="icono-social-facebook icono-3"
+              aria-hidden="true"
+            ></span>
             <span class="a11y-solo-lectura">feisbuk</span>
           </a>
           <a
@@ -163,7 +166,10 @@
             target="_blank"
             rel="noopener"
           >
-            <span class="icono-social-twitter icono-3"></span>
+            <span
+              class="icono-social-twitter icono-3"
+              aria-hidden="true"
+            ></span>
             <span class="a11y-solo-lectura">y tuiter.</span>
           </a>
         </p>

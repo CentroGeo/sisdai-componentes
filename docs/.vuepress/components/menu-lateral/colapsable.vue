@@ -28,7 +28,10 @@
           rel="noopener"
           style="display: grid"
         >
-          <span class="icono-social-github titulo-eni"></span>
+          <span
+            class="icono-social-github titulo-eni"
+            aria-hidden="true"
+          ></span>
           <span> ir a github</span>
         </a>
       </template>

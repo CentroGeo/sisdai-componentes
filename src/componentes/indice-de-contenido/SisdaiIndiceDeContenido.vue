@@ -4,7 +4,7 @@
     :id="id_indice"
   >
     <p class="titulo-indice">{{ titulo }}</p>
-    <nav>
+    <nav aria-label="índice de contenidos de la página">
       <div class="contenedor-indice-de-contenido">
         <slot name="contenido-indice-de-contenido">
           <router-link to="#routerlink"> router link prueba </router-link>
