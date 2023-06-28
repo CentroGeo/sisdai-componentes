@@ -6,11 +6,12 @@ layout: LayoutDocumentacion
 
 El Menú de accesibilidad permite ejecutar a las funciones que agregan reglas de accesibilidad al sitio web. Consulte la [sección de accesibilidad del Sisdai](https://sisdai.conacyt.mx/accesibilidad/introduccion) para más información.
 
-El componente cuenta con tres opciones de accesibilidad predeterminadas:
+El componente cuenta con cuatro opciones de accesibilidad predeterminadas:
 
 - Tipografía accesible
 - Vista simplificada
 - Enlaces subrayados
+- Vista oscura
 
 Uso:
 
@@ -96,6 +97,9 @@ Este componente cuenta con un módulo de store en estructura de [Vuex](https://v
 - Enlaces subrayados
   - Variable: `enlaces_subrayados` (de tipo boleano en `false` por defecto).
   - Mutación: `alternarEnlacesSubrayados` (sin parámetros).
+- Vista Oscura
+  - Variable: `vista_oscura` (de tipo boleano en `false` por defecto).
+  - Mutación: `alternarVistaOscura` (sin parámetros).
 
 Además de una mutación extra que restablece los valores de todas las variables:
 

@@ -7,7 +7,7 @@ export default {
     enlaces_subrayados: false,
     vista_oscura: false,
     tema: 'claro', // 'claro' | 'auto' | 'oscuro'
-    perfil: null, // 'neutro' | 'sisdai' | 'gema'
+    perfil: 'eni', // 'neutro' | 'sisdai' | 'gema'
   },
   getters: {
     clasesAccesibles: state => ({

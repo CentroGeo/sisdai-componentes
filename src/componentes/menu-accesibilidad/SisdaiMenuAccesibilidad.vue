@@ -115,8 +115,7 @@ defineExpose({ alternarEstado })
  * Módulo de vista oscura
  */
 const tema = computed(() => store.state.tema)
-
-store.state.perfil = 'eni' // 'neutro' | 'sisdai' | 'gema'
+// store.state.perfil = 'eni' // 'neutro' | 'sisdai' | 'gema'
 const perfil = computed(() => store.state.perfil)
 // Computar el nombre actual según
 const nombreTemaActual = computed(() => {
