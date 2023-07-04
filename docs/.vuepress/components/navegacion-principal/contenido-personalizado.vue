@@ -2,10 +2,11 @@
 import { ref } from 'vue'
 
 const sisdai_nav_ppal = ref('')
-
 function alternarSubmenu() {
   sisdai_nav_ppal.value._setupState.alternarSubmenu()
 }
+
+const aria_expanded = ref(false)
 </script>
 <template>
   <div class="contenedor">
@@ -38,7 +39,11 @@ function alternarSubmenu() {
         <li class="nav-contenedor-submenu">
           <button
             class="nav-boton-submenu"
+            aria-haspopup="true"
             @click="alternarSubmenu"
+            :aria-expanded="'' + aria_expanded"
+            @focus="aria_expanded = true"
+            @focusout="aria_expanded = false"
           >
             Submenu
           </button>
@@ -55,6 +60,8 @@ function alternarSubmenu() {
               <a
                 class="nav-hipervinculo"
                 href="/ejem"
+                @focus="aria_expanded = true"
+                @focusout="aria_expanded = false"
                 >Subsección 1</a
               >
             </li>
@@ -62,6 +69,8 @@ function alternarSubmenu() {
               <a
                 class="nav-hipervinculo"
                 href="/ejem"
+                @focus="aria_expanded = true"
+                @focusout="aria_expanded = false"
                 >Subsección 2</a
               >
             </li>
