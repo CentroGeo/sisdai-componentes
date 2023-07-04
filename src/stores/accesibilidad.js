@@ -22,7 +22,6 @@ export default {
       //rotar entre estos 3 valores
       const temas = ['claro', 'auto', 'oscuro']
       state.tema = temas[(temas.indexOf(state.tema) + 1) % 3]
-      console.log('state.tema', state.tema)
 
       //setear el tema del localStorage
       localStorage.setItem('tema', state.tema)

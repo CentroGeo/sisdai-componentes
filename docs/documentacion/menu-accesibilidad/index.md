@@ -19,6 +19,10 @@ Uso:
 <SisdaiMenuAccesibilidad />
 ```
 
+En el caso de la vista oscura, se cuenta además con perfiles de color predeterminados para los estilos de los elementos html y componentes del Sisdai.
+
+Por defecto, el perfil de color está configurado para recibir las variables css de la vista oscura del proyecto `'eni'`. Pero a su vez, se puede cambiar este perfil por el de `'gema'` o `'sisdai'` mediante la variable de estado **perfil** del módulo de accesibilidad en el store.
+
 <section id="api">
 
 ## API

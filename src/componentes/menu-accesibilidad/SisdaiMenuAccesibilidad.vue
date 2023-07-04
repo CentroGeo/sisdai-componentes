@@ -14,7 +14,7 @@ const propiedades = {
   },
 
   /**
-   * Objeto store completo del proytecto.
+   * Objeto store completo del proyecto.
    */
   objetoStore: {
     type: Object,
@@ -40,7 +40,7 @@ const eventos = {
   alSeleccionarOpcion: 'alSeleccionarOpcion',
 
   /**
-   * Se ejecuta cuanso se ha dado click en el botón "Restablecer".
+   * Se ejecuta cuando se ha dado click en el botón "Restablecer".
    */
   restablecer: 'restablecer',
 }
@@ -112,16 +112,16 @@ function alternarEstado() {
 defineExpose({ alternarEstado })
 
 /**
- * Módulo de vista oscura
+ * Módulo de vista oscura.
  */
 const tema = computed(() => store.state.tema)
-// store.state.perfil = 'eni' // 'neutro' | 'sisdai' | 'gema'
 const perfil = computed(() => store.state.perfil)
-// Computar el nombre actual según
+
+/**
+ * Muestra el nombre actual según el tema seleccionado.
+ */
 const nombreTemaActual = computed(() => {
   const nombres = {
-    // oscuro: 'Clara',
-    // claro: 'Oscura',
     claro: 'Clara',
     oscuro: 'Oscura',
     auto: 'Automática',
@@ -129,24 +129,28 @@ const nombreTemaActual = computed(() => {
   return nombres[tema.value]
 })
 
-function setThemeInDocument() {
-  // Si la variable del query es dark
-  // y el tema del store es auto
-  // o el tema del store es dark
+/**
+ * Elige el tema en el documento en modo oscuro,
+ * si la variable del query es dark y el tema del store es auto
+ * ó si el tema del store es oscuro.
+ */
+function elegirTemaEnDocumento() {
   const modoOscuro = ref(
     (window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches &&
       tema.value === 'auto') ||
       tema.value === 'oscuro'
   )
-  // Asignar el perfil para el atributo css del query
+
+  // Asignar el perfil de color para el atributo css del query.
   if (perfil.value !== null)
     document.documentElement.setAttribute(
-      // se puede nombrar como quieras
+      // se puede nombrar como quieras.
       `data-dark-theme-${perfil.value}`,
       modoOscuro.value
     )
-  // Reasignando la variable del store
+
+  // Reasignando la variable del store.
   modoOscuro.value === true
     ? (store.state.vista_oscura = true)
     : (store.state.vista_oscura = false)
@@ -155,24 +159,23 @@ function setThemeInDocument() {
 onBeforeMount(() => {
   window
     .matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', setThemeInDocument)
+    .removeEventListener('change', elegirTemaEnDocumento)
 })
+
 onMounted(() => {
-  setThemeInDocument()
+  elegirTemaEnDocumento()
   window
     .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', setThemeInDocument)
+    .addEventListener('change', elegirTemaEnDocumento)
 })
+
 watch(tema, () => {
-  console.log('tema.value', tema.value)
-  setThemeInDocument()
+  elegirTemaEnDocumento()
 })
-// Para asegurarnos que este item
-// exista en el localStorage.
-// Creo que solo se hace una vez
-if (localStorage.getItem('theme')) {
-  store.state.tema = localStorage.getItem('theme')
-}
+
+// if (localStorage.getItem('theme')) {
+//   store.state.tema = localStorage.getItem('theme')
+// }
 
 /**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
