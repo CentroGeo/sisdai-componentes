@@ -170,7 +170,7 @@
               class="icono-social-twitter icono-3"
               aria-hidden="true"
             ></span>
-            <span class="a11y-solo-lectura">y tuiter.</span>
+            <span class="a11y-solo-lectura">tuiter.</span>
           </a>
         </p>
       </nav>
