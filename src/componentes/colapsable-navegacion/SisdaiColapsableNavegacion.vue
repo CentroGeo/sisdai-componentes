@@ -4,11 +4,14 @@
     class="colapsable-navegacion"
   >
     <button
-      class="colapsable-boton-submenu nav-boton-submenu"
+      class="colapsable-boton-submenu"
       @click="esta_activo = !esta_activo"
-      aria-hidden="true"
     >
       {{ props.titulo }}
+      <span
+        aria-hidden="true"
+        class="nav-boton-submenu"
+      ></span>
     </button>
     <ul class="colapsable-submenu">
       <slot name="listado-contenido">
