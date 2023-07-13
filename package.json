@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "private": true,
   "description": "Biblioteca de componentes de Vue reutilizables",
   "main": "./src/index.js",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "core-js": "^3.31.0",
-    "sisdai-css": "github:salsa-community/sisdai-css#v0.37.10",
+    "sisdai-css": "github:salsa-community/sisdai-css#v0.37.12",
     "vue": "^2.7.14"
   },
   "devDependencies": {
