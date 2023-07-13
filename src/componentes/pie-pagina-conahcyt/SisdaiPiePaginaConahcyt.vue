@@ -110,7 +110,7 @@
               class="icono-social-youtube icono-3"
               aria-hidden="true"
             ></span>
-            <span class="a11y-solo-lectura">y yutub</span>
+            <span class="a11y-solo-lectura">yutub</span>
           </a>
         </p>
       </nav>
