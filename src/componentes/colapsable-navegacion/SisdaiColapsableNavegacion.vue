@@ -6,6 +6,7 @@
     <button
       class="colapsable-boton-submenu nav-boton-submenu"
       @click="esta_activo = !esta_activo"
+      aria-hidden="true"
     >
       {{ props.titulo }}
     </button>
