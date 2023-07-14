@@ -47,6 +47,7 @@ const {
       </slot>
       <button
         @click="alternarMenu"
+        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto }"
       >

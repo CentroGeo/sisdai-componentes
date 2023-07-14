@@ -68,6 +68,7 @@ watch(botonFlotanteEstaAbierto, () => {
       :class="`boton-flotante-alternador borde-r-redondeado-20 borde-l-redondeado-${
         botonFlotanteEstaAbierto ? '' : '2'
       }0`"
+      :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
       @click="alternarEstado"
     >
       <span

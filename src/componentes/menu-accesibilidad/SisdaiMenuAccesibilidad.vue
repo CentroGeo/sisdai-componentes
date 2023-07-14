@@ -149,6 +149,7 @@ const alturaMenuAbierto = computed(
   >
     <button
       class="icono-boton-accesibilidad"
+      :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
       @click="alternarEstado"
     >
       <span
