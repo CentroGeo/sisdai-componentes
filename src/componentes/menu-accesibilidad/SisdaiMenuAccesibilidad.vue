@@ -47,7 +47,7 @@ const eventos = {
 </script>
 
 <script setup>
-import { computed, ref, toRefs } from 'vue'
+import { computed, ref, toRefs, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
 
 const props = defineProps(propiedades)
@@ -111,6 +111,29 @@ function alternarEstado() {
 defineExpose({ alternarEstado })
 
 /**
+ * Si el menú está abierto, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse las opciones con el teclado secuencial.
+ */
+watch(menuAccesibilidadEstaAbierto, () => {
+  if (menuAccesibilidadEstaAbierto.value) {
+    opciones.value.forEach((element, idx) => {
+      document
+        .getElementById(`opcion_accesibilidad_${idx}`)
+        .removeAttribute('tabIndex')
+    })
+    document
+      .getElementById('opcion_accesibilidad_restablecer')
+      .removeAttribute('tabIndex')
+  } else {
+    opciones.value.forEach((element, idx) => {
+      document.getElementById(`opcion_accesibilidad_${idx}`).tabIndex = '-1'
+    })
+    document.getElementById('opcion_accesibilidad_restablecer').tabIndex = '-1'
+  }
+})
+
+/**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
  * opción de restablecer y el titulo del menú.
  */
@@ -142,8 +165,10 @@ const alturaMenuAbierto = computed(
 
       <button
         class="opcion-accesibilidad"
+        tabindex="-1"
         v-for="(opcion, idx) in opciones"
         :key="`opcion-accesibilidad-${idx}`"
+        :id="`opcion_accesibilidad_${idx}`"
         @click="seleccionarOpcion(opcion)"
       >
         <span
@@ -156,6 +181,8 @@ const alturaMenuAbierto = computed(
 
       <button
         class="opcion-accesibilidad"
+        tabindex="-1"
+        id="opcion_accesibilidad_restablecer"
         @click="restablecer"
       >
         <span
