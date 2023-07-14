@@ -138,7 +138,7 @@ const alturaMenuAbierto = computed(
     </button>
 
     <menu class="menu-accesibilidad">
-      <h6 class="titulo">Herramientas de accesibilidad</h6>
+      <p class="titulo">Herramientas de accesibilidad</p>
 
       <button
         class="opcion-accesibilidad"
