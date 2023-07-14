@@ -35,7 +35,6 @@
     >
       <div
         class="nav-menu-principal"
-        tabindex="0"
         ref="cuadroElementosMenu"
         @click="alternarMenu"
       >
