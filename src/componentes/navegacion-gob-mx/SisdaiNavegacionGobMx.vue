@@ -20,6 +20,7 @@
       </a>
       <button
         @click="alternarMenu"
+        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto }"
       >
@@ -35,7 +36,6 @@
     >
       <div
         class="nav-menu-principal"
-        tabindex="0"
         ref="cuadroElementosMenu"
         @click="alternarMenu"
       >

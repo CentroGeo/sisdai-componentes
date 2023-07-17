@@ -4,6 +4,7 @@
     class="colapsable-navegacion"
   >
     <button
+      :aria-expanded="esta_activo ? 'true' : 'false'"
       class="colapsable-boton-submenu"
       @click="esta_activo = !esta_activo"
     >
