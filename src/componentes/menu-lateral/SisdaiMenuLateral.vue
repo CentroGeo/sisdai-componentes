@@ -31,24 +31,30 @@
     >
       <div class="menu-max-height">
         <slot name="contenido-menu-lateral">
-          <router-link
-            to="#routerlink"
-            exact
-          >
-            router link prueba
-          </router-link>
-          <a href="#anchore"> anchore link prueba </a>
-          <a
-            href="https://github.com/salsa-community/sisdai-componentes"
-            rel="noopener"
-            target="_blank"
-          >
-            <span
-              class="icono-social-github"
-              aria-hidden="true"
-            ></span>
-            ejemplo github
-          </a>
+          <ul>
+            <li>
+              <router-link
+                to="#routerlink"
+                exact
+              >
+                router link prueba
+              </router-link>
+            </li>
+            <li><a href="#anchore"> anchore link prueba </a></li>
+            <li>
+              <a
+                href="https://github.com/salsa-community/sisdai-componentes"
+                rel="noopener"
+                target="_blank"
+              >
+                <span
+                  class="icono-social-github"
+                  aria-hidden="true"
+                ></span>
+                ejemplo github
+              </a>
+            </li>
+          </ul>
         </slot>
       </div>
     </div>
@@ -56,6 +62,53 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 const menu_abierto = ref(false)
+
+const menuColapsable = document.getElementsByClassName('menu-colapsable')
+const elementosLista = ref({})
+
+/**
+ * Agrega el atributo tabindex a los elementos de lista,
+ * si está en versión móvil
+ */
+function agregaAtributoTabIndex() {
+  if (window.innerWidth < 768) {
+    for (let index = 0; index < elementosLista.value.length; index++) {
+      const elemento = elementosLista.value[index]['children'][0]
+      elemento.tabIndex = '-1'
+    }
+  }
+}
+
+/**
+ * Si el menú está abierto en móvil, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+function actualizaAtributoTabIndex(estaAbierto) {
+  if (window.innerWidth < 768) {
+    if (estaAbierto) {
+      for (let i = 0; i < elementosLista.value.length; i++) {
+        const elemento = elementosLista.value[i]['children'][0]
+        elemento.removeAttribute('tabIndex')
+      }
+    } else {
+      for (let j = 0; j < elementosLista.value.length; j++) {
+        const elemento = elementosLista.value[j]['children'][0]
+        elemento.tabIndex = '-1'
+      }
+    }
+  }
+}
+
+onMounted(() => {
+  elementosLista.value =
+    menuColapsable[0]['children'][0]['children'][0]['children']
+  agregaAtributoTabIndex()
+})
+
+watch(menu_abierto, () => {
+  actualizaAtributoTabIndex(menu_abierto.value)
+})
 </script>
