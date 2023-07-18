@@ -97,11 +97,43 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
 //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenu = ref(null)
 const { menuEstaAbierto, alternarMenu } =
   useMenuDesenfocable(cuadroElementosMenu)
+
+/**
+ * Si el menú está abierto en móvil, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+watch(menuEstaAbierto, () => {
+  const listadoContenido = document.getElementsByClassName('nav-menu')
+  if (window.innerWidth < 768) {
+    if (menuEstaAbierto.value) {
+      console.log('submenu abierto')
+      for (
+        let index = 0;
+        index < listadoContenido[0]['children'].length;
+        index++
+      ) {
+        const element = listadoContenido[0]['children'][index]['children'][0]
+        element.removeAttribute('tabIndex')
+      }
+    } else {
+      console.log('submenu cerrado')
+      for (
+        let index = 0;
+        index < listadoContenido[0]['children'].length;
+        index++
+      ) {
+        const element = listadoContenido[0]['children'][index]['children'][0]
+        element.tabIndex = '-1'
+      }
+    }
+  }
+})
 </script>
