@@ -1,3 +1,55 @@
+<script setup>
+import { onMounted, ref, watch } from 'vue'
+const menu_abierto = ref(false)
+
+const menuColapsable = document.getElementsByClassName('menu-colapsable')
+const elementosLista = ref({})
+
+/**
+ * Agrega el atributo tabindex a los elementos de lista,
+ * si está en versión móvil
+ */
+function agregaAtributoTabIndex() {
+  if (window.innerWidth < 768) {
+    for (let index = 0; index < elementosLista.value.length; index++) {
+      const elemento = elementosLista.value[index]['children'][0]
+      elemento.tabIndex = '-1'
+    }
+  }
+}
+
+/**
+ * Si el menú está abierto en móvil, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+function actualizaAtributoTabIndex(estaAbierto) {
+  if (window.innerWidth < 768) {
+    if (estaAbierto) {
+      for (let i = 0; i < elementosLista.value.length; i++) {
+        const elemento = elementosLista.value[i]['children'][0]
+        elemento.removeAttribute('tabIndex')
+      }
+    } else {
+      for (let j = 0; j < elementosLista.value.length; j++) {
+        const elemento = elementosLista.value[j]['children'][0]
+        elemento.tabIndex = '-1'
+      }
+    }
+  }
+}
+
+onMounted(() => {
+  elementosLista.value =
+    menuColapsable[0]['children'][0]['children'][0]['children']
+  agregaAtributoTabIndex()
+})
+
+watch(menu_abierto, () => {
+  actualizaAtributoTabIndex(menu_abierto.value)
+})
+</script>
+
 <template>
   <nav
     class="menu-lateral-contenedor"
@@ -60,55 +112,3 @@
     </div>
   </nav>
 </template>
-
-<script setup>
-import { onMounted, ref, watch } from 'vue'
-const menu_abierto = ref(false)
-
-const menuColapsable = document.getElementsByClassName('menu-colapsable')
-const elementosLista = ref({})
-
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si está en versión móvil
- */
-function agregaAtributoTabIndex() {
-  if (window.innerWidth < 768) {
-    for (let index = 0; index < elementosLista.value.length; index++) {
-      const elemento = elementosLista.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-/**
- * Si el menú está abierto en móvil, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (window.innerWidth < 768) {
-    if (estaAbierto) {
-      for (let i = 0; i < elementosLista.value.length; i++) {
-        const elemento = elementosLista.value[i]['children'][0]
-        elemento.removeAttribute('tabIndex')
-      }
-    } else {
-      for (let j = 0; j < elementosLista.value.length; j++) {
-        const elemento = elementosLista.value[j]['children'][0]
-        elemento.tabIndex = '-1'
-      }
-    }
-  }
-}
-
-onMounted(() => {
-  elementosLista.value =
-    menuColapsable[0]['children'][0]['children'][0]['children']
-  agregaAtributoTabIndex()
-})
-
-watch(menu_abierto, () => {
-  actualizaAtributoTabIndex(menu_abierto.value)
-})
-</script>

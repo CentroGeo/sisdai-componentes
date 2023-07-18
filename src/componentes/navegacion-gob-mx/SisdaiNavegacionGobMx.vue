@@ -39,7 +39,10 @@
         ref="cuadroElementosMenu"
         @click="alternarMenu"
       >
-        <ul class="nav-menu">
+        <ul
+          id="nav_menu_gobmx"
+          class="nav-menu"
+        >
           <li>
             <a
               href="https://mivacuna.salud.gob.mx/index.php"
@@ -105,7 +108,7 @@ const cuadroElementosMenu = ref(null)
 const { menuEstaAbierto, alternarMenu } =
   useMenuDesenfocable(cuadroElementosMenu)
 
-const navMenu = document.getElementsByClassName('nav-menu')
+const navMenuGobMx = document.getElementsByClassName('nav-menu')[0]['children']
 
 /**
  * Agrega el atributo tabindex a los elementos de lista,
@@ -113,9 +116,9 @@ const navMenu = document.getElementsByClassName('nav-menu')
  */
 function agregaAtributoTabIndex() {
   if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenu[0]['children'].length; index++) {
-      const element = navMenu[0]['children'][index]['children'][0]
-      element.tabIndex = '-1'
+    for (let index = 0; index < navMenuGobMx.length; index++) {
+      const elemento = navMenuGobMx[index]['children'][0]
+      elemento.tabIndex = '-1'
     }
   }
 }
@@ -128,14 +131,14 @@ function agregaAtributoTabIndex() {
 function actualizaAtributoTabIndex(estaAbierto) {
   if (window.innerWidth < 768) {
     if (estaAbierto) {
-      for (let i = 0; i < navMenu[0]['children'].length; i++) {
-        const element = navMenu[0]['children'][i]['children'][0]
-        element.removeAttribute('tabIndex')
+      for (let i = 0; i < navMenuGobMx.length; i++) {
+        const elemento = navMenuGobMx[i]['children'][0]
+        elemento.removeAttribute('tabIndex')
       }
     } else {
-      for (let j = 0; j < navMenu[0]['children'].length; j++) {
-        const element = navMenu[0]['children'][j]['children'][0]
-        element.tabIndex = '-1'
+      for (let j = 0; j < navMenuGobMx.length; j++) {
+        const elemento = navMenuGobMx[j]['children'][0]
+        elemento.tabIndex = '-1'
       }
     }
   }
