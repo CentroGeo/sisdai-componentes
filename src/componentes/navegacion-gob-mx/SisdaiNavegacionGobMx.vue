@@ -97,7 +97,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
 //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
@@ -105,35 +105,47 @@ const cuadroElementosMenu = ref(null)
 const { menuEstaAbierto, alternarMenu } =
   useMenuDesenfocable(cuadroElementosMenu)
 
+const navMenu = document.getElementsByClassName('nav-menu')
+
+/**
+ * Agrega el atributo tabindex a los elementos de lista,
+ * si está en versión móvil
+ */
+function agregaAtributoTabIndex() {
+  if (window.innerWidth < 768) {
+    for (let index = 0; index < navMenu[0]['children'].length; index++) {
+      const element = navMenu[0]['children'][index]['children'][0]
+      element.tabIndex = '-1'
+    }
+  }
+}
+
 /**
  * Si el menú está abierto en móvil, remueve el atributo tabIndex.
  * Si está cerrado, agrega el atributo tabIndex en -1 para
  * saltarse los enlaces con el teclado secuencial.
  */
-watch(menuEstaAbierto, () => {
-  const listadoContenido = document.getElementsByClassName('nav-menu')
+function actualizaAtributoTabIndex(estaAbierto) {
   if (window.innerWidth < 768) {
-    if (menuEstaAbierto.value) {
-      console.log('submenu abierto')
-      for (
-        let index = 0;
-        index < listadoContenido[0]['children'].length;
-        index++
-      ) {
-        const element = listadoContenido[0]['children'][index]['children'][0]
+    if (estaAbierto) {
+      for (let i = 0; i < navMenu[0]['children'].length; i++) {
+        const element = navMenu[0]['children'][i]['children'][0]
         element.removeAttribute('tabIndex')
       }
     } else {
-      console.log('submenu cerrado')
-      for (
-        let index = 0;
-        index < listadoContenido[0]['children'].length;
-        index++
-      ) {
-        const element = listadoContenido[0]['children'][index]['children'][0]
+      for (let j = 0; j < navMenu[0]['children'].length; j++) {
+        const element = navMenu[0]['children'][j]['children'][0]
         element.tabIndex = '-1'
       }
     }
   }
+}
+
+onMounted(() => {
+  agregaAtributoTabIndex()
+})
+
+watch(menuEstaAbierto, () => {
+  actualizaAtributoTabIndex(menuEstaAbierto.value)
 })
 </script>
