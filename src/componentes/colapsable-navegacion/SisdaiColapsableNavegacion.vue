@@ -20,6 +20,7 @@
           <a
             href="https://github.com/salsa-community/sisdai-componentes/"
             target="_blank"
+            tabindex="-1"
           >
             Elemento desplegado</a
           >
@@ -30,11 +31,30 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const props = defineProps({
   titulo: { type: String, default: 'Titulo de colapsable' },
   activo: { type: Boolean, default: false },
 })
 const esta_activo = ref(props.activo)
+
+/**
+ * Si el menú está desplegado, remueve el atributo tabIndex.
+ * Si está colapsado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+watch(esta_activo, () => {
+  const contenidoLista = document.getElementsByTagName('a')
+
+  if (esta_activo.value) {
+    for (var i = 0; i < contenidoLista.length; i++) {
+      contenidoLista[i].removeAttribute('tabIndex')
+    }
+  } else {
+    for (var j = 0; j < contenidoLista.length; j++) {
+      contenidoLista[j].tabIndex = '-1'
+    }
+  }
+})
 </script>

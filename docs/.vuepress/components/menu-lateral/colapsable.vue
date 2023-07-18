@@ -18,8 +18,22 @@
             :titulo="'<SisdaiColapsableNavegacion> :D'"
           >
             <template v-slot:listado-contenido>
-              <li><router-link to="#ejemplos"> Ejemplos </router-link></li>
-              <li><a href="#menu-lateral"> El mero inicio </a></li>
+              <li>
+                <router-link
+                  to="#ejemplos"
+                  tabindex="-1"
+                >
+                  Ejemplos
+                </router-link>
+              </li>
+              <li>
+                <a
+                  href="#menu-lateral"
+                  tabindex="-1"
+                >
+                  El mero inicio
+                </a>
+              </li>
             </template>
           </SisdaiColapsableNavegacion>
         </ul>
