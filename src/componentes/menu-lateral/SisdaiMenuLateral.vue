@@ -8,7 +8,6 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-// const menuColapsable = document.getElementsByClassName('menu-colapsable')
 const elementosLista = ref({})
 
 /**

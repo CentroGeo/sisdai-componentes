@@ -17,7 +17,7 @@ const listadoContenido = ref({})
 
 /**
  * Agrega el atributo tabindex a los elementos de lista,
- * si está cerrado
+ * si la navegación está colapsada
  */
 function agregaAtributoTabIndex() {
   if (esta_activo.value === false) {
