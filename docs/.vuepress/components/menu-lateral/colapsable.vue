@@ -36,18 +36,20 @@
               </li>
             </template>
           </SisdaiColapsableNavegacion>
+          <li>
+            <a
+              href="##"
+              rel="noopener"
+              style="display: grid"
+            >
+              <span
+                class="icono-social-github titulo-eni"
+                aria-hidden="true"
+              ></span>
+              <span> ir a github</span>
+            </a>
+          </li>
         </ul>
-        <a
-          href="##"
-          rel="noopener"
-          style="display: grid"
-        >
-          <span
-            class="icono-social-github titulo-eni"
-            aria-hidden="true"
-          ></span>
-          <span> ir a github</span>
-        </a>
       </template>
     </SisdaiMenuLateral>
   </div>

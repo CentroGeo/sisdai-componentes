@@ -119,19 +119,21 @@ function actualizaContenidoIndice() {
                   PiePaginaGobMx
                 </router-link>
               </li>
+              <li>
+                <a
+                  href="https://github.com/salsa-community/sisdai-componentes"
+                  target="_blank"
+                  rel="noopener"
+                  style="display: grid"
+                >
+                  <span
+                    class="icono-social-github titulo-eni"
+                    aria-hidden="true"
+                  ></span>
+                  <span> ir a github</span>
+                </a>
+              </li>
             </ul>
-            <a
-              href="https://github.com/salsa-community/sisdai-componentes"
-              target="_blank"
-              rel="noopener"
-              style="display: grid"
-            >
-              <span
-                class="icono-social-github titulo-eni"
-                aria-hidden="true"
-              ></span>
-              <span> ir a github</span>
-            </a>
           </template>
         </SisdaiMenuLateral>
       </div>
