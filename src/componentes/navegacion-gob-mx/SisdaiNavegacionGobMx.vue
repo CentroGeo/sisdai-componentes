@@ -108,7 +108,7 @@ const cuadroElementosMenu = ref(null)
 const { menuEstaAbierto, alternarMenu } =
   useMenuDesenfocable(cuadroElementosMenu)
 
-const navMenuGobMx = document.getElementsByClassName('nav-menu')[0]['children']
+const navMenuGobMx = ref({})
 
 /**
  * Agrega el atributo tabindex a los elementos de lista,
@@ -116,8 +116,8 @@ const navMenuGobMx = document.getElementsByClassName('nav-menu')[0]['children']
  */
 function agregaAtributoTabIndex() {
   if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenuGobMx.length; index++) {
-      const elemento = navMenuGobMx[index]['children'][0]
+    for (let index = 0; index < navMenuGobMx.value.length; index++) {
+      const elemento = navMenuGobMx.value[index]['children'][0]
       elemento.tabIndex = '-1'
     }
   }
@@ -131,13 +131,13 @@ function agregaAtributoTabIndex() {
 function actualizaAtributoTabIndex(estaAbierto) {
   if (window.innerWidth < 768) {
     if (estaAbierto) {
-      for (let i = 0; i < navMenuGobMx.length; i++) {
-        const elemento = navMenuGobMx[i]['children'][0]
+      for (let i = 0; i < navMenuGobMx.value.length; i++) {
+        const elemento = navMenuGobMx.value[i]['children'][0]
         elemento.removeAttribute('tabIndex')
       }
     } else {
-      for (let j = 0; j < navMenuGobMx.length; j++) {
-        const elemento = navMenuGobMx[j]['children'][0]
+      for (let j = 0; j < navMenuGobMx.value.length; j++) {
+        const elemento = navMenuGobMx.value[j]['children'][0]
         elemento.tabIndex = '-1'
       }
     }
@@ -145,6 +145,8 @@ function actualizaAtributoTabIndex(estaAbierto) {
 }
 
 onMounted(() => {
+  navMenuGobMx.value =
+    document.getElementsByClassName('nav-menu')[0]['children']
   agregaAtributoTabIndex()
 })
 

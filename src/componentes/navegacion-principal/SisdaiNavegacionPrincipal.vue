@@ -22,8 +22,7 @@ const {
   alternarSubmenu,
 } = useMenuDesenfocable(cuadroElementosMenu)
 
-const navMenuConahcyt =
-  document.getElementsByClassName('nav-menu')[1]['children']
+const navMenuConahcyt = ref({})
 
 /**
  * Agrega el atributo tabindex a los elementos de lista,
@@ -31,8 +30,8 @@ const navMenuConahcyt =
  */
 function agregaAtributoTabIndex() {
   if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenuConahcyt.length; index++) {
-      const elemento = navMenuConahcyt[index]['children'][0]
+    for (let index = 0; index < navMenuConahcyt.value.length; index++) {
+      const elemento = navMenuConahcyt.value[index]['children'][0]
       elemento.tabIndex = '-1'
     }
   }
@@ -46,13 +45,13 @@ function agregaAtributoTabIndex() {
 function actualizaAtributoTabIndex(estaAbierto) {
   if (window.innerWidth < 768) {
     if (estaAbierto) {
-      for (let i = 0; i < navMenuConahcyt.length; i++) {
-        const elemento = navMenuConahcyt[i]['children'][0]
+      for (let i = 0; i < navMenuConahcyt.value.length; i++) {
+        const elemento = navMenuConahcyt.value[i]['children'][0]
         elemento.removeAttribute('tabIndex')
       }
     } else {
-      for (let j = 0; j < navMenuConahcyt.length; j++) {
-        const elemento = navMenuConahcyt[j]['children'][0]
+      for (let j = 0; j < navMenuConahcyt.value.length; j++) {
+        const elemento = navMenuConahcyt.value[j]['children'][0]
         elemento.tabIndex = '-1'
       }
     }
@@ -60,6 +59,8 @@ function actualizaAtributoTabIndex(estaAbierto) {
 }
 
 onMounted(() => {
+  navMenuConahcyt.value =
+    document.getElementsByClassName('nav-menu')[1]['children']
   agregaAtributoTabIndex()
 })
 
