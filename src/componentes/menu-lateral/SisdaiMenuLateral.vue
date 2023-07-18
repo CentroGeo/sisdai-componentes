@@ -2,7 +2,13 @@
 import { onMounted, ref, watch } from 'vue'
 const menu_abierto = ref(false)
 
-const menuColapsable = document.getElementsByClassName('menu-colapsable')
+function idAleatorio() {
+  return Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
+
+// const menuColapsable = document.getElementsByClassName('menu-colapsable')
 const elementosLista = ref({})
 
 /**
@@ -41,7 +47,9 @@ function actualizaAtributoTabIndex(estaAbierto) {
 
 onMounted(() => {
   elementosLista.value =
-    menuColapsable[0]['children'][0]['children'][0]['children']
+    document.getElementById(id_aleatorio)['children'][0]['children'][0][
+      'children'
+    ]
   agregaAtributoTabIndex()
 })
 
@@ -78,6 +86,7 @@ watch(menu_abierto, () => {
       </button>
     </div>
     <div
+      :id="id_aleatorio"
       class="menu-colapsable"
       :class="{ abierto: menu_abierto }"
     >
