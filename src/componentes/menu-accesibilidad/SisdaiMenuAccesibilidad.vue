@@ -115,8 +115,8 @@ defineExpose({ alternarEstado })
  * Si está cerrado, agrega el atributo tabIndex en -1 para
  * saltarse las opciones con el teclado secuencial.
  */
-watch(menuAccesibilidadEstaAbierto, () => {
-  if (menuAccesibilidadEstaAbierto.value) {
+function actualizaAtributoTabIndex(estaAbierto) {
+  if (estaAbierto) {
     opciones.value.forEach((element, idx) => {
       document
         .getElementById(`opcion_accesibilidad_${idx}`)
@@ -131,6 +131,10 @@ watch(menuAccesibilidadEstaAbierto, () => {
     })
     document.getElementById('opcion_accesibilidad_restablecer').tabIndex = '-1'
   }
+}
+
+watch(menuAccesibilidadEstaAbierto, () => {
+  actualizaAtributoTabIndex(menuAccesibilidadEstaAbierto.value)
 })
 
 /**
