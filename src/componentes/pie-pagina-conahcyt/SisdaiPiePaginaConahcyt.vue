@@ -12,8 +12,8 @@
         />
         <p>
           Av. Insurgentes Sur 1582, Col. Crédito Constructor,<br />
-          Alcaldía Benito Juárez, C.P. 03940, Ciudad de México<br />
-          Tel: (55) 5322-7700
+          Demarcación Territorial Benito Juárez, C.P. 03940,<br />
+          Ciudad de México Tel: (55) 5322-7700
         </p>
         <p>©2023 Conahcyt Derechos Reservados en trámite</p>
       </div>
