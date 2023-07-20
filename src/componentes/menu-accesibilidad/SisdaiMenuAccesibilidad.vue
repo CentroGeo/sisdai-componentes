@@ -178,6 +178,33 @@ watch(tema, () => {
 // }
 
 /**
+ * Si el menú está abierto, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse las opciones con el teclado secuencial.
+ */
+function actualizaAtributoTabIndex(estaAbierto) {
+  if (estaAbierto) {
+    opciones.value.forEach((element, idx) => {
+      document
+        .getElementById(`opcion_accesibilidad_${idx}`)
+        .removeAttribute('tabIndex')
+    })
+    document
+      .getElementById('opcion_accesibilidad_restablecer')
+      .removeAttribute('tabIndex')
+  } else {
+    opciones.value.forEach((element, idx) => {
+      document.getElementById(`opcion_accesibilidad_${idx}`).tabIndex = '-1'
+    })
+    document.getElementById('opcion_accesibilidad_restablecer').tabIndex = '-1'
+  }
+}
+
+watch(menuAccesibilidadEstaAbierto, () => {
+  actualizaAtributoTabIndex(menuAccesibilidadEstaAbierto.value)
+})
+
+/**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
  * opción de restablecer y el titulo del menú.
  */
@@ -193,6 +220,7 @@ const alturaMenuAbierto = computed(
   >
     <button
       class="icono-boton-accesibilidad"
+      :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
       @click="alternarEstado"
     >
       <span
@@ -205,12 +233,14 @@ const alturaMenuAbierto = computed(
     </button>
 
     <menu class="menu-accesibilidad">
-      <h6 class="titulo">Herramientas de accesibilidad</h6>
+      <p class="titulo">Herramientas de accesibilidad</p>
 
       <button
         class="opcion-accesibilidad"
+        tabindex="-1"
         v-for="(opcion, idx) in opciones"
         :key="`opcion-accesibilidad-${idx}`"
+        :id="`opcion_accesibilidad_${idx}`"
         @click="seleccionarOpcion(opcion)"
       >
         <span
@@ -224,6 +254,8 @@ const alturaMenuAbierto = computed(
 
       <button
         class="opcion-accesibilidad"
+        tabindex="-1"
+        id="opcion_accesibilidad_restablecer"
         @click="restablecer"
       >
         <span
