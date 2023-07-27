@@ -21,17 +21,6 @@
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	!function() {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = function(exports) {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	!function() {
 /******/ 		__webpack_require__.p = "";
@@ -46,22 +35,6 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 // UNUSED EXPORTS: GlobosInformacion, SisdaiColapsableNavegacion, SisdaiIndiceDeContenido, SisdaiInfoDeDespliegue, SisdaiMenuAccesibilidad, SisdaiMenuLateral, SisdaiNarrativaScroll, SisdaiNavegacionGobMx, SisdaiNavegacionPrincipal, SisdaiPiePaginaConahcyt, SisdaiPiePaginaGobMx
-
-// NAMESPACE OBJECT: ./src/componentes/index.js
-var componentes_namespaceObject = {};
-__webpack_require__.r(componentes_namespaceObject);
-__webpack_require__.d(componentes_namespaceObject, {
-  gU: function() { return colapsable_navegacion; },
-  s_: function() { return indice_de_contenido; },
-  WX: function() { return info_de_despliegue; },
-  m9: function() { return menu_accesibilidad; },
-  iT: function() { return menu_lateral; },
-  ko: function() { return narrativa_scroll; },
-  u0: function() { return navegacion_gob_mx; },
-  RE: function() { return navegacion_principal; },
-  mR: function() { return pie_pagina_conahcyt; },
-  VF: function() { return pie_pagina_gob_mx; }
-});
 
 ;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 /* eslint-disable no-var */
@@ -1165,7 +1138,7 @@ const boton_flotante_plugin = {
     Vue.component('SisdaiBotonFlotante', SisdaiBotonFlotante);
   }
 };
-/* harmony default export */ var boton_flotante = ((/* unused pure expression or super */ null && (boton_flotante_plugin)));
+/* harmony default export */ var boton_flotante = (boton_flotante_plugin);
 ;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"d4e2ec26-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=6da6615c&
 var SisdaiNavegacionPrincipalvue_type_template_id_6da6615c_render = function render() {
   var _vm = this,
@@ -2609,7 +2582,7 @@ const src_plugin = {
     Vue.use(tooltips);
     //otros
     Vue.use(narrativa_scroll);
-    Vue.use(componentes_namespaceObject.BotonFlotante);
+    Vue.use(boton_flotante);
   }
 };
 
