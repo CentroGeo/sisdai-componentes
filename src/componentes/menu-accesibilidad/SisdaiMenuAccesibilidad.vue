@@ -200,31 +200,6 @@ watch(tema, () => {
 // }
 
 /**
- * Si el menú está abierto, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse las opciones con el teclado secuencial.
- */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (estaAbierto) {
-    opciones.value.forEach((_, idx) => {
-      document
-        .getElementById(`opcion_accesibilidad_${idx}`)
-        .removeAttribute('tabIndex')
-    })
-    document
-      .getElementById('opcion_accesibilidad_restablecer')
-      .removeAttribute('tabIndex')
-  } else {
-    opciones.value.forEach((_, idx) => {
-      document.getElementById(`opcion_accesibilidad_${idx}`).tabIndex = '-1'
-    })
-    document.getElementById('opcion_accesibilidad_restablecer').tabIndex = '-1'
-  }
-}
-
-watch(menuAccesibilidadEstaAbierto, actualizaAtributoTabIndex)
-
-/**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
  * opción de restablecer y el titulo del menú.
  */
@@ -257,13 +232,11 @@ const alturaMenuAbierto = computed(
 
       <hr />
 
-      <!-- :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1" Esto también sirve sin usar document -->
       <button
         class="opcion-accesibilidad"
-        tabindex="-1"
+        :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         v-for="(opcion, idx) in opciones"
         :key="`opcion-accesibilidad-${idx}`"
-        :id="`opcion_accesibilidad_${idx}`"
         @click="seleccionarOpcion(opcion)"
       >
         <span
@@ -277,8 +250,7 @@ const alturaMenuAbierto = computed(
 
       <button
         class="opcion-accesibilidad"
-        tabindex="-1"
-        id="opcion_accesibilidad_restablecer"
+        :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"
       >
         <span
