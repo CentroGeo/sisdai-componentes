@@ -122,14 +122,6 @@ function moverFocoAElemento() {
       >
         <slot name="contenido-menu-lateral">
           <ul>
-            <li>
-              <router-link
-                to="#routerlink"
-                exact
-              >
-                router link prueba
-              </router-link>
-            </li>
             <li><a href="#anchore"> anchore link prueba </a></li>
             <li>
               <a
