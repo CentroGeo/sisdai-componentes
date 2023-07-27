@@ -18,6 +18,9 @@ Uso:
 
 ### Propiedades
 
+- **elemento_enfocable**
+  String, por default es `'#indice-con-contenido-principal'` y su valor corresponde a un texto querySelector que especifica a qué elemento del DOM harán focus los enlaces del menú después de hacer click. En el Sistema de diseño se ha determinado que cuando se hace click en un enlace de este menú, el focus se debe ir hacia el contenedor del índice de contenido más su texto principal, de ahí el valor por default.
+
 - **navInformacion**
   Para la version mobile es el contenido que se muestra debajo de la barra de navegacion, se usa generalmente para mostrar el nombre de la seccion actual del sitio.
 
@@ -73,7 +76,7 @@ Se debe agregar el atributo `exact` al primer elemento de la lista de navegació
 ##### identidad
 
 - Requerido: no
-- Contenido predeterminado: Logotipo de Conacyt
+- Contenido predeterminado: Logotipo de Conahcyt
 
 Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.
 
@@ -92,7 +95,7 @@ Se recomienda usar las clases css de Sisdaicss
         width="130"
         height="38"
         src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-azul.svg"
-        alt="Conacyt."
+        alt="Conahcyt."
       />
     </a>
   </template>

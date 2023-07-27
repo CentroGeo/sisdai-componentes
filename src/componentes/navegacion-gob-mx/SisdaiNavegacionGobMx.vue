@@ -1,3 +1,59 @@
+<script setup>
+import { onMounted, ref, watch } from 'vue'
+import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
+
+//Que el menu se pueda cerrar automaticamente al enfocar otra cosa
+const cuadroElementosMenu = ref(null)
+const { menuEstaAbierto, alternarMenu } =
+  useMenuDesenfocable(cuadroElementosMenu)
+
+const navMenuGobMx = ref({})
+
+/**
+ * Agrega el atributo tabindex a los elementos de lista,
+ * si está en versión móvil
+ */
+function agregaAtributoTabIndex() {
+  if (window.innerWidth < 768) {
+    for (let index = 0; index < navMenuGobMx.value.length; index++) {
+      const elemento = navMenuGobMx.value[index]['children'][0]
+      elemento.tabIndex = '-1'
+    }
+  }
+}
+
+/**
+ * Si el menú está abierto en móvil, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+function actualizaAtributoTabIndex(estaAbierto) {
+  if (window.innerWidth < 768) {
+    if (estaAbierto) {
+      for (let i = 0; i < navMenuGobMx.value.length; i++) {
+        const elemento = navMenuGobMx.value[i]['children'][0]
+        elemento.removeAttribute('tabIndex')
+      }
+    } else {
+      for (let j = 0; j < navMenuGobMx.value.length; j++) {
+        const elemento = navMenuGobMx.value[j]['children'][0]
+        elemento.tabIndex = '-1'
+      }
+    }
+  }
+}
+
+onMounted(() => {
+  navMenuGobMx.value =
+    document.getElementsByClassName('nav-menu')[0]['children']
+  agregaAtributoTabIndex()
+})
+
+watch(menuEstaAbierto, () => {
+  actualizaAtributoTabIndex(menuEstaAbierto.value)
+})
+</script>
+
 <template>
   <nav
     class="navegacion navegacion-gobmx"
@@ -98,59 +154,3 @@
     </div>
   </nav>
 </template>
-
-<script setup>
-import { onMounted, ref, watch } from 'vue'
-import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
-
-//Que el menu se pueda cerrar automaticamente al enfocar otra cosa
-const cuadroElementosMenu = ref(null)
-const { menuEstaAbierto, alternarMenu } =
-  useMenuDesenfocable(cuadroElementosMenu)
-
-const navMenuGobMx = ref({})
-
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si está en versión móvil
- */
-function agregaAtributoTabIndex() {
-  if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenuGobMx.value.length; index++) {
-      const elemento = navMenuGobMx.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-/**
- * Si el menú está abierto en móvil, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (window.innerWidth < 768) {
-    if (estaAbierto) {
-      for (let i = 0; i < navMenuGobMx.value.length; i++) {
-        const elemento = navMenuGobMx.value[i]['children'][0]
-        elemento.removeAttribute('tabIndex')
-      }
-    } else {
-      for (let j = 0; j < navMenuGobMx.value.length; j++) {
-        const elemento = navMenuGobMx.value[j]['children'][0]
-        elemento.tabIndex = '-1'
-      }
-    }
-  }
-}
-
-onMounted(() => {
-  navMenuGobMx.value =
-    document.getElementsByClassName('nav-menu')[0]['children']
-  agregaAtributoTabIndex()
-})
-
-watch(menuEstaAbierto, () => {
-  actualizaAtributoTabIndex(menuEstaAbierto.value)
-})
-</script>

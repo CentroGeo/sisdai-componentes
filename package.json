@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "2.1.4",
+  "version": "2.2.0",
   "private": true,
   "description": "Biblioteca de componentes de Vue reutilizables",
   "main": "./src/index.js",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "core-js": "^3.31.0",
-    "sisdai-css": "github:salsa-community/sisdai-css#develop",
+    "sisdai-css": "github:salsa-community/sisdai-css#v0.38.5",
     "vue": "^2.7.14"
   },
   "devDependencies": {
@@ -41,7 +41,6 @@
     "sass": "^1.57.1",
     "sass-loader": "^10.4.1",
     "vue-template-compiler": "^2.7.14",
-    "vue2-helpers": "^2.1.1",
     "vuepress": "^1.9.8",
     "vuepress-html-webpack-plugin": "^3.2.0",
     "vuex": "^3.6.2"

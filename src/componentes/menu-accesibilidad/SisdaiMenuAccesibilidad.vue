@@ -14,7 +14,7 @@ const propiedades = {
   },
 
   /**
-   * Objeto store completo del proytecto.
+   * Objeto store completo del proyecto.
    */
   objetoStore: {
     type: Object,
@@ -40,15 +40,16 @@ const eventos = {
   alSeleccionarOpcion: 'alSeleccionarOpcion',
 
   /**
-   * Se ejecuta cuanso se ha dado click en el botón "Restablecer".
+   * Se ejecuta cuando se ha dado click en el botón "Restablecer".
    */
   alRestablecer: 'alRestablecer',
 }
 </script>
 
 <script setup>
-import { computed, ref, toRefs, watch } from 'vue'
+import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
+import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
@@ -133,6 +134,72 @@ function alternarAbiertoCerrado() {
 defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
 
 /**
+ * Módulo de vista oscura.
+ */
+const tema = computed(() => store.state.tema)
+const perfil = computed(() => store.state.perfil)
+
+/**
+ * Muestra el nombre actual según el tema seleccionado.
+ */
+const nombreTemaActual = computed(() => {
+  const nombres = {
+    claro: 'Clara',
+    oscuro: 'Oscura',
+    auto: 'Automática',
+  }
+  return nombres[tema.value]
+})
+
+/**
+ * Elige el tema en el documento en modo oscuro,
+ * si la variable del query es dark y el tema del store es auto
+ * ó si el tema del store es oscuro.
+ */
+function elegirTemaEnDocumento() {
+  const modoOscuro = ref(
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+      tema.value === 'oscuro'
+  )
+
+  // Asignar el perfil de color para el atributo css del query.
+  if (perfil.value !== null)
+    document.documentElement.setAttribute(
+      // se puede nombrar como quieras.
+      `data-dark-theme-${perfil.value}`,
+      modoOscuro.value
+    )
+
+  // Reasignando la variable del store.
+  modoOscuro.value === true
+    ? (store.state.vista_oscura = true)
+    : (store.state.vista_oscura = false)
+}
+
+onBeforeMount(() => {
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', elegirTemaEnDocumento)
+})
+
+onMounted(() => {
+  elegirTemaEnDocumento()
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', elegirTemaEnDocumento)
+})
+
+watch(tema, () => {
+  elegirTemaEnDocumento()
+})
+
+// if (localStorage.getItem('theme')) {
+//   store.state.tema = localStorage.getItem('theme')
+// }
+
+/**
  * Si el menú está abierto, remueve el atributo tabIndex.
  * Si está cerrado, agrega el atributo tabIndex en -1 para
  * saltarse las opciones con el teclado secuencial.
@@ -205,6 +272,7 @@ const alturaMenuAbierto = computed(
           aria-hidden="true"
         />
         {{ opcion.titulo }}
+        {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
       </button>
 
       <button

@@ -8,7 +8,7 @@ La información de despliegue es un componente compartido en todos los Ecosistem
 
 Uso:
 
-La información de despliegue se coloca al final de cada página del sitio encima del último elemento de esta como por ejemplo el Pie de página del Conacyt.
+La información de despliegue se coloca al final de cada página del sitio encima del último elemento de esta como por ejemplo el Pie de página del Conahcyt.
 
 La información de despliegue sirve principalmente para:
 

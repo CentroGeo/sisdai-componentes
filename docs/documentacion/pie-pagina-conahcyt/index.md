@@ -2,21 +2,21 @@
 layout: LayoutDocumentacion
 ---
 
-# Pie de página del Conacyt
+# Pie de página del Conahcyt
 
-El pie de página del Conacyt es un componente compartido en todos los Ecosistemas Nacionales de Información. El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conacyt y enlaces de interés.
+El pie de página del Conahcyt es un componente compartido en todos los Ecosistemas Nacionales de Información. El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conahcyt y enlaces de interés.
 
 Uso:
 
-El pie de página del Conacyt se coloca al final de cada página del sitio.
+El pie de página del Conahcyt se coloca al final de cada página del sitio.
 
-El pie de página del Conacyt sirve principalmente para:
+El pie de página del Conahcyt sirve principalmente para:
 
-- Dar certeza de que el contenido es información oficial del Conacyt
+- Dar certeza de que el contenido es información oficial del Conahcyt
 
-- Ofrecer acceso rápido a sitios de interés del Conacyt
+- Ofrecer acceso rápido a sitios de interés del Conahcyt
 
-- Brindar información de contacto del Conacyt
+- Brindar información de contacto del Conahcyt
 
 Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados.
 
@@ -26,7 +26,7 @@ Al tratarse de un componente institucional se deben respetar los lineamientos de
 
 Vista simplificada
 
-En la vista simplificada el pie de página del CONACYT no se modifica en diseño ni en comportamiento.
+En la vista simplificada el pie de página del CONAHCYT no se modifica en diseño ni en comportamiento.
 
 <section id="api">
 
