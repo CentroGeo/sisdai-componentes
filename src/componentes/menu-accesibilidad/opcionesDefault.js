@@ -11,7 +11,7 @@ export default [
   {
     accion: 'alternarVistaOscura',
     claseCss: 'a11y-oscura',
-    icono: 'icono-ayuda',
+    icono: 'icono-contraste',
     titulo: 'Vista',
   },
   {
