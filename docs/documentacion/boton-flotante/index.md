@@ -34,7 +34,7 @@ Uso:
   - Valor predeterminado: `[]`
   - Requerido: si
 
-### Metodos
+### Métodos
 
 - **alternarEstado**
   Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Botón flotante.

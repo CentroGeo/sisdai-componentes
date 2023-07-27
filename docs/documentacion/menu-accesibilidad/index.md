@@ -6,16 +6,27 @@ layout: LayoutDocumentacion
 
 El Menú de accesibilidad permite ejecutar a las funciones que agregan reglas de accesibilidad al sitio web. Consulte la [sección de accesibilidad del Sisdai](https://sisdai.conacyt.mx/accesibilidad/introduccion) para más información.
 
-El componente cuenta con tres opciones de accesibilidad predeterminadas:
+El componente cuenta con cuatro opciones de accesibilidad predeterminadas:
 
 - Tipografía accesible
 - Vista simplificada
 - Enlaces subrayados
+- Vista oscura
 
 Uso:
 
 ```html
 <SisdaiMenuAccesibilidad />
+```
+
+En el caso de la vista oscura, se cuenta además con perfiles de color predeterminados para los estilos de los elementos html y componentes del Sisdai.
+
+Por defecto, el perfil de color de la vista oscura está configurado para recibir las variables css del proyecto `'eni'`. Pero a su vez, se puede cambiar este perfil por el de `'gema'` o `'sisdai'` mediante la variable de estado **perfil** del módulo de accesibilidad en el store de la siguiente manera:
+
+```js
+import store from '../../stores/accesibilidad'
+
+store.state.perfil = 'eni' // 'eni' | 'sisdai' | 'gema'
 ```
 
 <section id="api">
@@ -40,7 +51,7 @@ Uso:
   - Valor predeterminado: `[]`
   - Requerido: no
 
-### Metodos
+### Métodos
 
 - **alternarEstado**
   Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
@@ -52,9 +63,9 @@ Uso:
 
   Parametros:
 
-  - `String`: Objeto que contiene los atributos de la opción seleccionada al dar click.
+  - `Object`: Objeto que contiene los atributos de la opción seleccionada al dar click.
 
-- **@restablecer**
+- **@alRestablecer**
   Se ejecuta cuanso se ha dado click en el botón "Restablecer".
 
 ### Slots
@@ -96,6 +107,9 @@ Este componente cuenta con un módulo de store en estructura de [Vuex](https://v
 - Enlaces subrayados
   - Variable: `enlaces_subrayados` (de tipo boleano en `false` por defecto).
   - Mutación: `alternarEnlacesSubrayados` (sin parámetros).
+- Vista Oscura
+  - Variable: `vista_oscura` (de tipo boleano en `false` por defecto).
+  - Mutación: `alternarVistaOscura` (sin parámetros).
 
 Además de una mutación extra que restablece los valores de todas las variables:
 

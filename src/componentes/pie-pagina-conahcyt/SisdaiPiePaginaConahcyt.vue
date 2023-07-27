@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="contenedor conacyt-fondo-degradado conacyt-texto-claro-1 conacyt-piepagina p-y-4"
+    class="contenedor conahcyt-fondo-degradado conahcyt-texto-claro-1 conahcyt-piepagina p-y-4"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-8-esc">
@@ -9,6 +9,7 @@
           alt="Conahcyt"
           width="200px"
           height="60px"
+          class="foot-logo"
         />
         <p>
           Av. Insurgentes Sur 1582, Col. Crédito Constructor,<br />
@@ -22,7 +23,7 @@
         <ul class="lista-plana">
           <li>
             <a
-              class="hipervinculo-conacyt"
+              class="hipervinculo-conahcyt"
               href="https://conahcyt.mx/directorio/"
               target="_blank"
               rel="noopener"
@@ -31,7 +32,7 @@
           </li>
           <li>
             <a
-              class="hipervinculo-conacyt"
+              class="hipervinculo-conahcyt"
               href="https://conahcyt.mx/centro-de-contacto-de-atencion/"
               target="_blank"
               rel="noopener"
@@ -40,7 +41,7 @@
           </li>
           <li>
             <a
-              class="hipervinculo-conacyt"
+              class="hipervinculo-conahcyt"
               href="https://conahcyt.mx/aviso-de-privacidad/"
               target="_blank"
               rel="noopener"
@@ -49,7 +50,7 @@
           </li>
           <li>
             <a
-              class="hipervinculo-conacyt"
+              class="hipervinculo-conahcyt"
               href="http://comunidad.conahcyt.mx/index.php"
               target="_blank"
               rel="noopener"
@@ -66,7 +67,7 @@
         <p>
           <a
             href="https://www.facebook.com/ConahcytMX"
-            class="hipervinculo-conacyt m-r-3"
+            class="hipervinculo-conahcyt m-r-3"
             target="_blank"
             rel="noopener"
           >
@@ -78,7 +79,7 @@
           </a>
           <a
             href="https://twitter.com/Conahcyt_Mex"
-            class="hipervinculo-conacyt m-r-3"
+            class="hipervinculo-conahcyt m-r-3"
             target="_blank"
             rel="noopener"
           >
@@ -90,7 +91,7 @@
           </a>
           <a
             href="https://www.instagram.com/conahcyt_mex/"
-            class="hipervinculo-conacyt m-r-3"
+            class="hipervinculo-conahcyt m-r-3"
             target="_blank"
             rel="noopener"
           >
@@ -102,7 +103,7 @@
           </a>
           <a
             href="https://www.youtube.com/@Conahcytmx"
-            class="hipervinculo-conacyt"
+            class="hipervinculo-conahcyt"
             target="_blank"
             rel="noopener"
           >
@@ -119,7 +120,7 @@
 </template>
 
 <style>
-.conacyt-piepagina {
+.conahcyt-piepagina {
   color: #fff;
   font-size: 14px;
 }
