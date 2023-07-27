@@ -21,7 +21,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "core-js": "^3.31.0",
-    "sisdai-css": "github:salsa-community/sisdai-css#v0.38.1",
+    "sisdai-css": "github:salsa-community/sisdai-css#v0.38.5",
     "vue": "^2.7.14"
   },
   "devDependencies": {
