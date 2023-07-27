@@ -71,7 +71,7 @@ watch(menuEstaAbierto, () => {
 
 <template>
   <nav
-    class="navegacion navegacion-conacyt"
+    class="navegacion navegacion-conahcyt"
     :class="{ 'navegacion-pegada': fija }"
     aria-label="navegación principal"
   >
@@ -83,7 +83,7 @@ watch(menuEstaAbierto, () => {
           class="nav-hiperviculo-logo"
         >
           <img
-            class="nav-logo"
+            class="nav-logo invertir"
             width="130"
             height="38"
             src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-azul.svg"
