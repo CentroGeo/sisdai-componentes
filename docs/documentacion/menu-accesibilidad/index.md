@@ -52,9 +52,9 @@ Uso:
 
   Parametros:
 
-  - `String`: Objeto que contiene los atributos de la opción seleccionada al dar click.
+  - `Object`: Objeto que contiene los atributos de la opción seleccionada al dar click.
 
-- **@restablecer**
+- **@alRestablecer**
   Se ejecuta cuanso se ha dado click en el botón "Restablecer".
 
 ### Slots

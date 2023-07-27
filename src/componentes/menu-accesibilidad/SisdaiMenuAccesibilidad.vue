@@ -42,7 +42,7 @@ const eventos = {
   /**
    * Se ejecuta cuanso se ha dado click en el botón "Restablecer".
    */
-  restablecer: 'restablecer',
+  alRestablecer: 'alRestablecer',
 }
 </script>
 
@@ -63,9 +63,29 @@ const opciones = computed(() => [...opcionesDefault, ...agregarOpciones.value])
  * Indica si el Menú de accesibilidad está abierto.
  * - Abierto: `true`
  * - Cerrado: `false`
- * @type Boolean
+ * @type {Boolean}
  */
 const menuAccesibilidadEstaAbierto = ref(false)
+
+/**
+ *
+ * @type {Array<String>}
+ */
+const clasesSelecciondas = ref([])
+
+/**
+ *
+ * @param {String} claseCss
+ */
+function agregarQuitarClaseSeleccionda(claseCss) {
+  if (!clasesSelecciondas.value.includes(claseCss)) {
+    clasesSelecciondas.value.push(claseCss)
+  } else {
+    clasesSelecciondas.value = clasesSelecciondas.value.filter(
+      clase => clase !== claseCss
+    )
+  }
+}
 
 /**
  * Ejecuta un cambio en el store si dicho objeto permite hacer commits (si se esta usando la
@@ -86,17 +106,19 @@ function ejecutarEnStore(accion) {
  * @param {Object} Opcion seleccionada.
  */
 function seleccionarOpcion(opcion) {
+  alternarAbiertoCerrado()
+  agregarQuitarClaseSeleccionda(opcion.claseCss)
   emits(eventos.alSeleccionarOpcion, opcion)
-  menuAccesibilidadEstaAbierto.value = false
   ejecutarEnStore(opcion.accion)
 }
 
 /**
- * Desencadena el emit 'restablecer' al mismo tiempo que cierra el menú.
+ * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
  */
 function restablecer() {
-  emits(eventos.restablecer)
-  menuAccesibilidadEstaAbierto.value = false
+  alternarAbiertoCerrado()
+  clasesSelecciondas.value = []
+  emits(eventos.alRestablecer)
   ejecutarEnStore('restablecer')
 }
 
@@ -104,11 +126,11 @@ function restablecer() {
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
  * Menú de accesibilidad.
  */
-function alternarEstado() {
+function alternarAbiertoCerrado() {
   menuAccesibilidadEstaAbierto.value = !menuAccesibilidadEstaAbierto.value
 }
 
-defineExpose({ alternarEstado })
+defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
 
 /**
  * Si el menú está abierto, remueve el atributo tabIndex.
@@ -117,7 +139,7 @@ defineExpose({ alternarEstado })
  */
 function actualizaAtributoTabIndex(estaAbierto) {
   if (estaAbierto) {
-    opciones.value.forEach((element, idx) => {
+    opciones.value.forEach((_, idx) => {
       document
         .getElementById(`opcion_accesibilidad_${idx}`)
         .removeAttribute('tabIndex')
@@ -126,23 +148,21 @@ function actualizaAtributoTabIndex(estaAbierto) {
       .getElementById('opcion_accesibilidad_restablecer')
       .removeAttribute('tabIndex')
   } else {
-    opciones.value.forEach((element, idx) => {
+    opciones.value.forEach((_, idx) => {
       document.getElementById(`opcion_accesibilidad_${idx}`).tabIndex = '-1'
     })
     document.getElementById('opcion_accesibilidad_restablecer').tabIndex = '-1'
   }
 }
 
-watch(menuAccesibilidadEstaAbierto, () => {
-  actualizaAtributoTabIndex(menuAccesibilidadEstaAbierto.value)
-})
+watch(menuAccesibilidadEstaAbierto, actualizaAtributoTabIndex)
 
 /**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
  * opción de restablecer y el titulo del menú.
  */
 const alturaMenuAbierto = computed(
-  () => `${(opciones.value.length + 1) * 50 + 60}px`
+  () => `${(opciones.value.length + 1) * 40 + 84}px`
 )
 </script>
 
@@ -154,7 +174,7 @@ const alturaMenuAbierto = computed(
     <button
       class="icono-boton-accesibilidad"
       :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
-      @click="alternarEstado"
+      @click="alternarAbiertoCerrado"
     >
       <span
         class="icono-accesibilidad icono-5"
@@ -168,6 +188,9 @@ const alturaMenuAbierto = computed(
     <menu class="menu-accesibilidad">
       <p class="titulo">Herramientas de accesibilidad</p>
 
+      <hr />
+
+      <!-- :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1" Esto también sirve sin usar document -->
       <button
         class="opcion-accesibilidad"
         tabindex="-1"
@@ -200,7 +223,7 @@ const alturaMenuAbierto = computed(
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .contenedor-menu-accesibilidad.abierto .menu-accesibilidad {
   max-height: v-bind('alturaMenuAbierto') !important;
 }

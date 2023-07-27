@@ -2,31 +2,21 @@
 import ElementosParaVerAccesibilidad from './elementos-para-ver-accesibilidad.vue'
 import { ref } from 'vue'
 
-const clasesAccesibles = ref([])
+const menuAccesibilidad = ref(null)
 
-function eliminarClase(claseCss) {
-  clasesAccesibles.value = clasesAccesibles.value.filter(
-    clase => clase !== claseCss
-  )
-}
-
-function agregarClases({ accion, claseCss }) {
-  if (!clasesAccesibles.value.includes(claseCss)) {
-    clasesAccesibles.value.push(claseCss)
-  } else {
-    eliminarClase(claseCss)
-  }
+function alSeleccionarOpcion(opcion) {
+  alert(`Accesibilidad: ${opcion.titulo}`)
 }
 </script>
 
 <template>
   <div
     class="contenerdor-panttalla-simulada"
-    :class="clasesAccesibles"
+    :class="menuAccesibilidad?.clasesSelecciondas"
   >
     <SisdaiMenuAccesibilidad
-      @alSeleccionarOpcion="agregarClases"
-      @restablecer="clasesAccesibles = []"
+      ref="menuAccesibilidad"
+      @alSeleccionarOpcion="alSeleccionarOpcion"
     />
 
     <ElementosParaVerAccesibilidad />
