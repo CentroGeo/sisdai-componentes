@@ -9,6 +9,7 @@
           alt="Conahcyt"
           width="200px"
           height="60px"
+          class="foot-logo"
         />
         <p>
           Av. Insurgentes Sur 1582, Col. Crédito Constructor,<br />

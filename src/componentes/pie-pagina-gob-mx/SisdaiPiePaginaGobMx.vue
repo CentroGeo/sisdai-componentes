@@ -9,6 +9,7 @@
           alt="Gobierno de México"
           width="200px"
           height="60px"
+          class="foot-logo"
         />
       </div>
       <nav class="columna-8 columna-4-esc">

@@ -19,7 +19,7 @@ const aria_expanded = ref(false)
           class="nav-hiperviculo-logo"
         >
           <img
-            class="nav-logo"
+            class="nav-logo invertir"
             style="width: 232px; height: 38px"
             src="https://cdn.conacyt.mx/sisdai-archivos/to-examples/logo-conacyt-gema.svg"
             alt="gema."
