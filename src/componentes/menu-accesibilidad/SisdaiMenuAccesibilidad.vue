@@ -227,9 +227,9 @@ const alturaMenuAbierto = computed(
         class="icono-accesibilidad icono-5"
         aria-hidden="true"
       />
-      <span class="a11y-solo-lectura"
-        >abrir y cerrar menú de accesibilidad</span
-      >
+      <span class="a11y-solo-lectura">
+        abrir y cerrar menú de accesibilidad
+      </span>
     </button>
 
     <menu class="menu-accesibilidad">

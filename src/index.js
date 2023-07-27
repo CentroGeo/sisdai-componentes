@@ -9,7 +9,7 @@ import {
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   SisdaiNarrativaScroll,
-  BotonFlotante,
+  SisdaiBotonFlotante,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -31,7 +31,7 @@ const plugin = {
     Vue.use(GlobosInformacion)
     //otros
     Vue.use(SisdaiNarrativaScroll)
-    Vue.use(BotonFlotante)
+    Vue.use(SisdaiBotonFlotante)
   },
 }
 

@@ -2,7 +2,7 @@
 import { defineProps, onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
-defineProps({
+const props = defineProps({
   navInformacion: {
     default: '',
     type: String,
@@ -11,10 +11,16 @@ defineProps({
     default: true,
     type: Boolean,
   },
+  elemento_enfocable: {
+    type: String,
+    default: '#navegacion-secundaria-con-contenido-principal',
+  },
 })
 
 //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenu = ref(null)
+const navegacionPrincipal = ref(null)
+
 const {
   menuEstaAbierto,
   alternarMenu,
@@ -62,11 +68,24 @@ onMounted(() => {
   navMenuConahcyt.value =
     document.getElementsByClassName('nav-menu')[1]['children']
   agregaAtributoTabIndex()
+  navegacionPrincipal.value.querySelectorAll('a').forEach(d => {
+    if (d.target !== '_blank') {
+      d.addEventListener('click', moverFocoAElemento)
+    }
+  })
 })
 
 watch(menuEstaAbierto, () => {
   actualizaAtributoTabIndex(menuEstaAbierto.value)
 })
+
+function moverFocoAElemento() {
+  let elemento_receptor = document.querySelector(props.elemento_enfocable)
+  if (elemento_receptor) {
+    elemento_receptor.tabIndex = '-1'
+    elemento_receptor.focus()
+  }
+}
 </script>
 
 <template>
@@ -74,6 +93,7 @@ watch(menuEstaAbierto, () => {
     class="navegacion navegacion-conahcyt"
     :class="{ 'navegacion-pegada': fija }"
     aria-label="navegación principal"
+    ref="navegacionPrincipal"
   >
     <div class="nav-contenedor-identidad">
       <slot name="identidad">
