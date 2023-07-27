@@ -1,5 +1,5 @@
 <script setup>
-import { useRoute } from 'vue2-helpers/vue-router'
+import { useRoute } from 'vue-router/composables'
 import store from './../../store'
 
 import { ref, onMounted, watch } from 'vue'
@@ -49,7 +49,10 @@ function actualizaContenidoIndice() {
     <nav-navegacion-principal />
     <SisdaiMenuAccesibilidad :objetoStore="store" />
 
-    <div class="flex">
+    <div
+      class="flex"
+      id="navegacion-secundaria-con-contenido-principal"
+    >
       <div class="columna-4 columna-1-mov menu-fondo">
         <SisdaiMenuLateral>
           <template slot="contenido-menu-lateral">
@@ -138,7 +141,10 @@ function actualizaContenidoIndice() {
         </SisdaiMenuLateral>
       </div>
       <div class="columna-12 columna-7-mov">
-        <div class="flex contenedor-indice-y-content">
+        <div
+          class="flex contenedor-indice-y-content"
+          id="indice-con-contenido-principal"
+        >
           <div class="columna-4 columna-8-mov">
             <SisdaiIndiceDeContenido
               class="indice-contenido-documentacion"
@@ -157,7 +163,10 @@ function actualizaContenidoIndice() {
               </template>
             </SisdaiIndiceDeContenido>
           </div>
-          <div class="columna-12 contenedor ancho-fijo">
+          <div
+            class="columna-12 contenedor ancho-fijo"
+            tabindex="-1"
+          >
             <Content />
           </div>
         </div>

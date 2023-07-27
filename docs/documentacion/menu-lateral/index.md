@@ -12,7 +12,9 @@ Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usual
 
 ## API
 
-Este componente sólo admite slots.
+### Propiedades
+
+- `elemento_enfocable`: String, por default es `'#navegacion-secundaria-con-contenido-principal'` y su valor corresponde a un texto querySelector que especifica a qué elemento del DOM harán focus los enlaces del menú después de hacer click. En el Sistema de diseño se ha determinado que cuando se hace click en un enlace de este menú, el focus se debe ir hacia el contenedor del índice de contenido más su texto principal, de ahí el valor por default.
 
 ### Slots
 
