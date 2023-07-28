@@ -69,13 +69,14 @@ const opciones = computed(() => [...opcionesDefault, ...agregarOpciones.value])
 const menuAccesibilidadEstaAbierto = ref(false)
 
 /**
- *
+ * Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable
+ * para facilitar la relación de interacción del menú de accesibilidad con la vista.
  * @type {Array<String>}
  */
 const clasesSelecciondas = ref([])
 
 /**
- *
+ * Agrega y quita clases del arrelo `clasesSelecciondas`.
  * @param {String} claseCss
  */
 function agregarQuitarClaseSeleccionda(claseCss) {

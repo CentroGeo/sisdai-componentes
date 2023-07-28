@@ -56,6 +56,13 @@ store.state.perfil = 'eni' // 'eni' | 'sisdai' | 'gema'
 - **alternarEstado**
   Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
 
+### Variables
+
+- **clasesSelecciondas**
+  Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable para facilitar la relación de interacción del menú de accesibilidad con la vista.
+  - Tipo: `Array<String>`
+  - Valor inicial: `[]`
+
 ### Eventos
 
 - **@alSeleccionarOpcion**
