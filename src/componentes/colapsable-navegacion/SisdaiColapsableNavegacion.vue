@@ -5,6 +5,7 @@ const props = defineProps({
   titulo: { type: String, default: 'Titulo de colapsable' },
   activo: { type: Boolean, default: false },
 })
+// eslint-disable-next-line
 const esta_activo = ref(props.activo)
 
 function idAleatorio() {
