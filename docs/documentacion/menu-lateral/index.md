@@ -12,10 +12,6 @@ Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usual
 
 ## API
 
-### Propiedades
-
-- `elemento_enfocable`: String, por default es `'#navegacion-secundaria-con-contenido-principal'` y su valor corresponde a un texto querySelector que especifica a qué elemento del DOM harán focus los enlaces del menú después de hacer click. En el Sistema de diseño se ha determinado que cuando se hace click en un enlace de este menú, el focus se debe ir hacia el contenedor del índice de contenido más su texto principal, de ahí el valor por default.
-
 ### Slots
 
 -`'contenido-menu-lateral'`: Este es el único slot que contiene el componente. En el se pueden incluir elementos de navegación como `<a></a>` o `<router-link>  </router-link>` en el caso de que que el proyecto esté usando [Vue Router](https://router.vuejs.org/). También se pueden agregar dichos enlaces contenidos en los elementos de lista `<li>` de una lista no ordenada `<ul/>`, así como incluir el componente `<SisdaiColapsableNavegacion/>`

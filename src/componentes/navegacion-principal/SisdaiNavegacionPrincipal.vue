@@ -2,7 +2,7 @@
 import { defineProps, onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
-const props = defineProps({
+defineProps({
   navInformacion: {
     default: '',
     type: String,
@@ -10,10 +10,6 @@ const props = defineProps({
   fija: {
     default: true,
     type: Boolean,
-  },
-  elemento_enfocable: {
-    type: String,
-    default: '#navegacion-secundaria-con-contenido-principal',
   },
 })
 
@@ -68,24 +64,11 @@ onMounted(() => {
   navMenuConahcyt.value =
     document.getElementsByClassName('nav-menu')[1]['children']
   agregaAtributoTabIndex()
-  navegacionPrincipal.value.querySelectorAll('a').forEach(d => {
-    if (d.target !== '_blank') {
-      d.addEventListener('click', moverFocoAElemento)
-    }
-  })
 })
 
 watch(menuEstaAbierto, () => {
   actualizaAtributoTabIndex(menuEstaAbierto.value)
 })
-
-function moverFocoAElemento() {
-  let elemento_receptor = document.querySelector(props.elemento_enfocable)
-  if (elemento_receptor) {
-    elemento_receptor.tabIndex = '-1'
-    elemento_receptor.focus()
-  }
-}
 </script>
 
 <template>
