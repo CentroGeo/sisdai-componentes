@@ -1,11 +1,6 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
-const props = defineProps({
-  elemento_enfocable: {
-    type: String,
-    default: '#indice-con-contenido-principal',
-  },
-})
+
 const menu_abierto = ref(false)
 
 function idAleatorio() {
@@ -50,38 +45,17 @@ function actualizaAtributoTabIndex(estaAbierto) {
   }
 }
 const contenidoMenuLateral = ref(null)
-
 onMounted(() => {
   elementosLista.value =
     document.getElementById(id_aleatorio)['children'][0]['children'][0][
       'children'
     ]
   agregaAtributoTabIndex()
-  contenidoMenuLateral.value.querySelectorAll('a').forEach(d => {
-    if (d.target !== '_blank') {
-      d.addEventListener('click', moverFocoAElemento)
-    }
-  })
 })
 
 watch(menu_abierto, () => {
   actualizaAtributoTabIndex(menu_abierto.value)
 })
-
-function moverFocoAElemento() {
-  let elemento_receptor = document.querySelector(props.elemento_enfocable)
-  if (elemento_receptor) {
-    elemento_receptor.tabIndex = '-1'
-    elemento_receptor.focus()
-  }
-  if (window.innerWidth < 768) {
-    if (menu_abierto.value === true) {
-      menu_abierto.value = false
-    }
-  } else {
-    menu_abierto.value = true
-  }
-}
 </script>
 
 <template>

@@ -51,7 +51,7 @@ function actualizaContenidoIndice() {
 
     <div
       class="flex"
-      id="navegacion-secundaria-con-contenido-principal"
+      id="contenido-todo"
     >
       <div class="columna-4 columna-1-mov menu-fondo">
         <SisdaiMenuLateral>
@@ -143,7 +143,7 @@ function actualizaContenidoIndice() {
       <div class="columna-12 columna-7-mov">
         <div
           class="flex contenedor-indice-y-content"
-          id="indice-con-contenido-principal"
+          id="contenido-documento"
         >
           <div class="columna-4 columna-8-mov">
             <SisdaiIndiceDeContenido
