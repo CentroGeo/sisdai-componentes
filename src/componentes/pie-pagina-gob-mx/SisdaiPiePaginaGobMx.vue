@@ -12,7 +12,7 @@
           class="foot-logo"
         />
       </div>
-      <nav class="columna-8 columna-4-esc">
+      <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">Enlaces</p>
         <ul class="lista-plana">
           <li>
@@ -52,8 +52,8 @@
             >
           </li>
         </ul>
-      </nav>
-      <nav class="columna-8 columna-4-esc">
+      </div>
+      <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">¿Qué es gob.mx?</p>
         <p>
           <span
@@ -133,8 +133,8 @@
             >
           </li>
         </ul>
-      </nav>
-      <nav class="columna-8 columna-4-esc">
+      </div>
+      <div class="columna-8 columna-4-esc">
         <p>
           <a
             class="hipervinculo-gobmx"
@@ -174,7 +174,7 @@
             <span class="a11y-solo-lectura">tuiter.</span>
           </a>
         </p>
-      </nav>
+      </div>
     </div>
   </footer>
 </template>
