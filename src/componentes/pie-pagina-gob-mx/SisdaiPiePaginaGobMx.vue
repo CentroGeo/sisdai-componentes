@@ -1,6 +1,7 @@
 <template>
   <footer
     class="contenedor gobmx-fondo-oscuro-1 piepagina-gobmx gobmx-piepagina p-t-4 p-b-10"
+    aria-label="Gobierno de México"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-4-esc">
@@ -12,7 +13,7 @@
           class="foot-logo"
         />
       </div>
-      <nav class="columna-8 columna-4-esc">
+      <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">Enlaces</p>
         <ul class="lista-plana">
           <li>
@@ -52,8 +53,8 @@
             >
           </li>
         </ul>
-      </nav>
-      <nav class="columna-8 columna-4-esc">
+      </div>
+      <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">¿Qué es gob.mx?</p>
         <p>
           <span
@@ -133,8 +134,8 @@
             >
           </li>
         </ul>
-      </nav>
-      <nav class="columna-8 columna-4-esc">
+      </div>
+      <div class="columna-8 columna-4-esc">
         <p>
           <a
             class="hipervinculo-gobmx"
@@ -148,33 +149,37 @@
           Síguenos en
           <span class="a11y-solo-lectura">nuestras redes sociales:</span>
         </p>
-        <p>
-          <a
-            href="https://www.facebook.com/gobmx"
-            class="hipervinculo-gobmx m-r-3"
-            target="_blank"
-            rel="noopener"
-          >
-            <span
-              class="icono-social-facebook icono-3"
-              aria-hidden="true"
-            ></span>
-            <span class="a11y-solo-lectura">feisbuk</span>
-          </a>
-          <a
-            href="https://twitter.com/gobmx"
-            class="hipervinculo-gobmx"
-            target="_blank"
-            rel="noopener"
-          >
-            <span
-              class="icono-social-twitter icono-3"
-              aria-hidden="true"
-            ></span>
-            <span class="a11y-solo-lectura">tuiter.</span>
-          </a>
-        </p>
-      </nav>
+        <ul class="lista-redes-sociales">
+          <li>
+            <a
+              href="https://www.facebook.com/gobmx"
+              class="hipervinculo-gobmx m-r-3"
+              target="_blank"
+              rel="noopener"
+            >
+              <span
+                class="icono-social-facebook icono-3"
+                aria-hidden="true"
+              ></span>
+              <span class="a11y-solo-lectura">feisbuk</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/gobmx"
+              class="hipervinculo-gobmx"
+              target="_blank"
+              rel="noopener"
+            >
+              <span
+                class="icono-social-twitter icono-3"
+                aria-hidden="true"
+              ></span>
+              <span class="a11y-solo-lectura">tuiter.</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </footer>
 </template>
