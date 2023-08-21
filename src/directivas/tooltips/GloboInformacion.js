@@ -54,6 +54,9 @@ const globo_informacion = {
   unbind(el) {
     let unique_id = el.getAttribute('host-tooltip-id')
     const props = globalThis[GLOBAL_NAME][unique_id]
+    el.removeEventListener('focusin', props.mouseEnterListener)
+    el.removeEventListener('focusout', props.mouseLeaveListener)
+
     el.removeEventListener('mouseenter', props.mouseEnterListener)
     el.removeEventListener('mouseleave', props.mouseLeaveListener)
   },
@@ -109,6 +112,9 @@ const globo_informacion_extendido = {
   unbind(el) {
     let unique_id = el.getAttribute('host-tooltip-id')
     const props = globalThis[GLOBAL_NAME][unique_id]
+    el.removeEventListener('focusin', props.mouseEnterListener)
+    el.removeEventListener('focusout', props.mouseLeaveListener)
+
     el.removeEventListener('mouseenter', props.mouseEnterListener)
     el.removeEventListener('mouseleave', props.mouseLeaveListener)
   },
@@ -129,7 +135,8 @@ const addMouseEnterListenerTooltip = (el, unique_id) => {
     const tooltip = getTooltipElement(
       unique_id,
       globalProps.value,
-      globalProps.classTooltip
+      globalProps.classTooltip,
+      el
     )
 
     let elementToDesignate = el
@@ -151,6 +158,7 @@ const addMouseEnterListenerTooltip = (el, unique_id) => {
       ],
     })
   }
+  el.addEventListener('focus', fn)
   el.addEventListener('mouseenter', fn)
   return fn
 }
@@ -166,8 +174,18 @@ const addMouseLeaveListenerTooltip = (el, unique_id) => {
       const tooltip = getTooltipElement(
         unique_id,
         globalProps.value,
-        globalProps.classTooltip
+        globalProps.classTooltip,
+        el
       )
+      tooltip.addEventListener('focusin', () => {
+        //console.log("listener invocado");
+        cancelTimerToRemove(globalProps)
+      })
+      tooltip.addEventListener('focusout', () => {
+        //console.log("listener invocado");
+        waitToRemoveTooltip(unique_id, 500)
+      })
+
       tooltip.addEventListener('mouseenter', () => {
         //console.log("listener invocado");
         cancelTimerToRemove(globalProps)
@@ -183,6 +201,8 @@ const addMouseLeaveListenerTooltip = (el, unique_id) => {
     removeTooltip(unique_id)
   }
   el.addEventListener('mouseleave', fn)
+  el.addEventListener('focusout', fn)
+
   return fn
 }
 
@@ -237,11 +257,10 @@ const removeAllTooltips = () => {
  * @returns
  */
 
-function getTooltipElement(id, value, classTooltip) {
+function getTooltipElement(id, value, classTooltip, elemento) {
   if (document.querySelector("[tooltip-id='" + id + "']")) {
     return document.querySelector("[tooltip-id='" + id + "']")
   }
-
   //crearlo
   const tooltip = document.createElement('div')
   tooltip.setAttribute('tooltip-id', id)
@@ -249,7 +268,8 @@ function getTooltipElement(id, value, classTooltip) {
   tooltip.classList.add(classTooltip)
   let contenido = typeof value === 'object' ? value['contenido'] : value
   tooltip.innerHTML = `<div class="cuerpo-globo-info">${contenido}</div>`
-  document.body.appendChild(tooltip)
+  //document.body.appendChild(tooltip)
+  elemento.parentNode.insertBefore(tooltip, elemento.nextSibling)
   return tooltip
 }
 

@@ -1,5 +1,5 @@
 <script setup>
-import { useRoute } from 'vue2-helpers/vue-router'
+import { useRoute } from 'vue-router/composables'
 import store from './../../store'
 
 import { ref, onMounted, watch } from 'vue'
@@ -47,8 +47,12 @@ function actualizaContenidoIndice() {
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
 
-    <div class="flex">
+    <div
+      class="flex"
+      id="contenido-todo"
+    >
       <div class="columna-4 columna-1-mov menu-fondo">
         <SisdaiMenuLateral>
           <template slot="contenido-menu-lateral">
@@ -118,24 +122,29 @@ function actualizaContenidoIndice() {
                   PiePaginaGobMx
                 </router-link>
               </li>
+              <li>
+                <a
+                  href="https://github.com/salsa-community/sisdai-componentes"
+                  target="_blank"
+                  rel="noopener"
+                  style="display: grid"
+                >
+                  <span
+                    class="icono-social-github titulo-eni"
+                    aria-hidden="true"
+                  ></span>
+                  <span> ir a github</span>
+                </a>
+              </li>
             </ul>
-            <a
-              href="https://github.com/salsa-community/sisdai-componentes"
-              target="_blank"
-              rel="noopener"
-              style="display: grid"
-            >
-              <span class="icono-social-github titulo-eni"></span>
-              <span> ir a github</span>
-            </a>
           </template>
         </SisdaiMenuLateral>
       </div>
       <div class="columna-12 columna-7-mov">
-        <div class="flex contenedor-indice-y-content">
-          <div class="columna-12 contenedor ancho-fijo">
-            <Content />
-          </div>
+        <div
+          class="flex contenedor-indice-y-content"
+          id="contenido-documento"
+        >
           <div class="columna-4 columna-8-mov">
             <SisdaiIndiceDeContenido
               class="indice-contenido-documentacion"
@@ -154,6 +163,12 @@ function actualizaContenidoIndice() {
               </template>
             </SisdaiIndiceDeContenido>
           </div>
+          <div
+            class="columna-12 contenedor ancho-fijo"
+            tabindex="-1"
+          >
+            <Content />
+          </div>
         </div>
       </div>
     </div>
@@ -161,8 +176,6 @@ function actualizaContenidoIndice() {
     <SisdaiPiePaginaConahcyt />
 
     <SisdaiPiePaginaGobMx />
-
-    <SisdaiMenuAccesibilidad :objetoStore="store" />
   </div>
 </template>
 
@@ -173,9 +186,9 @@ function actualizaContenidoIndice() {
   top: 50px;
   padding: 28px 0;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .contenedor-indice-y-content {
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
   }
 }
 </style>

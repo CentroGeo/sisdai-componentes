@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="contenedor flex">
     <!--Un globo de informacion basico -->
     <button v-globo-informacion="'soy un globo de informacion'">boton</button>
 

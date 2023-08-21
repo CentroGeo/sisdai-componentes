@@ -4,7 +4,7 @@
     :id="id_indice"
   >
     <p class="titulo-indice">{{ titulo }}</p>
-    <nav>
+    <nav aria-label="índice de contenidos de la página">
       <div class="contenedor-indice-de-contenido">
         <slot name="contenido-indice-de-contenido">
           <router-link to="#routerlink"> router link prueba </router-link>
@@ -17,6 +17,7 @@
 
 <script setup>
 import { onUnmounted, onMounted, ref, watch } from 'vue'
+
 const lista_elementos = ref([])
 const seccion_visible = ref()
 const props = defineProps({
@@ -43,7 +44,7 @@ const obtenerRutas = () => {
 
 /**
  * Esta funcion detecta la posición escroleada de la navegación y calcula cual es
- * la sección activa
+ * la sección activa.
  */
 function scroleando() {
   lista_elementos.value.forEach(d => {
@@ -71,16 +72,17 @@ function scroleando() {
 }
 
 /**
- * Caracteristicas del autoscroll suave al clickear un link
+ * Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus
  */
 
 function autoScrollSuave() {
   document
     .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
     .forEach(anchor => {
-      anchor.addEventListener('click', e => {
+      anchor.addEventListener('click', () => {
         seccion_visible.value = anchor.href.split('#').slice(-1).pop()
-        e.preventDefault()
+        document.querySelector('#' + seccion_visible.value).focus()
+        //e.preventDefault()
 
         window.scrollTo({
           top:

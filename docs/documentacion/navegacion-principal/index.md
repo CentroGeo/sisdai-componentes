@@ -73,7 +73,7 @@ Se debe agregar el atributo `exact` al primer elemento de la lista de navegació
 ##### identidad
 
 - Requerido: no
-- Contenido predeterminado: Logotipo de Conacyt
+- Contenido predeterminado: Logotipo de Conahcyt
 
 Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.
 
@@ -92,7 +92,7 @@ Se recomienda usar las clases css de Sisdaicss
         width="130"
         height="38"
         src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-azul.svg"
-        alt="Conacyt."
+        alt="Conahcyt."
       />
     </a>
   </template>

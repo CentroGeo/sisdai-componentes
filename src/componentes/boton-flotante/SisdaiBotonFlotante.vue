@@ -16,7 +16,7 @@ const propiedades = {
 </script>
 
 <script setup>
-import { ref, toRefs } from 'vue'
+import { ref, toRefs, watch } from 'vue'
 
 const props = defineProps(propiedades)
 const { enlaces } = toRefs(props)
@@ -38,6 +38,25 @@ function alternarEstado() {
 }
 
 defineExpose({ alternarEstado })
+
+/**
+ * Si el botón está abierto, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+watch(botonFlotanteEstaAbierto, () => {
+  if (botonFlotanteEstaAbierto.value) {
+    enlaces.value.forEach((element, idx) => {
+      document
+        .getElementById(`boton_flotante_enlace_${idx}`)
+        .removeAttribute('tabIndex')
+    })
+  } else {
+    enlaces.value.forEach((element, idx) => {
+      document.getElementById(`boton_flotante_enlace_${idx}`).tabIndex = '-1'
+    })
+  }
+})
 </script>
 
 <template>
@@ -49,13 +68,16 @@ defineExpose({ alternarEstado })
       :class="`boton-flotante-alternador borde-r-redondeado-20 borde-l-redondeado-${
         botonFlotanteEstaAbierto ? '' : '2'
       }0`"
+      :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
       @click="alternarEstado"
     >
       <span
         :class="`icono ${
           botonFlotanteEstaAbierto ? 'icono-restar' : 'icono-agregar'
         } icono-3`"
+        aria-hidden="true"
       />
+      <span class="a11y-solo-lectura">abrir o cerrar botón flotante</span>
     </button>
 
     <div
@@ -65,6 +87,7 @@ defineExpose({ alternarEstado })
       <a
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
         :key="`boton-flotante-enlace-${idx}`"
+        :id="`boton_flotante_enlace_${idx}`"
         :href="enlace"
         :class="`enlace p-x-1 borde-redondeado-0 ${
           clasesCss === undefined ? '' : clasesCss
@@ -76,6 +99,7 @@ defineExpose({ alternarEstado })
           :class="`icono ${
             icono === undefined ? 'icono-enlace-externo' : icono
           }`"
+          aria-hidden="true"
         />
         {{ contenido === undefined ? 'Enlace externo' : contenido }}
       </a>

@@ -12,8 +12,6 @@ Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usual
 
 ## API
 
-Este componente sólo admite slots.
-
 ### Slots
 
 -`'contenido-menu-lateral'`: Este es el único slot que contiene el componente. En el se pueden incluir elementos de navegación como `<a></a>` o `<router-link>  </router-link>` en el caso de que que el proyecto esté usando [Vue Router](https://router.vuejs.org/). También se pueden agregar dichos enlaces contenidos en los elementos de lista `<li>` de una lista no ordenada `<ul/>`, así como incluir el componente `<SisdaiColapsableNavegacion/>`
@@ -23,21 +21,30 @@ Para este componente, el uso de [Vue Router](https://router.vuejs.org/) es altam
 Por _default_ el contenido del slot es el siguiente:
 
 ```html
-<router-link
-  to="#routerlink"
-  exact
->
-  router link prueba
-</router-link>
-<a href="#anchore"> anchore link prueba </a>
-<a
-  href="https://github.com/salsa-community/sisdai-componentes"
-  rel="noopener"
-  target="_blank"
->
-  <span class="icono-social-github"></span>
-  ejemplo github
-</a>
+<ul>
+  <li>
+    <router-link
+      to="#routerlink"
+      exact
+    >
+      router link prueba
+    </router-link>
+  </li>
+  <li><a href="#anchore"> anchore link prueba </a></li>
+  <li>
+    <a
+      href="https://github.com/salsa-community/sisdai-componentes"
+      rel="noopener"
+      target="_blank"
+    >
+      <span
+        class="icono-social-github"
+        aria-hidden="true"
+      ></span>
+      ejemplo github
+    </a>
+  </li>
+</ul>
 ```
 
 Se debe agregar el atributo `exact` al primer elemento de la lista de navegación para que el estilo de la sección actual en el menú se active exactamente cuando la ruta esté selecionada.
