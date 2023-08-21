@@ -18,7 +18,7 @@
         </p>
         <p>©2023 Conahcyt Derechos Reservados en trámite</p>
       </div>
-      <nav class="columna-8 columna-4-esc">
+      <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">Enlaces</p>
         <ul class="lista-plana">
           <li>
@@ -58,8 +58,8 @@
             >
           </li>
         </ul>
-      </nav>
-      <nav class="columna-8 columna-4-esc">
+      </div>
+      <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">
           Síguenos en
           <span class="a11y-solo-lectura">nuestras redes sociales:</span>
@@ -114,7 +114,7 @@
             <span class="a11y-solo-lectura">yutub</span>
           </a>
         </p>
-      </nav>
+      </div>
     </div>
   </footer>
 </template>
