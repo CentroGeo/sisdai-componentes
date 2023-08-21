@@ -1,6 +1,7 @@
 <template>
   <footer
     class="contenedor conahcyt-fondo-degradado conahcyt-texto-claro-1 conahcyt-piepagina p-y-4"
+    aria-label="Conahcyt"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-8-esc">

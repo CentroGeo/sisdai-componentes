@@ -1,6 +1,7 @@
 <template>
   <footer
     class="contenedor gobmx-fondo-oscuro-1 piepagina-gobmx gobmx-piepagina p-t-4 p-b-10"
+    aria-label="Gobierno de México"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-4-esc">
