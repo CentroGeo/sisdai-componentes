@@ -149,32 +149,36 @@
           Síguenos en
           <span class="a11y-solo-lectura">nuestras redes sociales:</span>
         </p>
-        <p>
-          <a
-            href="https://www.facebook.com/gobmx"
-            class="hipervinculo-gobmx m-r-3"
-            target="_blank"
-            rel="noopener"
-          >
-            <span
-              class="icono-social-facebook icono-3"
-              aria-hidden="true"
-            ></span>
-            <span class="a11y-solo-lectura">feisbuk</span>
-          </a>
-          <a
-            href="https://twitter.com/gobmx"
-            class="hipervinculo-gobmx"
-            target="_blank"
-            rel="noopener"
-          >
-            <span
-              class="icono-social-twitter icono-3"
-              aria-hidden="true"
-            ></span>
-            <span class="a11y-solo-lectura">tuiter.</span>
-          </a>
-        </p>
+        <ul class="lista-redes-sociales">
+          <li>
+            <a
+              href="https://www.facebook.com/gobmx"
+              class="hipervinculo-gobmx m-r-3"
+              target="_blank"
+              rel="noopener"
+            >
+              <span
+                class="icono-social-facebook icono-3"
+                aria-hidden="true"
+              ></span>
+              <span class="a11y-solo-lectura">feisbuk</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/gobmx"
+              class="hipervinculo-gobmx"
+              target="_blank"
+              rel="noopener"
+            >
+              <span
+                class="icono-social-twitter icono-3"
+                aria-hidden="true"
+              ></span>
+              <span class="a11y-solo-lectura">tuiter.</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </footer>
@@ -188,5 +192,13 @@
   background-size: auto 50px;
   color: #fff;
   font-size: 14px;
+}
+.lista-redes-sociales {
+  list-style: none;
+  display: flex;
+  padding-left: 0px;
+}
+.lista-redes-sociales li {
+  margin: 0;
 }
 </style>
