@@ -193,12 +193,4 @@
   color: #fff;
   font-size: 14px;
 }
-.lista-redes-sociales {
-  list-style: none;
-  display: flex;
-  padding-left: 0px;
-}
-.lista-redes-sociales li {
-  margin: 0;
-}
 </style>
