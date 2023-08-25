@@ -2101,15 +2101,15 @@ const colapsable_navegacion_plugin = {
   }
 };
 /* harmony default export */ var colapsable_navegacion = (colapsable_navegacion_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=template&id=1a9079e5&
-var SisdaiMenuLateralvue_type_template_id_1a9079e5_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=template&id=974b05e8&
+var SisdaiMenuLateralvue_type_template_id_974b05e8_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c('nav', {
     staticClass: "menu-lateral-contenedor",
     attrs: {
-      "aria-label": "navegación secundaria"
+      "aria-label": "Menú secundario"
     }
   }, [_c('div', {
     staticClass: "menu-mov",
@@ -2153,7 +2153,7 @@ var SisdaiMenuLateralvue_type_template_id_1a9079e5_render = function render() {
     return [_vm._m(0)];
   })], 2)])]);
 };
-var SisdaiMenuLateralvue_type_template_id_1a9079e5_staticRenderFns = [function () {
+var SisdaiMenuLateralvue_type_template_id_974b05e8_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -2175,7 +2175,7 @@ var SisdaiMenuLateralvue_type_template_id_1a9079e5_staticRenderFns = [function (
   }), _vm._v(" ejemplo github ")])])]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=template&id=1a9079e5&
+;// CONCATENATED MODULE: ./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=template&id=974b05e8&
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=script&setup=true&lang=js&
 
@@ -2254,8 +2254,8 @@ var SisdaiMenuLateralvue_type_template_id_1a9079e5_staticRenderFns = [function (
 ;
 var SisdaiMenuLateral_component = normalizeComponent(
   menu_lateral_SisdaiMenuLateralvue_type_script_setup_true_lang_js_,
-  SisdaiMenuLateralvue_type_template_id_1a9079e5_render,
-  SisdaiMenuLateralvue_type_template_id_1a9079e5_staticRenderFns,
+  SisdaiMenuLateralvue_type_template_id_974b05e8_render,
+  SisdaiMenuLateralvue_type_template_id_974b05e8_staticRenderFns,
   false,
   null,
   null,
@@ -2835,8 +2835,8 @@ const boton_flotante_plugin = {
   }
 };
 /* harmony default export */ var boton_flotante = (boton_flotante_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=2270a5a1&
-var SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=29602b0c&
+var SisdaiNavegacionPrincipalvue_type_template_id_29602b0c_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -2847,7 +2847,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_render = function ren
       'navegacion-pegada': _vm.fija
     },
     attrs: {
-      "aria-label": "navegación principal"
+      "aria-label": "Menú principal"
     }
   }, [_c('div', {
     staticClass: "nav-contenedor-identidad"
@@ -2891,7 +2891,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_render = function ren
     return [_vm._m(1)];
   })], 2)])]);
 };
-var SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_staticRenderFns = [function () {
+var SisdaiNavegacionPrincipalvue_type_template_id_29602b0c_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -2929,7 +2929,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_staticRenderFns = [fu
   }, [_vm._v("Acerca de")])])]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=2270a5a1&
+;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=29602b0c&
 
 ;// CONCATENATED MODULE: ./src/composables/useMenuDesenfocable.js
 
@@ -3127,8 +3127,8 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
 ;
 var SisdaiNavegacionPrincipal_component = normalizeComponent(
   navegacion_principal_SisdaiNavegacionPrincipalvue_type_script_setup_true_lang_js_,
-  SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_render,
-  SisdaiNavegacionPrincipalvue_type_template_id_2270a5a1_staticRenderFns,
+  SisdaiNavegacionPrincipalvue_type_template_id_29602b0c_render,
+  SisdaiNavegacionPrincipalvue_type_template_id_29602b0c_staticRenderFns,
   false,
   null,
   null,
@@ -3145,8 +3145,8 @@ const navegacion_principal_plugin = {
   }
 };
 /* harmony default export */ var navegacion_principal = (navegacion_principal_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/indice-de-contenido/SisdaiIndiceDeContenido.vue?vue&type=template&id=49902eaf&
-var SisdaiIndiceDeContenidovue_type_template_id_49902eaf_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/indice-de-contenido/SisdaiIndiceDeContenido.vue?vue&type=template&id=1a8fe0af&
+var SisdaiIndiceDeContenidovue_type_template_id_1a8fe0af_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -3156,10 +3156,13 @@ var SisdaiIndiceDeContenidovue_type_template_id_49902eaf_render = function rende
       "id": _vm.id_indice
     }
   }, [_c('p', {
-    staticClass: "titulo-indice"
-  }, [_vm._v(_vm._s(_vm.titulo))]), _c('nav', {
+    staticClass: "titulo-indice",
     attrs: {
-      "aria-label": "índice de contenidos de la página"
+      "id": "indice"
+    }
+  }, [_vm._v(" " + _vm._s(_vm.titulo) + " ")]), _c('nav', {
+    attrs: {
+      "aria-labelledby": "indice"
     }
   }, [_c('div', {
     staticClass: "contenedor-indice-de-contenido"
@@ -3175,7 +3178,7 @@ var SisdaiIndiceDeContenidovue_type_template_id_49902eaf_render = function rende
     }, [_vm._v(" anchore link prueba ")])];
   })], 2)])]);
 };
-var SisdaiIndiceDeContenidovue_type_template_id_49902eaf_staticRenderFns = [];
+var SisdaiIndiceDeContenidovue_type_template_id_1a8fe0af_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/indice-de-contenido/SisdaiIndiceDeContenido.vue?vue&type=script&setup=true&lang=js&
 
@@ -3184,7 +3187,7 @@ var SisdaiIndiceDeContenidovue_type_template_id_49902eaf_staticRenderFns = [];
   props: {
     titulo: {
       type: String,
-      default: 'Contenido'
+      default: 'Índice'
     },
     altura: {
       type: Number,
@@ -3296,8 +3299,8 @@ var SisdaiIndiceDeContenidovue_type_template_id_49902eaf_staticRenderFns = [];
 ;
 var SisdaiIndiceDeContenido_component = normalizeComponent(
   indice_de_contenido_SisdaiIndiceDeContenidovue_type_script_setup_true_lang_js_,
-  SisdaiIndiceDeContenidovue_type_template_id_49902eaf_render,
-  SisdaiIndiceDeContenidovue_type_template_id_49902eaf_staticRenderFns,
+  SisdaiIndiceDeContenidovue_type_template_id_1a8fe0af_render,
+  SisdaiIndiceDeContenidovue_type_template_id_1a8fe0af_staticRenderFns,
   false,
   null,
   null,
@@ -3314,15 +3317,15 @@ const indice_de_contenido_plugin = {
   }
 };
 /* harmony default export */ var indice_de_contenido = (indice_de_contenido_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=a1ce837c&
-var SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"33a834b4-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=578194de&
+var SisdaiNavegacionGobMxvue_type_template_id_578194de_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c('nav', {
     staticClass: "navegacion navegacion-gobmx",
     attrs: {
-      "aria-label": "barra de navegación del gobierno de México"
+      "aria-label": "Menú Gobierno de México"
     }
   }, [_c('div', {
     staticClass: "nav-contenedor-identidad"
@@ -3354,7 +3357,7 @@ var SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_render = function render(
     }
   }, [_vm._m(1)])])]);
 };
-var SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_staticRenderFns = [function () {
+var SisdaiNavegacionGobMxvue_type_template_id_578194de_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -3428,7 +3431,7 @@ var SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_staticRenderFns = [functi
   })])])]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=a1ce837c&
+;// CONCATENATED MODULE: ./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=578194de&
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=script&setup=true&lang=js&
 
@@ -3509,8 +3512,8 @@ var SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_staticRenderFns = [functi
 ;
 var SisdaiNavegacionGobMx_component = normalizeComponent(
   navegacion_gob_mx_SisdaiNavegacionGobMxvue_type_script_setup_true_lang_js_,
-  SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_render,
-  SisdaiNavegacionGobMxvue_type_template_id_a1ce837c_staticRenderFns,
+  SisdaiNavegacionGobMxvue_type_template_id_578194de_render,
+  SisdaiNavegacionGobMxvue_type_template_id_578194de_staticRenderFns,
   false,
   null,
   null,

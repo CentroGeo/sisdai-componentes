@@ -75,7 +75,7 @@ watch(menuEstaAbierto, () => {
   <nav
     class="navegacion navegacion-conahcyt"
     :class="{ 'navegacion-pegada': fija }"
-    aria-label="navegación principal"
+    aria-label="Menú principal"
     ref="navegacionPrincipal"
   >
     <div class="nav-contenedor-identidad">

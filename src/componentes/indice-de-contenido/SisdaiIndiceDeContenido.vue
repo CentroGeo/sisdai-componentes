@@ -3,8 +3,13 @@
     class="indice-de-contenido"
     :id="id_indice"
   >
-    <p class="titulo-indice">{{ titulo }}</p>
-    <nav aria-label="índice de contenidos de la página">
+    <p
+      id="indice"
+      class="titulo-indice"
+    >
+      {{ titulo }}
+    </p>
+    <nav aria-labelledby="indice">
       <div class="contenedor-indice-de-contenido">
         <slot name="contenido-indice-de-contenido">
           <router-link to="#routerlink"> router link prueba </router-link>
@@ -21,7 +26,7 @@ import { onUnmounted, onMounted, ref, watch } from 'vue'
 const lista_elementos = ref([])
 const seccion_visible = ref()
 const props = defineProps({
-  titulo: { type: String, default: 'Contenido' },
+  titulo: { type: String, default: 'Índice' },
   altura: { type: Number, default: 50 },
   id_indice: { type: String, defaul: 'id-del-indice-de-contenido' },
 })

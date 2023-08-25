@@ -57,7 +57,7 @@ watch(menuEstaAbierto, () => {
 <template>
   <nav
     class="navegacion navegacion-gobmx"
-    aria-label="barra de navegación del gobierno de México"
+    aria-label="Menú Gobierno de México"
   >
     <div class="nav-contenedor-identidad">
       <a

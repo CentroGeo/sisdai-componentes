@@ -61,7 +61,7 @@ watch(menu_abierto, () => {
 <template>
   <nav
     class="menu-lateral-contenedor"
-    aria-label="navegación secundaria"
+    aria-label="Menú secundario"
   >
     <div
       class="menu-mov"
