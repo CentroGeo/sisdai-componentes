@@ -8,12 +8,12 @@
  * @type Array
  */
 export default [
-  {
-    accion: 'alternarVistaOscura',
-    claseCss: 'a11y-oscura',
-    icono: 'icono-contraste',
-    titulo: 'Vista',
-  },
+  // {
+  //   accion: 'alternarVistaOscura',
+  //   claseCss: 'a11y-oscura',
+  //   icono: 'icono-contraste',
+  //   titulo: 'Vista',
+  // },
   {
     accion: 'alternarTipografiaAccesible',
     claseCss: 'a11y-tipografia',
