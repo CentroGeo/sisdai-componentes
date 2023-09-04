@@ -5,6 +5,7 @@ Vue alineada al Sistema de diseño y accesibilidad para la investigación
 ([Sisdai](https://sisdai.conahcyt.mx)).
 
 > **_Limitación de responsabilidad_**
+>
 > El presente es un proyecto en construcción, por tanto el equipo del Sisdai
 > no es responsable del uso y contenido del presente recurso,
 > toda vez que se trata de una versión en su modalidad prueba, y no de una
