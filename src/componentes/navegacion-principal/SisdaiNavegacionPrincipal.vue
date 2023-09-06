@@ -117,6 +117,9 @@ watch(menuEstaAbierto, () => {
       class="nav-menu-contedor"
       :class="{ abierto: menuEstaAbierto }"
     >
+      <div class="nav-menu-complementario">
+        <slot name="complementario"></slot>
+      </div>
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenu"
