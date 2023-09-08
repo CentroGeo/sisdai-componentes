@@ -214,7 +214,6 @@ agregarse el enlace a la pagina de documentacion del componente que se este
 trabajando. Lo anterior dentro del componente `SisdaiMenuLateral`
 
 ```html
-
 <SisdaiMenuLateral>
   <template slot="contenido-menu-lateral">
     <ul>

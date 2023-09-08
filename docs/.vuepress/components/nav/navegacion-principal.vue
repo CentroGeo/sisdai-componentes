@@ -24,9 +24,10 @@
       <li>
         <a
           class="nav-hipervinculo"
-          href="https://github.com/salsa-community/sisdai-componentes"
-          >GitHub</a
+          href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
         >
+          Repositorio
+        </a>
       </li>
     </ul>
   </SisdaiNavegacionPrincipal>
