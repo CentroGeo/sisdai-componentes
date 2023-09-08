@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "2.3.7",
+  "version": "2.3.9",
   "private": true,
   "description": "Biblioteca de componentes de Vue reutilizables",
   "main": "./src/index.js",
@@ -21,7 +21,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "core-js": "^3.31.0",
-    "sisdai-css": "git+https://codigo.conahcyt.mx/sisdai/sisdai-css#v0.40.1",
+    "sisdai-css": "git+https://codigo.conahcyt.mx/sisdai/sisdai-css#v0.41.1",
     "vue": "^2.7.14"
   },
   "devDependencies": {
@@ -50,6 +50,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/salsa-community/sisdai-componentes"
-  }
+    "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes/issues"
+  },
+  "homepage": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes#readme"
 }

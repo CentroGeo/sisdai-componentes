@@ -1,7 +1,9 @@
 <script setup>
 import store from './../../store'
-
-window.location.href = './documentacion'
+import { onMounted } from 'vue'
+onMounted(() => {
+  window.location.href = './documentacion'
+})
 </script>
 
 <template>

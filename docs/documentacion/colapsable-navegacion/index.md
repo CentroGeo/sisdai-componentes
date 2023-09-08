@@ -6,7 +6,7 @@ layout: LayoutDocumentacion
 
 Este componente consiste en un elemento `<li class="colapsable-navegacion"></li>` que contiene en su interior un botón y una lista no ordenada `<ul></ul>` que usualmente contendrá enlaces `<a></a>` en sus elementos de lista `<li></li>`,
 
-Su funcionalidad consiste en que al dar click al botón se pude agregar una clase `.activo` al elemento `li.colapsable-navegacion`, lo cual hará que la lista no ordenada sea vuelva visible. Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://github.com/salsa-community/sisdai-css), por lo cual es una dependencia de este componente.
+Su funcionalidad consiste en que al dar click al botón se pude agregar una clase `.activo` al elemento `li.colapsable-navegacion`, lo cual hará que la lista no ordenada sea vuelva visible. Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css), por lo cual es una dependencia de este componente.
 
 Los elementos de lista se especifican mediante `slots`.
 
