@@ -124,7 +124,7 @@ function actualizaContenidoIndice() {
               </li>
               <li>
                 <a
-                  href="https://github.com/salsa-community/sisdai-componentes"
+                  href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                   target="_blank"
                   rel="noopener"
                   style="display: grid"

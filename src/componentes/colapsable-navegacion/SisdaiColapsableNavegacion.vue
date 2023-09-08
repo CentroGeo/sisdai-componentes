@@ -81,7 +81,7 @@ watch(esta_activo, () => {
       <slot name="listado-contenido">
         <li>
           <a
-            href="https://github.com/salsa-community/sisdai-componentes/"
+            href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
             target="_blank"
             tabindex="-1"
           >
