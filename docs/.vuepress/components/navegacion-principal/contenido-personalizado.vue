@@ -10,7 +10,10 @@ const aria_expanded = ref(false)
 </script>
 <template>
   <div class="contenedor">
-    <SisdaiNavegacionPrincipal ref="sisdai_nav_ppal">
+    <SisdaiNavegacionPrincipal
+      :nav-informacion="`Sección: <b>${$route.name}</b>`"
+      ref="sisdai_nav_ppal"
+    >
       <!--Definiendo el logo del sitio-->
       <template #identidad>
         <a
@@ -24,6 +27,17 @@ const aria_expanded = ref(false)
             src="https://cdn.conacyt.mx/sisdai-archivos/to-examples/logo-conacyt-gema.svg"
             alt="gema."
           />
+        </a>
+      </template>
+      <!--Definiendo el contenido complementario del sitio-->
+      <template #complementario>
+        <a
+          class="nav-hipervinculo"
+          href=""
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <b>IR A ENLACE EXTERNO</b>
         </a>
       </template>
       <!--Definiendo las secciones del sitio-->

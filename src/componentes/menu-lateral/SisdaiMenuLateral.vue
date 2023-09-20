@@ -99,7 +99,7 @@ watch(menu_abierto, () => {
             <li><a href="#anchore"> anchore link prueba </a></li>
             <li>
               <a
-                href="https://github.com/salsa-community/sisdai-componentes"
+                href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                 rel="noopener"
                 target="_blank"
               >

@@ -99,6 +99,30 @@ Se recomienda usar las clases css de Sisdaicss
 </SisdaiNavegacionPrincipal>
 ```
 
+##### complementario
+
+- Requerido: no
+- Contenido predeterminado: Vacío
+
+Slot para el contenido complementario del sitio, donde se despliegan los enlaces externos por ejemplo.
+
+Se recomienda usar las clases css de Sisdaicss
+
+```html
+<SisdaiNavegacionPrincipal>
+  <template #complementario>
+    <a
+      class="nav-hipervinculo"
+      href=""
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <b>IR A ENLACE EXTERNO</b>
+    </a>
+  </template>
+</SisdaiNavegacionPrincipal>
+```
+
 </section>
 
 <section id="ejemplos">
