@@ -148,6 +148,7 @@ const addMouseEnterListenerTooltip = (el, unique_id) => {
 
     createPopper(elementToDesignate, tooltip, {
       placement: globalProps.placement,
+      strategy: 'fixed',
       modifiers: [
         {
           name: 'offset',
