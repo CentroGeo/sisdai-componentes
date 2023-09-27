@@ -89,7 +89,7 @@ watch(botonFlotanteEstaAbierto, () => {
         :key="`boton-flotante-enlace-${idx}`"
         :id="`boton_flotante_enlace_${idx}`"
         :href="enlace"
-        :class="`enlace p-x-1 borde-redondeado-0 ${
+        :class="`enlace p-x-2 borde-redondeado-0 ${
           clasesCss === undefined ? '' : clasesCss
         }`"
         target="_blank"
