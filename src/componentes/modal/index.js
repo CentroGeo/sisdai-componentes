@@ -1,4 +1,4 @@
-import SisdaiModal from './SisdaiModal'
+import SisdaiModal from './SisdaiModal.vue'
 
 const plugin = {
   install: function (Vue) {
