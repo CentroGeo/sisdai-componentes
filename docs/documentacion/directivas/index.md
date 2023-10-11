@@ -34,9 +34,9 @@ Uso
 
 ### API
 
-#### Parametros
+#### Parámetros
 
-La estructura de los parametros es la siguiente
+La estructura de los parámetros es la siguiente
 
 ```
 v-globo-informacion:[posicion] = [contenido | opciones]

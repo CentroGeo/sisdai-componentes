@@ -114,7 +114,7 @@ acción, campos de texto, opciones de selección, entre otros.
 
 #### Modal chico
 
-Dentro de las etiquetas `<modal-componente><modal-componente/>` se incluyen tres slots de vue (encabezado, cuerpo y pie) para colocar
+Dentro de las etiquetas `<SisdaiModal></SisdaiModal>` se incluyen tres slots de vue (encabezado, cuerpo y pie) para colocar
 contenido html. Se recomienda utilizar el slot de cuerpo para colocar el
 contenido deseado. A continuación se presentan algunos ejemplos con
 contenido.

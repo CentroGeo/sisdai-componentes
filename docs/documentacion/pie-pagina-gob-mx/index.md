@@ -8,7 +8,7 @@ El pie de página del Gobierno de México es uno de los elementos específicos q
 
 Uso:
 
-El pie de página del Gobierno de México se coloca debajo del pie de página del Conacyt.
+El pie de página del Gobierno de México se coloca debajo del pie de página del Conahcyt.
 
 El pie de página del Gobierno de México sirve principalmente para:
 

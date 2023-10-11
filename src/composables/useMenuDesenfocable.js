@@ -10,6 +10,10 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * @property {function} abrirMenu  pone `menuEstaAbierto = true`
  * @property {function} cerrarMenu  pone `menuEstaAbierto = false`
  * @property {function} alternarMenu  pone `menuEstaAbierto =  !menuEstaAbierto`
+ * @property {Ref<boolean>} submenuEstaAbierto  Indica el estado del submenu si esta abierto o no
+ * @property {function} abrirSubmenu  pone `submenuEstaAbierto = true` y agrega el selector de estilo `abierto` al submenu
+ * @property {function} cerrarSubmenu  pone `submenuEstaAbierto = false` y remueve el selector de estilo `abierto` al submenu
+ * @property {function} alternarSubmenu  pone `submenuEstaAbierto =  !menuEstaAbierto`
  */
 
 /**
@@ -25,20 +29,27 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * - `abrirMenu: function`
  * - `cerrarMenu: function`
  * - `alternarMenu: function`
+ * - `submenuEstaAbierto: ref<boolean>`
+ * - `abrirSubmenu: function`
+ * - `cerrarSubmenu: function`
+ * - `alternarSubmenu: function`
  */
 export function useMenuDesenfocable(elementoMenuEnfocable) {
   const menuEstaAbierto = ref(false)
 
+  const submenuEstaAbierto = ref(false)
+
   function updateBlur() {
     //revisar que no tengo foco ningun elemento hijo
 
-    if (menuEstaAbierto.value) {
+    if (menuEstaAbierto.value || submenuEstaAbierto.value) {
       setTimeout(() => {
         if (
           elementoMenuEnfocable.value &&
           !elementoMenuEnfocable.value.contains(document.activeElement)
         ) {
           menuEstaAbierto.value = false
+          cerrarSubmenu()
         }
       }, 200)
     }
@@ -58,19 +69,55 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   }
 
   function alternarMenu() {
-    menuEstaAbierto.value = !menuEstaAbierto.value
+    if (menuEstaAbierto.value === false && submenuEstaAbierto.value === true) {
+      cerrarSubmenu()
+    } else {
+      menuEstaAbierto.value = !menuEstaAbierto.value
+    }
   }
 
-  watch(menuEstaAbierto, menuEstaAbierto => {
-    if (menuEstaAbierto) {
-      elementoMenuEnfocable.value.focus()
+  function abrirSubmenu() {
+    if (document.querySelector('.nav-submenu')) {
+      const navSubmenu = document.querySelector('.nav-submenu')
+      const list = navSubmenu.classList
+      list.add('abierto')
+      submenuEstaAbierto.value = true
     }
-  })
+  }
+
+  function cerrarSubmenu() {
+    if (document.querySelector('.nav-submenu')) {
+      const navSubmenu = document.querySelector('.nav-submenu')
+      const list = navSubmenu.classList
+      list.remove('abierto')
+      submenuEstaAbierto.value = false
+    }
+  }
+
+  function alternarSubmenu() {
+    submenuEstaAbierto.value = !submenuEstaAbierto.value
+    submenuEstaAbierto.value ? abrirSubmenu() : cerrarSubmenu()
+  }
+
+  watch(
+    [menuEstaAbierto, submenuEstaAbierto],
+    (menuEstaAbierto, submenuEstaAbierto) => {
+      if (menuEstaAbierto || submenuEstaAbierto) {
+        elementoMenuEnfocable.value.focus()
+      }
+    }
+  )
 
   onUnmounted(() => {
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.removeEventListener('blur', updateBlur)
   })
 
-  return { menuEstaAbierto, abrirMenu, cerrarMenu, alternarMenu }
+  return {
+    menuEstaAbierto,
+    abrirMenu,
+    cerrarMenu,
+    alternarMenu,
+    alternarSubmenu,
+  }
 }

@@ -2,23 +2,9 @@
 import ElementosParaVerAccesibilidad from './elementos-para-ver-accesibilidad.vue'
 import { ref } from 'vue'
 
-const clasesAccesibles = ref([])
+const menuAccesibilidad = ref(null)
 
-function eliminarClase(claseCss) {
-  clasesAccesibles.value = clasesAccesibles.value.filter(
-    clase => clase !== claseCss
-  )
-}
-
-function agregarClases({ accion, claseCss }) {
-  if (!clasesAccesibles.value.includes(claseCss)) {
-    clasesAccesibles.value.push(claseCss)
-  } else {
-    eliminarClase(claseCss)
-  }
-}
-
-const nuevaOpcion = {
+const opcionCursiva = {
   accion: 'alternarCursivaDestacada',
   claseCss: 'a11y-cursiva-destacada',
   icono: 'icono-estrella',
@@ -29,12 +15,11 @@ const nuevaOpcion = {
 <template>
   <div
     class="contenerdor-panttalla-simulada agregando-opcion"
-    :class="clasesAccesibles"
+    :class="menuAccesibilidad?.clasesSelecciondas"
   >
     <SisdaiMenuAccesibilidad
-      :agregarOpciones="[nuevaOpcion]"
-      @alSeleccionarOpcion="agregarClases"
-      @restablecer="clasesAccesibles = []"
+      ref="menuAccesibilidad"
+      :agregarOpciones="[opcionCursiva]"
     />
 
     <ElementosParaVerAccesibilidad />

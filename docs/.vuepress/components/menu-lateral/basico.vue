@@ -2,10 +2,19 @@
   <div>
     <SisdaiMenuLateral>
       <template slot="contenido-menu-lateral">
-        <router-link to="#api"> API</router-link>
-        <router-link to="#slots"> Slots</router-link>
-        <router-link to="#ejemplos"> Ejemplos </router-link>
-        <a href="#menu-lateral"> El mero inicio </a>
+        <ul>
+          <li>
+            <router-link
+              to="#api"
+              exact
+            >
+              API</router-link
+            >
+          </li>
+          <li><router-link to="#slots"> Slots</router-link></li>
+          <li><router-link to="#ejemplos"> Ejemplos </router-link></li>
+          <li><a href="#menu-lateral"> El mero inicio </a></li>
+        </ul>
       </template>
     </SisdaiMenuLateral>
   </div>

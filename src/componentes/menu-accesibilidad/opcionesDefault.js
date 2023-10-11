@@ -9,10 +9,16 @@
  */
 export default [
   {
+    accion: 'alternarVistaOscura',
+    claseCss: 'a11y-oscura',
+    icono: 'icono-contraste',
+    titulo: 'Vista',
+  },
+  {
     accion: 'alternarTipografiaAccesible',
     claseCss: 'a11y-tipografia',
     icono: 'icono-cambio-tipografia',
-    titulo: 'Tipografía accesible',
+    titulo: 'Cambio de fuente',
   },
   {
     accion: 'alternarVistaSimplificada',

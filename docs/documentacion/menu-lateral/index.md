@@ -4,15 +4,13 @@ layout: LayoutDocumentacion
 
 # Menú lateral
 
-Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://github.com/salsa-community/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
+Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
 
 <menu-lateral-basico/>
 
 <section id="api">
 
 ## API
-
-Este componente sólo admite slots.
 
 ### Slots
 
@@ -23,17 +21,33 @@ Para este componente, el uso de [Vue Router](https://router.vuejs.org/) es altam
 Por _default_ el contenido del slot es el siguiente:
 
 ```html
-<router-link to="#routerlink"> router link prueba </router-link>
-<a href="#anchore"> anchore link prueba </a>
-<a
-  href="https://github.com/salsa-community/sisdai-componentes"
-  rel="noopener"
-  target="_blank"
->
-  <span class="icono-social-github"></span>
-  ejemplo github
-</a>
+<ul>
+  <li>
+    <router-link
+      to="#routerlink"
+      exact
+    >
+      router link prueba
+    </router-link>
+  </li>
+  <li><a href="#anchore"> anchore link prueba </a></li>
+  <li>
+    <a
+      href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+      rel="noopener"
+      target="_blank"
+    >
+      <span
+        class="icono-social-github"
+        aria-hidden="true"
+      ></span>
+      ejemplo github
+    </a>
+  </li>
+</ul>
 ```
+
+Se debe agregar el atributo `exact` al primer elemento de la lista de navegación para que el estilo de la sección actual en el menú se active exactamente cuando la ruta esté selecionada.
 
 </section>
 

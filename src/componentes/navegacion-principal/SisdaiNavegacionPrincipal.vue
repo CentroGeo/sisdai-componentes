@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, ref } from 'vue'
+import { defineProps, onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
 defineProps({
@@ -15,37 +15,98 @@ defineProps({
 
 //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenu = ref(null)
-const { menuEstaAbierto, alternarMenu } =
-  useMenuDesenfocable(cuadroElementosMenu)
+const navegacionPrincipal = ref(null)
+
+const {
+  menuEstaAbierto,
+  alternarMenu,
+  // eslint-disable-next-line
+  alternarSubmenu,
+} = useMenuDesenfocable(cuadroElementosMenu)
+
+const navMenuConahcyt = ref({})
+
+/**
+ * Agrega el atributo tabindex a los elementos de lista,
+ * si está en versión móvil
+ */
+function agregaAtributoTabIndex() {
+  if (window.innerWidth < 768) {
+    for (let index = 0; index < navMenuConahcyt.value.length; index++) {
+      const elemento = navMenuConahcyt.value[index]['children'][0]
+      elemento.tabIndex = '-1'
+    }
+  }
+}
+
+/**
+ * Si el menú está abierto en móvil, remueve el atributo tabIndex.
+ * Si está cerrado, agrega el atributo tabIndex en -1 para
+ * saltarse los enlaces con el teclado secuencial.
+ */
+function actualizaAtributoTabIndex(estaAbierto) {
+  if (window.innerWidth < 768) {
+    if (estaAbierto) {
+      for (let i = 0; i < navMenuConahcyt.value.length; i++) {
+        const elemento = navMenuConahcyt.value[i]['children'][0]
+        elemento.removeAttribute('tabIndex')
+      }
+    } else {
+      for (let j = 0; j < navMenuConahcyt.value.length; j++) {
+        const elemento = navMenuConahcyt.value[j]['children'][0]
+        elemento.tabIndex = '-1'
+      }
+    }
+  }
+}
+
+onMounted(() => {
+  navMenuConahcyt.value =
+    document.getElementsByClassName('nav-menu')[1]['children']
+  agregaAtributoTabIndex()
+})
+
+watch(menuEstaAbierto, () => {
+  actualizaAtributoTabIndex(menuEstaAbierto.value)
+})
 </script>
 
 <template>
   <nav
-    class="navegacion navegacion-conacyt"
+    class="navegacion navegacion-conahcyt"
     :class="{ 'navegacion-pegada': fija }"
+    aria-label="Menú principal"
+    ref="navegacionPrincipal"
   >
     <div class="nav-contenedor-identidad">
       <slot name="identidad">
         <a
-          href="https://conacyt.mx/"
+          href="https://conahcyt.mx/"
           target="_blank"
           class="nav-hiperviculo-logo"
         >
           <img
-            class="nav-logo"
+            class="nav-logo invertir"
             width="130"
             height="38"
-            src="https://cdn.conacyt.mx/sisdai-archivos/conacyt-azul.svg"
-            alt="Conacyt."
+            src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-azul.svg"
+            alt="Conahcyt."
           />
         </a>
       </slot>
       <button
         @click="alternarMenu"
+        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto }"
       >
-        <span class="nav-icono-menu"></span>
+        <span
+          class="nav-icono-menu"
+          aria-hidden="true"
+        ></span>
+        <span class="a11y-solo-lectura"
+          >abrir y cerrar navegacion principal</span
+        >
       </button>
       <div
         class="nav-informacion"
@@ -56,9 +117,11 @@ const { menuEstaAbierto, alternarMenu } =
       class="nav-menu-contedor"
       :class="{ abierto: menuEstaAbierto }"
     >
+      <div class="nav-menu-complementario">
+        <slot name="complementario"></slot>
+      </div>
       <div
         class="nav-menu-principal"
-        tabindex="0"
         ref="cuadroElementosMenu"
         @click="alternarMenu"
       >

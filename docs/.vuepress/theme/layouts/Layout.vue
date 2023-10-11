@@ -1,5 +1,9 @@
 <script setup>
 import store from './../../store'
+import { onMounted } from 'vue'
+onMounted(() => {
+  window.location.href = './documentacion'
+})
 </script>
 
 <template>
@@ -18,15 +22,10 @@ import store from './../../store'
       <Content />
     </main>
 
-    <SisdaiPiePaginaConacyt />
+    <SisdaiPiePaginaConahcyt />
 
     <SisdaiPiePaginaGobMx />
 
-    <SisdaiMenuAccesibilidad
-      @alSeleccionarOpcion="
-        ({ accion }) => store.commit(`accesibilidad/${accion}`)
-      "
-      @restablecer="store.commit('accesibilidad/limpiarClasesAccesibles')"
-    />
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
   </div>
 </template>

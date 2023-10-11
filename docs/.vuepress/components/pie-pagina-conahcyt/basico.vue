@@ -1,5 +1,5 @@
 <template>
   <div class="contenedor">
-    <SisdaiPiePaginaConacyt />
+    <SisdaiPiePaginaConahcyt />
   </div>
 </template>

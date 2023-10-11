@@ -4,14 +4,15 @@
       <li>
         <a
           href="#"
-          class="nav-hipervinculo"
+          exact
+          tabindex="-1"
           >Opción 1 desplegable</a
         >
       </li>
       <li>
         <a
           href="#"
-          class="nav-hipervinculo"
+          tabindex="-1"
           >Opción 2 desplegable</a
         >
       </li>

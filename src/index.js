@@ -2,14 +2,14 @@ import {
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaGobMx,
-  SisdaiPiePaginaConacyt,
+  SisdaiPiePaginaConahcyt,
   SisdaiColapsableNavegacion,
   SisdaiMenuLateral,
   SisdaiIndiceDeContenido,
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   SisdaiNarrativaScroll,
-  BotonFlotante,
+  SisdaiBotonFlotante,
   SisdaiModal,
 } from './componentes'
 
@@ -21,7 +21,7 @@ const plugin = {
     Vue.use(SisdaiNavegacionGobMx)
     Vue.use(SisdaiNavegacionPrincipal)
     Vue.use(SisdaiPiePaginaGobMx)
-    Vue.use(SisdaiPiePaginaConacyt)
+    Vue.use(SisdaiPiePaginaConahcyt)
     Vue.use(SisdaiColapsableNavegacion)
     Vue.use(SisdaiMenuLateral)
     Vue.use(SisdaiIndiceDeContenido)
@@ -32,7 +32,7 @@ const plugin = {
     Vue.use(GlobosInformacion)
     //otros
     Vue.use(SisdaiNarrativaScroll)
-    Vue.use(BotonFlotante)
+    Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
   },
 }
@@ -41,7 +41,7 @@ export {
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaGobMx,
-  SisdaiPiePaginaConacyt,
+  SisdaiPiePaginaConahcyt,
   SisdaiColapsableNavegacion,
   SisdaiMenuLateral,
   SisdaiIndiceDeContenido,
@@ -49,6 +49,7 @@ export {
   SisdaiMenuAccesibilidad,
   GlobosInformacion,
   SisdaiNarrativaScroll,
+  SisdaiBotonFlotante,
   SisdaiModal,
 }
 

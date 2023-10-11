@@ -12,6 +12,23 @@ const propiedades = {
     type: Array,
     default: () => [],
   },
+
+  /**
+   * Objeto store completo del proyecto.
+   */
+  objetoStore: {
+    type: Object,
+    default: () => {},
+  },
+
+  /**
+   * Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de
+   * `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
+   */
+  nombreModuloStore: {
+    type: String,
+    default: 'accesibilidad',
+  },
 }
 
 const eventos = {
@@ -23,19 +40,20 @@ const eventos = {
   alSeleccionarOpcion: 'alSeleccionarOpcion',
 
   /**
-   * Se ejecuta cuanso se ha dado click en el botón "Restablecer".
+   * Se ejecuta cuando se ha dado click en el botón "Restablecer".
    */
-  restablecer: 'restablecer',
+  alRestablecer: 'alRestablecer',
 }
 </script>
 
 <script setup>
-import { computed, ref, toRefs } from 'vue'
+import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
+import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones } = toRefs(props)
+const { agregarOpciones, nombreModuloStore, objetoStore } = toRefs(props)
 
 /**
  * Opciones que se mostrarán en el menú de accesibilidad.
@@ -46,43 +64,148 @@ const opciones = computed(() => [...opcionesDefault, ...agregarOpciones.value])
  * Indica si el Menú de accesibilidad está abierto.
  * - Abierto: `true`
  * - Cerrado: `false`
- * @type Boolean
+ * @type {Boolean}
  */
 const menuAccesibilidadEstaAbierto = ref(false)
+
+/**
+ * Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable
+ * para facilitar la relación de interacción del menú de accesibilidad con la vista.
+ * @type {Array<String>}
+ */
+const clasesSelecciondas = ref([])
+
+/**
+ * Agrega y quita clases del arrelo `clasesSelecciondas`.
+ * @param {String} claseCss
+ */
+function agregarQuitarClaseSeleccionda(claseCss) {
+  if (!clasesSelecciondas.value.includes(claseCss)) {
+    clasesSelecciondas.value.push(claseCss)
+  } else {
+    clasesSelecciondas.value = clasesSelecciondas.value.filter(
+      clase => clase !== claseCss
+    )
+  }
+}
+
+/**
+ * Ejecuta un cambio en el store si dicho objeto permite hacer commits (si se esta usando la
+ * pripiedad `objetoStore`).
+ * @param {String} accion nombre del mutation en el modulo del store.
+ */
+function ejecutarEnStore(accion) {
+  if (
+    objetoStore.value !== undefined &&
+    Object.prototype.hasOwnProperty.call(objetoStore.value, 'commit')
+  ) {
+    objetoStore.value.commit(`${nombreModuloStore.value}/${accion}`)
+  }
+}
 
 /**
  * Desencadena el emit 'alSeleccionarOpcion' al mismo tiempo que cierra el menú.
  * @param {Object} Opcion seleccionada.
  */
 function seleccionarOpcion(opcion) {
+  alternarAbiertoCerrado()
+  agregarQuitarClaseSeleccionda(opcion.claseCss)
   emits(eventos.alSeleccionarOpcion, opcion)
-  menuAccesibilidadEstaAbierto.value = false
+  ejecutarEnStore(opcion.accion)
 }
 
 /**
- * Desencadena el emit 'restablecer' al mismo tiempo que cierra el menú.
+ * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
  */
 function restablecer() {
-  emits(eventos.restablecer)
-  menuAccesibilidadEstaAbierto.value = false
+  alternarAbiertoCerrado()
+  clasesSelecciondas.value = []
+  emits(eventos.alRestablecer)
+  ejecutarEnStore('restablecer')
 }
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
  * Menú de accesibilidad.
  */
-function alternarEstado() {
+function alternarAbiertoCerrado() {
   menuAccesibilidadEstaAbierto.value = !menuAccesibilidadEstaAbierto.value
 }
 
-defineExpose({ alternarEstado })
+defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
+
+/**
+ * Módulo de vista oscura.
+ */
+const tema = computed(() => store.state.tema)
+const perfil = computed(() => store.state.perfil)
+
+/**
+ * Muestra el nombre actual según el tema seleccionado.
+ */
+const nombreTemaActual = computed(() => {
+  const nombres = {
+    claro: 'Clara',
+    oscuro: 'Oscura',
+    auto: 'Automática',
+  }
+  return nombres[tema.value]
+})
+
+/**
+ * Elige el tema en el documento en modo oscuro,
+ * si la variable del query es dark y el tema del store es auto
+ * ó si el tema del store es oscuro.
+ */
+function elegirTemaEnDocumento() {
+  const modoOscuro = ref(
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+      tema.value === 'oscuro'
+  )
+
+  // Asignar el perfil de color para el atributo css del query.
+  if (perfil.value !== null)
+    document.documentElement.setAttribute(
+      // se puede nombrar como quieras.
+      `data-dark-theme-${perfil.value}`,
+      modoOscuro.value
+    )
+
+  // Reasignando la variable del store.
+  modoOscuro.value === true
+    ? (store.state.vista_oscura = true)
+    : (store.state.vista_oscura = false)
+}
+
+onBeforeMount(() => {
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', elegirTemaEnDocumento)
+})
+
+onMounted(() => {
+  elegirTemaEnDocumento()
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', elegirTemaEnDocumento)
+})
+
+watch(tema, () => {
+  elegirTemaEnDocumento()
+})
+
+// if (localStorage.getItem('theme')) {
+//   store.state.tema = localStorage.getItem('theme')
+// }
 
 /**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
  * opción de restablecer y el titulo del menú.
  */
 const alturaMenuAbierto = computed(
-  () => `${(opciones.value.length + 1) * 50 + 60}px`
+  () => `${(opciones.value.length + 1) * 40 + 84}px`
 )
 </script>
 
@@ -93,16 +216,26 @@ const alturaMenuAbierto = computed(
   >
     <button
       class="icono-boton-accesibilidad"
-      @click="alternarEstado"
+      :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
+      @click="alternarAbiertoCerrado"
     >
-      <span class="icono-accesibilidad icono-5" />
+      <span
+        class="icono-accesibilidad icono-5"
+        aria-hidden="true"
+      />
+      <span class="a11y-solo-lectura">
+        abrir y cerrar menú de accesibilidad
+      </span>
     </button>
 
     <menu class="menu-accesibilidad">
-      <h6 class="titulo">Herramientas de accesibilidad</h6>
+      <p class="titulo">Herramientas de accesibilidad</p>
+
+      <hr />
 
       <button
         class="opcion-accesibilidad"
+        :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         v-for="(opcion, idx) in opciones"
         :key="`opcion-accesibilidad-${idx}`"
         @click="seleccionarOpcion(opcion)"
@@ -110,22 +243,28 @@ const alturaMenuAbierto = computed(
         <span
           class="icono-4"
           :class="opcion.icono"
+          aria-hidden="true"
         />
         {{ opcion.titulo }}
+        {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
       </button>
 
       <button
         class="opcion-accesibilidad"
+        :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"
       >
-        <span class="icono-4 icono-restablecer" />
+        <span
+          class="icono-4 icono-restablecer"
+          aria-hidden="true"
+        />
         Restablecer
       </button>
     </menu>
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .contenedor-menu-accesibilidad.abierto .menu-accesibilidad {
   max-height: v-bind('alturaMenuAbierto') !important;
 }
