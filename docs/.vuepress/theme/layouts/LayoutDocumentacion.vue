@@ -63,6 +63,9 @@ function actualizaContenidoIndice() {
                 </router-link>
               </li>
               <li>
+                <router-link to="/documentacion/modal"> Modal</router-link>
+              </li>
+              <li>
                 <router-link to="/documentacion/boton-flotante">
                   Botonflotante
                 </router-link>
