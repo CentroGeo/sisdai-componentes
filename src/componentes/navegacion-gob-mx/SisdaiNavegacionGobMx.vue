@@ -101,15 +101,6 @@ watch(menuEstaAbierto, () => {
         >
           <li>
             <a
-              href="https://mivacuna.salud.gob.mx/index.php"
-              class="nav-hipervinculo"
-              target="_blank"
-              rel="noopener"
-              >Registro para vacunación</a
-            >
-          </li>
-          <li>
-            <a
               href="https://coronavirus.gob.mx/"
               class="nav-hipervinculo"
               target="_blank"
