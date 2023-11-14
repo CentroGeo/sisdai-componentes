@@ -108,7 +108,7 @@ function ejecutarEnStore(accion) {
  * @param {Object} Opcion seleccionada.
  */
 function seleccionarOpcion(opcion) {
-  alternarAbiertoCerrado()
+  // alternarAbiertoCerrado()
   agregarQuitarClaseSeleccionda(opcion.claseCss)
   emits(eventos.alSeleccionarOpcion, opcion)
   ejecutarEnStore(opcion.accion)
@@ -118,7 +118,7 @@ function seleccionarOpcion(opcion) {
  * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
  */
 function restablecer() {
-  alternarAbiertoCerrado()
+  // alternarAbiertoCerrado()
   clasesSelecciondas.value = []
   emits(eventos.alRestablecer)
   ejecutarEnStore('restablecer')
@@ -233,7 +233,48 @@ const alturaMenuAbierto = computed(
 
       <hr />
 
-      <button
+      <div
+        v-for="(opcion, key, idx) in opciones"
+        :key="`opcion-accesibilidad-${idx}`"
+        v-show="key > 2"
+      >
+        <input
+          type="checkbox"
+          :id="key"
+          v-model="opcion.valor"
+          :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
+          @click="seleccionarOpcion(opcion)"
+        />
+        <label :for="key">
+          <span class="vis-nomenclatura opcion-accesibilidad">
+            <span
+              class="icono-4"
+              :class="opcion.icono"
+              aria-hidden="true"
+            ></span>
+            {{ opcion.titulo }} {{ opcion.valor }}
+            {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
+          </span>
+        </label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="restablecer"
+          :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
+          @click="restablecer"
+        />
+        <label for="restablecer">
+          <span class="vis-nomenclatura opcion-accesibilidad">
+            <span
+              class="icono-4 icono-restablecer"
+              aria-hidden="true"
+            ></span>
+            Restablecer
+          </span>
+        </label>
+      </div>
+      <!-- <button
         class="opcion-accesibilidad"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         v-for="(opcion, idx) in opciones"
@@ -247,7 +288,7 @@ const alturaMenuAbierto = computed(
         />
         {{ opcion.titulo }}
         {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
-      </button>
+      </button> -->
 
       <button
         class="opcion-accesibilidad"
