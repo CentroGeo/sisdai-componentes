@@ -310,7 +310,7 @@ const alturaMenuAbierto = computed(
     font-size: 16px;
   }
   // width: 262px !important;
-  width: 300px !important;
+  width: 278px !important;
   background: #f0f6ff !important;
   .titulo {
     color: #102543;
@@ -326,8 +326,8 @@ const alturaMenuAbierto = computed(
     // align-items: bottom;
   }
   label {
-    width: 268px;
-    padding: 8px 24px 8px;
+    width: 246px;
+    padding: 8px 0px 8px 24px;
     margin-left: 16px;
     .vis-nomenclatura {
       margin-bottom: 0;
