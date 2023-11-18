@@ -114,6 +114,13 @@ function seleccionarOpcion(opcion) {
   ejecutarEnStore(opcion.accion)
 }
 
+function desactivarOpciones() {
+  opciones.value.forEach(opcion => {
+    console.log(opcion.valor)
+    opcion.valor = false
+  })
+}
+
 /**
  * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
  */
@@ -122,6 +129,7 @@ function restablecer() {
   clasesSelecciondas.value = []
   emits(eventos.alRestablecer)
   ejecutarEnStore('restablecer')
+  desactivarOpciones()
 }
 
 /**
@@ -205,7 +213,7 @@ watch(tema, () => {
  * opción de restablecer y el titulo del menú.
  */
 const alturaMenuAbierto = computed(
-  () => `${(opciones.value.length + 1) * 40 + 84}px`
+  () => `${(opciones.value.length + 1) * 50 + 84}px`
 )
 </script>
 
@@ -230,50 +238,40 @@ const alturaMenuAbierto = computed(
 
     <menu class="menu-accesibilidad">
       <p class="titulo">Herramientas de accesibilidad</p>
-
       <hr />
 
       <div
-        v-for="(opcion, key, idx) in opciones"
+        class="controlador-vis"
+        v-for="(opcion, idx) in opciones"
         :key="`opcion-accesibilidad-${idx}`"
-        v-show="key > 2"
+        v-show="idx < 4"
       >
         <input
           type="checkbox"
-          :id="key"
+          :id="opcion.titulo"
           v-model="opcion.valor"
           :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
           @click="seleccionarOpcion(opcion)"
         />
-        <label :for="key">
+        <label :for="opcion.titulo">
           <span class="vis-nomenclatura opcion-accesibilidad">
             <span
               class="icono-4"
               :class="opcion.icono"
               aria-hidden="true"
             ></span>
-            {{ opcion.titulo }} {{ opcion.valor }}
+            {{ opcion.titulo }}
             {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
           </span>
         </label>
       </div>
-      <div>
-        <input
-          type="checkbox"
-          id="restablecer"
-          :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
-          @click="restablecer"
-        />
-        <label for="restablecer">
-          <span class="vis-nomenclatura opcion-accesibilidad">
-            <span
-              class="icono-4 icono-restablecer"
-              aria-hidden="true"
-            ></span>
-            Restablecer
-          </span>
-        </label>
-      </div>
+      <button
+        class="hipervinculo opcion-accesibilidad"
+        :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
+        @click="restablecer"
+      >
+        Restablecer
+      </button>
       <!-- <button
         class="opcion-accesibilidad"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
@@ -288,8 +286,7 @@ const alturaMenuAbierto = computed(
         />
         {{ opcion.titulo }}
         {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
-      </button> -->
-
+      </button>
       <button
         class="opcion-accesibilidad"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
@@ -300,7 +297,7 @@ const alturaMenuAbierto = computed(
           aria-hidden="true"
         />
         Restablecer
-      </button>
+      </button> -->
     </menu>
   </div>
 </template>
@@ -308,5 +305,46 @@ const alturaMenuAbierto = computed(
 <style lang="scss">
 .contenedor-menu-accesibilidad.abierto .menu-accesibilidad {
   max-height: v-bind('alturaMenuAbierto') !important;
+
+  .opcion-accesibilidad {
+    font-size: 16px;
+  }
+  // width: 262px !important;
+  width: 262px !important;
+  background: #f0f6ff !important;
+  .titulo {
+    color: #102543;
+    width: 170px;
+  }
+  hr {
+    border-top: 1px solid #102543;
+    margin: 8px 16px;
+  }
+  .controlador-vis {
+    // padding: 8px 0;
+    // display: flex;
+    // align-items: bottom;
+  }
+  label {
+    width: 268px;
+    padding: 8px 24px 8px;
+    margin-left: 16px;
+    .vis-nomenclatura {
+      margin-bottom: 0;
+      align-items: center;
+      padding: 4px 16px 4px 8px;
+      span {
+        font-size: 24px;
+      }
+    }
+  }
+  label::before {
+    top: 14px;
+    margin-left: 0;
+  }
+  label::after {
+    top: 12px;
+    left: 6px !important;
+  }
 }
 </style>
