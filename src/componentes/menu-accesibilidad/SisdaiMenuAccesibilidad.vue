@@ -310,7 +310,7 @@ const alturaMenuAbierto = computed(
     font-size: 16px;
   }
   // width: 262px !important;
-  width: 262px !important;
+  width: 300px !important;
   background: #f0f6ff !important;
   .titulo {
     color: #102543;
