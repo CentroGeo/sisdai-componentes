@@ -92,7 +92,6 @@ const clasesSelecciondas = ref([])
  * @param {String} accion nombre del mutation en el modulo del store.
  */
 function ejecutarEnStore(accion, valor) {
-  console.log(accion)
   if (
     objetoStore.value !== undefined &&
     Object.prototype.hasOwnProperty.call(objetoStore.value, 'commit')
@@ -111,7 +110,6 @@ function restablecer() {
 }
 
 watch(clasesSelecciondas, (nv, ov) => {
-  console.log(nv, ov)
   ejecutarEnStore('modificarClasesAccesibles', nv)
 })
 
