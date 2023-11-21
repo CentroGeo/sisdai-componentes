@@ -33,7 +33,7 @@ export default [
     accion: 'alternarVistaOscura',
     claseCss: 'a11y-oscura',
     icono: 'icono-contraste',
-    titulo: 'Vista',
+    titulo: 'Vista Oscura',
     valor: false,
   },
 ]
