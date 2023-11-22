@@ -6,7 +6,7 @@ export default {
     // vista_simplificada: false,
     // enlaces_subrayados: false,
     // vista_oscura: false,
-    tema: 'auto', // 'claro' | 'auto' | 'oscuro'
+    tema: 'claro', // 'claro' | 'auto' | 'oscuro'
     perfil: 'eni', // 'eni' | 'sisdai' | 'gema'
 
     clasesAccesibles: [],
@@ -25,8 +25,8 @@ export default {
     },
     alternarVistaOscura(state) {
       //rotar entre estos 3 valores
-      const temas = ['claro', 'auto', 'oscuro']
-      state.tema = temas[(temas.indexOf(state.tema) + 1) % 3]
+      const temas = ['claro', 'oscuro']
+      state.tema = temas[(temas.indexOf(state.tema) + 1) % 2]
 
       //setear el tema del localStorage
       localStorage.setItem('tema', state.tema)
@@ -48,7 +48,7 @@ export default {
       // state.vista_simplificada = false
       // state.enlaces_subrayados = false
       // state.vista_oscura = false
-      state.tema = 'claro'
+      // state.tema = 'claro'
       state.clasesAccesibles = []
     },
   },

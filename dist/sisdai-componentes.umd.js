@@ -714,8 +714,8 @@ const menu_lateral_plugin = {
   }
 };
 /* harmony default export */ var menu_lateral = (menu_lateral_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"130c30e0-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=template&id=d0311cd4
-var SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"130c30e0-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=template&id=a07e7ddc
+var SisdaiMenuAccesibilidadvue_type_template_id_a07e7ddc_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -755,7 +755,7 @@ var SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_render = function rende
         expression: "clasesSelecciondas"
       }],
       attrs: {
-        "id": `${opcion.claseCss}css_${_setup.id}`,
+        "id": `${opcion.claseCss}_css_${_setup.id}`,
         "type": "checkbox",
         "tabindex": _setup.menuAccesibilidadEstaAbierto ? undefined : -1
       },
@@ -783,7 +783,7 @@ var SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_render = function rende
       }
     }), _c('label', {
       attrs: {
-        "for": `${opcion.claseCss}css_${_setup.id}`
+        "for": `${opcion.claseCss}_css_${_setup.id}`
       }
     }, [_c('span', {
       staticClass: "figura-variable icono-4",
@@ -805,7 +805,7 @@ var SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_render = function rende
     }
   }, [_c('b', [_vm._v("Restablecer")])])], 2)]);
 };
-var SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_staticRenderFns = [];
+var SisdaiMenuAccesibilidadvue_type_template_id_a07e7ddc_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/opcionesDefault.js
 /**
@@ -821,28 +821,84 @@ var SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_staticRenderFns = [];
   accion: 'alternarTipografiaAccesible',
   claseCss: 'a11y-tipografia',
   icono: 'icono-cambio-tipografia',
-  titulo: 'Cambio de fuente',
-  valor: false
+  titulo: 'Cambio de fuente'
 }, {
   accion: 'alternarEnlacesSubrayados',
   claseCss: 'a11y-hipervinculos',
   icono: 'icono-enlace-subrayado',
-  titulo: 'Enlaces subrayados',
-  valor: false
+  titulo: 'Enlaces subrayados'
 }, {
   accion: 'alternarVistaSimplificada',
   claseCss: 'a11y-simplificada',
   icono: 'icono-vista-simplificada',
-  titulo: 'Mostrar solo texto',
-  valor: false
+  titulo: 'Mostrar solo texto'
 }, {
   accion: 'alternarVistaOscura',
   claseCss: 'a11y-oscura',
   icono: 'icono-contraste',
-  titulo: 'Vista Oscura',
-  valor: false
+  titulo: 'Vista Oscura'
 }]);
+;// CONCATENATED MODULE: ./src/stores/accesibilidad.js
+/* harmony default export */ var accesibilidad = ({
+  namespaced: true,
+  state: {
+    // menu_accesibilidad_abierto: false,
+    // tipografia_accesible: false,
+    // vista_simplificada: false,
+    // enlaces_subrayados: false,
+    // vista_oscura: false,
+    tema: 'claro',
+    // 'claro' | 'auto' | 'oscuro'
+    perfil: 'eni',
+    // 'eni' | 'sisdai' | 'gema'
+
+    clasesAccesibles: []
+  },
+  getters: {
+    // clasesAccesibles: state => ({
+    //   'a11y-oscura': state.vista_oscura,
+    //   'a11y-tipografia': state.tipografia_accesible,
+    //   'a11y-simplificada': state.vista_simplificada,
+    //   'a11y-hipervinculos': state.enlaces_subrayados,
+    // }),
+  },
+  mutations: {
+    modificarClasesAccesibles(state, valor) {
+      state.clasesAccesibles = valor;
+    },
+    alternarVistaOscura(state) {
+      //rotar entre estos 3 valores
+      const temas = ['claro', 'oscuro'];
+      state.tema = temas[(temas.indexOf(state.tema) + 1) % 2];
+
+      //setear el tema del localStorage
+      localStorage.setItem('tema', state.tema);
+
+      //prender y apagar la vista oscura
+      // state.vista_oscura = !state.vista_oscura
+    },
+
+    // alternarTipografiaAccesible(state) {
+    //   state.tipografia_accesible = !state.tipografia_accesible
+    // },
+    // alternarVistaSimplificada(state) {
+    //   state.vista_simplificada = !state.vista_simplificada
+    // },
+    // alternarEnlacesSubrayados(state) {
+    //   state.enlaces_subrayados = !state.enlaces_subrayados
+    // },
+    restablecer(state) {
+      // state.tipografia_accesible = false
+      // state.vista_simplificada = false
+      // state.enlaces_subrayados = false
+      // state.vista_oscura = false
+      // state.tema = 'claro'
+      state.clasesAccesibles = [];
+    }
+  }
+});
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=script&setup=true&lang=js
+
 
 
 
@@ -874,6 +930,9 @@ const propiedades = {
     type: String,
     default: 'accesibilidad'
   },
+  /**
+   * id Aleatorio.
+   */
   id: {
     type: String,
     default: idAleatorio()
@@ -909,7 +968,7 @@ function idAleatorio() {
   }) {
     const props = __props;
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.useCssVars)((_vm, _setup) => ({
-      "3ed64154": _setup.alturaMenuAbierto
+      "7835c2b7": _setup.alturaMenuAbierto
     }));
     const {
       agregarOpciones,
@@ -955,12 +1014,51 @@ function idAleatorio() {
     function restablecer() {
       clasesSelecciondas.value = [];
       emits(eventos.alRestablecer);
-      // ejecutarEnStore('restablecer')
+      ejecutarEnStore('restablecer');
     }
-
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(clasesSelecciondas, (nv, ov) => {
       ejecutarEnStore('modificarClasesAccesibles', nv);
+      if (nv.find(clase => clase === 'a11y-oscura') && !ov.find(clase => clase === 'a11y-oscura')) {
+        ejecutarEnStore('alternarVistaOscura', nv);
+      }
+      if (!nv.find(clase => clase === 'a11y-oscura') && ov.find(clase => clase === 'a11y-oscura')) {
+        ejecutarEnStore('alternarVistaOscura', nv);
+      }
     });
+
+    /**
+     * Módulo de vista oscura.
+     */
+    const tema = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.computed)(() => accesibilidad.state.tema);
+    const perfil = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.computed)(() => accesibilidad.state.perfil);
+
+    /**
+     * Elige el tema en el documento en modo oscuro,
+     * si la variable del query es dark y el tema del store es auto
+     * ó si el tema del store es oscuro.
+     */
+    function elegirTemaEnDocumento() {
+      const modoOscuro = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.ref)(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && tema.value === 'auto' || tema.value === 'oscuro');
+
+      // Asignar el perfil de color para el atributo css del query.
+      if (perfil.value !== null) document.documentElement.setAttribute(
+      // se puede nombrar como quieras.
+      `data-dark-theme-${perfil.value}`, modoOscuro.value);
+    }
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.onBeforeMount)(() => {
+      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', elegirTemaEnDocumento);
+    });
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.onMounted)(() => {
+      elegirTemaEnDocumento();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', elegirTemaEnDocumento);
+    });
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(tema, () => {
+      elegirTemaEnDocumento();
+    });
+
+    // if (localStorage.getItem('theme')) {
+    //   store.state.tema = localStorage.getItem('theme')
+    // }
 
     /**
      * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -995,6 +1093,9 @@ function idAleatorio() {
       clasesSelecciondas,
       ejecutarEnStore,
       restablecer,
+      tema,
+      perfil,
+      elegirTemaEnDocumento,
       alternarAbiertoCerrado,
       alturaMenuAbierto
     };
@@ -1002,10 +1103,10 @@ function idAleatorio() {
 });
 ;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=script&setup=true&lang=js
  /* harmony default export */ var menu_accesibilidad_SisdaiMenuAccesibilidadvue_type_script_setup_true_lang_js = (SisdaiMenuAccesibilidadvue_type_script_setup_true_lang_js); 
-;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=d0311cd4&prod&lang=scss
+;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=a07e7ddc&prod&lang=scss
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=d0311cd4&prod&lang=scss
+;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=a07e7ddc&prod&lang=scss
 
 ;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue
 
@@ -1018,8 +1119,8 @@ function idAleatorio() {
 
 var SisdaiMenuAccesibilidad_component = normalizeComponent(
   menu_accesibilidad_SisdaiMenuAccesibilidadvue_type_script_setup_true_lang_js,
-  SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_render,
-  SisdaiMenuAccesibilidadvue_type_template_id_d0311cd4_staticRenderFns,
+  SisdaiMenuAccesibilidadvue_type_template_id_a07e7ddc_render,
+  SisdaiMenuAccesibilidadvue_type_template_id_a07e7ddc_staticRenderFns,
   false,
   null,
   null,

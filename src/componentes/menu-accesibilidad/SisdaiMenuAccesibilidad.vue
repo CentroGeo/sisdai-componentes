@@ -115,11 +115,18 @@ function restablecer() {
 }
 
 watch(clasesSelecciondas, (nv, ov) => {
-  // ejecutarEnStore('modificarClasesAccesibles', nv)
-  if (clasesSelecciondas.value.find(clase => clase === 'a11y-oscura')) {
+  ejecutarEnStore('modificarClasesAccesibles', nv)
+  if (
+    nv.find(clase => clase === 'a11y-oscura') &&
+    !ov.find(clase => clase === 'a11y-oscura')
+  ) {
     ejecutarEnStore('alternarVistaOscura', nv)
-  } else {
-    ejecutarEnStore('modificarClasesAccesibles', nv)
+  }
+  if (
+    !nv.find(clase => clase === 'a11y-oscura') &&
+    ov.find(clase => clase === 'a11y-oscura')
+  ) {
+    ejecutarEnStore('alternarVistaOscura', nv)
   }
 })
 
@@ -128,27 +135,6 @@ watch(clasesSelecciondas, (nv, ov) => {
  */
 const tema = computed(() => store.state.tema)
 const perfil = computed(() => store.state.perfil)
-
-/**
- * Muestra el nombre actual según el tema seleccionado.
- */
-// const nombreTemaActual = computed(() => {
-//   const nombres = {
-//     claro: 'Clara',
-//     oscuro: 'Oscura',
-//     auto: 'Automática',
-//   }
-//   if (tema.value === 'auto') {
-//     console.log('auto', store.state.vista_oscura)
-//     if (store.state.vista_oscura) {
-//       return nombres['oscuro']
-//     } else {
-//       return nombres['claro']
-//     }
-//   } else {
-//     return nombres[tema.value]
-//   }
-// })
 
 /**
  * Elige el tema en el documento en modo oscuro,
@@ -162,11 +148,6 @@ function elegirTemaEnDocumento() {
       tema.value === 'auto') ||
       tema.value === 'oscuro'
   )
-  if (modoOscuro.value) {
-    clasesSelecciondas.value.push('a11y-oscura')
-  } else {
-    clasesSelecciondas.value.pop('a11y-oscura')
-  }
 
   // Asignar el perfil de color para el atributo css del query.
   if (perfil.value !== null)
@@ -175,11 +156,6 @@ function elegirTemaEnDocumento() {
       `data-dark-theme-${perfil.value}`,
       modoOscuro.value
     )
-
-  // // Reasignando la variable del store.
-  // modoOscuro.value === true
-  //   ? (store.state.vista_oscura = true)
-  //   : (store.state.vista_oscura = false)
 }
 
 onBeforeMount(() => {
@@ -199,9 +175,9 @@ watch(tema, () => {
   elegirTemaEnDocumento()
 })
 
-if (localStorage.getItem('theme')) {
-  store.state.tema = localStorage.getItem('theme')
-}
+// if (localStorage.getItem('theme')) {
+//   store.state.tema = localStorage.getItem('theme')
+// }
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
