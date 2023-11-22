@@ -29,6 +29,10 @@ const propiedades = {
     type: String,
     default: 'accesibilidad',
   },
+
+  /**
+   * id Aleatorio.
+   */
   id: {
     type: String,
     default: idAleatorio(),
@@ -59,8 +63,9 @@ function idAleatorio() {
 </script>
 
 <script setup>
-import { computed, ref, toRefs, watch } from 'vue'
+import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
+import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
@@ -106,12 +111,97 @@ function ejecutarEnStore(accion, valor) {
 function restablecer() {
   clasesSelecciondas.value = []
   emits(eventos.alRestablecer)
-  // ejecutarEnStore('restablecer')
+  ejecutarEnStore('restablecer')
 }
 
 watch(clasesSelecciondas, (nv, ov) => {
-  ejecutarEnStore('modificarClasesAccesibles', nv)
+  // ejecutarEnStore('modificarClasesAccesibles', nv)
+  if (clasesSelecciondas.value.find(clase => clase === 'a11y-oscura')) {
+    ejecutarEnStore('alternarVistaOscura', nv)
+  } else {
+    ejecutarEnStore('modificarClasesAccesibles', nv)
+  }
 })
+
+/**
+ * Módulo de vista oscura.
+ */
+const tema = computed(() => store.state.tema)
+const perfil = computed(() => store.state.perfil)
+
+/**
+ * Muestra el nombre actual según el tema seleccionado.
+ */
+// const nombreTemaActual = computed(() => {
+//   const nombres = {
+//     claro: 'Clara',
+//     oscuro: 'Oscura',
+//     auto: 'Automática',
+//   }
+//   if (tema.value === 'auto') {
+//     console.log('auto', store.state.vista_oscura)
+//     if (store.state.vista_oscura) {
+//       return nombres['oscuro']
+//     } else {
+//       return nombres['claro']
+//     }
+//   } else {
+//     return nombres[tema.value]
+//   }
+// })
+
+/**
+ * Elige el tema en el documento en modo oscuro,
+ * si la variable del query es dark y el tema del store es auto
+ * ó si el tema del store es oscuro.
+ */
+function elegirTemaEnDocumento() {
+  const modoOscuro = ref(
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+      tema.value === 'oscuro'
+  )
+  if (modoOscuro.value) {
+    clasesSelecciondas.value.push('a11y-oscura')
+  } else {
+    clasesSelecciondas.value.pop('a11y-oscura')
+  }
+
+  // Asignar el perfil de color para el atributo css del query.
+  if (perfil.value !== null)
+    document.documentElement.setAttribute(
+      // se puede nombrar como quieras.
+      `data-dark-theme-${perfil.value}`,
+      modoOscuro.value
+    )
+
+  // // Reasignando la variable del store.
+  // modoOscuro.value === true
+  //   ? (store.state.vista_oscura = true)
+  //   : (store.state.vista_oscura = false)
+}
+
+onBeforeMount(() => {
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', elegirTemaEnDocumento)
+})
+
+onMounted(() => {
+  elegirTemaEnDocumento()
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', elegirTemaEnDocumento)
+})
+
+watch(tema, () => {
+  elegirTemaEnDocumento()
+})
+
+if (localStorage.getItem('theme')) {
+  store.state.tema = localStorage.getItem('theme')
+}
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -160,13 +250,13 @@ const alturaMenuAbierto = computed(
         :key="`opcion-accesibilidad-${idx}`"
       >
         <input
-          :id="`${opcion.claseCss}css_${id}`"
+          :id="`${opcion.claseCss}_css_${id}`"
           type="checkbox"
           :value="opcion.claseCss"
           v-model="clasesSelecciondas"
           :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         />
-        <label :for="`${opcion.claseCss}css_${id}`">
+        <label :for="`${opcion.claseCss}_css_${id}`">
           <span
             class="figura-variable icono-4"
             :class="opcion.icono"
@@ -213,7 +303,6 @@ const alturaMenuAbierto = computed(
       padding-left: 6px !important;
       padding-top: 8px !important;
       padding-bottom: 8px !important;
-      align-items: center;
       .figura-variable {
         // max-width: calc(var(--controlador-vis-figura-alto));
         max-width: inherit;

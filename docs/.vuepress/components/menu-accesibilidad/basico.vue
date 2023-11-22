@@ -16,7 +16,7 @@ function alSeleccionarOpcion(opcion) {
   >
     <SisdaiMenuAccesibilidad
       ref="menuAccesibilidad"
-      :id="'xBasico'"
+      :id="'basico'"
       @alSeleccionarOpcion="alSeleccionarOpcion"
     />
 

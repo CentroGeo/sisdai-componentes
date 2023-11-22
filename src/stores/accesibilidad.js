@@ -6,7 +6,7 @@ export default {
     // vista_simplificada: false,
     // enlaces_subrayados: false,
     // vista_oscura: false,
-    tema: 'claro', // 'claro' | 'auto' | 'oscuro'
+    tema: 'auto', // 'claro' | 'auto' | 'oscuro'
     perfil: 'eni', // 'eni' | 'sisdai' | 'gema'
 
     clasesAccesibles: [],
@@ -32,7 +32,7 @@ export default {
       localStorage.setItem('tema', state.tema)
 
       //prender y apagar la vista oscura
-      state.vista_oscura = !state.vista_oscura
+      // state.vista_oscura = !state.vista_oscura
     },
     // alternarTipografiaAccesible(state) {
     //   state.tipografia_accesible = !state.tipografia_accesible
@@ -48,7 +48,7 @@ export default {
       // state.vista_simplificada = false
       // state.enlaces_subrayados = false
       // state.vista_oscura = false
-      // state.tema = 'claro'
+      state.tema = 'claro'
       state.clasesAccesibles = []
     },
   },
