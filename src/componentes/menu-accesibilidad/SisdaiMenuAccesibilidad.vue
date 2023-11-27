@@ -263,13 +263,8 @@ const alturaMenuAbierto = computed(
 
   // width: 262px !important;
   width: 282px !important;
-  background: #f0f6ff !important;
   .titulo {
-    color: #102543;
     width: 170px;
-  }
-  hr {
-    border-top: 1px solid #102543;
   }
   .controlador-vis {
     margin-left: 16px !important;
@@ -279,19 +274,73 @@ const alturaMenuAbierto = computed(
       padding-left: 6px !important;
       padding-top: 8px !important;
       padding-bottom: 8px !important;
+      &:hover {
+        background: var(--boton-secundario-hover-fondo);
+        border: 1px solid transparent;
+        box-shadow: none;
+        color: var(--tipografia-color);
+        .nombre-variable {
+          color: var(--tipografia-color);
+        }
+      }
       .figura-variable {
-        // max-width: calc(var(--controlador-vis-figura-alto));
         max-width: inherit;
       }
       .nombre-variable {
         font-size: 16px;
       }
     }
+    input[type='checkbox'],
+    input[type='radio'] {
+      &:hover {
+        + label {
+          &:before {
+            box-shadow: inset 0 0 0 1px var(--tipografia-color);
+          }
+        }
+      }
+      &:focus {
+        + label {
+          background: var(--boton-secundario-hover-fondo);
+        }
+      }
+      &:checked {
+        &:not(:hover) + label {
+          &:before {
+            background: var(--input-controles-color);
+          }
+        }
+      }
+    }
+    input[type='checkbox']:checked {
+      + label:after {
+        color: var(--tipografia-color-1);
+      }
+      &:hover:checked:not(:disabled) + label:after {
+        color: var(--tipografia-color-1);
+      }
+    }
+    input[type='checkbox']:checked + label:before {
+      background: var(--input-controles-color);
+    }
   }
   .hipervinculo {
-    width: 100%;
     margin-left: 20px !important;
-    margin-right: 16px !important;
+    padding: 4px !important;
+    text-decoration: none !important;
+    border: 1px solid transparent;
+    &:hover {
+      color: var(--hipervinculo-color);
+      background: var(--boton-secundario-hover-fondo);
+      box-shadow: none !important;
+      border: 1px solid transparent !important;
+    }
+    &:focus {
+      background: var(--boton-secundario-hover-fondo);
+      box-shadow: 0 0 8px var(--input-focus);
+      border: 1px solid var(--hipervinculo-focus-sombra);
+      outline: none;
+    }
   }
 }
 </style>
