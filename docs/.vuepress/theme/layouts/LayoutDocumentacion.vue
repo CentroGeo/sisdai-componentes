@@ -42,7 +42,7 @@ function actualizaContenidoIndice() {
 <template>
   <div
     class="theme-container"
-    :class="store.getters['accesibilidad/clasesAccesibles']"
+    :class="store.state.accesibilidad.clasesAccesibles"
   >
     <SisdaiNavegacionGobMx />
 

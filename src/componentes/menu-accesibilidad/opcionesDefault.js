@@ -9,27 +9,27 @@
  */
 export default [
   {
-    accion: 'alternarVistaOscura',
-    claseCss: 'a11y-oscura',
-    icono: 'icono-contraste',
-    titulo: 'Vista',
-  },
-  {
     accion: 'alternarTipografiaAccesible',
     claseCss: 'a11y-tipografia',
     icono: 'icono-cambio-tipografia',
     titulo: 'Cambio de fuente',
   },
   {
-    accion: 'alternarVistaSimplificada',
-    claseCss: 'a11y-simplificada',
-    icono: 'icono-vista-simplificada',
-    titulo: 'Vista simplificada',
-  },
-  {
     accion: 'alternarEnlacesSubrayados',
     claseCss: 'a11y-hipervinculos',
     icono: 'icono-enlace-subrayado',
     titulo: 'Enlaces subrayados',
+  },
+  {
+    accion: 'alternarVistaSimplificada',
+    claseCss: 'a11y-simplificada',
+    icono: 'icono-vista-simplificada',
+    titulo: 'Mostrar solo texto',
+  },
+  {
+    accion: 'alternarVistaOscura',
+    claseCss: 'a11y-oscura',
+    icono: 'icono-contraste',
+    titulo: 'Vista Oscura',
   },
 ]
