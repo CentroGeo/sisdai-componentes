@@ -95,6 +95,7 @@ const clasesSelecciondas = ref([])
  * Ejecuta un cambio en el store si dicho objeto permite hacer commits (si se esta usando la
  * pripiedad `objetoStore`).
  * @param {String} accion nombre del mutation en el modulo del store.
+ * @param {Array<String>} valor es decir las clases seleccionadas.
  */
 function ejecutarEnStore(accion, valor) {
   if (
