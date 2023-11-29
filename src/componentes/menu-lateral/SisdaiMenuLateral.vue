@@ -1,8 +1,10 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 
-// const menu_abierto = ref(window.innerWidth < 768 ? false : true)
 const menu_abierto = ref()
+
+const contenidoMenuLateral = ref(null)
+
 if (typeof window !== 'undefined') {
   menu_abierto.value = window.innerWidth < 768 ? false : true
 }
@@ -13,56 +15,10 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-// const elementosLista = ref({})
-
 const emits = defineEmits(['alAlternarMenu'])
-
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si está en versión móvil
- */
-// function agregaAtributoTabIndex() {
-//   // if (window.innerWidth < 768) {
-//   //   for (let index = 0; index < elementosLista.value.length; index++) {
-//   //     const elemento = elementosLista.value[index]['children'][0]
-//   //     elemento.tabIndex = '-1'
-//   //   }
-//   // }
-// }
-/**
- * Si el menú está abierto en móvil, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-// function actualizaAtributoTabIndex(estaAbierto) {
-//   // console.log(estaAbierto)
-//   // if (window.innerWidth < 768) {
-//   //   if (estaAbierto) {
-//   //     for (let i = 0; i < elementosLista.value.length; i++) {
-//   //       const elemento = elementosLista.value[i]['children'][0]
-//   //       elemento.removeAttribute('tabIndex')
-//   //     }
-//   //   } else {
-//   //     for (let j = 0; j < elementosLista.value.length; j++) {
-//   //       const elemento = elementosLista.value[j]['children'][0]
-//   //       elemento.tabIndex = '-1'
-//   //     }
-//   //   }
-//   // }
-// }
-const contenidoMenuLateral = ref(null)
-onMounted(() => {
-  // elementosLista.value =
-  //   document.getElementById(id_aleatorio)['children'][0]['children'][0][
-  //     'children'
-  //   ]
-  // console.log(elementosLista.value)
-  // agregaAtributoTabIndex()
-})
 
 watch(menu_abierto, () => {
   emits('alAlternarMenu', menu_abierto.value)
-  // actualizaAtributoTabIndex(menu_abierto.value)
 })
 </script>
 

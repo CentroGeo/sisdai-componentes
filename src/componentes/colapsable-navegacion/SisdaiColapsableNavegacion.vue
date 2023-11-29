@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, toRefs, watch } from 'vue'
+import { ref, toRefs, watch } from 'vue'
 
 const props = defineProps({
   titulo: { type: String, default: 'Titulo de colapsable' },
@@ -16,49 +16,10 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-// const listadoContenido = ref({})
-
 const emits = defineEmits(['alAlternarColapsable'])
-
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si la navegación está colapsada
- */
-// function agregaAtributoTabIndex() {
-//   // if (esta_activo.value === false) {
-//   //   for (let index = 0; index < listadoContenido.value.length; index++) {
-//   //     const elemento = listadoContenido.value[index]['children'][0]
-//   //     elemento.tabIndex = '-1'
-//   //   }
-//   // }
-// }
-/**
- * Si el menú está desplegado, remueve el atributo tabIndex.
- * Si está colapsado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-// function actualizaAtributoTabIndex(estaAbierto) {
-//   if (estaAbierto) {
-//     for (let index = 0; index < listadoContenido.value.length; index++) {
-//       const elemento = listadoContenido.value[index]['children'][0]
-//       elemento.removeAttribute('tabIndex')
-//     }
-//   } else {
-//     for (let index = 0; index < listadoContenido.value.length; index++) {
-//       const elemento = listadoContenido.value[index]['children'][0]
-//       elemento.tabIndex = '-1'
-//     }
-//   }
-// }
-
-onMounted(() => {
-  // listadoContenido.value = document.getElementById(id_aleatorio)['children']
-  // agregaAtributoTabIndex()
-})
 
 watch(esta_activo, () => {
   emits('alAlternarColapsable', esta_activo.value)
-  // actualizaAtributoTabIndex(esta_activo.value)
 })
 </script>
 

@@ -389,8 +389,8 @@ const narrativa_scroll_plugin = {
   }
 };
 /* harmony default export */ var narrativa_scroll = (narrativa_scroll_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70cb50ca-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=444868f8
-var SisdaiColapsableNavegacionvue_type_template_id_444868f8_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70cb50ca-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=a5fbf5dc
+var SisdaiColapsableNavegacionvue_type_template_id_a5fbf5dc_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -430,7 +430,7 @@ var SisdaiColapsableNavegacionvue_type_template_id_444868f8_render = function re
     }, [_vm._v(" Elemento desplegado")])])];
   })], 2)]);
 };
-var SisdaiColapsableNavegacionvue_type_template_id_444868f8_staticRenderFns = [];
+var SisdaiColapsableNavegacionvue_type_template_id_a5fbf5dc_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=script&setup=true&lang=js
 
@@ -465,49 +465,9 @@ var SisdaiColapsableNavegacionvue_type_template_id_444868f8_staticRenderFns = []
       return Math.random().toString(36).substring(2);
     }
     const id_aleatorio = idAleatorio();
-
-    // const listadoContenido = ref({})
-
-    /**
-     * Agrega el atributo tabindex a los elementos de lista,
-     * si la navegación está colapsada
-     */
-    // function agregaAtributoTabIndex() {
-    //   // if (esta_activo.value === false) {
-    //   //   for (let index = 0; index < listadoContenido.value.length; index++) {
-    //   //     const elemento = listadoContenido.value[index]['children'][0]
-    //   //     elemento.tabIndex = '-1'
-    //   //   }
-    //   // }
-    // }
-    /**
-     * Si el menú está desplegado, remueve el atributo tabIndex.
-     * Si está colapsado, agrega el atributo tabIndex en -1 para
-     * saltarse los enlaces con el teclado secuencial.
-     */
-    // function actualizaAtributoTabIndex(estaAbierto) {
-    //   if (estaAbierto) {
-    //     for (let index = 0; index < listadoContenido.value.length; index++) {
-    //       const elemento = listadoContenido.value[index]['children'][0]
-    //       elemento.removeAttribute('tabIndex')
-    //     }
-    //   } else {
-    //     for (let index = 0; index < listadoContenido.value.length; index++) {
-    //       const elemento = listadoContenido.value[index]['children'][0]
-    //       elemento.tabIndex = '-1'
-    //     }
-    //   }
-    // }
-
-    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.onMounted)(() => {
-      // listadoContenido.value = document.getElementById(id_aleatorio)['children']
-      // agregaAtributoTabIndex()
-    });
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(esta_activo, () => {
       emits('alAlternarColapsable', esta_activo.value);
-      // actualizaAtributoTabIndex(esta_activo.value)
     });
-
     return {
       __sfc: true,
       props,
@@ -531,8 +491,8 @@ var SisdaiColapsableNavegacionvue_type_template_id_444868f8_staticRenderFns = []
 ;
 var SisdaiColapsableNavegacion_component = normalizeComponent(
   colapsable_navegacion_SisdaiColapsableNavegacionvue_type_script_setup_true_lang_js,
-  SisdaiColapsableNavegacionvue_type_template_id_444868f8_render,
-  SisdaiColapsableNavegacionvue_type_template_id_444868f8_staticRenderFns,
+  SisdaiColapsableNavegacionvue_type_template_id_a5fbf5dc_render,
+  SisdaiColapsableNavegacionvue_type_template_id_a5fbf5dc_staticRenderFns,
   false,
   null,
   null,
@@ -549,8 +509,8 @@ const colapsable_navegacion_plugin = {
   }
 };
 /* harmony default export */ var colapsable_navegacion = (colapsable_navegacion_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70cb50ca-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=template&id=b73635ec
-var SisdaiMenuLateralvue_type_template_id_b73635ec_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70cb50ca-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=template&id=f479545a
+var SisdaiMenuLateralvue_type_template_id_f479545a_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -618,12 +578,9 @@ var SisdaiMenuLateralvue_type_template_id_b73635ec_render = function render() {
     }), _vm._v(" ejemplo github ")])])])];
   })], 2)])]);
 };
-var SisdaiMenuLateralvue_type_template_id_b73635ec_staticRenderFns = [];
+var SisdaiMenuLateralvue_type_template_id_f479545a_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-lateral/SisdaiMenuLateral.vue?vue&type=script&setup=true&lang=js
-
-
-// const menu_abierto = ref(window.innerWidth < 768 ? false : true)
 
 /* harmony default export */ var SisdaiMenuLateralvue_type_script_setup_true_lang_js = ({
   __name: 'SisdaiMenuLateral',
@@ -632,6 +589,7 @@ var SisdaiMenuLateralvue_type_template_id_b73635ec_staticRenderFns = [];
     emit: emits
   }) {
     const menu_abierto = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.ref)();
+    const contenidoMenuLateral = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.ref)(null);
     if (typeof window !== 'undefined') {
       menu_abierto.value = window.innerWidth < 768 ? false : true;
     }
@@ -639,63 +597,16 @@ var SisdaiMenuLateralvue_type_template_id_b73635ec_staticRenderFns = [];
       return Math.random().toString(36).substring(2);
     }
     const id_aleatorio = idAleatorio();
-
-    // const elementosLista = ref({})
-
-    /**
-     * Agrega el atributo tabindex a los elementos de lista,
-     * si está en versión móvil
-     */
-    // function agregaAtributoTabIndex() {
-    //   // if (window.innerWidth < 768) {
-    //   //   for (let index = 0; index < elementosLista.value.length; index++) {
-    //   //     const elemento = elementosLista.value[index]['children'][0]
-    //   //     elemento.tabIndex = '-1'
-    //   //   }
-    //   // }
-    // }
-    /**
-     * Si el menú está abierto en móvil, remueve el atributo tabIndex.
-     * Si está cerrado, agrega el atributo tabIndex en -1 para
-     * saltarse los enlaces con el teclado secuencial.
-     */
-    // function actualizaAtributoTabIndex(estaAbierto) {
-    //   // console.log(estaAbierto)
-    //   // if (window.innerWidth < 768) {
-    //   //   if (estaAbierto) {
-    //   //     for (let i = 0; i < elementosLista.value.length; i++) {
-    //   //       const elemento = elementosLista.value[i]['children'][0]
-    //   //       elemento.removeAttribute('tabIndex')
-    //   //     }
-    //   //   } else {
-    //   //     for (let j = 0; j < elementosLista.value.length; j++) {
-    //   //       const elemento = elementosLista.value[j]['children'][0]
-    //   //       elemento.tabIndex = '-1'
-    //   //     }
-    //   //   }
-    //   // }
-    // }
-    const contenidoMenuLateral = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.ref)(null);
-    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.onMounted)(() => {
-      // elementosLista.value =
-      //   document.getElementById(id_aleatorio)['children'][0]['children'][0][
-      //     'children'
-      //   ]
-      // console.log(elementosLista.value)
-      // agregaAtributoTabIndex()
-    });
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(menu_abierto, () => {
       emits('alAlternarMenu', menu_abierto.value);
-      // actualizaAtributoTabIndex(menu_abierto.value)
     });
-
     return {
       __sfc: true,
       menu_abierto,
+      contenidoMenuLateral,
       idAleatorio,
       id_aleatorio,
-      emits,
-      contenidoMenuLateral
+      emits
     };
   }
 });
@@ -711,8 +622,8 @@ var SisdaiMenuLateralvue_type_template_id_b73635ec_staticRenderFns = [];
 ;
 var SisdaiMenuLateral_component = normalizeComponent(
   menu_lateral_SisdaiMenuLateralvue_type_script_setup_true_lang_js,
-  SisdaiMenuLateralvue_type_template_id_b73635ec_render,
-  SisdaiMenuLateralvue_type_template_id_b73635ec_staticRenderFns,
+  SisdaiMenuLateralvue_type_template_id_f479545a_render,
+  SisdaiMenuLateralvue_type_template_id_f479545a_staticRenderFns,
   false,
   null,
   null,
@@ -1153,8 +1064,8 @@ const menu_accesibilidad_plugin = {
   }
 };
 /* harmony default export */ var menu_accesibilidad = (menu_accesibilidad_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70cb50ca-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/boton-flotante/SisdaiBotonFlotante.vue?vue&type=template&id=2874fc58
-var SisdaiBotonFlotantevue_type_template_id_2874fc58_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"70cb50ca-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/boton-flotante/SisdaiBotonFlotante.vue?vue&type=template&id=4ca57805
+var SisdaiBotonFlotantevue_type_template_id_4ca57805_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1162,6 +1073,9 @@ var SisdaiBotonFlotantevue_type_template_id_2874fc58_render = function render() 
     staticClass: "contenedor-boton-flotante",
     class: {
       abierto: _setup.botonFlotanteEstaAbierto
+    },
+    attrs: {
+      "id": _setup.id_aleatorio
     }
   }, [_c('button', {
     class: `boton-flotante-alternador borde-r-redondeado-20 borde-l-redondeado-${_setup.botonFlotanteEstaAbierto ? '' : '2'}0`,
@@ -1196,7 +1110,8 @@ var SisdaiBotonFlotantevue_type_template_id_2874fc58_render = function render() 
         "id": `boton_flotante_enlace_${idx}`,
         "href": enlace,
         "target": "_blank",
-        "rel": "noopener noreferrer"
+        "rel": "noopener noreferrer",
+        "tabindex": _setup.botonFlotanteEstaAbierto ? undefined : -1
       }
     }, [_c('span', {
       class: `icono ${icono === undefined ? 'icono-enlace-externo' : icono}`,
@@ -1206,7 +1121,7 @@ var SisdaiBotonFlotantevue_type_template_id_2874fc58_render = function render() 
     }), _vm._v(" " + _vm._s(contenido === undefined ? 'Enlace externo' : contenido) + " ")]);
   }), 0)]);
 };
-var SisdaiBotonFlotantevue_type_template_id_2874fc58_staticRenderFns = [];
+var SisdaiBotonFlotantevue_type_template_id_4ca57805_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/boton-flotante/SisdaiBotonFlotante.vue?vue&type=script&setup=true&lang=js
 
@@ -1253,30 +1168,19 @@ const SisdaiBotonFlotantevue_type_script_setup_true_lang_js_propiedades = {
     expose({
       alternarEstado
     });
-
-    /**
-     * Si el botón está abierto, remueve el atributo tabIndex.
-     * Si está cerrado, agrega el atributo tabIndex en -1 para
-     * saltarse los enlaces con el teclado secuencial.
-     */
-    (0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(botonFlotanteEstaAbierto, () => {
-      if (botonFlotanteEstaAbierto.value) {
-        enlaces.value.forEach((element, idx) => {
-          document.getElementById(`boton_flotante_enlace_${idx}`).removeAttribute('tabIndex');
-        });
-      } else {
-        enlaces.value.forEach((element, idx) => {
-          document.getElementById(`boton_flotante_enlace_${idx}`).tabIndex = '-1';
-        });
-      }
-    });
+    function idAleatorio() {
+      return Math.random().toString(36).substring(2);
+    }
+    const id_aleatorio = idAleatorio();
     return {
       __sfc: true,
       propiedades: SisdaiBotonFlotantevue_type_script_setup_true_lang_js_propiedades,
       props,
       enlaces,
       botonFlotanteEstaAbierto,
-      alternarEstado
+      alternarEstado,
+      idAleatorio,
+      id_aleatorio
     };
   }
 });
@@ -1292,8 +1196,8 @@ const SisdaiBotonFlotantevue_type_script_setup_true_lang_js_propiedades = {
 ;
 var SisdaiBotonFlotante_component = normalizeComponent(
   boton_flotante_SisdaiBotonFlotantevue_type_script_setup_true_lang_js,
-  SisdaiBotonFlotantevue_type_template_id_2874fc58_render,
-  SisdaiBotonFlotantevue_type_template_id_2874fc58_staticRenderFns,
+  SisdaiBotonFlotantevue_type_template_id_4ca57805_render,
+  SisdaiBotonFlotantevue_type_template_id_4ca57805_staticRenderFns,
   false,
   null,
   null,
