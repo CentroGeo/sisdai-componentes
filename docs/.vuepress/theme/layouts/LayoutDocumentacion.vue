@@ -37,7 +37,7 @@ function actualizaContenidoIndice() {
   componenteIndice.value._setupState.seccion_visible.value = ''
   componenteIndice.value._setupState.autoScrollSuave()
 }
-const menuLateralAbierto = ref(false)
+const menuLateralAbierto = ref(window.innerWidth < 768 ? false : true)
 function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }

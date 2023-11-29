@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-const menuLateralAbierto = ref(false)
+const menuLateralAbierto = ref(window.innerWidth < 768 ? false : true)
 function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
@@ -33,13 +33,18 @@ function alAlternarColapsableNavegacion(d) {
           </li>
           <SisdaiColapsableNavegacion
             :titulo="'<SisdaiColapsableNavegacion> :D'"
+            :avisarMenuLateral="menuLateralAbierto"
             @alAlternarColapsable="alAlternarColapsableNavegacion"
           >
             <template v-slot:listado-contenido>
               <li>
                 <router-link
                   to="#ejemplos"
-                  :tabindex="colapsableNavegacionAbierta ? undefined : -1"
+                  :tabindex="
+                    colapsableNavegacionAbierta && menuLateralAbierto
+                      ? undefined
+                      : -1
+                  "
                 >
                   Ejemplos
                 </router-link>
@@ -47,7 +52,11 @@ function alAlternarColapsableNavegacion(d) {
               <li>
                 <a
                   href="#menu-lateral"
-                  :tabindex="colapsableNavegacionAbierta ? undefined : -1"
+                  :tabindex="
+                    colapsableNavegacionAbierta && menuLateralAbierto
+                      ? undefined
+                      : -1
+                  "
                 >
                   El mero inicio
                 </a>
