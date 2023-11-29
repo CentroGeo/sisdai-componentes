@@ -50,6 +50,7 @@ onMounted(() => {
     document.getElementById(id_aleatorio)['children'][0]['children'][0][
       'children'
     ]
+  console.log(elementosLista.value)
   agregaAtributoTabIndex()
 })
 
