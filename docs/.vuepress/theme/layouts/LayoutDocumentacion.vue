@@ -37,6 +37,10 @@ function actualizaContenidoIndice() {
   componenteIndice.value._setupState.seccion_visible.value = ''
   componenteIndice.value._setupState.autoScrollSuave()
 }
+const menuLateralAbierto = ref(false)
+function funcionPrueba(navSecundariaAbierta) {
+  menuLateralAbierto.value = navSecundariaAbierta
+}
 </script>
 
 <template>
@@ -54,74 +58,118 @@ function actualizaContenidoIndice() {
       id="contenido-todo"
     >
       <div class="columna-4 columna-1-mov menu-fondo">
-        <SisdaiMenuLateral>
+        <SisdaiMenuLateral @alAlternarMenu="funcionPrueba">
           <template slot="contenido-menu-lateral">
             <ul>
               <li>
-                <router-link to="/documentacion">
+                <router-link
+                  to="/documentacion"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   <b>SisdaiComponentes</b>
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/modal"> Modal</router-link>
+                <router-link
+                  to="/documentacion/modal"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  Modal</router-link
+                >
               </li>
               <li>
-                <router-link to="/documentacion/boton-flotante">
+                <router-link
+                  to="/documentacion/boton-flotante"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   Botonflotante
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/colapsable-navegacion">
+                <router-link
+                  to="/documentacion/colapsable-navegacion"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   Colapsable navegación
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/directivas">
+                <router-link
+                  to="/documentacion/directivas"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   Directivas
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/indice-de-contenido">
+                <router-link
+                  to="/documentacion/indice-de-contenido"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   IndiceDeContenido
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/info-de-despliegue">
+                <router-link
+                  to="/documentacion/info-de-despliegue"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   InfoDeDespliegue
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/menu-accesibilidad">
+                <router-link
+                  to="/documentacion/menu-accesibilidad"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   MenuAccesibilidad
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/menu-lateral">
+                <router-link
+                  to="/documentacion/menu-lateral"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   MenuLateral
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/narrativa-scroll">
+                <router-link
+                  to="/documentacion/narrativa-scroll"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   NarrativaScroll
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/navegacion-gob-mx">
+                <router-link
+                  to="/documentacion/navegacion-gob-mx"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   NavegacionGobMx
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/navegacion-principal">
+                <router-link
+                  to="/documentacion/navegacion-principal"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   NavegacionPrincipal
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/pie-pagina-conahcyt">
+                <router-link
+                  to="/documentacion/pie-pagina-conahcyt"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   PiePaginaConahcyt
                 </router-link>
               </li>
               <li>
-                <router-link to="/documentacion/pie-pagina-gob-mx">
+                <router-link
+                  to="/documentacion/pie-pagina-gob-mx"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
                   PiePaginaGobMx
                 </router-link>
               </li>
