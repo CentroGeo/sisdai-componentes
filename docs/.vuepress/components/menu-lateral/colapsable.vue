@@ -4,6 +4,10 @@ const menuLateralAbierto = ref(false)
 function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
+const colapsableNavegacionAbierta = ref(false)
+function alAlternarColapsableNavegacion(d) {
+  colapsableNavegacionAbierta.value = d
+}
 </script>
 <template>
   <div>
@@ -29,12 +33,13 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           </li>
           <SisdaiColapsableNavegacion
             :titulo="'<SisdaiColapsableNavegacion> :D'"
+            @alAlternarColapsable="alAlternarColapsableNavegacion"
           >
             <template v-slot:listado-contenido>
               <li>
                 <router-link
                   to="#ejemplos"
-                  tabindex="-1"
+                  :tabindex="colapsableNavegacionAbierta ? undefined : -1"
                 >
                   Ejemplos
                 </router-link>
@@ -42,7 +47,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               <li>
                 <a
                   href="#menu-lateral"
-                  tabindex="-1"
+                  :tabindex="colapsableNavegacionAbierta ? undefined : -1"
                 >
                   El mero inicio
                 </a>

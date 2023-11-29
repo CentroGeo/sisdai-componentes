@@ -14,19 +14,21 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-const listadoContenido = ref({})
+// const listadoContenido = ref({})
+
+const emits = defineEmits(['alAlternarColapsable'])
 
 /**
  * Agrega el atributo tabindex a los elementos de lista,
  * si la navegación está colapsada
  */
 function agregaAtributoTabIndex() {
-  if (esta_activo.value === false) {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
+  // if (esta_activo.value === false) {
+  //   for (let index = 0; index < listadoContenido.value.length; index++) {
+  //     const elemento = listadoContenido.value[index]['children'][0]
+  //     elemento.tabIndex = '-1'
+  //   }
+  // }
 }
 
 /**
@@ -34,27 +36,28 @@ function agregaAtributoTabIndex() {
  * Si está colapsado, agrega el atributo tabIndex en -1 para
  * saltarse los enlaces con el teclado secuencial.
  */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (estaAbierto) {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.removeAttribute('tabIndex')
-    }
-  } else {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
+// function actualizaAtributoTabIndex(estaAbierto) {
+//   if (estaAbierto) {
+//     for (let index = 0; index < listadoContenido.value.length; index++) {
+//       const elemento = listadoContenido.value[index]['children'][0]
+//       elemento.removeAttribute('tabIndex')
+//     }
+//   } else {
+//     for (let index = 0; index < listadoContenido.value.length; index++) {
+//       const elemento = listadoContenido.value[index]['children'][0]
+//       elemento.tabIndex = '-1'
+//     }
+//   }
+// }
 
 onMounted(() => {
-  listadoContenido.value = document.getElementById(id_aleatorio)['children']
+  // listadoContenido.value = document.getElementById(id_aleatorio)['children']
   agregaAtributoTabIndex()
 })
 
 watch(esta_activo, () => {
-  actualizaAtributoTabIndex(esta_activo.value)
+  emits('alAlternarColapsable', esta_activo.value)
+  // actualizaAtributoTabIndex(esta_activo.value)
 })
 </script>
 
@@ -83,7 +86,7 @@ watch(esta_activo, () => {
           <a
             href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
             target="_blank"
-            tabindex="-1"
+            :tabindex="esta_activo ? undefined : -1"
           >
             Elemento desplegado</a
           >
