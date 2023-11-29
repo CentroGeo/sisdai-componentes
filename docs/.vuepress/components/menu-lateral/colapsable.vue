@@ -1,18 +1,31 @@
+<script setup>
+import { ref } from 'vue'
+const menuLateralAbierto = ref(false)
+function alAlternarMenuLateral(navSecundariaAbierta) {
+  menuLateralAbierto.value = navSecundariaAbierta
+}
+</script>
 <template>
   <div>
-    <SisdaiMenuLateral>
+    <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
       <template slot="contenido-menu-lateral">
         <ul>
           <li>
             <router-link
               to="#api"
               exact
+              :tabindex="menuLateralAbierto ? undefined : -1"
             >
               API</router-link
             >
           </li>
           <li>
-            <router-link to="#slots"> Slots</router-link>
+            <router-link
+              to="#slots"
+              :tabindex="menuLateralAbierto ? undefined : -1"
+            >
+              Slots</router-link
+            >
           </li>
           <SisdaiColapsableNavegacion
             :titulo="'<SisdaiColapsableNavegacion> :D'"
@@ -41,6 +54,7 @@
               href="##"
               rel="noopener"
               style="display: grid"
+              :tabindex="menuLateralAbierto ? undefined : -1"
             >
               <span
                 class="icono-social-github titulo-eni"

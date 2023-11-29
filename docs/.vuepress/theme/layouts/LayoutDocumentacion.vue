@@ -38,7 +38,7 @@ function actualizaContenidoIndice() {
   componenteIndice.value._setupState.autoScrollSuave()
 }
 const menuLateralAbierto = ref(false)
-function funcionPrueba(navSecundariaAbierta) {
+function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
 </script>
@@ -58,7 +58,7 @@ function funcionPrueba(navSecundariaAbierta) {
       id="contenido-todo"
     >
       <div class="columna-4 columna-1-mov menu-fondo">
-        <SisdaiMenuLateral @alAlternarMenu="funcionPrueba">
+        <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
           <template slot="contenido-menu-lateral">
             <ul>
               <li>
