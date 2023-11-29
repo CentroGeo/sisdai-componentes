@@ -16,12 +16,12 @@ const elementosLista = ref({})
  * si está en versión móvil
  */
 function agregaAtributoTabIndex() {
-  if (window.innerWidth < 768) {
-    for (let index = 0; index < elementosLista.value.length; index++) {
-      const elemento = elementosLista.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
+  // if (window.innerWidth < 768) {
+  //   for (let index = 0; index < elementosLista.value.length; index++) {
+  //     const elemento = elementosLista.value[index]['children'][0]
+  //     elemento.tabIndex = '-1'
+  //   }
+  // }
 }
 
 /**
@@ -30,26 +30,27 @@ function agregaAtributoTabIndex() {
  * saltarse los enlaces con el teclado secuencial.
  */
 function actualizaAtributoTabIndex(estaAbierto) {
-  if (window.innerWidth < 768) {
-    if (estaAbierto) {
-      for (let i = 0; i < elementosLista.value.length; i++) {
-        const elemento = elementosLista.value[i]['children'][0]
-        elemento.removeAttribute('tabIndex')
-      }
-    } else {
-      for (let j = 0; j < elementosLista.value.length; j++) {
-        const elemento = elementosLista.value[j]['children'][0]
-        elemento.tabIndex = '-1'
-      }
-    }
-  }
+  console.log(estaAbierto)
+  // if (window.innerWidth < 768) {
+  //   if (estaAbierto) {
+  //     for (let i = 0; i < elementosLista.value.length; i++) {
+  //       const elemento = elementosLista.value[i]['children'][0]
+  //       elemento.removeAttribute('tabIndex')
+  //     }
+  //   } else {
+  //     for (let j = 0; j < elementosLista.value.length; j++) {
+  //       const elemento = elementosLista.value[j]['children'][0]
+  //       elemento.tabIndex = '-1'
+  //     }
+  //   }
+  // }
 }
 const contenidoMenuLateral = ref(null)
 onMounted(() => {
-  elementosLista.value =
-    document.getElementById(id_aleatorio)['children'][0]['children'][0][
-      'children'
-    ]
+  // elementosLista.value =
+  //   document.getElementById(id_aleatorio)['children'][0]['children'][0][
+  //     'children'
+  //   ]
   console.log(elementosLista.value)
   agregaAtributoTabIndex()
 })
