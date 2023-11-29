@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
 
-const menu_abierto = ref(false)
+const menu_abierto = ref(window.innerWidth < 768 ? false : true)
 
 function idAleatorio() {
   return Math.random().toString(36).substring(2)
@@ -17,15 +17,14 @@ const emits = defineEmits(['alAlternarMenu'])
  * Agrega el atributo tabindex a los elementos de lista,
  * si está en versión móvil
  */
-function agregaAtributoTabIndex() {
-  // if (window.innerWidth < 768) {
-  //   for (let index = 0; index < elementosLista.value.length; index++) {
-  //     const elemento = elementosLista.value[index]['children'][0]
-  //     elemento.tabIndex = '-1'
-  //   }
-  // }
-}
-
+// function agregaAtributoTabIndex() {
+//   // if (window.innerWidth < 768) {
+//   //   for (let index = 0; index < elementosLista.value.length; index++) {
+//   //     const elemento = elementosLista.value[index]['children'][0]
+//   //     elemento.tabIndex = '-1'
+//   //   }
+//   // }
+// }
 /**
  * Si el menú está abierto en móvil, remueve el atributo tabIndex.
  * Si está cerrado, agrega el atributo tabIndex en -1 para
@@ -54,7 +53,7 @@ onMounted(() => {
   //     'children'
   //   ]
   // console.log(elementosLista.value)
-  agregaAtributoTabIndex()
+  // agregaAtributoTabIndex()
 })
 
 watch(menu_abierto, () => {
