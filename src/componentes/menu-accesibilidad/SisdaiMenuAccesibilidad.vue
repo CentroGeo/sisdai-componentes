@@ -35,7 +35,7 @@ const propiedades = {
    */
   id: {
     type: String,
-    default: idAleatorio(),
+    default: 'menu_accesibilidad',
   },
 }
 
@@ -57,9 +57,9 @@ const eventos = {
  * Devuelve una cadena de texto aleatoreo.
  * @returns {String}
  */
-function idAleatorio() {
-  return Math.random().toString(36).substring(2)
-}
+// function idAleatorio() {
+//   return Math.random().toString(36).substring(2)
+// }
 </script>
 
 <script setup>
@@ -200,7 +200,6 @@ const alturaMenuAbierto = computed(
 
 <template>
   <div
-    :id="id"
     class="contenedor-menu-accesibilidad"
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
@@ -224,17 +223,17 @@ const alturaMenuAbierto = computed(
 
       <div
         class="controlador-vis m-y-1"
-        v-for="(opcion, key, idx) in opciones"
-        :key="`opcion-accesibilidad-${key}`"
+        v-for="(opcion, idx) in opciones"
+        :key="`opcion-accesibilidad-${idx}`"
       >
         <input
-          :id="`${idx}_${opcion.claseCss}_${id}`"
+          :id="`${opcion.claseCss}_${id}`"
           type="checkbox"
           :value="opcion.claseCss"
           v-model="clasesSelecciondas"
           :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         />
-        <label :for="`${idx}_${opcion.claseCss}_${id}`">
+        <label :for="`${opcion.claseCss}_${id}`">
           <span
             class="figura-variable icono-4"
             :class="opcion.icono"
