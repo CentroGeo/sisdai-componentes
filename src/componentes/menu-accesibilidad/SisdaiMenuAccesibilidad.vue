@@ -200,6 +200,7 @@ const alturaMenuAbierto = computed(
 
 <template>
   <div
+    :id="id"
     class="contenedor-menu-accesibilidad"
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
@@ -223,26 +224,24 @@ const alturaMenuAbierto = computed(
 
       <div
         class="controlador-vis m-y-1"
-        v-for="(opcion, idx) in opciones"
-        :key="`opcion-accesibilidad-${idx}`"
+        v-for="(opcion, key, idx) in opciones"
+        :key="`opcion-accesibilidad-${key}`"
       >
         <input
-          :id="`${opcion.claseCss}_css_${id}`"
+          :id="`${idx}_${opcion.claseCss}_${id}`"
           type="checkbox"
           :value="opcion.claseCss"
           v-model="clasesSelecciondas"
           :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         />
-        <label :for="`${opcion.claseCss}_css_${id}`">
+        <label :for="`${idx}_${opcion.claseCss}_${id}`">
           <span
             class="figura-variable icono-4"
             :class="opcion.icono"
             aria-hidden="true"
           ></span>
           <span class="nombre-variable">
-            <b>
-              {{ opcion.titulo }}
-            </b>
+            <b> {{ opcion.titulo }} </b>
           </span>
         </label>
       </div>
