@@ -9,7 +9,9 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-const elementosLista = ref({})
+// const elementosLista = ref({})
+
+const emits = defineEmits(['alAlternarMenu'])
 
 /**
  * Agrega el atributo tabindex a los elementos de lista,
@@ -29,34 +31,35 @@ function agregaAtributoTabIndex() {
  * Si está cerrado, agrega el atributo tabIndex en -1 para
  * saltarse los enlaces con el teclado secuencial.
  */
-function actualizaAtributoTabIndex(estaAbierto) {
-  console.log(estaAbierto)
-  // if (window.innerWidth < 768) {
-  //   if (estaAbierto) {
-  //     for (let i = 0; i < elementosLista.value.length; i++) {
-  //       const elemento = elementosLista.value[i]['children'][0]
-  //       elemento.removeAttribute('tabIndex')
-  //     }
-  //   } else {
-  //     for (let j = 0; j < elementosLista.value.length; j++) {
-  //       const elemento = elementosLista.value[j]['children'][0]
-  //       elemento.tabIndex = '-1'
-  //     }
-  //   }
-  // }
-}
+// function actualizaAtributoTabIndex(estaAbierto) {
+//   // console.log(estaAbierto)
+//   // if (window.innerWidth < 768) {
+//   //   if (estaAbierto) {
+//   //     for (let i = 0; i < elementosLista.value.length; i++) {
+//   //       const elemento = elementosLista.value[i]['children'][0]
+//   //       elemento.removeAttribute('tabIndex')
+//   //     }
+//   //   } else {
+//   //     for (let j = 0; j < elementosLista.value.length; j++) {
+//   //       const elemento = elementosLista.value[j]['children'][0]
+//   //       elemento.tabIndex = '-1'
+//   //     }
+//   //   }
+//   // }
+// }
 const contenidoMenuLateral = ref(null)
 onMounted(() => {
   // elementosLista.value =
   //   document.getElementById(id_aleatorio)['children'][0]['children'][0][
   //     'children'
   //   ]
-  console.log(elementosLista.value)
+  // console.log(elementosLista.value)
   agregaAtributoTabIndex()
 })
 
 watch(menu_abierto, () => {
-  actualizaAtributoTabIndex(menu_abierto.value)
+  emits('alAlternarMenu', menu_abierto.value)
+  // actualizaAtributoTabIndex(menu_abierto.value)
 })
 </script>
 
@@ -98,12 +101,20 @@ watch(menu_abierto, () => {
       >
         <slot name="contenido-menu-lateral">
           <ul>
-            <li><a href="#anchore"> anchore link prueba </a></li>
+            <li>
+              <a
+                href="#anchore"
+                :tabindex="menu_abierto ? undefined : -1"
+              >
+                anchore link prueba
+              </a>
+            </li>
             <li>
               <a
                 href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                 rel="noopener"
                 target="_blank"
+                :tabindex="menu_abierto ? undefined : -1"
               >
                 <span
                   class="icono-social-github"
