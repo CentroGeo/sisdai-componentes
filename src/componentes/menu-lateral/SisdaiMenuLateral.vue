@@ -1,7 +1,11 @@
 <script setup>
 import { onMounted, ref, watch } from 'vue'
 
-const menu_abierto = ref(window.innerWidth < 768 ? false : true)
+// const menu_abierto = ref(window.innerWidth < 768 ? false : true)
+const menu_abierto = ref()
+if (typeof window !== 'undefined') {
+  menu_abierto.value = window.innerWidth < 768 ? false : true
+}
 
 function idAleatorio() {
   return Math.random().toString(36).substring(2)
