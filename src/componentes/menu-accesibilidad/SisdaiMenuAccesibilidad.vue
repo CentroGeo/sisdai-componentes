@@ -65,7 +65,7 @@ const eventos = {
 <script setup>
 import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
-import store from '../../stores/accesibilidad'
+// import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
@@ -121,21 +121,40 @@ watch(clasesSelecciondas, (nv, ov) => {
     nv.find(clase => clase === 'a11y-oscura') &&
     !ov.find(clase => clase === 'a11y-oscura')
   ) {
-    ejecutarEnStore('alternarVistaOscura', nv)
+    // poner
+    // if (tema.value === 'auto') {
+    //   ejecutarEnStore('alternarVistaOscura', nv)
+    // }
+    tema.value = 'oscura'
+    localStorage.setItem('theme', tema.value)
   }
   if (
     !nv.find(clase => clase === 'a11y-oscura') &&
     ov.find(clase => clase === 'a11y-oscura')
   ) {
-    ejecutarEnStore('alternarVistaOscura', nv)
+    // quitar
+    // if (tema.value === 'auto') {
+    //   ejecutarEnStore('alternarVistaOscura', nv)
+    // }
+    tema.value = 'clara'
+    localStorage.setItem('theme', tema.value)
   }
 })
 
 /**
  * Módulo de vista oscura.
  */
-const tema = computed(() => store.state.tema)
-const perfil = computed(() => store.state.perfil)
+const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+localStorage.setItem('theme', tema.value)
+const perfil = ref('eni') // 'eni' | 'sisdai' | 'gema'
+
+// function alternarTema() {
+//   //rotar entre estos 3 valores
+//   const themes = ['clara', 'oscura', 'auto']
+//   tema.value = themes[(themes.indexOf(tema.value) + 1) % 3]
+
+//   localStorage.setItem('theme', tema.value)
+// }
 
 /**
  * Elige el tema en el documento en modo oscuro,
@@ -143,20 +162,33 @@ const perfil = computed(() => store.state.perfil)
  * ó si el tema del store es oscuro.
  */
 function elegirTemaEnDocumento() {
-  const modoOscuro = ref(
+  const modoOscuro =
     (window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches &&
       tema.value === 'auto') ||
-      tema.value === 'oscuro'
-  )
+    tema.value === 'oscura'
 
   // Asignar el perfil de color para el atributo css del query.
-  if (perfil.value !== null)
+  if (perfil.value !== null) {
     document.documentElement.setAttribute(
       // se puede nombrar como quieras.
       `data-dark-theme-${perfil.value}`,
-      modoOscuro.value
+      modoOscuro
     )
+    // Agrega claseSeleccionada .a11y-oscura
+    if (modoOscuro && !clasesSelecciondas.value.includes('a11y-oscura')) {
+      // Esta línea es necesaria para tener un registro de las clases
+      // seleccionadas y para checkear la opción en el menú
+      clasesSelecciondas.value.push('a11y-oscura')
+
+      // Esta línea es necesaria para poner la clase en el html
+      ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
+    } else {
+      // clasesSelecciondas.value = clasesSelecciondas.value.filter(
+      //   clase => clase !== 'a11y-oscura'
+      // )
+    }
+  }
 }
 
 onBeforeMount(() => {
@@ -177,7 +209,7 @@ watch(tema, () => {
 })
 
 // if (localStorage.getItem('theme')) {
-//   store.state.tema = localStorage.getItem('theme')
+//   tema.value = localStorage.getItem('theme')
 // }
 
 /**
