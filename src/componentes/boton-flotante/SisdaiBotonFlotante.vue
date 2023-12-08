@@ -16,7 +16,7 @@ const propiedades = {
 </script>
 
 <script setup>
-import { ref, toRefs, watch } from 'vue'
+import { ref, toRefs } from 'vue'
 
 const props = defineProps(propiedades)
 const { enlaces } = toRefs(props)
@@ -39,28 +39,16 @@ function alternarEstado() {
 
 defineExpose({ alternarEstado })
 
-/**
- * Si el botón está abierto, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-watch(botonFlotanteEstaAbierto, () => {
-  if (botonFlotanteEstaAbierto.value) {
-    enlaces.value.forEach((element, idx) => {
-      document
-        .getElementById(`boton_flotante_enlace_${idx}`)
-        .removeAttribute('tabIndex')
-    })
-  } else {
-    enlaces.value.forEach((element, idx) => {
-      document.getElementById(`boton_flotante_enlace_${idx}`).tabIndex = '-1'
-    })
-  }
-})
+function idAleatorio() {
+  return Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
 </script>
 
 <template>
   <div
+    :id="id_aleatorio"
     class="contenedor-boton-flotante"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
@@ -94,6 +82,7 @@ watch(botonFlotanteEstaAbierto, () => {
         }`"
         target="_blank"
         rel="noopener noreferrer"
+        :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
       >
         <span
           :class="`icono ${

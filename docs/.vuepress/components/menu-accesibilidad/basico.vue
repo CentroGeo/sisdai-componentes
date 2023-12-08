@@ -5,7 +5,7 @@ import { ref } from 'vue'
 const menuAccesibilidad = ref(null)
 
 function alSeleccionarOpcion(opcion) {
-  alert(`Accesibilidad: ${opcion.titulo}`)
+  alert(`Accesibilidad: ${opcion}`)
 }
 </script>
 
@@ -16,6 +16,7 @@ function alSeleccionarOpcion(opcion) {
   >
     <SisdaiMenuAccesibilidad
       ref="menuAccesibilidad"
+      :id="'basico'"
       @alSeleccionarOpcion="alSeleccionarOpcion"
     />
 

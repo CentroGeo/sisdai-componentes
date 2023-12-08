@@ -1,27 +1,57 @@
+<script setup>
+import { ref } from 'vue'
+
+const menuLateralAbierto = ref()
+const colapsableNavegacionAbierta = ref(false)
+
+if (typeof window !== 'undefined') {
+  menuLateralAbierto.value = window.innerWidth < 768 ? false : true
+}
+
+function alAlternarMenuLateral(navSecundariaAbierta) {
+  menuLateralAbierto.value = navSecundariaAbierta
+}
+
+function alAlternarColapsableNavegacion(d) {
+  colapsableNavegacionAbierta.value = d
+}
+</script>
 <template>
   <div>
-    <SisdaiMenuLateral>
+    <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
       <template slot="contenido-menu-lateral">
         <ul>
           <li>
             <router-link
               to="#api"
               exact
+              :tabindex="menuLateralAbierto ? undefined : -1"
             >
               API</router-link
             >
           </li>
           <li>
-            <router-link to="#slots"> Slots</router-link>
+            <router-link
+              to="#slots"
+              :tabindex="menuLateralAbierto ? undefined : -1"
+            >
+              Slots</router-link
+            >
           </li>
           <SisdaiColapsableNavegacion
             :titulo="'<SisdaiColapsableNavegacion> :D'"
+            :avisarMenuLateral="menuLateralAbierto"
+            @alAlternarColapsable="alAlternarColapsableNavegacion"
           >
             <template v-slot:listado-contenido>
               <li>
                 <router-link
                   to="#ejemplos"
-                  tabindex="-1"
+                  :tabindex="
+                    colapsableNavegacionAbierta && menuLateralAbierto
+                      ? undefined
+                      : -1
+                  "
                 >
                   Ejemplos
                 </router-link>
@@ -29,7 +59,11 @@
               <li>
                 <a
                   href="#menu-lateral"
-                  tabindex="-1"
+                  :tabindex="
+                    colapsableNavegacionAbierta && menuLateralAbierto
+                      ? undefined
+                      : -1
+                  "
                 >
                   El mero inicio
                 </a>
@@ -41,6 +75,7 @@
               href="##"
               rel="noopener"
               style="display: grid"
+              :tabindex="menuLateralAbierto ? undefined : -1"
             >
               <span
                 class="icono-social-github titulo-eni"

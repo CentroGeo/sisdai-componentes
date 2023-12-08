@@ -1,3 +1,6 @@
+<script setup>
+const pkg = require('../../../../package.json')
+</script>
 <template>
   <SisdaiNavegacionPrincipal
     :nav-informacion="`Sección: <b>${$frontmatter.sectionName || ''}</b>`"
@@ -24,9 +27,9 @@
       <li>
         <a
           class="nav-hipervinculo"
-          href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+          :href="pkg.repository.url"
         >
-          Repositorio
+          v{{ pkg.version }}
         </a>
       </li>
     </ul>

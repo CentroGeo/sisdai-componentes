@@ -88,10 +88,10 @@
               rel="noopener"
             >
               <span
-                class="icono-social-twitter icono-3"
+                class="icono-social-x icono-3"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">tuiter,</span>
+              <span class="a11y-solo-lectura">x,</span>
             </a>
           </li>
           <li>

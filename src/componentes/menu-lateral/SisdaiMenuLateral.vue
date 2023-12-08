@@ -1,7 +1,13 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { ref, watch } from 'vue'
 
-const menu_abierto = ref(false)
+const menu_abierto = ref()
+
+const contenidoMenuLateral = ref(null)
+
+if (typeof window !== 'undefined') {
+  menu_abierto.value = window.innerWidth < 768 ? false : true
+}
 
 function idAleatorio() {
   return Math.random().toString(36).substring(2)
@@ -9,52 +15,10 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-const elementosLista = ref({})
-
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si está en versión móvil
- */
-function agregaAtributoTabIndex() {
-  if (window.innerWidth < 768) {
-    for (let index = 0; index < elementosLista.value.length; index++) {
-      const elemento = elementosLista.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-/**
- * Si el menú está abierto en móvil, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (window.innerWidth < 768) {
-    if (estaAbierto) {
-      for (let i = 0; i < elementosLista.value.length; i++) {
-        const elemento = elementosLista.value[i]['children'][0]
-        elemento.removeAttribute('tabIndex')
-      }
-    } else {
-      for (let j = 0; j < elementosLista.value.length; j++) {
-        const elemento = elementosLista.value[j]['children'][0]
-        elemento.tabIndex = '-1'
-      }
-    }
-  }
-}
-const contenidoMenuLateral = ref(null)
-onMounted(() => {
-  elementosLista.value =
-    document.getElementById(id_aleatorio)['children'][0]['children'][0][
-      'children'
-    ]
-  agregaAtributoTabIndex()
-})
+const emits = defineEmits(['alAlternarMenu'])
 
 watch(menu_abierto, () => {
-  actualizaAtributoTabIndex(menu_abierto.value)
+  emits('alAlternarMenu', menu_abierto.value)
 })
 </script>
 
@@ -96,12 +60,20 @@ watch(menu_abierto, () => {
       >
         <slot name="contenido-menu-lateral">
           <ul>
-            <li><a href="#anchore"> anchore link prueba </a></li>
+            <li>
+              <a
+                href="#anchore"
+                :tabindex="menu_abierto ? undefined : -1"
+              >
+                anchore link prueba
+              </a>
+            </li>
             <li>
               <a
                 href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                 rel="noopener"
                 target="_blank"
+                :tabindex="menu_abierto ? undefined : -1"
               >
                 <span
                   class="icono-social-github"

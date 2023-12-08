@@ -1,12 +1,14 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { ref, toRefs, watch } from 'vue'
 
 const props = defineProps({
   titulo: { type: String, default: 'Titulo de colapsable' },
   activo: { type: Boolean, default: false },
+  avisarMenuLateral: { type: Boolean, default: true },
 })
 // eslint-disable-next-line
 const esta_activo = ref(props.activo)
+const { avisarMenuLateral } = toRefs(props)
 
 function idAleatorio() {
   return Math.random().toString(36).substring(2)
@@ -14,47 +16,10 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-const listadoContenido = ref({})
-
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si la navegación está colapsada
- */
-function agregaAtributoTabIndex() {
-  if (esta_activo.value === false) {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-/**
- * Si el menú está desplegado, remueve el atributo tabIndex.
- * Si está colapsado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (estaAbierto) {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.removeAttribute('tabIndex')
-    }
-  } else {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-onMounted(() => {
-  listadoContenido.value = document.getElementById(id_aleatorio)['children']
-  agregaAtributoTabIndex()
-})
+const emits = defineEmits(['alAlternarColapsable'])
 
 watch(esta_activo, () => {
-  actualizaAtributoTabIndex(esta_activo.value)
+  emits('alAlternarColapsable', esta_activo.value)
 })
 </script>
 
@@ -67,6 +32,7 @@ watch(esta_activo, () => {
       :aria-expanded="esta_activo ? 'true' : 'false'"
       class="colapsable-boton-submenu"
       @click="esta_activo = !esta_activo"
+      :tabindex="avisarMenuLateral ? undefined : -1"
     >
       {{ props.titulo }}
       <span
@@ -83,7 +49,7 @@ watch(esta_activo, () => {
           <a
             href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
             target="_blank"
-            tabindex="-1"
+            :tabindex="esta_activo ? undefined : -1"
           >
             Elemento desplegado</a
           >
