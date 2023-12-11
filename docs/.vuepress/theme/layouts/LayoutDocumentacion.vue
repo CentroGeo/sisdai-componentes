@@ -50,7 +50,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
 <template>
   <div
     class="theme-container"
-    :class="store.state.accesibilidad.clasesAccesibles"
+    :class="store.getters['accesibilidad/clasesAccesibles']"
   >
     <SisdaiNavegacionGobMx />
 
