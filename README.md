@@ -36,16 +36,19 @@ y dependencias del proyecto se muestran aquí usando tanto npm, como nvm.
 ### Instalación
 
 Clona este repositorio utilizando **solo el protocolo HTTPS**, es decir.
+
 ```bash
 git clone https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git
 ```
 
 Establece la versión adecuada de npm y nvm (previamente instaladas).
+
 ```bash
 nvm use 18
 ```
 
 Instala las dependencias de la biblioteca.
+
 ```bash
 npm install
 ```
@@ -74,6 +77,7 @@ npm run build
 ```
 
 ## Uso de la biblioteca
+
 ### ¿Como agregar nuevos componentes?
 
 #### Estructura
@@ -247,7 +251,6 @@ agregarse el enlace a la página de documentación del componente que se esté
 trabajando. Lo anterior dentro del componente `SisdaiMenuLateral`
 
 ```html
-
 <SisdaiMenuLateral>
   <template slot="contenido-menu-lateral">
     <ul>
