@@ -1,8 +1,12 @@
 # sisdai-componentes
 
 El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de
-Vue alineada al Sistema de diseño y accesibilidad para la investigación
+Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
 ([Sisdai](https://sisdai.conahcyt.mx)).
+
+Cualquier persona usuaria puede hacer uso de esta biblioteca al clonarla e
+instalarla en su equipo. Las personas investigadoras con correo de dominio @conahcyt
+podrán colaborar con este proyecto y levantar _issues_ en este repositorio.
 
 > **_Limitación de responsabilidad_**
 >
@@ -13,37 +17,66 @@ Vue alineada al Sistema de diseño y accesibilidad para la investigación
 > final,
 > se invita a la persona usuaria a consultarla y validar sus requisitos.
 
-## Instalación
+## Requerimientos
 
-Para instalar las dependencias de la biblioteca:
+### Pasos previos recomendados
 
+Para desarrollar este proyecto se usó [node.js](https://nodejs.org/en) como
+entorno de ejecución de JavaScript. La opción recomendada para instalarlo es
+[vía nvm](https://github.com/nvm-sh/nvm) que es el manejador de versiones de
+node. Siguiendo este camino, también se instalará el manejador de paquetes
+[npm](https://www.npmjs.com/). Dado lo anterior las instrucciones de instalación
+y dependencias del proyecto se muestran aquí usando tanto npm, como nvm.
+
+### Dependencias
+
+- [node.js (^18)](https://nodejs.org/en/download/)
+- [npm (^9)](https://www.npmjs.com/get-npm)
+
+### Instalación
+
+Clona este repositorio utilizando **solo el protocolo HTTPS**, es decir.
+```bash
+git clone https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git
 ```
+
+Establece la versión adecuada de npm y nvm (previamente instaladas).
+```bash
+nvm use 18
+```
+
+Instala las dependencias de la biblioteca.
+```bash
 npm install
 ```
 
-### Compilar ambiente de desarrollo en local
+## Documentación
 
-Este comando levanta para que quien desarrolle pueda hacer pruebas
+Este proyecto cuenta con una documentación más extensa que aún está
+en proceso de desarrollo. Es posible levantarla en un ambiente local con la
+instrucción:
 
-```
+```bash
 npm run docs
 ```
 
-### Compilar biblioteca para producción
+Para las personas colaboradoras de este proyecto, la documentación se puede
+compilar para su despliegue en desarrollo usando:
 
-```
-npm run build
-```
-
-### Compilar ambiente de desarrollo para visualizar en línea
-
-```
+```bash
 npm run docs:build
 ```
 
-## ¿Como agregar nuevos componentes?
+Y para su despliegue en producción:
 
-### Estructura
+```bash
+npm run build
+```
+
+## Uso de la biblioteca
+### ¿Como agregar nuevos componentes?
+
+#### Estructura
 
 - Los nuevos componentes se agregan en la carpeta `src/componentes`.
 - Cada componente se agrega en su propio
@@ -64,24 +97,24 @@ sisdai-componentes/
 
 ```
 
-### Componente .vue
+#### Componente .vue
 
 - Para el desarrollo se
   usa [Composition API](https://vuejs.org/guide/introduction.html#composition-api)
 - Se evita el uso de preprocesadores de estilos, se usa css en vez de scss o
   sass
-- En la medida de lo posible se evita la llamada de metodos al router de vue, si
+- En la medida de lo posible se evita la llamada de métodos al router de vue, si
   un componente por su funcionalidad requiere de esta dependencia o de otra
-  similar debera especificarlo en la documentacion de uso del componente.
-- Apegarse a los estilos de codigo definidos en las configuraciones del
+  similar debera especificarlo en la documentación de uso del componente.
+- Apegarse a los estilos de código definidos en las configuraciones del
   proyecto: _eslint, prettier,editorconfig y vscode-settings_.
 
-### Script de instalacion en index.js
+#### Script de instalación en index.js
 
-Dentro del archivo `index.js` que acompaña al componente se agregara un codigo
+Dentro del archivo `index.js` que acompaña al componente se agregara un código
 de instalación como el siguiente:
 
-```js
+```javascript
 // /src/componentes/componente-nuevo/index.js
 
 import ComponenteNuevo from './ComponenteNuevo.vue'
@@ -97,7 +130,7 @@ export default plugin
 
 Para que funcione el archivo anterior debera integrarse con los
 archivos `src/index.js` y `src/componentes/index.js`. Cuando se agregue un nuevo
-componente tambien deberan de modificarse estos mismos.
+componente también deberán de modificarse estos mismos.
 
 ```bash
 sisdai-componentes/
@@ -115,7 +148,7 @@ sisdai-componentes/
 En el siguiente archivo se indexan todos los componentes para que sean
 accesibles a nivel `src/componentes`
 
-```js
+```javascript
 // /src/componentes.js
 import ComponenteNuevo from './componente-nuevo'
 
@@ -127,7 +160,7 @@ ComponenteNuevo, // agregar al final de las exportaciones
 ```
 
 Finalmente en el siguiente archivo se agrega el nuevo componente al script
-global de instalacion
+global de instalación
 
 ```js
 // /src/index.js
@@ -152,17 +185,17 @@ export default plugin
 
 ```
 
-### Uso del store en componentes
+#### Uso del store en componentes
 
-Los componentes que hagan uso de variables de estado globales podran hacerlo,
+Los componentes que hagan uso de variables de estado globales podrán hacerlo,
 pero sin comprometer o condicionar el funcionamiento de la biblioteca en general
-a tener un _store_ de requisito, es decir, si la aplicacion no ocupa estos
-componentes (que usan el store) el usuario de la biblioteca no deberia necesitar
+a tener un _store_ de requisito, es decir, si la aplicación no ocupa estos
+componentes (que usan el store) el usuario de la biblioteca no debería necesitar
 instalar un store. Por el contrario, si desea ocuparlos si es un requisito.
 
-Las variables y metodos del store que usen los componentes de esta biblioteca se
+Las variables y métodos del store que usen los componentes de esta biblioteca se
 implementaran de tal manera que solo se ofrezca la estructura del mismo, sin
-tener dependencia directa con la libreria de _store_.
+tener dependencia directa con la biblioteca de _store_.
 
 **Ejemplo, teniendo estos componentes**
 
@@ -170,14 +203,14 @@ tener dependencia directa con la libreria de _store_.
 - ComponenteB no usa store
 - ComponenteC no usa store
 
-  Pensando en una aplicacion muy sencilla que **no requiere** usar _ComponenteA_
-  , el usuarix de la biblioteca no se ve obligadx a instalar un store, y dado
-  que solo usa _ComponenteB_ y _ComponenteC_ estos deberian funcionar
-  perfectamente sin ninguna instalacion adicional.
+  Pensando en una aplicación muy sencilla que **no requiere** usar _ComponenteA_
+  , la persona usuaria de la biblioteca no se ve obligada a instalar un store, y dado
+  que solo usa _ComponenteB_ y _ComponenteC_ estos deberían funcionar
+  perfectamente sin ninguna instalación adicional.
 
   En caso contrario, que el _ComponenteA_ sea utilizado, entonces es requisito
   instalar un store (en este momento [VUEX](https://vuex.vuejs.org/)) y en la
-  definicion del mismo dar de alta la estructura que esta misma biblioteca
+  definición del mismo dar de alta la estructura que esta misma biblioteca
   ofrece.
 
 La ubicación de la estructura de los stores que ofrezca esta biblioteca
@@ -185,32 +218,32 @@ es `/src/stores/nombre-del-nuevo-store.js`
 
 **NOTA**
 
-En la primera version el unico modulo que ocupa esta biblioteca es el de **
+En la primera version el único módulo que ocupa esta biblioteca es el de **
 Accesibilidad**
 
-### Agregando el componente a la documentacion vuepress
+#### Agregando el componente a la documentacion vuepress
 
 Cada componente ofrecido por la presente biblioteca debera contar con 3
-secciones de documentacion indispensables:
+secciones de documentación indispensables:
 
-- Breve descripcion del componente
+- Breve descripción del componente
 - API
 - Ejemplos de uso
 
-#### Ubicación de archivos
+##### Ubicación de archivos
 
 En la carpeta `docs` existe un proyecto
-de [VuePress](https://vuepress.vuejs.org/) para dedplegar la documentacion.
+de [VuePress](https://vuepress.vuejs.org/) para desplegar la documentación.
 
-Cada componente agregado en la libreria tambien debe ser agregado en la
+Cada componente agregado en la biblioteca también debe ser agregado en la
 carpeta `docs`.
 
 **1.-** Se creara una carpeta `docs/documentacion/nombre-nuevo-componente` y
 dentro de la misma se agregara un archivo index.md en donde se agregara toda la
-documentacion necesaria del componente y sus ejemplos.
+documentación necesaria del componente y sus ejemplos.
 
 **2.-** Dentro del archivo `docs/.vuepress/theme/LayoutDocumentacion.vue` debe
-agregarse el enlace a la pagina de documentacion del componente que se este
+agregarse el enlace a la página de documentación del componente que se esté
 trabajando. Lo anterior dentro del componente `SisdaiMenuLateral`
 
 ```html
@@ -229,13 +262,13 @@ trabajando. Lo anterior dentro del componente `SisdaiMenuLateral`
 </SisdaiMenuLateral>
 ```
 
-**3.-** Los ejemplos del componente se realizaran en archivos `.vue` y
-depositaran en una carpeta
-nueva: `docs/.vuepress/components/nombre-nuevo-componente/`. Se agregaran todos
+**3.-** Los ejemplos del componente se realizarán en archivos `.vue` y
+depositarán en una carpeta
+nueva: `docs/.vuepress/components/nombre-nuevo-componente/`. Se agregarán todos
 los que se considere necesarios.
 
-Para la integracion de los ejemplos en los archivos _markdown_, se hace via el
-componente `utils-ejemplo-doc`, dentro de la seccion para este mismo proposito
+Para la integración de los ejemplos en los archivos _markdown_, se hace via el
+componente `utils-ejemplo-doc`, dentro de la sección para este mismo propósito
 
 ```md
 ... contenido del archivo markdown
@@ -258,9 +291,13 @@ artículo 63 se explicita que "cuando se trate
 de desarrollos basados en software libre, se respetarán las condiciones de su
 licenciamiento original [...]".
 
+Considerando lo anterior sisdai-componentes se publica aquí bajo la licencia
+[GPL3](https://www.gnu.org/licenses/gpl-3.0.html). Dicha licencia se puede
+consultar en el archivo _LICENSE_ de este repositorio.
+
 ## Contribuir
 
-Para contribuir al proyecto, se pide que se haga tomando en cuenta la guía de
-contribución
+Para aquellas personas con dominio de correo @conahcyt se pide que contribuyan
+tomando en cuenta la guía de contribución
 de [git](https://git-scm.com/book/es/v2/Git-en-entornos-distribuidos-Contribuyendo-a-un-Proyecto)
 .
