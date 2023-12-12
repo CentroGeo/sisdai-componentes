@@ -5,9 +5,7 @@ Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
 ([Sisdai](https://sisdai.conahcyt.mx)).
 
 Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla
-en su equipo a través del **protocolo HTTPS**. Por el momento sólo quienes sean
-parte de un equipo de investigación del capítulo de un [ENI](https://eni.conahcyt.mx)
-podrán levantar issues en este repositorio.
+en su equipo a través del **protocolo HTTPS**.
 
 ## Requerimientos
 
@@ -295,7 +293,6 @@ el idioma español se respeta la versión original de acuerdo a la
 
 ## Contribuir
 
-Para aquellas personas con dominio de correo @conahcyt se pide que contribuyan
-tomando en cuenta la guía de contribución
-de [git](https://git-scm.com/book/es/v2/Git-en-entornos-distribuidos-Contribuyendo-a-un-Proyecto)
-.
+Por el momento sólo quienes sean
+parte de un equipo de investigación del capítulo de un [ENI](https://eni.conahcyt.mx)
+podrán levantar issues en este repositorio.
