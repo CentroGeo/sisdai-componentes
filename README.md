@@ -8,15 +8,6 @@ Cualquier persona usuaria puede hacer uso de esta biblioteca al clonarla e
 instalarla en su equipo. Las personas investigadoras con correo de dominio @conahcyt
 podrán colaborar con este proyecto y levantar _issues_ en este repositorio.
 
-> **_Limitación de responsabilidad_**
->
-> El presente es un proyecto en construcción, por tanto el equipo del Sisdai
-> no es responsable del uso y contenido del presente recurso,
-> toda vez que se trata de una versión en su modalidad prueba, y no de una
-> versión liberada al público, por lo que una vez que sea lanzada la versión
-> final,
-> se invita a la persona usuaria a consultarla y validar sus requisitos.
-
 ## Requerimientos
 
 ### Pasos previos recomendados
