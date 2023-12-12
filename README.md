@@ -4,9 +4,10 @@ El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de
 Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
 ([Sisdai](https://sisdai.conahcyt.mx)).
 
-Cualquier persona usuaria puede hacer uso de esta biblioteca al clonarla e
-instalarla en su equipo. Las personas investigadoras con correo de dominio @conahcyt
-podrán colaborar con este proyecto y levantar _issues_ en este repositorio.
+Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla
+en su equipo a través del **protocolo HTTPS**. Por el momento sólo quienes sean
+parte de un equipo de investigación del capítulo de un [ENI](https://eni.conahcyt.mx)
+podrán levantar issues en este repositorio.
 
 ## Requerimientos
 
