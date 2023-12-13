@@ -4,18 +4,8 @@ El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de
 Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
 ([Sisdai](https://sisdai.conahcyt.mx)).
 
-Cualquier persona usuaria puede hacer uso de esta biblioteca al clonarla e
-instalarla en su equipo. Las personas investigadoras con correo de dominio @conahcyt
-podrán colaborar con este proyecto y levantar _issues_ en este repositorio.
-
-> **_Limitación de responsabilidad_**
->
-> El presente es un proyecto en construcción, por tanto el equipo del Sisdai
-> no es responsable del uso y contenido del presente recurso,
-> toda vez que se trata de una versión en su modalidad prueba, y no de una
-> versión liberada al público, por lo que una vez que sea lanzada la versión
-> final,
-> se invita a la persona usuaria a consultarla y validar sus requisitos.
+Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla
+en su equipo a través del **protocolo HTTPS**.
 
 ## Requerimientos
 
@@ -35,7 +25,8 @@ y dependencias del proyecto se muestran aquí usando tanto npm, como nvm.
 
 ### Instalación
 
-Clona este repositorio utilizando **solo el protocolo HTTPS**, es decir.
+Se puede clonar e instalar este proyecto en tu equipo
+utilizando **solo el protocolo HTTPS**, es decir:
 
 ```bash
 git clone https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git
@@ -52,6 +43,22 @@ Instala las dependencias de la biblioteca.
 ```bash
 npm install
 ```
+
+En cambio si se quiere instalar esta biblioteca para su uso en otro proyecto se puede hacer:
+
+``` bash
+npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
+```
+
+Dependiendo de la versión de la biblioteca a instalar, la instrucción anterior puede cambiar a:
+``` bash
+npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
+```
+donde N.N.N indica el número de versión, por ejemplo v1.0.0
+
+Así mismo también se puede agregar la biblioteca en el archio `package.json` de otro 
+proyecto.
+
 
 ## Documentación
 
@@ -294,13 +301,15 @@ artículo 63 se explicita que "cuando se trate
 de desarrollos basados en software libre, se respetarán las condiciones de su
 licenciamiento original [...]".
 
-Considerando lo anterior sisdai-componentes se publica aquí bajo la licencia
+Considerando lo anterior sisdai-componentes se publica bajo la licencia
 [GPL3](https://www.gnu.org/licenses/gpl-3.0.html). Dicha licencia se puede
 consultar en el archivo _LICENSE_ de este repositorio.
+Esta licencia se encuentra disponible en inglés porque aunque el Sisdai privilegia
+el idioma español se respeta la versión original de acuerdo al proyecto
+[GNU](https://www.gnu.org/licenses/licenses.html).
 
 ## Contribuir
 
-Para aquellas personas con dominio de correo @conahcyt se pide que contribuyan
-tomando en cuenta la guía de contribución
-de [git](https://git-scm.com/book/es/v2/Git-en-entornos-distribuidos-Contribuyendo-a-un-Proyecto)
-.
+Por el momento sólo quienes sean
+parte de un equipo de investigación del capítulo de un [ENI](https://eni.conahcyt.mx)
+podrán levantar issues en este repositorio.
