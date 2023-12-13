@@ -22,7 +22,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "core-js": "^3.31.0",
-    "sisdai-css": "git+https://codigo.conahcyt/sisdai/sisdai-css#v0.39.3",
+    "sisdai-css": "git+https://codigo.conahcyt.mx/sisdai/sisdai-css#v0.39.3",
     "vue": "^2.7.14"
   },
   "devDependencies": {
