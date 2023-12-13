@@ -58,7 +58,7 @@ donde N.N.N indica el número de versión, por ejemplo v1.0.0
 
 Así mismo también se puede agregar la biblioteca en el archio `package.json` de otro 
 proyecto.
-```
+
 
 ## Documentación
 
