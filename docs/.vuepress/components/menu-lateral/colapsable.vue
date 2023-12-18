@@ -25,6 +25,7 @@ function alAlternarColapsableNavegacion(d) {
             <router-link
               to="#api"
               exact
+              class="p-x-5-esc p-x-3-mov p-y-1"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               API</router-link
@@ -32,47 +33,58 @@ function alAlternarColapsableNavegacion(d) {
           </li>
           <li>
             <router-link
+              class="p-x-5-esc p-x-3-mov p-y-1"
               to="#slots"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               Slots</router-link
             >
           </li>
-          <SisdaiColapsableNavegacion
-            :titulo="'<SisdaiColapsableNavegacion> :D'"
-            :avisarMenuLateral="menuLateralAbierto"
-            @alAlternarColapsable="alAlternarColapsableNavegacion"
-          >
-            <template v-slot:listado-contenido>
-              <li>
-                <router-link
-                  to="#ejemplos"
-                  :tabindex="
-                    colapsableNavegacionAbierta && menuLateralAbierto
-                      ? undefined
-                      : -1
-                  "
-                >
-                  Ejemplos
-                </router-link>
-              </li>
-              <li>
-                <a
-                  href="#menu-lateral"
-                  :tabindex="
-                    colapsableNavegacionAbierta && menuLateralAbierto
-                      ? undefined
-                      : -1
-                  "
-                >
-                  El mero inicio
-                </a>
-              </li>
-            </template>
-          </SisdaiColapsableNavegacion>
+          <li>
+            <SisdaiColapsableNavegacion
+              :avisarMenuLateral="menuLateralAbierto"
+              @alAlternarColapsable="alAlternarColapsableNavegacion"
+            >
+              <template v-slot:encabezado>
+                <span>Este es un colapsable</span>
+              </template>
+              <template v-slot:contenido>
+                <ul>
+                  <li>
+                    <router-link
+                      class="p-x-6-esc p-x-4-mov p-y-1"
+                      to="#ejemplos"
+                      :tabindex="
+                        colapsableNavegacionAbierta && menuLateralAbierto
+                          ? undefined
+                          : -1
+                      "
+                    >
+                      Ejemplos
+                    </router-link>
+                  </li>
+                  <li>
+                    <a
+                      href="#menu-lateral"
+                      class="p-x-6-esc p-x-4-mov p-y-1"
+                      :tabindex="
+                        colapsableNavegacionAbierta && menuLateralAbierto
+                          ? undefined
+                          : -1
+                      "
+                    >
+                      El mero inicio
+                    </a>
+                  </li>
+                </ul>
+              </template>
+            </SisdaiColapsableNavegacion>
+          </li>
+
           <li>
             <a
               href="##"
+              class="p-x-5-esc p-x-3-mov p-y-1"
               rel="noopener"
               style="display: grid"
               :tabindex="menuLateralAbierto ? undefined : -1"

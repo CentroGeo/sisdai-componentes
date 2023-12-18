@@ -59,9 +59,10 @@ watch(menu_abierto, () => {
         ref="contenidoMenuLateral"
       >
         <slot name="contenido-menu-lateral">
-          <ul>
+          <ul class="colapsable-submenu">
             <li>
               <a
+                class="p-x-5-esc p-x-3-mov p-y-1"
                 href="#anchore"
                 :tabindex="menu_abierto ? undefined : -1"
               >
@@ -70,6 +71,7 @@ watch(menu_abierto, () => {
             </li>
             <li>
               <a
+                class="p-x-5-esc p-x-3-mov p-y-1"
                 href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                 rel="noopener"
                 target="_blank"
