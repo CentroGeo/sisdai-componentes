@@ -26,7 +26,7 @@ A continuación se enlistan las propiedades que admite el componente
 
 #### Opcionales
 
-- `activo`: (_Boolean_) Corresponde al estado del componente. Por _default_ es `false` y corresponde al componente colapsado. Si se elige `true` el componente se mostrará desplegado
+- `colapsado`: (_Boolean_) Corresponde al estado del componente. Por _default_ es `false` y corresponde al componente colapsado. Si se elige `true` el componente se mostrará desplegado
 
 ### Slots
 
