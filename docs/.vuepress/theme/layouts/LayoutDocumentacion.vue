@@ -113,6 +113,24 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               <li>
                 <router-link
                   class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/enlace-externo"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  EnlaceExterno
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/imagen-png-webp"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  ImagenPngWebp
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/indice-de-contenido"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -191,6 +209,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   PiePaginaGobMx
                 </router-link>
               </li>
+
               <li>
                 <a
                   href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
