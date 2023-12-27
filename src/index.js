@@ -11,6 +11,8 @@ import {
   SisdaiNarrativaScroll,
   SisdaiBotonFlotante,
   SisdaiModal,
+  SisdaiEnlaceExterno,
+  SisdaiImagenPngWebp,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -26,8 +28,12 @@ const plugin = {
     Vue.use(SisdaiMenuLateral)
     Vue.use(SisdaiIndiceDeContenido)
     Vue.use(SisdaiInfoDeDespliegue)
+    Vue.use(SisdaiEnlaceExterno)
+
     //accesibilidad
     Vue.use(SisdaiMenuAccesibilidad)
+    Vue.use(SisdaiImagenPngWebp)
+
     //auxiliares
     Vue.use(GlobosInformacion)
     //otros
@@ -51,6 +57,8 @@ export {
   SisdaiNarrativaScroll,
   SisdaiBotonFlotante,
   SisdaiModal,
+  SisdaiEnlaceExterno,
+  SisdaiImagenPngWebp,
 }
 
 export default plugin
