@@ -146,7 +146,7 @@ watch(clasesSelecciondas, (nv, ov) => {
  */
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
 localStorage.setItem('theme', tema.value)
-const perfil = ref('sisdai') // 'eni' | 'sisdai' | 'gema'
+const perfil = ref('gema') // 'eni' | 'sisdai' | 'gema'
 
 // function alternarTema() {
 //   //rotar entre estos 3 valores
