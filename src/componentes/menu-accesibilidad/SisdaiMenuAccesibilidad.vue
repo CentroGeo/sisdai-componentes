@@ -174,6 +174,11 @@ function elegirTemaEnDocumento() {
       `data-dark-theme-${perfil.value}`,
       modoOscuro
     )
+    document.documentElement.setAttribute(
+      // se puede nombrar como quieras.
+      `data-light-theme-${perfil.value}`,
+      !modoOscuro
+    )
     // Agrega claseSeleccionada .a11y-oscura
     if (modoOscuro && !clasesSelecciondas.value.includes('a11y-oscura')) {
       // Esta línea es necesaria para tener un registro de las clases
