@@ -211,9 +211,9 @@ watch(tema, () => {
   elegirTemaEnDocumento()
 })
 
-// if (localStorage.getItem('theme')) {
-//   tema.value = localStorage.getItem('theme')
-// }
+if (localStorage.getItem('theme')) {
+  tema.value = localStorage.getItem('theme')
+}
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
