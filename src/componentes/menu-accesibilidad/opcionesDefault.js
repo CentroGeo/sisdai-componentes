@@ -26,10 +26,10 @@ export default [
     icono: 'icono-vista-simplificada',
     titulo: 'Mostrar solo texto',
   },
-  // {
-  //   accion: 'alternarVistaOscura',
-  //   claseCss: 'a11y-oscura',
-  //   icono: 'icono-contraste',
-  //   titulo: 'Vista Oscura',
-  // },
+  {
+    accion: 'alternarVistaOscura',
+    claseCss: 'a11y-oscura',
+    icono: 'icono-contraste',
+    titulo: 'Vista Oscura',
+  },
 ]
