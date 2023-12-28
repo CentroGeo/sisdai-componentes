@@ -67,6 +67,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
             <ul>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -75,6 +76,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/modal"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -83,6 +85,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/boton-flotante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -91,6 +94,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/colapsable-navegacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -99,6 +103,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/directivas"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -107,6 +112,25 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/enlace-externo"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  EnlaceExterno
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/imagen-png-webp"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  ImagenPngWebp
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/indice-de-contenido"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -115,6 +139,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/info-de-despliegue"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -123,6 +148,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/menu-accesibilidad"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -131,6 +157,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/menu-lateral"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -139,6 +166,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/narrativa-scroll"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -147,6 +175,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/navegacion-gob-mx"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -155,6 +184,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/navegacion-principal"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -163,6 +193,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/pie-pagina-conahcyt"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -171,16 +202,19 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/pie-pagina-gob-mx"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
                   PiePaginaGobMx
                 </router-link>
               </li>
+
               <li>
                 <a
                   href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                   target="_blank"
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   rel="noopener"
                   style="display: grid"
                 >

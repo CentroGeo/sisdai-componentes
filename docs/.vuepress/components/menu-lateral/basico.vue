@@ -19,6 +19,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           <li>
             <router-link
               to="#api"
+              class="p-x-5-esc p-x-3-mov p-y-1"
               exact
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
@@ -28,6 +29,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           <li>
             <router-link
               to="#slots"
+              class="p-x-5-esc p-x-3-mov p-y-1"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               Slots</router-link
@@ -36,6 +38,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           <li>
             <router-link
               to="#ejemplos"
+              class="p-x-5-esc p-x-3-mov p-y-1"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               Ejemplos
@@ -44,6 +47,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           <li>
             <a
               href="#menu-lateral"
+              class="p-x-5-esc p-x-3-mov p-y-1"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               El mero inicio
