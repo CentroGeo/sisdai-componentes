@@ -123,7 +123,7 @@ watch(clasesSelecciondas, (nv, ov) => {
   ) {
     // poner
     if (tema.value === 'auto') {
-      ejecutarEnStore('alternarVistaOscura', nv)
+      // ejecutarEnStore('alternarVistaOscura', nv)
     }
     tema.value = 'oscura'
     localStorage.setItem('theme', tema.value)
@@ -134,7 +134,7 @@ watch(clasesSelecciondas, (nv, ov) => {
   ) {
     // quitar
     if (tema.value === 'auto') {
-      ejecutarEnStore('alternarVistaOscura', nv)
+      // ejecutarEnStore('alternarVistaOscura', nv)
     }
     tema.value = 'clara'
     localStorage.setItem('theme', tema.value)
