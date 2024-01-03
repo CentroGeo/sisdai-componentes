@@ -155,15 +155,97 @@ watch(clasesSelecciondas, (nv, ov) => {
 /**
  * Módulo de vista oscura.
  */
-// Tema o modo con el que inicializa la página
+// Tema o modo con el que inicializa la app
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+
+// function getTemaDesdeLocalStorage() {
+//   const tema = localStorage.getItem('theme') || 'clara'
+//   return tema
+// }
+
+/**
+ * Devuelve el tema del documento según la configuración del dispositivo.
+ */
+function getTemaDispositivo() {
+  if (
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+    tema.value === 'oscura'
+  ) {
+    return 'oscura'
+  }
+  return 'clara'
+}
+
+/**
+ * Agrega la clase `.a11y-oscura` para la selección
+ * de la vistas oscura.
+ * @param {String} temaClaroUOscuro
+ */
+function setClaseA11yOscura(temaClaroUOscuro) {
+  if (
+    temaClaroUOscuro === 'oscura' &&
+    !clasesSelecciondas.value.includes('a11y-oscura')
+  ) {
+    // Esta línea es necesaria para tener un registro de las clases
+    // seleccionadas y para checkear la opción en el menú
+    clasesSelecciondas.value.push('a11y-oscura')
+    // Esta línea es necesaria para poner la clase a la altura del app
+    ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
+  }
+}
+
+/**
+ * Elige el tema en el documento (clara u oscura)
+ * y la key local `theme` del navegador.
+ * @param {String} tema o modo de la vista: clara | oscura | auto
+ */
+function setTemaEnDocumentoYLocalStorage(tema) {
+  localStorage.setItem('theme', tema)
+  let temaClaroUOscuro = tema
+  if (tema === 'auto') {
+    temaClaroUOscuro = getTemaDispositivo()
+  }
+
+  // Agrega claseSeleccionada `.a11y-oscura`
+  setClaseA11yOscura(temaClaroUOscuro)
+
+  // Agrega y/o remueve el atributo selecctor para :root
+  switch (temaClaroUOscuro) {
+    case 'clara':
+      document.documentElement.removeAttribute(
+        `data-dark-theme-${perfilColor.value}`
+      )
+      document.documentElement.removeAttribute(
+        `data-light-theme-${perfilColor.value}`
+      )
+      document.documentElement.setAttribute(
+        `data-light-theme-${perfilColor.value}`,
+        true
+      )
+      break
+    case 'oscura':
+      document.documentElement.removeAttribute(
+        `data-light-theme-${perfilColor.value}`
+      )
+      document.documentElement.removeAttribute(
+        `data-dark-theme-${perfilColor.value}`
+      )
+      document.documentElement.setAttribute(
+        `data-dark-theme-${perfilColor.value}`,
+        true
+      )
+      break
+  }
+}
 
 /**
  * Almacenamiento local del navegador que setea la variable key `theme``
  * con el valor igual tema con el que inicializa la página o app
  * @type {<String>}
  */
-localStorage.setItem('theme', tema.value)
+// localStorage.setItem('theme', tema.value)
 // const perfil = ref('gema') // 'eni' | 'sisdai' | 'gema'
 // function alternarTema() {
 //   //rotar entre estos 3 valores
@@ -171,62 +253,54 @@ localStorage.setItem('theme', tema.value)
 //   tema.value = themes[(themes.indexOf(tema.value) + 1) % 3]
 //   localStorage.setItem('theme', tema.value)
 // }
+// function elegirTemaEnDocumento() {
+//   const modoOscuro =
+//     (window.matchMedia &&
+//       window.matchMedia('(prefers-color-scheme: dark)').matches &&
+//       tema.value === 'auto') ||
+//     tema.value === 'oscura'
 
-/**
- * Elige el tema en el documento en modo oscuro,
- * si la variable del query es dark y el tema del store es auto
- * ó si el tema del store es oscuro.
- */
-function elegirTemaEnDocumento() {
-  const modoOscuro =
-    (window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches &&
-      tema.value === 'auto') ||
-    tema.value === 'oscura'
-
-  // Asignar el perfil de color para el atributo css del query.
-  if (perfilColor.value !== null) {
-    document.documentElement.setAttribute(
-      // se puede nombrar como quieras.
-      `data-dark-theme-${perfilColor.value}`,
-      modoOscuro
-    )
-    document.documentElement.setAttribute(
-      // se puede nombrar como quieras.
-      `data-light-theme-${perfilColor.value}`,
-      !modoOscuro
-    )
-    // Agrega claseSeleccionada .a11y-oscura
-    if (modoOscuro && !clasesSelecciondas.value.includes('a11y-oscura')) {
-      // Esta línea es necesaria para tener un registro de las clases
-      // seleccionadas y para checkear la opción en el menú
-      clasesSelecciondas.value.push('a11y-oscura')
-      // Esta línea es necesaria para poner la clase en el html
-      ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
-    }
-  }
-}
+//   // Asignar el perfil de color para el atributo css del query.
+//   if (perfilColor.value !== null) {
+//     document.documentElement.setAttribute(
+//       // se puede nombrar como quieras.
+//       `data-dark-theme-${perfilColor.value}`,
+//       modoOscuro
+//     )
+//     document.documentElement.setAttribute(
+//       // se puede nombrar como quieras.
+//       `data-light-theme-${perfilColor.value}`,
+//       !modoOscuro
+//     )
+//     // Agrega claseSeleccionada .a11y-oscura
+//     if (modoOscuro && !clasesSelecciondas.value.includes('a11y-oscura')) {
+//       // Esta línea es necesaria para tener un registro de las clases
+//       // seleccionadas y para checkear la opción en el menú
+//       clasesSelecciondas.value.push('a11y-oscura')
+//       // Esta línea es necesaria para poner la clase en el html
+//       ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
+//     }
+//   }
+// }
 
 onBeforeMount(() => {
   window
     .matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', elegirTemaEnDocumento)
+    .removeEventListener('change', setTemaEnDocumentoYLocalStorage)
 })
 
 onMounted(() => {
-  elegirTemaEnDocumento()
+  // const tema = getTemaDesdeLocalStorage()
+  // tema.value = getTemaDesdeLocalStorage()
+  setTemaEnDocumentoYLocalStorage(tema.value)
   window
     .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', elegirTemaEnDocumento)
+    .addEventListener('change', setTemaEnDocumentoYLocalStorage)
 })
 
 watch(tema, () => {
-  elegirTemaEnDocumento()
+  setTemaEnDocumentoYLocalStorage(tema.value)
 })
-
-// if (localStorage.getItem('theme')) {
-//   tema.value = localStorage.getItem('theme')
-// }
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
