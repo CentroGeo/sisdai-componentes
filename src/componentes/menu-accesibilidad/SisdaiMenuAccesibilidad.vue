@@ -43,7 +43,7 @@ const propiedades = {
    */
   perfilColor: {
     type: String,
-    default: 'eni',
+    default: 'eni', // 'eni' | 'sisdai' | 'gema'
   },
 }
 
@@ -126,6 +126,8 @@ function restablecer() {
 
 watch(clasesSelecciondas, (nv, ov) => {
   ejecutarEnStore('modificarClasesAccesibles', nv)
+
+  // TODO: hacer función. Solo para vista oscura
   if (
     nv.find(clase => clase === 'a11y-oscura') &&
     !ov.find(clase => clase === 'a11y-oscura')
@@ -153,15 +155,20 @@ watch(clasesSelecciondas, (nv, ov) => {
 /**
  * Módulo de vista oscura.
  */
+// Tema o modo con el que inicializa la página
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+
+/**
+ * Almacenamiento local del navegador que setea la variable key `theme``
+ * con el valor igual tema con el que inicializa la página o app
+ * @type {<String>}
+ */
 localStorage.setItem('theme', tema.value)
 // const perfil = ref('gema') // 'eni' | 'sisdai' | 'gema'
-
 // function alternarTema() {
 //   //rotar entre estos 3 valores
 //   const themes = ['clara', 'oscura', 'auto']
 //   tema.value = themes[(themes.indexOf(tema.value) + 1) % 3]
-
 //   localStorage.setItem('theme', tema.value)
 // }
 
@@ -176,8 +183,8 @@ function elegirTemaEnDocumento() {
       window.matchMedia('(prefers-color-scheme: dark)').matches &&
       tema.value === 'auto') ||
     tema.value === 'oscura'
+
   // Asignar el perfil de color para el atributo css del query.
-  console.log(perfilColor.value)
   if (perfilColor.value !== null) {
     document.documentElement.setAttribute(
       // se puede nombrar como quieras.
@@ -196,10 +203,6 @@ function elegirTemaEnDocumento() {
       clasesSelecciondas.value.push('a11y-oscura')
       // Esta línea es necesaria para poner la clase en el html
       ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
-    } else {
-      // clasesSelecciondas.value = clasesSelecciondas.value.filter(
-      //   clase => clase !== 'a11y-oscura'
-      // )
     }
   }
 }
@@ -221,9 +224,9 @@ watch(tema, () => {
   elegirTemaEnDocumento()
 })
 
-if (localStorage.getItem('theme')) {
-  tema.value = localStorage.getItem('theme')
-}
+// if (localStorage.getItem('theme')) {
+//   tema.value = localStorage.getItem('theme')
+// }
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
