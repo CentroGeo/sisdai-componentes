@@ -37,6 +37,14 @@ const propiedades = {
     type: String,
     default: 'menu_accesibilidad',
   },
+  /**
+   * Si el perfil o paleta de color seleccionada para el proyecto es diferente de `eni`,
+   * se debe introducir el nombre del selector. Este debe existir en la biblio de estilos.
+   */
+  perfilColor: {
+    type: String,
+    default: 'eni',
+  },
 }
 
 const eventos = {
@@ -69,7 +77,8 @@ import opcionesDefault from './opcionesDefault'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, id, objetoStore, nombreModuloStore } = toRefs(props)
+const { agregarOpciones, id, objetoStore, perfilColor, nombreModuloStore } =
+  toRefs(props)
 
 /**
  * Opciones que se mostrarán en el menú de accesibilidad.
@@ -146,7 +155,7 @@ watch(clasesSelecciondas, (nv, ov) => {
  */
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
 localStorage.setItem('theme', tema.value)
-const perfil = ref('gema') // 'eni' | 'sisdai' | 'gema'
+// const perfil = ref('gema') // 'eni' | 'sisdai' | 'gema'
 
 // function alternarTema() {
 //   //rotar entre estos 3 valores
@@ -168,15 +177,16 @@ function elegirTemaEnDocumento() {
       tema.value === 'auto') ||
     tema.value === 'oscura'
   // Asignar el perfil de color para el atributo css del query.
-  if (perfil.value !== null) {
+  console.log(perfilColor.value)
+  if (perfilColor.value !== null) {
     document.documentElement.setAttribute(
       // se puede nombrar como quieras.
-      `data-dark-theme-${perfil.value}`,
+      `data-dark-theme-${perfilColor.value}`,
       modoOscuro
     )
     document.documentElement.setAttribute(
       // se puede nombrar como quieras.
-      `data-light-theme-${perfil.value}`,
+      `data-light-theme-${perfilColor.value}`,
       !modoOscuro
     )
     // Agrega claseSeleccionada .a11y-oscura
