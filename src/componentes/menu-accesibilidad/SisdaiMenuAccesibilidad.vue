@@ -199,7 +199,7 @@ function setClaseA11yOscura(temaClaroUOscuro) {
 function setTemaEnDocumentoYLocalStorage() {
   localStorage.setItem('theme', tema.value)
   let temaClaroUOscuro = getTemaDispositivo()
-  console.log(temaClaroUOscuro)
+
   // Agrega claseSeleccionada `.a11y-oscura`
   setClaseA11yOscura(temaClaroUOscuro)
 
