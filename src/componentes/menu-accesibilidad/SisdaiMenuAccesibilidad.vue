@@ -96,7 +96,7 @@ const clasesSelecciondas = ref([])
  * Ejecuta un cambio en el store si dicho objeto permite hacer commits (si se esta usando la
  * pripiedad `objetoStore`).
  * @param {String} accion nombre del mutation en el modulo del store.
- * @param {Array<String>} valor es decir las clases seleccionadas.
+ * @param {Array<String>} valor es decir las clases que siendo seleccionadas.
  */
 function ejecutarEnStore(accion, valor) {
   if (
@@ -124,17 +124,33 @@ watch(clasesSelecciondas, (nv, ov) => {
     nv.find(clase => clase === 'a11y-oscura') &&
     !ov.find(clase => clase === 'a11y-oscura')
   ) {
-    // poner clase
-    tema.value = 'oscura'
-    // localStorage.setItem('theme', tema.value)
+    // cuando pone la clase a11y-oscura
+    document.documentElement.removeAttribute(
+      `data-light-theme-${perfilColor.value}`
+    )
+    document.documentElement.removeAttribute(
+      `data-dark-theme-${perfilColor.value}`
+    )
+    document.documentElement.setAttribute(
+      `data-dark-theme-${perfilColor.value}`,
+      true
+    )
   }
   if (
     !nv.find(clase => clase === 'a11y-oscura') &&
     ov.find(clase => clase === 'a11y-oscura')
   ) {
-    // quitar clase
-    tema.value = 'clara'
-    // localStorage.setItem('theme', tema.value)
+    // cuando quita la clase a11y-oscura
+    document.documentElement.removeAttribute(
+      `data-dark-theme-${perfilColor.value}`
+    )
+    document.documentElement.removeAttribute(
+      `data-light-theme-${perfilColor.value}`
+    )
+    document.documentElement.setAttribute(
+      `data-light-theme-${perfilColor.value}`,
+      true
+    )
   }
 })
 
@@ -174,21 +190,16 @@ function setClaseA11yOscura(temaClaroUOscuro) {
     temaClaroUOscuro === 'oscura' &&
     !clasesSelecciondas.value.includes('a11y-oscura')
   ) {
-    // Esta línea es necesaria para tener un registro de las clases
-    // seleccionadas y para checkear la opción en el menú
-    clasesSelecciondas.value.push('a11y-oscura')
-    // Esta línea es necesaria para poner la clase a la altura del app
-    ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
+    clasesSelecciondas.value = [...clasesSelecciondas.value, ...['a11y-oscura']]
   }
-  // if (
-  //   temaClaroUOscuro === 'clara' &&
-  //   clasesSelecciondas.value.includes('a11y-oscura')
-  // ) {
-  //   ejecutarEnStore(
-  //     'modificarClasesAccesibles',
-  //     clasesSelecciondas.value.filter(clases => !clases.includes('a11y-oscura'))
-  //   )
-  // }
+  if (
+    temaClaroUOscuro === 'clara' &&
+    clasesSelecciondas.value.includes('a11y-oscura')
+  ) {
+    clasesSelecciondas.value = clasesSelecciondas.value.filter(
+      clases => !clases.includes('a11y-oscura')
+    )
+  }
 }
 
 /**
@@ -255,7 +266,7 @@ onMounted(() => {
 })
 
 watch([perfilColor, tema], () => {
-  setTemaEnDocumentoYLocalStorage(tema.value)
+  setTemaEnDocumentoYLocalStorage()
 })
 
 /**
