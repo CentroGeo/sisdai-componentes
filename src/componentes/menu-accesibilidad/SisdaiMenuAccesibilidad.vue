@@ -180,6 +180,15 @@ function setClaseA11yOscura(temaClaroUOscuro) {
     // Esta línea es necesaria para poner la clase a la altura del app
     ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
   }
+  // if (
+  //   temaClaroUOscuro === 'clara' &&
+  //   clasesSelecciondas.value.includes('a11y-oscura')
+  // ) {
+  //   ejecutarEnStore(
+  //     'modificarClasesAccesibles',
+  //     clasesSelecciondas.value.filter(clases => !clases.includes('a11y-oscura'))
+  //   )
+  // }
 }
 
 /**
@@ -187,13 +196,10 @@ function setClaseA11yOscura(temaClaroUOscuro) {
  * y la key local `theme` del navegador.
  * @param {String} tema o modo de la vista: clara | oscura | auto
  */
-function setTemaEnDocumentoYLocalStorage(tema) {
-  localStorage.setItem('theme', tema)
-  let temaClaroUOscuro = tema
-  if (tema === 'auto') {
-    temaClaroUOscuro = getTemaDispositivo()
-  }
-
+function setTemaEnDocumentoYLocalStorage() {
+  localStorage.setItem('theme', tema.value)
+  let temaClaroUOscuro = getTemaDispositivo()
+  console.log(temaClaroUOscuro)
   // Agrega claseSeleccionada `.a11y-oscura`
   setClaseA11yOscura(temaClaroUOscuro)
 
@@ -242,13 +248,13 @@ onBeforeMount(() => {
 onMounted(() => {
   // const tema = getTemaDesdeLocalStorage()
   // tema.value = getTemaDesdeLocalStorage()
-  setTemaEnDocumentoYLocalStorage(tema.value)
+  setTemaEnDocumentoYLocalStorage()
   window
     .matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', setTemaEnDocumentoYLocalStorage)
 })
 
-watch(tema, () => {
+watch([perfilColor, tema], () => {
   setTemaEnDocumentoYLocalStorage(tema.value)
 })
 
