@@ -54,12 +54,10 @@ const menuAccesibilidad = ref(null)
     class="theme-container"
     :class="menuAccesibilidad?.clasesSelecciondas"
   >
-    <!-- :class="store.state.accesibilidad.clasesAccesibles" -->
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
     <SisdaiMenuAccesibilidad ref="menuAccesibilidad" />
-    <!-- <SisdaiMenuAccesibilidad :objetoStore="store" /> -->
 
     <div
       class="flex"
