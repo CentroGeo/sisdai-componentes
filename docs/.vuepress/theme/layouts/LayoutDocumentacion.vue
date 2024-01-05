@@ -45,17 +45,21 @@ if (typeof window !== 'undefined') {
 function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
+
+const menuAccesibilidad = ref(null)
 </script>
 
 <template>
   <div
     class="theme-container"
-    :class="store.state.accesibilidad.clasesAccesibles"
+    :class="menuAccesibilidad?.clasesSelecciondas"
   >
+    <!-- :class="store.state.accesibilidad.clasesAccesibles" -->
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
-    <SisdaiMenuAccesibilidad :objetoStore="store" />
+    <SisdaiMenuAccesibilidad ref="menuAccesibilidad" />
+    <!-- <SisdaiMenuAccesibilidad :objetoStore="store" /> -->
 
     <div
       class="flex"

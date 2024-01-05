@@ -1,6 +1,7 @@
 export default {
   namespaced: true,
   state: {
+    clasesAccesibles: [],
     // menu_accesibilidad_abierto: false,
     // tipografia_accesible: false,
     // vista_simplificada: false,
@@ -8,8 +9,6 @@ export default {
     // vista_oscura: false,
     // tema: 'claro', // 'claro' | 'auto' | 'oscuro'
     // perfil: 'eni', // 'eni' | 'sisdai' | 'gema'
-
-    clasesAccesibles: [],
   },
   getters: {
     // clasesAccesibles: state => ({
@@ -22,6 +21,14 @@ export default {
   mutations: {
     modificarClasesAccesibles(state, valor) {
       state.clasesAccesibles = valor
+    },
+    restablecer(state) {
+      state.clasesAccesibles = []
+      // state.tipografia_accesible = false
+      // state.vista_simplificada = false
+      // state.enlaces_subrayados = false
+      // state.vista_oscura = false
+      // state.tema = 'claro'
     },
     // alternarVistaOscura(state) {
     //   //rotar entre estos 3 valores
@@ -41,13 +48,5 @@ export default {
     // alternarEnlacesSubrayados(state) {
     //   state.enlaces_subrayados = !state.enlaces_subrayados
     // },
-    restablecer(state) {
-      // state.tipografia_accesible = false
-      // state.vista_simplificada = false
-      // state.enlaces_subrayados = false
-      // state.vista_oscura = false
-      // state.tema = 'claro'
-      state.clasesAccesibles = []
-    },
   },
 }

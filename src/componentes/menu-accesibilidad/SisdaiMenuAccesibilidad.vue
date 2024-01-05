@@ -30,17 +30,14 @@ const propiedades = {
     default: 'accesibilidad',
   },
 
-  /**
-   * id Aleatorio.
-   */
   id: {
     type: String,
     default: 'menu_accesibilidad',
   },
 
   /**
-   * Si el perfil o paleta de color seleccionada para el proyecto es diferente de `eni`,
-   * se debe introducir el nombre del selector. Este debe existir en la biblio de estilos.
+   * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
+   * Los perfiles disponibles son: `'eni'`, `'gema'`, `'sisdai'`.
    */
   perfilColor: {
     type: String,
@@ -157,7 +154,7 @@ watch(clasesSelecciondas, (nv, ov) => {
 /**
  * Módulo de vista oscura.
  */
-// Tema o modo con el que inicializa la app
+// Tema o modo de color con el que inicializa la aplicación.
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
 
 // function getTemaDesdeLocalStorage() {
