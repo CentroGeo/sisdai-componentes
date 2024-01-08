@@ -19,26 +19,14 @@ Uso:
 <SisdaiMenuAccesibilidad />
 ```
 
-La función de Vista oscura cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca sisdai-css.
+La función de Vista oscura transita entre el tema claro y el oscuro. Por defecto al entrar a la aplicación la vista está en automática, esto es, dependiendo de los ajustes de tu navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú puedes cambiar entre clara u oscura.
+
+También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca sisdai-css.
 
 Al utilizar el Menú de accesibilidad, el perfil de color por defecto es el de la paleta de `eni`. Esta se puede modificar mediante la propiedad `perfilColor` del componente con los valores disponibles de `gema` o `sisdai`. Como se muestra a continuación:
 
 ```html
 <SisdaiMenuAccesibilidad perfilColor="sisdai" />
-```
-
-o pueden añadirle el atributo `ref` al componente para tener una referencia de éste y tener acceso a la variable perfil para asignarle la paleta para el proyecto:
-
-```html
-<script setup>
-  import { ref } from 'vue'
-  const menuAccesibilidad = ref(null)
-  menuAccesibilidad.perfilColor = 'sisdai'
-</script>
-
-<template>
-  <SisdaiMenuAccesibilidad ref="menuAccesibilidad" />
-</template>
 ```
 
 <section id="api">
