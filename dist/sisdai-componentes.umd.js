@@ -664,8 +664,8 @@ const menu_lateral_plugin = {
   }
 };
 /* harmony default export */ var menu_lateral = (menu_lateral_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1d06b5a0-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=template&id=1cbb9f81
-var SisdaiMenuAccesibilidadvue_type_template_id_1cbb9f81_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1d06b5a0-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=template&id=77f0fdbe
+var SisdaiMenuAccesibilidadvue_type_template_id_77f0fdbe_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -755,7 +755,7 @@ var SisdaiMenuAccesibilidadvue_type_template_id_1cbb9f81_render = function rende
     }
   }, [_c('b', [_vm._v("Restablecer")])])], 2)]);
 };
-var SisdaiMenuAccesibilidadvue_type_template_id_1cbb9f81_staticRenderFns = [];
+var SisdaiMenuAccesibilidadvue_type_template_id_77f0fdbe_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/opcionesDefault.js
 /**
@@ -855,7 +855,7 @@ const eventos = {
   }) {
     const props = __props;
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.useCssVars)((_vm, _setup) => ({
-      "1e2e10f0": _setup.alturaMenuAbierto
+      "a0b8c7d6": _setup.alturaMenuAbierto
     }));
     const {
       agregarOpciones,
@@ -907,20 +907,7 @@ const eventos = {
     }
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_.watch)(clasesSelecciondas, (nv, ov) => {
       ejecutarEnStore('modificarClasesAccesibles', nv);
-
-      // TODO: hacer función. Solo para vista oscura
-      if (nv.find(clase => clase === 'a11y-oscura') && !ov.find(clase => clase === 'a11y-oscura')) {
-        // cuando pone la clase a11y-oscura
-        document.documentElement.removeAttribute(`data-light-theme-${perfilColor.value}`);
-        document.documentElement.removeAttribute(`data-dark-theme-${perfilColor.value}`);
-        document.documentElement.setAttribute(`data-dark-theme-${perfilColor.value}`, true);
-      }
-      if (!nv.find(clase => clase === 'a11y-oscura') && ov.find(clase => clase === 'a11y-oscura')) {
-        // cuando quita la clase a11y-oscura
-        document.documentElement.removeAttribute(`data-dark-theme-${perfilColor.value}`);
-        document.documentElement.removeAttribute(`data-light-theme-${perfilColor.value}`);
-        document.documentElement.setAttribute(`data-light-theme-${perfilColor.value}`, true);
-      }
+      asignarTemaClaroUOscuro(nv, ov);
     });
 
     /**
@@ -928,6 +915,43 @@ const eventos = {
      */
     // Tema o modo de color con el que inicializa la aplicación.
     const tema = (0,external_commonjs_vue_commonjs2_vue_root_Vue_.ref)('auto'); // 'oscura' | 'clara' | 'auto'
+
+    /**
+     * Agrega el atributo para asignar el tema claro con el perfil
+     * de color al nivel de la etiqueta html del documento.
+     */
+    function setTemaClaro() {
+      document.documentElement.removeAttribute(`data-dark-theme-${perfilColor.value}`);
+      document.documentElement.removeAttribute(`data-light-theme-${perfilColor.value}`);
+      document.documentElement.setAttribute(`data-light-theme-${perfilColor.value}`, true);
+    }
+
+    /**
+     * Agrega el atributo para asignar el tema oscuro con el perfil
+     * de color al nivel de la etiqueta html del documento.
+     */
+    function setTemaOscuro() {
+      document.documentElement.removeAttribute(`data-light-theme-${perfilColor.value}`);
+      document.documentElement.removeAttribute(`data-dark-theme-${perfilColor.value}`);
+      document.documentElement.setAttribute(`data-dark-theme-${perfilColor.value}`, true);
+    }
+
+    /**
+     * Asigna el tema claro u oscuro,
+     * si en las clasesSeleccionadas están el valor de a11y-oscura o no.
+     * @param {Array} nv nuevo valor con las clases seleccionadas
+     * @param {Array} ov viejo valor con las clases seleccionadas
+     */
+    function asignarTemaClaroUOscuro(nv, ov) {
+      if (nv.find(clase => clase === 'a11y-oscura') && !ov.find(clase => clase === 'a11y-oscura')) {
+        // cuando pone la clase a11y-oscura
+        setTemaOscuro();
+      }
+      if (!nv.find(clase => clase === 'a11y-oscura') && ov.find(clase => clase === 'a11y-oscura')) {
+        // cuando quita la clase a11y-oscura
+        setTemaClaro();
+      }
+    }
 
     // function getTemaDesdeLocalStorage() {
     //   const tema = localStorage.getItem('theme') || 'clara'
@@ -973,14 +997,10 @@ const eventos = {
       // Agrega y/o remueve el atributo selecctor para :root
       switch (temaClaroUOscuro) {
         case 'clara':
-          document.documentElement.removeAttribute(`data-dark-theme-${perfilColor.value}`);
-          document.documentElement.removeAttribute(`data-light-theme-${perfilColor.value}`);
-          document.documentElement.setAttribute(`data-light-theme-${perfilColor.value}`, true);
+          setTemaClaro();
           break;
         case 'oscura':
-          document.documentElement.removeAttribute(`data-light-theme-${perfilColor.value}`);
-          document.documentElement.removeAttribute(`data-dark-theme-${perfilColor.value}`);
-          document.documentElement.setAttribute(`data-dark-theme-${perfilColor.value}`, true);
+          setTemaOscuro();
           break;
       }
     }
@@ -1039,6 +1059,9 @@ const eventos = {
       ejecutarEnStore,
       restablecer,
       tema,
+      setTemaClaro,
+      setTemaOscuro,
+      asignarTemaClaroUOscuro,
       getTemaDispositivo,
       setClaseA11yOscura,
       setTemaEnDocumentoYLocalStorage,
@@ -1049,10 +1072,10 @@ const eventos = {
 });
 ;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=script&setup=true&lang=js
  /* harmony default export */ var menu_accesibilidad_SisdaiMenuAccesibilidadvue_type_script_setup_true_lang_js = (SisdaiMenuAccesibilidadvue_type_script_setup_true_lang_js); 
-;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=1cbb9f81&prod&lang=scss
+;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=77f0fdbe&prod&lang=scss
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=1cbb9f81&prod&lang=scss
+;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue?vue&type=style&index=0&id=77f0fdbe&prod&lang=scss
 
 ;// CONCATENATED MODULE: ./src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad.vue
 
@@ -1065,8 +1088,8 @@ const eventos = {
 
 var SisdaiMenuAccesibilidad_component = normalizeComponent(
   menu_accesibilidad_SisdaiMenuAccesibilidadvue_type_script_setup_true_lang_js,
-  SisdaiMenuAccesibilidadvue_type_template_id_1cbb9f81_render,
-  SisdaiMenuAccesibilidadvue_type_template_id_1cbb9f81_staticRenderFns,
+  SisdaiMenuAccesibilidadvue_type_template_id_77f0fdbe_render,
+  SisdaiMenuAccesibilidadvue_type_template_id_77f0fdbe_staticRenderFns,
   false,
   null,
   null,
