@@ -27,6 +27,20 @@ Al utilizar el Menú de accesibilidad, el perfil de color por defecto es el de l
 <SisdaiMenuAccesibilidad perfilColor="sisdai" />
 ```
 
+o pueden añadirle el atributo `ref` al componente para tener una referencia de éste y tener acceso a la variable perfil para asignarle la paleta para el proyecto:
+
+```html
+<script setup>
+  import { ref } from 'vue'
+  const menuAccesibilidad = ref(null)
+  menuAccesibilidad.perfilColor = 'sisdai'
+</script>
+
+<template>
+  <SisdaiMenuAccesibilidad ref="menuAccesibilidad" />
+</template>
+```
+
 <section id="api">
 
 ## API

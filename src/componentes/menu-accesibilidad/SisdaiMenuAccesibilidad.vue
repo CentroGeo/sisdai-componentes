@@ -116,39 +116,7 @@ function restablecer() {
 watch(clasesSelecciondas, (nv, ov) => {
   ejecutarEnStore('modificarClasesAccesibles', nv)
 
-  // TODO: hacer función. Solo para vista oscura
-  if (
-    nv.find(clase => clase === 'a11y-oscura') &&
-    !ov.find(clase => clase === 'a11y-oscura')
-  ) {
-    // cuando pone la clase a11y-oscura
-    document.documentElement.removeAttribute(
-      `data-light-theme-${perfilColor.value}`
-    )
-    document.documentElement.removeAttribute(
-      `data-dark-theme-${perfilColor.value}`
-    )
-    document.documentElement.setAttribute(
-      `data-dark-theme-${perfilColor.value}`,
-      true
-    )
-  }
-  if (
-    !nv.find(clase => clase === 'a11y-oscura') &&
-    ov.find(clase => clase === 'a11y-oscura')
-  ) {
-    // cuando quita la clase a11y-oscura
-    document.documentElement.removeAttribute(
-      `data-dark-theme-${perfilColor.value}`
-    )
-    document.documentElement.removeAttribute(
-      `data-light-theme-${perfilColor.value}`
-    )
-    document.documentElement.setAttribute(
-      `data-light-theme-${perfilColor.value}`,
-      true
-    )
-  }
+  asignarTemaClaroUOscuro(nv, ov)
 })
 
 /**
@@ -156,6 +124,63 @@ watch(clasesSelecciondas, (nv, ov) => {
  */
 // Tema o modo de color con el que inicializa la aplicación.
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+
+/**
+ * Agrega el atributo para asignar el tema claro con el perfil
+ * de color al nivel de la etiqueta html del documento.
+ */
+function setTemaClaro() {
+  document.documentElement.removeAttribute(
+    `data-dark-theme-${perfilColor.value}`
+  )
+  document.documentElement.removeAttribute(
+    `data-light-theme-${perfilColor.value}`
+  )
+  document.documentElement.setAttribute(
+    `data-light-theme-${perfilColor.value}`,
+    true
+  )
+}
+
+/**
+ * Agrega el atributo para asignar el tema oscuro con el perfil
+ * de color al nivel de la etiqueta html del documento.
+ */
+function setTemaOscuro() {
+  document.documentElement.removeAttribute(
+    `data-light-theme-${perfilColor.value}`
+  )
+  document.documentElement.removeAttribute(
+    `data-dark-theme-${perfilColor.value}`
+  )
+  document.documentElement.setAttribute(
+    `data-dark-theme-${perfilColor.value}`,
+    true
+  )
+}
+
+/**
+ * Asigna el tema claro u oscuro,
+ * si en las clasesSeleccionadas están el valor de a11y-oscura o no.
+ * @param {Array} nv nuevo valor con las clases seleccionadas
+ * @param {Array} ov viejo valor con las clases seleccionadas
+ */
+function asignarTemaClaroUOscuro(nv, ov) {
+  if (
+    nv.find(clase => clase === 'a11y-oscura') &&
+    !ov.find(clase => clase === 'a11y-oscura')
+  ) {
+    // cuando pone la clase a11y-oscura
+    setTemaOscuro()
+  }
+  if (
+    !nv.find(clase => clase === 'a11y-oscura') &&
+    ov.find(clase => clase === 'a11y-oscura')
+  ) {
+    // cuando quita la clase a11y-oscura
+    setTemaClaro()
+  }
+}
 
 // function getTemaDesdeLocalStorage() {
 //   const tema = localStorage.getItem('theme') || 'clara'
@@ -214,28 +239,10 @@ function setTemaEnDocumentoYLocalStorage() {
   // Agrega y/o remueve el atributo selecctor para :root
   switch (temaClaroUOscuro) {
     case 'clara':
-      document.documentElement.removeAttribute(
-        `data-dark-theme-${perfilColor.value}`
-      )
-      document.documentElement.removeAttribute(
-        `data-light-theme-${perfilColor.value}`
-      )
-      document.documentElement.setAttribute(
-        `data-light-theme-${perfilColor.value}`,
-        true
-      )
+      setTemaClaro()
       break
     case 'oscura':
-      document.documentElement.removeAttribute(
-        `data-light-theme-${perfilColor.value}`
-      )
-      document.documentElement.removeAttribute(
-        `data-dark-theme-${perfilColor.value}`
-      )
-      document.documentElement.setAttribute(
-        `data-dark-theme-${perfilColor.value}`,
-        true
-      )
+      setTemaOscuro()
       break
   }
 }
