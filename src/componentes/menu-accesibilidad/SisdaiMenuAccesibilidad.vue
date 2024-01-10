@@ -116,6 +116,19 @@ function restablecer() {
 watch(clasesSelecciondas, (nv, ov) => {
   ejecutarEnStore('modificarClasesAccesibles', nv)
 
+  clasesSelecciondas.value.includes('a11y-tipografia')
+    ? body.classList.add('a11y-tipografia')
+    : body.classList.remove('a11y-tipografia')
+  clasesSelecciondas.value.includes('a11y-simplificada')
+    ? body.classList.add('a11y-simplificada')
+    : body.classList.remove('a11y-simplificada')
+  clasesSelecciondas.value.includes('a11y-hipervinculos')
+    ? body.classList.add('a11y-hipervinculos')
+    : body.classList.remove('a11y-hipervinculos')
+  clasesSelecciondas.value.includes('a11y-oscura')
+    ? body.classList.add('a11y-oscura')
+    : body.classList.remove('a11y-oscura')
+
   asignarTemaClaroUOscuro(nv, ov)
 })
 
@@ -124,22 +137,16 @@ watch(clasesSelecciondas, (nv, ov) => {
  */
 // Tema o modo de color con el que inicializa la aplicación.
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+const body = document.querySelector('body')
 
 /**
  * Agrega el atributo para asignar el tema claro con el perfil
  * de color al nivel de la etiqueta html del documento.
  */
 function setTemaClaro() {
-  document.documentElement.removeAttribute(
-    `data-dark-theme-${perfilColor.value}`
-  )
-  document.documentElement.removeAttribute(
-    `data-light-theme-${perfilColor.value}`
-  )
-  document.documentElement.setAttribute(
-    `data-light-theme-${perfilColor.value}`,
-    true
-  )
+  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
+  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
+  body.setAttribute(`data-light-theme-${perfilColor.value}`, true)
 }
 
 /**
@@ -147,16 +154,9 @@ function setTemaClaro() {
  * de color al nivel de la etiqueta html del documento.
  */
 function setTemaOscuro() {
-  document.documentElement.removeAttribute(
-    `data-light-theme-${perfilColor.value}`
-  )
-  document.documentElement.removeAttribute(
-    `data-dark-theme-${perfilColor.value}`
-  )
-  document.documentElement.setAttribute(
-    `data-dark-theme-${perfilColor.value}`,
-    true
-  )
+  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
+  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
+  body.setAttribute(`data-dark-theme-${perfilColor.value}`, true)
 }
 
 /**

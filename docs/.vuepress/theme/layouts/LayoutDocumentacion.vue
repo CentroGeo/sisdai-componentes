@@ -50,10 +50,7 @@ const menuAccesibilidad = ref(null)
 </script>
 
 <template>
-  <div
-    class="theme-container"
-    :class="menuAccesibilidad?.clasesSelecciondas"
-  >
+  <div class="theme-container">
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
