@@ -116,6 +116,15 @@ function restablecer() {
 watch(clasesSelecciondas, (nv, ov) => {
   ejecutarEnStore('modificarClasesAccesibles', nv)
 
+  alternarClasesBody()
+
+  asignarTemaClaroUOscuro(nv, ov)
+})
+
+/**
+ * Alterna las clases accesibles seleccionadas en el body.
+ */
+function alternarClasesBody() {
   clasesSelecciondas.value.includes('a11y-tipografia')
     ? body.classList.add('a11y-tipografia')
     : body.classList.remove('a11y-tipografia')
@@ -128,9 +137,7 @@ watch(clasesSelecciondas, (nv, ov) => {
   clasesSelecciondas.value.includes('a11y-oscura')
     ? body.classList.add('a11y-oscura')
     : body.classList.remove('a11y-oscura')
-
-  asignarTemaClaroUOscuro(nv, ov)
-})
+}
 
 /**
  * Módulo de vista oscura.
