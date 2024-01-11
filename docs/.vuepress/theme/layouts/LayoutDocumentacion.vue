@@ -76,6 +76,15 @@ const menuAccesibilidad = ref(null)
               <li>
                 <router-link
                   class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/audio"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  Audio</router-link
+                >
+              </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/modal"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
