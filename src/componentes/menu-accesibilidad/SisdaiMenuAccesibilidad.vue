@@ -144,7 +144,7 @@ function alternarClasesBody() {
  */
 // Tema o modo de color con el que inicializa la aplicación.
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
-const body = document.querySelector('body')
+const body = document?.querySelector('body')
 
 /**
  * Agrega el atributo para asignar el tema claro con el perfil
