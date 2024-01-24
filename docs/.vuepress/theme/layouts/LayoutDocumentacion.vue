@@ -54,7 +54,8 @@ const menuAccesibilidad = ref(null)
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
-    <SisdaiMenuAccesibilidad ref="menuAccesibilidad" />
+    <!-- <SisdaiMenuAccesibilidad ref="menuAccesibilidad" /> -->
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
 
     <div
       class="flex"

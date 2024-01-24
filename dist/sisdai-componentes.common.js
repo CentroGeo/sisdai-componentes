@@ -338,8 +338,8 @@ const narrativa_scroll_plugin = {
   }
 };
 /* harmony default export */ var narrativa_scroll = (narrativa_scroll_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"222ec847-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=5a4414ba
-var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"222ec847-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=37ce73be
+var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -352,7 +352,8 @@ var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_render = function re
     staticClass: "colapsable-boton p-x-5-esc p-x-3-mov p-y-1",
     attrs: {
       "aria-expanded": _setup._colapsado,
-      "tabindex": _setup.avisarMenuLateral ? undefined : -1
+      "tabindex": _setup.avisarMenuLateral ? undefined : -1,
+      "disabled": _setup.clasesAccesibles.includes('a11y-simplificada')
     },
     on: {
       "click": function ($event) {
@@ -382,7 +383,7 @@ var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_render = function re
     }, [_vm._v(" Elemento desplegado")])])])];
   })], 2)]);
 };
-var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_staticRenderFns = [function () {
+var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -396,9 +397,63 @@ var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_staticRenderFns = [f
   })]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=5a4414ba
+;// CONCATENATED MODULE: ./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=37ce73be
 
+;// CONCATENATED MODULE: ./src/stores/accesibilidad.js
+/* harmony default export */ var accesibilidad = ({
+  namespaced: true,
+  state: {
+    clasesAccesibles: []
+    // menu_accesibilidad_abierto: false,
+    // tipografia_accesible: false,
+    // vista_simplificada: false,
+    // enlaces_subrayados: false,
+    // vista_oscura: false,
+    // tema: 'claro', // 'claro' | 'auto' | 'oscuro'
+    // perfil: 'eni', // 'eni' | 'sisdai' | 'gema'
+  },
+  getters: {
+    // clasesAccesibles: state => ({
+    //   'a11y-oscura': state.vista_oscura,
+    //   'a11y-tipografia': state.tipografia_accesible,
+    //   'a11y-simplificada': state.vista_simplificada,
+    //   'a11y-hipervinculos': state.enlaces_subrayados,
+    // }),
+  },
+  mutations: {
+    modificarClasesAccesibles(state, valor) {
+      state.clasesAccesibles = valor;
+    },
+    restablecer(state) {
+      state.clasesAccesibles = [];
+      // state.tipografia_accesible = false
+      // state.vista_simplificada = false
+      // state.enlaces_subrayados = false
+      // state.vista_oscura = false
+      // state.tema = 'claro'
+    }
+    // alternarVistaOscura(state) {
+    //   //rotar entre estos 3 valores
+    //   // const temas = ['claro', 'oscuro']
+    //   // state.tema = temas[(temas.indexOf(state.tema) + 1) % 2]
+    //   // //setear el tema del localStorage
+    //   // localStorage.setItem('tema', state.tema)
+    //   //prender y apagar la vista oscura
+    //   // state.vista_oscura = !state.vista_oscura
+    // },
+    // alternarTipografiaAccesible(state) {
+    //   state.tipografia_accesible = !state.tipografia_accesible
+    // },
+    // alternarVistaSimplificada(state) {
+    //   state.vista_simplificada = !state.vista_simplificada
+    // },
+    // alternarEnlacesSubrayados(state) {
+    //   state.enlaces_subrayados = !state.enlaces_subrayados
+    // },
+  }
+});
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=script&setup=true&lang=js
+
 
 /* harmony default export */ var SisdaiColapsableNavegacionvue_type_script_setup_true_lang_js = ({
   __name: 'SisdaiColapsableNavegacion',
@@ -437,6 +492,13 @@ var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_staticRenderFns = [f
       emits('alAlternarColapsable', esta_activo.value)
     })*/
 
+    const clasesAccesibles = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.computed)(() => {
+      return accesibilidad.state.clasesAccesibles;
+    });
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)(clasesAccesibles, () => {
+      // let contenedor_colapsable = document?.querySelector('.contenedor-colapsable')
+      clasesAccesibles.value.includes('a11y-simplificada') ? _colapsado.value = true : _colapsado.value = false;
+    });
     return {
       __sfc: true,
       props,
@@ -444,7 +506,8 @@ var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_staticRenderFns = [f
       avisarMenuLateral,
       _colapsado,
       idAleatorio,
-      id_aleatorio
+      id_aleatorio,
+      clasesAccesibles
     };
   }
 });
@@ -460,8 +523,8 @@ var SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_staticRenderFns = [f
 ;
 var SisdaiColapsableNavegacion_component = normalizeComponent(
   colapsable_navegacion_SisdaiColapsableNavegacionvue_type_script_setup_true_lang_js,
-  SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_render,
-  SisdaiColapsableNavegacionvue_type_template_id_5a4414ba_staticRenderFns,
+  SisdaiColapsableNavegacionvue_type_template_id_37ce73be_render,
+  SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns,
   false,
   null,
   null,
