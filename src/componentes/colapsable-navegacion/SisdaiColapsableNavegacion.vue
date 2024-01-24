@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, toRefs, watch } from 'vue'
+import store from '../../stores/accesibilidad'
 
 const props = defineProps({
   titulo: { type: String, default: 'Titulo de colapsable' },
@@ -23,12 +24,11 @@ const id_aleatorio = idAleatorio()
   emits('alAlternarColapsable', esta_activo.value)
 })*/
 
-import store from '../../stores/accesibilidad'
 const clasesAccesibles = computed(() => {
   return store.state.clasesAccesibles
 })
+
 watch(clasesAccesibles, () => {
-  // let contenedor_colapsable = document?.querySelector('.contenedor-colapsable')
   clasesAccesibles.value.includes('a11y-simplificada')
     ? (_colapsado.value = true)
     : (_colapsado.value = false)

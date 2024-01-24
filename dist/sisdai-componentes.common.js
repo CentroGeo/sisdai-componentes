@@ -338,8 +338,8 @@ const narrativa_scroll_plugin = {
   }
 };
 /* harmony default export */ var narrativa_scroll = (narrativa_scroll_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"222ec847-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=37ce73be
-var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"222ec847-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=dac12b06
+var SisdaiColapsableNavegacionvue_type_template_id_dac12b06_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -383,7 +383,7 @@ var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_render = function re
     }, [_vm._v(" Elemento desplegado")])])])];
   })], 2)]);
 };
-var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns = [function () {
+var SisdaiColapsableNavegacionvue_type_template_id_dac12b06_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -397,7 +397,7 @@ var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns = [f
   })]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=37ce73be
+;// CONCATENATED MODULE: ./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=dac12b06
 
 ;// CONCATENATED MODULE: ./src/stores/accesibilidad.js
 /* harmony default export */ var accesibilidad = ({
@@ -496,7 +496,6 @@ var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns = [f
       return accesibilidad.state.clasesAccesibles;
     });
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)(clasesAccesibles, () => {
-      // let contenedor_colapsable = document?.querySelector('.contenedor-colapsable')
       clasesAccesibles.value.includes('a11y-simplificada') ? _colapsado.value = true : _colapsado.value = false;
     });
     return {
@@ -523,8 +522,8 @@ var SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns = [f
 ;
 var SisdaiColapsableNavegacion_component = normalizeComponent(
   colapsable_navegacion_SisdaiColapsableNavegacionvue_type_script_setup_true_lang_js,
-  SisdaiColapsableNavegacionvue_type_template_id_37ce73be_render,
-  SisdaiColapsableNavegacionvue_type_template_id_37ce73be_staticRenderFns,
+  SisdaiColapsableNavegacionvue_type_template_id_dac12b06_render,
+  SisdaiColapsableNavegacionvue_type_template_id_dac12b06_staticRenderFns,
   false,
   null,
   null,
