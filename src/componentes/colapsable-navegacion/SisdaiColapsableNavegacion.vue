@@ -28,10 +28,15 @@ const clasesAccesibles = computed(() => {
   return store.state.clasesAccesibles
 })
 
-watch(clasesAccesibles, () => {
-  clasesAccesibles.value.includes('a11y-simplificada')
-    ? (_colapsado.value = true)
-    : (_colapsado.value = false)
+watch(clasesAccesibles, (nv, ov) => {
+  // Descolapsa la navegación si la vista simplificada está activada
+  if (clasesAccesibles.value.includes('a11y-simplificada')) {
+    _colapsado.value = true
+  } else {
+    if (ov.includes('a11y-simplificada')) {
+      _colapsado.value = false
+    }
+  }
 })
 </script>
 
