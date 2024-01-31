@@ -359,11 +359,5 @@ const alturaMenuAbierto = computed(
 <style lang="scss">
 .contenedor-menu-accesibilidad.abierto .menu-accesibilidad {
   max-height: v-bind('alturaMenuAbierto') !important;
-
-  // width: 262px !important;
-  width: 283px !important;
-  .titulo {
-    width: 170px;
-  }
 }
 </style>
