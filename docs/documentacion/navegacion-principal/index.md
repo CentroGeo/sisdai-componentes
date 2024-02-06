@@ -77,7 +77,7 @@ Se debe agregar el atributo `exact` al primer elemento de la lista de navegació
 
 Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.
 
-Se recomienda usar las clases css de Sisdaicss. Por ejemplo, la clase invertir ayuda a que en la función vista oscura del menú accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
+Se recomienda usar las clases css de Sisdaicss. Por ejemplo, la clase **invertir** ayuda a que en la función vista oscura del menú accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
 
 ```html
 <SisdaiNavegacionPrincipal>
