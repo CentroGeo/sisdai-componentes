@@ -7,6 +7,70 @@ Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
 Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla
 en su equipo a través del **protocolo HTTPS**.
 
+## Utilidades
+
+- lista de cosas
+- que se hacen mas facil
+- utilizando esta biblioteca
+
+.
+
+.
+
+## Instalación y uso
+
+Si tu proyecto esta creado con [sisdai-proyecto-base](https://codigo.conahcyt.mx/sisdai/sisdai-proyecto-base) tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
+
+### Instala la biblioteca
+
+En la carpeta principal de tu proyecto Vue, instala la biblioteca a las dependencias de tu proyecto con:
+
+```bash
+npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
+```
+
+Dependiendo de la versión de la biblioteca a instalar, la instrucción anterior puede cambiar a:
+
+```bash
+npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
+```
+
+donde N.N.N indica el número de versión, por ejemplo v1.0.0
+
+### Importa la biblioteca
+
+En el archivo `main.js` de tu proyecto Vue, importa todos los componentes de la biblioteca con:
+
+```js
+// src/main.js
+
+import SisdaiComponentes from 'sisdai-componentes/src/index'
+
+Vue.use(SisdaiComponentes)
+```
+
+### Uso
+
+En cualquier vista en la sección `<template>` de tu proyecto puedes utilizar cualquier componente de la biblioteca, sin necesidad de importarlo en el script.
+
+Por ejemplo:
+
+```js
+<template>
+  <SisdaiBotonFlotante :enlaces="[...]" />
+</template>
+```
+
+#### Listado completo de los componentes
+
+| Componente          | Descripcion                                                                       | Propiedades                                                                       |
+| ------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| SisdaiBotonFlotante | Boton circular fijo en la pantalla que se expande para mostrar multiples opciones | :enlaces="`[{ clasesCss: '', contenido: '', enlace: '', icono: '',}, { . . . }]`" |
+
+.
+
+.
+
 ## Requerimientos
 
 ### Pasos previos recomendados
@@ -46,19 +110,20 @@ npm install
 
 En cambio si se quiere instalar esta biblioteca para su uso en otro proyecto se puede hacer:
 
-``` bash
+```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
 ```
 
 Dependiendo de la versión de la biblioteca a instalar, la instrucción anterior puede cambiar a:
-``` bash
+
+```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
 ```
+
 donde N.N.N indica el número de versión, por ejemplo v1.0.0
 
-Así mismo también se puede agregar la biblioteca en el archio `package.json` de otro 
+Así mismo también se puede agregar la biblioteca en el archio `package.json` de otro
 proyecto.
-
 
 ## Documentación
 
