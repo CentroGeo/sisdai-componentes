@@ -84,7 +84,7 @@ donde N.N.N indica el número de versión, por ejemplo v1.0.0
 | SisdaiPiePaginaConahcyt    | El pie de página del Conahcyt es un componente compartido en todos los Ecosistemas Nacionales de Información                                                                            | NA                                                                                                                                             | NA                                                |
 | SisdaiPiePaginaGobMx       | El pie de página del Gobierno de México es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal                         | NA                                                                                                                                             | NA                                                |
 
-## Requerimientos
+## Uso local del proyecto
 
 ### Pasos previos recomendados
 
@@ -138,7 +138,7 @@ donde N.N.N indica el número de versión, por ejemplo v1.0.0
 Así mismo también se puede agregar la biblioteca en el archio `package.json` de otro
 proyecto.
 
-## Documentación
+### Documentación
 
 Este proyecto cuenta con una documentación más extensa que aún está
 en proceso de desarrollo. Es posible levantarla en un ambiente local con la
@@ -146,19 +146,6 @@ instrucción:
 
 ```bash
 npm run docs
-```
-
-Para las personas colaboradoras de este proyecto, la documentación se puede
-compilar para su despliegue en desarrollo usando:
-
-```bash
-npm run docs:build
-```
-
-Y para su despliegue en producción:
-
-```bash
-npm run build
 ```
 
 ## Licencia
@@ -388,3 +375,18 @@ carpeta `docs`.
 
   <utils-ejemplo-doc ruta="nombre-nuevo-componente/nombre-ejemplo.vue"/>
   ```
+
+#### Compilación y actualización
+
+Para las personas colaboradoras de este proyecto, la documentación se puede
+compilar para su despliegue en desarrollo usando:
+
+```bash
+npm run docs:build
+```
+
+Y para su despliegue en producción:
+
+```bash
+npm run build
+```
