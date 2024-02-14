@@ -121,23 +121,6 @@ Instala las dependencias de la biblioteca.
 npm install
 ```
 
-En cambio si se quiere instalar esta biblioteca para su uso en otro proyecto se puede hacer:
-
-```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
-```
-
-Dependiendo de la versión de la biblioteca a instalar, la instrucción anterior puede cambiar a:
-
-```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
-```
-
-donde N.N.N indica el número de versión, por ejemplo v1.0.0
-
-Así mismo también se puede agregar la biblioteca en el archio `package.json` de otro
-proyecto.
-
 ### Documentación
 
 Este proyecto cuenta con una documentación más extensa que aún está
