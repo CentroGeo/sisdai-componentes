@@ -58,6 +58,8 @@ En cualquier vista en la sección `<template>` de tu proyecto puedes utilizar cu
 </template>
 ```
 
+_Para un uso avanzado revisa la documentación._
+
 ## Actualizarion de la biblioteca
 
 Si actualmente utilizas la biblioteca y necesitas utilizar otra version de los componentes, en la carpeta del proyecto en donde necesitas la actualización instala la version que requieres nuevamente
