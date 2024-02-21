@@ -60,9 +60,9 @@ En cualquier vista en la sección `<template>` de tu proyecto puedes utilizar cu
 
 _Para un uso avanzado revisa la documentación._
 
-## Actualizarion de la biblioteca
+## Actualización de la biblioteca
 
-Si actualmente utilizas la biblioteca y necesitas utilizar otra version de los componentes, en la carpeta del proyecto en donde necesitas la actualización instala la version que requieres nuevamente
+Si actualmente utilizas la biblioteca y necesitas utilizar otra versión de los componentes, en la carpeta del proyecto en donde necesitas la actualización instala la versión que requieres nuevamente
 
 ```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
@@ -73,16 +73,16 @@ donde N.N.N indica el número de versión, por ejemplo v1.0.0
 ## Listado de componentes
 
 | Componente                 | Descripcion                                                                                                                                                                             | Propiedades                                                                                                                                    | Secciones (v-slot)                                |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
-| SisdaiBotonFlotante        | Botón circular fijo en la pantalla que se expande para mostrar multiples enlaces                                                                                                        | :enlaces="`[{arreglo de objetos}]`"                                                                                                            | NA                                                |
-| SisdaiColapsableNavegacion | Botón para mostrar/ocultar secciones de la navegacion en el menú lateral                                                                                                                | titulo="`texto`" :activo="`boleano`"                                                                                                           | `<template v-slot:listado-contenido>`             |
+| -------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| SisdaiBotonFlotante        | Botón circular fijo en la pantalla que se expande para mostrar múltiples enlaces                                                                                                        | :enlaces="`[{arreglo de objetos}]`"                                                                                                            | NA                                                |
+| SisdaiColapsableNavegacion | Botón para mostrar/ocultar secciones de la navegación en el menú lateral                                                                                                                | titulo="`texto`" :activo="`boleano`"                                                                                                           | `<template v-slot:listado-contenido>`             |
 | SisdaiIndiceDeContenido    | Menú de navegación para el contenido de una vista                                                                                                                                       | titulo="`texo`" :altura="`número entero`" id_indice="`texto`"                                                                                  | `<template slot="contenido-indice-de-contenido">` |
 | SisdaiInfoDeDespliegue     | Información acerca del versionamiento, el ambiente y la fecha de despliegue                                                                                                             | versionProyecto="`texto`" entornoProyecto="`text`" actualizacionProyecto="`texto`"                                                             | NA                                                |
 | SisdaiMenuAccesibilidad    | El Menú de accesibilidad para activar/desactivar funciones de accesibilidad en el sitio web. Este componente requiere de las variables globales del store `src/stores/accesibilidad.js` | :agregarOpciones="`[arreglo]`" nombreModuloStore="`texto`" :objetoStore="`{objeto}`"                                                           | NA                                                |
 | SisdaiMenuLateral          | Menú fijo lateralmente que se colapsa en dispositivos pequeños                                                                                                                          | NA                                                                                                                                             | `<template slot="contenido-menu-lateral">`        |
 | SisdaiNarrativaScroll      | Sección que muestra contenido y cambia la imagen de fondo, dependiendo de la posición del scroll                                                                                        | id_scroll="`texto`" bullets="`[{arreglo de objetos}]`" :depurador="`boleano`" :altura_sensor="`número decimal`" :degradado_inicial="`boleano`" | NA                                                |
 | SisdaiNavegacionGobMx      | Barra de navegación del Gobierno de México                                                                                                                                              | NA                                                                                                                                             | NA                                                |
-| SisdaiNavegacionPrincipal  | Barra de navegacion principal del sitio. Dentro de sus etiquetas se agrega el menú principal del sitio.                                                                                 | navInformacion="`html`" :fija="`boleano`"                                                                                                      | `<template v-slot:identidad>`                     |
+| SisdaiNavegacionPrincipal  | Barra de navegación principal del sitio. Dentro de sus etiquetas se agrega el menú principal del sitio.                                                                                 | navInformacion="`html`" :fija="`boleano`"                                                                                                      | `<template v-slot:identidad>`                     |
 | SisdaiPiePaginaConahcyt    | El pie de página del Conahcyt es un componente compartido en todos los Ecosistemas Nacionales de Información                                                                            | NA                                                                                                                                             | NA                                                |
 | SisdaiPiePaginaGobMx       | El pie de página del Gobierno de México es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal                         | NA                                                                                                                                             | NA                                                |
 
@@ -105,7 +105,7 @@ y dependencias del proyecto se muestran aquí usando tanto npm, como nvm.
 ### Instalación
 
 Se puede clonar e instalar este proyecto en tu equipo
-utilizando **solo el protocolo HTTPS**, es decir:
+utilizando **sólo el protocolo HTTPS**, es decir:
 
 ```bash
 git clone https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git
