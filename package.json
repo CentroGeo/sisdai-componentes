@@ -3,6 +3,7 @@
   "version": "2.9.0",
   "private": true,
   "description": "Biblioteca de componentes de Vue reutilizables",
+  "license": "LGPL-3.0-only",
   "main": "./src/index.js",
   "files": [
     "src",
@@ -53,8 +54,6 @@
     "type": "git",
     "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
   },
-  "author": "",
-  "license": "",
   "bugs": {
     "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes/issues"
   },
