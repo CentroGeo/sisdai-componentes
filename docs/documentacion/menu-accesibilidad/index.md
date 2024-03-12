@@ -19,9 +19,9 @@ Uso:
 <SisdaiMenuAccesibilidad />
 ```
 
-La función de Vista oscura transita entre el tema claro y el oscuro. Por defecto al entrar a la aplicación la vista está en automática, esto es, dependiendo de los ajustes de tu navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú puedes cambiar entre clara u oscura.
+La función de Vista oscura transita entre el tema claro y el oscuro. Por defecto al entrar a la aplicación la vista muestra la función automática, esto es, dependiendo de los ajustes de tu navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú puedes cambiar entre clara u oscura.
 
-También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca sisdai-css.
+También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css).
 
 Al utilizar el Menú de accesibilidad, el perfil de color por defecto es el de la paleta de `eni`. Esta se puede modificar mediante la propiedad `perfilColor` del componente con los valores disponibles de `gema` o `sisdai`. Como se muestra a continuación:
 
@@ -131,21 +131,6 @@ Junto con el uso de la propiedad `agregarOpciones` para añadir reglas de accesi
 ## Store
 
 Este componente puede o no contar con un módulo de store en estructura de [Vuex](https://vuex.vuejs.org/) con variables y mutaciones para cada una de las opciones predeterminadas:
-
-<s>
-- Tipografía accesible
-  - Variable: `tipografia_accesible` (de tipo boleano en `false` por defecto).
-  - Mutación: `alternarTipografiaAccesible` (sin parámetros).
-- Vista simplificada
-  - Variable: `vista_simplificada` (de tipo boleano en `false` por defecto).
-  - Mutación: `alternarVistaSimplificada` (sin parámetros).
-- Enlaces subrayados
-  - Variable: `enlaces_subrayados` (de tipo boleano en `false` por defecto).
-  - Mutación: `alternarEnlacesSubrayados` (sin parámetros).
-- Vista Oscura
-  - Variable: `vista_oscura` (de tipo boleano en `false` por defecto).
-  - Mutación: `alternarVistaOscura` (sin parámetros).
-</s>
 
 - Clases accesibles
   - Variable: `clasesAccesibles` (de tipo Array en `[]` por defecto).
