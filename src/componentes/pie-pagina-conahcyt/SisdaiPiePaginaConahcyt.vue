@@ -1,3 +1,8 @@
+<script>
+var anioActual = new Date().getFullYear()
+document.getElementById('anioActual').innerHTML = anioActual
+</script>
+
 <template>
   <footer
     class="contenedor conahcyt-fondo-degradado conahcyt-texto-claro-1 conahcyt-piepagina p-y-4"
@@ -17,7 +22,11 @@
           Demarcación Territorial Benito Juárez, C.P. 03940,<br />
           Ciudad de México Tel: (55) 5322-7700
         </p>
-        <p>©2023 Conahcyt Derechos Reservados en trámite</p>
+        <p>
+          ©<span id="anioActual">x</span>
+          <!--current year-->
+          Conahcyt Derechos Reservados en trámite
+        </p>
       </div>
       <div class="columna-8 columna-4-esc">
         <p class="titulo-lista">Enlaces</p>
