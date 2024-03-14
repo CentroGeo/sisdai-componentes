@@ -129,9 +129,9 @@
       </div>
     </div>
     <script type="module">
-      let anioActual
-      anioActual = new Date().getFullYear()
-      document.getElementById('anioActual').innerHTML = anioActual
+      let anioActual;
+      anioActual = new Date().getFullYear();
+      document.getElementById('anioActual').innerHTML = anioActual;
     </script>
   </footer>
 </template>
