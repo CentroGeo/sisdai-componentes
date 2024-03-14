@@ -1,8 +1,3 @@
-<script>
-var anioActual = new Date().getFullYear()
-document.getElementById('anioActual').innerHTML = anioActual
-</script>
-
 <template>
   <footer
     class="contenedor conahcyt-fondo-degradado conahcyt-texto-claro-1 conahcyt-piepagina p-y-4"
@@ -24,7 +19,6 @@ document.getElementById('anioActual').innerHTML = anioActual
         </p>
         <p>
           ©<span id="anioActual">x</span>
-          <!--current year-->
           Conahcyt Derechos Reservados en trámite
         </p>
       </div>
@@ -134,6 +128,10 @@ document.getElementById('anioActual').innerHTML = anioActual
         </ul>
       </div>
     </div>
+    <script>
+      const anioActual = new Date().getFullYear()
+      document.getElementById('anioActual').innerHTML = anioActual
+    </script>
   </footer>
 </template>
 
