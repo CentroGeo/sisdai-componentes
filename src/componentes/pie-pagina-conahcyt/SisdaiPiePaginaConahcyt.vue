@@ -128,7 +128,7 @@
         </ul>
       </div>
     </div>
-    <script>
+    <script type="application/javascript">
       const anioActual = new Date().getFullYear()
       document.getElementById('anioActual').innerHTML = anioActual
     </script>
