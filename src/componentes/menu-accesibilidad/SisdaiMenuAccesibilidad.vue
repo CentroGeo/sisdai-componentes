@@ -44,6 +44,20 @@ const propiedades = {
     type: String,
     default: 'accesibilidad',
   },
+
+  id: {
+    type: String,
+    default: 'menu_accesibilidad',
+  },
+
+  /**
+   * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
+   * Los perfiles disponibles son: `'eni'`, `'gema'`, `'sisdai'`.
+   */
+  perfilColor: {
+    type: String,
+    default: 'eni', // 'eni' | 'sisdai' | 'gema'
+  },
 }
 
 const eventos = {
@@ -64,11 +78,11 @@ const eventos = {
 <script setup>
 import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
-import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, nombreModuloStore, objetoStore } = toRefs(props)
+const { agregarOpciones, id, objetoStore, perfilColor, nombreModuloStore } =
+  toRefs(props)
 
 /**
  * Opciones que se mostrarán en el menú de accesibilidad.
@@ -91,53 +105,195 @@ const menuAccesibilidadEstaAbierto = ref(false)
 const clasesSelecciondas = ref([])
 
 /**
- * Agrega y quita clases del arrelo `clasesSelecciondas`.
- * @param {String} claseCss
- */
-function agregarQuitarClaseSeleccionda(claseCss) {
-  if (!clasesSelecciondas.value.includes(claseCss)) {
-    clasesSelecciondas.value.push(claseCss)
-  } else {
-    clasesSelecciondas.value = clasesSelecciondas.value.filter(
-      clase => clase !== claseCss
-    )
-  }
-}
-
-/**
  * Ejecuta un cambio en el store si dicho objeto permite hacer commits (si se esta usando la
  * pripiedad `objetoStore`).
  * @param {String} accion nombre del mutation en el modulo del store.
+ * @param {Array<String>} valor es decir las clases que siendo seleccionadas.
  */
-function ejecutarEnStore(accion) {
+function ejecutarEnStore(accion, valor) {
   if (
     objetoStore.value !== undefined &&
     Object.prototype.hasOwnProperty.call(objetoStore.value, 'commit')
   ) {
-    objetoStore.value.commit(`${nombreModuloStore.value}/${accion}`)
+    objetoStore.value.commit(`${nombreModuloStore.value}/${accion}`, valor)
   }
-}
-
-/**
- * Desencadena el emit 'alSeleccionarOpcion' al mismo tiempo que cierra el menú.
- * @param {Object} Opcion seleccionada.
- */
-function seleccionarOpcion(opcion) {
-  // alternarAbiertoCerrado()
-  agregarQuitarClaseSeleccionda(opcion.claseCss)
-  emits(eventos.alSeleccionarOpcion, opcion)
-  ejecutarEnStore(opcion.accion)
 }
 
 /**
  * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
  */
 function restablecer() {
-  // alternarAbiertoCerrado()
   clasesSelecciondas.value = []
   emits(eventos.alRestablecer)
   ejecutarEnStore('restablecer')
 }
+
+watch(clasesSelecciondas, (nv, ov) => {
+  ejecutarEnStore('modificarClasesAccesibles', nv)
+
+  alternarClasesBody()
+
+  asignarTemaClaroUOscuro(nv, ov)
+})
+
+/**
+ * Alterna las clases accesibles seleccionadas en el body.
+ */
+function alternarClasesBody() {
+  clasesSelecciondas.value.includes('a11y-tipografia')
+    ? body.classList.add('a11y-tipografia')
+    : body.classList.remove('a11y-tipografia')
+  clasesSelecciondas.value.includes('a11y-simplificada')
+    ? body.classList.add('a11y-simplificada')
+    : body.classList.remove('a11y-simplificada')
+  clasesSelecciondas.value.includes('a11y-hipervinculos')
+    ? body.classList.add('a11y-hipervinculos')
+    : body.classList.remove('a11y-hipervinculos')
+  clasesSelecciondas.value.includes('a11y-oscura')
+    ? body.classList.add('a11y-oscura')
+    : body.classList.remove('a11y-oscura')
+}
+
+/**
+ * Módulo de vista oscura.
+ */
+// Tema o modo de color con el que inicializa la aplicación.
+const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+const body = document?.querySelector('body')
+
+/**
+ * Agrega el atributo para asignar el tema claro con el perfil
+ * de color al nivel de la etiqueta html del documento.
+ */
+function setTemaClaro() {
+  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
+  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
+  body.setAttribute(`data-light-theme-${perfilColor.value}`, true)
+}
+
+/**
+ * Agrega el atributo para asignar el tema oscuro con el perfil
+ * de color al nivel de la etiqueta html del documento.
+ */
+function setTemaOscuro() {
+  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
+  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
+  body.setAttribute(`data-dark-theme-${perfilColor.value}`, true)
+}
+
+/**
+ * Asigna el tema claro u oscuro,
+ * si en las clasesSeleccionadas están el valor de a11y-oscura o no.
+ * @param {Array} nv nuevo valor con las clases seleccionadas
+ * @param {Array} ov viejo valor con las clases seleccionadas
+ */
+function asignarTemaClaroUOscuro(nv, ov) {
+  if (
+    nv.find(clase => clase === 'a11y-oscura') &&
+    !ov.find(clase => clase === 'a11y-oscura')
+  ) {
+    // cuando pone la clase a11y-oscura
+    setTemaOscuro()
+  }
+  if (
+    !nv.find(clase => clase === 'a11y-oscura') &&
+    ov.find(clase => clase === 'a11y-oscura')
+  ) {
+    // cuando quita la clase a11y-oscura
+    setTemaClaro()
+  }
+}
+
+// function getTemaDesdeLocalStorage() {
+//   const tema = localStorage.getItem('theme') || 'clara'
+//   return tema
+// }
+
+/**
+ * Devuelve el tema del documento según la configuración del dispositivo.
+ */
+function getTemaDispositivo() {
+  if (
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+    tema.value === 'oscura'
+  ) {
+    return 'oscura'
+  }
+  return 'clara'
+}
+
+/**
+ * Agrega la clase `.a11y-oscura` para la selección
+ * de la vistas oscura.
+ * @param {String} temaClaroUOscuro
+ */
+function setClaseA11yOscura(temaClaroUOscuro) {
+  if (
+    temaClaroUOscuro === 'oscura' &&
+    !clasesSelecciondas.value.includes('a11y-oscura')
+  ) {
+    clasesSelecciondas.value = [...clasesSelecciondas.value, ...['a11y-oscura']]
+  }
+  if (
+    temaClaroUOscuro === 'clara' &&
+    clasesSelecciondas.value.includes('a11y-oscura')
+  ) {
+    clasesSelecciondas.value = clasesSelecciondas.value.filter(
+      clases => !clases.includes('a11y-oscura')
+    )
+  }
+}
+
+/**
+ * Elige el tema en el documento (clara u oscura)
+ * y la key local `theme` del navegador.
+ * @param {String} tema o modo de la vista: clara | oscura | auto
+ */
+function setTemaEnDocumentoYLocalStorage() {
+  localStorage.setItem('theme', tema.value)
+  let temaClaroUOscuro = getTemaDispositivo()
+
+  // Agrega claseSeleccionada `.a11y-oscura`
+  setClaseA11yOscura(temaClaroUOscuro)
+
+  // Agrega y/o remueve el atributo selecctor para :root
+  switch (temaClaroUOscuro) {
+    case 'clara':
+      setTemaClaro()
+      break
+    case 'oscura':
+      setTemaOscuro()
+      break
+  }
+}
+
+// function alternarTema() {
+//   //rotar entre estos 3 valores
+//   const themes = ['clara', 'oscura', 'auto']
+//   tema.value = themes[(themes.indexOf(tema.value) + 1) % 3]
+//   localStorage.setItem('theme', tema.value)
+// }
+
+onBeforeMount(() => {
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', setTemaEnDocumentoYLocalStorage)
+})
+
+onMounted(() => {
+  // const tema = getTemaDesdeLocalStorage()
+  // tema.value = getTemaDesdeLocalStorage()
+  setTemaEnDocumentoYLocalStorage()
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .addEventListener('change', setTemaEnDocumentoYLocalStorage)
+})
+
+watch([perfilColor, tema], () => {
+  setTemaEnDocumentoYLocalStorage()
+})
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -146,81 +302,14 @@ function restablecer() {
 function alternarAbiertoCerrado() {
   menuAccesibilidadEstaAbierto.value = !menuAccesibilidadEstaAbierto.value
 }
-
 defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
-
-/**
- * Módulo de vista oscura.
- */
-const tema = computed(() => store.state.tema)
-const perfil = computed(() => store.state.perfil)
-
-/**
- * Muestra el nombre actual según el tema seleccionado.
- */
-const nombreTemaActual = computed(() => {
-  const nombres = {
-    claro: 'Clara',
-    oscuro: 'Oscura',
-    auto: 'Automática',
-  }
-  return nombres[tema.value]
-})
-
-/**
- * Elige el tema en el documento en modo oscuro,
- * si la variable del query es dark y el tema del store es auto
- * ó si el tema del store es oscuro.
- */
-function elegirTemaEnDocumento() {
-  const modoOscuro = ref(
-    (window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches &&
-      tema.value === 'auto') ||
-      tema.value === 'oscuro'
-  )
-
-  // Asignar el perfil de color para el atributo css del query.
-  if (perfil.value !== null)
-    document.documentElement.setAttribute(
-      // se puede nombrar como quieras.
-      `data-dark-theme-${perfil.value}`,
-      modoOscuro.value
-    )
-
-  // Reasignando la variable del store.
-  modoOscuro.value === true
-    ? (store.state.vista_oscura = true)
-    : (store.state.vista_oscura = false)
-}
-
-onBeforeMount(() => {
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', elegirTemaEnDocumento)
-})
-
-onMounted(() => {
-  elegirTemaEnDocumento()
-  window
-    .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', elegirTemaEnDocumento)
-})
-
-watch(tema, () => {
-  elegirTemaEnDocumento()
-})
-
-// if (localStorage.getItem('theme')) {
-//   store.state.tema = localStorage.getItem('theme')
-// }
 
 /**
  * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
  * opción de restablecer y el titulo del menú.
  */
 const alturaMenuAbierto = computed(
-  () => `${(opciones.value.length + 1) * 40 + 84}px`
+  () => `${(opciones.value.length + 1) * 48 + 145}px`
 )
 </script>
 
@@ -245,35 +334,38 @@ const alturaMenuAbierto = computed(
 
     <menu class="menu-accesibilidad">
       <p class="titulo">Herramientas de accesibilidad</p>
-
       <hr />
 
-      <button
-        class="opcion-accesibilidad"
-        :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
+      <div
+        class="controlador-vis m-y-1"
         v-for="(opcion, idx) in opciones"
         :key="`opcion-accesibilidad-${idx}`"
-        @click="seleccionarOpcion(opcion)"
       >
-        <span
-          class="icono-4"
-          :class="opcion.icono"
-          aria-hidden="true"
+        <input
+          :id="`${opcion.claseCss}_${id}`"
+          type="checkbox"
+          :value="opcion.claseCss"
+          v-model="clasesSelecciondas"
+          :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         />
-        {{ opcion.titulo }}
-        {{ opcion.titulo === 'Vista' ? nombreTemaActual : '' }}
-      </button>
-
+        <label :for="`${opcion.claseCss}_${id}`">
+          <span
+            class="figura-variable icono-4"
+            :class="opcion.icono"
+            aria-hidden="true"
+          ></span>
+          <span class="nombre-variable">
+            <b> {{ opcion.titulo }} </b>
+          </span>
+        </label>
+      </div>
       <button
-        class="opcion-accesibilidad"
+        class="hipervinculo"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"
+        :disabled="!clasesSelecciondas.length"
       >
-        <span
-          class="icono-4 icono-restablecer"
-          aria-hidden="true"
-        />
-        Restablecer
+        <b>Restablecer</b>
       </button>
     </menu>
   </div>

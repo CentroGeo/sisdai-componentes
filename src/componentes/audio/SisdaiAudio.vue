@@ -153,7 +153,7 @@ watch(reproduciendo, nv => {
  * el tiempo transcurrido del audio
  */
 watch(slider_activo, (nv, ov) => {
-  console.log(nv)
+  // console.log(nv)
   if (!nv && ov) {
     audio.value.currentTime = +tiempo_transcurrido.value
   }
