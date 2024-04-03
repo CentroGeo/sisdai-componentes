@@ -1,6 +1,22 @@
+// This file is part of sisdai-componentes.
+//
+//   sisdai-componentes is free software: you can redistribute it and/or modify
+//   it under the terms of the GNU Lesser General Public License as published by the
+//   Free Software Foundation, either version 3 of the License, or
+//   (at your option) any later version.
+//
+//   sisdai-componentes is distributed in the hope that it will be useful,
+//   but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General
+//   Public License for more details.
+//
+//   You should have received a copy of the GNU Lesser General Public License along
+//   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
+
 export default {
   namespaced: true,
   state: {
+    clasesAccesibles: [],
     // menu_accesibilidad_abierto: false,
     // tipografia_accesible: false,
     // vista_simplificada: false,
@@ -8,8 +24,6 @@ export default {
     // vista_oscura: false,
     // tema: 'claro', // 'claro' | 'auto' | 'oscuro'
     // perfil: 'eni', // 'eni' | 'sisdai' | 'gema'
-
-    clasesAccesibles: [],
   },
   getters: {
     // clasesAccesibles: state => ({
@@ -22,6 +36,14 @@ export default {
   mutations: {
     modificarClasesAccesibles(state, valor) {
       state.clasesAccesibles = valor
+    },
+    restablecer(state) {
+      state.clasesAccesibles = []
+      // state.tipografia_accesible = false
+      // state.vista_simplificada = false
+      // state.enlaces_subrayados = false
+      // state.vista_oscura = false
+      // state.tema = 'claro'
     },
     // alternarVistaOscura(state) {
     //   //rotar entre estos 3 valores
@@ -41,13 +63,5 @@ export default {
     // alternarEnlacesSubrayados(state) {
     //   state.enlaces_subrayados = !state.enlaces_subrayados
     // },
-    restablecer(state) {
-      // state.tipografia_accesible = false
-      // state.vista_simplificada = false
-      // state.enlaces_subrayados = false
-      // state.vista_oscura = false
-      // state.tema = 'claro'
-      state.clasesAccesibles = []
-    },
   },
 }

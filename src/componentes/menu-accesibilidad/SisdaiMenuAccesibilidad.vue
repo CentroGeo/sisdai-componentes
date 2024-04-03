@@ -1,3 +1,18 @@
+<!--This file is part of sisdai-componentes.-->
+
+<!--sisdai-componentes is free software: you can redistribute it and/or modify-->
+<!--it under the terms of the GNU Lesser General Public License as published by the-->
+<!--Free Software Foundation, either version 3 of the License, or-->
+<!--(at your option) any later version.-->
+
+<!--sisdai-componentes is distributed in the hope that it will be useful,-->
+<!--but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General-->
+<!--Public License for more details.-->
+
+<!--You should have received a copy of the GNU Lesser General Public License along-->
+<!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
+
 <script>
 const propiedades = {
   /**
@@ -30,12 +45,18 @@ const propiedades = {
     default: 'accesibilidad',
   },
 
-  /**
-   * id Aleatorio.
-   */
   id: {
     type: String,
     default: 'menu_accesibilidad',
+  },
+
+  /**
+   * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
+   * Los perfiles disponibles son: `'eni'`, `'gema'`, `'sisdai'`.
+   */
+  perfilColor: {
+    type: String,
+    default: 'eni', // 'eni' | 'sisdai' | 'gema'
   },
 }
 
@@ -52,24 +73,16 @@ const eventos = {
    */
   alRestablecer: 'alRestablecer',
 }
-
-/**
- * Devuelve una cadena de texto aleatoreo.
- * @returns {String}
- */
-// function idAleatorio() {
-//   return Math.random().toString(36).substring(2)
-// }
 </script>
 
 <script setup>
 import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
 import opcionesDefault from './opcionesDefault'
-// import store from '../../stores/accesibilidad'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, id, objetoStore, nombreModuloStore } = toRefs(props)
+const { agregarOpciones, id, objetoStore, perfilColor, nombreModuloStore } =
+  toRefs(props)
 
 /**
  * Opciones que se mostrarán en el menú de accesibilidad.
@@ -95,7 +108,7 @@ const clasesSelecciondas = ref([])
  * Ejecuta un cambio en el store si dicho objeto permite hacer commits (si se esta usando la
  * pripiedad `objetoStore`).
  * @param {String} accion nombre del mutation en el modulo del store.
- * @param {Array<String>} valor es decir las clases seleccionadas.
+ * @param {Array<String>} valor es decir las clases que siendo seleccionadas.
  */
 function ejecutarEnStore(accion, valor) {
   if (
@@ -117,98 +130,170 @@ function restablecer() {
 
 watch(clasesSelecciondas, (nv, ov) => {
   ejecutarEnStore('modificarClasesAccesibles', nv)
+
+  alternarClasesBody()
+
+  asignarTemaClaroUOscuro(nv, ov)
+})
+
+/**
+ * Alterna las clases accesibles seleccionadas en el body.
+ */
+function alternarClasesBody() {
+  clasesSelecciondas.value.includes('a11y-tipografia')
+    ? body.classList.add('a11y-tipografia')
+    : body.classList.remove('a11y-tipografia')
+  clasesSelecciondas.value.includes('a11y-simplificada')
+    ? body.classList.add('a11y-simplificada')
+    : body.classList.remove('a11y-simplificada')
+  clasesSelecciondas.value.includes('a11y-hipervinculos')
+    ? body.classList.add('a11y-hipervinculos')
+    : body.classList.remove('a11y-hipervinculos')
+  clasesSelecciondas.value.includes('a11y-oscura')
+    ? body.classList.add('a11y-oscura')
+    : body.classList.remove('a11y-oscura')
+}
+
+/**
+ * Módulo de vista oscura.
+ */
+// Tema o modo de color con el que inicializa la aplicación.
+const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
+const body = document?.querySelector('body')
+
+/**
+ * Agrega el atributo para asignar el tema claro con el perfil
+ * de color al nivel de la etiqueta html del documento.
+ */
+function setTemaClaro() {
+  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
+  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
+  body.setAttribute(`data-light-theme-${perfilColor.value}`, true)
+}
+
+/**
+ * Agrega el atributo para asignar el tema oscuro con el perfil
+ * de color al nivel de la etiqueta html del documento.
+ */
+function setTemaOscuro() {
+  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
+  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
+  body.setAttribute(`data-dark-theme-${perfilColor.value}`, true)
+}
+
+/**
+ * Asigna el tema claro u oscuro,
+ * si en las clasesSeleccionadas están el valor de a11y-oscura o no.
+ * @param {Array} nv nuevo valor con las clases seleccionadas
+ * @param {Array} ov viejo valor con las clases seleccionadas
+ */
+function asignarTemaClaroUOscuro(nv, ov) {
   if (
     nv.find(clase => clase === 'a11y-oscura') &&
     !ov.find(clase => clase === 'a11y-oscura')
   ) {
-    // poner
-    // if (tema.value === 'auto') {
-    //   ejecutarEnStore('alternarVistaOscura', nv)
-    // }
-    // tema.value = 'oscura'
-    // localStorage.setItem('theme', tema.value)
+    // cuando pone la clase a11y-oscura
+    setTemaOscuro()
   }
   if (
     !nv.find(clase => clase === 'a11y-oscura') &&
     ov.find(clase => clase === 'a11y-oscura')
   ) {
-    // quitar
-    // if (tema.value === 'auto') {
-    //   ejecutarEnStore('alternarVistaOscura', nv)
-    // }
-    // tema.value = 'clara'
-    // localStorage.setItem('theme', tema.value)
+    // cuando quita la clase a11y-oscura
+    setTemaClaro()
   }
-})
+}
+
+// function getTemaDesdeLocalStorage() {
+//   const tema = localStorage.getItem('theme') || 'clara'
+//   return tema
+// }
 
 /**
- * Módulo de vista oscura.
+ * Devuelve el tema del documento según la configuración del dispositivo.
  */
-// const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
-// localStorage.setItem('theme', tema.value)
-// const perfil = ref('eni') // 'eni' | 'sisdai' | 'gema'
+function getTemaDispositivo() {
+  if (
+    (window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      tema.value === 'auto') ||
+    tema.value === 'oscura'
+  ) {
+    return 'oscura'
+  }
+  return 'clara'
+}
+
+/**
+ * Agrega la clase `.a11y-oscura` para la selección
+ * de la vistas oscura.
+ * @param {String} temaClaroUOscuro
+ */
+function setClaseA11yOscura(temaClaroUOscuro) {
+  if (
+    temaClaroUOscuro === 'oscura' &&
+    !clasesSelecciondas.value.includes('a11y-oscura')
+  ) {
+    clasesSelecciondas.value = [...clasesSelecciondas.value, ...['a11y-oscura']]
+  }
+  if (
+    temaClaroUOscuro === 'clara' &&
+    clasesSelecciondas.value.includes('a11y-oscura')
+  ) {
+    clasesSelecciondas.value = clasesSelecciondas.value.filter(
+      clases => !clases.includes('a11y-oscura')
+    )
+  }
+}
+
+/**
+ * Elige el tema en el documento (clara u oscura)
+ * y la key local `theme` del navegador.
+ * @param {String} tema o modo de la vista: clara | oscura | auto
+ */
+function setTemaEnDocumentoYLocalStorage() {
+  localStorage.setItem('theme', tema.value)
+  let temaClaroUOscuro = getTemaDispositivo()
+
+  // Agrega claseSeleccionada `.a11y-oscura`
+  setClaseA11yOscura(temaClaroUOscuro)
+
+  // Agrega y/o remueve el atributo selecctor para :root
+  switch (temaClaroUOscuro) {
+    case 'clara':
+      setTemaClaro()
+      break
+    case 'oscura':
+      setTemaOscuro()
+      break
+  }
+}
 
 // function alternarTema() {
 //   //rotar entre estos 3 valores
 //   const themes = ['clara', 'oscura', 'auto']
 //   tema.value = themes[(themes.indexOf(tema.value) + 1) % 3]
-
 //   localStorage.setItem('theme', tema.value)
 // }
-
-/**
- * Elige el tema en el documento en modo oscuro,
- * si la variable del query es dark y el tema del store es auto
- * ó si el tema del store es oscuro.
- */
-function elegirTemaEnDocumento() {
-  // const modoOscuro =
-  //   (window.matchMedia &&
-  //     window.matchMedia('(prefers-color-scheme: dark)').matches &&
-  //     tema.value === 'auto') ||
-  //   tema.value === 'oscura'
-  // // Asignar el perfil de color para el atributo css del query.
-  // if (perfil.value !== null) {
-  //   document.documentElement.setAttribute(
-  //     // se puede nombrar como quieras.
-  //     `data-dark-theme-${perfil.value}`,
-  //     modoOscuro
-  //   )
-  //   // Agrega claseSeleccionada .a11y-oscura
-  //   if (modoOscuro && !clasesSelecciondas.value.includes('a11y-oscura')) {
-  //     // Esta línea es necesaria para tener un registro de las clases
-  //     // seleccionadas y para checkear la opción en el menú
-  //     clasesSelecciondas.value.push('a11y-oscura')
-  //     // Esta línea es necesaria para poner la clase en el html
-  //     ejecutarEnStore('modificarClasesAccesibles', 'a11y-oscura')
-  //   } else {
-  //     // clasesSelecciondas.value = clasesSelecciondas.value.filter(
-  //     //   clase => clase !== 'a11y-oscura'
-  //     // )
-  //   }
-  // }
-}
 
 onBeforeMount(() => {
   window
     .matchMedia('(prefers-color-scheme: dark)')
-    .removeEventListener('change', elegirTemaEnDocumento)
+    .removeEventListener('change', setTemaEnDocumentoYLocalStorage)
 })
 
 onMounted(() => {
-  elegirTemaEnDocumento()
+  // const tema = getTemaDesdeLocalStorage()
+  // tema.value = getTemaDesdeLocalStorage()
+  setTemaEnDocumentoYLocalStorage()
   window
     .matchMedia('(prefers-color-scheme: dark)')
-    .addEventListener('change', elegirTemaEnDocumento)
+    .addEventListener('change', setTemaEnDocumentoYLocalStorage)
 })
 
-// watch(tema, () => {
-//   elegirTemaEnDocumento()
-// })
-
-// if (localStorage.getItem('theme')) {
-//   tema.value = localStorage.getItem('theme')
-// }
+watch([perfilColor, tema], () => {
+  setTemaEnDocumentoYLocalStorage()
+})
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -289,87 +374,5 @@ const alturaMenuAbierto = computed(
 <style lang="scss">
 .contenedor-menu-accesibilidad.abierto .menu-accesibilidad {
   max-height: v-bind('alturaMenuAbierto') !important;
-
-  // width: 262px !important;
-  width: 282px !important;
-  .titulo {
-    width: 170px;
-  }
-  .controlador-vis {
-    margin-left: 16px !important;
-    margin-right: 16px !important;
-    label {
-      width: 100%;
-      padding-left: 6px !important;
-      padding-top: 8px !important;
-      padding-bottom: 8px !important;
-      &:hover {
-        background: var(--boton-secundario-hover-fondo);
-        border: 1px solid transparent;
-        box-shadow: none;
-        color: var(--tipografia-color);
-        .nombre-variable {
-          color: var(--tipografia-color);
-        }
-      }
-      .figura-variable {
-        max-width: inherit;
-      }
-      .nombre-variable {
-        font-size: 16px;
-      }
-    }
-    input[type='checkbox'],
-    input[type='radio'] {
-      &:hover {
-        + label {
-          &:before {
-            box-shadow: inset 0 0 0 1px var(--tipografia-color);
-          }
-        }
-      }
-      &:focus {
-        + label {
-          background: var(--boton-secundario-hover-fondo);
-        }
-      }
-      &:checked {
-        &:not(:hover) + label {
-          &:before {
-            background: var(--input-controles-color);
-          }
-        }
-      }
-    }
-    input[type='checkbox']:checked {
-      + label:after {
-        color: var(--tipografia-color-1);
-      }
-      &:hover:checked:not(:disabled) + label:after {
-        color: var(--tipografia-color-1);
-      }
-    }
-    input[type='checkbox']:checked + label:before {
-      background: var(--input-controles-color);
-    }
-  }
-  .hipervinculo {
-    margin-left: 20px !important;
-    padding: 4px !important;
-    text-decoration: none !important;
-    border: 1px solid transparent;
-    &:hover {
-      color: var(--hipervinculo-color);
-      background: var(--boton-secundario-hover-fondo);
-      box-shadow: none !important;
-      border: 1px solid transparent !important;
-    }
-    &:focus {
-      background: var(--boton-secundario-hover-fondo);
-      box-shadow: 0 0 8px var(--input-focus);
-      border: 1px solid var(--hipervinculo-focus-sombra);
-      outline: none;
-    }
-  }
 }
 </style>

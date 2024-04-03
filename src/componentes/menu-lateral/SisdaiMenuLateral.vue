@@ -1,3 +1,18 @@
+<!--This file is part of sisdai-componentes.-->
+
+<!--sisdai-componentes is free software: you can redistribute it and/or modify-->
+<!--it under the terms of the GNU Lesser General Public License as published by the-->
+<!--Free Software Foundation, either version 3 of the License, or-->
+<!--(at your option) any later version.-->
+
+<!--sisdai-componentes is distributed in the hope that it will be useful,-->
+<!--but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General-->
+<!--Public License for more details.-->
+
+<!--You should have received a copy of the GNU Lesser General Public License along-->
+<!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
+
 <script setup>
 import { ref, watch } from 'vue'
 
@@ -59,9 +74,10 @@ watch(menu_abierto, () => {
         ref="contenidoMenuLateral"
       >
         <slot name="contenido-menu-lateral">
-          <ul>
+          <ul class="colapsable-submenu">
             <li>
               <a
+                class="p-x-5-esc p-x-3-mov p-y-1"
                 href="#anchore"
                 :tabindex="menu_abierto ? undefined : -1"
               >
@@ -70,6 +86,7 @@ watch(menu_abierto, () => {
             </li>
             <li>
               <a
+                class="p-x-5-esc p-x-3-mov p-y-1"
                 href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                 rel="noopener"
                 target="_blank"
