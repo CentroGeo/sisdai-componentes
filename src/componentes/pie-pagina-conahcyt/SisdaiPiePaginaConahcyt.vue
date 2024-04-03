@@ -1,3 +1,7 @@
+<script setup>
+const anioActual = new Date().getFullYear()
+</script>
+
 <template>
   <footer
     class="contenedor conahcyt-fondo-degradado conahcyt-texto-claro-1 conahcyt-piepagina p-y-4"
@@ -18,7 +22,8 @@
           Ciudad de México Tel: (55) 5322-7700
         </p>
         <p>
-          ©<span id="anioActual">x</span>
+          <!-- ©<span id="anioActual">x</span> -->
+          ©<span>{{ anioActual }}</span>
           Conahcyt Derechos Reservados en trámite
         </p>
       </div>
@@ -31,8 +36,9 @@
               href="https://conahcyt.mx/directorio/"
               target="_blank"
               rel="noopener"
-              >Directorio</a
             >
+              Directorio
+            </a>
           </li>
           <li>
             <a
@@ -40,8 +46,9 @@
               href="https://conahcyt.mx/centro-de-contacto-de-atencion/"
               target="_blank"
               rel="noopener"
-              >Centro de Contacto</a
             >
+              Centro de Contacto
+            </a>
           </li>
           <li>
             <a
@@ -49,8 +56,9 @@
               href="https://conahcyt.mx/aviso-de-privacidad/"
               target="_blank"
               rel="noopener"
-              >Política de Privacidad</a
             >
+              Política de Privacidad
+            </a>
           </li>
           <li>
             <a
@@ -58,8 +66,9 @@
               href="http://comunidad.conahcyt.mx/index.php"
               target="_blank"
               rel="noopener"
-              >Intranet Conahcyt</a
             >
+              Intranet Conahcyt
+            </a>
           </li>
         </ul>
       </div>
@@ -79,7 +88,7 @@
               <span
                 class="icono-social-facebook icono-3"
                 aria-hidden="true"
-              ></span>
+              />
               <span class="a11y-solo-lectura">feisbuk,</span>
             </a>
           </li>
@@ -93,7 +102,7 @@
               <span
                 class="icono-social-x icono-3"
                 aria-hidden="true"
-              ></span>
+              />
               <span class="a11y-solo-lectura">x,</span>
             </a>
           </li>
@@ -107,7 +116,7 @@
               <span
                 class="icono-social-instagram icono-3"
                 aria-hidden="true"
-              ></span>
+              />
               <span class="a11y-solo-lectura">instagram </span>
             </a>
           </li>
@@ -121,18 +130,18 @@
               <span
                 class="icono-social-youtube icono-3"
                 aria-hidden="true"
-              ></span>
+              />
               <span class="a11y-solo-lectura">yutub</span>
             </a>
           </li>
         </ul>
       </div>
     </div>
-    <script type="module">
+    <!-- <script type="module">
       let anioActual;
       anioActual = new Date().getFullYear();
       document.getElementById('anioActual').innerHTML = anioActual;
-    </script>
+    </script> -->
   </footer>
 </template>
 
