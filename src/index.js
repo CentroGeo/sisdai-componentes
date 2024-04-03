@@ -29,6 +29,7 @@ import {
   SisdaiEnlaceExterno,
   SisdaiImagenPngWebp,
   SisdaiAudio,
+  SisdaiCampoBusqueda,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -57,6 +58,7 @@ const plugin = {
     Vue.use(SisdaiNarrativaScroll)
     Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
+    Vue.use(SisdaiCampoBusqueda)
   },
 }
 
@@ -77,6 +79,7 @@ export {
   SisdaiEnlaceExterno,
   SisdaiImagenPngWebp,
   SisdaiAudio,
+  SisdaiCampoBusqueda,
 }
 
 export default plugin
