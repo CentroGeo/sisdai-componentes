@@ -14,7 +14,8 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { ref, toRefs, watch } from 'vue'
+import { computed, ref, toRefs, watch } from 'vue'
+import store from '../../stores/accesibilidad'
 
 const props = defineProps({
   titulo: { type: String, default: 'Titulo de colapsable' },
@@ -37,6 +38,21 @@ const id_aleatorio = idAleatorio()
 /*watch(esta_activo, () => {
   emits('alAlternarColapsable', esta_activo.value)
 })*/
+
+const clasesAccesibles = computed(() => {
+  return store.state.clasesAccesibles
+})
+
+watch(clasesAccesibles, (nv, ov) => {
+  // Descolapsa la navegación si la vista simplificada está activada
+  if (clasesAccesibles.value.includes('a11y-simplificada')) {
+    _colapsado.value = true
+  } else {
+    if (ov.includes('a11y-simplificada')) {
+      _colapsado.value = false
+    }
+  }
+})
 </script>
 
 <template>
@@ -49,6 +65,7 @@ const id_aleatorio = idAleatorio()
       class="colapsable-boton p-x-5-esc p-x-3-mov p-y-1"
       @click="_colapsado = !_colapsado"
       :tabindex="avisarMenuLateral ? undefined : -1"
+      :disabled="clasesAccesibles.includes('a11y-simplificada')"
     >
       <div class="contenedor-encabezado-colapsable">
         <slot name="encabezado">
