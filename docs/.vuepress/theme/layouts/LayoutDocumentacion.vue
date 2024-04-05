@@ -220,6 +220,15 @@ const menuAccesibilidad = ref(null)
                   PiePaginaGobMx
                 </router-link>
               </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/campo-busqueda"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  CampoBusqueda
+                </router-link>
+              </li>
 
               <li>
                 <a
