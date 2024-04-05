@@ -39,6 +39,10 @@ Este componente admite las siguientes propiedades
 - `catalogoAnidadoPropiedadElementos`: Propiedad opcional. (_String_) El nombre de la propiedad que contiene la lista de elementos de cada grupo. por default tiene el valor `'elementos'`
 - `etiqueta`: (_Array_) Propiedad opcional. Corresponde a la etiqueta de busqueda, comunmente conocida como _placeholder_. Por _default_ tiene el valor `'Buscar...'`
 
+### Eventos
+
+- `alFiltrar`: Evento que se dispara al momento de ejecutar la busqueda. Como parametro se obtiene la lista de elementos filtrada.
+
 </section>
 
 <section id="ejemplos">
