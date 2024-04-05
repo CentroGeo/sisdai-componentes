@@ -224,7 +224,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/campo-busqueda"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Campo busqueda
+                  CampoBusqueda
                 </router-link>
               </li>
 
