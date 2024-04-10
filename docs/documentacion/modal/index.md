@@ -4,7 +4,7 @@ layout: LayoutDocumentacion
 
 # Modal
 
-Este Modal desactiva el contenido y las acciones principales para colocar un
+<!-- Este Modal desactiva el contenido y las acciones principales para colocar un
 contenedor encima de estos que requiera toda la atención y acción de la
 persona usuaria. El contenido y la navegación principal se reactivan una
 vez que la persona usuaria acepte, cancele o concluya la tarea que le
@@ -60,13 +60,13 @@ Este componente no dispara eventos externos
 
 Este componente no permite contenido con slots
 
-</section>
+</section> -->
 
 <section id="ejemplos">
 
 ## Ejemplos
 
-El ancho del modal en versión móvil es del 100% de la pantalla y el alto
+<!-- El ancho del modal en versión móvil es del 100% de la pantalla y el alto
 es proporcional al contenido del mismo.
 
 Utiliza el modal en los siguientes casos:
@@ -101,18 +101,18 @@ Utiliza el modal en los siguientes casos:
   - Las tareas a desarrollar en el modal deben tener un inicio y fin
     claros.
   - Al finalizar la tarea o cerrar el modal, la persona usuaria debe
-    regresar a la pantalla en la que se encontraba inicialmente.
+    regresar a la pantalla en la que se encontraba inicialmente. -->
 
 #### Uso básico
 
-Los elementos a disponer en cada parte del modal pueden variar de acuerdo
+<!-- Los elementos a disponer en cada parte del modal pueden variar de acuerdo
 con la función y el contexto de este. Es decir, el modal puede contener
 diferentes componentes tales como carruseles de imágenes, botones de
-acción, campos de texto, opciones de selección, entre otros.
+acción, campos de texto, opciones de selección, entre otros. -->
 
 <utils-ejemplo-doc ruta="modal/basico.vue"/>
 
-#### Modal chico
+<!-- #### Modal chico
 
 Dentro de las etiquetas `<SisdaiModal></SisdaiModal>` se incluyen tres slots de vue (encabezado, cuerpo y pie) para colocar
 contenido html. Se recomienda utilizar el slot de cuerpo para colocar el
@@ -120,7 +120,6 @@ contenido deseado. A continuación se presentan algunos ejemplos con
 contenido.
 
 <utils-ejemplo-doc ruta="modal/chico.vue"/>
-
 #### Modal mediano
 
 <utils-ejemplo-doc ruta="modal/mediano.vue"/>
@@ -162,6 +161,6 @@ Para salir del modal, la persona usuaria puede:
 En la vista simplificada, los modales funcionan de la misma forma como lo
 hacen en la vista predeterminada. Solo el modal para visualizar imágenes a
 detalle no se utiliza, ya que en la vista simplificada no se muestran
-imágenes.
+imágenes. -->
 
 </section>
