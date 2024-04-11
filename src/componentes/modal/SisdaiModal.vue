@@ -1,6 +1,6 @@
 <script>
 const propiedades = {
-  tamanio: {
+  tamanioModal: {
     type: String,
     default: 'chico',
   },
@@ -13,18 +13,35 @@ import { computed, onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
 const esta_abierto = ref(false)
 
 const props = defineProps(propiedades)
-const { tamanio } = toRefs(props)
+const { tamanioModal } = toRefs(props)
 
+const overflowYX = computed(() => {
+  if (tamanioModal.value === 'pantalla-completa') {
+    return 'overflow-x-y'
+  }
+  return ''
+})
+
+// TODO: Colocar el modal hasta el final del body
+// TODO: Deshabilitar todas las demás funciones
+/**
+ * Método para cerrar el modal
+ */
 function cerrarModal() {
   esta_abierto.value = false
   document.querySelector('body').classList.remove('overflow-hidden')
 }
-/* eslint-disable */
+/**
+ * Método para abrir el modal
+ */
 function abrirModal() {
   esta_abierto.value = true
   document.querySelector('body').classList.add('overflow-hidden')
 }
-
+/**
+ * Método que detecta si la tecla esc
+ * es presionada para cerrar el modal
+ */
 function onEscapeKeyUp(event) {
   if (event.which === 27) {
     cerrarModal()
@@ -39,11 +56,9 @@ onBeforeUnmount(() => {
   window.removeEventListener('keyup', onEscapeKeyUp)
 })
 
-const overflowYX = computed(() => {
-  if (tamanio.value === 'pantalla-completa') {
-    return 'overflow-x-y'
-  }
-  return ''
+defineExpose({
+  abrirModal,
+  cerrarModal,
 })
 </script>
 
@@ -57,25 +72,26 @@ const overflowYX = computed(() => {
       <div
         class="modal-fondo-trasero"
         @click="cerrarModal()"
-      />
+      ></div>
+
       <div
         class="modal-contenedor"
-        :class="tamanio"
+        :class="tamanioModal"
       >
-        <div class="modal-encabezado">
-          <slot name="encabezado" />
-          <button
-            class="btn-icono icono-cerrar modal-cerrar"
-            @click="cerrarModal()"
-          ></button>
-        </div>
+        <button
+          class="boton-icono boton-sin-borde icono-3 modal-cerrar"
+          @click="cerrarModal()"
+        >
+          <span class="icono-cerrar" />
+          <span class="a11y-solo-lectura">Cerrar.</span>
+        </button>
+
         <div class="modal-cuerpo">
-          <slot name="cuerpo" />
-        </div>
-        <div class="modal-pie">
-          <slot name="pie" />
+          <slot />
         </div>
       </div>
     </div>
   </transition>
 </template>
+
+<style lang="scss" scoped></style>
