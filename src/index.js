@@ -30,6 +30,7 @@ import {
   SisdaiImagenPngWebp,
   SisdaiAudio,
   SisdaiCampoBusqueda,
+  SisdaiControlAcercarAlejar,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -59,6 +60,7 @@ const plugin = {
     Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
     Vue.use(SisdaiCampoBusqueda)
+    Vue.use(SisdaiControlAcercarAlejar)
   },
 }
 
@@ -80,6 +82,7 @@ export {
   SisdaiImagenPngWebp,
   SisdaiAudio,
   SisdaiCampoBusqueda,
+  SisdaiControlAcercarAlejar,
 }
 
 export default plugin
