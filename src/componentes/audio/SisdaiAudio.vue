@@ -176,7 +176,7 @@ watch(volumen, nv => {
 
 <template>
   <div
-    class="sisdai-audio borde-redondeado-8 p-3"
+    class="sisdai-audio borde-redondeado-8 p-x-2 p-y-2"
     :id="id_aleatorio"
   >
     <slot name="encabezado"> </slot>
@@ -196,7 +196,7 @@ watch(volumen, nv => {
     <div class="flex">
       <input
         type="range"
-        class="control-tiempo columna-16"
+        class="control-tiempo columna-16 m-y-0"
         :max="Math.floor(duracion)"
         v-model.number="tiempo_transcurrido"
         @change="slider_activo = false"
@@ -207,8 +207,8 @@ watch(volumen, nv => {
       />
     </div>
 
-    <div class="flex flex-contenido-separado">
-      <div class="columna-2-mov columna-4-esc">
+    <div class="flex flex-contenido-separado contenedor-controles">
+      <div class="contenedor-velocidad">
         <select
           name="velocidad-reproduccion"
           class="velocidad-reproduccion m-y-1"
@@ -220,12 +220,12 @@ watch(volumen, nv => {
               v-for="(velocidad, i) in velocidades"
               :key="i"
             >
-              {{ velocidad.opcion }}
+              {{ velocidad.opcion }}x
             </option>
           </optgroup>
         </select>
       </div>
-      <div class="columna-4-mov columna-8-esc flex flex-contenido-centrado">
+      <div class="flex flex-contenido-centrado m-x-0-esc contenedor-botones">
         <button
           class="boton-icono boton-sin-borde"
           @click="retrasa10"
@@ -254,7 +254,7 @@ watch(volumen, nv => {
           <span class="icono-adelantar-10"></span>
         </button>
       </div>
-      <div class="columna-2-mov columna-4-esc flex contenedor-volumen">
+      <div class="flex contenedor-volumen">
         <button
           class="boton-icono boton-sin-borde"
           @click="volumen == 0 ? (volumen = 100) : (volumen = 0)"
@@ -287,36 +287,35 @@ watch(volumen, nv => {
   button.boton-icono.boton-sin-borde:disabled {
     border-color: transparent;
   }
-  .contenedor-volumen {
-    flex-wrap: nowrap;
-    button {
-      margin-right: 0;
+
+  .contenedor-controles {
+    .contenedor-velocidad {
+      flex-basis: calc(33% - 24px);
+      max-width: 87px;
+      margin-left: 12px;
+      select.velocidad-reproduccion {
+        background-position: calc(100% - 2px), 50%;
+        padding-right: 20px;
+      }
+    }
+    .contenedor-botones {
+      flex-basis: calc(33% - 24px);
+      min-width: 120px;
+    }
+    .contenedor-volumen {
+      flex-basis: calc(33% - 24px);
+      min-width: 72px;
+      max-width: 100px;
+      margin-right: 12px;
+      flex-wrap: nowrap;
+      button {
+        margin-right: 0;
+      }
     }
   }
 }
 
-input[type='range'] {
-  min-height: 1rem;
-}
 input.control-volumen[type='range'] {
-  &::-moz-range-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    height: 1rem;
-    width: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-ms-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-webkit-slider-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
   &::-webkit-slider-runnable-track {
     &,
     &:hover,
@@ -359,9 +358,6 @@ input.control-volumen[type='range'] {
 }
 
 input.control-tiempo[type='range'] {
-  width: 100%;
-  cursor: pointer;
-  height: 1rem;
   &::-webkit-slider-runnable-track {
     &,
     &:hover,
@@ -407,35 +403,5 @@ input.control-tiempo[type='range'] {
       );
     }
   }
-}
-
-input.control-tiempo[type='range'] {
-  &::-moz-range-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-ms-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-webkit-slider-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-}
-
-select.velocidad-reproduccion {
-  max-width: 50px;
-  height: 1rem;
-  font-size: 0.75rem;
-  background-position: calc(100% - 2px), 50%;
-  border-radius: 10px;
-  padding: 0 4px;
 }
 </style>
