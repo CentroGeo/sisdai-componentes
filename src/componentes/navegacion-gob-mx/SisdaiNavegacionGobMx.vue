@@ -85,7 +85,7 @@ watch(menuEstaAbierto, () => {
           width="128"
           height="38"
           class="nav-logo"
-          src="https://cdn.conacyt.mx/sisdai-archivos/gobmx.svg"
+          src="https://cdn.conacyt.mx/sisdai/recursos/gobmx.svg"
           alt="Gobierno de México."
         />
       </a>

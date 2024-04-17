@@ -21,7 +21,7 @@
     <div class="flex flex-wrap">
       <div class="columna-8 columna-4-esc">
         <img
-          src="https://cdn.conacyt.mx/sisdai-archivos/gobmx.svg"
+          src="https://cdn.conacyt.mx/sisdai/recursos/gobmx.svg"
           alt="Gobierno de México"
           width="200px"
           height="60px"
@@ -201,7 +201,7 @@
 
 <style>
 .gobmx-piepagina {
-  background-image: url('https://cdn.conacyt.mx/sisdai-archivos/gobmxpleca.svg');
+  background-image: url('https://cdn.conacyt.mx/sisdai/recursos/gobmxpleca.svg');
   background-position: bottom;
   background-repeat: repeat-x;
   background-size: auto 50px;
