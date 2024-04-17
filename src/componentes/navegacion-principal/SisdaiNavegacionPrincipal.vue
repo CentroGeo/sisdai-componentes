@@ -104,7 +104,7 @@ watch(menuEstaAbierto, () => {
             class="nav-logo invertir"
             width="130"
             height="38"
-            src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-azul.svg"
+            src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-azul.svg"
             alt="Conahcyt."
           />
         </a>

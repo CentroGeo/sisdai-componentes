@@ -21,7 +21,7 @@
     <div class="flex flex-wrap">
       <div class="columna-8 columna-8-esc">
         <img
-          src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-blanco.svg"
+          src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-blanco.svg"
           alt="Conahcyt"
           width="200px"
           height="60px"
