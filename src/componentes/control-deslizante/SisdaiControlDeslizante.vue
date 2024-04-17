@@ -1,11 +1,11 @@
 <script setup>
-import { ref, computed, defineExpose } from 'vue'
+import { ref, computed, defineExpose, watch } from 'vue'
 const props = defineProps({
   val_min: { default: 0, type: Number },
   val_max: { default: 100, type: Number },
-  val_default: { default: 50, type: Number },
+  val_entrada: { default: 50, type: Number },
 })
-const valor_seleccionado = ref(props.val_default)
+const valor_seleccionado = ref(props.val_entrada)
 const valor_porcentual = computed(() => {
   return `${
     (100 * (valor_seleccionado.value - props.val_min)) /
@@ -15,6 +15,12 @@ const valor_porcentual = computed(() => {
 defineExpose({
   valor_seleccionado,
 })
+watch(
+  () => props.val_entrada,
+  nv => {
+    valor_seleccionado.value = nv
+  }
+)
 </script>
 
 <template>
@@ -35,40 +41,53 @@ defineExpose({
 
 input.sisdai-control-deslizante[type='range'] {
   &::-webkit-slider-runnable-track {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-      );
-    }
+    background: linear-gradient(
+      to right,
+      var(--input-controles-color),
+      var(--input-controles-color) v-bind(valor_porcentual),
+      var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+    );
   }
   &::-moz-range-track {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
+    background: linear-gradient(
+      to right,
+      var(--input-controles-color),
+      var(--input-controles-color) v-bind(valor_porcentual),
+      var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+    );
+  }
+  &::-ms-fill-upper {
+    background: linear-gradient(
+      to right,
+      var(--input-controles-color),
+      var(--input-controles-color) v-bind(valor_porcentual),
+      var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+    );
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    &::-webkit-slider-runnable-track {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(valor_porcentual),
+        var(--boton-primario-focus-fondo),
+        var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
         var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
       );
     }
-  }
-  &::-ms-fill-upper {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
+    &::-moz-range-track {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(valor_porcentual),
+        var(--boton-primario-focus-fondo),
+        var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
+        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      );
+    }
+    &::-ms-fill-upper {
+      background: linear-gradient(
+        to right,
+        var(--boton-primario-focus-fondo),
+        var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
         var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
       );
     }

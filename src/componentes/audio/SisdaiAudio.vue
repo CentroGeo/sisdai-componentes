@@ -1,12 +1,13 @@
 <script setup>
 import { ref, onMounted, watch, onUnmounted } from 'vue'
+import SisdaiControlDeslizante from '../control-deslizante/SisdaiControlDeslizante.vue'
 defineProps({
   archivo: {
     type: String,
     default: '',
   },
 })
-
+const controlVolumen = ref()
 const velocidades = ref([
   { valor: 0.25, opcion: '0.25' },
   { valor: 0.5, opcion: '0.5' },
@@ -16,10 +17,9 @@ const velocidades = ref([
   { valor: 2.25, opcion: '2.25' },
   { valor: 3.75, opcion: '3.75' },
 ])
-
+const volumen_default = ref(100)
 const velocidad_reproduccion = ref(1)
 const reproduciendo = ref(false)
-const volumen = ref(100)
 const id_aleatorio = idAleatorio()
 const duracion = ref(0)
 const tiempo_transcurrido = ref(0)
@@ -27,7 +27,6 @@ const tiempo_transcurrido = ref(0)
 // Strings para css
 const porcentaje_transcurrido = ref('0%')
 const porcentaje_almacenado = ref('0%')
-const porcentaje_volumen = ref('100%')
 
 const slider_activo = ref(false)
 //Elementos DOM
@@ -168,10 +167,12 @@ watch(velocidad_reproduccion, nv => {
 /**
  * Watcha el input de volumen para actualizar el volumen del audio
  */
-watch(volumen, nv => {
-  audio.value.volume = nv / 100
-  porcentaje_volumen.value = `${nv}%`
-})
+watch(
+  () => controlVolumen.value?.valor_seleccionado,
+  nv => {
+    audio.value.volume = nv / 100
+  }
+)
 </script>
 
 <template>
@@ -257,24 +258,26 @@ watch(volumen, nv => {
       <div class="flex contenedor-volumen">
         <button
           class="boton-icono boton-sin-borde"
-          @click="volumen == 0 ? (volumen = 100) : (volumen = 0)"
+          @click="
+            controlVolumen?.valor_seleccionado == 0
+              ? (volumen_default = 100)
+              : (volumen_default = 0)
+          "
         >
           <span
             class="icono-volumen"
-            v-if="volumen > 0"
+            v-if="controlVolumen?.valor_seleccionado > 0"
           ></span>
           <span
             class="icono-silenciar"
-            v-if="volumen == 0"
+            v-if="controlVolumen?.valor_seleccionado == 0"
           ></span>
         </button>
-        <input
-          type="range"
+        <SisdaiControlDeslizante
+          ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
-          v-model="volumen"
-          max="100"
-          value="100"
-        />
+          :val_entrada="volumen_default"
+        ></SisdaiControlDeslizante>
       </div>
     </div>
   </div>
@@ -311,48 +314,6 @@ watch(volumen, nv => {
       button {
         margin-right: 0;
       }
-    }
-  }
-}
-
-input.control-volumen[type='range'] {
-  &::-webkit-slider-runnable-track {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_volumen),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_volumen)
-      );
-    }
-  }
-  &::-moz-range-track {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_volumen),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_volumen)
-      );
-    }
-  }
-  &::-ms-fill-upper {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_volumen),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_volumen)
-      );
     }
   }
 }

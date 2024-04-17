@@ -10,7 +10,7 @@ const controlDeslizante = ref()
     <SisdaiControlDeslizante
       :val_min="20"
       :val_max="100"
-      :val_default="90"
+      :val_entrada="90"
       id="identificador"
       step="10"
       ref="controlDeslizante"

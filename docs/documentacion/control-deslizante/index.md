@@ -19,7 +19,7 @@ A continuación se enlistan las propiedades que admite el componente
 - `val_min`: (_Number_) Corresponde al valor mínimo que puede tomar el control y se asigna al atributo `min` del `input[range]`.Su valor por _default_ es 0.
 
 - `val_max`: (_Number_) Corresponde al valor máximo que puede tomar el control y se asigna al atributo `max` del `input[range]`. Su valor por _default_ es 100.
-- `val_default`: (_Number_) Es el valor inicial que tomará el input y debe ser un valor entre `val_min` y `val_max`. Por _default_ es 50.
+- `val_entrada`: (_Number_) Es el valor inicial que tomará el input y debe ser un valor entre `val_min` y `val_max`. Por _default_ es 50.
 
 ### Propiedades expuestas
 
