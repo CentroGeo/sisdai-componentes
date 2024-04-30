@@ -1,12 +1,13 @@
 <script setup>
 import { ref, onMounted, watch, onUnmounted } from 'vue'
+import SisdaiControlDeslizante from '../control-deslizante/SisdaiControlDeslizante.vue'
 defineProps({
   archivo: {
     type: String,
     default: '',
   },
 })
-
+const controlVolumen = ref()
 const velocidades = ref([
   { valor: 0.25, opcion: '0.25' },
   { valor: 0.5, opcion: '0.5' },
@@ -16,10 +17,9 @@ const velocidades = ref([
   { valor: 2.25, opcion: '2.25' },
   { valor: 3.75, opcion: '3.75' },
 ])
-
+const volumen_default = ref(100)
 const velocidad_reproduccion = ref(1)
 const reproduciendo = ref(false)
-const volumen = ref(100)
 const id_aleatorio = idAleatorio()
 const duracion = ref(0)
 const tiempo_transcurrido = ref(0)
@@ -27,7 +27,6 @@ const tiempo_transcurrido = ref(0)
 // Strings para css
 const porcentaje_transcurrido = ref('0%')
 const porcentaje_almacenado = ref('0%')
-const porcentaje_volumen = ref('100%')
 
 const slider_activo = ref(false)
 //Elementos DOM
@@ -168,15 +167,17 @@ watch(velocidad_reproduccion, nv => {
 /**
  * Watcha el input de volumen para actualizar el volumen del audio
  */
-watch(volumen, nv => {
-  audio.value.volume = nv / 100
-  porcentaje_volumen.value = `${nv}%`
-})
+watch(
+  () => controlVolumen.value?.valor_seleccionado,
+  nv => {
+    audio.value.volume = nv / 100
+  }
+)
 </script>
 
 <template>
   <div
-    class="sisdai-audio borde-redondeado-8 p-3"
+    class="sisdai-audio borde-redondeado-8 p-x-2 p-y-2"
     :id="id_aleatorio"
   >
     <slot name="encabezado"> </slot>
@@ -196,7 +197,7 @@ watch(volumen, nv => {
     <div class="flex">
       <input
         type="range"
-        class="control-tiempo columna-16"
+        class="control-tiempo columna-16 m-y-0"
         :max="Math.floor(duracion)"
         v-model.number="tiempo_transcurrido"
         @change="slider_activo = false"
@@ -207,8 +208,8 @@ watch(volumen, nv => {
       />
     </div>
 
-    <div class="flex flex-contenido-separado">
-      <div class="columna-2-mov columna-4-esc">
+    <div class="flex flex-contenido-separado contenedor-controles">
+      <div class="contenedor-velocidad">
         <select
           name="velocidad-reproduccion"
           class="velocidad-reproduccion m-y-1"
@@ -220,12 +221,12 @@ watch(volumen, nv => {
               v-for="(velocidad, i) in velocidades"
               :key="i"
             >
-              {{ velocidad.opcion }}
+              {{ velocidad.opcion }}x
             </option>
           </optgroup>
         </select>
       </div>
-      <div class="columna-4-mov columna-8-esc flex flex-contenido-centrado">
+      <div class="flex flex-contenido-centrado m-x-0-esc contenedor-botones">
         <button
           class="boton-icono boton-sin-borde"
           @click="retrasa10"
@@ -254,27 +255,29 @@ watch(volumen, nv => {
           <span class="icono-adelantar-10"></span>
         </button>
       </div>
-      <div class="columna-2-mov columna-4-esc flex contenedor-volumen">
+      <div class="flex contenedor-volumen">
         <button
           class="boton-icono boton-sin-borde"
-          @click="volumen == 0 ? (volumen = 100) : (volumen = 0)"
+          @click="
+            controlVolumen?.valor_seleccionado == 0
+              ? (volumen_default = 100)
+              : (volumen_default = 0)
+          "
         >
           <span
             class="icono-volumen"
-            v-if="volumen > 0"
+            v-if="controlVolumen?.valor_seleccionado > 0"
           ></span>
           <span
             class="icono-silenciar"
-            v-if="volumen == 0"
+            v-if="controlVolumen?.valor_seleccionado == 0"
           ></span>
         </button>
-        <input
-          type="range"
+        <SisdaiControlDeslizante
+          ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
-          v-model="volumen"
-          max="100"
-          value="100"
-        />
+          :val_entrada="volumen_default"
+        ></SisdaiControlDeslizante>
       </div>
     </div>
   </div>
@@ -287,81 +290,35 @@ watch(volumen, nv => {
   button.boton-icono.boton-sin-borde:disabled {
     border-color: transparent;
   }
-  .contenedor-volumen {
-    flex-wrap: nowrap;
-    button {
-      margin-right: 0;
-    }
-  }
-}
 
-input[type='range'] {
-  min-height: 1rem;
-}
-input.control-volumen[type='range'] {
-  &::-moz-range-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    height: 1rem;
-    width: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-ms-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-webkit-slider-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-webkit-slider-runnable-track {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_volumen),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_volumen)
-      );
+  .contenedor-controles {
+    .contenedor-velocidad {
+      flex-basis: calc(33% - 24px);
+      max-width: 87px;
+      margin-left: 12px;
+      select.velocidad-reproduccion {
+        background-position: calc(100% - 2px), 50%;
+        padding-right: 20px;
+      }
     }
-  }
-  &::-moz-range-track {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_volumen),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_volumen)
-      );
+    .contenedor-botones {
+      flex-basis: calc(33% - 24px);
+      min-width: 120px;
     }
-  }
-  &::-ms-fill-upper {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      background: linear-gradient(
-        to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_volumen),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_volumen)
-      );
+    .contenedor-volumen {
+      flex-basis: calc(33% - 24px);
+      min-width: 72px;
+      max-width: 100px;
+      margin-right: 12px;
+      flex-wrap: nowrap;
+      button {
+        margin-right: 0;
+      }
     }
   }
 }
 
 input.control-tiempo[type='range'] {
-  width: 100%;
-  cursor: pointer;
-  height: 1rem;
   &::-webkit-slider-runnable-track {
     &,
     &:hover,
@@ -407,35 +364,5 @@ input.control-tiempo[type='range'] {
       );
     }
   }
-}
-
-input.control-tiempo[type='range'] {
-  &::-moz-range-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-ms-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-  &::-webkit-slider-thumb {
-    margin-top: calc((-1rem * 0.5) + 0.125rem);
-    width: 1rem;
-    height: 1rem;
-    background: var(--input-controles-color);
-  }
-}
-
-select.velocidad-reproduccion {
-  max-width: 50px;
-  height: 1rem;
-  font-size: 0.75rem;
-  background-position: calc(100% - 2px), 50%;
-  border-radius: 10px;
-  padding: 0 4px;
 }
 </style>

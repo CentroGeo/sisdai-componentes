@@ -106,6 +106,15 @@ const menuAccesibilidad = ref(null)
               <li>
                 <router-link
                   class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/control-deslizante"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  Control deslizante
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/directivas"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >

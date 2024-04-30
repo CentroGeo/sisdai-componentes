@@ -52,7 +52,7 @@ En caso que de que el menú esté desplegado por defecto el atributo se puede om
 
 </section>
 
-<section id="api">
+<section id="ejemplos">
 
 ## Ejemplos
 
