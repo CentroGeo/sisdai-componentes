@@ -1,21 +1,21 @@
 <template>
   <div class="selector-zoom m-x-2">
     <button
-      class="boton-secundario boton-chico boton-icono"
+      class="boton-secundario boton-icono boton-sin-borde"
       @click="disminuir"
     >
       <span class="icono-restar"></span>
     </button>
     <input
       type="range"
-      class="input-rango"
+      class="input-rango-acercar-alejar"
       :min="min"
       :max="max"
       :step="step"
       v-model="inputValue"
     />
     <button
-      class="boton-secundario boton-chico boton-icono m-l-1"
+      class="boton-secundario boton-icono boton-sin-borde m-l-1"
       @click="aumentar"
     >
       <span class="icono-agregar"></span>
@@ -58,6 +58,9 @@ export default {
         this.$emit('change', Number(value))
       },
     },
+    valor_porcentual() {
+      return `${((this.inputValue - this.min) / (this.max - this.min)) * 100}%`
+    },
   },
   methods: {
     aumentar() {
@@ -78,10 +81,9 @@ export default {
   align-items: center;
   position: relative;
 
-  input[type='range'].input-rango {
+  input[type='range'].input-rango-acercar-alejar {
     max-height: inherit;
     margin: 0;
-    background-color: transparent;
     min-width: 200px;
   }
   input[type='text'].input-texto {
@@ -97,6 +99,66 @@ export default {
     right: 0.5rem;
     color: var(--tipografia-color);
     top: 25%;
+  }
+
+  .input-rango-acercar-alejar {
+    width: 100%;
+    //background: var(--tarjetas-fondo);
+  }
+
+  input.input-rango-acercar-alejar[type='range'] {
+    &::-webkit-slider-runnable-track {
+      background: linear-gradient(
+        to right,
+        var(--input-controles-color),
+        var(--input-controles-color) v-bind(valor_porcentual),
+        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      );
+    }
+    &::-moz-range-track {
+      background: linear-gradient(
+        to right,
+        var(--input-controles-color),
+        var(--input-controles-color) v-bind(valor_porcentual),
+        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      );
+    }
+    &::-ms-fill-upper {
+      background: linear-gradient(
+        to right,
+        var(--input-controles-color),
+        var(--input-controles-color) v-bind(valor_porcentual),
+        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      );
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      &::-webkit-slider-runnable-track {
+        background: linear-gradient(
+          to right,
+          var(--boton-primario-focus-fondo),
+          var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
+          var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+        );
+      }
+      &::-moz-range-track {
+        background: linear-gradient(
+          to right,
+          var(--boton-primario-focus-fondo),
+          var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
+          var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+        );
+      }
+      &::-ms-fill-upper {
+        background: linear-gradient(
+          to right,
+          var(--boton-primario-focus-fondo),
+          var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
+          var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+        );
+      }
+    }
   }
 }
 </style>
