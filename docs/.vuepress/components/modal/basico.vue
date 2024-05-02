@@ -1,17 +1,27 @@
 <script setup>
 import { ref } from 'vue'
 const sisdaiModal = ref(null)
+
+const salida = ref()
+function descargaAlgo() {
+  sisdaiModal.value.cerrarModal()
+  salida.value = 'descargando...'
+}
 </script>
 
 <template>
   <div>
-    <SisdaiModal ref="sisdaiModal">
+    <SisdaiModal
+      ref="sisdaiModal"
+      tamanioModal="chico"
+    >
       <div class="modal-contenido">
         <!-- TODO:columas -->
         <h1>
           <span class="icono-archivo-descargar icono-3 m-r-1"></span>Descargar
           datos con más de una línea
         </h1>
+
         <div>
           <p><b>Selección de datos</b></p>
           <input
@@ -46,14 +56,16 @@ const sisdaiModal = ref(null)
 
         <button
           class="boton-primario m-t-5"
-          @click="sisdaiModal?.cerrarModal()"
+          value="descarga"
+          @click="descargaAlgo()"
         >
           Descargar
         </button>
       </div>
     </SisdaiModal>
 
-    <button @click="sisdaiModal?.abrirModal()">Abrir Modal</button>
+    <button @click="sisdaiModal?.abrirModal()">Modal Básico</button>
+    <p>{{ salida }}</p>
   </div>
 </template>
 

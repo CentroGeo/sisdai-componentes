@@ -2,96 +2,113 @@
 const propiedades = {
   tamanioModal: {
     type: String,
-    default: 'chico',
+    default: '',
   },
 }
 </script>
 
 <script setup>
-import { computed, onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
+import { onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
 
-const esta_abierto = ref(false)
+const modal = ref()
+const idModal = idAleatorio()
 
 const props = defineProps(propiedades)
 const { tamanioModal } = toRefs(props)
 
-const overflowYX = computed(() => {
-  if (tamanioModal.value === 'pantalla-completa') {
-    return 'overflow-x-y'
-  }
-  return ''
-})
-
-// TODO: Colocar el modal hasta el final del body
-// TODO: Deshabilitar todas las demás funciones
 /**
- * Método para cerrar el modal
+ * Esta función nos sirve para obtener un id aleatorio para el componente
+ * @returns {String} Cadena con prefijo "modal-" contatenado con un string aleatorio
+ */
+function idAleatorio() {
+  return 'modal-' + Math.random().toString(36).substring(2)
+}
+
+/**
+ * Método para cerrar el modal y remover la clase overflow-hidden del body
  */
 function cerrarModal() {
-  esta_abierto.value = false
   document.querySelector('body').classList.remove('overflow-hidden')
+
+  modal.value = document.querySelector('dialog#' + idModal)
+  modal.value.close()
 }
 /**
- * Método para abrir el modal
+ * Método para abrir el modal y agregar la clase overflow-hidden al body
  */
 function abrirModal() {
-  esta_abierto.value = true
   document.querySelector('body').classList.add('overflow-hidden')
+
+  modal.value = document.querySelector('dialog#' + idModal)
+  modal.value.showModal()
+}
+
+/**
+ * Método que detecta si la tecla esc es presionada para cerrar el modal
+ */
+function siPresionaTeclaEscape(event) {
+  if (event.which === 27) {
+    document.querySelector('body').classList.remove('overflow-hidden')
+  }
 }
 /**
- * Método que detecta si la tecla esc
- * es presionada para cerrar el modal
+ * Método para cerrar el Modal si se da click fuera de este o en el :backdrop
+ * mientras esté abierto
+ * @param {Object} event
  */
-function onEscapeKeyUp(event) {
-  if (event.which === 27) {
+function clickFueraDelModal(event) {
+  modal.value = document.querySelector('dialog#' + idModal)
+  if (event.target === modal.value) {
     cerrarModal()
   }
 }
 
 onBeforeMount(() => {
-  window.addEventListener('keyup', onEscapeKeyUp)
+  window.addEventListener('keyup', siPresionaTeclaEscape)
+  window.addEventListener('click', function (event) {
+    clickFueraDelModal(event)
+  })
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('keyup', onEscapeKeyUp)
+  window.removeEventListener('keyup', siPresionaTeclaEscape)
+  window.addEventListener('click', function (event) {
+    clickFueraDelModal()
+  })
 })
 
 defineExpose({
   abrirModal,
   cerrarModal,
+  idModal,
 })
 </script>
 
 <template>
-  <transition name="fade">
-    <div
-      class="modal"
-      :class="overflowYX"
-      v-if="esta_abierto"
-    >
-      <div
-        class="modal-fondo-trasero"
+  <dialog
+    :id="idModal"
+    :class="tamanioModal"
+    class="modal"
+    autofocus
+  >
+    <div class="modal-contenedor">
+      <button
+        class="boton-icono boton-sin-borde icono-3 modal-cerrar"
+        value="cerrar"
         @click="cerrarModal()"
-      ></div>
-
-      <div
-        class="modal-contenedor"
-        :class="tamanioModal"
       >
-        <button
-          class="boton-icono boton-sin-borde icono-3 modal-cerrar"
-          @click="cerrarModal()"
-        >
-          <span class="icono-cerrar" />
-          <span class="a11y-solo-lectura">Cerrar.</span>
-        </button>
+        <span
+          class="icono-cerrar"
+          aria-hidden="true"
+        />
+        <span class="a11y-solo-lectura">Cerrar.</span>
+      </button>
 
-        <div class="modal-cuerpo">
-          <slot />
-        </div>
+      <div class="modal-cuerpo">
+        <slot />
       </div>
     </div>
-  </transition>
+  </dialog>
 </template>
 
 <style lang="scss" scoped></style>

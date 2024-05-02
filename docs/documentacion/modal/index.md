@@ -4,7 +4,9 @@ layout: LayoutDocumentacion
 
 # Modal
 
-Este componente desactiva el contenido y las acciones principales para colocar un contenedor encima de estos que requiera toda la tención y acción de la persona usuaria.
+Este componente interrumpe el contenido y las interacciones principales de la página para colocar un elemento html `<dialog/>` de tipo modal encima que requiera toda la tención y acción de la persona usuaria.
+
+Consulte la [sección del elemento dialog](https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog) para más información.
 
 Uso:
 
@@ -16,7 +18,14 @@ Uso:
 ```
 
 Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en _hidden_ en la hoja de estilo css
-principal de la aplicación o en el App.vue
+principal de la aplicación o en el App.vue para interrumpir el scroll con el resto de la página.
+
+```css
+/* css */
+.overflow-hidden {
+  overflow: hidden;
+}
+```
 
 <section id="api">
 
@@ -33,10 +42,10 @@ principal de la aplicación o en el App.vue
   - Requerido: si
 
 - **tamanioModal**
-  Tamaño del contenedor del modal: _chico, grande o pantalla-completa_. Por defecto usa el tamaño chico.
+  Tamaño del ancho del contenedor del modal: _chico, grande o pantalla-completa_. Por defecto se adapta al tamaño del contenido.
 
   - Tipo: `String`
-  - Valor predeterminado: `chico`
+  - Valor predeterminado: ``
 
 ### Metodos
 
@@ -45,6 +54,12 @@ principal de la aplicación o en el App.vue
 
 - **cerrarModal**
   Cierra el modal y remueve la clase .overflow-hidden al elemento body del documento.
+
+- **siPresionaTeclaEscape**
+  Si la tecla _Esc_ es presionada se remueve la clase .overflow-hidden al elemento body del documento.
+
+- **clickFueraDelModal**
+  Si la usuaria da click fuera del modal mientras este esté abierto, este se cerrará.
 
 ### Eventos
 
@@ -56,7 +71,7 @@ Este componente no dispara eventos externos
 
 - Requerido: si
 
-Slot para el contenido del modal, son los elementos de formulario u otros para filtrar la información requerida para una petición de orden o instrucción.
+Slot para el contenido del modal.
 
 </section>
 
@@ -64,11 +79,19 @@ Slot para el contenido del modal, son los elementos de formulario u otros para f
 
 ## Ejemplos
 
+#### Uso
+
+<utils-ejemplo-doc ruta="modal/prueba.vue"/>
+
 #### Uso básico
+
+Su ancho máximo es de 462px equivalentes a 6 columnas.
 
 <utils-ejemplo-doc ruta="modal/basico.vue"/>
 
 #### Modal grande
+
+Su ancho máximo es de 1110px equivalentes a 14 columnas o 90% del ancho de la pantalla.
 
 <utils-ejemplo-doc ruta="modal/grande.vue"/>
 
