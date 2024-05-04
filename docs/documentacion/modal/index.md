@@ -18,7 +18,7 @@ Uso:
 ```
 
 Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en _hidden_ en la hoja de estilo css
-principal de la aplicación o en el App.vue para interrumpir el scroll con el resto de la página.
+principal de la aplicación o en el body para interrumpir el scroll con el resto de la página.
 
 ```css
 /* css */
@@ -41,10 +41,17 @@ principal de la aplicación o en el App.vue para interrumpir el scroll con el re
   - Tipo: `String`
   - Requerido: si
 
+- **tituloModal**
+  Título del modal, se pueden utilizar elementos html haciéndo el props dinámico. Se requiere para que los lectores de pantalla lo lean.
+
+  - Tipo: `String`
+  - Valor predeterminado: ``
+
 - **tamanioModal**
   Tamaño del ancho del contenedor del modal: _chico, grande o pantalla-completa_. Por defecto se adapta al tamaño del contenido.
 
   - Tipo: `String`
+  - Requerido: no
   - Valor predeterminado: ``
 
 ### Metodos

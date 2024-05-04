@@ -7,10 +7,10 @@ const sisdaiModal = ref(null)
   <div>
     <SisdaiModal
       ref="sisdaiModal"
+      tituloModal="Título de modal"
       tamanioModal="grande"
     >
       <div class="modal-contenido">
-        <h1>Título de modal</h1>
         <div class="flex flex-contenido-equidistante">
           <div class="columna-5-esc"></div>
           <div class="columna-6-esc"></div>

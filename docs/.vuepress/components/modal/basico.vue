@@ -13,15 +13,15 @@ function descargaAlgo() {
   <div>
     <SisdaiModal
       ref="sisdaiModal"
+      :tituloModal="` <span
+            class='icono-archivo-descargar icono-3 m-r-1'
+            aria-hidden='true'
+          ></span
+          >Descargar datos con más de una línea`"
       tamanioModal="chico"
     >
       <div class="modal-contenido">
         <!-- TODO:columas -->
-        <h1>
-          <span class="icono-archivo-descargar icono-3 m-r-1"></span>Descargar
-          datos con más de una línea
-        </h1>
-
         <div>
           <p><b>Selección de datos</b></p>
           <input
@@ -49,7 +49,7 @@ function descargaAlgo() {
           <input
             id="radio4"
             type="radio"
-            name="radioses4"
+            name="radioses3"
           />
           <label for="radio4">.xls (Archivo de Excel)</label>
         </div>
@@ -71,14 +71,10 @@ function descargaAlgo() {
 
 <style lang="scss" scoped>
 .modal-contenido {
-  h1 {
-    font-size: 1.5rem;
-    margin-top: 0;
-  }
   button.boton-primario {
     display: block;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: -36px;
     @media (max-width: 768px) {
       width: 100%;
     }
