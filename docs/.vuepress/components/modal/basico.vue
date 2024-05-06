@@ -49,7 +49,7 @@ function descargaAlgo() {
           <input
             id="radio4"
             type="radio"
-            name="radioses3"
+            name="radioses4"
           />
           <label for="radio4">.xls (Archivo de Excel)</label>
         </div>

@@ -42,7 +42,7 @@ principal de la aplicación o en el body para interrumpir el scroll con el resto
   - Requerido: si
 
 - **tituloModal**
-  Título del modal, se pueden utilizar elementos html haciéndo el props dinámico. Se requiere para que los lectores de pantalla lo lean.
+  Título del modal, se pueden utilizar elementos html mediante la props dinámica. Se requiere para que los lectores de pantalla lo lean.
 
   - Tipo: `String`
   - Valor predeterminado: ``

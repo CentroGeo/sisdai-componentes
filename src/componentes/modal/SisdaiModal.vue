@@ -10,6 +10,9 @@ const propiedades = {
 
 <script setup>
 import { onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
+import useFocusTrap from '../../composables/useFocusTrap'
+
+const { trapRef } = useFocusTrap()
 
 const modal = ref()
 const idModal = idAleatorio()
@@ -66,16 +69,12 @@ function clickFueraDelModal(event) {
 
 onBeforeMount(() => {
   window.addEventListener('keyup', siPresionaTeclaEscape)
-  window.addEventListener('click', function (event) {
-    clickFueraDelModal(event)
-  })
+  window.addEventListener('click', clickFueraDelModal)
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('keyup', siPresionaTeclaEscape)
-  window.addEventListener('click', function (event) {
-    clickFueraDelModal(event)
-  })
+  window.addEventListener('click', clickFueraDelModal)
 })
 
 defineExpose({
@@ -87,18 +86,18 @@ defineExpose({
 
 <template>
   <dialog
-    role="dialog"
+    class="modal"
     :id="idModal"
     :class="tamanioModal"
-    class="modal"
+    role="dialog"
+    aria-labelledby="titulo_modal"
     aria-modal="true"
-    autofocus
+    ref="trapRef"
   >
-    <!-- TODO: que itere entre las opciones de tab dentro del modal -->
     <div class="modal-contenedor">
       <div class="modal-cuerpo">
         <h1
-          class="titulo-modal"
+          id="titulo_modal"
           v-html="tituloModal"
         ></h1>
         <slot />
