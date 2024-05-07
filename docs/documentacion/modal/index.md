@@ -4,7 +4,7 @@ layout: LayoutDocumentacion
 
 # Modal
 
-Este componente interrumpe el contenido y las interacciones principales de la página para colocar un elemento html `<dialog/>` de tipo modal encima que requiera toda la tención y acción de la persona usuaria.
+Este componente interrumpe el contenido y las interacciones principales de la página para colocar un elemento html `<dialog/>` de tipo modal encima que requiera toda la atención y acción de la persona usuaria.
 
 Consulte la [sección del elemento dialog](https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog) para más información.
 

@@ -2704,8 +2704,8 @@ const info_de_despliegue_plugin = {
   }
 };
 /* harmony default export */ var info_de_despliegue = (info_de_despliegue_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6f898b7e-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/modal/SisdaiModal.vue?vue&type=template&id=7aecfb48&scoped=true
-var SisdaiModalvue_type_template_id_7aecfb48_scoped_true_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6f898b7e-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/modal/SisdaiModal.vue?vue&type=template&id=32d30754&scoped=true
+var SisdaiModalvue_type_template_id_32d30754_scoped_true_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -2724,6 +2724,7 @@ var SisdaiModalvue_type_template_id_7aecfb48_scoped_true_render = function rende
   }, [_c('div', {
     staticClass: "modal-cuerpo"
   }, [_c('h1', {
+    staticClass: "titulo-modal",
     attrs: {
       "id": "titulo_modal"
     },
@@ -2749,7 +2750,7 @@ var SisdaiModalvue_type_template_id_7aecfb48_scoped_true_render = function rende
     staticClass: "a11y-solo-lectura"
   }, [_vm._v("Cerrar.")])])])]);
 };
-var SisdaiModalvue_type_template_id_7aecfb48_scoped_true_staticRenderFns = [];
+var SisdaiModalvue_type_template_id_32d30754_scoped_true_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./src/composables/useFocusTrap.js
 // This file is part of sisdai-componentes.
@@ -2768,7 +2769,7 @@ var SisdaiModalvue_type_template_id_7aecfb48_scoped_true_staticRenderFns = [];
 //   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
 
 
-const selectorElementosEnfocables = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+const selectorElementosEnfocables = 'button, [href], input, select, details, audio, video, textarea, [tabindex]:not([tabindex="-1"])';
 
 /**
  * @typedef {function} useFocusTrap
@@ -2911,34 +2912,28 @@ const SisdaiModalvue_type_script_setup_true_lang_js_propiedades = {
       return 'modal-' + Math.random().toString(36).substring(2);
     }
 
-    /**
-     * Método para cerrar el modal y remover la clase overflow-hidden del body
-     */
+    /** Cierra el modal y remover la clase overflow-hidden del body */
     function cerrarModal() {
       document.querySelector('body').classList.remove('overflow-hidden');
       modal.value = document.getElementById(idModal);
       modal.value.close();
     }
-    /**
-     * Método para abrir el modal y agregar la clase overflow-hidden al body
-     */
+    /** Abre el modal y agregar la clase overflow-hidden al body */
     function abrirModal() {
       document.querySelector('body').classList.add('overflow-hidden');
       modal.value = document.getElementById(idModal);
       modal.value.showModal();
     }
 
-    /**
-     * Método que detecta si la tecla esc es presionada para cerrar el modal
-     */
+    /** Revisa si la tecla Esc fue presionada para cerrar el modal */
     function siPresionaTeclaEscape(event) {
       if (event.which === 27) {
         document.querySelector('body').classList.remove('overflow-hidden');
       }
     }
     /**
-     * Método para cerrar el Modal si se da click fuera de este o en el :backdrop
-     * mientras esté abierto
+     * Revisa si se da click fuera del modal o en el :backdrop
+     * mientras esté abierto para cerrarlo
      * @param {Object} event
      */
     function clickFueraDelModal(event) {
@@ -2978,10 +2973,10 @@ const SisdaiModalvue_type_script_setup_true_lang_js_propiedades = {
 });
 ;// CONCATENATED MODULE: ./src/componentes/modal/SisdaiModal.vue?vue&type=script&setup=true&lang=js
  /* harmony default export */ var modal_SisdaiModalvue_type_script_setup_true_lang_js = (SisdaiModalvue_type_script_setup_true_lang_js); 
-;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/modal/SisdaiModal.vue?vue&type=style&index=0&id=7aecfb48&prod&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./node_modules/@vue/cli-service/node_modules/mini-css-extract-plugin/dist/loader.js??clonedRuleSet-64.use[0]!./node_modules/@vue/cli-service/node_modules/css-loader/dist/cjs.js??clonedRuleSet-64.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/stylePostLoader.js!./node_modules/@vue/cli-service/node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-64.use[2]!./node_modules/sass-loader/dist/cjs.js??clonedRuleSet-64.use[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/modal/SisdaiModal.vue?vue&type=style&index=0&id=32d30754&prod&lang=scss&scoped=true
 // extracted by mini-css-extract-plugin
 
-;// CONCATENATED MODULE: ./src/componentes/modal/SisdaiModal.vue?vue&type=style&index=0&id=7aecfb48&prod&lang=scss&scoped=true
+;// CONCATENATED MODULE: ./src/componentes/modal/SisdaiModal.vue?vue&type=style&index=0&id=32d30754&prod&lang=scss&scoped=true
 
 ;// CONCATENATED MODULE: ./src/componentes/modal/SisdaiModal.vue
 
@@ -2994,11 +2989,11 @@ const SisdaiModalvue_type_script_setup_true_lang_js_propiedades = {
 
 var SisdaiModal_component = normalizeComponent(
   modal_SisdaiModalvue_type_script_setup_true_lang_js,
-  SisdaiModalvue_type_template_id_7aecfb48_scoped_true_render,
-  SisdaiModalvue_type_template_id_7aecfb48_scoped_true_staticRenderFns,
+  SisdaiModalvue_type_template_id_32d30754_scoped_true_render,
+  SisdaiModalvue_type_template_id_32d30754_scoped_true_staticRenderFns,
   false,
   null,
-  "7aecfb48",
+  "32d30754",
   null
   
 )

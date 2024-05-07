@@ -16,7 +16,7 @@
 import { customRef } from 'vue'
 
 const selectorElementosEnfocables =
-  'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+  'button, [href], input, select, details, audio, video, textarea, [tabindex]:not([tabindex="-1"])'
 
 /**
  * @typedef {function} useFocusTrap

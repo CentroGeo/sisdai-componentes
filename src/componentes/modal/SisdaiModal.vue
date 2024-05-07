@@ -28,18 +28,14 @@ function idAleatorio() {
   return 'modal-' + Math.random().toString(36).substring(2)
 }
 
-/**
- * Método para cerrar el modal y remover la clase overflow-hidden del body
- */
+/** Cierra el modal y remover la clase overflow-hidden del body */
 function cerrarModal() {
   document.querySelector('body').classList.remove('overflow-hidden')
 
   modal.value = document.getElementById(idModal)
   modal.value.close()
 }
-/**
- * Método para abrir el modal y agregar la clase overflow-hidden al body
- */
+/** Abre el modal y agregar la clase overflow-hidden al body */
 function abrirModal() {
   document.querySelector('body').classList.add('overflow-hidden')
 
@@ -47,17 +43,15 @@ function abrirModal() {
   modal.value.showModal()
 }
 
-/**
- * Método que detecta si la tecla esc es presionada para cerrar el modal
- */
+/** Revisa si la tecla Esc fue presionada para cerrar el modal */
 function siPresionaTeclaEscape(event) {
   if (event.which === 27) {
     document.querySelector('body').classList.remove('overflow-hidden')
   }
 }
 /**
- * Método para cerrar el Modal si se da click fuera de este o en el :backdrop
- * mientras esté abierto
+ * Revisa si se da click fuera del modal o en el :backdrop
+ * mientras esté abierto para cerrarlo
  * @param {Object} event
  */
 function clickFueraDelModal(event) {
@@ -89,15 +83,16 @@ defineExpose({
     class="modal"
     :id="idModal"
     :class="tamanioModal"
+    ref="trapRef"
     role="dialog"
     aria-labelledby="titulo_modal"
     aria-modal="true"
-    ref="trapRef"
   >
     <div class="modal-contenedor">
       <div class="modal-cuerpo">
         <h1
           id="titulo_modal"
+          class="titulo-modal"
           v-html="tituloModal"
         ></h1>
         <slot />
@@ -120,8 +115,7 @@ defineExpose({
 
 <style lang="scss" scoped>
 .modal-contenedor {
-  // TODO: este no puede estar acá, sino desde sisdai-css
-  h1 {
+  h1.titulo-modal {
     font-size: 1.5rem;
     margin-top: 0;
   }
