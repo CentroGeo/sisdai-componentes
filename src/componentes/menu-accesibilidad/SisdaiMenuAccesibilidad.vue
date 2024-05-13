@@ -159,7 +159,7 @@ function alternarClasesBody() {
  */
 // Tema o modo de color con el que inicializa la aplicación.
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
-const body = document?.querySelector('body')
+let body = {}
 
 /**
  * Agrega el atributo para asignar el tema claro con el perfil
@@ -285,6 +285,7 @@ onBeforeMount(() => {
 onMounted(() => {
   // const tema = getTemaDesdeLocalStorage()
   // tema.value = getTemaDesdeLocalStorage()
+  body = document?.querySelector('body')
   setTemaEnDocumentoYLocalStorage()
   window
     .matchMedia('(prefers-color-scheme: dark)')

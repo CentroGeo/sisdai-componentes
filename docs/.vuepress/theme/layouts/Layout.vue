@@ -15,6 +15,8 @@ onMounted(() => {
 
     <nav-navegacion-principal />
 
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
+
     <main
       role="main"
       class="contenedor m-y-maximo"
@@ -25,7 +27,5 @@ onMounted(() => {
     <SisdaiPiePaginaConahcyt />
 
     <SisdaiPiePaginaGobMx />
-
-    <SisdaiMenuAccesibilidad :objetoStore="store" />
   </div>
 </template>

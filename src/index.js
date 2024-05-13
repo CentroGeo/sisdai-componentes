@@ -32,6 +32,7 @@ import {
   SisdaiCampoBusqueda,
   SisdaiControlAcercarAlejar,
   SisdaiControlDeslizante,
+  SisdaiNarrativa,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -59,6 +60,8 @@ const plugin = {
     Vue.use(GlobosInformacion)
     //otros
     Vue.use(SisdaiNarrativaScroll)
+    Vue.use(SisdaiNarrativa)
+
     Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
     Vue.use(SisdaiCampoBusqueda)
@@ -78,6 +81,7 @@ export {
   SisdaiMenuAccesibilidad,
   GlobosInformacion,
   SisdaiNarrativaScroll,
+  SisdaiNarrativa,
   SisdaiBotonFlotante,
   SisdaiModal,
   SisdaiEnlaceExterno,

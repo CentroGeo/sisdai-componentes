@@ -1,183 +1,123 @@
 <script>
 const propiedades = {
-  tamanio: {
+  tituloModal: { type: String, default: '' },
+  tamanioModal: {
     type: String,
-    default: 'chico',
+    default: '',
   },
 }
 </script>
 
 <script setup>
-import { computed, onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
+import { onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
+import useFocusTrap from '../../composables/useFocusTrap'
 
-const esta_abierto = ref(false)
+const { trapRef } = useFocusTrap()
+
+const modal = ref()
+const idModal = idAleatorio()
 
 const props = defineProps(propiedades)
-const { tamanio } = toRefs(props)
+const { tamanioModal } = toRefs(props)
 
+/**
+ * Esta función nos sirve para obtener un id aleatorio para el componente
+ * @returns {String} Cadena con prefijo "modal-" contatenado con un string aleatorio
+ */
+function idAleatorio() {
+  return 'modal-' + Math.random().toString(36).substring(2)
+}
+
+/** Cierra el modal y remover la clase overflow-hidden del body */
 function cerrarModal() {
-  esta_abierto.value = false
   document.querySelector('body').classList.remove('overflow-hidden')
+
+  modal.value = document.getElementById(idModal)
+  modal.value.close()
 }
-/* eslint-disable */
+/** Abre el modal y agregar la clase overflow-hidden al body */
 function abrirModal() {
-  esta_abierto.value = true
   document.querySelector('body').classList.add('overflow-hidden')
+
+  modal.value = document.getElementById(idModal)
+  modal.value.showModal()
 }
 
-function onEscapeKeyUp(event) {
+/** Revisa si la tecla Esc fue presionada para cerrar el modal */
+function siPresionaTeclaEscape(event) {
   if (event.which === 27) {
+    document.querySelector('body').classList.remove('overflow-hidden')
+  }
+}
+/**
+ * Revisa si se da click fuera del modal o en el :backdrop
+ * mientras esté abierto para cerrarlo
+ * @param {Object} event
+ */
+function clickFueraDelModal(event) {
+  modal.value = document.getElementById(idModal)
+  if (event.target === modal.value) {
     cerrarModal()
   }
 }
 
 onBeforeMount(() => {
-  window.addEventListener('keyup', onEscapeKeyUp)
+  window.addEventListener('keyup', siPresionaTeclaEscape)
+  window.addEventListener('click', clickFueraDelModal)
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('keyup', onEscapeKeyUp)
+  window.removeEventListener('keyup', siPresionaTeclaEscape)
+  window.addEventListener('click', clickFueraDelModal)
 })
 
-const overflowYX = computed(() => {
-  if (tamanio.value === 'pantalla-completa') {
-    return 'overflow-x-y'
-  }
-  return ''
+defineExpose({
+  abrirModal,
+  cerrarModal,
+  idModal,
 })
 </script>
 
 <template>
-  <transition name="fade">
-    <div
-      class="modal"
-      :class="overflowYX"
-      v-if="esta_abierto"
-    >
-      <div
-        class="modal-fondo-trasero"
-        @click="cerrarModal()"
-      />
-      <div
-        class="modal-contenedor"
-        :class="tamanio"
-      >
-        <div class="modal-encabezado">
-          <slot name="encabezado" />
-          <button
-            class="btn-icono icono-cerrar modal-cerrar"
-            @click="cerrarModal()"
-          ></button>
-        </div>
-        <div class="modal-cuerpo">
-          <slot name="cuerpo" />
-        </div>
-        <div class="modal-pie">
-          <slot name="pie" />
-        </div>
+  <dialog
+    class="modal"
+    :id="idModal"
+    :class="tamanioModal"
+    ref="trapRef"
+    role="dialog"
+    aria-labelledby="titulo_modal"
+    aria-modal="true"
+  >
+    <div class="modal-contenedor">
+      <div class="modal-cuerpo">
+        <h1
+          id="titulo_modal"
+          class="titulo-modal"
+          v-html="tituloModal"
+        ></h1>
+        <slot />
       </div>
+
+      <button
+        class="boton-icono boton-sin-borde icono-3 modal-cerrar"
+        value="cerrar"
+        @click="cerrarModal()"
+      >
+        <span
+          class="icono-cerrar"
+          aria-hidden="true"
+        />
+        <span class="a11y-solo-lectura">Cerrar.</span>
+      </button>
     </div>
-  </transition>
+  </dialog>
 </template>
 
 <style lang="scss" scoped>
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9999;
-  @media (max-width: 768px) {
-    top: inherit;
+.modal-contenedor {
+  h1.titulo-modal {
+    font-size: 1.5rem;
+    margin-top: 0;
   }
-  &.overflow-x-y {
-    top: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  &-fondo-trasero {
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-  }
-  &-contenedor {
-    background-color: #fff;
-    position: relative;
-    margin: 120px auto;
-    display: flex;
-    flex-direction: column;
-    border-radius: 20px;
-    padding: 24px;
-    z-index: 2;
-    @media (max-width: 768px) {
-      margin: inherit;
-      padding: 24px 24px 40px;
-    }
-    &.chico {
-      width: 462px;
-      @media (max-width: 768px) {
-        width: 100%;
-        border-radius: 20px 20px 0px 0px;
-      }
-    }
-    &.mediano {
-      width: 616px;
-      @media (max-width: 768px) {
-        width: 100%;
-        border-radius: 20px 20px 0px 0px;
-      }
-    }
-    &.grande {
-      width: 924px;
-      @media (max-width: 768px) {
-        width: 100%;
-        border-radius: 20px 20px 0px 0px;
-      }
-    }
-    &.pantalla-completa {
-      width: 100%;
-      height: auto;
-      margin: 0px;
-      border-radius: 0px;
-    }
-  }
-  button.modal-cerrar {
-    background: none;
-    box-shadow: none;
-    border: none;
-    padding: 8px;
-    color: #000;
-    font-weight: 700;
-    margin-left: auto;
-    font-size: 16px;
-    &:hover {
-      color: #000;
-    }
-  }
-  &-encabezado {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  &-cuerpo {
-  }
-  &-pie {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s;
-}
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
