@@ -7,7 +7,7 @@ const valor = ref(50)
 <template>
   <SisdaiControlAcercarAlejar
     v-model="valor"
-    min="0"
-    max="100"
+    :min="0"
+    :max="100"
   />
 </template>
