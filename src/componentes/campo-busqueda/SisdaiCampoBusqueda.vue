@@ -183,7 +183,7 @@ $alturaBase: 3.5em;
     }
   }
 
-  input.input-busqueda {
+  input[type='search'].input-busqueda {
     font-size: inherit !important;
     margin: 0 !important;
     //TODO:variable desde sisdai
@@ -201,6 +201,12 @@ $alturaBase: 3.5em;
     &:focus {
       background-color: #fff !important;
       color: #000 !important;
+    }
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
     }
   }
 }
