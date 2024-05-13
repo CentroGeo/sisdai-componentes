@@ -173,6 +173,10 @@ watch(
     audio.value.volume = nv / 100
   }
 )
+function funcionInput() {
+  slider_activo.value = true
+  porcentaje_transcurrido.value = `${(100 * tiempo_transcurrido.value) / duracion.value}%`
+}
 </script>
 
 <template>
@@ -201,10 +205,7 @@ watch(
         :max="Math.floor(duracion)"
         v-model.number="tiempo_transcurrido"
         @change="slider_activo = false"
-        @input="
-          slider_activo = true
-          porcentaje_transcurrido = `${(100 * tiempo_transcurrido) / duracion}%`
-        "
+        @input="funcionInput()"
       />
     </div>
 
