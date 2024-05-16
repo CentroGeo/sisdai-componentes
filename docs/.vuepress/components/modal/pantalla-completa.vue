@@ -11,7 +11,7 @@ const sisdaiModal = ref(null)
     >
       <div class="modal-contenido">
         <img
-          src="https://picsum.photos/1920/1080"
+          src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/par.jpg"
           alt=""
         />
       </div>

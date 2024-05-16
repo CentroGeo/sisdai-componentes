@@ -5,7 +5,7 @@
     <div class="tarjeta m-b-2">
       <img
         class="fondo-imagen"
-        src="http://placekitten.com/970/984"
+        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/kale-3.jpg"
       />
       <div class="contenido-html">
         <p class="parrafo-texto-alto">Esta es una tarjeta de ejemplo</p>
@@ -19,7 +19,7 @@
     >
       <img
         class="fondo-imagen"
-        src="http://placekitten.com/970/980"
+        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/puca.jpg"
       />
       <div class="degradado-negro-abajo">
         <div class="contenido-abajo texto-color-1">

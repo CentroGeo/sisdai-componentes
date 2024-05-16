@@ -6,7 +6,7 @@
     >
       <img
         class="portada"
-        src="http://placekitten.com/970/980"
+        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/rayo.jpg"
       />
       <div class="degradado-negro-abajo">
         <div class="contenido-abajo">
@@ -20,7 +20,7 @@
     <div class="tarjeta m-y-2">
       <img
         class="fondo-imagen"
-        src="http://placekitten.com/970/984"
+        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/latke.jpg"
       />
       <div class="contenido-html">
         <p class="parrafo-texto-alto">Esta es una tarjeta de ejemplo</p>
