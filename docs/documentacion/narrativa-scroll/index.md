@@ -37,15 +37,18 @@ Uso:
             </div>
           </div>
         </div>`,
-        imagen: 'https://placekitten.com/1920/1080',
+        imagen:
+          'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/duquesa-2.jpg',
       },
       {
         html: '<p>bullet 1</p>',
-        imagen: 'https://placekitten.com/1920/1082',
+        imagen:
+          'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/becka.jpg',
       },
       {
         html: '<p>bullet 2</p>',
-        imagen: 'https://placekitten.com/1920/1042',
+        imagen:
+          'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/guilliam.jpg',
       },
     ]
     ```
