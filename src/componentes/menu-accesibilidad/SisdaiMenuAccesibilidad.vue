@@ -117,6 +117,7 @@ function ejecutarEnStore(accion, valor) {
   ) {
     objetoStore.value.commit(`${nombreModuloStore.value}/${accion}`, valor)
   }
+  // console.log('objetoStore.value', objetoStore.value)
 }
 
 /**
