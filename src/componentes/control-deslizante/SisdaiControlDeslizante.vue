@@ -1,10 +1,12 @@
 <script setup>
 import { ref, computed, defineExpose, watch } from 'vue'
+
 const props = defineProps({
   val_min: { default: 0, type: Number },
   val_max: { default: 100, type: Number },
   val_entrada: { default: 50, type: Number },
 })
+
 const valor_seleccionado = ref(props.val_entrada)
 const valor_porcentual = computed(() => {
   return `${
@@ -12,34 +14,36 @@ const valor_porcentual = computed(() => {
     (props.val_max - props.val_min)
   }%`
 })
-defineExpose({
-  valor_seleccionado,
-})
+
 watch(
   () => props.val_entrada,
   nv => {
     valor_seleccionado.value = nv
   }
 )
+
+defineExpose({
+  valor_seleccionado,
+})
 </script>
 
 <template>
   <input
     type="range"
-    class="sisdai-control-deslizante"
-    v-model="valor_seleccionado"
+    class="control-deslizante"
     :min="val_min"
     :max="val_max"
+    v-model="valor_seleccionado"
   />
 </template>
 
 <style lang="scss">
-.sisdai-control-deslizante {
-  width: 100%;
-  background: var(--tarjetas-fondo);
-}
+// .control-deslizante {
+//   width: 100%;
+//   background: var(--tarjetas-fondo);
+// }
 
-input.sisdai-control-deslizante[type='range'] {
+input.control-deslizante[type='range'] {
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       to right,

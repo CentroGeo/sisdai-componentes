@@ -77,23 +77,27 @@ watch(menuEstaAbierto, () => {
     <div class="nav-contenedor-identidad">
       <a
         href="https://www.gob.mx/"
-        class="nav-hiperviculo-logo"
         target="_blank"
-        rel="noopener"
+        rel="noopener noreferrer"
+        class="nav-hiperviculo-logo"
       >
         <img
-          width="128"
-          height="38"
           class="nav-logo"
           src="https://cdn.conacyt.mx/sisdai/recursos/gobmx.svg"
           alt="Gobierno de México."
+          width="128"
+          height="38"
         />
       </a>
+
       <button
+        type="button"
         @click="alternarMenu"
-        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto }"
+        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
+        aria-label="Abrir/Cerrar menú de gobierno de México"
+        aria-controls="menugobiernomexico"
       >
         <span class="nav-icono-menu"></span>
         <span class="a11y-solo-lectura"
@@ -101,7 +105,9 @@ watch(menuEstaAbierto, () => {
         >
       </button>
     </div>
+
     <div
+      id="menugobiernomexico"
       class="nav-menu-contedor"
       :class="{ abierto: menuEstaAbierto }"
     >
@@ -148,11 +154,11 @@ watch(menuEstaAbierto, () => {
               target="_blank"
               rel="noopener"
             >
-              <span class="a11y-solo-lectura">ir al buscador</span>
               <span
-                class="icono-buscar"
+                class="pictograma-buscar"
                 aria-hidden="true"
               ></span>
+              <span class="a11y-solo-lectura">ir al buscador</span>
             </a>
           </li>
         </ul>

@@ -28,7 +28,7 @@ defineProps({
   },
 })
 
-//Que el menu se pueda cerrar automaticamente al enfocar otra cosa
+// //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenu = ref(null)
 const navegacionPrincipal = ref(null)
 
@@ -77,7 +77,7 @@ function actualizaAtributoTabIndex(estaAbierto) {
 
 onMounted(() => {
   navMenuConahcyt.value =
-    document.getElementsByClassName('nav-menu')[1]['children']
+    document.getElementsByClassName('nav-menu')[0]['children']
   agregaAtributoTabIndex()
 })
 
@@ -90,30 +90,35 @@ watch(menuEstaAbierto, () => {
   <nav
     class="navegacion navegacion-conahcyt"
     :class="{ 'navegacion-pegada': fija }"
-    aria-label="Menú principal"
     ref="navegacionPrincipal"
+    aria-label="Menú principal"
   >
     <div class="nav-contenedor-identidad">
       <slot name="identidad">
         <a
           href="https://conahcyt.mx/"
           target="_blank"
+          rel="noopener noreferrer"
           class="nav-hiperviculo-logo"
         >
           <img
-            class="nav-logo invertir"
-            width="130"
-            height="38"
+            class="nav-logo color-invertir"
             src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-azul.svg"
             alt="Conahcyt."
+            width="130"
+            height="38"
           />
         </a>
       </slot>
+
       <button
+        type="button"
         @click="alternarMenu"
-        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto }"
+        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
+        aria-label="Abrir/Cerrar navegación principal"
+        aria-controls="navegacionprincipal"
       >
         <span
           class="nav-icono-menu"
@@ -123,18 +128,22 @@ watch(menuEstaAbierto, () => {
           >abrir y cerrar navegacion principal</span
         >
       </button>
+
       <div
         class="nav-informacion"
         v-html="navInformacion"
       ></div>
     </div>
+
     <div
+      id="navegacionprincipal"
       class="nav-menu-contedor"
       :class="{ abierto: menuEstaAbierto }"
     >
       <div class="nav-menu-complementario">
         <slot name="complementario"></slot>
       </div>
+
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenu"
@@ -144,17 +153,25 @@ watch(menuEstaAbierto, () => {
           <ul class="nav-menu">
             <li>
               <a
+                href="#"
                 class="nav-hipervinculo"
-                href="/"
-                >Inicio</a
+                >Menú</a
               >
             </li>
-            <li>
-              <a
-                class="nav-hipervinculo"
-                href="/acerca-de"
-                >Acerca de</a
-              >
+            <li class="nav-contenedor-submenu">
+              <button class="nav-boton-submenu">Menú con submenu</button>
+              <ul class="nav-submenu">
+                <li>
+                  <button class="nav-boton-regresar">Menú con submenu</button>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-hipervinculo"
+                    >Submenu</a
+                  >
+                </li>
+              </ul>
             </li>
           </ul>
         </slot>

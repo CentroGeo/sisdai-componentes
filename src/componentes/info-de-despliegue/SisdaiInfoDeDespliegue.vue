@@ -21,8 +21,10 @@
     <dl class="info-entorno">
       <dt>V</dt>
       <dd>{{ versionProyecto }}</dd>
+
       <dt>Ambiente:</dt>
       <dd>{{ entornoProyecto }}</dd>
+
       <dt>Actualización:</dt>
       <dd>{{ actualizacionProyecto }}</dd>
     </dl>

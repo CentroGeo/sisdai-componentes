@@ -1,19 +1,21 @@
 <script setup>
+import { ref, onMounted, watch } from 'vue'
 import { useRoute } from 'vue-router/composables'
 import store from './../../store'
 
-import { ref, onMounted, watch } from 'vue'
 const lista_elementos = ref([])
 
 const route = useRoute()
 const componenteIndice = ref()
+const menuLateralAbierto = ref()
+
+const menuAccesibilidad = ref(null)
 
 onMounted(() => {
   setTimeout(() => actualizaContenidoIndice(), 200)
 })
 
 watch(route, () => {
-  let elementos = []
   setTimeout(() => actualizaContenidoIndice(), 200)
 })
 
@@ -37,16 +39,14 @@ function actualizaContenidoIndice() {
   componenteIndice.value._setupState.seccion_visible.value = ''
   componenteIndice.value._setupState.autoScrollSuave()
 }
-// const menuLateralAbierto = ref(window.innerWidth < 768 ? false : true)
-const menuLateralAbierto = ref()
+
 if (typeof window !== 'undefined') {
   menuLateralAbierto.value = window.innerWidth < 768 ? false : true
 }
+
 function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
-
-const menuAccesibilidad = ref(null)
 </script>
 
 <template>
@@ -54,31 +54,31 @@ const menuAccesibilidad = ref(null)
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
+
     <SisdaiMenuAccesibilidad
       ref="menuAccesibilidad"
       :objetoStore="store"
     />
 
     <div
-      class="flex"
       id="contenido-todo"
+      class="flex"
     >
-      <div class="columna-4 columna-1-mov menu-fondo">
+      <div class="columna-4 menu-lateral-fondo">
         <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
           <template slot="contenido-menu-lateral">
             <ul>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  <b>SisdaiComponentes</b>
+                  <b>Sisdai Componentes</b>
                 </router-link>
               </li>
-              <li>
+
+              <!-- <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/audio"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -87,34 +87,46 @@ const menuAccesibilidad = ref(null)
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/boton-flotante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Botonflotante
+                  Boton Flotante
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/campo-busqueda"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  Campo Búsqueda
+                </router-link>
+              </li>
+              <li>
+                <router-link
                   to="/documentacion/colapsable-navegacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Colapsable navegación
+                  Colapsable Navegación
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
+                  to="/documentacion/control-acercar-alejar"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  Control Acercar Alejar
+                </router-link>
+              </li>
+              <li>
+                <router-link
                   to="/documentacion/control-deslizante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Control deslizante
+                  Control Deslizante
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/directivas"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -123,16 +135,14 @@ const menuAccesibilidad = ref(null)
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/enlace-externo"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  EnlaceExterno
+                  Enlace Externo
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/imagen-png-webp"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -141,43 +151,38 @@ const menuAccesibilidad = ref(null)
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/indice-de-contenido"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  IndiceDeContenido
+                  Índice de Contenido
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/info-de-despliegue"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  InfoDeDespliegue
+                  Información de Despliegue
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/menu-accesibilidad"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  MenuAccesibilidad
+                  Menu de Accesibilidad
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/menu-lateral"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  MenuLateral
+                  Menu Lateral
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/modal"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -186,7 +191,6 @@ const menuAccesibilidad = ref(null)
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/narrativa"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
@@ -195,65 +199,42 @@ const menuAccesibilidad = ref(null)
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/narrativa-scroll"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  NarrativaScroll
+                  Narrativa Scroll
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/navegacion-gob-mx"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  NavegacionGobMx
+                  Navegacion GobMx
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/navegacion-principal"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  NavegacionPrincipal
+                  Navegacion Principal
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/pie-pagina-conahcyt"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  PiePaginaConahcyt
+                  Pie Pagina Conahcyt
                 </router-link>
               </li>
               <li>
                 <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
                   to="/documentacion/pie-pagina-gob-mx"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  PiePaginaGobMx
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
-                  to="/documentacion/campo-busqueda"
-                  :tabindex="menuLateralAbierto ? undefined : -1"
-                >
-                  CampoBusqueda
-                </router-link>
-              </li>
-              <li>
-                <router-link
-                  class="p-x-5-esc p-x-3-mov p-y-1"
-                  to="/documentacion/control-acercar-alejar"
-                  :tabindex="menuLateralAbierto ? undefined : -1"
-                >
-                  ControlAcercarAlejar
+                  Pie Pagina GobMx
                 </router-link>
               </li>
 
@@ -261,37 +242,36 @@ const menuAccesibilidad = ref(null)
                 <a
                   href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                   target="_blank"
-                  class="p-x-5-esc p-x-3-mov p-y-1"
-                  rel="noopener"
-                  style="display: grid"
+                  rel="noopener noreferrer"
                 >
                   <span
-                    class="icono-social-github titulo-eni"
+                    class="pictograma-social-github pictograma-48"
                     aria-hidden="true"
-                  ></span>
-                  <span> ir a github</span>
+                  >
+                    ir a github</span
+                  >
                 </a>
-              </li>
+              </li> -->
             </ul>
           </template>
         </SisdaiMenuLateral>
       </div>
-      <div class="columna-12 columna-7-mov">
+
+      <div class="columna-12">
         <div
-          class="flex contenedor-indice-y-content"
           id="contenido-documento"
+          class="flex"
         >
-          <div class="columna-4 columna-8-mov">
+          <div class="columna-4 columna-orden-3-esc">
             <SisdaiIndiceDeContenido
-              class="indice-contenido-documentacion"
               :id_indice="'indice-template'"
               ref="componenteIndice"
             >
               <template slot="contenido-indice-de-contenido">
                 <ul>
                   <li
-                    v-for="(elemento, i) in lista_elementos"
-                    :key="i"
+                    v-for="elemento in lista_elementos"
+                    :key="elemento.texto"
                   >
                     <a :href="'#' + elemento.id"> {{ elemento.texto }}</a>
                   </li>
@@ -299,11 +279,16 @@ const menuAccesibilidad = ref(null)
               </template>
             </SisdaiIndiceDeContenido>
           </div>
+
           <div
-            class="columna-12 contenedor ancho-fijo"
+            class="columna-12"
             tabindex="-1"
           >
-            <Content />
+            <div class="m-y-maximo contenedor">
+              <div class="ancho-lectura">
+                <Content />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -316,15 +301,3 @@ const menuAccesibilidad = ref(null)
 </template>
 
 <style src="prismjs/themes/prism-tomorrow.css" />
-<style>
-.indice-contenido-documentacion {
-  position: sticky;
-  top: 50px;
-  padding: 28px 0;
-}
-@media (min-width: 768px) {
-  .contenedor-indice-y-content {
-    flex-direction: row-reverse;
-  }
-}
-</style>

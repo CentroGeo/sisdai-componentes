@@ -25,7 +25,7 @@ Si su proyecto tiene configurado el preprocesador `sass` o `scss`
 
 ```js
 //generalmente es el archivo src/main.js
-import 'sisdai-css/src/eni.scss'
+import 'sisdai-css/src/sisdai.scss'
 ```
 
 O si su proyecto solo acepta css plano:
@@ -51,11 +51,6 @@ Adicionalmente debera agregarse las fuentes e iconos en el encabezado del docume
 />
 <link
   href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&family=Montserrat:wght@400;500;600&display=swap"
-  rel="stylesheet"
-/>
-
-<link
-  href="https://file.myfontastic.com/JS4TgqY9L4s8WsKQDkt5qA/icons.css"
   rel="stylesheet"
 />
 ```
@@ -109,9 +104,6 @@ export default {
   }
 }
 <script>
-
-
-
 ```
 
 **Opción 3**

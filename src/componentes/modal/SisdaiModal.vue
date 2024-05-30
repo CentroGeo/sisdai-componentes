@@ -80,11 +80,11 @@ defineExpose({
 
 <template>
   <dialog
-    class="modal"
     :id="idModal"
-    :class="tamanioModal"
+    class="modal"
     ref="trapRef"
     role="dialog"
+    :class="tamanioModal"
     aria-labelledby="titulo_modal"
     aria-modal="true"
   >
@@ -95,19 +95,20 @@ defineExpose({
           class="titulo-modal"
           v-html="tituloModal"
         ></h1>
+
         <slot />
       </div>
 
       <button
-        class="boton-icono boton-sin-borde icono-3 modal-cerrar"
+        class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
         value="cerrar"
         @click="cerrarModal()"
       >
         <span
-          class="icono-cerrar"
+          class="pictograma-cerrar"
           aria-hidden="true"
         />
-        <span class="a11y-solo-lectura">Cerrar.</span>
+        <span class="a11y-solo-lectura">Cerrar Modal.</span>
       </button>
     </div>
   </dialog>

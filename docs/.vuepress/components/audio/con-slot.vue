@@ -2,16 +2,13 @@
   <div class="contenerdor">
     <SisdaiAudio archivo="/audios/CASA PUEBLA-TLAXCALA NATALIA ZAMUDIO.mp3">
       <template #encabezado>
-        <div>
-          <p class="texto-color-3">Fecha de actualización</p>
-          <p class="h3">Título de audio</p>
+        <div class="audio-cabecera">
+          <p class="nota">Etiqueta o texto secundario .nota</p>
+          <p class="h3">Título de audio .h3</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel
-            eleifend enim. Sed ornare tincidunt bibendum. In hac habitasse
-            platea dictumst. Sed malesuada quam turpis, eu aliquam ligula
-            euismod id. Orci varius natoque penatibus et magnis dis parturient
-            montes, nascetur ridiculus mus. Vestibulum viverra felis enim, non
-            convallis lacus varius in
+            El texto descriptivo es conciso y significativo. Debe ayudar a la
+            persona usuaria a tomar decisiones. Muestra 2 líneas y alberga de
+            100 a 120 caracteres.
           </p>
         </div>
       </template>

@@ -13,28 +13,6 @@
 <!--You should have received a copy of the GNU Lesser General Public License along-->
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
-<template>
-  <div
-    class="indice-de-contenido"
-    :id="id_indice"
-  >
-    <p
-      id="indice"
-      class="titulo-indice"
-    >
-      {{ titulo }}
-    </p>
-    <nav aria-labelledby="indice">
-      <div class="contenedor-indice-de-contenido">
-        <slot name="contenido-indice-de-contenido">
-          <router-link to="#routerlink"> router link prueba </router-link>
-          <a href="#anchore"> anchore link prueba </a>
-        </slot>
-      </div>
-    </nav>
-  </div>
-</template>
-
 <script setup>
 import { onUnmounted, onMounted, ref, watch } from 'vue'
 
@@ -135,3 +113,27 @@ onUnmounted(() => {
   window.removeEventListener('scroll', scroleando)
 })
 </script>
+
+<template>
+  <div
+    :id="id_indice"
+    class="indice-contenido"
+  >
+    <p
+      id="indicecontenido"
+      class="indice-contenido-titulo"
+    >
+      {{ titulo }}
+    </p>
+
+    <nav
+      aria-labelledby="indicecontenido"
+      class="indice-contenido-contenedor"
+    >
+      <slot name="contenido-indice-de-contenido">
+        <router-link to="#routerlink"> router link prueba </router-link>
+        <a href="#anchore"> anchore link prueba </a>
+      </slot>
+    </nav>
+  </div>
+</template>

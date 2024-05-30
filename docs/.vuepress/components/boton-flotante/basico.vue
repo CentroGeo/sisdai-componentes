@@ -1,32 +1,23 @@
 <template>
   <div class="contenerdor-ejemplo-boton-flotante">
     <SisdaiBotonFlotante
+      style="position: absolute"
       :enlaces="[
         {
           clasesCss: 'eni',
           contenido: 'Ir a ENI',
           enlace: 'https://eni.conacyt.mx/',
+          icono: 'pictograma-enlace-externo',
+          color: '#3caeac',
         },
         {
           clasesCss: 'gema',
           contenido: 'Ir a GEMA',
           enlace: 'https://gema.conacyt.mx/',
+          icono: 'pictograma-enlace-externo',
+          color: '#ff5100',
         },
       ]"
     />
   </div>
 </template>
-
-<style>
-.boton-flotante-contenido .eni,
-.boton-flotante-contenido .eni:hover,
-.boton-flotante-contenido .eni:focus {
-  background: #3caeac;
-}
-
-.boton-flotante-contenido .gema,
-.boton-flotante-contenido .gema:hover,
-.boton-flotante-contenido .gema:focus {
-  background: #ff5100;
-}
-</style>

@@ -1,11 +1,12 @@
 <template>
   <div class="contenerdor-ejemplo-boton-flotante">
     <SisdaiBotonFlotante
+      style="position: absolute"
       :enlaces="[
         {
           contenido: 'Documento externo',
           clasesCss: 'icono-resaltado',
-          icono: 'icono-documento icono-3',
+          color: '#000000',
         },
       ]"
     />

@@ -1,28 +1,48 @@
 <template>
-  <div class="selector-zoom m-x-2">
+  <div
+    class="control-acercar-alejar"
+    role="toolbar"
+    aria-label="Controles para ajustar el nivel de acercamiento"
+  >
     <button
-      class="boton-secundario boton-icono boton-sin-borde"
+      class="boton-pictograma boton-sin-contenedor-secundario"
       @click="disminuir"
     >
-      <span class="icono-restar"></span>
+      <span
+        class="pictograma-restar"
+        aria-label="Alejar"
+      ></span>
     </button>
+
     <input
       type="range"
-      class="input-rango-acercar-alejar"
+      class="control-acercar-alejar-rango"
+      aria-label="Ajustar el nivel de acercamiento"
       :min="min"
       :max="max"
       :step="step"
       v-model="inputValue"
     />
+
     <button
-      class="boton-secundario boton-icono boton-sin-borde m-l-1"
+      class="boton-pictograma boton-sin-contenedor-secundario"
       @click="aumentar"
     >
-      <span class="icono-agregar"></span>
+      <span
+        class="pictograma-agregar"
+        aria-label="Acercar"
+      ></span>
     </button>
+
     <input
       type="text"
-      class="input-texto"
+      maxlength="3"
+      inputmode="numeric"
+      min="0"
+      max="100"
+      pattern="\d*"
+      class="control-acercar-alejar-porcentaje"
+      aria-label="Porcentaje de acercamiento"
       v-model.lazy="inputValue"
     />
   </div>
@@ -72,93 +92,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.selector-zoom {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  input[type='range'].input-rango-acercar-alejar {
-    max-height: inherit;
-    margin: 0;
-    min-width: 200px;
-  }
-  input[type='text'].input-texto {
-    max-height: inherit;
-    //TODO quitar los importants
-    margin: 0 !important;
-    background-color: var(--pagina-fondo) !important;
-    width: 4.5rem !important;
-  }
-  &::after {
-    content: '%';
-    position: absolute;
-    right: 0.5rem;
-    color: var(--tipografia-color);
-    top: 25%;
-  }
-
-  .input-rango-acercar-alejar {
-    width: 100%;
-    //background: var(--tarjetas-fondo);
-  }
-
-  input.input-rango-acercar-alejar[type='range'] {
-    &::-webkit-slider-runnable-track {
-      background: linear-gradient(
-        to right,
-        var(--input-controles-color),
-        var(--input-controles-color) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-      );
-    }
-    &::-moz-range-track {
-      background: linear-gradient(
-        to right,
-        var(--input-controles-color),
-        var(--input-controles-color) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-      );
-    }
-    &::-ms-fill-upper {
-      background: linear-gradient(
-        to right,
-        var(--input-controles-color),
-        var(--input-controles-color) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-      );
-    }
-    &:hover,
-    &:focus,
-    &:active {
-      &::-webkit-slider-runnable-track {
-        background: linear-gradient(
-          to right,
-          var(--boton-primario-focus-fondo),
-          var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
-          var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-        );
-      }
-      &::-moz-range-track {
-        background: linear-gradient(
-          to right,
-          var(--boton-primario-focus-fondo),
-          var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
-          var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-        );
-      }
-      &::-ms-fill-upper {
-        background: linear-gradient(
-          to right,
-          var(--boton-primario-focus-fondo),
-          var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
-          var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
-        );
-      }
-    }
-  }
-}
-</style>

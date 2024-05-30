@@ -19,7 +19,7 @@ defineProps({
   >
     {{ texto }}
     <span
-      class="icono-enlace-externo"
+      class="pictograma-enlace-externo"
       aria-hidden="true"
     />
   </a>

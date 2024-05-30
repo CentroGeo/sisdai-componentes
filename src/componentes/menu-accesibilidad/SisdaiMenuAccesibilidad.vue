@@ -81,7 +81,7 @@ import opcionesDefault from './opcionesDefault'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, id, objetoStore, perfilColor, nombreModuloStore } =
+const { agregarOpciones, objetoStore, perfilColor, nombreModuloStore } =
   toRefs(props)
 
 /**
@@ -316,16 +316,18 @@ const alturaMenuAbierto = computed(
 
 <template>
   <div
-    class="contenedor-menu-accesibilidad"
+    class="menu-accesibilidad"
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
     <button
-      class="icono-boton-accesibilidad"
+      class="menu-accesibilidad-boton"
+      aria-label="Abrir y cerrar menú de accesibilidad"
+      aria-controls="menua11y"
       :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
       @click="alternarAbiertoCerrado"
     >
       <span
-        class="icono-accesibilidad icono-5"
+        class="pictograma-accesibilidad"
         aria-hidden="true"
       />
       <span class="a11y-solo-lectura">
@@ -333,40 +335,41 @@ const alturaMenuAbierto = computed(
       </span>
     </button>
 
-    <menu class="menu-accesibilidad">
-      <p class="titulo">Herramientas de accesibilidad</p>
-      <hr />
+    <menu
+      id="menua11y"
+      class="menu-accesibilidad-contenedor"
+      :aria-hidden="!menuAccesibilidadEstaAbierto"
+    >
+      <p class="menu-accesibilidad-titulo">Herramientas de accesibilidad</p>
 
       <div
-        class="controlador-vis m-y-1"
-        v-for="(opcion, idx) in opciones"
-        :key="`opcion-accesibilidad-${idx}`"
+        class="menu-accesibilidad-opcion"
+        v-for="opcion in opciones"
+        :key="opcion.titulo"
       >
         <input
-          :id="`${opcion.claseCss}_${id}`"
+          :id="opcion.claseCss"
           type="checkbox"
           :value="opcion.claseCss"
           v-model="clasesSelecciondas"
           :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         />
-        <label :for="`${opcion.claseCss}_${id}`">
+        <label :for="opcion.claseCss">
           <span
-            class="figura-variable icono-4"
             :class="opcion.icono"
             aria-hidden="true"
           ></span>
-          <span class="nombre-variable">
-            <b> {{ opcion.titulo }} </b>
-          </span>
+          {{ opcion.titulo }}
         </label>
       </div>
+
       <button
-        class="hipervinculo"
+        class="boton-secundario boton-chico menu-accesibilidad-reestablecer"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"
         :disabled="!clasesSelecciondas.length"
       >
-        <b>Restablecer</b>
+        Restablecer
       </button>
     </menu>
   </div>

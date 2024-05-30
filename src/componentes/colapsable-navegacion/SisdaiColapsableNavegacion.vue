@@ -33,12 +33,6 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-//const emits = defineEmits(['alAlternarColapsable'])
-
-/*watch(esta_activo, () => {
-  emits('alAlternarColapsable', esta_activo.value)
-})*/
-
 const clasesAccesibles = computed(() => {
   return store.state.clasesAccesibles
 })
@@ -57,36 +51,38 @@ watch(clasesAccesibles, (nv, ov) => {
 
 <template>
   <div
-    :class="{ activo: _colapsado }"
-    class="contenedor-colapsable"
+    class="colapsable"
+    :class="{ abierto: _colapsado }"
   >
     <button
+      class="colapsable-boton"
+      aria-controls="colapsableboton"
       :aria-expanded="_colapsado"
-      class="colapsable-boton p-x-5-esc p-x-3-mov p-y-1"
       @click="_colapsado = !_colapsado"
-      :tabindex="avisarMenuLateral ? undefined : -1"
       :disabled="clasesAccesibles.includes('a11y-simplificada')"
+      :tabindex="avisarMenuLateral ? undefined : -1"
     >
-      <div class="contenedor-encabezado-colapsable">
-        <slot name="encabezado">
-          <p class="m-0">Encabezado colapsable</p>
-        </slot>
-      </div>
-      <div class="p-t-1">
-        <span
-          aria-hidden="true"
-          class="nav-boton-submenu"
-        ></span>
-      </div>
+      <slot name="encabezado">
+        <p>Encabezado colapsable</p>
+      </slot>
+
+      <span
+        aria-hidden="true"
+        class="pictograma-angulo-derecho"
+      ></span>
     </button>
-    <div class="contenedor-colapsable-contenido">
+
+    <div
+      class="colapsable-contenedor"
+      id="colapsablecontenedor"
+      :aria-hidden="!_colapsado"
+    >
       <slot name="contenido">
         <ul :id="id_aleatorio">
           <li>
             <a
               href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
               target="_blank"
-              class="p-x-5-esc p-x-3-mov p-y-1"
               :tabindex="_colapsado ? undefined : -1"
             >
               Elemento desplegado</a

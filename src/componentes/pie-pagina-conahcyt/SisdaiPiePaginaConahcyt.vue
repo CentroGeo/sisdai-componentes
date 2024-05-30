@@ -14,12 +14,37 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
+// import { ref, onMounted, onUnmounted, watch } from 'vue'
+
 const anioActual = new Date().getFullYear()
+// const windowWidth = ref(window.innerWidth)
+// const esMovil = ref()
+
+// const handleResize = () => {
+//   windowWidth.value = window.innerWidth
+// }
+
+// function isMovil() {
+//   return windowWidth.value < 768
+// }
+
+// onMounted(() => {
+//   window.addEventListener('resize', handleResize)
+//   esMovil.value = isMovil()
+// })
+
+// onUnmounted(() => {
+//   window.removeEventListener('resize', handleResize)
+// })
+
+// watch(windowWidth, () => {
+//   esMovil.value = isMovil()
+// })
 </script>
 
 <template>
   <footer
-    class="contenedor conahcyt-fondo-degradado conahcyt-texto-claro-1 conahcyt-piepagina p-y-4"
+    class="contenedor piepagina-conahcyt"
     aria-label="Conahcyt"
   >
     <div class="flex flex-wrap">
@@ -29,7 +54,6 @@ const anioActual = new Date().getFullYear()
           alt="Conahcyt"
           width="200px"
           height="60px"
-          class="foot-logo"
         />
         <p>
           Av. Insurgentes Sur 1582, Col. Crédito Constructor,<br />
@@ -37,20 +61,21 @@ const anioActual = new Date().getFullYear()
           Ciudad de México Tel: (55) 5322-7700
         </p>
         <p>
-          <!-- ©<span id="anioActual">x</span> -->
           ©<span>{{ anioActual }}</span>
           Conahcyt Derechos Reservados en trámite
         </p>
       </div>
+
       <div class="columna-8 columna-4-esc">
-        <p class="titulo-lista">Enlaces</p>
-        <ul class="lista-plana">
+        <p class="piepagina-titulo">Enlaces</p>
+
+        <ul>
           <li>
             <a
               class="hipervinculo-conahcyt"
               href="https://conahcyt.mx/directorio/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Directorio
             </a>
@@ -60,7 +85,7 @@ const anioActual = new Date().getFullYear()
               class="hipervinculo-conahcyt"
               href="https://conahcyt.mx/centro-de-contacto-de-atencion/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Centro de Contacto
             </a>
@@ -70,7 +95,7 @@ const anioActual = new Date().getFullYear()
               class="hipervinculo-conahcyt"
               href="https://conahcyt.mx/aviso-de-privacidad/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Política de Privacidad
             </a>
@@ -80,28 +105,30 @@ const anioActual = new Date().getFullYear()
               class="hipervinculo-conahcyt"
               href="http://comunidad.conahcyt.mx/index.php"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               Intranet Conahcyt
             </a>
           </li>
         </ul>
       </div>
+
       <div class="columna-8 columna-4-esc">
-        <p class="titulo-lista">
+        <p class="piepagina-titulo">
           Síguenos en
           <span class="a11y-solo-lectura">nuestras redes sociales:</span>
         </p>
-        <ul class="lista-redes-sociales">
+
+        <ul class="piepagina-social">
           <li>
             <a
               href="https://www.facebook.com/ConahcytMX"
-              class="hipervinculo-conahcyt m-r-3"
+              class="hipervinculo-conahcyt"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <span
-                class="icono-social-facebook icono-3"
+                class="pictograma-social-facebook"
                 aria-hidden="true"
               />
               <span class="a11y-solo-lectura">feisbuk,</span>
@@ -110,12 +137,12 @@ const anioActual = new Date().getFullYear()
           <li>
             <a
               href="https://twitter.com/Conahcyt_Mex"
-              class="hipervinculo-conahcyt m-r-3"
+              class="hipervinculo-conahcyt"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <span
-                class="icono-social-x icono-3"
+                class="pictograma-social-x"
                 aria-hidden="true"
               />
               <span class="a11y-solo-lectura">x,</span>
@@ -124,12 +151,12 @@ const anioActual = new Date().getFullYear()
           <li>
             <a
               href="https://www.instagram.com/conahcyt_mex/"
-              class="hipervinculo-conahcyt m-r-3"
+              class="hipervinculo-conahcyt"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <span
-                class="icono-social-instagram icono-3"
+                class="pictograma-social-instagram"
                 aria-hidden="true"
               />
               <span class="a11y-solo-lectura">instagram </span>
@@ -140,10 +167,10 @@ const anioActual = new Date().getFullYear()
               href="https://www.youtube.com/@Conahcytmx"
               class="hipervinculo-conahcyt"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <span
-                class="icono-social-youtube icono-3"
+                class="pictograma-social-youtube"
                 aria-hidden="true"
               />
               <span class="a11y-solo-lectura">yutub</span>
@@ -152,17 +179,5 @@ const anioActual = new Date().getFullYear()
         </ul>
       </div>
     </div>
-    <!-- <script type="module">
-      let anioActual;
-      anioActual = new Date().getFullYear();
-      document.getElementById('anioActual').innerHTML = anioActual;
-    </script> -->
   </footer>
 </template>
-
-<style>
-.conahcyt-piepagina {
-  color: #fff;
-  font-size: 14px;
-}
-</style>

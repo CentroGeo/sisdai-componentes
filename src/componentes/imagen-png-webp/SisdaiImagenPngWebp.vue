@@ -24,7 +24,7 @@ defineProps({
 </script>
 
 <template>
-  <figure class="m-y-2">
+  <figure>
     <picture>
       <source
         :srcset="`${dominio}${ruta}.webp`"
@@ -41,6 +41,7 @@ defineProps({
         :alt="textoAlternativo"
       />
     </picture>
+
     <figcaption
       aria-hidden="true"
       v-html="leyenda"

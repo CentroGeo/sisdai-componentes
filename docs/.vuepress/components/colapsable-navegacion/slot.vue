@@ -10,15 +10,13 @@ function alAlternarColapsableNavegacion(d) {
 <template>
   <SisdaiColapsableNavegacion>
     <template v-slot:encabezado>
-      <p class="m-0">Este es el título del colapsable</p>
+      <p>Este es el título del colapsable</p>
     </template>
     <template v-slot:contenido>
-      <ul class="colapsable-submenu">
+      <ul>
         <li>
           <a
             href="#"
-            exact
-            class="p-x-5-esc p-x-3-mov p-y-1"
             :tabindex="colapsableNavegacionAbierta ? undefined : -1"
             >Opción 1 desplegable</a
           >
@@ -26,7 +24,6 @@ function alAlternarColapsableNavegacion(d) {
         <li>
           <a
             href="#"
-            class="p-x-5-esc p-x-3-mov p-y-1"
             :tabindex="colapsableNavegacionAbierta ? undefined : -1"
             >Opción 2 desplegable</a
           >

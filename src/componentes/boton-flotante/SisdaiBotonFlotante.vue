@@ -64,49 +64,52 @@ const id_aleatorio = idAleatorio()
 <template>
   <div
     :id="id_aleatorio"
-    class="contenedor-boton-flotante"
+    class="boton-flotante"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
-      :class="`boton-flotante-alternador borde-r-redondeado-20 borde-l-redondeado-${
-        botonFlotanteEstaAbierto ? '' : '2'
-      }0`"
+      class="boton-primario boton-flotante-alternador"
+      aria-controls="botonflotante"
+      aria-label="Abrir/Cerrar menu de enlaces"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
       @click="alternarEstado"
     >
       <span
-        :class="`icono ${
-          botonFlotanteEstaAbierto ? 'icono-restar' : 'icono-agregar'
-        } icono-3`"
+        :class="`${
+          botonFlotanteEstaAbierto
+            ? 'boton-flotante-pictograma-abierto pictograma-restar'
+            : 'boton-flotante-pictograma-cerrado pictograma-agregar'
+        }`"
         aria-hidden="true"
       />
       <span class="a11y-solo-lectura">abrir o cerrar botón flotante</span>
     </button>
 
-    <div
-      class="boton-flotante-contenido borde-l-redondeado-20"
-      :class="{ 'borde-l': botonFlotanteEstaAbierto }"
+    <menu
+      class="boton-flotante-cuerpo"
+      id="botonflotantecuerpo"
+      :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
-        v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
+        v-for="({ enlace, clasesCss, icono, contenido, color }, idx) in enlaces"
         :key="`boton-flotante-enlace-${idx}`"
         :id="`boton_flotante_enlace_${idx}`"
         :href="enlace"
-        :class="`enlace p-x-2 borde-redondeado-0 ${
+        :class="`boton-flotante-hipervinculo ${
           clasesCss === undefined ? '' : clasesCss
         }`"
         target="_blank"
         rel="noopener noreferrer"
         :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
+        :style="`background: ${color}`"
       >
         <span
-          :class="`icono ${
-            icono === undefined ? 'icono-enlace-externo' : icono
-          }`"
+          :class="`${icono === undefined ? 'pictograma-documento' : icono}`"
           aria-hidden="true"
         />
+
         {{ contenido === undefined ? 'Enlace externo' : contenido }}
       </a>
-    </div>
+    </menu>
   </div>
 </template>
