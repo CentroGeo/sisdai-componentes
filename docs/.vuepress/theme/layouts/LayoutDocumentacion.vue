@@ -109,7 +109,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Colapsable Navegación
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/control-acercar-alejar"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -117,7 +117,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Control Acercar Alejar
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/control-deslizante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
