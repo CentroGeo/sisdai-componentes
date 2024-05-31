@@ -189,7 +189,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Modal</router-link
                 >
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/narrativa"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -205,7 +205,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Narrativa Scroll
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/navegacion-gob-mx"
                   :tabindex="menuLateralAbierto ? undefined : -1"

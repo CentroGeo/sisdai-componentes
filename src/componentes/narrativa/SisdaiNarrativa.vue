@@ -1,11 +1,13 @@
 <script setup>
 import { onMounted, onUnmounted, ref, watch } from 'vue'
+
 const lista_elementos = ref([])
 const seccion_visible = ref(-1)
 const posicion_depurador = ref(0)
 const narrativa = ref()
 let posicion_actual = -1
 const posicion_normalizada = ref(0)
+
 const props = defineProps({
   id: {
     type: String,
@@ -27,27 +29,33 @@ const props = defineProps({
     default: 1,
   },
 })
+
 const obtenerElementos = () => {
   narrativa.value = document.querySelector(
     `section#${props.id}.narrativa-graficas `
   )
+
   lista_elementos.value = [...narrativa.value.querySelectorAll(` .vineta`)]
 
   narrativa.value.style.height =
     (lista_elementos.value.length + 1) * props.separacion * 100 + 'vh'
+
   lista_elementos.value.forEach((el, i) => {
     el.style.top = (props.posicion_inicial + i * props.separacion) * 100 + 'vh'
   })
 }
+
 function scroleando() {
   posicion_depurador.value = document
     .querySelector(`section#${props.id}.narrativa-graficas div.depurador`)
     .getBoundingClientRect().top
+
   posicion_normalizada.value =
     (posicion_depurador.value -
       lista_elementos.value[0].getBoundingClientRect().bottom) /
     (lista_elementos.value[1].getBoundingClientRect().top -
       lista_elementos.value[0].getBoundingClientRect().top)
+
   // Checando elementos activos
   lista_elementos.value.forEach((el, i) => {
     if (i < lista_elementos.value.length - 1) {
@@ -77,18 +85,23 @@ function scroleando() {
     seccion_visible.value = posicion_actual
   }
 }
+
 onMounted(() => {
   obtenerElementos()
+
   window.addEventListener('scroll', scroleando)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', scroleando)
 })
+
 watch(() => props.posicion_inicial, obtenerElementos)
 watch(() => props.separacion, obtenerElementos)
 
 defineExpose({ seccion_visible, posicion_normalizada, lista_elementos })
 </script>
+
 <template>
   <section
     class="narrativa-graficas"
@@ -110,6 +123,7 @@ defineExpose({ seccion_visible, posicion_normalizada, lista_elementos })
     <slot></slot>
   </section>
 </template>
+
 <style scoped lang="scss">
 .narrativa-graficas {
   position: relative;
