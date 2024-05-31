@@ -86,10 +86,11 @@ watch(menu_abierto, () => {
               :tabindex="menu_abierto ? undefined : -1"
             >
               <span
-                class="icono-social-github"
+                class="pictograma-social-github"
                 aria-hidden="true"
-              ></span>
-              ejemplo github
+              >
+                ejemplo github</span
+              >
             </a>
           </li>
         </ul>

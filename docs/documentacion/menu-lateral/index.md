@@ -4,7 +4,7 @@ layout: LayoutDocumentacion
 
 # Menú lateral
 
-Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
+Este componente consiste en un elemento `nav.menu-lateral` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
 
 <menu-lateral-basico/>
 
@@ -34,11 +34,11 @@ Por _default_ el contenido del slot es el siguiente:
   <li>
     <a
       href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
-      rel="noopener"
       target="_blank"
+      rel="noopener noreferrer"
     >
       <span
-        class="icono-social-github"
+        class="pictograma-social-github"
         aria-hidden="true"
       ></span>
       ejemplo github

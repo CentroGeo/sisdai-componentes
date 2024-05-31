@@ -173,7 +173,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Menu de Accesibilidad
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/menu-lateral"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -181,7 +181,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Menu Lateral
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/modal"
                   :tabindex="menuLateralAbierto ? undefined : -1"

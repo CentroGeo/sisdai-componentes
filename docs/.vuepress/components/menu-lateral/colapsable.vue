@@ -19,7 +19,7 @@ function alAlternarColapsableNavegacion(d) {
 <template>
   <div>
     <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
-      <template slot="contenido-menu-lateral">
+      <template #contenido-menu-lateral>
         <ul>
           <li>
             <router-link
@@ -43,10 +43,10 @@ function alAlternarColapsableNavegacion(d) {
               :avisarMenuLateral="menuLateralAbierto"
               @alAlternarColapsable="alAlternarColapsableNavegacion"
             >
-              <template v-slot:encabezado>
+              <template #encabezado>
                 <span>Este es un colapsable</span>
               </template>
-              <template v-slot:contenido>
+              <template #contenido>
                 <ul>
                   <li>
                     <router-link
