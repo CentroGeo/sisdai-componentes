@@ -53,13 +53,15 @@ function descargaAlgo() {
           </div>
         </div>
 
-        <button
-          class="boton-primario m-t-5"
-          value="descarga"
-          @click="descargaAlgo()"
-        >
-          Descargar
-        </button>
+        <p class="modal-pie">
+          <button
+            class="boton-primario"
+            value="descarga"
+            @click="descargaAlgo()"
+          >
+            Descargar
+          </button>
+        </p>
       </div>
     </SisdaiModal>
 
@@ -67,16 +69,3 @@ function descargaAlgo() {
     <p>{{ salida }}</p>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.modal-contenido {
-  button.boton-primario {
-    display: block;
-    margin-left: auto;
-    margin-right: -36px;
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-  }
-}
-</style>
