@@ -93,7 +93,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Boton Flotante
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/campo-busqueda"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -101,7 +101,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Campo Búsqueda
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/colapsable-navegacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
