@@ -8,14 +8,14 @@
           contenido: 'Ir a ENI',
           enlace: 'https://eni.conacyt.mx/',
           icono: 'pictograma-enlace-externo',
-          color: '#3caeac',
+          colorFondo: '#3caeac',
         },
         {
           clasesCss: 'gema',
           contenido: 'Ir a GEMA',
           enlace: 'https://gema.conacyt.mx/',
           icono: 'pictograma-enlace-externo',
-          color: '#ff5100',
+          colorFondo: '#ff5100',
         },
       ]"
     />

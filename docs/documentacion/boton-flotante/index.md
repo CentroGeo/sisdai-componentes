@@ -27,6 +27,7 @@ Uso:
     contenido: <String> 'Contenido en texto que se mostrará en la interfaz.',
     enlace: <String> 'Dirección url a la que dirigirá el botón.',
     icono: <String> 'Visible al costado izquierdo del contenido.',
+    colorFondo: <String> 'Color de fondo del botón enlace.',
   }
   ```
 
@@ -55,7 +56,7 @@ Este componente no permite contenido con slots
 
 #### Enlaces con fondo de color
 
-El color de fondo de cada enlace es transparente por defecto, si se desea agregar un color, se puede sobreescribir el estilo agregando una clase en cada elemento de la siguiente manera.
+El color de fondo de cada enlace es transparente por defecto, si se desea agregar un color, se puede sobreescribir el estilo agregando la opcion de `colorFondo` en cada objeto de la lista de enlace de la siguiente manera.
 
 <utils-ejemplo-doc ruta="boton-flotante/basico.vue"/>
 

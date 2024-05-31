@@ -85,7 +85,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Audio</router-link
                 >
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/boton-flotante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -93,7 +93,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Boton Flotante
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/campo-busqueda"
                   :tabindex="menuLateralAbierto ? undefined : -1"
