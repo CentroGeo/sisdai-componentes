@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "3.0.0-alpha.0",
+  "version": "3.0.0-beta.0",
   "private": true,
   "description": "Biblioteca de componentes de Vue reutilizables",
   "license": "LGPL-3.0-only",
