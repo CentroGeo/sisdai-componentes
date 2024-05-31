@@ -353,8 +353,8 @@ const narrativa_scroll_plugin = {
   }
 };
 /* harmony default export */ var narrativa_scroll = (narrativa_scroll_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6be40e10-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=18c4669c
-var SisdaiColapsableNavegacionvue_type_template_id_18c4669c_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6be40e10-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue?vue&type=template&id=57439eb4
+var SisdaiColapsableNavegacionvue_type_template_id_57439eb4_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -398,12 +398,14 @@ var SisdaiColapsableNavegacionvue_type_template_id_18c4669c_render = function re
       attrs: {
         "href": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes",
         "target": "_blank",
+        "rel": "noopener noreferrer",
+        "exact": "",
         "tabindex": _setup._colapsado ? undefined : -1
       }
     }, [_vm._v(" Elemento desplegado")])])])];
   })], 2)]);
 };
-var SisdaiColapsableNavegacionvue_type_template_id_18c4669c_staticRenderFns = [];
+var SisdaiColapsableNavegacionvue_type_template_id_57439eb4_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./src/stores/accesibilidad.js
 // This file is part of sisdai-componentes.
@@ -479,10 +481,6 @@ var SisdaiColapsableNavegacionvue_type_template_id_18c4669c_staticRenderFns = []
 /* harmony default export */ var SisdaiColapsableNavegacionvue_type_script_setup_true_lang_js = ({
   __name: 'SisdaiColapsableNavegacion',
   props: {
-    titulo: {
-      type: String,
-      default: 'Titulo de colapsable'
-    },
     colapsado: {
       type: Boolean,
       default: false
@@ -543,8 +541,8 @@ var SisdaiColapsableNavegacionvue_type_template_id_18c4669c_staticRenderFns = []
 ;
 var SisdaiColapsableNavegacion_component = normalizeComponent(
   colapsable_navegacion_SisdaiColapsableNavegacionvue_type_script_setup_true_lang_js,
-  SisdaiColapsableNavegacionvue_type_template_id_18c4669c_render,
-  SisdaiColapsableNavegacionvue_type_template_id_18c4669c_staticRenderFns,
+  SisdaiColapsableNavegacionvue_type_template_id_57439eb4_render,
+  SisdaiColapsableNavegacionvue_type_template_id_57439eb4_staticRenderFns,
   false,
   null,
   null,

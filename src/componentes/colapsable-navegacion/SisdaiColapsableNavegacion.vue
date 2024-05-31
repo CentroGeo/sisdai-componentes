@@ -18,13 +18,14 @@ import { computed, ref, toRefs, watch } from 'vue'
 import store from '../../stores/accesibilidad'
 
 const props = defineProps({
-  titulo: { type: String, default: 'Titulo de colapsable' },
   colapsado: { type: Boolean, default: false },
   avisarMenuLateral: { type: Boolean, default: true },
 })
+
 // eslint-disable-next-line
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
+
 watch(colapsado, nv => (_colapsado.value = nv))
 
 function idAleatorio() {
@@ -83,6 +84,8 @@ watch(clasesAccesibles, (nv, ov) => {
             <a
               href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
               target="_blank"
+              rel="noopener noreferrer"
+              exact
               :tabindex="_colapsado ? undefined : -1"
             >
               Elemento desplegado</a

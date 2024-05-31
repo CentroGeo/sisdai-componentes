@@ -101,7 +101,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Campo Búsqueda
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/colapsable-navegacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -109,7 +109,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Colapsable Navegación
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/control-acercar-alejar"
                   :tabindex="menuLateralAbierto ? undefined : -1"
