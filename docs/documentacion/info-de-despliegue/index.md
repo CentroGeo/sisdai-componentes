@@ -4,7 +4,7 @@ layout: LayoutDocumentacion
 
 # Información de despliegue
 
-La información de despliegue es un componente compartido en todos los Ecosistemas Nacionales de Información entre otros, que sirve para presentar la información acerca del versionamiento, el ambiente y la fecha de despliegue.
+La información de despliegue es un componente que sirve para presentar la información acerca del versionamiento, el ambiente y la fecha de despliegue.
 
 Uso:
 

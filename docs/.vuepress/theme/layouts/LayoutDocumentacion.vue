@@ -157,7 +157,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Índice de Contenido
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/info-de-despliegue"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -165,7 +165,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Información de Despliegue
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/menu-accesibilidad"
                   :tabindex="menuLateralAbierto ? undefined : -1"
