@@ -71,6 +71,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               <li>
                 <router-link
                   to="/documentacion"
+                  exact
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
                   <b>Sisdai Componentes</b>
@@ -205,7 +206,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Narrativa Scroll
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/navegacion-gob-mx"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -251,7 +252,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                     ir a github</span
                   >
                 </a>
-              </li> -->
+              </li>
             </ul>
           </template>
         </SisdaiMenuLateral>

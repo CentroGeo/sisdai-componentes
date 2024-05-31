@@ -19,13 +19,15 @@ const aria_expanded = ref(false)
         <a
           href="https://gema.conacyt.mx/"
           target="_blank"
+          rel="noopener noreferrer"
           class="nav-hiperviculo-logo"
         >
           <img
-            class="nav-logo invertir"
-            style="width: 232px; height: 38px"
             src="https://cdn.conacyt.mx/sisdai-archivos/to-examples/logo-conacyt-gema.svg"
-            alt="gema."
+            class="nav-logo color-invertir"
+            alt="Gema."
+            width="232"
+            height="38"
           />
         </a>
       </template>
@@ -33,7 +35,7 @@ const aria_expanded = ref(false)
       <template #complementario>
         <a
           class="nav-hipervinculo"
-          href=""
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
