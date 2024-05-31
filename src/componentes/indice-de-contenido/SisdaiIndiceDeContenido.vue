@@ -18,6 +18,7 @@ import { onUnmounted, onMounted, ref, watch } from 'vue'
 
 const lista_elementos = ref([])
 const seccion_visible = ref()
+
 const props = defineProps({
   titulo: { type: String, default: 'Índice' },
   altura: { type: Number, default: 50 },
@@ -29,7 +30,6 @@ const props = defineProps({
  * el último elemento al separar por el caracter '#', es decir
  * los id
  */
-
 const obtenerRutas = () => {
   lista_elementos.value = [
     ...document.querySelectorAll(
@@ -57,6 +57,7 @@ function scroleando() {
       )
     }
   })
+
   let posicion_scroll_y = window.pageYOffset + 100
 
   lista_elementos.value.map(d => {
@@ -72,7 +73,6 @@ function scroleando() {
 /**
  * Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus
  */
-
 function autoScrollSuave() {
   document
     .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
@@ -91,6 +91,7 @@ function autoScrollSuave() {
       })
     })
 }
+
 watch(seccion_visible, () => {
   document
     .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
@@ -107,8 +108,10 @@ watch(seccion_visible, () => {
 onMounted(() => {
   obtenerRutas()
   autoScrollSuave()
+
   window.addEventListener('scroll', scroleando)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', scroleando)
 })

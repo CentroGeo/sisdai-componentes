@@ -1782,8 +1782,8 @@ const navegacion_principal_plugin = {
   }
 };
 /* harmony default export */ var navegacion_principal = (navegacion_principal_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6be40e10-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/indice-de-contenido/SisdaiIndiceDeContenido.vue?vue&type=template&id=15d0231d
-var SisdaiIndiceDeContenidovue_type_template_id_15d0231d_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"6be40e10-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/indice-de-contenido/SisdaiIndiceDeContenido.vue?vue&type=template&id=26769dfb
+var SisdaiIndiceDeContenidovue_type_template_id_26769dfb_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1814,7 +1814,7 @@ var SisdaiIndiceDeContenidovue_type_template_id_15d0231d_render = function rende
     }, [_vm._v(" anchore link prueba ")])];
   })], 2)]);
 };
-var SisdaiIndiceDeContenidovue_type_template_id_15d0231d_staticRenderFns = [];
+var SisdaiIndiceDeContenidovue_type_template_id_26769dfb_staticRenderFns = [];
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-82.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/indice-de-contenido/SisdaiIndiceDeContenido.vue?vue&type=script&setup=true&lang=js
 
@@ -1844,7 +1844,6 @@ var SisdaiIndiceDeContenidovue_type_template_id_15d0231d_staticRenderFns = [];
      * el último elemento al separar por el caracter '#', es decir
      * los id
      */
-
     const obtenerRutas = () => {
       lista_elementos.value = [...document.querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)].map(d => {
         return {
@@ -1879,7 +1878,6 @@ var SisdaiIndiceDeContenidovue_type_template_id_15d0231d_staticRenderFns = [];
     /**
      * Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus
      */
-
     function autoScrollSuave() {
       document.querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`).forEach(anchor => {
         anchor.addEventListener('click', () => {
@@ -1935,8 +1933,8 @@ var SisdaiIndiceDeContenidovue_type_template_id_15d0231d_staticRenderFns = [];
 ;
 var SisdaiIndiceDeContenido_component = normalizeComponent(
   indice_de_contenido_SisdaiIndiceDeContenidovue_type_script_setup_true_lang_js,
-  SisdaiIndiceDeContenidovue_type_template_id_15d0231d_render,
-  SisdaiIndiceDeContenidovue_type_template_id_15d0231d_staticRenderFns,
+  SisdaiIndiceDeContenidovue_type_template_id_26769dfb_render,
+  SisdaiIndiceDeContenidovue_type_template_id_26769dfb_staticRenderFns,
   false,
   null,
   null,

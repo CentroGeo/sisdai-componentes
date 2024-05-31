@@ -149,7 +149,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   ImagenPngWebp
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/indice-de-contenido"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -157,7 +157,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Índice de Contenido
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/info-de-despliegue"
                   :tabindex="menuLateralAbierto ? undefined : -1"
