@@ -117,7 +117,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Control Acercar Alejar
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/control-deslizante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
@@ -125,7 +125,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Control Deslizante
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/directivas"
                   :tabindex="menuLateralAbierto ? undefined : -1"

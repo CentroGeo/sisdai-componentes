@@ -8,6 +8,7 @@ const props = defineProps({
 })
 
 const valor_seleccionado = ref(props.val_entrada)
+
 const valor_porcentual = computed(() => {
   return `${
     (100 * (valor_seleccionado.value - props.val_min)) /
