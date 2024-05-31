@@ -18,6 +18,7 @@ const opcionCursiva = {
     :class="menuAccesibilidad?.clasesSelecciondas"
   >
     <SisdaiMenuAccesibilidad
+      style="position: absolute"
       ref="menuAccesibilidad"
       :id="'agregando-opciones'"
       :agregarOpciones="[opcionCursiva]"

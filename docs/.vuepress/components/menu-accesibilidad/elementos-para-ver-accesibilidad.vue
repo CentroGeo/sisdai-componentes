@@ -45,7 +45,7 @@
       :enlaces="[
         {
           clasesCss: 'icono-resaltado',
-          color: '#000000',
+          colorFondo: '#000000',
         },
       ]"
     />
