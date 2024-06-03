@@ -39,11 +39,6 @@ defineExpose({
 </template>
 
 <style lang="scss">
-// .control-deslizante {
-//   width: 100%;
-//   background: var(--tarjetas-fondo);
-// }
-
 input.control-deslizante[type='range'] {
   &::-webkit-slider-runnable-track {
     background: linear-gradient(

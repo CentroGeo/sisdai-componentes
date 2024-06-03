@@ -328,40 +328,6 @@ function funcionInput() {
 </template>
 
 <style lang="scss">
-.sisdai-audio {
-  // width: 100%;
-  // background: var(--tarjetas-fondo);
-  // button.boton-icono.boton-sin-borde:disabled {
-  //   border-color: transparent;
-  // }
-
-  // .contenedor-controles {
-  //   .contenedor-velocidad {
-  //     flex-basis: calc(33% - 24px);
-  //     max-width: 87px;
-  //     margin-left: 12px;
-  //     select.velocidad-reproduccion {
-  //       background-position: calc(100% - 2px), 50%;
-  //       padding-right: 20px;
-  //     }
-  //   }
-  //   .contenedor-botones {
-  //     flex-basis: calc(33% - 24px);
-  //     min-width: 120px;
-  //   }
-  //   .contenedor-volumen {
-  //     flex-basis: calc(33% - 24px);
-  //     min-width: 72px;
-  //     max-width: 100px;
-  //     margin-right: 12px;
-  //     flex-wrap: nowrap;
-  //     button {
-  //       margin-right: 0;
-  //     }
-  //   }
-  // }
-}
-
 input.control-tiempo[type='range'] {
   &::-webkit-slider-runnable-track {
     &,
