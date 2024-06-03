@@ -4258,7 +4258,7 @@ const globo_informacion = {
       value: binding.value,
       mouseEnterListener: addMouseEnterListenerTooltip(el, unique_id),
       mouseLeaveListener: addMouseLeaveListenerTooltip(el, unique_id),
-      classTooltip: 'globo-informacion',
+      classTooltip: 'contenedor-globo-info',
       interactable: interactable
     };
   },
@@ -4306,7 +4306,7 @@ const globo_informacion_extendido = {
       value: binding.value,
       mouseEnterListener: addMouseEnterListenerTooltip(el, unique_id),
       mouseLeaveListener: addMouseLeaveListenerTooltip(el, unique_id),
-      classTooltip: 'goblo-informacion',
+      classTooltip: 'contenedor-globo-info-ext',
       interactable: interactable
     };
   },
