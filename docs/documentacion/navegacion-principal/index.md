@@ -1,5 +1,6 @@
 ---
 layout: LayoutDocumentacion
+sectionName: NavegaciónPrincipal
 ---
 
 # Navegacion principal
