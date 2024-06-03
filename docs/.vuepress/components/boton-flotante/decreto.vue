@@ -5,10 +5,17 @@
       :enlaces="[
         {
           contenido: 'Documento externo',
-          clasesCss: 'icono-resaltado',
-          colorFondo: '#000000',
+          clasesCss: 'decreto',
         },
       ]"
     />
   </div>
 </template>
+
+<style>
+.boton-flotante .boton-flotante-hipervinculo.decreto,
+.boton-flotante .boton-flotante-hipervinculo.decreto:hover,
+.boton-flotante .boton-flotante-hipervinculo.decreto:focus {
+  background: #000000;
+}
+</style>

@@ -91,9 +91,7 @@ const id_aleatorio = idAleatorio()
       :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
-        v-for="(
-          { enlace, clasesCss, icono, contenido, colorFondo }, idx
-        ) in enlaces"
+        v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
         :key="`boton-flotante-enlace-${idx}`"
         :id="`boton_flotante_enlace_${idx}`"
         :href="enlace"
@@ -103,7 +101,6 @@ const id_aleatorio = idAleatorio()
         target="_blank"
         rel="noopener noreferrer"
         :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
-        :style="`background-color: ${colorFondo}`"
       >
         <span
           :class="`${icono === undefined ? 'pictograma-documento' : icono}`"

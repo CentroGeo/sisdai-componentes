@@ -44,8 +44,7 @@
       style="position: absolute"
       :enlaces="[
         {
-          clasesCss: 'icono-resaltado',
-          colorFondo: '#000000',
+          clasesCss: 'decreto',
         },
       ]"
     />
@@ -60,5 +59,10 @@
   min-height: 350px;
   width: 100%;
   overflow-y: hidden;
+}
+.boton-flotante .boton-flotante-hipervinculo.decreto,
+.boton-flotante .boton-flotante-hipervinculo.decreto:hover,
+.boton-flotante .boton-flotante-hipervinculo.decreto:focus {
+  background: #000000;
 }
 </style>
