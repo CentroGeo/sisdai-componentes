@@ -126,14 +126,14 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Control Deslizante
                 </router-link>
               </li>
-              <!-- <li>
+              <li>
                 <router-link
                   to="/documentacion/directivas"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
                   Directivas
                 </router-link>
-              </li> -->
+              </li>
               <li>
                 <router-link
                   to="/documentacion/enlace-externo"
@@ -198,14 +198,14 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   Narrativa
                 </router-link>
               </li>
-              <li>
+              <!-- <li>
                 <router-link
                   to="/documentacion/narrativa-scroll"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
                   Narrativa Scroll
                 </router-link>
-              </li>
+              </li> -->
               <li>
                 <router-link
                   to="/documentacion/navegacion-gob-mx"
