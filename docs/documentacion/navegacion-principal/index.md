@@ -1,11 +1,11 @@
 ---
 layout: LayoutDocumentacion
-sectionName: NavegaciónPrincipal
+sectionName: navegacion-principal
 ---
 
-# Navegacion principal
+# Navegación principal
 
-Se trata del componente de barra de navegacion principal del sitio, generalmente contiene la lista de enlaces a las secciones del sitio, identidad, etc.
+Se trata del componente de barra de navegación principal del sitio, generalmente contiene la lista de enlaces a las secciones del sitio, identidad, etc.
 
 Uso:
 
@@ -19,26 +19,22 @@ Uso:
 
 ### Propiedades
 
-- **navInformacion**
-  Para la version mobile es el contenido que se muestra debajo de la barra de navegacion, se usa generalmente para mostrar el nombre de la seccion actual del sitio.
-
+- `navInformacion` Para la versión mobile es el contenido que se muestra debajo de la barra de navegación, se usa generalmente para mostrar el nombre de la seccion actual del sitio.
   - Tipo: `String`
   - Valor predeterminado: `''`
   - Requerido: no
-
-- **fija**
-  Define si esta barra de navegacion se queda fija en la parte superior al hacer scroll en la vista actual
+- `fija` Define si esta barra de navegación se queda fija en la parte superior al hacer scroll en la vista actual.
   - Tipo: `Boolean`
   - Valor predeterminado `true`
   - Requerido: no
 
-### Metodos
+### Métodos
 
-Este componente no cuenta con metodos publicos
+Este componente no cuenta con métodos públicos.
 
 ### Eventos
 
-Este componente no dispara eventos externos
+Este componente no dispara eventos externos.
 
 ### Slots
 
@@ -47,7 +43,7 @@ Este componente no dispara eventos externos
 - Requerido: si
 - Contenido predeterminado: contenido de prueba
 
-Slot para el contenido de navegacion, son los links a las secciones disponibles en el sitio.
+Slot para el contenido de navegación, son los links a las secciones disponibles en el sitio.
 
 ```html
 <SisdaiNavegacionPrincipal>
@@ -65,7 +61,7 @@ Slot para el contenido de navegacion, son los links a las secciones disponibles 
 </SisdaiNavegacionPrincipal>
 ```
 
-De acuerdo a la semantica de html y las reglas de css definidas en Sisdaicss, los links deberan estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
+De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, los links deberan estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
 
 En caso de tener un [router](https://router.vuejs.org/), el elemento `<a>` podria ser remplazado por el componente `<RouterLink>` conservando las clases de estilo necesarias.
 
@@ -78,7 +74,7 @@ Se debe agregar el atributo `exact` al primer elemento de la lista de navegació
 
 Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.
 
-Se recomienda usar las clases css de Sisdaicss. Por ejemplo, la clase **invertir** ayuda a que en la función vista oscura del menú accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
+Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase **color-invertir** ayuda a que en la función vista oscura del menú de accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
 
 ```html
 <SisdaiNavegacionPrincipal>
@@ -107,8 +103,6 @@ Se recomienda usar las clases css de Sisdaicss. Por ejemplo, la clase **invertir
 
 Slot para el contenido complementario del sitio, donde se despliegan los enlaces externos por ejemplo.
 
-Se recomienda usar las clases css de Sisdaicss
-
 ```html
 <SisdaiNavegacionPrincipal>
   <template #complementario>
@@ -130,11 +124,11 @@ Se recomienda usar las clases css de Sisdaicss
 
 ## Ejemplos
 
-Usando el contenido por default
+Usando el contenido predeterminado.
 
 <utils-ejemplo-doc ruta="navegacion-principal/basico.vue"/>
 
-Agregando contenido personalizado
+Agregando contenido personalizado.
 
 <utils-ejemplo-doc ruta="navegacion-principal/contenido-personalizado.vue"/>
 

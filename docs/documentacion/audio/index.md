@@ -1,5 +1,6 @@
 ---
 layout: LayoutDocumentacion
+sectionName: audio
 ---
 
 # Audio
@@ -18,22 +19,20 @@ Uso:
 
 ### Propiedades
 
-- **archivo**
-  Esta propiedad indica la ruta del archivo del audio. Es importante que si éste se consume de una url remota, el archivo cuente con los permisos de reproducción necesarios.
-
+- `archivo` Esta propiedad indica la ruta del archivo del audio. Es importante que si éste se consume de una url remota, el archivo cuente con los permisos de reproducción necesarios.
   - Tipo: `String`
   - Valor predeterminado: `''`
   - Requerido: si
 
 ### Métodos
 
-- **metadatosCargados**
+- `metadatosCargados`
   Esta función se ejecuta al cargar los métadados. Una vez que ésto ocurre se obtiene la duración del audio y se muestra dicha duración.
-- **actualizacionTiempo**
+- `actualizacionTiempo`
   Esta función se ejecuta conforme se actualiza el tiempo de la reproducción del audio. Cuando ésto ocurre se muestra actualiza el texto del tiempo transcurrido y los estilos del input[type='range']. También se actualiza la información del audio descargado.
-- **adelanta10**
+- `adelanta10`
   Adelanta el el audio 10 segundos
-- **retrasa10**
+- `retrasa10`
   Retrasa el el audio 10 segundos
 
 ### Eventos
@@ -54,13 +53,13 @@ Este componente no permite contenido con slots
 
 ### Ejemplo básico
 
-Únicamente se indica la ruta del archivo
+Únicamente se indica la ruta del archivo.
 
 <utils-ejemplo-doc ruta="audio/basico.vue"/>
 
 ### Ejemplo con slot
 
-Agregando el slot de encabezado
+Agregando el slot de encabezado.
 
 <utils-ejemplo-doc ruta="audio/con-slot.vue"/>
 

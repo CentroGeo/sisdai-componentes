@@ -91,7 +91,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/boton-flotante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Boton Flotante
+                  Botón Flotante
                 </router-link>
               </li>
               <li>
@@ -241,16 +241,18 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
 
               <li>
                 <a
-                  href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+                  href="##"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style="display: grid"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
                 >
                   <span
+                    style="font-size: 2rem"
                     class="pictograma-social-github pictograma-48"
                     aria-hidden="true"
-                  >
-                    ir a github</span
-                  >
+                  ></span>
+                  <span> ir a github</span>
                 </a>
               </li>
             </ul>

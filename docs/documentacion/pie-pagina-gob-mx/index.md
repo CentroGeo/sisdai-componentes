@@ -1,22 +1,21 @@
 ---
 layout: LayoutDocumentacion
+sectionName: pie-pagina-gob-mx
 ---
 
-# Pie de página del Gobierno de México
+# Pie de página del gobierno de México
 
-El pie de página del Gobierno de México es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal al momento de realizar la maquetación de páginas web para información, trámites y servicios dentro o fuera de la página de Gobierno.
+El pie de página del gobierno de México es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal al momento de realizar la maquetación de páginas web para información, trámites y servicios dentro o fuera de la página de gobierno.
 
 Uso:
 
-El pie de página del Gobierno de México se coloca debajo del pie de página del Conahcyt.
+El pie de página del gobierno de México se coloca debajo del pie de página del Conahcyt.
 
-El pie de página del Gobierno de México sirve principalmente para:
+El pie de página del gobierno de México sirve principalmente para:
 
-- Dar certeza de que el contenido es información oficial del Gobierno de México
-
-- Ofrecer acceso rápido a sitios de interés del Gobierno de México
-
-Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados por el gobierno.
+- Dar certeza de que el contenido es información oficial del gobierno de México
+- Ofrecer acceso rápido a sitios de interés del gobierno de México
+  Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados por el gobierno.
 
 ```html
 <SisdaiPiePaginaGobMx />
@@ -36,7 +35,7 @@ Este componente no contiene propiedades.
 
 ### Métodos
 
-Este componente no cuenta con métodos publicos.
+Este componente no cuenta con métodos públicos.
 
 ### Eventos
 

@@ -1,8 +1,9 @@
 ---
 layout: LayoutDocumentacion
+sectionName: boton-flotante
 ---
 
-# BotonFlotante
+# Botón flotante
 
 Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en el esquina inferior izquierda.
 
@@ -18,26 +19,25 @@ Uso:
 
 ### Propiedades
 
-- **enlaces**
-  Lista de enlaces que se mostrarán en el Botón flotante abierto, cada opción debe ser un objeto con los siguientes atributos:
-
-  ```js
-  {
-    clasesCss: <String> 'Nombre de la clase css de la opción.',
-    contenido: <String> 'Contenido en texto que se mostrará en la interfaz.',
-    enlace: <String> 'Dirección url a la que dirigirá el botón.',
-    icono: <String> 'Visible al costado izquierdo del contenido.',
-    colorFondo: <String> 'Color de fondo del botón enlace.',
-  }
-  ```
-
+- `enlaces` Lista de enlaces que se mostrarán en el Botón flotante abierto.
   - Tipo: `Array`
   - Valor predeterminado: `[]`
   - Requerido: si
 
+Cada opción debe ser un objeto con los siguientes atributos:
+
+```js
+{
+  clasesCss: <String> 'Nombre de la clase css de la opción.',
+  contenido: <String> 'Contenido en texto que se mostrará en la interfaz.',
+  enlace: <String> 'Dirección url a la que dirigirá el botón.',
+  icono: <String> 'Visible al costado izquierdo del contenido.',
+}
+```
+
 ### Métodos
 
-- **alternarEstado**
+- `alternarEstado`
   Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Botón flotante.
 
 ### Eventos
@@ -56,7 +56,7 @@ Este componente no permite contenido con slots
 
 #### Enlaces con fondo de color
 
-El color de fondo de cada enlace es transparente por defecto, si se desea agregar un color, se puede sobreescribir el estilo agregando la opcion de `colorFondo` en cada objeto de la lista de enlace de la siguiente manera.
+El color de fondo de cada enlace es transparente por defecto, si se desea agregar un color, se puede sobreescribir el estilo agregando una clase en cada elemento de la siguiente manera.
 
 <utils-ejemplo-doc ruta="boton-flotante/basico.vue"/>
 

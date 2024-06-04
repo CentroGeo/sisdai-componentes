@@ -25,11 +25,13 @@
 .boton-flotante .boton-flotante-hipervinculo.eni:hover,
 .boton-flotante .boton-flotante-hipervinculo.eni:focus {
   background: #3caeac;
+  color: #ffffff;
 }
 
 .boton-flotante .boton-flotante-hipervinculo.gema,
 .boton-flotante .boton-flotante-hipervinculo.gema:hover,
 .boton-flotante .boton-flotante-hipervinculo.gema:focus {
   background: #ff5100;
+  color: #ffffff;
 }
 </style>

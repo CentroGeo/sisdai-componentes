@@ -1,8 +1,9 @@
 ---
 layout: LayoutDocumentacion
+sectionName: menu-accesibilidad
 ---
 
-# MenuAccesibilidad
+# Menú de accesibilidad
 
 El Menú de accesibilidad permite ejecutar a las funciones que agregan reglas de accesibilidad al sitio web. Consulte la [sección de accesibilidad del Sisdai](https://sisdai.conahcyt.mx/accesibilidad/) para más información.
 
@@ -19,7 +20,7 @@ Uso:
 <SisdaiMenuAccesibilidad />
 ```
 
-La función de Vista oscura transita entre el tema claro y el oscuro. Por defecto al entrar a la aplicación la vista muestra la función automática, esto es, dependiendo de los ajustes de tu navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú puedes cambiar entre clara u oscura.
+La función de Vista oscura transita entre el tema claro y el oscuro. De manera predeterminada al entrar a la aplicación la vista muestra la función automática. Esto es, dependiendo de los ajustes del navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú se puede cambiar entre clara u oscura.
 
 También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css).
 
@@ -35,76 +36,59 @@ Al utilizar el Menú de accesibilidad, el perfil de color por defecto es el de l
 
 ### Propiedades
 
-- **agregarOpciones**
-  Lista de opciones que se agregará al Menú de accesibilidad, cada opción debe ser un objeto con los siguientes atributos:
-
-  ```js
-  {
-    accion: <String> 'Nombre de la acción al dar click en la opción.',
-    claseCss: <String> 'Nombre de la clase css de la opción.',
-    icono: <String> 'Visible a un costado del titulo.',
-    titulo: <String> 'Visible en la lista del menú abierto.',
-  }
-  ```
-
+- `agregarOpciones` Lista de opciones que se agregará al Menú de accesibilidad.
   - Tipo: `Array`
   - Valor predeterminado: `[]`
   - Requerido: no
 
-- **objetoStore**
-  Objeto store completo del proyecto.
+Cada opción debe ser un objeto con los siguientes atributos:
 
+```js
+{
+  accion: <String> 'Nombre de la acción al dar click en la opción.',
+  claseCss: <String> 'Nombre de la clase css de la opción.',
+  icono: <String> 'Visible a un costado del titulo.',
+  titulo: <String> 'Visible en la lista del menú abierto.',
+}
+```
+
+- `objetoStore` Objeto store completo del proyecto.
   - Tipo: `Object`
   - Valor predeterminado: `{}`
   - Requerido: no
-
-- **nombreModuloStore**
-  Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
-
+- `nombreModuloStore` Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
   - Tipo: `String`
   - Valor predeterminado: `accesibilidad`
   - Requerido: no
-
-- **perfilColor**
-  Seleciona el perfil o paleta de color desde la biblioteca de estilos. Los perfiles disponibles son: `eni`, `gema`, `sisdai`.
-
+- `perfilColor` Seleciona el perfil o paleta de color desde la biblioteca de estilos. Los perfiles disponibles son: `eni`, `gema`, `sisdai`.
   - Tipo: `String`
   - Valor predeterminado: `eni`
   - Requerido: no
 
 ### Métodos
 
-- **alternarEstado**
-  Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
+- `alternarEstado` Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
 
 ### Variables
 
-- **clasesSelecciondas**
-  Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable para facilitar la relación de interacción del menú de accesibilidad con la vista.
-
+- `clasesSelecciondas` Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable para facilitar la relación de interacción del menú de accesibilidad con la vista.
   - Tipo: `Array<String>`
   - Valor inicial: `[]`
-
-- **tema**
-  Tema o modo de color con el que inicializa la aplicación. Los temas disponibles son: `auto`, `clara`, `oscura`.
+- `tema` Tema o modo de color con el que inicializa la aplicación. Los temas disponibles son: `auto`, `clara`, `oscura`.
   - Tipo: `String`
   - Valor inicial: `auto`
 
 ### Eventos
 
 - **@alSeleccionarOpcion**
-  Se ejecuta al dar click en una opción del menú de accesibilidad.
-
-  Parametros:
-
+  Se ejecuta al dar click en una opción del menú de accesibilidad. Parametros:
   - `Object`: Objeto que contiene los atributos de la opción seleccionada al dar click.
-
 - **@alRestablecer**
   Se ejecuta cuanso se ha dado click en el botón "Restablecer".
 
 ### Slots
 
-Este componente no permite contenido con slots
+Este componente no permite contenido con slots.
 
 </section>
 
@@ -143,16 +127,11 @@ Además de una mutación extra que restablece los valores de todas las variables
 
 ### Propiedades de store
 
-- **objetoStore**
-  Objeto store completo del proytecto.
-
+- `objetoStore` Objeto store completo del proytecto.
   - Tipo: `Object`
   - Valor predeterminado: `{}`
   - Requerido: no
-
-- **nombreModuloStore**
-  Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
-
+- `nombreModuloStore` Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
   - Tipo: `String`
   - Valor predeterminado: `accesibilidad`
   - Requerido: no

@@ -1,5 +1,6 @@
 ---
 layout: LayoutDocumentacion
+sectionName: NarrativaScroll
 ---
 
 # Narrativa scroll

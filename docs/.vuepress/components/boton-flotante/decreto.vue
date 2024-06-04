@@ -17,5 +17,6 @@
 .boton-flotante .boton-flotante-hipervinculo.decreto:hover,
 .boton-flotante .boton-flotante-hipervinculo.decreto:focus {
   background: #000000;
+  color: #ffffff;
 }
 </style>
