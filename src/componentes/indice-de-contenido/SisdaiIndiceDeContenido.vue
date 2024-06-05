@@ -32,9 +32,7 @@ const props = defineProps({
  */
 const obtenerRutas = () => {
   lista_elementos.value = [
-    ...document.querySelectorAll(
-      `div#${props.id_indice}.indice-de-contenido a`
-    ),
+    ...document.querySelectorAll(`div#${props.id_indice}.indice-contenido a`),
   ].map(d => {
     return { id: d.href.split('#').slice(-1).pop() }
   })
@@ -75,7 +73,7 @@ function scroleando() {
  */
 function autoScrollSuave() {
   document
-    .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
+    .querySelectorAll(`div#${props.id_indice}.indice-contenido a`)
     .forEach(anchor => {
       anchor.addEventListener('click', () => {
         seccion_visible.value = anchor.href.split('#').slice(-1).pop()
@@ -94,7 +92,7 @@ function autoScrollSuave() {
 
 watch(seccion_visible, () => {
   document
-    .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
+    .querySelectorAll(`div#${props.id_indice}.indice-contenido a`)
     .forEach(d => {
       if (d.href.split('#').slice(-1).pop() === seccion_visible.value) {
         d.classList.add('link-activo')
