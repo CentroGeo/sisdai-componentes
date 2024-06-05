@@ -1,7 +1,6 @@
 <template>
   <div class="contenerdor-ejemplo-boton-flotante">
     <SisdaiBotonFlotante
-      style="position: absolute"
       :enlaces="[
         {
           clasesCss: 'eni',
@@ -33,5 +32,8 @@
 .boton-flotante .boton-flotante-hipervinculo.gema:focus {
   background: #ff5100;
   color: #ffffff;
+}
+.contenerdor-ejemplo-boton-flotante .boton-flotante {
+  position: absolute;
 }
 </style>

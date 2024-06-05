@@ -14,18 +14,17 @@
 import ElementosParaVerSisdaiInfoDeDespliegue from './elementos-para-ver-info-de-despliegue.vue'
 import { computed } from 'vue'
 
-const version = require('../../../../package.json').version
-const now = new Date()
-
 const entornoProyecto = computed(() => {
   return 'development'
 })
 
 const versionProyecto = computed(() => {
+  let version = require('../../../../package.json').version
   return version
 })
 
 const actualizacionProyecto = computed(() => {
+  let now = new Date()
   return now.toLocaleString('es-MX', {
     timeZone: 'America/Mexico_City',
   })

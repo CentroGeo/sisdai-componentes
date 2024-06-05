@@ -15,7 +15,6 @@ function alSeleccionarOpcion(opcion) {
     :class="menuAccesibilidad?.clasesSelecciondas"
   >
     <SisdaiMenuAccesibilidad
-      style="position: absolute"
       ref="menuAccesibilidad"
       :id="'basico'"
       @alSeleccionarOpcion="alSeleccionarOpcion"

@@ -1,7 +1,6 @@
 <template>
   <div class="contenerdor-ejemplo-boton-flotante">
     <SisdaiBotonFlotante
-      style="position: absolute"
       :enlaces="[
         {
           contenido: 'Documento externo',
@@ -18,5 +17,8 @@
 .boton-flotante .boton-flotante-hipervinculo.decreto:focus {
   background: #000000;
   color: #ffffff;
+}
+.contenerdor-ejemplo-boton-flotante .boton-flotante {
+  position: absolute;
 }
 </style>
