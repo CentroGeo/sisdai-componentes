@@ -7,24 +7,39 @@ const sisdaiModal = ref(null)
   <div>
     <SisdaiModal
       ref="sisdaiModal"
-      tituloModal="Título de modal"
-      tamanioModal="grande"
+      tituloModal="Título de modal grande"
+      tamanioModal="modal-grande"
     >
-      <div class="modal-contenido">
+      <template #cuerpo>
         <div class="flex flex-contenido-equidistante">
           <div class="columna-5-esc"></div>
           <div class="columna-6-esc"></div>
           <div class="columna-5-esc"></div>
         </div>
-      </div>
+      </template>
+
+      <template #pie>
+        <button
+          type="button"
+          class="boton-primario"
+          value="acepta"
+        >
+          Aceptar
+        </button>
+      </template>
     </SisdaiModal>
 
-    <button @click="sisdaiModal?.abrirModal()">Modal Grande</button>
+    <button
+      type="button"
+      @click="sisdaiModal?.abrirModal()"
+    >
+      Modal Grande
+    </button>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.modal-contenido {
+.modal-cuerpo {
   .flex {
     row-gap: 24px;
     div {

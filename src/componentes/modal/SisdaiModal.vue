@@ -82,21 +82,27 @@ defineExpose({
   <dialog
     :id="idModal"
     class="modal"
+    :class="tamanioModal"
     ref="trapRef"
     role="dialog"
-    :class="tamanioModal"
     aria-labelledby="titulo_modal"
     aria-modal="true"
   >
     <div class="modal-contenedor">
-      <div class="modal-cuerpo">
+      <div class="modal-cabecera">
         <h1
           id="titulo_modal"
-          class="titulo-modal"
+          class="modal-titulo"
           v-html="tituloModal"
         ></h1>
+      </div>
 
-        <slot />
+      <div class="modal-cuerpo">
+        <slot name="cuerpo" />
+      </div>
+
+      <div class="modal-pie">
+        <slot name="pie" />
       </div>
 
       <button
@@ -115,8 +121,8 @@ defineExpose({
 </template>
 
 <style lang="scss" scoped>
-.modal-contenedor {
-  h1.titulo-modal {
+.modal-cabecera {
+  h1.modal-titulo {
     font-size: 1.5rem;
     margin-top: 0;
   }
