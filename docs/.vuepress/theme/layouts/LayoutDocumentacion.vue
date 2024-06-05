@@ -64,7 +64,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
       id="contenido-todo"
       class="flex"
     >
-      <div class="columna-4 columna-1-mov menu-lateral-fondo">
+      <div class="columna-4-esc columna-1-mov menu-lateral-fondo">
         <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
           <template slot="contenido-menu-lateral">
             <ul>
@@ -260,12 +260,12 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
         </SisdaiMenuLateral>
       </div>
 
-      <div class="columna-12 columna-7-mov">
+      <div class="columna-12-esc columna-7-mov">
         <div
           id="contenido-documento"
           class="flex"
         >
-          <div class="columna-4 columna-8-mov columna-orden-3-esc">
+          <div class="columna-4-esc columna-8-mov columna-orden-3-esc">
             <SisdaiIndiceDeContenido
               :id_indice="'indice-template'"
               class="m-l-3-mov"
@@ -285,10 +285,10 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           </div>
 
           <div
-            class="columna-12 columna-8-mov"
+            class="columna-12-esc columna-8-mov"
             tabindex="-1"
           >
-            <div class="m-y-maximo-esc contenedor">
+            <div class="contenedor m-y-maximo-esc">
               <div class="ancho-lectura">
                 <Content />
               </div>
