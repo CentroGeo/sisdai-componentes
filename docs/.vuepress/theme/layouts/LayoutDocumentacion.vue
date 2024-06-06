@@ -271,7 +271,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               class="m-l-3-mov"
               ref="componenteIndice"
             >
-              <template slot="contenido-indice-de-contenido">
+              <template #contenido-indice-contenido>
                 <ul>
                   <li
                     v-for="elemento in lista_elementos"
