@@ -1,7 +1,7 @@
 <template>
   <div>
     <SisdaiIndiceDeContenido>
-      <template #contenido-indice-de-contenido>
+      <template #contenido-indice-contenido>
         <router-link to="#indice-de-contenido">
           Elemento índice de contenido
         </router-link>

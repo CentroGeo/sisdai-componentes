@@ -51,7 +51,7 @@ function scroleando() {
     } else {
       // eslint-disable-next-line
       console.warn(
-        'Los href que introdujiste en el slot "contenido-indice-de-contenido" no hacen referencia a ningún id de esta vista'
+        'Los href que introdujiste en el slot "contenido-indice-contenido" no hacen referencia a ningún id de esta vista'
       )
     }
   })
@@ -131,7 +131,7 @@ onUnmounted(() => {
       aria-labelledby="indicecontenido"
       class="indice-contenido-contenedor"
     >
-      <slot name="contenido-indice-de-contenido">
+      <slot name="contenido-indice-contenido">
         <router-link to="#routerlink"> router link prueba </router-link>
         <a href="#anchore"> anchore link prueba </a>
       </slot>

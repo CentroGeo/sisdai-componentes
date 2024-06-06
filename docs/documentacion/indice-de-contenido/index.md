@@ -32,7 +32,7 @@ Uso:
 
 ### Slots
 
-- `'contenido-indice-de-contenido'`: Este es el único slot que tiene este componente. En éste se deben introducir elementos de enlaces como `<a></a>` o `<router-link>`. Los enlaces que se introducen deben contener el id del elemento al que se quiere navegar, y a su vez, este elemento debe existir en el documento.
+- `'contenido-indice-contenido'`: Este es el único slot que tiene este componente. En éste se deben introducir elementos de enlaces como `<a></a>` o `<router-link>`. Los enlaces que se introducen deben contener el id del elemento al que se quiere navegar, y a su vez, este elemento debe existir en el documento.
 
 </section>
 

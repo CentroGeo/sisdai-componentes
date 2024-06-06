@@ -1,7 +1,7 @@
 <template>
   <div>
     <SisdaiIndiceDeContenido id_indice="indice-lista">
-      <template #contenido-indice-de-contenido>
+      <template #contenido-indice-contenido>
         <ul>
           <li>
             <router-link to="#indice-de-contenido">
