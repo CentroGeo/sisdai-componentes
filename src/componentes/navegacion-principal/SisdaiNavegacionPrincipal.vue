@@ -29,31 +29,29 @@ defineProps({
 })
 
 // //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
-const cuadroElementosMenu = ref(null)
-const navegacionPrincipal = ref(null)
+const cuadroElementosMenuRef = ref(null)
+const navegacionPrincipalRef = ref(null)
+const navMenu = ref({})
 
 const {
   menuEstaAbierto,
   alternarMenu,
+  submenuEstaAbierto,
   // eslint-disable-next-line
   alternarSubmenu,
-} = useMenuDesenfocable(cuadroElementosMenu)
-
-const navMenuConahcyt = ref({})
+} = useMenuDesenfocable(cuadroElementosMenuRef)
 
 /**
- * Agrega el atributo tabindex a los elementos de lista,
- * si está en versión móvil
+ * Agrega el atributo tabindex a los elementos de lista, si está en versión móvil
  */
 function agregaAtributoTabIndex() {
   if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenuConahcyt.value.length; index++) {
-      const elemento = navMenuConahcyt.value[index]['children'][0]
+    for (let index = 0; index < navMenu.value.length; index++) {
+      const elemento = navMenu.value[index]['children'][0]
       elemento.tabIndex = '-1'
     }
   }
 }
-
 /**
  * Si el menú está abierto en móvil, remueve el atributo tabIndex.
  * Si está cerrado, agrega el atributo tabIndex en -1 para
@@ -62,13 +60,13 @@ function agregaAtributoTabIndex() {
 function actualizaAtributoTabIndex(estaAbierto) {
   if (window.innerWidth < 768) {
     if (estaAbierto) {
-      for (let i = 0; i < navMenuConahcyt.value.length; i++) {
-        const elemento = navMenuConahcyt.value[i]['children'][0]
+      for (let i = 0; i < navMenu.value.length; i++) {
+        const elemento = navMenu.value[i]['children'][0]
         elemento.removeAttribute('tabIndex')
       }
     } else {
-      for (let j = 0; j < navMenuConahcyt.value.length; j++) {
-        const elemento = navMenuConahcyt.value[j]['children'][0]
+      for (let j = 0; j < navMenu.value.length; j++) {
+        const elemento = navMenu.value[j]['children'][0]
         elemento.tabIndex = '-1'
       }
     }
@@ -76,21 +74,28 @@ function actualizaAtributoTabIndex(estaAbierto) {
 }
 
 onMounted(() => {
-  navMenuConahcyt.value =
-    document.getElementsByClassName('nav-menu')[0]['children']
+  navMenu.value = document.getElementsByClassName('nav-menu')[0]['children']
   agregaAtributoTabIndex()
 })
 
 watch(menuEstaAbierto, () => {
+  // console.log('menuEstaAbierto', menuEstaAbierto.value)
   actualizaAtributoTabIndex(menuEstaAbierto.value)
 })
+
+watch(submenuEstaAbierto, () => {
+  // console.log('submenuEstaAbierto', submenuEstaAbierto.value)
+  // actualizaAtributoTabIndex(menuEstaAbierto.value)
+})
+
+defineExpose({ submenuEstaAbierto, alternarSubmenu })
 </script>
 
 <template>
   <nav
     class="navegacion navegacion-conahcyt"
     :class="{ 'navegacion-pegada': fija }"
-    ref="navegacionPrincipal"
+    ref="navegacionPrincipalRef"
     aria-label="Menú principal"
   >
     <div class="nav-contenedor-identidad">
@@ -146,7 +151,7 @@ watch(menuEstaAbierto, () => {
 
       <div
         class="nav-menu-principal"
-        ref="cuadroElementosMenu"
+        ref="cuadroElementosMenuRef"
         @click="alternarMenu"
       >
         <slot>
@@ -159,8 +164,16 @@ watch(menuEstaAbierto, () => {
               >
             </li>
             <li class="nav-contenedor-submenu">
-              <button class="nav-boton-submenu">Menú con submenu</button>
-              <ul class="nav-submenu">
+              <button
+                class="nav-boton-submenu"
+                @click="alternarSubmenu"
+              >
+                Menú con submenu
+              </button>
+              <ul
+                class="nav-submenu"
+                :class="{ abierto: submenuEstaAbierto }"
+              >
                 <li>
                   <button class="nav-boton-regresar">Menú con submenu</button>
                 </li>

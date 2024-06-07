@@ -130,6 +130,7 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
 
   return {
     menuEstaAbierto,
+    submenuEstaAbierto,
     abrirMenu,
     cerrarMenu,
     alternarMenu,

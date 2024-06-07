@@ -1371,13 +1371,13 @@ const boton_flotante_plugin = {
   }
 };
 /* harmony default export */ var boton_flotante = (boton_flotante_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4603857a-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=24fa42e0
-var SisdaiNavegacionPrincipalvue_type_template_id_24fa42e0_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4603857a-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=a8fde828
+var SisdaiNavegacionPrincipalvue_type_template_id_a8fde828_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c('nav', {
-    ref: "navegacionPrincipal",
+    ref: "navegacionPrincipalRef",
     staticClass: "navegacion navegacion-conahcyt",
     class: {
       'navegacion-pegada': _vm.fija
@@ -1426,16 +1426,30 @@ var SisdaiNavegacionPrincipalvue_type_template_id_24fa42e0_render = function ren
   }, [_c('div', {
     staticClass: "nav-menu-complementario"
   }, [_vm._t("complementario")], 2), _c('div', {
-    ref: "cuadroElementosMenu",
+    ref: "cuadroElementosMenuRef",
     staticClass: "nav-menu-principal",
     on: {
       "click": _setup.alternarMenu
     }
   }, [_vm._t("default", function () {
-    return [_vm._m(1)];
+    return [_c('ul', {
+      staticClass: "nav-menu"
+    }, [_vm._m(1), _c('li', {
+      staticClass: "nav-contenedor-submenu"
+    }, [_c('button', {
+      staticClass: "nav-boton-submenu",
+      on: {
+        "click": _setup.alternarSubmenu
+      }
+    }, [_vm._v(" Menú con submenu ")]), _c('ul', {
+      staticClass: "nav-submenu",
+      class: {
+        abierto: _setup.submenuEstaAbierto
+      }
+    }, [_vm._m(2), _vm._m(3)])])])];
   })], 2)])]);
 };
-var SisdaiNavegacionPrincipalvue_type_template_id_24fa42e0_staticRenderFns = [function () {
+var SisdaiNavegacionPrincipalvue_type_template_id_a8fde828_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1459,30 +1473,32 @@ var SisdaiNavegacionPrincipalvue_type_template_id_24fa42e0_staticRenderFns = [fu
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
-  return _c('ul', {
-    staticClass: "nav-menu"
-  }, [_c('li', [_c('a', {
+  return _c('li', [_c('a', {
     staticClass: "nav-hipervinculo",
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Menú")])]), _c('li', {
-    staticClass: "nav-contenedor-submenu"
-  }, [_c('button', {
-    staticClass: "nav-boton-submenu"
-  }, [_vm._v("Menú con submenu")]), _c('ul', {
-    staticClass: "nav-submenu"
-  }, [_c('li', [_c('button', {
+  }, [_vm._v("Menú")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c('li', [_c('button', {
     staticClass: "nav-boton-regresar"
-  }, [_vm._v("Menú con submenu")])]), _c('li', [_c('a', {
+  }, [_vm._v("Menú con submenu")])]);
+}, function () {
+  var _vm = this,
+    _c = _vm._self._c,
+    _setup = _vm._self._setupProxy;
+  return _c('li', [_c('a', {
     staticClass: "nav-hipervinculo",
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Submenu")])])])])]);
+  }, [_vm._v("Submenu")])]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=24fa42e0
+;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=a8fde828
 
 ;// CONCATENATED MODULE: ./src/composables/useMenuDesenfocable.js
 // This file is part of sisdai-componentes.
@@ -1597,6 +1613,7 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
   });
   return {
     menuEstaAbierto,
+    submenuEstaAbierto,
     abrirMenu,
     cerrarMenu,
     alternarMenu,
@@ -1618,31 +1635,32 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
       type: Boolean
     }
   },
-  setup(__props) {
+  setup(__props, {
+    expose
+  }) {
     // //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
-    const cuadroElementosMenu = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)(null);
-    const navegacionPrincipal = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)(null);
+    const cuadroElementosMenuRef = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)(null);
+    const navegacionPrincipalRef = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)(null);
+    const navMenu = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)({});
     const {
       menuEstaAbierto,
       alternarMenu,
+      submenuEstaAbierto,
       // eslint-disable-next-line
       alternarSubmenu
-    } = useMenuDesenfocable(cuadroElementosMenu);
-    const navMenuConahcyt = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)({});
+    } = useMenuDesenfocable(cuadroElementosMenuRef);
 
     /**
-     * Agrega el atributo tabindex a los elementos de lista,
-     * si está en versión móvil
+     * Agrega el atributo tabindex a los elementos de lista, si está en versión móvil
      */
     function agregaAtributoTabIndex() {
       if (window.innerWidth < 768) {
-        for (let index = 0; index < navMenuConahcyt.value.length; index++) {
-          const elemento = navMenuConahcyt.value[index]['children'][0];
+        for (let index = 0; index < navMenu.value.length; index++) {
+          const elemento = navMenu.value[index]['children'][0];
           elemento.tabIndex = '-1';
         }
       }
     }
-
     /**
      * Si el menú está abierto en móvil, remueve el atributo tabIndex.
      * Si está cerrado, agrega el atributo tabIndex en -1 para
@@ -1651,33 +1669,43 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
     function actualizaAtributoTabIndex(estaAbierto) {
       if (window.innerWidth < 768) {
         if (estaAbierto) {
-          for (let i = 0; i < navMenuConahcyt.value.length; i++) {
-            const elemento = navMenuConahcyt.value[i]['children'][0];
+          for (let i = 0; i < navMenu.value.length; i++) {
+            const elemento = navMenu.value[i]['children'][0];
             elemento.removeAttribute('tabIndex');
           }
         } else {
-          for (let j = 0; j < navMenuConahcyt.value.length; j++) {
-            const elemento = navMenuConahcyt.value[j]['children'][0];
+          for (let j = 0; j < navMenu.value.length; j++) {
+            const elemento = navMenu.value[j]['children'][0];
             elemento.tabIndex = '-1';
           }
         }
       }
     }
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.onMounted)(() => {
-      navMenuConahcyt.value = document.getElementsByClassName('nav-menu')[0]['children'];
+      navMenu.value = document.getElementsByClassName('nav-menu')[0]['children'];
       agregaAtributoTabIndex();
     });
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)(menuEstaAbierto, () => {
+      // console.log('menuEstaAbierto', menuEstaAbierto.value)
       actualizaAtributoTabIndex(menuEstaAbierto.value);
+    });
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)(submenuEstaAbierto, () => {
+      // console.log('submenuEstaAbierto', submenuEstaAbierto.value)
+      // actualizaAtributoTabIndex(menuEstaAbierto.value)
+    });
+    expose({
+      submenuEstaAbierto,
+      alternarSubmenu
     });
     return {
       __sfc: true,
-      cuadroElementosMenu,
-      navegacionPrincipal,
+      cuadroElementosMenuRef,
+      navegacionPrincipalRef,
+      navMenu,
       menuEstaAbierto,
       alternarMenu,
+      submenuEstaAbierto,
       alternarSubmenu,
-      navMenuConahcyt,
       agregaAtributoTabIndex,
       actualizaAtributoTabIndex
     };
@@ -1695,8 +1723,8 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
 ;
 var SisdaiNavegacionPrincipal_component = normalizeComponent(
   navegacion_principal_SisdaiNavegacionPrincipalvue_type_script_setup_true_lang_js,
-  SisdaiNavegacionPrincipalvue_type_template_id_24fa42e0_render,
-  SisdaiNavegacionPrincipalvue_type_template_id_24fa42e0_staticRenderFns,
+  SisdaiNavegacionPrincipalvue_type_template_id_a8fde828_render,
+  SisdaiNavegacionPrincipalvue_type_template_id_a8fde828_staticRenderFns,
   false,
   null,
   null,
