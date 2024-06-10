@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
 //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
@@ -58,10 +58,24 @@ function actualizaAtributoTabIndex(estaAbierto) {
   }
 }
 
+const anchoNavegacion = ref(768)
+const esColapsable = ref(false)
+
+function validarNavegacionColapsable() {
+  esColapsable.value = anchoNavegacion.value > window.innerWidth ? true : false
+}
+
 onMounted(() => {
   navMenuGobMx.value =
     document.getElementsByClassName('nav-menu')[0]['children']
   agregaAtributoTabIndex()
+
+  validarNavegacionColapsable()
+  window.addEventListener('resize', validarNavegacionColapsable)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', validarNavegacionColapsable)
 })
 
 watch(menuEstaAbierto, () => {
@@ -72,6 +86,7 @@ watch(menuEstaAbierto, () => {
 <template>
   <nav
     class="navegacion navegacion-gobmx"
+    :class="{ 'navegacion-extendida': !esColapsable }"
     aria-label="Menú Gobierno de México"
   >
     <div class="nav-contenedor-identidad">
@@ -108,7 +123,7 @@ watch(menuEstaAbierto, () => {
 
     <div
       id="menugobiernomexico"
-      class="nav-menu-contedor"
+      class="nav-menu-contenedor"
       :class="{ abierto: menuEstaAbierto }"
     >
       <div

@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { defineProps, onMounted, ref, watch } from 'vue'
+import { defineProps, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
 defineProps({
@@ -35,8 +35,8 @@ const navMenu = ref({})
 
 const {
   menuEstaAbierto,
-  alternarMenu,
   submenuEstaAbierto,
+  alternarMenu,
   // eslint-disable-next-line
   alternarSubmenu,
 } = useMenuDesenfocable(cuadroElementosMenuRef)
@@ -73,9 +73,45 @@ function actualizaAtributoTabIndex(estaAbierto) {
   }
 }
 
+const anchoNavegacion = ref(768)
+const esColapsable = ref(false)
+
+function regresarMenu() {
+  menuEstaAbierto.value = true
+  submenuEstaAbierto.value = false
+}
+
+function cerrarMenuSubmenu() {
+  menuEstaAbierto.value = false
+  submenuEstaAbierto.value = false
+}
+
+function ocultarSumbenu() {
+  if (esColapsable.value === false) {
+    submenuEstaAbierto.value = false
+  }
+}
+
+function mostrarSubmenu() {
+  if (esColapsable.value === false) {
+    submenuEstaAbierto.value = true
+  }
+}
+
+function validarNavegacionColapsable() {
+  esColapsable.value = anchoNavegacion.value > window.innerWidth ? true : false
+}
+
 onMounted(() => {
   navMenu.value = document.getElementsByClassName('nav-menu')[0]['children']
   agregaAtributoTabIndex()
+
+  validarNavegacionColapsable()
+  window.addEventListener('resize', validarNavegacionColapsable)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', validarNavegacionColapsable)
 })
 
 watch(menuEstaAbierto, () => {
@@ -88,15 +124,23 @@ watch(submenuEstaAbierto, () => {
   // actualizaAtributoTabIndex(menuEstaAbierto.value)
 })
 
-defineExpose({ submenuEstaAbierto, alternarSubmenu })
+defineExpose({
+  cerrarMenuSubmenu,
+  ocultarSumbenu,
+  regresarMenu,
+  mostrarSubmenu,
+  submenuEstaAbierto,
+  alternarSubmenu,
+})
 </script>
 
 <template>
   <nav
     class="navegacion navegacion-conahcyt"
-    :class="{ 'navegacion-pegada': fija }"
+    :class="{ 'navegacion-extendida': !esColapsable }"
     ref="navegacionPrincipalRef"
-    aria-label="Menú principal"
+    aria-label="Navegación principal"
+    @mouseleave="ocultarSumbenu()"
   >
     <div class="nav-contenedor-identidad">
       <slot name="identidad">
@@ -117,11 +161,12 @@ defineExpose({ submenuEstaAbierto, alternarSubmenu })
       </slot>
 
       <button
+        v-if="esColapsable"
         type="button"
         @click="alternarMenu"
         class="nav-boton-menu"
-        :class="{ abierto: menuEstaAbierto }"
-        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
+        :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
+        :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
         aria-label="Abrir/Cerrar navegación principal"
         aria-controls="navegacionprincipal"
       >
@@ -135,6 +180,7 @@ defineExpose({ submenuEstaAbierto, alternarSubmenu })
       </button>
 
       <div
+        v-if="esColapsable"
         class="nav-informacion"
         v-html="navInformacion"
       ></div>
@@ -142,17 +188,24 @@ defineExpose({ submenuEstaAbierto, alternarSubmenu })
 
     <div
       id="navegacionprincipal"
-      class="nav-menu-contedor"
-      :class="{ abierto: menuEstaAbierto }"
+      class="nav-menu-contenedor"
+      :class="{
+        abierto: menuEstaAbierto,
+        'submenu-abierto': submenuEstaAbierto,
+      }"
     >
       <div class="nav-menu-complementario">
         <slot name="complementario"></slot>
       </div>
 
-      <div
+      <!-- <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
         @click="alternarMenu"
+      > -->
+      <div
+        class="nav-menu-principal"
+        ref="cuadroElementosMenuRef"
       >
         <slot>
           <ul class="nav-menu">
@@ -160,28 +213,50 @@ defineExpose({ submenuEstaAbierto, alternarSubmenu })
               <a
                 href="#"
                 class="nav-hipervinculo"
+                @mouseover="ocultarSumbenu()"
+                @click="cerrarMenuSubmenu()"
                 >Menú</a
               >
             </li>
-            <li class="nav-contenedor-submenu">
+            <!-- <li class="nav-contenedor-submenu"> -->
+            <li>
               <button
                 class="nav-boton-submenu"
                 @click="alternarSubmenu"
+                aria-haspopup="true"
+                aria-controls="submenuEjemplo"
+                :aria-expanded="submenuEstaAbierto"
+                @mouseover="mostrarSubmenu()"
               >
                 Menú con submenu
               </button>
               <ul
                 class="nav-submenu"
+                :aria-hidden="!submenuEstaAbierto"
                 :class="{ abierto: submenuEstaAbierto }"
               >
-                <li>
-                  <button class="nav-boton-regresar">Menú con submenu</button>
+                <li v-if="esColapsable">
+                  <button
+                    class="nav-boton-regresar"
+                    @click="regresarMenu()"
+                  >
+                    Submenu
+                  </button>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="#eje"
                     class="nav-hipervinculo"
-                    >Submenu</a
+                    @click="cerrarMenuSubmenu()"
+                    >Submenu uno</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#aja"
+                    class="nav-hipervinculo"
+                    @click="cerrarMenuSubmenu()"
+                    >Submenu dos</a
                   >
                 </li>
               </ul>

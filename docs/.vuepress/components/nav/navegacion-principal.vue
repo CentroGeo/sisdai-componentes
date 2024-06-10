@@ -19,29 +19,6 @@ const navegacionPrincipal = ref(null)
           Documentación
         </RouterLink>
       </li>
-      <li class="nav-contenedor-submenu">
-        <button
-          class="nav-boton-submenu"
-          @click="navegacionPrincipal?.alternarSubmenu()"
-        >
-          Menú con submenu
-        </button>
-        <ul
-          class="nav-submenu"
-          :class="{ abierto: navegacionPrincipal?.submenuEstaAbierto }"
-        >
-          <li>
-            <button class="nav-boton-regresar">Menú con submenu</button>
-          </li>
-          <li>
-            <a
-              href="#"
-              class="nav-hipervinculo"
-              >Submenu</a
-            >
-          </li>
-        </ul>
-      </li>
 
       <li>
         <a

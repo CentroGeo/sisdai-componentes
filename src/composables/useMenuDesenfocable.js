@@ -96,6 +96,7 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
       const navSubmenu = document.querySelector('.nav-submenu')
       const list = navSubmenu.classList
       list.add('abierto')
+      menuEstaAbierto.value = false
       submenuEstaAbierto.value = true
     }
   }
