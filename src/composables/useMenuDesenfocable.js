@@ -54,9 +54,12 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
 
   const submenuEstaAbierto = ref(false)
 
+  const anchoNavegacion = ref(768)
+
+  const esColapsable = ref(false)
+
   function updateBlur() {
     //revisar que no tengo foco ningun elemento hijo
-
     if (menuEstaAbierto.value || submenuEstaAbierto.value) {
       setTimeout(() => {
         if (
@@ -71,6 +74,9 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   }
 
   onMounted(() => {
+    validarNavegacionColapsable()
+    window.addEventListener('resize', validarNavegacionColapsable)
+
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.addEventListener('blur', updateBlur)
   })
@@ -84,20 +90,19 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   }
 
   function alternarMenu() {
-    if (menuEstaAbierto.value === false && submenuEstaAbierto.value === true) {
-      cerrarSubmenu()
-    } else {
-      menuEstaAbierto.value = !menuEstaAbierto.value
-    }
+    cerrarSubmenu()
+    menuEstaAbierto.value = !menuEstaAbierto.value
   }
 
   function abrirSubmenu() {
-    if (document.querySelector('.nav-submenu')) {
-      const navSubmenu = document.querySelector('.nav-submenu')
-      const list = navSubmenu.classList
-      list.add('abierto')
-      menuEstaAbierto.value = false
-      submenuEstaAbierto.value = true
+    if (esColapsable.value === false) {
+      if (document.querySelector('.nav-submenu')) {
+        const navSubmenu = document.querySelector('.nav-submenu')
+        const list = navSubmenu.classList
+        list.add('abierto')
+        menuEstaAbierto.value = false
+        submenuEstaAbierto.value = true
+      }
     }
   }
 
@@ -115,6 +120,21 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
     submenuEstaAbierto.value ? abrirSubmenu() : cerrarSubmenu()
   }
 
+  function regresarMenu() {
+    cerrarSubmenu()
+    abrirMenu()
+  }
+
+  function cerrarMenuSubmenu() {
+    cerrarMenu()
+    cerrarSubmenu()
+  }
+
+  function validarNavegacionColapsable() {
+    esColapsable.value =
+      anchoNavegacion.value > window.innerWidth ? true : false
+  }
+
   watch(
     [menuEstaAbierto, submenuEstaAbierto],
     (menuEstaAbierto, submenuEstaAbierto) => {
@@ -125,6 +145,8 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   )
 
   onUnmounted(() => {
+    window.removeEventListener('resize', validarNavegacionColapsable)
+
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.removeEventListener('blur', updateBlur)
   })
@@ -132,9 +154,17 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   return {
     menuEstaAbierto,
     submenuEstaAbierto,
+    esColapsable,
+
     abrirMenu,
     cerrarMenu,
     alternarMenu,
+
+    abrirSubmenu,
+    cerrarSubmenu,
     alternarSubmenu,
+
+    cerrarMenuSubmenu,
+    regresarMenu,
   }
 }
