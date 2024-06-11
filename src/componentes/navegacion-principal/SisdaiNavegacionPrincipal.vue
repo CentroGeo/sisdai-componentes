@@ -161,6 +161,7 @@ defineExpose({
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
+        tabindex="0"
       >
         <slot>
           <ul class="nav-menu">

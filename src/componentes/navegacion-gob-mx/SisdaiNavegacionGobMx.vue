@@ -129,6 +129,7 @@ watch(menuEstaAbierto, () => {
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenu"
+        tabindex="0"
         @click="alternarMenu"
       >
         <ul
