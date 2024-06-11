@@ -17,10 +17,14 @@
 import { defineProps, onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
-defineProps({
+const props = defineProps({
   navInformacion: {
     default: '',
     type: String,
+  },
+  anchoNavegacion: {
+    default: 768,
+    type: Number,
   },
 })
 
@@ -43,7 +47,7 @@ const {
 
   cerrarMenuSubmenu,
   regresarMenu,
-} = useMenuDesenfocable(cuadroElementosMenuRef)
+} = useMenuDesenfocable(cuadroElementosMenuRef, props.anchoNavegacion)
 
 /**
  * Remueve el atributo tabindex a los elementos de lista para que enfoque.
@@ -68,7 +72,7 @@ function agregarTabIndex(menu) {
  * y la disposición del tamaño de pantalla: movil o escritorio.
  */
 function alternarTabIndex() {
-  if (window.innerWidth < 768) {
+  if (window.innerWidth < props.anchoNavegacion) {
     // movil
     if (menuEstaAbierto.value) {
       if (submenuEstaAbierto.value) {

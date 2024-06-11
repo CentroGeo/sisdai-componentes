@@ -29,7 +29,6 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * @property {function} abrirSubmenu  pone `submenuEstaAbierto = true` y agrega el selector de estilo `abierto` al submenu
  * @property {function} cerrarSubmenu  pone `submenuEstaAbierto = false` y remueve el selector de estilo `abierto` al submenu
  * @property {function} alternarSubmenu  pone `submenuEstaAbierto =  !menuEstaAbierto`
- * @property {Ref<Number>} anchoNavegacion Indica el ancho de corte de navegación de la pnatalla
  * @property {Ref<boolean>} esColapsable Indica si el menú está en una posición de ser colapsable o no
  * @property {function} regresarMenu pone `submenuEstaAbierto = !submenuEstaAbierto` y cierra o abre submenu según su valor
  * @property {function} cerrarMenuSubmenu cierra el Menu y el Submenu
@@ -44,6 +43,8 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * elementos del menu colapsable `ref<HTMLElement>`. Debe ser enfocable, si es un div o algun elemento que no
  * tenga focus por si mismo, debe agregarse el atributo [tab-index](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
  *
+ * @param {<Number>} anchoNavegacion Indica el ancho de corte de navegación de la pnatalla
+ *
  * @returns {UseMenuDesenfocableObject} Metodos y propiedades del composable
  * - `menuEstaAbierto: ref<boolean>`
  * - `abrirMenu: function`
@@ -53,18 +54,18 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * - `abrirSubmenu: function`
  * - `cerrarSubmenu: function`
  * - `alternarSubmenu: function`
- * - `anchoNavegacion: ref<Number>`
  * - `esColapsable: ref<boolean>`
  * - `regresarMenu: function`
  * - `cerrarMenuSubmenu: function`
  * - `validarNavegacionColapsable: function`
  */
-export function useMenuDesenfocable(elementoMenuEnfocable) {
+export function useMenuDesenfocable(
+  elementoMenuEnfocable,
+  anchoNavegacion = 768
+) {
   const menuEstaAbierto = ref(false)
 
   const submenuEstaAbierto = ref(false)
-
-  const anchoNavegacion = ref(768)
 
   const esColapsable = ref(false)
 
@@ -141,8 +142,7 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   }
 
   function validarNavegacionColapsable() {
-    esColapsable.value =
-      anchoNavegacion.value > window.innerWidth ? true : false
+    esColapsable.value = anchoNavegacion > window.innerWidth ? true : false
   }
 
   watch(
