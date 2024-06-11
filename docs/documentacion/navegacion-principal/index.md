@@ -64,6 +64,8 @@ De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, 
 
 En caso de tener un [router](https://router.vuejs.org/), el elemento `<a>` podria ser remplazado por el componente `<RouterLink>` conservando las clases de estilo necesarias.
 
+Cuando se agregue contenido personalizado **es importante incluir** la clase css `nav-menu` al elemento `<ul>` y `nav-submenu` al otro elemento `<ul>` que maneja la subnavegación de 'abierto' para que la funcionalidad de enfocar con el teclado opere correctamente.
+
 Se debe agregar el atributo `exact` al primer elemento de la lista de navegación para que el estilo de la sección actual en el menú se active exactamente cuando la ruta esté selecionada.
 
 ##### identidad

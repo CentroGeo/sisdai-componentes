@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-
 const SisdaiNavPpal = ref('')
 </script>
 <template>

@@ -149,7 +149,9 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
     [menuEstaAbierto, submenuEstaAbierto],
     (menuEstaAbierto, submenuEstaAbierto) => {
       if (menuEstaAbierto || submenuEstaAbierto) {
-        elementoMenuEnfocable.value.focus()
+        if (esColapsable.value) {
+          elementoMenuEnfocable.value.focus()
+        }
       }
     }
   )

@@ -24,10 +24,12 @@ defineProps({
   },
 })
 
-// //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
+// Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenuRef = ref(null)
 const navegacionPrincipalRef = ref(null)
+// Que el menu enfoque las secciones cuando esté abierto y cuando no no
 const navMenu = ref({})
+const navSubmenu = ref({})
 
 const {
   menuEstaAbierto,
@@ -44,44 +46,66 @@ const {
 } = useMenuDesenfocable(cuadroElementosMenuRef)
 
 /**
- * Agrega el atributo tabindex a los elementos de lista, si está en versión móvil
+ * Remueve el atributo tabindex a los elementos de lista para que enfoque.
  */
-function agregaAtributoTabIndex() {
-  if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenu.value.length; index++) {
-      const elemento = navMenu.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
+function removerTabIndex(menu) {
+  for (let i = 0; i < menu.length; i++) {
+    const elemento = menu[i]['children'][0]
+    elemento.removeAttribute('tabIndex')
   }
 }
 /**
- * Si el menú está abierto en móvil, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
+ * Agrega el atributo tabindex a los elementos de lista para que no enfoque.
  */
-function actualizaAtributoTabIndex(estaAbierto) {
+function agregarTabIndex(menu) {
+  for (let j = 0; j < menu.length; j++) {
+    const elemento = menu[j]['children'][0]
+    elemento.tabIndex = '-1'
+  }
+}
+/**
+ * Alterna el atributo tabindex a los elementos lista según el tipo de menú
+ * y la disposición del tamaño de pantalla: movil o escritorio.
+ */
+function alternarTabIndex() {
   if (window.innerWidth < 768) {
-    if (estaAbierto) {
-      for (let i = 0; i < navMenu.value.length; i++) {
-        const elemento = navMenu.value[i]['children'][0]
-        elemento.removeAttribute('tabIndex')
+    // movil
+    if (menuEstaAbierto.value) {
+      if (submenuEstaAbierto.value) {
+        agregarTabIndex(navMenu.value)
+        removerTabIndex(navSubmenu.value)
+      } else {
+        removerTabIndex(navMenu.value)
+        agregarTabIndex(navSubmenu.value)
       }
     } else {
-      for (let j = 0; j < navMenu.value.length; j++) {
-        const elemento = navMenu.value[j]['children'][0]
-        elemento.tabIndex = '-1'
-      }
+      agregarTabIndex(navMenu.value)
+      agregarTabIndex(navSubmenu.value)
+    }
+  } else {
+    // escritorio
+    if (submenuEstaAbierto.value) {
+      removerTabIndex(navSubmenu.value)
+    } else {
+      agregarTabIndex(navSubmenu.value)
     }
   }
 }
 
 onMounted(() => {
-  navMenu.value = document.getElementsByClassName('nav-menu')[0]['children']
-  agregaAtributoTabIndex()
+  navMenu.value = document.querySelectorAll(
+    '#navegacionprincipal .nav-menu'
+  )[0]['children']
+
+  if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
+    navSubmenu.value =
+      document.getElementsByClassName('nav-submenu')[0]['children']
+
+  alternarTabIndex()
 })
 
-watch(menuEstaAbierto, () => {
-  actualizaAtributoTabIndex(menuEstaAbierto.value)
+watch([menuEstaAbierto, submenuEstaAbierto], () => {
+  alternarTabIndex()
 })
 
 defineExpose({

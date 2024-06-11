@@ -1371,8 +1371,8 @@ const boton_flotante_plugin = {
   }
 };
 /* harmony default export */ var boton_flotante = (boton_flotante_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0f6f3bb1-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=0f49e64c
-var SisdaiNavegacionPrincipalvue_type_template_id_0f49e64c_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0f6f3bb1-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=3a613533
+var SisdaiNavegacionPrincipalvue_type_template_id_3a613533_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1507,7 +1507,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_0f49e64c_render = function ren
     }, [_vm._v("Submenu dos")])])])])])];
   })], 2)])]);
 };
-var SisdaiNavegacionPrincipalvue_type_template_id_0f49e64c_staticRenderFns = [function () {
+var SisdaiNavegacionPrincipalvue_type_template_id_3a613533_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1529,7 +1529,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_0f49e64c_staticRenderFns = [fu
   })]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=0f49e64c
+;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=3a613533
 
 ;// CONCATENATED MODULE: ./src/composables/useMenuDesenfocable.js
 // This file is part of sisdai-componentes.
@@ -1660,7 +1660,9 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
   }
   (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)([menuEstaAbierto, submenuEstaAbierto], (menuEstaAbierto, submenuEstaAbierto) => {
     if (menuEstaAbierto || submenuEstaAbierto) {
-      elementoMenuEnfocable.value.focus();
+      if (esColapsable.value) {
+        elementoMenuEnfocable.value.focus();
+      }
     }
   });
   (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.onUnmounted)(() => {
@@ -1695,10 +1697,12 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
   setup(__props, {
     expose
   }) {
-    // //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
+    // Que el menu se pueda cerrar automaticamente al enfocar otra cosa
     const cuadroElementosMenuRef = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)(null);
     const navegacionPrincipalRef = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)(null);
+    // Que el menu enfoque las secciones cuando esté abierto y cuando no no
     const navMenu = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)({});
+    const navSubmenu = (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.ref)({});
     const {
       menuEstaAbierto,
       submenuEstaAbierto,
@@ -1712,42 +1716,58 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
     } = useMenuDesenfocable(cuadroElementosMenuRef);
 
     /**
-     * Agrega el atributo tabindex a los elementos de lista, si está en versión móvil
+     * Remueve el atributo tabindex a los elementos de lista para que enfoque.
      */
-    function agregaAtributoTabIndex() {
-      if (window.innerWidth < 768) {
-        for (let index = 0; index < navMenu.value.length; index++) {
-          const elemento = navMenu.value[index]['children'][0];
-          elemento.tabIndex = '-1';
-        }
+    function removerTabIndex(menu) {
+      for (let i = 0; i < menu.length; i++) {
+        const elemento = menu[i]['children'][0];
+        elemento.removeAttribute('tabIndex');
       }
     }
     /**
-     * Si el menú está abierto en móvil, remueve el atributo tabIndex.
-     * Si está cerrado, agrega el atributo tabIndex en -1 para
-     * saltarse los enlaces con el teclado secuencial.
+     * Agrega el atributo tabindex a los elementos de lista para que no enfoque.
      */
-    function actualizaAtributoTabIndex(estaAbierto) {
+    function agregarTabIndex(menu) {
+      for (let j = 0; j < menu.length; j++) {
+        const elemento = menu[j]['children'][0];
+        elemento.tabIndex = '-1';
+      }
+    }
+    /**
+     * Alterna el atributo tabindex a los elementos lista según el tipo de menú
+     * y la disposición del tamaño de pantalla: movil o escritorio.
+     */
+    function alternarTabIndex() {
       if (window.innerWidth < 768) {
-        if (estaAbierto) {
-          for (let i = 0; i < navMenu.value.length; i++) {
-            const elemento = navMenu.value[i]['children'][0];
-            elemento.removeAttribute('tabIndex');
+        // movil
+        if (menuEstaAbierto.value) {
+          if (submenuEstaAbierto.value) {
+            agregarTabIndex(navMenu.value);
+            removerTabIndex(navSubmenu.value);
+          } else {
+            removerTabIndex(navMenu.value);
+            agregarTabIndex(navSubmenu.value);
           }
         } else {
-          for (let j = 0; j < navMenu.value.length; j++) {
-            const elemento = navMenu.value[j]['children'][0];
-            elemento.tabIndex = '-1';
-          }
+          agregarTabIndex(navMenu.value);
+          agregarTabIndex(navSubmenu.value);
+        }
+      } else {
+        // escritorio
+        if (submenuEstaAbierto.value) {
+          removerTabIndex(navSubmenu.value);
+        } else {
+          agregarTabIndex(navSubmenu.value);
         }
       }
     }
     (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.onMounted)(() => {
-      navMenu.value = document.getElementsByClassName('nav-menu')[0]['children'];
-      agregaAtributoTabIndex();
+      navMenu.value = document.querySelectorAll('#navegacionprincipal .nav-menu')[0]['children'];
+      if (document.getElementsByClassName('nav-submenu')[0] !== undefined) navSubmenu.value = document.getElementsByClassName('nav-submenu')[0]['children'];
+      alternarTabIndex();
     });
-    (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)(menuEstaAbierto, () => {
-      actualizaAtributoTabIndex(menuEstaAbierto.value);
+    (0,external_commonjs_vue_commonjs2_vue_root_Vue_namespaceObject.watch)([menuEstaAbierto, submenuEstaAbierto], () => {
+      alternarTabIndex();
     });
     expose({
       submenuEstaAbierto,
@@ -1763,6 +1783,7 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
       cuadroElementosMenuRef,
       navegacionPrincipalRef,
       navMenu,
+      navSubmenu,
       menuEstaAbierto,
       submenuEstaAbierto,
       esColapsable,
@@ -1772,8 +1793,9 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
       alternarSubmenu,
       cerrarMenuSubmenu,
       regresarMenu,
-      agregaAtributoTabIndex,
-      actualizaAtributoTabIndex
+      removerTabIndex,
+      agregarTabIndex,
+      alternarTabIndex
     };
   }
 });
@@ -1789,8 +1811,8 @@ function useMenuDesenfocable(elementoMenuEnfocable) {
 ;
 var SisdaiNavegacionPrincipal_component = normalizeComponent(
   navegacion_principal_SisdaiNavegacionPrincipalvue_type_script_setup_true_lang_js,
-  SisdaiNavegacionPrincipalvue_type_template_id_0f49e64c_render,
-  SisdaiNavegacionPrincipalvue_type_template_id_0f49e64c_staticRenderFns,
+  SisdaiNavegacionPrincipalvue_type_template_id_3a613533_render,
+  SisdaiNavegacionPrincipalvue_type_template_id_3a613533_staticRenderFns,
   false,
   null,
   null,
