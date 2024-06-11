@@ -23,10 +23,9 @@ Uso:
   - Tipo: `String`
   - Valor predeterminado: `''`
   - Requerido: no
-- `fija` Define si esta barra de navegación se queda fija en la parte superior al hacer scroll en la vista actual.
-  - Tipo: `Boolean`
-  - Valor predeterminado `true`
-  - Requerido: no
+- `ref` Referencia del componente que sirve como instancia para acceder a las variables o métodos expuestos de abrir o cerrar menús.
+  - Tipo: `String`
+  - Requerido: sí
 
 ### Métodos
 
@@ -61,7 +60,7 @@ Slot para el contenido de navegación, son los links a las secciones disponibles
 </SisdaiNavegacionPrincipal>
 ```
 
-De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, los links deberan estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
+De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, los links deberán estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
 
 En caso de tener un [router](https://router.vuejs.org/), el elemento `<a>` podria ser remplazado por el componente `<RouterLink>` conservando las clases de estilo necesarias.
 
@@ -82,6 +81,7 @@ Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase **color-i
     <a
       href="https://conacyt.mx/"
       target="_blank"
+      rel="noopener noreferrer"
       class="nav-hiperviculo-logo"
     >
       <img
@@ -101,7 +101,7 @@ Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase **color-i
 - Requerido: no
 - Contenido predeterminado: Vacío
 
-Slot para el contenido complementario del sitio, donde se despliegan los enlaces externos por ejemplo.
+Slot para el contenido complementario del sitio, donde se colocan enlaces externos por ejemplo.
 
 ```html
 <SisdaiNavegacionPrincipal>
@@ -132,8 +132,8 @@ Agregando contenido personalizado.
 
 <utils-ejemplo-doc ruta="navegacion-principal/contenido-personalizado.vue"/>
 
-Para que la subnavegación en la móvil versión se abra y cierre, se deberá agregar la lógica que alterne la clase dinámica css `abierto` del elemento de lista `ul` con el selector `nav-submenu`.
+Para que la subnavegación en la móvil versión se abra y cierre, se deberá agregar al elemento de lista `ul` con el selector `nav-submenu` la clase dinámica css `abierto` con la condición de que la variable `submenuEstaAbierta`.
 
-Dicha alternancia se puede lograr mediante un evento de clic en los elementos `button` con los selectores `nav-boton-submenu` y `nav-boton-regresar` para llamar a la función `alternarSubmenu` del `_setupState` de la referencia o instancia del componente.
+Dicha alternancia se puede lograr mediante un evento de clic en los elementos `button` con los selectores `nav-boton-submenu` y `nav-boton-regresar` para llamar a la función `alternarSubmenu` y `regresarMenu` de la referencia o instancias expuestas del componente.
 
 </section>

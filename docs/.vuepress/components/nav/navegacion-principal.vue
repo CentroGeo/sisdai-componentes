@@ -10,7 +10,7 @@ const navegacionPrincipal = ref(null)
     :nav-informacion="`Sección: <b>${$frontmatter.sectionName || ''}</b>`"
     ref="navegacionPrincipal"
   >
-    <ul class="nav-menu">
+    <!-- <ul class="nav-menu">
       <li>
         <RouterLink
           class="nav-hipervinculo"
@@ -30,6 +30,6 @@ const navegacionPrincipal = ref(null)
           v{{ pkg.version }}
         </a>
       </li>
-    </ul>
+    </ul> -->
   </SisdaiNavegacionPrincipal>
 </template>

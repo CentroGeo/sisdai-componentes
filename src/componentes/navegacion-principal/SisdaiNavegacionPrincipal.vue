@@ -22,10 +22,6 @@ defineProps({
     default: '',
     type: String,
   },
-  fija: {
-    default: true,
-    type: Boolean,
-  },
 })
 
 // //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
@@ -90,8 +86,14 @@ watch(menuEstaAbierto, () => {
 
 defineExpose({
   submenuEstaAbierto,
+  abrirSubmenu,
   alternarSubmenu,
+
   esColapsable,
+  regresarMenu,
+
+  cerrarSubmenu,
+  cerrarMenuSubmenu,
 })
 </script>
 
@@ -169,6 +171,7 @@ defineExpose({
               <a
                 href="#"
                 class="nav-hipervinculo"
+                exact
                 @mouseover="cerrarSubmenu()"
                 @click="cerrarMenuSubmenu()"
                 >Menú</a
@@ -177,11 +180,11 @@ defineExpose({
             <li class="nav-contenedor-submenu">
               <button
                 class="nav-boton-submenu"
-                @click="alternarSubmenu"
                 aria-haspopup="true"
                 aria-controls="submenuEjemplo"
                 :aria-expanded="submenuEstaAbierto"
                 @mouseover="abrirSubmenu()"
+                @click="alternarSubmenu"
               >
                 Menú con submenu
               </button>

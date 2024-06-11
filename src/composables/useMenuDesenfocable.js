@@ -24,11 +24,16 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * @property {Ref<boolean>} menuEstaAbierto  Indica el estado del menu si esta abierto o no
  * @property {function} abrirMenu  pone `menuEstaAbierto = true`
  * @property {function} cerrarMenu  pone `menuEstaAbierto = false`
- * @property {function} alternarMenu  pone `menuEstaAbierto =  !menuEstaAbierto`
+ * @property {function} alternarMenu  pone `menuEstaAbierto =  !menuEstaAbierto` y cierra el submenu
  * @property {Ref<boolean>} submenuEstaAbierto  Indica el estado del submenu si esta abierto o no
  * @property {function} abrirSubmenu  pone `submenuEstaAbierto = true` y agrega el selector de estilo `abierto` al submenu
  * @property {function} cerrarSubmenu  pone `submenuEstaAbierto = false` y remueve el selector de estilo `abierto` al submenu
  * @property {function} alternarSubmenu  pone `submenuEstaAbierto =  !menuEstaAbierto`
+ * @property {Ref<Number>} anchoNavegacion Indica el ancho de corte de navegación de la pnatalla
+ * @property {Ref<boolean>} esColapsable Indica si el menú está en una posición de ser colapsable o no
+ * @property {function} regresarMenu pone `submenuEstaAbierto = !submenuEstaAbierto` y cierra o abre submenu según su valor
+ * @property {function} cerrarMenuSubmenu cierra el Menu y el Submenu
+ * @property {function} validarNavegacionColapsable valida si la navegación en colapsable o no al ancho de la navegación
  */
 
 /**
@@ -48,6 +53,11 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * - `abrirSubmenu: function`
  * - `cerrarSubmenu: function`
  * - `alternarSubmenu: function`
+ * - `anchoNavegacion: ref<Number>`
+ * - `esColapsable: ref<boolean>`
+ * - `regresarMenu: function`
+ * - `cerrarMenuSubmenu: function`
+ * - `validarNavegacionColapsable: function`
  */
 export function useMenuDesenfocable(elementoMenuEnfocable) {
   const menuEstaAbierto = ref(false)
