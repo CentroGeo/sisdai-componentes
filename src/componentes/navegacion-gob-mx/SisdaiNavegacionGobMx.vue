@@ -14,72 +14,77 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { onMounted, onUnmounted, ref, watch } from 'vue'
+import { defineProps, onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
+const props = defineProps({
+  anchoNavegacion: {
+    default: 768,
+    type: Number,
+  },
+})
+
 //Que el menu se pueda cerrar automaticamente al enfocar otra cosa
-const cuadroElementosMenu = ref(null)
-const { menuEstaAbierto, alternarMenu } =
-  useMenuDesenfocable(cuadroElementosMenu)
+const cuadroElementosMenuRef = ref(null)
+
+const {
+  menuEstaAbierto,
+  submenuEstaAbierto,
+  esColapsable,
+
+  alternarMenu,
+  cerrarSubmenu,
+
+  cerrarMenuSubmenu,
+} = useMenuDesenfocable(cuadroElementosMenuRef)
 
 const navMenuGobMx = ref({})
 
 /**
- * Agrega el atributo tabindex a los elementos de lista,
- * si está en versión móvil
+ * Remueve el atributo tabindex a los elementos de lista para que enfoque.
  */
-function agregaAtributoTabIndex() {
-  if (window.innerWidth < 768) {
-    for (let index = 0; index < navMenuGobMx.value.length; index++) {
-      const elemento = navMenuGobMx.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
+function removerTabIndex(menu) {
+  for (let i = 0; i < menu.length; i++) {
+    const elemento = menu[i]['children'][0]
+    elemento.removeAttribute('tabIndex')
   }
 }
-
 /**
- * Si el menú está abierto en móvil, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
+ * Agrega el atributo tabindex a los elementos de lista para que no enfoque.
  */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (window.innerWidth < 768) {
-    if (estaAbierto) {
-      for (let i = 0; i < navMenuGobMx.value.length; i++) {
-        const elemento = navMenuGobMx.value[i]['children'][0]
-        elemento.removeAttribute('tabIndex')
-      }
-    } else {
-      for (let j = 0; j < navMenuGobMx.value.length; j++) {
-        const elemento = navMenuGobMx.value[j]['children'][0]
-        elemento.tabIndex = '-1'
-      }
-    }
+function agregarTabIndex(menu) {
+  for (let j = 0; j < menu.length; j++) {
+    const elemento = menu[j]['children'][0]
+    elemento.tabIndex = '-1'
   }
 }
-
-const anchoNavegacion = ref(768)
-const esColapsable = ref(false)
-
-function validarNavegacionColapsable() {
-  esColapsable.value = anchoNavegacion.value > window.innerWidth ? true : false
+/**
+ * Alterna el atributo tabindex a los elementos lista según el tipo de menú
+ * y la disposición del tamaño de pantalla: movil o escritorio.
+ */
+function alternarTabIndex() {
+  if (window.innerWidth < props.anchoNavegacion) {
+    // movil
+    if (menuEstaAbierto.value) {
+      removerTabIndex(navMenuGobMx.value)
+    } else {
+      agregarTabIndex(navMenuGobMx.value)
+    }
+  } else {
+    // escritorio
+    removerTabIndex(navMenuGobMx.value)
+  }
 }
 
 onMounted(() => {
-  navMenuGobMx.value =
-    document.getElementsByClassName('nav-menu')[0]['children']
-  agregaAtributoTabIndex()
-
-  validarNavegacionColapsable()
-  window.addEventListener('resize', validarNavegacionColapsable)
+  navMenuGobMx.value = document.querySelectorAll(
+    '#menugobiernomexico .nav-menu'
+  )[0]['children']
+  alternarTabIndex()
 })
 
-onUnmounted(() => {
-  window.removeEventListener('resize', validarNavegacionColapsable)
-})
-
-watch(menuEstaAbierto, () => {
-  actualizaAtributoTabIndex(menuEstaAbierto.value)
+watch([menuEstaAbierto, submenuEstaAbierto], () => {
+  alternarTabIndex()
 })
 </script>
 
@@ -88,6 +93,7 @@ watch(menuEstaAbierto, () => {
     class="navegacion navegacion-gobmx"
     :class="{ 'navegacion-extendida': !esColapsable }"
     aria-label="Menú Gobierno de México"
+    @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
       <a
@@ -109,8 +115,8 @@ watch(menuEstaAbierto, () => {
         type="button"
         @click="alternarMenu"
         class="nav-boton-menu"
-        :class="{ abierto: menuEstaAbierto }"
-        :aria-expanded="menuEstaAbierto ? 'true' : 'false'"
+        :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
+        :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
         aria-label="Abrir/Cerrar menú de gobierno de México"
         aria-controls="menugobiernomexico"
       >
@@ -128,20 +134,19 @@ watch(menuEstaAbierto, () => {
     >
       <div
         class="nav-menu-principal"
-        ref="cuadroElementosMenu"
+        ref="cuadroElementosMenuRef"
         tabindex="0"
-        @click="alternarMenu"
       >
-        <ul
-          id="nav_menu_gobmx"
-          class="nav-menu"
-        >
+        <ul class="nav-menu">
           <li>
             <a
               href="https://coronavirus.gob.mx/"
               class="nav-hipervinculo"
               target="_blank"
               rel="noopener"
+              exact
+              @mouseover="cerrarSubmenu()"
+              @click="cerrarMenuSubmenu()"
               >Información sobre COVID-19</a
             >
           </li>
@@ -151,6 +156,8 @@ watch(menuEstaAbierto, () => {
               class="nav-hipervinculo"
               target="_blank"
               rel="noopener"
+              @mouseover="cerrarSubmenu()"
+              @click="cerrarMenuSubmenu()"
               >Trámites</a
             >
           </li>
@@ -160,6 +167,8 @@ watch(menuEstaAbierto, () => {
               class="nav-hipervinculo"
               target="_blank"
               rel="noopener"
+              @mouseover="cerrarSubmenu()"
+              @click="cerrarMenuSubmenu()"
               >Gobierno</a
             >
           </li>
@@ -169,6 +178,8 @@ watch(menuEstaAbierto, () => {
               class="nav-hipervinculo"
               target="_blank"
               rel="noopener"
+              @mouseover="cerrarSubmenu()"
+              @click="cerrarMenuSubmenu()"
             >
               <span
                 class="pictograma-buscar"

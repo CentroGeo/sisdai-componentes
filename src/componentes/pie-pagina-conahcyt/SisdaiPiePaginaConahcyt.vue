@@ -14,32 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-// import { ref, onMounted, onUnmounted, watch } from 'vue'
-
 const anioActual = new Date().getFullYear()
-// const windowWidth = ref(window.innerWidth)
-// const esMovil = ref()
-
-// const handleResize = () => {
-//   windowWidth.value = window.innerWidth
-// }
-
-// function isMovil() {
-//   return windowWidth.value < 768
-// }
-
-// onMounted(() => {
-//   window.addEventListener('resize', handleResize)
-//   esMovil.value = isMovil()
-// })
-
-// onUnmounted(() => {
-//   window.removeEventListener('resize', handleResize)
-// })
-
-// watch(windowWidth, () => {
-//   esMovil.value = isMovil()
-// })
 </script>
 
 <template>

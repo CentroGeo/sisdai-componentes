@@ -30,10 +30,6 @@ const props = defineProps({
 
 // Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenuRef = ref(null)
-const navegacionPrincipalRef = ref(null)
-// Que el menu enfoque las secciones cuando esté abierto y cuando no no
-const navMenu = ref({})
-const navSubmenu = ref({})
 
 const {
   menuEstaAbierto,
@@ -48,6 +44,10 @@ const {
   cerrarMenuSubmenu,
   regresarMenu,
 } = useMenuDesenfocable(cuadroElementosMenuRef, props.anchoNavegacion)
+
+// Que el menu enfoque las secciones cuando esté abierto y cuando no no
+const navMenu = ref({})
+const navSubmenu = ref({})
 
 /**
  * Remueve el atributo tabindex a los elementos de lista para que enfoque.
@@ -129,7 +129,6 @@ defineExpose({
   <nav
     class="navegacion navegacion-conahcyt navegacion-pegada"
     :class="{ 'navegacion-extendida': !esColapsable }"
-    ref="navegacionPrincipalRef"
     aria-label="Navegación principal"
     @mouseleave="cerrarSubmenu()"
   >

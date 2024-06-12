@@ -117,7 +117,6 @@ function ejecutarEnStore(accion, valor) {
   ) {
     objetoStore.value.commit(`${nombreModuloStore.value}/${accion}`, valor)
   }
-  // console.log('objetoStore.value', objetoStore.value)
 }
 
 /**
@@ -205,11 +204,6 @@ function asignarTemaClaroUOscuro(nv, ov) {
   }
 }
 
-// function getTemaDesdeLocalStorage() {
-//   const tema = localStorage.getItem('theme') || 'clara'
-//   return tema
-// }
-
 /**
  * Devuelve el tema del documento según la configuración del dispositivo.
  */
@@ -270,13 +264,6 @@ function setTemaEnDocumentoYLocalStorage() {
   }
 }
 
-// function alternarTema() {
-//   //rotar entre estos 3 valores
-//   const themes = ['clara', 'oscura', 'auto']
-//   tema.value = themes[(themes.indexOf(tema.value) + 1) % 3]
-//   localStorage.setItem('theme', tema.value)
-// }
-
 onBeforeMount(() => {
   window
     .matchMedia('(prefers-color-scheme: dark)')
@@ -284,8 +271,6 @@ onBeforeMount(() => {
 })
 
 onMounted(() => {
-  // const tema = getTemaDesdeLocalStorage()
-  // tema.value = getTemaDesdeLocalStorage()
   body = document?.querySelector('body')
   setTemaEnDocumentoYLocalStorage()
   window
