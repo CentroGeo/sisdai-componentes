@@ -351,11 +351,11 @@ input.control-tiempo[type='range'] {
     &:active {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_almacenado),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_almacenado)
+        var(--campo-rango-activo),
+        var(--campo-rango-activo) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_almacenado),
+        var(--campo-rango) v-bind(porcentaje_almacenado)
       );
     }
   }
@@ -366,11 +366,11 @@ input.control-tiempo[type='range'] {
     &:active {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_almacenado),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_almacenado)
+        var(--campo-rango-activo),
+        var(--campo-rango-activo) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_almacenado),
+        var(--campo-rango) v-bind(porcentaje_almacenado)
       );
     }
   }
@@ -381,11 +381,11 @@ input.control-tiempo[type='range'] {
     &:active {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_almacenado),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_almacenado)
+        var(--campo-rango-activo),
+        var(--campo-rango-activo) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_almacenado),
+        var(--campo-rango) v-bind(porcentaje_almacenado)
       );
     }
   }
