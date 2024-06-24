@@ -56,7 +56,7 @@ const propiedades = {
    */
   perfilColor: {
     type: String,
-    default: 'eni', // 'eni' | 'sisdai' | 'gema'
+    default: 'predeterminada', // 'predeterminada' | 'sisdai' | 'gema'
   },
 }
 
@@ -166,9 +166,9 @@ let body = {}
  * de color al nivel de la etiqueta html del documento.
  */
 function setTemaClaro() {
-  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
-  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
-  body.setAttribute(`data-light-theme-${perfilColor.value}`, true)
+  body.removeAttribute(`data-${perfilColor.value}-oscura`)
+  body.removeAttribute(`data-${perfilColor.value}-clara`)
+  body.setAttribute(`data-${perfilColor.value}-clara`, true)
 }
 
 /**
@@ -176,9 +176,9 @@ function setTemaClaro() {
  * de color al nivel de la etiqueta html del documento.
  */
 function setTemaOscuro() {
-  body.removeAttribute(`data-light-theme-${perfilColor.value}`)
-  body.removeAttribute(`data-dark-theme-${perfilColor.value}`)
-  body.setAttribute(`data-dark-theme-${perfilColor.value}`, true)
+  body.removeAttribute(`data-${perfilColor.value}-clara`)
+  body.removeAttribute(`data-${perfilColor.value}-oscura`)
+  body.setAttribute(`data-${perfilColor.value}-oscura`, true)
 }
 
 /**
@@ -289,24 +289,17 @@ watch([perfilColor, tema], () => {
 function alternarAbiertoCerrado() {
   menuAccesibilidadEstaAbierto.value = !menuAccesibilidadEstaAbierto.value
 }
-defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
 
-/**
- * Altura en pixeles del menú abierto, se calcula dando 50 pixeles a cada opción sumando la
- * opción de restablecer y el titulo del menú.
- */
-const alturaMenuAbierto = computed(
-  () => `${(opciones.value.length + 1) * 48 + 145}px`
-)
+defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
 </script>
 
 <template>
   <div
-    class="menu-accesibilidad"
+    class="menu-flotante menu-flotante-derecho"
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
     <button
-      class="menu-accesibilidad-boton"
+      class="menu-flotante-boton"
       aria-label="Abrir y cerrar menú de accesibilidad"
       aria-controls="menua11y"
       :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
@@ -323,13 +316,12 @@ const alturaMenuAbierto = computed(
 
     <menu
       id="menua11y"
-      class="menu-accesibilidad-contenedor"
+      class="menu-flotante-contenedor"
       :aria-hidden="!menuAccesibilidadEstaAbierto"
     >
-      <p class="menu-accesibilidad-titulo">Herramientas de accesibilidad</p>
+      <p class="menu-flotante-titulo">Herramientas de accesibilidad</p>
 
       <div
-        class="menu-accesibilidad-opcion"
         v-for="opcion in opciones"
         :key="opcion.titulo"
       >
@@ -350,7 +342,7 @@ const alturaMenuAbierto = computed(
       </div>
 
       <button
-        class="boton-secundario boton-chico menu-accesibilidad-reestablecer"
+        class="boton-secundario boton-chico m-t-2"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"
         :disabled="!clasesSelecciondas.length"
@@ -360,9 +352,3 @@ const alturaMenuAbierto = computed(
     </menu>
   </div>
 </template>
-
-<style lang="scss">
-.contenedor-menu-accesibilidad.abierto .menu-accesibilidad {
-  max-height: v-bind('alturaMenuAbierto') !important;
-}
-</style>
