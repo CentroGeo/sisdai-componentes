@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { defineProps, onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useMenuDesenfocable } from '../../composables/useMenuDesenfocable'
 
 const props = defineProps({

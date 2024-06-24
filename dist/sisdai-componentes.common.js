@@ -1294,8 +1294,8 @@ const boton_flotante_plugin = {
   }
 };
 /* harmony default export */ var boton_flotante = (boton_flotante_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2cef1271-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=195d3a7c
-var SisdaiNavegacionPrincipalvue_type_template_id_195d3a7c_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2cef1271-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=73ec86b1
+var SisdaiNavegacionPrincipalvue_type_template_id_73ec86b1_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1429,7 +1429,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_195d3a7c_render = function ren
     }, [_vm._v("Submenu dos")])])])])])];
   })], 2)])]);
 };
-var SisdaiNavegacionPrincipalvue_type_template_id_195d3a7c_staticRenderFns = [function () {
+var SisdaiNavegacionPrincipalvue_type_template_id_73ec86b1_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -1451,7 +1451,7 @@ var SisdaiNavegacionPrincipalvue_type_template_id_195d3a7c_staticRenderFns = [fu
   })]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=195d3a7c
+;// CONCATENATED MODULE: ./src/componentes/navegacion-principal/SisdaiNavegacionPrincipal.vue?vue&type=template&id=73ec86b1
 
 ;// CONCATENATED MODULE: ./src/composables/useMenuDesenfocable.js
 // This file is part of sisdai-componentes.
@@ -1738,8 +1738,8 @@ function useMenuDesenfocable(elementoMenuEnfocable, anchoNavegacion = 768) {
 ;
 var SisdaiNavegacionPrincipal_component = normalizeComponent(
   navegacion_principal_SisdaiNavegacionPrincipalvue_type_script_setup_true_lang_js,
-  SisdaiNavegacionPrincipalvue_type_template_id_195d3a7c_render,
-  SisdaiNavegacionPrincipalvue_type_template_id_195d3a7c_staticRenderFns,
+  SisdaiNavegacionPrincipalvue_type_template_id_73ec86b1_render,
+  SisdaiNavegacionPrincipalvue_type_template_id_73ec86b1_staticRenderFns,
   false,
   null,
   null,
@@ -1955,8 +1955,8 @@ const indice_de_contenido_plugin = {
   }
 };
 /* harmony default export */ var indice_de_contenido = (indice_de_contenido_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2cef1271-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=cd2f70b6
-var SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2cef1271-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=47403468
+var SisdaiNavegacionGobMxvue_type_template_id_47403468_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -2079,7 +2079,7 @@ var SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_render = function render(
     staticClass: "a11y-solo-lectura"
   }, [_vm._v("ir al buscador")])])])])])])]);
 };
-var SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_staticRenderFns = [function () {
+var SisdaiNavegacionGobMxvue_type_template_id_47403468_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -2101,7 +2101,7 @@ var SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_staticRenderFns = [functi
   })]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=cd2f70b6
+;// CONCATENATED MODULE: ./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=template&id=47403468
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue?vue&type=script&setup=true&lang=js
 
@@ -2200,8 +2200,8 @@ var SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_staticRenderFns = [functi
 ;
 var SisdaiNavegacionGobMx_component = normalizeComponent(
   navegacion_gob_mx_SisdaiNavegacionGobMxvue_type_script_setup_true_lang_js,
-  SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_render,
-  SisdaiNavegacionGobMxvue_type_template_id_cd2f70b6_staticRenderFns,
+  SisdaiNavegacionGobMxvue_type_template_id_47403468_render,
+  SisdaiNavegacionGobMxvue_type_template_id_47403468_staticRenderFns,
   false,
   null,
   null,

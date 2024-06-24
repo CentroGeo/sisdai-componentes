@@ -1,6 +1,6 @@
 <script setup>
 import Prism from 'prismjs'
-import { onMounted, defineProps, ref, defineAsyncComponent } from 'vue'
+import { onMounted, ref, defineAsyncComponent } from 'vue'
 
 const props = defineProps({
   ruta: {
