@@ -51,13 +51,7 @@ watch(menu_abierto, () => {
       @click="menu_abierto = !menu_abierto"
     >
       <span
-        v-if="menu_abierto"
         class="pictograma-angulo-izquierdo"
-        aria-hidden="true"
-      ></span>
-      <span
-        v-else
-        class="pictograma-angulo-derecho"
         aria-hidden="true"
       ></span>
       <span class="a11y-solo-lectura"> Expandir o colapsar navegación</span>
