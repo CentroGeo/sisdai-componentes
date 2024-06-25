@@ -98,7 +98,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/boton-flotante"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Botón Flotante
+                  Botón Flotante <span class="etiqueta m-l-1">pre</span>
                 </router-link>
               </li>
               <li>
@@ -114,7 +114,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/colapsable-navegacion"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Colapsable Navegación
+                  Colapsable Navegación <span class="etiqueta m-l-1">pre</span>
                 </router-link>
               </li>
               <li>
