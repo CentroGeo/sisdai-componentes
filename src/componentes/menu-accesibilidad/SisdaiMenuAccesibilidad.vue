@@ -76,7 +76,15 @@ const eventos = {
 </script>
 
 <script setup>
-import { computed, ref, toRefs, onBeforeMount, onMounted, watch } from 'vue'
+import {
+  computed,
+  ref,
+  toRefs,
+  onBeforeMount,
+  onMounted,
+  watch,
+  onUnmounted,
+} from 'vue'
 import opcionesDefault from './opcionesDefault'
 
 const props = defineProps(propiedades)
@@ -135,7 +143,6 @@ watch(clasesSelecciondas, (nv, ov) => {
 
   asignarTemaClaroUOscuro(nv, ov)
 })
-
 /**
  * Alterna las clases accesibles seleccionadas en el body.
  */
@@ -162,25 +169,27 @@ const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
 let body = {}
 
 /**
+ * Agrega el atributo para asignar el tema y el perfil
+ * de color predeterminados.
+ */
+function agregarPerfilTemaPredeterminados() {
+  body.setAttribute('data-perfil', perfilColor.value)
+  body.setAttribute('data-tema', 'claro')
+}
+/**
  * Agrega el atributo para asignar el tema claro con el perfil
  * de color al nivel de la etiqueta html del documento.
  */
 function setTemaClaro() {
-  body.removeAttribute(`data-${perfilColor.value}-oscura`)
-  body.removeAttribute(`data-${perfilColor.value}-clara`)
-  body.setAttribute(`data-${perfilColor.value}-clara`, true)
+  body.setAttribute(`data-tema`, 'claro')
 }
-
 /**
  * Agrega el atributo para asignar el tema oscuro con el perfil
  * de color al nivel de la etiqueta html del documento.
  */
 function setTemaOscuro() {
-  body.removeAttribute(`data-${perfilColor.value}-clara`)
-  body.removeAttribute(`data-${perfilColor.value}-oscura`)
-  body.setAttribute(`data-${perfilColor.value}-oscura`, true)
+  body.setAttribute(`data-tema`, 'oscuro')
 }
-
 /**
  * Asigna el tema claro u oscuro,
  * si en las clasesSeleccionadas están el valor de a11y-oscura o no.
@@ -203,7 +212,6 @@ function asignarTemaClaroUOscuro(nv, ov) {
     setTemaClaro()
   }
 }
-
 /**
  * Devuelve el tema del documento según la configuración del dispositivo.
  */
@@ -218,7 +226,6 @@ function getTemaDispositivo() {
   }
   return 'clara'
 }
-
 /**
  * Agrega la clase `.a11y-oscura` para la selección
  * de la vistas oscura.
@@ -240,7 +247,6 @@ function setClaseA11yOscura(temaClaroUOscuro) {
     )
   }
 }
-
 /**
  * Elige el tema en el documento (clara u oscura)
  * y la key local `theme` del navegador.
@@ -272,10 +278,19 @@ onBeforeMount(() => {
 
 onMounted(() => {
   body = document?.querySelector('body')
+  agregarPerfilTemaPredeterminados()
+
   setTemaEnDocumentoYLocalStorage()
+
   window
     .matchMedia('(prefers-color-scheme: dark)')
     .addEventListener('change', setTemaEnDocumentoYLocalStorage)
+})
+
+onUnmounted(() => {
+  window
+    .matchMedia('(prefers-color-scheme: dark)')
+    .removeEventListener('change', setTemaEnDocumentoYLocalStorage)
 })
 
 watch([perfilColor, tema], () => {
