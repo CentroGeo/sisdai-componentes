@@ -219,7 +219,7 @@ function funcionInput() {
       :src="archivo"
     ></audio>
 
-    <div class="flex flex-contenido-separado texto-color-2">
+    <div class="flex flex-contenido-separado texto-color-secundario">
       <div
         role="timer"
         aria-label="Tiempo transcurrido"
@@ -335,6 +335,7 @@ function funcionInput() {
         <SisdaiControlDeslizante
           ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
+          aria-label="Nivel de volumen"
           :val_entrada="volumen_default"
         ></SisdaiControlDeslizante>
       </div>
