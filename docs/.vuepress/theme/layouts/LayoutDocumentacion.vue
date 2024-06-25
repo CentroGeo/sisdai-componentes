@@ -51,6 +51,13 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
 
 <template>
   <div class="theme-container">
+    <a
+      href="#principal"
+      class="ir-contenido-principal"
+    >
+      Ir a contenido principal
+    </a>
+
     <SisdaiNavegacionGobMx />
 
     <nav-navegacion-principal />
@@ -290,7 +297,12 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
           >
             <div class="contenedor m-y-maximo-esc">
               <div class="ancho-lectura">
-                <Content />
+                <main
+                  role="main"
+                  id="principal"
+                >
+                  <Content />
+                </main>
               </div>
             </div>
           </div>
