@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-
 const valor = ref(50)
 </script>
 

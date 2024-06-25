@@ -3,7 +3,7 @@ layout: LayoutDocumentacion
 sectionName: indice-de-contenido
 ---
 
-# Índice de contenido
+# Índice de contenido <span class="etiqueta">preliminar</span>
 
 Este componente se utiliza como un menú de navegación para el contenido de una vista. Mediante slots se introducen enlaces, ya sean `<router-link/>` o `<a/>` cuya ruta sea simplmente un id de algún elemento que exista dentro de la vista en la que se muestra el componente.
 

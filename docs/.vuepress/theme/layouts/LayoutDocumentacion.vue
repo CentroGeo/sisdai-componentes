@@ -162,7 +162,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/indice-de-contenido"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Índice de Contenido
+                  Índice de Contenido <span class="etiqueta m-l-1">pre</span>
                 </router-link>
               </li>
               <li>
@@ -186,7 +186,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/menu-lateral"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Menu Lateral
+                  Menu Lateral <span class="etiqueta m-l-1">pre</span>
                 </router-link>
               </li>
               <li>

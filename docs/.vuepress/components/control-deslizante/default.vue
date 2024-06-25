@@ -8,12 +8,12 @@ const controlDeslizante = ref()
       >Valor: {{ controlDeslizante?.valor_seleccionado }}</label
     >
     <SisdaiControlDeslizante
+      id="identificador"
+      ref="controlDeslizante"
       :val_min="20"
       :val_max="100"
       :val_entrada="90"
-      id="identificador"
       step="10"
-      ref="controlDeslizante"
     >
     </SisdaiControlDeslizante>
   </div>

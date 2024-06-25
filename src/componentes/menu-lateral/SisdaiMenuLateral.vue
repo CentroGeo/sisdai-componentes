@@ -67,6 +67,7 @@ watch(menu_abierto, () => {
           <li>
             <a
               href="#anchore"
+              exact
               :tabindex="menu_abierto ? undefined : -1"
             >
               anchore link prueba

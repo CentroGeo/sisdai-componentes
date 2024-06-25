@@ -128,7 +128,7 @@ defineExpose({
         <span
           class="pictograma-cerrar"
           aria-hidden="true"
-        />
+        ></span>
         <span class="a11y-solo-lectura"> Cerrar Modal. </span>
       </button>
     </div>

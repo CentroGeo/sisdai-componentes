@@ -38,7 +38,7 @@ function alAlternarColapsableNavegacion(d) {
               Slots</router-link
             >
           </li>
-          <li>
+          <li class="colapsable">
             <SisdaiColapsableNavegacion
               :avisarMenuLateral="menuLateralAbierto"
               @alAlternarColapsable="alAlternarColapsableNavegacion"

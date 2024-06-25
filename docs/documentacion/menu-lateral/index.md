@@ -3,7 +3,7 @@ layout: LayoutDocumentacion
 sectionName: menu-lateral
 ---
 
-# Menú lateral
+# Menú lateral <span class="etiqueta">preliminar</span>
 
 Este componente consiste en un elemento `nav.menu-lateral` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
 
