@@ -3,7 +3,7 @@ layout: LayoutDocumentacion
 sectionName: boton-flotante
 ---
 
-# Botón flotante
+# Botón flotante <span class="etiqueta">preliminar</span>
 
 Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en el esquina inferior izquierda.
 

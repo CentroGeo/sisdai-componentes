@@ -64,12 +64,12 @@ const id_aleatorio = idAleatorio()
 <template>
   <div
     :id="id_aleatorio"
-    class="boton-flotante"
+    class="menu-flotante"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
-      class="boton-primario boton-flotante-alternador"
-      aria-controls="botonflotante"
+      class="menu-flotante-boton"
+      aria-controls="menuflotante"
       aria-label="Abrir/Cerrar menu de enlaces"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
       @click="alternarEstado"
@@ -81,33 +81,32 @@ const id_aleatorio = idAleatorio()
             : 'boton-flotante-pictograma-cerrado pictograma-agregar'
         }`"
         aria-hidden="true"
-      />
+      ></span>
       <span class="a11y-solo-lectura">abrir o cerrar botón flotante</span>
     </button>
 
     <menu
-      class="boton-flotante-cuerpo"
-      id="botonflotantecuerpo"
+      class="menu-flotante-contenedor"
+      id="menuflotantecuerpo"
       :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
-        :key="`boton-flotante-enlace-${idx}`"
-        :id="`boton_flotante_enlace_${idx}`"
-        :href="enlace"
-        :class="`boton-flotante-hipervinculo ${
+        :key="`menu-flotante-enlace-${idx}`"
+        :id="`menu_flotante_enlace_${idx}`"
+        :class="`menu-flotante-hipervinculo m-t-2 ${
           clasesCss === undefined ? '' : clasesCss
         }`"
+        :href="enlace"
         target="_blank"
         rel="noopener noreferrer"
         :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
       >
+        {{ contenido === undefined ? 'Ir a enlace externo' : contenido }}
         <span
-          :class="`${icono === undefined ? 'pictograma-documento' : icono}`"
+          :class="`${icono === undefined ? 'pictograma-flecha-arriba-derecha' : icono}  m-l-1`"
           aria-hidden="true"
-        />
-
-        {{ contenido === undefined ? 'Enlace externo' : contenido }}
+        ></span>
       </a>
     </menu>
   </div>
