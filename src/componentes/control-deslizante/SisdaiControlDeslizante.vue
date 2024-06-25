@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { ref, computed, defineExpose, watch } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 const props = defineProps({
   val_min: { default: 0, type: Number },
