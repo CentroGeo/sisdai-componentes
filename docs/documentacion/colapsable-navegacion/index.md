@@ -3,7 +3,7 @@ layout: LayoutDocumentacion
 sectionName: colapsable-navegacion
 ---
 
-# Colapsable de navegación
+# Colapsable de navegación <span class="etiqueta">preliminar</span>
 
 Este componente consiste en un elemento `<div class="colapsable"></div>` que contiene en su interior un botón y una lista no ordenada `<ul></ul>` que usualmente contendrá enlaces `<a></a>` en sus elementos de lista `<li></li>`.
 
