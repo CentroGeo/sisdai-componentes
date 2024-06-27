@@ -64,7 +64,7 @@ const id_aleatorio = idAleatorio()
 <template>
   <div
     :id="id_aleatorio"
-    class="menu-flotante"
+    class="menu-flotante menu-flotante-izquierdo"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
