@@ -135,6 +135,14 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
               </li>
               <li>
                 <router-link
+                  to="/documentacion/control-deslizante-contenido"
+                  :tabindex="menuLateralAbierto ? undefined : -1"
+                >
+                  Control Deslizante de Contenido
+                </router-link>
+              </li>
+              <li>
+                <router-link
                   to="/documentacion/directivas"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
