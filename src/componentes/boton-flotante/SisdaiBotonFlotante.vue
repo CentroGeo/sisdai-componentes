@@ -27,6 +27,17 @@ const propiedades = {
     type: Array,
     required: true,
   },
+
+  /**
+   * Indica si el Botón flotante estará abierto o no.
+   * - Abierto: `true`
+   * - Cerrado: `false`
+   * @type Boolean
+   */
+  botonFlotanteAbierto: {
+    type: Boolean,
+    default: false,
+  },
 }
 </script>
 
@@ -42,7 +53,7 @@ const { enlaces } = toRefs(props)
  * - Cerrado: `false`
  * @type Boolean
  */
-const botonFlotanteEstaAbierto = ref(true)
+const botonFlotanteEstaAbierto = ref(props.botonFlotanteAbierto)
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -72,7 +83,7 @@ const id_aleatorio = idAleatorio()
       aria-controls="menuflotante"
       aria-label="Abrir/Cerrar menu de enlaces"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
-      @click="alternarEstado"
+      @click="botonFlotanteEstaAbierto = !botonFlotanteEstaAbierto"
     >
       <span
         :class="`${
