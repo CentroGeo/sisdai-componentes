@@ -52,7 +52,7 @@ const propiedades = {
 
   /**
    * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
-   * Los perfiles disponibles son: `'eni'`, `'gema'`, `'sisdai'`.
+   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'sisdai'`.
    */
   perfilColor: {
     type: String,
