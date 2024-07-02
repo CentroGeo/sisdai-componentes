@@ -23,6 +23,10 @@ Uso:
   - Tipo: `Array`
   - Valor predeterminado: `[]`
   - Requerido: si
+- `botonFlotanteAbierto` Indica si el Botón flotante estará abierto o no.
+  - Tipo: `Boolean`
+  - Valor predeterminado: `false`
+  - Requerido: no
 
 Cada opción debe ser un objeto con los siguientes atributos:
 
