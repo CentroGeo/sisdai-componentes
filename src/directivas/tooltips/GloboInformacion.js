@@ -41,7 +41,8 @@ const globo_informacion = {
       value: binding.value,
       mouseEnterListener: addMouseEnterListenerTooltip(el, unique_id),
       mouseLeaveListener: addMouseLeaveListenerTooltip(el, unique_id),
-      classTooltip: 'contenedor-globo-info',
+      // classTooltip: 'contenedor-globo-info',
+      classTooltip: ['globo-informacion'],
       interactable: interactable,
     }
   },
@@ -99,7 +100,8 @@ const globo_informacion_extendido = {
       value: binding.value,
       mouseEnterListener: addMouseEnterListenerTooltip(el, unique_id),
       mouseLeaveListener: addMouseLeaveListenerTooltip(el, unique_id),
-      classTooltip: 'contenedor-globo-info-ext',
+      // classTooltip: 'contenedor-globo-info-ext',
+      classTooltip: ['globo-informacion', 'globo-informacion-extra'],
       interactable: interactable,
     }
   },
@@ -280,9 +282,15 @@ function getTooltipElement(id, value, classTooltip, elemento) {
   const tooltip = document.createElement('div')
   tooltip.setAttribute('tooltip-id', id)
 
-  tooltip.classList.add(classTooltip)
+  tooltip.setAttribute('role', 'tooltip')
+
+  // tooltip.classList.add(classTooltip)
+  classTooltip.forEach(classCss => {
+    tooltip.classList.add(classCss)
+  })
   let contenido = typeof value === 'object' ? value['contenido'] : value
-  tooltip.innerHTML = `<div class="cuerpo-globo-info">${contenido}</div>`
+  // tooltip.innerHTML = `<div class="cuerpo-globo-info">${contenido}</div>`
+  tooltip.innerHTML = `<div class="globo-informacion-cuerpo">${contenido}</div>`
   //document.body.appendChild(tooltip)
   elemento.parentNode.insertBefore(tooltip, elemento.nextSibling)
   return tooltip
@@ -293,7 +301,8 @@ function updateTooltipElement(id, value) {
   if (document.querySelector("[tooltip-id='" + id + "']")) {
     const tooltip = document.querySelector("[tooltip-id='" + id + "']")
     let contenido = typeof value === 'object' ? value['contenido'] : value
-    tooltip.innerHTML = `<div class="cuerpo">${contenido}</div>`
+    // tooltip.innerHTML = `<div class="cuerpo">${contenido}</div>`
+    tooltip.innerHTML = `<div class="globo-informacion-cuerpo">${contenido}</div>`
   }
 }
 

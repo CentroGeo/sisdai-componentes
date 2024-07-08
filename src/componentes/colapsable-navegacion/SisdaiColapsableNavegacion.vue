@@ -18,13 +18,14 @@ import { computed, ref, toRefs, watch } from 'vue'
 import store from '../../stores/accesibilidad'
 
 const props = defineProps({
-  titulo: { type: String, default: 'Titulo de colapsable' },
   colapsado: { type: Boolean, default: false },
   avisarMenuLateral: { type: Boolean, default: true },
 })
+
 // eslint-disable-next-line
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
+
 watch(colapsado, nv => (_colapsado.value = nv))
 
 function idAleatorio() {
@@ -33,14 +34,14 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-//const emits = defineEmits(['alAlternarColapsable'])
-
-/*watch(esta_activo, () => {
-  emits('alAlternarColapsable', esta_activo.value)
-})*/
-
 const clasesAccesibles = computed(() => {
   return store.state.clasesAccesibles
+})
+
+const emits = defineEmits(['alAlternarColapsable'])
+
+watch(_colapsado, () => {
+  emits('alAlternarColapsable', _colapsado.value)
 })
 
 watch(clasesAccesibles, (nv, ov) => {
@@ -57,36 +58,41 @@ watch(clasesAccesibles, (nv, ov) => {
 
 <template>
   <div
-    :class="{ activo: _colapsado }"
-    class="contenedor-colapsable"
+    class="colapsable"
+    :class="{ abierto: _colapsado }"
   >
     <button
+      class="colapsable-boton"
+      aria-controls="colapsableboton"
       :aria-expanded="_colapsado"
-      class="colapsable-boton p-x-5-esc p-x-3-mov p-y-1"
       @click="_colapsado = !_colapsado"
-      :tabindex="avisarMenuLateral ? undefined : -1"
       :disabled="clasesAccesibles.includes('a11y-simplificada')"
+      :tabindex="avisarMenuLateral ? undefined : -1"
     >
-      <div class="contenedor-encabezado-colapsable">
-        <slot name="encabezado">
-          <p class="m-0">Encabezado colapsable</p>
-        </slot>
-      </div>
-      <div class="p-t-1">
-        <span
-          aria-hidden="true"
-          class="nav-boton-submenu"
-        ></span>
-      </div>
+      <slot name="encabezado">
+        <p>Encabezado colapsable</p>
+      </slot>
+
+      <span
+        aria-hidden="true"
+        class="pictograma-angulo-derecho"
+      ></span>
+      <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span>
     </button>
-    <div class="contenedor-colapsable-contenido">
+
+    <div
+      class="colapsable-contenedor"
+      id="colapsablecontenedor"
+      :aria-hidden="!_colapsado"
+    >
       <slot name="contenido">
         <ul :id="id_aleatorio">
           <li>
             <a
               href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
               target="_blank"
-              class="p-x-5-esc p-x-3-mov p-y-1"
+              rel="noopener noreferrer"
+              exact
               :tabindex="_colapsado ? undefined : -1"
             >
               Elemento desplegado</a

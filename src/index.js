@@ -23,7 +23,7 @@ import {
   SisdaiIndiceDeContenido,
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
-  SisdaiNarrativaScroll,
+  // SisdaiNarrativaScroll,
   SisdaiBotonFlotante,
   SisdaiModal,
   SisdaiEnlaceExterno,
@@ -59,7 +59,7 @@ const plugin = {
     //auxiliares
     Vue.use(GlobosInformacion)
     //otros
-    Vue.use(SisdaiNarrativaScroll)
+    // Vue.use(SisdaiNarrativaScroll)
     Vue.use(SisdaiNarrativa)
 
     Vue.use(SisdaiBotonFlotante)
@@ -80,7 +80,7 @@ export {
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   GlobosInformacion,
-  SisdaiNarrativaScroll,
+  // SisdaiNarrativaScroll,
   SisdaiNarrativa,
   SisdaiBotonFlotante,
   SisdaiModal,

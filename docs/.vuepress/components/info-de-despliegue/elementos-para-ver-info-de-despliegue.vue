@@ -1,17 +1,15 @@
 <template>
   <div class="elementos-ejemplo m-x-2">
-    <div
-      class="contenedor-portada"
-      style="height: 40vh"
-    >
+    <div class="portada">
       <img
-        class="portada"
+        class="portada-imagen"
         src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/rayo.jpg"
+        alt=""
       />
-      <div class="degradado-negro-abajo">
-        <div class="contenido-abajo">
+      <div class="portada-degradado">
+        <div class="portada-cuerpo">
           <div class="contenedor ancho-lectura">
-            <p class="titulo-eni texto-centrado">Título de ENI</p>
+            <p class="portada-titulo">Título de ENI</p>
           </div>
         </div>
       </div>
@@ -19,18 +17,21 @@
 
     <div class="tarjeta m-y-2">
       <img
-        class="fondo-imagen"
+        class="tarjeta-imagen"
         src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/latke.jpg"
+        alt=""
       />
-      <div class="contenido-html">
-        <p class="parrafo-texto-alto">Esta es una tarjeta de ejemplo</p>
+      <div class="tarjeta-cuerpo">
+        <p>Esta es una tarjeta de ejemplo</p>
       </div>
     </div>
 
     <div class="m-y-5">
       <a
-        class="boton boton-secundario boton-chico"
+        href="#"
+        class="boton-secundario boton-chico"
         target="_blank"
+        rel="noopener noreferrer"
       >
         enlace con estilo de botón
       </a>
@@ -39,10 +40,9 @@
 </template>
 
 <style>
-.contenerdor-panttalla-simulada .info-entorno {
+.contenerdor-panttalla-simulada .informacion-despliegue {
   position: absolute;
 }
-
 .contenerdor-panttalla-simulada {
   position: relative;
   border-right: solid gray 10px;

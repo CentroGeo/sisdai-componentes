@@ -19,13 +19,12 @@ function alAlternarColapsableNavegacion(d) {
 <template>
   <div>
     <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
-      <template slot="contenido-menu-lateral">
+      <template #contenido-menu-lateral>
         <ul>
           <li>
             <router-link
               to="#api"
               exact
-              class="p-x-5-esc p-x-3-mov p-y-1"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               API</router-link
@@ -33,26 +32,24 @@ function alAlternarColapsableNavegacion(d) {
           </li>
           <li>
             <router-link
-              class="p-x-5-esc p-x-3-mov p-y-1"
               to="#slots"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               Slots</router-link
             >
           </li>
-          <li>
+          <li class="colapsable">
             <SisdaiColapsableNavegacion
               :avisarMenuLateral="menuLateralAbierto"
               @alAlternarColapsable="alAlternarColapsableNavegacion"
             >
-              <template v-slot:encabezado>
+              <template #encabezado>
                 <span>Este es un colapsable</span>
               </template>
-              <template v-slot:contenido>
+              <template #contenido>
                 <ul>
                   <li>
                     <router-link
-                      class="p-x-6-esc p-x-4-mov p-y-1"
                       to="#ejemplos"
                       :tabindex="
                         colapsableNavegacionAbierta && menuLateralAbierto
@@ -66,7 +63,6 @@ function alAlternarColapsableNavegacion(d) {
                   <li>
                     <a
                       href="#menu-lateral"
-                      class="p-x-6-esc p-x-4-mov p-y-1"
                       :tabindex="
                         colapsableNavegacionAbierta && menuLateralAbierto
                           ? undefined
@@ -84,13 +80,14 @@ function alAlternarColapsableNavegacion(d) {
           <li>
             <a
               href="##"
-              class="p-x-5-esc p-x-3-mov p-y-1"
-              rel="noopener"
+              target="_blank"
+              rel="noopener noreferrer"
               style="display: grid"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               <span
-                class="icono-social-github titulo-eni"
+                style="font-size: 2rem"
+                class="pictograma-social-github pictograma-48"
                 aria-hidden="true"
               ></span>
               <span> ir a github</span>

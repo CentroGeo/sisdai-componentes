@@ -1,5 +1,6 @@
 ---
 layout: LayoutDocumentacion
+sectionName: modal
 ---
 
 # Modal
@@ -33,52 +34,33 @@ principal de la aplicación o en el body para interrumpir el scroll con el resto
 
 ### Propiedades
 
-- **ref**
-  Referencia del
+- `ref` Referencia del
   componente para acceder al método abrirModal y cerrarModal mediante el evento de
   click.
-
   - Tipo: `String`
   - Requerido: si
-
-- **tituloModal**
-  Título del modal, se pueden utilizar elementos html mediante la props dinámica. Se requiere para que los lectores de pantalla lo lean.
-
+- `tituloModal` Título del modal, se pueden utilizar elementos html mediante la props dinámica. Se requiere para que los lectores de pantalla lo lean.
   - Tipo: `String`
   - Valor predeterminado: ``
-
-- **tamanioModal**
-  Tamaño del ancho del contenedor del modal: _chico, grande o pantalla-completa_. Por defecto se adapta al tamaño del contenido.
-
+- `tamanioModal` Se puede elegir entre un tamaño grande del modal.
   - Tipo: `String`
   - Requerido: no
-  - Valor predeterminado: ``
 
-### Metodos
+### Métodos
 
-- **abrirModal**
-  Abre el modal y agrega la clase .overflow-hidden al elemento body del documento.
-
-- **cerrarModal**
-  Cierra el modal y remueve la clase .overflow-hidden al elemento body del documento.
-
-- **siPresionaTeclaEscape**
-  Si la tecla _Esc_ es presionada se remueve la clase .overflow-hidden al elemento body del documento.
-
-- **clickFueraDelModal**
-  Si la usuaria da click fuera del modal mientras este esté abierto, este se cerrará.
+- `abrirModal` Abre el modal y agrega la clase .overflow-hidden al elemento body del documento.
+- `cerrarModal` Cierra el modal y remueve la clase .overflow-hidden al elemento body del documento.
+- `siPresionaTeclaEscape` Si la tecla _Esc_ es presionada se remueve la clase .overflow-hidden al elemento body del documento.
+- `clickFueraDelModal` Si la usuaria da click fuera del modal mientras este esté abierto, este se cerrará.
 
 ### Eventos
 
-Este componente no dispara eventos externos
+Este componente no dispara eventos externos.
 
 ### Slots
 
-#### default
-
-- Requerido: si
-
-Slot para el contenido del modal.
+- `'cuerpo'`: En este se indica el cuerpo del modal.
+- `'pie'`: En este se indican los elementos de pie del modal como botones.
 
 </section>
 
@@ -86,25 +68,17 @@ Slot para el contenido del modal.
 
 ## Ejemplos
 
-#### Uso
-
-<utils-ejemplo-doc ruta="modal/prueba.vue"/>
-
 #### Uso básico
 
 Su ancho máximo es de 462px equivalentes a 6 columnas.
 
-<utils-ejemplo-doc ruta="modal/basico.vue"/>
+<utils-ejemplo-doc ruta="modal/chico.vue"/>
 
 #### Modal grande
 
-Su ancho máximo es de 1110px equivalentes a 14 columnas o 90% del ancho de la pantalla.
+Su ancho máximo es de 1110px equivalentes a 14 columnas.
 
 <utils-ejemplo-doc ruta="modal/grande.vue"/>
-
-#### Pantalla completa
-
-<utils-ejemplo-doc ruta="modal/pantalla-completa.vue"/>
 
 ## Mejores prácticas
 

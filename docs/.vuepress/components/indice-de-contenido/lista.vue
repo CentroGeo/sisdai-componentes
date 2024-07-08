@@ -1,10 +1,13 @@
 <template>
   <div>
     <SisdaiIndiceDeContenido id_indice="indice-lista">
-      <template slot="contenido-indice-de-contenido">
+      <template #contenido-indice-contenido>
         <ul>
           <li>
-            <router-link to="#indice-de-contenido">
+            <router-link
+              to="#indice-de-contenido"
+              exact
+            >
               Elemento índice de contenido
             </router-link>
           </li>

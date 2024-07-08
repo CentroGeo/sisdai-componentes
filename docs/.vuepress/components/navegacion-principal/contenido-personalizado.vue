@@ -1,52 +1,52 @@
 <script setup>
 import { ref } from 'vue'
-
-const sisdai_nav_ppal = ref('')
-function alternarSubmenu() {
-  sisdai_nav_ppal.value._setupState.alternarSubmenu()
-}
-
-const aria_expanded = ref(false)
+const SisdaiNavPpal = ref('')
 </script>
 <template>
   <div class="contenedor">
     <SisdaiNavegacionPrincipal
       :nav-informacion="`Sección: <b>${$route.name}</b>`"
-      ref="sisdai_nav_ppal"
+      ref="SisdaiNavPpal"
     >
       <!--Definiendo el logo del sitio-->
       <template #identidad>
         <a
           href="https://gema.conacyt.mx/"
           target="_blank"
+          rel="noopener noreferrer"
           class="nav-hiperviculo-logo"
         >
           <img
-            class="nav-logo invertir"
-            style="width: 232px; height: 38px"
             src="https://cdn.conacyt.mx/sisdai-archivos/to-examples/logo-conacyt-gema.svg"
-            alt="gema."
+            class="nav-logo color-invertir"
+            alt="Gema."
+            width="232"
+            height="38"
           />
         </a>
       </template>
+
       <!--Definiendo el contenido complementario del sitio-->
       <template #complementario>
         <a
-          class="nav-hipervinculo"
-          href=""
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
+          class="nav-hipervinculo"
         >
           <b>IR A ENLACE EXTERNO</b>
         </a>
       </template>
+
       <!--Definiendo las secciones del sitio-->
       <ul class="nav-menu">
         <li>
           <a
-            class="nav-hipervinculo"
             href="#"
+            class="nav-hipervinculo"
             exact
+            @mouseover="SisdaiNavPpal.cerrarSubmenu()"
+            @click="SisdaiNavPpal.cerrarMenuSubmenu()"
             >Sección 1</a
           >
         </li>
@@ -54,48 +54,43 @@ const aria_expanded = ref(false)
           <button
             class="nav-boton-submenu"
             aria-haspopup="true"
-            @click="alternarSubmenu"
-            :aria-expanded="'' + aria_expanded"
-            @focus="aria_expanded = true"
-            @focusout="aria_expanded = false"
+            aria-controls="submenuEjemplo"
+            :aria-expanded="SisdaiNavPpal.submenuEstaAbierto"
+            @mouseover="SisdaiNavPpal.abrirSubmenu()"
+            @click="SisdaiNavPpal.alternarSubmenu()"
           >
             Submenu
           </button>
-          <ul class="nav-submenu">
-            <li>
+          <ul
+            class="nav-submenu"
+            :aria-hidden="!SisdaiNavPpal.submenuEstaAbierto"
+            :class="{ abierto: SisdaiNavPpal.submenuEstaAbierto }"
+          >
+            <li v-if="SisdaiNavPpal.esColapsable">
               <button
                 class="nav-boton-regresar"
-                @click="alternarSubmenu"
+                @click="SisdaiNavPpal.regresarMenu()"
               >
                 Submenu
               </button>
             </li>
             <li>
               <a
+                href="#ejem"
                 class="nav-hipervinculo"
-                href="/ejem"
-                @focus="aria_expanded = true"
-                @focusout="aria_expanded = false"
+                @click="SisdaiNavPpal.cerrarMenuSubmenu()"
                 >Subsección 1</a
               >
             </li>
             <li>
               <a
+                href="#ajam"
                 class="nav-hipervinculo"
-                href="/ejem"
-                @focus="aria_expanded = true"
-                @focusout="aria_expanded = false"
+                @click="SisdaiNavPpal.cerrarMenuSubmenu()"
                 >Subsección 2</a
               >
             </li>
           </ul>
-        </li>
-        <li>
-          <a
-            class="nav-hipervinculo"
-            href="/creditos"
-            >Sección 2</a
-          >
         </li>
       </ul>
     </SisdaiNavegacionPrincipal>

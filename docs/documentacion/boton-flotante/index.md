@@ -1,10 +1,11 @@
 ---
 layout: LayoutDocumentacion
+sectionName: boton-flotante
 ---
 
-# BotonFlotante
+# Botón flotante <span class="etiqueta">preliminar</span>
 
-Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en el esquina inferior izquierda.
+Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en la esquina inferior izquierda.
 
 Uso:
 
@@ -18,25 +19,29 @@ Uso:
 
 ### Propiedades
 
-- **enlaces**
-  Lista de enlaces que se mostrarán en el Botón flotante abierto, cada opción debe ser un objeto con los siguientes atributos:
-
-  ```js
-  {
-    clasesCss: <String> 'Nombre de la clase css de la opción.',
-    contenido: <String> 'Contenido en texto que se mostrará en la interfaz.',
-    enlace: <String> 'Dirección url a la que dirigirá el botón.',
-    icono: <String> 'Visible al costado izquierdo del contenido.',
-  }
-  ```
-
+- `enlaces` Lista de enlaces que se mostrarán en el Botón flotante abierto.
   - Tipo: `Array`
   - Valor predeterminado: `[]`
   - Requerido: si
+- `botonFlotanteAbierto` Indica si el Botón flotante estará abierto o no.
+  - Tipo: `Boolean`
+  - Valor predeterminado: `false`
+  - Requerido: no
+
+Cada opción debe ser un objeto con los siguientes atributos:
+
+```js
+{
+  clasesCss: <String> 'Nombre de la clase css de la opción.',
+  contenido: <String> 'Contenido en texto que se mostrará en la interfaz.',
+  enlace: <String> 'Dirección url a la que dirigirá el botón.',
+  icono: <String> 'Visible al costado izquierdo del contenido.',
+}
+```
 
 ### Métodos
 
-- **alternarEstado**
+- `alternarEstado`
   Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Botón flotante.
 
 ### Eventos

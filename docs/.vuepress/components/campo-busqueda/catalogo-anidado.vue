@@ -43,12 +43,14 @@ const catalogoFiltrado = ref(catalogo.value)
     <ul>
       <li
         v-for="grupo in catalogoFiltrado"
+        :key="grupo.nombre"
         :id="grupo.nombre"
       >
         {{ grupo.nombre }}
         <ul>
           <li
             v-for="capa in grupo.capas"
+            :key="capa.titulo"
             :id="capa.titulo"
           >
             {{ capa.titulo }}

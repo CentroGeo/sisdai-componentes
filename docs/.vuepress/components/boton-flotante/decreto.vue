@@ -1,13 +1,21 @@
 <template>
-  <div class="contenerdor-ejemplo-boton-flotante">
+  <div class="contenerdor-ejemplo-menu-flotante">
     <SisdaiBotonFlotante
       :enlaces="[
         {
           contenido: 'Documento externo',
-          clasesCss: 'icono-resaltado',
-          icono: 'icono-documento icono-3',
+          clasesCss: 'decreto',
+          icono: 'pictograma-documento',
         },
       ]"
     />
   </div>
 </template>
+
+<style>
+.contenerdor-ejemplo-menu-flotante .menu-flotante {
+  position: relative;
+  top: 16px;
+  left: 16px;
+}
+</style>

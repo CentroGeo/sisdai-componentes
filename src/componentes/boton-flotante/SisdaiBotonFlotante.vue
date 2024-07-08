@@ -27,6 +27,17 @@ const propiedades = {
     type: Array,
     required: true,
   },
+
+  /**
+   * Indica si el Botón flotante estará abierto o no.
+   * - Abierto: `true`
+   * - Cerrado: `false`
+   * @type Boolean
+   */
+  botonFlotanteAbierto: {
+    type: Boolean,
+    default: false,
+  },
 }
 </script>
 
@@ -42,7 +53,7 @@ const { enlaces } = toRefs(props)
  * - Cerrado: `false`
  * @type Boolean
  */
-const botonFlotanteEstaAbierto = ref(true)
+const botonFlotanteEstaAbierto = ref(props.botonFlotanteAbierto)
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -64,49 +75,50 @@ const id_aleatorio = idAleatorio()
 <template>
   <div
     :id="id_aleatorio"
-    class="contenedor-boton-flotante"
+    class="menu-flotante menu-flotante-izquierdo"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
-      :class="`boton-flotante-alternador borde-r-redondeado-20 borde-l-redondeado-${
-        botonFlotanteEstaAbierto ? '' : '2'
-      }0`"
+      class="menu-flotante-boton"
+      aria-controls="menuflotante"
+      aria-label="Abrir/Cerrar menu de enlaces"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
-      @click="alternarEstado"
+      @click="botonFlotanteEstaAbierto = !botonFlotanteEstaAbierto"
     >
       <span
-        :class="`icono ${
-          botonFlotanteEstaAbierto ? 'icono-restar' : 'icono-agregar'
-        } icono-3`"
+        :class="`${
+          botonFlotanteEstaAbierto
+            ? 'boton-flotante-pictograma-abierto pictograma-restar'
+            : 'boton-flotante-pictograma-cerrado pictograma-agregar'
+        }`"
         aria-hidden="true"
-      />
+      ></span>
       <span class="a11y-solo-lectura">abrir o cerrar botón flotante</span>
     </button>
 
-    <div
-      class="boton-flotante-contenido borde-l-redondeado-20"
-      :class="{ 'borde-l': botonFlotanteEstaAbierto }"
+    <menu
+      class="menu-flotante-contenedor"
+      id="menuflotantecuerpo"
+      :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
-        :key="`boton-flotante-enlace-${idx}`"
-        :id="`boton_flotante_enlace_${idx}`"
-        :href="enlace"
-        :class="`enlace p-x-2 borde-redondeado-0 ${
+        :key="`menu-flotante-enlace-${idx}`"
+        :id="`menu_flotante_enlace_${idx}`"
+        :class="`menu-flotante-hipervinculo m-t-2 ${
           clasesCss === undefined ? '' : clasesCss
         }`"
+        :href="enlace"
         target="_blank"
         rel="noopener noreferrer"
         :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
       >
+        {{ contenido === undefined ? 'Ir a enlace externo' : contenido }}
         <span
-          :class="`icono ${
-            icono === undefined ? 'icono-enlace-externo' : icono
-          }`"
+          :class="`${icono === undefined ? 'pictograma-flecha-arriba-derecha' : icono}  m-l-1`"
           aria-hidden="true"
-        />
-        {{ contenido === undefined ? 'Enlace externo' : contenido }}
+        ></span>
       </a>
-    </div>
+    </menu>
   </div>
 </template>

@@ -11,21 +11,21 @@ onMounted(() => {
     class="theme-container"
     :class="store.state.accesibilidad.clasesAccesibles"
   >
-    <SisdaiNavegacionGobMx />
+    <!-- <SisdaiNavegacionGobMx /> -->
 
-    <nav-navegacion-principal />
+    <!-- <nav-navegacion-principal /> -->
 
-    <SisdaiMenuAccesibilidad :objetoStore="store" />
+    <!-- <SisdaiMenuAccesibilidad :objetoStore="store" /> -->
 
-    <main
+    <!-- <main
       role="main"
       class="contenedor m-y-maximo"
     >
       <Content />
-    </main>
+    </main> -->
 
-    <SisdaiPiePaginaConahcyt />
+    <!-- <SisdaiPiePaginaConahcyt /> -->
 
-    <SisdaiPiePaginaGobMx />
+    <!-- <SisdaiPiePaginaGobMx /> -->
   </div>
 </template>

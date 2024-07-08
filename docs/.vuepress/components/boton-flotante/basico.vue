@@ -1,5 +1,5 @@
 <template>
-  <div class="contenerdor-ejemplo-boton-flotante">
+  <div class="contenerdor-ejemplo-menu-flotante">
     <SisdaiBotonFlotante
       :enlaces="[
         {
@@ -16,17 +16,3 @@
     />
   </div>
 </template>
-
-<style>
-.boton-flotante-contenido .eni,
-.boton-flotante-contenido .eni:hover,
-.boton-flotante-contenido .eni:focus {
-  background: #3caeac;
-}
-
-.boton-flotante-contenido .gema,
-.boton-flotante-contenido .gema:hover,
-.boton-flotante-contenido .gema:focus {
-  background: #ff5100;
-}
-</style>

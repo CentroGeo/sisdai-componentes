@@ -1,3 +1,18 @@
+<!--This file is part of sisdai-componentes.-->
+
+<!--sisdai-componentes is free software: you can redistribute it and/or modify-->
+<!--it under the terms of the GNU Lesser General Public License as published by the-->
+<!--Free Software Foundation, either version 3 of the License, or-->
+<!--(at your option) any later version.-->
+
+<!--sisdai-componentes is distributed in the hope that it will be useful,-->
+<!--but WITHOUT ANY WARRANTY; without even the implied warranty of-->
+<!--MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General-->
+<!--Public License for more details.-->
+
+<!--You should have received a copy of the GNU Lesser General Public License along-->
+<!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
+
 <script>
 const propiedades = {
   tituloModal: { type: String, default: '' },
@@ -80,8 +95,8 @@ defineExpose({
 
 <template>
   <dialog
-    class="modal"
     :id="idModal"
+    class="modal"
     :class="tamanioModal"
     ref="trapRef"
     role="dialog"
@@ -89,33 +104,40 @@ defineExpose({
     aria-modal="true"
   >
     <div class="modal-contenedor">
-      <div class="modal-cuerpo">
+      <div class="modal-cabecera">
         <h1
           id="titulo_modal"
-          class="titulo-modal"
+          class="modal-titulo"
           v-html="tituloModal"
         ></h1>
-        <slot />
+      </div>
+
+      <div class="modal-cuerpo">
+        <slot name="cuerpo" />
+      </div>
+
+      <div class="modal-pie">
+        <slot name="pie" />
       </div>
 
       <button
-        class="boton-icono boton-sin-borde icono-3 modal-cerrar"
+        class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
         value="cerrar"
         @click="cerrarModal()"
       >
         <span
-          class="icono-cerrar"
+          class="pictograma-cerrar"
           aria-hidden="true"
-        />
-        <span class="a11y-solo-lectura">Cerrar.</span>
+        ></span>
+        <span class="a11y-solo-lectura"> Cerrar Modal. </span>
       </button>
     </div>
   </dialog>
 </template>
 
 <style lang="scss" scoped>
-.modal-contenedor {
-  h1.titulo-modal {
+.modal-cabecera {
+  h1.modal-titulo {
     font-size: 1.5rem;
     margin-top: 0;
   }

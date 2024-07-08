@@ -5,7 +5,6 @@ const depurador = ref(true)
 const altura_sensor = ref(0.5)
 const separacion = ref(1)
 const posicion_inicial = ref(1)
-
 // cuando se cambia a una viñeta par, se colorean de azul
 watch(
   d => miNarrativa.value?.seccion_visible,

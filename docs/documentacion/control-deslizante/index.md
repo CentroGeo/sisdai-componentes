@@ -1,5 +1,6 @@
 ---
 layout: LayoutDocumentacion
+sectionName: control-deslizante
 ---
 
 # Control deslizante
@@ -14,12 +15,17 @@ Este componente admite propiedades y se expone el valor asociado al control.
 
 ### Propiedades
 
-A continuación se enlistan las propiedades que admite el componente
+A continuación se enlistan las propiedades que admite el componente:
 
-- `val_min`: (_Number_) Corresponde al valor mínimo que puede tomar el control y se asigna al atributo `min` del `input[range]`.Su valor por _default_ es 0.
-
-- `val_max`: (_Number_) Corresponde al valor máximo que puede tomar el control y se asigna al atributo `max` del `input[range]`. Su valor por _default_ es 100.
-- `val_entrada`: (_Number_) Es el valor inicial que tomará el input y debe ser un valor entre `val_min` y `val_max`. Por _default_ es 50.
+- `val_min` Corresponde al valor mínimo que puede tomar el control y se asigna al atributo `min` del `input[range]`.
+  - Tipo: `Number`
+  - Valor predeterminado: `0`
+- `val_max` Corresponde al valor máximo que puede tomar el control y se asigna al atributo `max` del `input[range]`.
+  - Tipo: `Number`
+  - Valor predeterminado: `100`
+- `val_entrada` Es el valor inicial que tomará el input y debe ser un valor entre `val_min` y `val_max`.
+  - Tipo: `Number`
+  - Valor predeterminado: `50`
 
 ### Propiedades expuestas
 

@@ -15,7 +15,7 @@
 
 <template>
   <footer
-    class="contenedor gobmx-fondo-oscuro-1 piepagina-gobmx gobmx-piepagina p-t-4 p-b-10"
+    class="contenedor piepagina-gobmx"
     aria-label="Gobierno de México"
   >
     <div class="flex flex-wrap">
@@ -25,18 +25,19 @@
           alt="Gobierno de México"
           width="200px"
           height="60px"
-          class="foot-logo"
         />
       </div>
+
       <div class="columna-8 columna-4-esc">
-        <p class="titulo-lista">Enlaces</p>
-        <ul class="lista-plana">
+        <p class="piepagina-titulo">Enlaces</p>
+
+        <ul>
           <li>
             <a
               class="hipervinculo-gobmx"
               href="https://www.participa.gob.mx/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Participa</a
             >
           </li>
@@ -45,7 +46,7 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/publicaciones"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Publicaciones Oficiales</a
             >
           </li>
@@ -54,7 +55,7 @@
               class="hipervinculo-gobmx"
               href="http://www.ordenjuridico.gob.mx/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Marco Jurídico</a
             >
           </li>
@@ -63,34 +64,34 @@
               class="hipervinculo-gobmx"
               href="https://consultapublicamx.inai.org.mx/vut-web/faces/view/consultaPublica.xhtml"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Plataforma Nacional de Transparencia</a
             >
           </li>
         </ul>
       </div>
+
       <div class="columna-8 columna-4-esc">
-        <p class="titulo-lista">¿Qué es gob.mx?</p>
+        <p class="piepagina-titulo">¿Qué es gob.mx?</p>
+
         <p>
-          <span
-            >Es el portal único de trámites, información y participación
-            ciudadana.
-          </span>
+          Es el portal único de trámites, información y participación ciudadana.
           <a
             href="https://www.gob.mx/que-es-gobmx"
             class="hipervinculo-gobmx"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             >Leer más</a
           >
         </p>
-        <ul class="lista-plana">
+
+        <ul>
           <li>
             <a
               class="hipervinculo-gobmx"
               href="https://datos.gob.mx/"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Portal de datos abiertos</a
             >
           </li>
@@ -99,7 +100,7 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/accesibilidad"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Declaración de accesibilidad</a
             >
           </li>
@@ -108,7 +109,7 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/aviso_de_privacidad"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Aviso de privacidad integral</a
             >
           </li>
@@ -117,7 +118,7 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/privacidadsimplificado"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Aviso de privacidad simplificado</a
             >
           </li>
@@ -126,7 +127,7 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/terminos"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Términos y Condiciones</a
             >
           </li>
@@ -135,7 +136,7 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/terminos#medidas-seguridad-informacion"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Política de seguridad</a
             >
           </li>
@@ -144,36 +145,39 @@
               class="hipervinculo-gobmx"
               href="https://www.gob.mx/sitemap"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
               >Mapa de sitio</a
             >
           </li>
         </ul>
       </div>
+
       <div class="columna-8 columna-4-esc">
         <p>
           <a
             class="hipervinculo-gobmx"
             href="https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             >Denuncia contra servidores públicos</a
           >
         </p>
-        <p class="titulo-lista">
+
+        <p class="piepagina-titulo">
           Síguenos en
           <span class="a11y-solo-lectura">nuestras redes sociales:</span>
         </p>
-        <ul class="lista-redes-sociales">
+
+        <ul class="piepagina-social">
           <li>
             <a
               href="https://www.facebook.com/gobmx"
-              class="hipervinculo-gobmx m-r-3"
+              class="hipervinculo-gobmx"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <span
-                class="icono-social-facebook icono-3"
+                class="pictograma-social-facebook"
                 aria-hidden="true"
               ></span>
               <span class="a11y-solo-lectura">feisbuk</span>
@@ -184,10 +188,10 @@
               href="https://twitter.com/gobmx"
               class="hipervinculo-gobmx"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               <span
-                class="icono-social-x icono-3"
+                class="pictograma-social-x"
                 aria-hidden="true"
               ></span>
               <span class="a11y-solo-lectura">x.</span>
@@ -198,14 +202,3 @@
     </div>
   </footer>
 </template>
-
-<style>
-.gobmx-piepagina {
-  background-image: url('https://cdn.conacyt.mx/sisdai/recursos/gobmxpleca.svg');
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-size: auto 50px;
-  color: #fff;
-  font-size: 14px;
-}
-</style>

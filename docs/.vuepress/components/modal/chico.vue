@@ -14,22 +14,22 @@ function descargaAlgo() {
     <SisdaiModal
       ref="sisdaiModal"
       :tituloModal="` <span
-            class='icono-archivo-descargar icono-3 m-r-1'
+            class='pictograma-archivo-descargar p-l-0 p-t-0'
             aria-hidden='true'
           ></span
           >Descargar datos con más de una línea`"
-      tamanioModal="chico"
     >
-      <div class="modal-contenido">
+      <template #cuerpo>
         <div class="grid">
           <div class="columna-16">
-            <p><b>Selección de datos</b></p>
+            <p class="m-t-0"><b>Selección de datos</b></p>
             <input
               id="radio1"
               type="radio"
               name="radioses1"
             />
             <label for="radio1">Todos los datos</label>
+            <br />
             <input
               id="radio2"
               type="radio"
@@ -44,6 +44,7 @@ function descargaAlgo() {
               name="radioses3"
             />
             <label for="radio3">.csv (Valores separados por comas)</label>
+            <br />
             <input
               id="radio4"
               type="radio"
@@ -52,31 +53,34 @@ function descargaAlgo() {
             <label for="radio4">.xls (Archivo de Excel)</label>
           </div>
         </div>
+      </template>
 
+      <template #pie>
         <button
-          class="boton-primario m-t-5"
+          type="button"
+          class="boton-primario"
           value="descarga"
           @click="descargaAlgo()"
         >
           Descargar
         </button>
-      </div>
+        <button
+          type="button"
+          class="boton-secundario"
+          value="cancela"
+          @click="sisdaiModal.cerrarModal()"
+        >
+          Cancelar
+        </button>
+      </template>
     </SisdaiModal>
 
-    <button @click="sisdaiModal?.abrirModal()">Modal Básico</button>
+    <button
+      type="button"
+      @click="sisdaiModal?.abrirModal()"
+    >
+      Modal Básico
+    </button>
     <p>{{ salida }}</p>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.modal-contenido {
-  button.boton-primario {
-    display: block;
-    margin-left: auto;
-    margin-right: -36px;
-    @media (max-width: 768px) {
-      width: 100%;
-    }
-  }
-}
-</style>

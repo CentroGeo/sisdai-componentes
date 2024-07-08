@@ -39,69 +39,57 @@ watch(menu_abierto, () => {
 
 <template>
   <nav
-    class="menu-lateral-contenedor"
+    class="menu-lateral"
+    :class="{ abierto: menu_abierto }"
     aria-label="Menú secundario"
   >
-    <div
-      class="menu-mov"
+    <button
+      class="menu-lateral-boton"
+      aria-controls="menulateral"
+      :aria-expanded="menu_abierto ? 'true' : 'false'"
+      aria-label="Abrir/Cerrar navegación secundaria"
       @click="menu_abierto = !menu_abierto"
-      :class="{ abierto: menu_abierto }"
     >
-      <button
-        :aria-expanded="menu_abierto ? 'true' : 'false'"
-        class="boton-icono boton-menu"
-      >
-        <span
-          v-if="menu_abierto"
-          class="icono-angulo-doble-izquierda"
-          aria-hidden="true"
-        ></span>
-        <span
-          v-else
-          class="icono-angulo-doble-derecha"
-          aria-hidden="true"
-        ></span>
-        <span class="a11y-solo-lectura"> Expandir o colapsar navegación</span>
-      </button>
-    </div>
+      <span
+        class="pictograma-angulo-izquierdo"
+        aria-hidden="true"
+      ></span>
+      <span class="a11y-solo-lectura"> Expandir o colapsar navegación</span>
+    </button>
+
     <div
       :id="id_aleatorio"
-      class="menu-colapsable"
-      :class="{ abierto: menu_abierto }"
+      class="menu-lateral-contenedor"
+      ref="contenidoMenuLateral"
     >
-      <div
-        class="menu-max-height"
-        ref="contenidoMenuLateral"
-      >
-        <slot name="contenido-menu-lateral">
-          <ul class="colapsable-submenu">
-            <li>
-              <a
-                class="p-x-5-esc p-x-3-mov p-y-1"
-                href="#anchore"
-                :tabindex="menu_abierto ? undefined : -1"
+      <slot name="contenido-menu-lateral">
+        <ul>
+          <li>
+            <a
+              href="#anchore"
+              exact
+              :tabindex="menu_abierto ? undefined : -1"
+            >
+              anchore link prueba
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+              target="_blank"
+              rel="noopener noreferrer"
+              :tabindex="menu_abierto ? undefined : -1"
+            >
+              <span
+                class="pictograma-social-github"
+                aria-hidden="true"
               >
-                anchore link prueba
-              </a>
-            </li>
-            <li>
-              <a
-                class="p-x-5-esc p-x-3-mov p-y-1"
-                href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
-                rel="noopener"
-                target="_blank"
-                :tabindex="menu_abierto ? undefined : -1"
+                ejemplo github</span
               >
-                <span
-                  class="icono-social-github"
-                  aria-hidden="true"
-                ></span>
-                ejemplo github
-              </a>
-            </li>
-          </ul>
-        </slot>
-      </div>
+            </a>
+          </li>
+        </ul>
+      </slot>
     </div>
   </nav>
 </template>
