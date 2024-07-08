@@ -5,7 +5,7 @@ sectionName: boton-flotante
 
 # Botón flotante <span class="etiqueta">preliminar</span>
 
-Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en el esquina inferior izquierda.
+Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en la esquina inferior izquierda.
 
 Uso:
 

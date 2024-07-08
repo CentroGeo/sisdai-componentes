@@ -25,7 +25,7 @@ Al tratarse de un componente institucional se deben respetar los lineamientos de
 
 Vista simplificada
 
-En la vista simplificada el pie de página del CONAHCYT no se modifica en diseño ni en comportamiento.
+En la vista simplificada el pie de página del Conahcyt no se modifica en diseño ni en comportamiento.
 
 <section id="api">
 

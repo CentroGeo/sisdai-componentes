@@ -5,7 +5,7 @@ sectionName: audio
 
 # Audio
 
-Este componente de audio permite reproducir audios en el navegador. Incluye un slot llamado "encabezado" para agregar información sobre el archivo, así como diversos controles de reproducción.
+Este componente permite reproducir audios en el navegador. Incluye un slot llamado "encabezado" para agregar información sobre el archivo, así como diversos controles de reproducción.
 
 Uso:
 
@@ -33,7 +33,7 @@ Uso:
 - `adelanta10`
   Adelanta el el audio 10 segundos
 - `retrasa10`
-  Retrasa el el audio 10 segundos
+  Retrasa el audio 10 segundos.
 
 ### Eventos
 

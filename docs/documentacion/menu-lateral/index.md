@@ -74,7 +74,7 @@ Observe como los primeros 3 modifican su estilo cuando la ruta se actualiza, mie
 
 **Slot como lista no ordenada y colapsable**
 
-El siguiente ejemplo contiene los mismos enlaces que el anterior, sin embargo, su estructura es un poco más ordenada pues los enlaces están dentro de los elementos de una lista no ordenada. Además se integró el componente `<SisdaiColapsableNavegacion/>`, que a su vez tiene otros enlaces que se introducen mediante un slot propio.
+El siguiente ejemplo contiene los mismos enlaces que el anterior, sin embargo, su estructura es un poco más ordenada pues los enlaces están dentro de los elementos de una lista no ordenada. Además se integró el componente de `<SisdaiColapsableNavegacion/>`, que a su vez tiene otros enlaces que se introducen mediante un slot propio.
 
 <utils-ejemplo-doc ruta="menu-lateral/colapsable.vue"/>
 

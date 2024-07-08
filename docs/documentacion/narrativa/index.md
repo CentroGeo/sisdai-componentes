@@ -17,7 +17,7 @@ Uso:
 
 ## API
 
-- `id`: (_String_) Identificar único del componente.
+- `id`: (_String_) Identificador único del componente.
 - `depurador`: (_Boolean_) Cuando el valor es `true`, se muestra una línea roja que ayuda a visualizar en qué posición de las secciones se disparan las transiciones de las imágenes de fondo. Cuando es `false`, no se muestra. El valor por default es `false`.
 - `altura_sensor`: (_Number_) Número entre 0 y 1 que determina la altura de la pantalla a la cual se dispara la transición. Si es 0, las transiciones se disparan cuando sale una viñeta de pantalla. Si es 1, las transiciones se ejecutan cuando entra la viñeta a pantalla.
 - `separacion`: (_Boolean_) Número entre 0 y 1 que indica la separación entre viñetas. Cuando el valor es 1 corresponde a una altura del 100% del alto de la pantalla, cuando es 0 es el 0% de la pantalla.

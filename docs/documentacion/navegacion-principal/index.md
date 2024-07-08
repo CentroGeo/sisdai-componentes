@@ -19,7 +19,7 @@ Uso:
 
 ### Propiedades
 
-- `navInformacion` Para la versión mobile es el contenido que se muestra debajo de la barra de navegación, se usa generalmente para mostrar el nombre de la seccion actual del sitio.
+- `navInformacion` Para la versión mobile es el contenido que se muestra debajo de la barra de navegación, se usa generalmente para mostrar el nombre de la sección actual del sitio.
   - Tipo: `String`
   - Valor predeterminado: `''`
   - Requerido: no
@@ -134,7 +134,7 @@ Agregando contenido personalizado.
 
 <utils-ejemplo-doc ruta="navegacion-principal/contenido-personalizado.vue"/>
 
-Para que la subnavegación en la móvil versión se abra y cierre, se deberá agregar al elemento de lista `ul` con el selector `nav-submenu` la clase dinámica css `abierto` con la condición de que la variable `submenuEstaAbierta`.
+Para que la subnavegación en la versión móvil se abra y cierre, se deberá agregar al elemento de lista `ul` con el selector `nav-submenu` la clase dinámica css `abierto` con la condición de que la variable `submenuEstaAbierta`.
 
 Dicha alternancia se puede lograr mediante un evento de clic en los elementos `button` con los selectores `nav-boton-submenu` y `nav-boton-regresar` para llamar a la función `alternarSubmenu` y `regresarMenu` de la referencia o instancias expuestas del componente.
 
