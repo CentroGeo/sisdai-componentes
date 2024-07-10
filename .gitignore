@@ -24,3 +24,6 @@ pnpm-debug.log*
 *.sln
 *.sw?
 dist/demo.html
+
+# No ejecutar prettier en carpeta deprecada
+deprecated

@@ -1,3 +1,0 @@
-<template>
-  <SisdaiColapsableNavegacion> </SisdaiColapsableNavegacion>
-</template>
