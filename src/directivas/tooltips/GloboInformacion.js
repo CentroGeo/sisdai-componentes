@@ -101,7 +101,7 @@ const globo_informacion_extendido = {
       mouseEnterListener: addMouseEnterListenerTooltip(el, unique_id),
       mouseLeaveListener: addMouseLeaveListenerTooltip(el, unique_id),
       // classTooltip: 'contenedor-globo-info-ext',
-      classTooltip: ['globo-informacion', 'globo-informacion-extra'],
+      classTooltip: ['globo-informacion', 'globo-informacion-extendido'],
       interactable: interactable,
     }
   },
