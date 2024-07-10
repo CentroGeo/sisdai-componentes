@@ -12,15 +12,15 @@ export default {
   // appearance: false,
   lastUpdated: true,
 
-  head: [
-    [
-      'link',
-      {
-        rel: 'stylesheet',
-        href: 'https://file.myfontastic.com/JS4TgqY9L4s8WsKQDkt5qA/icons.css',
-      },
-    ],
-  ],
+  // head: [
+  //   [
+  //     'link',
+  //     {
+  //       rel: 'stylesheet',
+  //       href: 'https://file.myfontastic.com/JS4TgqY9L4s8WsKQDkt5qA/icons.css',
+  //     },
+  //   ],
+  // ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config

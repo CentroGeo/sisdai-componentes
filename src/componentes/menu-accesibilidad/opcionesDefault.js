@@ -26,25 +26,25 @@ export default [
   {
     accion: 'alternarTipografiaAccesible',
     claseCss: 'a11y-tipografia',
-    icono: 'icono-cambio-tipografia',
+    icono: 'pictograma-cambio-tipografia',
     titulo: 'Cambio de fuente',
   },
   {
     accion: 'alternarEnlacesSubrayados',
     claseCss: 'a11y-hipervinculos',
-    icono: 'icono-enlace-subrayado',
+    icono: 'pictograma-enlace-subrayado',
     titulo: 'Enlaces subrayados',
   },
   {
     accion: 'alternarVistaSimplificada',
     claseCss: 'a11y-simplificada',
-    icono: 'icono-vista-simplificada',
+    icono: 'pictograma-vista-simplificada',
     titulo: 'Mostrar solo texto',
   },
   {
     accion: 'alternarVistaOscura',
     claseCss: 'a11y-oscura',
-    icono: 'icono-contraste',
+    icono: 'pictograma-contraste',
     titulo: 'Vista Oscura',
   },
 ]
