@@ -69,10 +69,10 @@ function nav() {
 function sidebarDocumentacion(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
-    // {
-    //   text: 'Audio',
-    //   link: `/${path}/audio/`,
-    // },
+    {
+      text: 'Audio',
+      link: `/${path}/audio/`,
+    },
     // {
     //   text: 'Boton flotante',
     //   link: `/${path}/boton-flotante/`,

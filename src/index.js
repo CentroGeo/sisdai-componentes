@@ -14,7 +14,7 @@
 //   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
 
 import {
-  // SisdaiAudio,
+  SisdaiAudio,
   // SisdaiBotonFlotante,
   // SisdaiCampoBusqueda,
   // SisdaiColapsableNavegacion,
@@ -48,7 +48,7 @@ const plugin = {
     Vue.use(SisdaiIndiceDeContenido)
     // Vue.use(SisdaiInfoDeDespliegue)
     // Vue.use(SisdaiEnlaceExterno)
-    // Vue.use(SisdaiAudio)
+    Vue.use(SisdaiAudio)
     // Vue.use(SisdaiControlDeslizante)
 
     // //accesibilidad
@@ -68,7 +68,7 @@ const plugin = {
 }
 
 export {
-  // SisdaiAudio,
+  SisdaiAudio,
   // GlobosInformacion,
   // SisdaiBotonFlotante,
   // SisdaiCampoBusqueda,

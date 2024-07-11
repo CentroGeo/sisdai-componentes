@@ -130,6 +130,7 @@ function mostrarCantidadAlmacenada() {
       (cantidadAlmacenada / Math.floor(duracion.value)) * 100 + '%'
   }
 }
+
 /**
  * Adelanta el el audio 10 segundos
  */
@@ -142,6 +143,7 @@ function adelanta10() {
     audio.value.currentTime = tiempo_transcurrido.value
   }
 }
+
 /**
  * Retrasa el el audio 10 segundos
  */
@@ -333,6 +335,7 @@ function funcionInput() {
         <SisdaiControlDeslizante
           ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
+          aria-label="Nivel de volumen"
           :val_entrada="volumen_default"
         ></SisdaiControlDeslizante>
       </div>
@@ -349,11 +352,11 @@ input.control-tiempo[type='range'] {
     &:active {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_almacenado),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_almacenado)
+        var(--campo-rango-activo),
+        var(--campo-rango-activo) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_almacenado),
+        var(--campo-rango) v-bind(porcentaje_almacenado)
       );
     }
   }
@@ -364,11 +367,11 @@ input.control-tiempo[type='range'] {
     &:active {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_almacenado),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_almacenado)
+        var(--campo-rango-activo),
+        var(--campo-rango-activo) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_almacenado),
+        var(--campo-rango) v-bind(porcentaje_almacenado)
       );
     }
   }
@@ -379,11 +382,11 @@ input.control-tiempo[type='range'] {
     &:active {
       background: linear-gradient(
         to right,
-        var(--tipografia-color-2),
-        var(--tipografia-color-2) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_transcurrido),
-        var(--boton-primario-hover-fondo) v-bind(porcentaje_almacenado),
-        var(--input-deshabilitado-fondo) v-bind(porcentaje_almacenado)
+        var(--campo-rango-activo),
+        var(--campo-rango-activo) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_transcurrido),
+        var(--campo-rango-cursor) v-bind(porcentaje_almacenado),
+        var(--campo-rango) v-bind(porcentaje_almacenado)
       );
     }
   }

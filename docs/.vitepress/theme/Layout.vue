@@ -102,8 +102,7 @@ function listaSidebar({ sidebar }, { relativePath }) {
                   {{ item.text }}
                 </a>
               </li>
-
-              <!-- <li>
+              <li>
                 <a
                   href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
                   target="_blank"
@@ -118,7 +117,7 @@ function listaSidebar({ sidebar }, { relativePath }) {
                   ></span>
                   <span> ir a github</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </template>
         </SisdaiMenuLateral>
