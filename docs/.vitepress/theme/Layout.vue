@@ -100,6 +100,11 @@ function listaSidebar({ sidebar }, { relativePath }) {
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
                   {{ item.text }}
+                  <span
+                    v-if="item.pre"
+                    class="etiqueta m-l-1"
+                    >pre</span
+                  >
                 </a>
               </li>
             </ul>

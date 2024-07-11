@@ -74,10 +74,11 @@ function sidebarDocumentacion(path) {
       text: 'Audio',
       link: `/${path}/audio/`,
     },
-    // {
-    //   text: 'Boton flotante',
-    //   link: `/${path}/boton-flotante/`,
-    // },
+    {
+      text: 'Boton flotante',
+      link: `/${path}/boton-flotante/`,
+      pre: true,
+    },
     // {
     //   text: 'Campo de búsqueda',
     //   link: `/${path}/campo-busqueda/`,

@@ -4,7 +4,7 @@ import EjemploBasico from "../../.vitepress/components/boton-flotante/basico.vue
 import EjemploDecreto from "../../.vitepress/components/boton-flotante/decreto.vue";
 </script>
 
-# BotonFlotante
+# Botón flotante <span class="etiqueta">preliminar</span>
 
 Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en el esquina inferior izquierda.
 

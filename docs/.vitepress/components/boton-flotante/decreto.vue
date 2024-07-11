@@ -1,10 +1,11 @@
 <template>
-  <div class="contenerdor-ejemplo-boton-flotante">
+  <div class="contenerdor-ejemplo-menu-flotante">
     <SisdaiBotonFlotante
       :enlaces="[
         {
           contenido: 'Documento externo',
           clasesCss: 'decreto',
+          icono: 'pictograma-documento',
         },
       ]"
     />
@@ -12,13 +13,9 @@
 </template>
 
 <style>
-.boton-flotante .boton-flotante-hipervinculo.decreto,
-.boton-flotante .boton-flotante-hipervinculo.decreto:hover,
-.boton-flotante .boton-flotante-hipervinculo.decreto:focus {
-  background: #000000;
-  color: #ffffff;
-}
-.contenerdor-ejemplo-boton-flotante .boton-flotante {
-  position: absolute;
+.contenerdor-ejemplo-menu-flotante .menu-flotante {
+  position: relative;
+  top: 16px;
+  left: 16px;
 }
 </style>
