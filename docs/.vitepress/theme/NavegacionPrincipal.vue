@@ -31,6 +31,12 @@ const navegacionPrincipal = ref(null)
           :target="nav.target"
           :rel="nav.rel"
         >
+          <img
+            v-if="nav.img"
+            class="nav-logo"
+            :src="nav.img"
+            alt=""
+          />
           {{ nav.text }}
         </a>
       </li>

@@ -62,6 +62,7 @@ function nav() {
       link: pkg.repository.url,
       rel: 'noopener noreferrer',
       target: '_blank',
+      img: 'https://cdn.conahcyt.mx/sisdai-archivos/gitlab-logo-500.png',
     },
   ]
 }

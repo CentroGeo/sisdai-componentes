@@ -102,22 +102,6 @@ function listaSidebar({ sidebar }, { relativePath }) {
                   {{ item.text }}
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
-                  target="_blank"
-                  rel="noopener"
-                  style="display: grid"
-                  :tabindex="menuLateralAbierto ? undefined : -1"
-                >
-                  <span
-                    style="font-size: 2rem"
-                    class="pictograma-social-github"
-                    aria-hidden="true"
-                  ></span>
-                  <span> ir a github</span>
-                </a>
-              </li>
             </ul>
           </template>
         </SisdaiMenuLateral>
