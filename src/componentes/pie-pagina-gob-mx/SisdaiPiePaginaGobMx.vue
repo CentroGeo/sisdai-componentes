@@ -35,7 +35,7 @@
           <li>
             <a
               class="hipervinculo-gobmx"
-              href="https://www.participa.gob.mx/"
+              href="https://participa.gob.mx/"
               target="_blank"
               rel="noopener noreferrer"
               >Participa</a
