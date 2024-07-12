@@ -58,25 +58,25 @@ input.control-deslizante[type='range'] {
   &::-webkit-slider-runnable-track {
     background: linear-gradient(
       to right,
-      var(--input-controles-color),
-      var(--input-controles-color) v-bind(valor_porcentual),
-      var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      var(--campo-rango-activo),
+      var(--campo-rango-activo) v-bind(valor_porcentual),
+      var(--campo-rango) v-bind(valor_porcentual)
     );
   }
   &::-moz-range-track {
     background: linear-gradient(
       to right,
-      var(--input-controles-color),
-      var(--input-controles-color) v-bind(valor_porcentual),
-      var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      var(--campo-rango-activo),
+      var(--campo-rango-activo) v-bind(valor_porcentual),
+      var(--campo-rango) v-bind(valor_porcentual)
     );
   }
   &::-ms-fill-upper {
     background: linear-gradient(
       to right,
-      var(--input-controles-color),
-      var(--input-controles-color) v-bind(valor_porcentual),
-      var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+      var(--campo-rango-activo),
+      var(--campo-rango-activo) v-bind(valor_porcentual),
+      var(--campo-rango) v-bind(valor_porcentual)
     );
   }
   &:hover,
@@ -85,25 +85,25 @@ input.control-deslizante[type='range'] {
     &::-webkit-slider-runnable-track {
       background: linear-gradient(
         to right,
-        var(--boton-primario-focus-fondo),
-        var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+        var(--campo-rango-cursor),
+        var(--campo-rango-cursor) v-bind(valor_porcentual),
+        var(--campo-rango) v-bind(valor_porcentual)
       );
     }
     &::-moz-range-track {
       background: linear-gradient(
         to right,
-        var(--boton-primario-focus-fondo),
-        var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+        var(--campo-rango-cursor),
+        var(--campo-rango-cursor) v-bind(valor_porcentual),
+        var(--campo-rango) v-bind(valor_porcentual)
       );
     }
     &::-ms-fill-upper {
       background: linear-gradient(
         to right,
-        var(--boton-primario-focus-fondo),
-        var(--boton-primario-focus-fondo) v-bind(valor_porcentual),
-        var(--input-deshabilitado-fondo) v-bind(valor_porcentual)
+        var(--campo-rango-cursor),
+        var(--campo-rango-cursor) v-bind(valor_porcentual),
+        var(--campo-rango) v-bind(valor_porcentual)
       );
     }
   }

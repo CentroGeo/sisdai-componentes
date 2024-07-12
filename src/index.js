@@ -19,7 +19,7 @@ import {
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
-  // SisdaiControlDeslizante,
+  SisdaiControlDeslizante,
   // SisdaiEnlaceExterno,
   // SisdaiImagenPngWebp,
   SisdaiIndiceDeContenido,
@@ -49,7 +49,7 @@ const plugin = {
     // Vue.use(SisdaiInfoDeDespliegue)
     // Vue.use(SisdaiEnlaceExterno)
     Vue.use(SisdaiAudio)
-    // Vue.use(SisdaiControlDeslizante)
+    Vue.use(SisdaiControlDeslizante)
 
     // //accesibilidad
     Vue.use(SisdaiMenuAccesibilidad)
@@ -74,7 +74,7 @@ export {
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
-  // SisdaiControlDeslizante,
+  SisdaiControlDeslizante,
   // SisdaiEnlaceExterno,
   // SisdaiImagenPngWebp,
   SisdaiIndiceDeContenido,

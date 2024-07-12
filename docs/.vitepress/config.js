@@ -92,10 +92,10 @@ function sidebarDocumentacion(path) {
       text: 'Control Acercar Alejar',
       link: `/${path}/control-acercar-alejar/`,
     },
-    // {
-    //   text: 'Control Deslizante',
-    //   link: `/${path}/control-deslizante/`,
-    // },
+    {
+      text: 'Control Deslizante',
+      link: `/${path}/control-deslizante/`,
+    },
     // {
     //   text: 'Directivas',
     //   link: `/${path}/directivas/`,
