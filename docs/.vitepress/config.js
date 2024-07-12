@@ -117,10 +117,10 @@ function sidebarDocumentacion(path) {
       text: 'Info de Despliegue',
       link: `/${path}/info-de-despliegue/`,
     },
-    // {
-    //   text: 'Menú de Accesibilidad',
-    //   link: `/${path}/menu-accesibilidad/`,
-    // },
+    {
+      text: 'Menú de Accesibilidad',
+      link: `/${path}/menu-accesibilidad/`,
+    },
     {
       text: 'Menú Lateral',
       link: `/${path}/menu-lateral/`,

@@ -76,14 +76,20 @@ const eventos = {
 </script>
 
 <script setup>
-import { computed, onBeforeMount, onMounted, ref, toRefs, watch } from 'vue'
+import {
+  computed,
+  onBeforeMount,
+  onMounted,
+  ref,
+  toRefs,
+  watch,
+  onUnmounted,
+} from 'vue'
 import opcionesDefault from './opcionesDefault'
-import { onUnmounted } from 'vue'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, id, objetoStore, perfilColor, nombreModuloStore } =
-  toRefs(props)
+const { agregarOpciones, id, objetoStore, perfilColor } = toRefs(props)
 
 /**
  * Opciones que se mostrarán en el menú de accesibilidad.
@@ -330,7 +336,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       <span
         class="pictograma-accesibilidad"
         aria-hidden="true"
-      />
+      ></span>
       <span class="a11y-solo-lectura">
         abrir y cerrar menú de accesibilidad
       </span>

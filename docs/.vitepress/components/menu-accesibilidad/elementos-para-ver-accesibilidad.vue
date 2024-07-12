@@ -49,6 +49,7 @@
     </p>
 
     <SisdaiBotonFlotante
+      id="btnflotante"
       :enlaces="[
         {
           clasesCss: 'decreto',
@@ -59,10 +60,12 @@
 </template>
 
 <style>
-.contenerdor-panttalla-simulada .boton-flotante {
-  position: absolute;
+.contenerdor-panttalla-simulada #btnflotante {
+  position: relative;
+  top: 8px;
+  left: 16px;
 }
-.contenerdor-panttalla-simulada .menu-accesibilidad {
+.contenerdor-panttalla-simulada .menu-flotante.menu-flotante-derecho {
   position: absolute;
 }
 .contenerdor-panttalla-simulada {
@@ -72,11 +75,5 @@
   min-height: 350px;
   width: 100%;
   overflow-y: hidden;
-}
-.boton-flotante .boton-flotante-hipervinculo.decreto,
-.boton-flotante .boton-flotante-hipervinculo.decreto:hover,
-.boton-flotante .boton-flotante-hipervinculo.decreto:focus {
-  background: #000000;
-  color: #ffffff;
 }
 </style>

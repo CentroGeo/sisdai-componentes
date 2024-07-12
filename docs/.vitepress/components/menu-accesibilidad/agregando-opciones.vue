@@ -7,7 +7,7 @@ const menuAccesibilidad = ref(null)
 const opcionCursiva = {
   accion: 'alternarCursivaDestacada',
   claseCss: 'a11y-cursiva-destacada',
-  icono: 'icono-estrella',
+  icono: 'pictograma-estrella',
   titulo: 'Cursiva destacada',
 }
 </script>
