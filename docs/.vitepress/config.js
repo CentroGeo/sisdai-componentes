@@ -104,10 +104,10 @@ function sidebarDocumentacion(path) {
       text: 'Enlace Externo',
       link: `/${path}/enlace-externo/`,
     },
-    // {
-    //   text: 'ImagenPngWebp',
-    //   link: `/${path}/imagen-png-webp/`,
-    // },
+    {
+      text: 'ImagenPngWebp',
+      link: `/${path}/imagen-png-webp/`,
+    },
     // {
     //   text: 'Índice de Contenido',
     //   link: `/${path}/indice-de-contenido/`,
