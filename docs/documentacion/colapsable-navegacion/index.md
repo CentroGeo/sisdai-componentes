@@ -3,11 +3,13 @@ import EjemploDefault from "../../.vitepress/components/colapsable-navegacion/de
 import EjemploSlot from "../../.vitepress/components/colapsable-navegacion/slot.vue";
 </script>
 
-# Colapsable de navegacion
+# Colapsable de navegacion <span class="etiqueta">preliminar</span>
 
-Este componente consiste en un elemento `<li class="colapsable-navegacion"></li>` que contiene en su interior un botón y una lista no ordenada `<ul></ul>` que usualmente contendrá enlaces `<a></a>` en sus elementos de lista `<li></li>`,
+Este componente consiste en un elemento `<div class="colapsable"></div>` que contiene en su interior un botón y una lista no ordenada `<ul></ul>` que usualmente contendrá enlaces `<a></a>` en sus elementos de lista `<li></li>`.
 
-Su funcionalidad consiste en que al dar click al botón se pude agregar una clase `.activo` al elemento `li.colapsable-navegacion`, lo cual hará que la lista no ordenada sea vuelva visible. Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css), por lo cual es una dependencia de este componente.
+Su funcionalidad consiste en que al dar click al botón se pude agregar una clase `.activo` al elemento `div.colapsable`, lo cual hará que la lista no ordenada se vuelva visible.
+
+Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css), por lo cual es una dependencia de este componente.
 
 Los elementos de lista se especifican mediante `slots`.
 
@@ -19,30 +21,45 @@ Este componente admite propiedades y slots.
 
 ### Propiedades
 
-A continuación se enlistan las propiedades que admite el componente
-
-#### Obligatorios
-
-- `titulo`: (_String_) Corresponde al texto que deberá tener el botón del colapsable. Por _default_ tiene el valor 'Titulo de colapsable', sin embargo su valor se debe especificar siempre que se use.
+A continuación se enlistan las propiedades que admite el componente.
 
 #### Opcionales
 
-- `colapsado`: (_Boolean_) Corresponde al estado del componente. Por _default_ es `false` y corresponde al componente colapsado. Si se elige `true` el componente se mostrará desplegado
+- `colapsado`: Corresponde al estado del componente. Por _default_ es `false` y corresponde al componente colapsado. Si se elige `true` el componente se mostrará desplegado.
+  - Tipo de dato: `Boolean`
+  - Valor predeterminado: `false`
+  - Requerido: opcional
+- `avisarMenuLateral`: Avisa al menú lateral si se puede hacer tabindex.
+  - Tipo de dato: `Boolean`
+  - Valor predeterminado: `true`
+  - Requerido: opcional
 
 ### Slots
 
-- `'listado-contenido'`: Este es el único slot que contiene el componente, en él se deben indicar los elementos de lista `<li></li>` que contendrá el elemento. Por _default_ tiene el siguiente `html` dentro del slot
+- `'encabezado'`: En este se indica el título del encabezado de la lista con una etiqueta `<p></p>`. Por defecto tiene el siguiente `html` dentro del slot.
 
 ```html
-<li>
-  <a
-    tabindex="-1"
-    href="#"
-    exact
-  >
-    Elemento desplegado</a
-  >
-</li>
+<slot name="encabezado">
+  <p>Encabezado colapsable</p>
+</slot>
+```
+
+- `'contenido'`: En este se indican los elementos de lista `<li></li>` que contendrá el elemento. Por defecto tiene el siguiente `html` dentro del slot.
+
+```html
+<ul :id="id_aleatorio">
+  <li>
+    <a
+      href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+      target="_blank"
+      rel="noopener noreferrer"
+      exact
+      :tabindex="_colapsado ? undefined : -1"
+    >
+      Elemento desplegado</a
+    >
+  </li>
+</ul>
 ```
 
 Se debe agregar el atributo `exact` al primer elemento de la lista de navegación para que el estilo de la sección actual en el menú se active exactamente cuando la ruta esté selecionada.
@@ -59,7 +76,7 @@ En caso que de que el menú esté desplegado por defecto el atributo se puede om
 
 **_Default_**
 
-Así se renderiza el componente sin especificar `:titulo` ni slot
+Así se renderiza el componente sin especificar nada en los slots.
 
 <!-- <utils-ejemplo-doc ruta="colapsable-navegacion/default.vue"/> -->
 <EjemploDefault />
@@ -67,7 +84,7 @@ Así se renderiza el componente sin especificar `:titulo` ni slot
 
 **Titulo y slot**
 
-Así se renderiza cuando especificamos un `:titulo` y su slot
+Así se renderiza cuando especificamos un título en el slot de encabezado y contenido.
 
 <!-- <utils-ejemplo-doc ruta="colapsable-navegacion/slot.vue"/> -->
 <EjemploSlot />

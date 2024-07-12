@@ -83,10 +83,11 @@ function sidebarDocumentacion(path) {
       text: 'Campo de búsqueda',
       link: `/${path}/campo-busqueda/`,
     },
-    // {
-    //   text: 'Colapsable navegación',
-    //   link: `/${path}/colapsable-navegacion/`,
-    // },
+    {
+      text: 'Colapsable navegación',
+      link: `/${path}/colapsable-navegacion/`,
+      pre: true,
+    },
     // {
     //   text: 'Control de acercar y alejar',
     //   link: `/${path}/control-acercar-alejar/`,

@@ -8,7 +8,9 @@ function alAlternarColapsableNavegacion(d) {
 }
 </script>
 <template>
-  <SisdaiColapsableNavegacion>
+  <SisdaiColapsableNavegacion
+    @alAlternarColapsable="alAlternarColapsableNavegacion"
+  >
     <template #encabezado>
       <p>Este es el título del colapsable</p>
     </template>

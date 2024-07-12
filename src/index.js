@@ -17,7 +17,7 @@ import {
   SisdaiAudio,
   SisdaiBotonFlotante,
   SisdaiCampoBusqueda,
-  // SisdaiColapsableNavegacion,
+  SisdaiColapsableNavegacion,
   // SisdaiControlAcercarAlejar,
   // SisdaiControlDeslizante,
   // SisdaiEnlaceExterno,
@@ -43,7 +43,7 @@ const plugin = {
     Vue.use(SisdaiNavegacionPrincipal)
     Vue.use(SisdaiPiePaginaGobMx)
     Vue.use(SisdaiPiePaginaConahcyt)
-    // Vue.use(SisdaiColapsableNavegacion)
+    Vue.use(SisdaiColapsableNavegacion)
     Vue.use(SisdaiMenuLateral)
     Vue.use(SisdaiIndiceDeContenido)
     // Vue.use(SisdaiInfoDeDespliegue)
@@ -72,7 +72,7 @@ export {
   // GlobosInformacion,
   SisdaiBotonFlotante,
   SisdaiCampoBusqueda,
-  // SisdaiColapsableNavegacion,
+  SisdaiColapsableNavegacion,
   // SisdaiControlAcercarAlejar,
   // SisdaiControlDeslizante,
   // SisdaiEnlaceExterno,

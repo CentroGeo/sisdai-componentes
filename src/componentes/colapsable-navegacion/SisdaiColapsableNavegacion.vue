@@ -40,6 +40,12 @@ const clasesAccesibles = computed(() => {
   return store.clasesAccesibles
 })
 
+const emits = defineEmits(['alAlternarColapsable'])
+
+watch(_colapsado, () => {
+  emits('alAlternarColapsable', _colapsado.value)
+})
+
 watch(clasesAccesibles, (nv, ov) => {
   // Descolapsa la navegación si la vista simplificada está activada
   if (clasesAccesibles.value.includes('a11y-simplificada')) {
@@ -73,6 +79,7 @@ watch(clasesAccesibles, (nv, ov) => {
         aria-hidden="true"
         class="pictograma-angulo-derecho"
       ></span>
+      <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span>
     </button>
 
     <div
