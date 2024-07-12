@@ -20,14 +20,6 @@ const menuLateralAbierto = ref()
 
 const menuAccesibilidad = ref(null)
 
-onMounted(() => {
-  setTimeout(() => actualizaContenidoIndice(), 200)
-})
-
-watch(route, () => {
-  setTimeout(() => actualizaContenidoIndice(), 200)
-})
-
 function actualizaContenidoIndice() {
   let elementos = []
   document.querySelectorAll('div h2').forEach(el => {
@@ -61,10 +53,25 @@ function listaSidebar({ sidebar }, { relativePath }) {
     Object.keys(sidebar).find(side => isActive(relativePath, side, !!side))
   ]
 }
+
+onMounted(() => {
+  setTimeout(() => actualizaContenidoIndice(), 200)
+})
+
+watch(route, () => {
+  setTimeout(() => actualizaContenidoIndice(), 200)
+})
 </script>
 
 <template>
   <div>
+    <a
+      href="#principal"
+      class="ir-contenido-principal"
+    >
+      Ir a contenido principal
+    </a>
+
     <SisdaiNavegacionGobMx />
     <NavegacionPrincipal />
 
@@ -142,7 +149,12 @@ function listaSidebar({ sidebar }, { relativePath }) {
           >
             <div class="contenedor m-y-maximo-esc">
               <div class="ancho-lectura">
-                <Content />
+                <main
+                  role="main"
+                  id="principal"
+                >
+                  <Content />
+                </main>
               </div>
             </div>
           </div>
