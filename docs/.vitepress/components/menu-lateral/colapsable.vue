@@ -22,20 +22,20 @@ function alAlternarColapsableNavegacion(d) {
       <template #contenido-menu-lateral>
         <ul>
           <li>
-            <router-link
-              to="#api"
+            <a
+              href="#api"
               exact
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
-              API</router-link
+              API</a
             >
           </li>
           <li>
-            <router-link
-              to="#slots"
+            <a
+              href="#slots"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
-              Slots</router-link
+              Slots</a
             >
           </li>
           <li>
@@ -49,8 +49,8 @@ function alAlternarColapsableNavegacion(d) {
               <template #contenido>
                 <ul>
                   <li>
-                    <router-link
-                      to="#ejemplos"
+                    <a
+                      href="#ejemplos"
                       :tabindex="
                         colapsableNavegacionAbierta && menuLateralAbierto
                           ? undefined
@@ -58,7 +58,7 @@ function alAlternarColapsableNavegacion(d) {
                       "
                     >
                       Ejemplos
-                    </router-link>
+                    </a>
                   </li>
                   <li>
                     <a
@@ -71,6 +71,43 @@ function alAlternarColapsableNavegacion(d) {
                     >
                       El mero inicio
                     </a>
+                  </li>
+                  <li>
+                    <SisdaiColapsableNavegacion>
+                      <template #encabezado>
+                        <span>Este es un colapsable anidado</span>
+                      </template>
+                      <template #contenido>
+                        <ul>
+                          <li>
+                            <a
+                              href="#ejemplos"
+                              :tabindex="
+                                colapsableNavegacionAbierta &&
+                                menuLateralAbierto
+                                  ? undefined
+                                  : -1
+                              "
+                            >
+                              Ejemplos
+                            </a>
+                          </li>
+                          <li>
+                            <a
+                              href="#menu-lateral"
+                              :tabindex="
+                                colapsableNavegacionAbierta &&
+                                menuLateralAbierto
+                                  ? undefined
+                                  : -1
+                              "
+                            >
+                              Opcion anidada
+                            </a>
+                          </li>
+                        </ul>
+                      </template>
+                    </SisdaiColapsableNavegacion>
                   </li>
                 </ul>
               </template>

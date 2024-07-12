@@ -4,9 +4,9 @@ import EjemploBasico from "../../.vitepress/components/menu-lateral/basico.vue";
 import EjemploColapsable from "../../.vitepress/components/menu-lateral/colapsable.vue";
 </script>
 
-# Menú lateral
+# Menú lateral <span class="etiqueta">preliminar</span>
 
-Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
+Este componente consiste en un elemento `nav.menu-lateral` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En version de celular tiene un botón que muestra el contenido o lo colapsa.
 
 <!-- <menu-lateral-basico/> -->
 <EjemploBasico />
@@ -17,11 +17,13 @@ Este componente consiste en un elemento `menu.menu-lateral-contenedor` que usual
 
 ### Slots
 
--`'contenido-menu-lateral'`: Este es el único slot que contiene el componente. En el se pueden incluir elementos de navegación como `<a></a>` o `<router-link>  </router-link>` en el caso de que que el proyecto esté usando [Vue Router](https://router.vuejs.org/). También se pueden agregar dichos enlaces contenidos en los elementos de lista `<li>` de una lista no ordenada `<ul/>`, así como incluir el componente `<SisdaiColapsableNavegacion/>`
+- `'contenido-menu-lateral'`: Este es el único slot que contiene el componente. En este se pueden incluir elementos de navegación como `<a></a>` o `<router-link></router-link>` en el caso de que que el proyecto esté usando [Vue Router](https://router.vuejs.org/).
+
+También se pueden agregar dichos enlaces contenidos en los elementos de lista `<li>` de una lista no ordenada `<ul/>`, así como incluir el componente `<SisdaiColapsableNavegacion/>`
 
 Para este componente, el uso de [Vue Router](https://router.vuejs.org/) es altamente recomendado, entre otras cosas, por los estilos que asigna a los enlaces dentro de este componente.
 
-Por _default_ el contenido del slot es el siguiente:
+El contenido predeterminado del slot es el siguiente:
 
 ```html
 <ul>
@@ -68,7 +70,9 @@ Así se renderiza el componente sin especificar su slot
 
 **Usando slot simple**
 
-En el siguiente ejemplo usamos `router-link` y un `<a></a>` para ilustrar algunos dejemplos de enlaces dentro de esta mísma documentación. Observe como los primeros 3 modifican su estilo cuando la ruta se actualiza, mientras que el cuarto elemento solo se modifica en el estaod :active. Es esta una de las razones por las que se recomienda el uso de [Vue Router](https://router.vuejs.org/)
+En el siguiente ejemplo usamos `router-link` y un `<a></a>` para ilustrar algunos dejemplos de enlaces dentro de esta mísma documentación.
+
+Observe como los primeros 3 modifican su estilo cuando la ruta se actualiza, mientras que el cuarto elemento solo se modifica en el estado :active. Es esta una de las razones por las que se recomienda el uso de [Vue Router](https://router.vuejs.org/)
 
 <!-- <utils-ejemplo-doc ruta="menu-lateral/basico.vue"/> -->
 <EjemploBasico />
@@ -76,7 +80,7 @@ En el siguiente ejemplo usamos `router-link` y un `<a></a>` para ilustrar alguno
 
 **Slot como lista no ordenada y colapsable**
 
-El siguiente ejemplo contiene los mismos enlaces que el anterior, sin embargo, su estructura es un poco más ordenada pues los enlaces están dentro de los elementos de lista de una lista no ordenada. Además se integró el componente `<SisdaiColapsableNavegacion/>`, que a su vez tiene otros enlaces que se introducen mediante un slot propio.
+El siguiente ejemplo contiene los mismos enlaces que el anterior, sin embargo, su estructura es un poco más ordenada pues los enlaces están dentro de los elementos de una lista no ordenada. Además se integró el componente de `<SisdaiColapsableNavegacion/>`, que a su vez tiene otros enlaces que se introducen mediante un slot propio.
 
 <!-- <utils-ejemplo-doc ruta="menu-lateral/colapsable.vue"/> -->
 <EjemploColapsable />

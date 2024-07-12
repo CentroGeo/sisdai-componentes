@@ -17,29 +17,29 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
       <template #contenido-menu-lateral>
         <ul>
           <li>
-            <router-link
-              to="#api"
+            <a
+              href="#api"
               exact
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
-              API</router-link
+              API</a
             >
           </li>
           <li>
-            <router-link
-              to="#slots"
+            <a
+              href="#slots"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
-              Slots</router-link
+              Slots</a
             >
           </li>
           <li>
-            <router-link
-              to="#ejemplos"
+            <a
+              href="#ejemplos"
               :tabindex="menuLateralAbierto ? undefined : -1"
             >
               Ejemplos
-            </router-link>
+            </a>
           </li>
           <li>
             <a

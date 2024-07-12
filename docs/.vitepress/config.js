@@ -120,10 +120,11 @@ function sidebarDocumentacion(path) {
     //   text: 'Menú de Accesibilidad',
     //   link: `/${path}/menu-accesibilidad/`,
     // },
-    // {
-    //   text: 'Menú Lateral',
-    //   link: `/${path}/menu-lateral/`,
-    // },
+    {
+      text: 'Menú Lateral',
+      link: `/${path}/menu-lateral/`,
+      pre: true,
+    },
     // {
     //   text: 'Modal',
     //   link: `/${path}/modal/`,
