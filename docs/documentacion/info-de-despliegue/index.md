@@ -4,7 +4,7 @@ import EjemploBasico from "../../.vitepress/components/info-de-despliegue/basico
 
 # Información de despliegue
 
-La información de despliegue es un componente compartido en todos los Ecosistemas Nacionales de Información entre otros, que sirve para presentar la información acerca del versionamiento, el ambiente y la fecha de despliegue.
+La Información de despliegue es un componente que sirve para presentar la información acerca del versionamiento, el ambiente y la fecha de despliegue.
 
 Uso:
 
@@ -13,7 +13,6 @@ La información de despliegue se coloca al final de cada página del sitio encim
 La información de despliegue sirve principalmente para:
 
 - Dar certeza de la versión en la que se está desplegando actualmente el proyecto
-
 - Brindar información del ambiente ya sea de pruebas, desarrollo o producción
 
 ```html
@@ -32,21 +31,13 @@ Es importante mencionar que el componente solo se mostrará cuando se despliegue
 
 ### Propiedades
 
-- **versionProyecto**
-  Identificador de versionamiento semántico del proyecto. Este valor se encuentra en el archivo package.json en la propiedad version. Ejemplo: '0.0.1'
-
+- `versionProyecto` Identificador de versionamiento semántico del proyecto. Este valor se encuentra en el archivo package.json en la propiedad version. Ejemplo: '0.0.1'
   - Tipo: `String`
   - Requerido: sí
-
-- **entornoProyecto**
-  Define el entorno o ambiente de programación en el que se encuentre desplegado actualmente el proyecto. Este valor se obtiene de los archivos `.env` con las variables de entorno. Ejemplo: 'desarrollo'
-
+- `entornoProyecto` Define el entorno o ambiente de programación en el que se encuentre desplegado actualmente el proyecto. Este valor se obtiene de los archivos `.env` con las variables de entorno. Ejemplo: 'desarrollo'
   - Tipo: `String`
   - Requerido: sí
-
-- **actualizacionProyecto**
-  Se trata de la fecha en que el proyecto está siendo desplegado. Es decir, toma el momento actual del día, mes, año y hora centrada en América y Ciudad de México. Ejemplo: '1/01/2023, 12:00:00'
-
+- `actualizacionProyecto` Se trata de la fecha en que el proyecto está siendo desplegado. Es decir, toma el momento actual del día, mes, año y hora centrada en América y Ciudad de México. Ejemplo: '1/01/2023, 12:00:00'
   - Tipo: `String`
   - Requerido: sí
 
@@ -107,7 +98,7 @@ const entornoProyecto = computed(() => {
 
 ### Métodos
 
-Este componente no cuenta con métodos publicos.
+Este componente no cuenta con métodos públicos.
 
 ### Eventos
 

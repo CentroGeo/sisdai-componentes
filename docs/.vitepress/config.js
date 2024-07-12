@@ -113,10 +113,10 @@ function sidebarDocumentacion(path) {
       link: `/${path}/indice-de-contenido/`,
       pre: true,
     },
-    // {
-    //   text: 'Info de Despliegue',
-    //   link: `/${path}/info-de-despliegue/`,
-    // },
+    {
+      text: 'Info de Despliegue',
+      link: `/${path}/info-de-despliegue/`,
+    },
     // {
     //   text: 'Menú de Accesibilidad',
     //   link: `/${path}/menu-accesibilidad/`,

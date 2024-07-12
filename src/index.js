@@ -23,7 +23,7 @@ import {
   SisdaiEnlaceExterno,
   SisdaiImagenPngWebp,
   SisdaiIndiceDeContenido,
-  // SisdaiInfoDeDespliegue,
+  SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
   // SisdaiModal,
@@ -46,7 +46,7 @@ const plugin = {
     Vue.use(SisdaiColapsableNavegacion)
     Vue.use(SisdaiMenuLateral)
     Vue.use(SisdaiIndiceDeContenido)
-    // Vue.use(SisdaiInfoDeDespliegue)
+    Vue.use(SisdaiInfoDeDespliegue)
     Vue.use(SisdaiEnlaceExterno)
     Vue.use(SisdaiAudio)
     Vue.use(SisdaiControlDeslizante)
@@ -78,7 +78,7 @@ export {
   SisdaiEnlaceExterno,
   SisdaiImagenPngWebp,
   SisdaiIndiceDeContenido,
-  // SisdaiInfoDeDespliegue,
+  SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
   // SisdaiModal,
