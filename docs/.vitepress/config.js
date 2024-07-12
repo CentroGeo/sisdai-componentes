@@ -96,10 +96,10 @@ function sidebarDocumentacion(path) {
       text: 'Control Deslizante',
       link: `/${path}/control-deslizante/`,
     },
-    // {
-    //   text: 'Directivas',
-    //   link: `/${path}/directivas/`,
-    // },
+    {
+      text: 'Directivas',
+      link: `/${path}/directivas/`,
+    },
     // {
     //   text: 'Enlace Externo',
     //   link: `/${path}/enlace-externo/`,

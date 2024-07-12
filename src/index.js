@@ -34,7 +34,7 @@ import {
   SisdaiPiePaginaGobMx,
 } from './componentes'
 
-// import { GlobosInformacion } from './directivas'
+import { GlobosInformacion } from './directivas'
 
 const plugin = {
   install: function (Vue) {
@@ -56,7 +56,7 @@ const plugin = {
     // Vue.use(SisdaiImagenPngWebp)
 
     // //auxiliares
-    // Vue.use(GlobosInformacion)
+    Vue.use(GlobosInformacion)
     // //otros
     // Vue.use(SisdaiNarrativa)
 
@@ -69,7 +69,7 @@ const plugin = {
 
 export {
   SisdaiAudio,
-  // GlobosInformacion,
+  GlobosInformacion,
   SisdaiBotonFlotante,
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
