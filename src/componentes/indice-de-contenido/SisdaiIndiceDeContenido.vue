@@ -134,7 +134,6 @@ defineExpose({ lista_elementos, seccion_visible, autoScrollSuave })
       class="indice-contenido-contenedor"
     >
       <slot name="contenido-indice-contenido">
-        <!-- <router-link to="#routerlink"> router link prueba </router-link> -->
         <a href="#anchore"> anchore link prueba </a>
       </slot>
     </nav>

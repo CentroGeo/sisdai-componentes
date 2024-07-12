@@ -108,10 +108,11 @@ function sidebarDocumentacion(path) {
       text: 'ImagenPngWebp',
       link: `/${path}/imagen-png-webp/`,
     },
-    // {
-    //   text: 'Índice de Contenido',
-    //   link: `/${path}/indice-de-contenido/`,
-    // },
+    {
+      text: 'Índice de Contenido',
+      link: `/${path}/indice-de-contenido/`,
+      pre: true,
+    },
     // {
     //   text: 'Info de Despliegue',
     //   link: `/${path}/info-de-despliegue/`,
