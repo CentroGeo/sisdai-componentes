@@ -79,10 +79,10 @@ function sidebarDocumentacion(path) {
       link: `/${path}/boton-flotante/`,
       pre: true,
     },
-    // {
-    //   text: 'Campo de búsqueda',
-    //   link: `/${path}/campo-busqueda/`,
-    // },
+    {
+      text: 'Campo de búsqueda',
+      link: `/${path}/campo-busqueda/`,
+    },
     // {
     //   text: 'Colapsable navegación',
     //   link: `/${path}/colapsable-navegacion/`,

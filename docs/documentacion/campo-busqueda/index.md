@@ -3,9 +3,10 @@ import EjemploBasico from "../../.vitepress/components/campo-busqueda/basico.vue
 import EjemploCatalogoAnidado from "../../.vitepress/components/campo-busqueda/catalogo-anidado.vue";
 </script>
 
-# Campo de busqueda
+# Campo de búsqueda
 
-El campo de búsqueda permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web. Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
+El campo de búsqueda permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web.
+Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
 
 Uso:
 
@@ -24,25 +25,40 @@ Uso:
 </ul>
 ```
 
-_Donde `listaElementos` es la lista de elementos sobre los que se realiza la búsqueda y `listaElementos2` es la variable que recibe el resultado de la búsqueda_
+Donde `listaElementos` es la lista de elementos sobre los que se realiza la búsqueda y `listaElementos2` es la variable que recibe el resultado de la búsqueda.
 
 <section id="api">
 
 ## API
 
-Este componente admite las siguientes propiedades
+Este componente admite las siguientes propiedades.
 
 ### Propiedades
 
-- `catalogo`: (_Array_) Propiedad requerida. Corresponde a la lista de elementos sobre los que se desea aplicar la busqueda. Por _default_ tiene el valor `[]`
-- `propiedadBusqueda`: (_String_) Propiedad opcional. corresponde al nombre de la propiedad de cada objeto en donde se aplicara la busqueda. Por _default_ tiene el valor `'nombre'`
-- `catalogoAnidado`: Propiedad opcional. (_Boolean_) Indica si el catalogo tiene anidación o agrupacion. Por _default_ tiene el valor `false`
-- `catalogoAnidadoPropiedadElementos`: Propiedad opcional. (_String_) El nombre de la propiedad que contiene la lista de elementos de cada grupo. por default tiene el valor `'elementos'`
-- `etiqueta`: (_String_) Propiedad opcional. Corresponde a la etiqueta de busqueda, comunmente conocida como _placeholder_. Por _default_ tiene el valor `'Buscar...'`
+- `catalogo`: Corresponde a la lista de elementos sobre los que se desea aplicar la búsqueda.
+  - Tipo de dato: `Array`
+  - Valor predeterminado: `[]`
+  - Requerido: sí
+- `propiedadBusqueda`: corresponde al nombre de la propiedad de cada objeto en donde se aplicara la búsqueda.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `'nombre'`
+  - Requerido: opcional
+- `catalogoAnidado`: Indica si el catalogo tiene anidación o agrupación.
+  - Tipo de dato: `Boolean`
+  - Valor predeterminado: `false`
+  - Requerido: opcional
+- `catalogoAnidadoPropiedadElementos`: El nombre de la propiedad que contiene la lista de elementos de cada grupo.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `'elementos'`
+  - Requerido: opcional
+- `etiqueta`: Corresponde a la etiqueta de búsqueda, comúnmente conocida como _placeholder_.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `'Buscar...'`
+  - Requerido: opcional
 
 ### Eventos
 
-- `alFiltrar`: Evento que se dispara al momento de ejecutar la busqueda. Como parametro se obtiene la lista de elementos filtrada.
+- `alFiltrar`: Evento que se dispara al momento de ejecutar la búsqueda. Como parámetro se obtiene la lista de elementos filtrada.
 
 </section>
 
