@@ -72,6 +72,43 @@ function alAlternarColapsableNavegacion(d) {
                       El mero inicio
                     </a>
                   </li>
+                  <li>
+                    <SisdaiColapsableNavegacion>
+                      <template #encabezado>
+                        <span>Este es un colapsable anidado</span>
+                      </template>
+                      <template #contenido>
+                        <ul>
+                          <li>
+                            <router-link
+                              to="#ejemplos"
+                              :tabindex="
+                                colapsableNavegacionAbierta &&
+                                menuLateralAbierto
+                                  ? undefined
+                                  : -1
+                              "
+                            >
+                              Ejemplos
+                            </router-link>
+                          </li>
+                          <li>
+                            <a
+                              href="#menu-lateral"
+                              :tabindex="
+                                colapsableNavegacionAbierta &&
+                                menuLateralAbierto
+                                  ? undefined
+                                  : -1
+                              "
+                            >
+                              Opcion anidada
+                            </a>
+                          </li>
+                        </ul>
+                      </template>
+                    </SisdaiColapsableNavegacion>
+                  </li>
                 </ul>
               </template>
             </SisdaiColapsableNavegacion>
