@@ -2,9 +2,9 @@
 import EjemploBasico from "../../.vitepress/components/enlace-externo/basico.vue";
 </script>
 
-# EnlaceExterno
+# Enlace externo
 
-Este pequeño componente funciona para crear enlaces externos dentro de párrafos u otros elementos, el cual incluye los atributos `target="_blank" rel="noopener noreferrer"`
+Este pequeño componente funciona para crear enlaces externos dentro de párrafos u otros elementos, el cual incluye los atributos `target="_blank" rel="noopener noreferrer"`.
 
 Uso:
 
@@ -21,31 +21,26 @@ Uso:
 
 ### Propiedades
 
-- **enlace**
-  **String** que indica la ruta o el enlace al que dirige el componente
-
+- `enlace`: Indica la ruta o el enlace al que dirige el componente.
   - Tipo: `String`
   - Valor predeterminado: `'#'`
   - Requerido: si
-
-- **texto**
-  **String** que indica el texto clickeable para acceder al enlace
-
+- `texto`: Indica el texto clickeable para acceder al enlace
   - Tipo: `String`
   - Valor predeterminado: `'Enlace externo'`
   - Requerido: si
 
 ### Métodos
 
-Este componente no tiene métodos
+Este componente no tiene métodos.
 
 ### Eventos
 
-Este componente no dispara eventos externos
+Este componente no dispara eventos externos.
 
 ### Slots
 
-Este componente no permite contenido con slots
+Este componente no permite contenido con slots.
 
 </section>
 
@@ -55,7 +50,7 @@ Este componente no permite contenido con slots
 
 #### Enlace
 
-El color del enlace se hereda de sisdai-css y el ícono que lo acompaña viene de la fuente de íconos sisdai-iconos
+El color del enlace se hereda de Sisdai Css y el pictograma que lo acompaña viene de la fuente de pictogramas sisdai-pictogramas.
 
 <!-- <utils-ejemplo-doc ruta="enlace-externo/basico.vue"/> -->
 <EjemploBasico />

@@ -100,10 +100,10 @@ function sidebarDocumentacion(path) {
       text: 'Directivas',
       link: `/${path}/directivas/`,
     },
-    // {
-    //   text: 'Enlace Externo',
-    //   link: `/${path}/enlace-externo/`,
-    // },
+    {
+      text: 'Enlace Externo',
+      link: `/${path}/enlace-externo/`,
+    },
     // {
     //   text: 'ImagenPngWebp',
     //   link: `/${path}/imagen-png-webp/`,
