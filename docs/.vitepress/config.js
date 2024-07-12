@@ -75,25 +75,25 @@ function sidebarDocumentacion(path) {
       link: `/${path}/audio/`,
     },
     {
-      text: 'Boton flotante',
+      text: 'Boton Flotante',
       link: `/${path}/boton-flotante/`,
       pre: true,
     },
     {
-      text: 'Campo de búsqueda',
+      text: 'Campo Búsqueda',
       link: `/${path}/campo-busqueda/`,
     },
     {
-      text: 'Colapsable navegación',
+      text: 'Colapsable Navegación',
       link: `/${path}/colapsable-navegacion/`,
       pre: true,
     },
+    {
+      text: 'Control Acercar Alejar',
+      link: `/${path}/control-acercar-alejar/`,
+    },
     // {
-    //   text: 'Control de acercar y alejar',
-    //   link: `/${path}/control-acercar-alejar/`,
-    // },
-    // {
-    //   text: 'Control deslizante',
+    //   text: 'Control Deslizante',
     //   link: `/${path}/control-deslizante/`,
     // },
     // {
@@ -101,27 +101,27 @@ function sidebarDocumentacion(path) {
     //   link: `/${path}/directivas/`,
     // },
     // {
-    //   text: 'Enlace externo',
+    //   text: 'Enlace Externo',
     //   link: `/${path}/enlace-externo/`,
     // },
     // {
-    //   text: 'Imagen png webp',
+    //   text: 'ImagenPngWebp',
     //   link: `/${path}/imagen-png-webp/`,
     // },
     // {
-    //   text: 'Índice de contenido',
+    //   text: 'Índice de Contenido',
     //   link: `/${path}/indice-de-contenido/`,
     // },
     // {
-    //   text: 'Info de despliegue',
+    //   text: 'Info de Despliegue',
     //   link: `/${path}/info-de-despliegue/`,
     // },
     // {
-    //   text: 'Menú de accesibilidad',
+    //   text: 'Menú de Accesibilidad',
     //   link: `/${path}/menu-accesibilidad/`,
     // },
     // {
-    //   text: 'Menú lateral',
+    //   text: 'Menú Lateral',
     //   link: `/${path}/menu-lateral/`,
     // },
     // {
@@ -133,19 +133,19 @@ function sidebarDocumentacion(path) {
     //   link: `/${path}/narrativa/`,
     // },
     // {
-    //   text: 'Navegación gob mx',
+    //   text: 'Navegación GobMx',
     //   link: `/${path}/navegacion-gob-mx/`,
     // },
     // {
-    //   text: 'Navegación principal',
+    //   text: 'Navegación Principal',
     //   link: `/${path}/navegacion-principal/`,
     // },
     // {
-    //   text: 'Pie de página Conahcyt',
+    //   text: 'Pie Página Conahcyt',
     //   link: `/${path}/pie-pagina-conahcyt/`,
     // },
     // {
-    //   text: 'Pie de página gob mx',
+    //   text: 'Pie Página GobMx',
     //   link: `/${path}/pie-pagina-gob-mx/`,
     // },
   ]
