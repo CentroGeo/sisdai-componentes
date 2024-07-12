@@ -75,7 +75,7 @@ function sidebarDocumentacion(path) {
       link: `/${path}/audio/`,
     },
     {
-      text: 'Boton Flotante',
+      text: 'Botón Flotante',
       link: `/${path}/boton-flotante/`,
       pre: true,
     },

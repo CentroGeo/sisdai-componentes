@@ -2,9 +2,11 @@
 import EjemploBasico from "../../.vitepress/components/control-acercar-alejar/basico.vue";
 </script>
 
-# Control Acercar Alejar
+# Control para acercar y alejar
 
-El control para acercar y alejar es un elemento que se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web. Esta funcionalidad se emplea en el Sisdai en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
+El Control para acercar y alejar es un elemento que se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web.
+
+Esta funcionalidad se emplea en el Sisdai en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
 
 Uso:
 
@@ -18,20 +20,15 @@ Uso:
 
 ### Propiedades
 
-- **v-model**
-  El valor numerico del control.
-  - Tipo: `Number`
+- `v-model` El valor numerico del control.
+  - Tipo de dato: `Number`
   - Requerido: si
-- **min**
-  El valor minimo del componente
-
-  - Tipo: `Number`
+- `min` El valor minimo del componente.
+  - Tipo de dato: `Number`
   - Valor predeterminado: `0`
   - Requerido: no
-
-- **max**
-  El valor maximo del componente
-  - Tipo: `Number`
+- `max` El valor maximo del componente.
+  - Tipo de dato: `Number`
   - Valor predeterminado: `100`
   - Requerido: no
 

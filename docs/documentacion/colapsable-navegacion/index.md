@@ -3,7 +3,7 @@ import EjemploDefault from "../../.vitepress/components/colapsable-navegacion/de
 import EjemploSlot from "../../.vitepress/components/colapsable-navegacion/slot.vue";
 </script>
 
-# Colapsable de navegacion <span class="etiqueta">preliminar</span>
+# Colapsable de navegación <span class="etiqueta">preliminar</span>
 
 Este componente consiste en un elemento `<div class="colapsable"></div>` que contiene en su interior un botón y una lista no ordenada `<ul></ul>` que usualmente contendrá enlaces `<a></a>` en sus elementos de lista `<li></li>`.
 
