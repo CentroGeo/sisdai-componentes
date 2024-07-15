@@ -1,8 +1,9 @@
 <script setup>
 import { useRoute } from 'vitepress'
-import { ref } from 'vue'
 // https://router.vuejs.org/
 const route = useRoute()
+
+import { ref } from 'vue'
 const SisdaiNavPpal = ref('')
 </script>
 <template>

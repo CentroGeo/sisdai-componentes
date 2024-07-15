@@ -18,7 +18,6 @@ import SisdaiIndiceDeContenido from './indice-de-contenido/SisdaiIndiceDeConteni
 import SisdaiInfoDeDespliegue from './info-de-despliegue/SisdaiInfoDeDespliegue.vue'
 import SisdaiMenuAccesibilidad from './menu-accesibilidad/SisdaiMenuAccesibilidad.vue'
 import SisdaiMenuLateral from './menu-lateral/SisdaiMenuLateral.vue'
-import SisdaiNarrativaScroll from './narrativa-scroll/SisdaiNarrativaScroll.vue'
 import SisdaiNarrativa from './narrativa/SisdaiNarrativa.vue'
 import SisdaiNavegacionGobMx from './navegacion-gob-mx/SisdaiNavegacionGobMx.vue'
 import SisdaiNavegacionPrincipal from './navegacion-principal/SisdaiNavegacionPrincipal.vue'
@@ -45,7 +44,6 @@ export default {
     //auxiliares
     // Vue.component('GlobosInformacion', GlobosInformacion)
     //otros
-    Vue.component('SisdaiNarrativaScroll', SisdaiNarrativaScroll)
     Vue.component('SisdaiNarrativa', SisdaiNarrativa)
 
     Vue.component('SisdaiBotonFlotante', SisdaiBotonFlotante)
@@ -60,7 +58,6 @@ export {
   SisdaiMenuLateral,
   SisdaiNarrativa,
   // GlobosInformacion,
-  SisdaiNarrativaScroll,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaConahcyt,

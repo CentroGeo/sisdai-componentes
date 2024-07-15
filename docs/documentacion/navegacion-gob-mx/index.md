@@ -2,9 +2,9 @@
 import EjemploBasico from "../../.vitepress/components/navegacion-gob-mx/basico.vue";
 </script>
 
-# Barra de navegación del Gobierno de México
+# Barra de Navegación del gobierno de México
 
-La barra de navegación del Gobierno de México `<SisdaiNavegacionGobMx />` es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal al momento de realizar la maquetación de páginas web para información, trámites y servicios dentro o fuera de la página de Gobierno.
+La barra de navegación del gobierno de México `<SisdaiNavegacionGobMx />` es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal al momento de realizar la maquetación de páginas web para información, trámites y servicios dentro o fuera de la página de Gobierno.
 
 Uso:
 

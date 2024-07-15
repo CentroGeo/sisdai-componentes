@@ -134,14 +134,14 @@ function sidebarDocumentacion(path) {
       text: 'Narrativa',
       link: `/${path}/narrativa/`,
     },
-    // {
-    //   text: 'Navegación GobMx',
-    //   link: `/${path}/navegacion-gob-mx/`,
-    // },
-    // {
-    //   text: 'Navegación Principal',
-    //   link: `/${path}/navegacion-principal/`,
-    // },
+    {
+      text: 'Navegación GobMx',
+      link: `/${path}/navegacion-gob-mx/`,
+    },
+    {
+      text: 'Navegación Principal',
+      link: `/${path}/navegacion-principal/`,
+    },
     // {
     //   text: 'Pie Página Conahcyt',
     //   link: `/${path}/pie-pagina-conahcyt/`,
