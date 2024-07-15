@@ -29,7 +29,7 @@ en donde N.N.N indica el número de versión, por ejemplo v1.0.0
 
 **Instalacion de estilos**
 
-Puesto que el estilo de los componentes está ligado a las reglas de [Sisdai](https://sisdai.conahcyt.mx/. Lo siguiente es dar de alta los estilos de [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css) en el archivo de inicialización del proyecto.
+Puesto que el estilo de los componentes está ligado a las reglas de [Sisdai](https://sisdai.conahcyt.mx/). Lo siguiente es dar de alta los estilos de [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css) en el archivo de inicialización del proyecto.
 
 Si su proyecto tiene configurado el preprocesador `sass` o `scss`
 
