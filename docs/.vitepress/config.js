@@ -12,15 +12,15 @@ export default {
   // appearance: false,
   lastUpdated: true,
 
-  // head: [
-  //   [
-  //     'link',
-  //     {
-  //       rel: 'stylesheet',
-  //       href: 'https://file.myfontastic.com/JS4TgqY9L4s8WsKQDkt5qA/icons.css',
-  //     },
-  //   ],
-  // ],
+  head: [
+    [
+      // 'link',
+      // {
+      //   rel: 'stylesheet',
+      //   href: '',
+      // },
+    ],
+  ],
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -33,9 +33,9 @@ export default {
 
     socialLinks: [
       {
-        icon: 'github',
-        link: pkg.repository.url || '',
-        ariaLabel: 'github',
+        // icon: 'github',
+        // link: pkg.repository.url || '',
+        // ariaLabel: 'github',
       },
     ],
 

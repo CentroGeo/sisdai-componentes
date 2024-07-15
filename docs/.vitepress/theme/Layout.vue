@@ -109,7 +109,7 @@ watch(route, () => {
                   {{ item.text }}
                   <span
                     v-if="item.pre"
-                    class="etiqueta m-l-1"
+                    class="etiqueta"
                     >pre</span
                   >
                 </a>
