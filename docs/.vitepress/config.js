@@ -130,10 +130,10 @@ function sidebarDocumentacion(path) {
       text: 'Modal',
       link: `/${path}/modal/`,
     },
-    // {
-    //   text: 'Narrativa',
-    //   link: `/${path}/narrativa/`,
-    // },
+    {
+      text: 'Narrativa',
+      link: `/${path}/narrativa/`,
+    },
     // {
     //   text: 'Navegación GobMx',
     //   link: `/${path}/navegacion-gob-mx/`,

@@ -53,6 +53,7 @@ const obtenerElementos = () => {
 
   narrativa.value.style.height =
     (lista_elementos.value.length + 1) * props.separacion * 100 + 'vh'
+
   lista_elementos.value.forEach((el, i) => {
     el.style.top = (props.posicion_inicial + i * props.separacion) * 100 + 'vh'
   })
@@ -62,6 +63,7 @@ function scroleando() {
   posicion_depurador.value = document
     .querySelector(`section#${props.id}.narrativa-graficas div.depurador`)
     .getBoundingClientRect().top
+
   posicion_normalizada.value =
     (posicion_depurador.value -
       lista_elementos.value[0].getBoundingClientRect().bottom) /

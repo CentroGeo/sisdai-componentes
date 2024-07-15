@@ -27,7 +27,7 @@ import {
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
   SisdaiModal,
-  // SisdaiNarrativa,
+  SisdaiNarrativa,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaConahcyt,
@@ -58,7 +58,7 @@ const plugin = {
     // //auxiliares
     Vue.use(GlobosInformacion)
     // //otros
-    // Vue.use(SisdaiNarrativa)
+    Vue.use(SisdaiNarrativa)
 
     Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
@@ -82,7 +82,7 @@ export {
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
   SisdaiModal,
-  // SisdaiNarrativa,
+  SisdaiNarrativa,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaConahcyt,
