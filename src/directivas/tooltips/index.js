@@ -18,15 +18,11 @@ import {
   globo_informacion_extendido,
 } from './GloboInformacion'
 
-const plugin = {  
-  install: (app, options) => {
-  app.directive(globo_informacion.name, globo_informacion)
-  app.directive(globo_informacion_extendido.name, globo_informacion_extendido)
+const plugin = {
+  install: app => {
+    app.directive(globo_informacion.name, globo_informacion)
+    app.directive(globo_informacion_extendido.name, globo_informacion_extendido)
   },
-  // install: function (Vue) {
-  //   Vue.directive(globo_informacion.name, globo_informacion)
-  //   Vue.directive(globo_informacion_extendido.name, globo_informacion_extendido)
-  // },
 }
 
 export default plugin

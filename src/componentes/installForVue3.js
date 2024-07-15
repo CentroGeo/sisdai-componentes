@@ -26,7 +26,7 @@ import SisdaiPiePaginaGobMx from './pie-pagina-gob-mx/SisdaiPiePaginaGobMx.vue'
 
 import SisdaiBotonFlotante from './boton-flotante/SisdaiBotonFlotante.vue'
 
-// import { GlobosInformacion } from './directivas'
+import { GlobosInformacion } from './directivas'
 
 export default {
   install: Vue => {
@@ -42,7 +42,7 @@ export default {
     //accesibilidad
     Vue.component('SisdaiMenuAccesibilidad', SisdaiMenuAccesibilidad)
     //auxiliares
-    // Vue.component('GlobosInformacion', GlobosInformacion)
+    Vue.component('GlobosInformacion', GlobosInformacion)
     //otros
     Vue.component('SisdaiNarrativa', SisdaiNarrativa)
 
@@ -57,7 +57,7 @@ export {
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
   SisdaiNarrativa,
-  // GlobosInformacion,
+  GlobosInformacion,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaConahcyt,

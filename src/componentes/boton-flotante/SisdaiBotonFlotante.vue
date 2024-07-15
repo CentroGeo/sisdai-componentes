@@ -62,13 +62,13 @@ function alternarEstado() {
   botonFlotanteEstaAbierto.value = !botonFlotanteEstaAbierto.value
 }
 
-defineExpose({ alternarEstado })
-
 function idAleatorio() {
   return Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = idAleatorio()
+
+defineExpose({ alternarEstado })
 </script>
 
 <template>
@@ -91,7 +91,7 @@ const id_aleatorio = idAleatorio()
             : 'boton-flotante-pictograma-cerrado pictograma-agregar'
         }`"
         aria-hidden="true"
-      />
+      ></span>
       <span class="a11y-solo-lectura">abrir o cerrar menú flotante</span>
     </button>
 

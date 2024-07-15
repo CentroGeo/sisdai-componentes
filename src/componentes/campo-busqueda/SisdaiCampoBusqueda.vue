@@ -15,9 +15,7 @@
 
 <script>
 const eventos = {
-  /**
-   * Evento que se emite al empezar a escribir en el campo de búsqueda.
-   */
+  /** Evento que se emite al empezar a escribir en el campo de búsqueda. */
   alFiltrar: 'alFiltrar',
 }
 </script>

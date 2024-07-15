@@ -28,9 +28,7 @@ const propiedades = {
     default: () => [],
   },
 
-  /**
-   * Objeto store completo del proyecto.
-   */
+  /** Objeto store completo del proyecto. */
   objetoStore: {
     type: Object,
     default: () => {},
@@ -68,9 +66,7 @@ const eventos = {
    */
   alSeleccionarOpcion: 'alSeleccionarOpcion',
 
-  /**
-   * Se ejecuta cuando se ha dado click en el botón "Restablecer".
-   */
+  /** Se ejecuta cuando se ha dado click en el botón "Restablecer". */
   alRestablecer: 'alRestablecer',
 }
 </script>
@@ -91,9 +87,7 @@ const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
 const { agregarOpciones, id, objetoStore, perfilColor } = toRefs(props)
 
-/**
- * Opciones que se mostrarán en el menú de accesibilidad.
- */
+/** Opciones que se mostrarán en el menú de accesibilidad. */
 const opciones = computed(() => [...opcionesDefault, ...agregarOpciones.value])
 
 /**
@@ -135,9 +129,7 @@ function ejecutarEnStore(accion, valor) {
   // console.log('objetoStore.value', objetoStore.value)
 }
 
-/**
- * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
- */
+/** Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú. */
 function restablecer() {
   clasesSelecciondas.value = []
   emits(eventos.alRestablecer)
@@ -152,9 +144,7 @@ watch(clasesSelecciondas, (nv, ov) => {
   asignarTemaClaroUOscuro(nv, ov)
 })
 
-/**
- * Alterna las clases accesibles seleccionadas en el body.
- */
+/** Alterna las clases accesibles seleccionadas en el body. */
 function alternarClasesBody() {
   clasesSelecciondas.value.includes('a11y-tipografia')
     ? body.classList.add('a11y-tipografia')
@@ -177,10 +167,7 @@ function alternarClasesBody() {
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
 let body = {}
 
-/**
- * Agrega el atributo para asignar el tema y el perfil
- * de color predeterminados.
- */
+/** Agrega el atributo para asignar el tema y el perfil de color predeterminados. */
 function agregarPerfilTemaPredeterminados() {
   body.setAttribute('data-perfil', perfilColor.value)
   body.setAttribute('data-tema', 'claro')
@@ -223,9 +210,7 @@ function asignarTemaClaroUOscuro(nv, ov) {
   }
 }
 
-/**
- * Devuelve el tema del documento según la configuración del dispositivo.
- */
+/** Devuelve el tema del documento según la configuración del dispositivo. */
 function getTemaDispositivo() {
   if (
     (window.matchMedia &&

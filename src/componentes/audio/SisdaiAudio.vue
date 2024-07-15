@@ -131,9 +131,7 @@ function mostrarCantidadAlmacenada() {
   }
 }
 
-/**
- * Adelanta el el audio 10 segundos
- */
+/** Adelanta el el audio 10 segundos */
 function adelanta10() {
   if (tiempo_transcurrido.value < duracion.value - 10) {
     tiempo_transcurrido.value = Math.floor(audio.value.currentTime + 10)
@@ -144,9 +142,7 @@ function adelanta10() {
   }
 }
 
-/**
- * Retrasa el el audio 10 segundos
- */
+/** Retrasa el el audio 10 segundos */
 function retrasa10() {
   if (10 < tiempo_transcurrido.value) {
     tiempo_transcurrido.value = Math.floor(audio.value.currentTime - 10)
@@ -158,9 +154,7 @@ function retrasa10() {
   }
 }
 
-/**
- * Watcha el botón de reproducción para pausar o reproducir
- */
+/** Watcha el botón de reproducción para pausar o reproducir */
 watch(reproduciendo, nv => {
   if (nv) {
     audio.value.play()
@@ -180,17 +174,12 @@ watch(slider_activo, (nv, ov) => {
   }
 })
 
-/**
- * Watcha al selector de velocidad de reproducción para modificar la velocidad
- * del audio
- */
+/** Watcha al selector de velocidad de reproducción para modificar la velocidad del audio */
 watch(velocidad_reproduccion, nv => {
   audio.value.playbackRate = nv
 })
 
-/**
- * Watcha el input de volumen para actualizar el volumen del audio
- */
+/** Watcha el input de volumen para actualizar el volumen del audio */
 watch(
   () => controlVolumen.value?.valor_seleccionado,
   nv => {

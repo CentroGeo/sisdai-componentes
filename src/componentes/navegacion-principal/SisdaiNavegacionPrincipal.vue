@@ -49,18 +49,14 @@ const {
 const navMenu = ref({})
 const navSubmenu = ref({})
 
-/**
- * Remueve el atributo tabindex a los elementos de lista para que enfoque.
- */
+/** Remueve el atributo tabindex a los elementos de lista para que enfoque. */
 function removerTabIndex(menu) {
   for (let i = 0; i < menu.length; i++) {
     const elemento = menu[i]['children'][0]
     elemento.removeAttribute('tabIndex')
   }
 }
-/**
- * Agrega el atributo tabindex a los elementos de lista para que no enfoque.
- */
+/** Agrega el atributo tabindex a los elementos de lista para que no enfoque. */
 function agregarTabIndex(menu) {
   for (let j = 0; j < menu.length; j++) {
     const elemento = menu[j]['children'][0]

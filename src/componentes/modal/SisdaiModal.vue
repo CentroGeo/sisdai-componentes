@@ -113,11 +113,11 @@ defineExpose({
       </div>
 
       <div class="modal-cuerpo">
-        <slot name="cuerpo" />
+        <slot name="cuerpo"></slot>
       </div>
 
       <div class="modal-pie">
-        <slot name="pie" />
+        <slot name="pie"></slot>
       </div>
 
       <button

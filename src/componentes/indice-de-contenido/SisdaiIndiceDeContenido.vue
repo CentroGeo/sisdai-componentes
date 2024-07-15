@@ -68,9 +68,7 @@ function scroleando() {
   })
 }
 
-/**
- * Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus
- */
+/** Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus */
 function autoScrollSuave() {
   document
     .querySelectorAll(`div#${props.id_indice}.indice-contenido a`)
