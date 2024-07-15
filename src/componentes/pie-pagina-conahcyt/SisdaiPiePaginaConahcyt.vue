@@ -105,7 +105,7 @@ const anioActual = new Date().getFullYear()
               <span
                 class="pictograma-social-facebook"
                 aria-hidden="true"
-              />
+              ></span>
               <span class="a11y-solo-lectura">feisbuk,</span>
             </a>
           </li>
@@ -119,7 +119,7 @@ const anioActual = new Date().getFullYear()
               <span
                 class="pictograma-social-x"
                 aria-hidden="true"
-              />
+              ></span>
               <span class="a11y-solo-lectura">x,</span>
             </a>
           </li>
@@ -133,7 +133,7 @@ const anioActual = new Date().getFullYear()
               <span
                 class="pictograma-social-instagram"
                 aria-hidden="true"
-              />
+              ></span>
               <span class="a11y-solo-lectura">instagram </span>
             </a>
           </li>
@@ -147,7 +147,7 @@ const anioActual = new Date().getFullYear()
               <span
                 class="pictograma-social-youtube"
                 aria-hidden="true"
-              />
+              ></span>
               <span class="a11y-solo-lectura">yutub</span>
             </a>
           </li>

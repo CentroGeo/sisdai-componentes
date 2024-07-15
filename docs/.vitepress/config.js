@@ -142,13 +142,13 @@ function sidebarDocumentacion(path) {
       text: 'Navegación Principal',
       link: `/${path}/navegacion-principal/`,
     },
-    // {
-    //   text: 'Pie Página Conahcyt',
-    //   link: `/${path}/pie-pagina-conahcyt/`,
-    // },
-    // {
-    //   text: 'Pie Página GobMx',
-    //   link: `/${path}/pie-pagina-gob-mx/`,
-    // },
+    {
+      text: 'Pie Página Conahcyt',
+      link: `/${path}/pie-pagina-conahcyt/`,
+    },
+    {
+      text: 'Pie Página GobMx',
+      link: `/${path}/pie-pagina-gob-mx/`,
+    },
   ]
 }
