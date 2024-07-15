@@ -17,7 +17,6 @@ const posicionesDisponibles = [
   'izquierda-final',
 ]
 </script>
-
 <template>
   <div>
     <client-only>

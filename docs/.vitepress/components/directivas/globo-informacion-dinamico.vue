@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+
 const contenido = ref('<b>Hola</b> editame!')
 </script>
-
 <template>
   <div>
     <client-only>

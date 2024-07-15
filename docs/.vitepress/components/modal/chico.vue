@@ -3,12 +3,12 @@ import { ref } from 'vue'
 const sisdaiModal = ref(null)
 
 const salida = ref()
+
 function descargaAlgo() {
   sisdaiModal.value.cerrarModal()
   salida.value = 'descargando...'
 }
 </script>
-
 <template>
   <div>
     <SisdaiModal

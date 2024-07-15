@@ -8,7 +8,6 @@ function alSeleccionarOpcion(opcion) {
   alert(`Accesibilidad: ${opcion}`)
 }
 </script>
-
 <template>
   <div
     class="contenerdor-panttalla-simulada"

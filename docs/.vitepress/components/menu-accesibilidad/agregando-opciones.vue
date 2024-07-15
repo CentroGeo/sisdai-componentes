@@ -11,7 +11,6 @@ const opcionCursiva = {
   titulo: 'Cursiva destacada',
 }
 </script>
-
 <template>
   <div
     class="contenerdor-panttalla-simulada agregando-opcion"

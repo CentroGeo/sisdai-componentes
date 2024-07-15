@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from 'vue'
+
 const sisdaiModal = ref(null)
 </script>
-
 <template>
   <div>
     <SisdaiModal
