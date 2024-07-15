@@ -18,8 +18,7 @@ Uso:
 <button @click="sisdaiModal?.abrirModal()">Abrir Modal</button>
 ```
 
-Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en _hidden_ en la hoja de estilo css
-principal de la aplicación o en el body para interrumpir el scroll con el resto de la página.
+Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en _hidden_ en la hoja de estilo css principal de la aplicación o en el body para interrumpir el scroll con el resto de la página.
 
 ```css
 /* css */
@@ -41,7 +40,7 @@ principal de la aplicación o en el body para interrumpir el scroll con el resto
   - Requerido: si
 - `tituloModal` Título del modal, se pueden utilizar elementos html mediante la props dinámica. Se requiere para que los lectores de pantalla lo lean.
   - Tipo: `String`
-  - Valor predeterminado: ``
+  - Valor predeterminado: `''`
 - `tamanioModal` Se puede elegir entre un tamaño grande del modal.
   - Tipo: `String`
   - Requerido: no

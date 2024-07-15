@@ -37,7 +37,7 @@ const { tamanioModal } = toRefs(props)
 
 /**
  * Esta función nos sirve para obtener un id aleatorio para el componente
- * @returns {String} Cadena con prefijo "modal-" contatenado con un string aleatorio
+ * @returns {String} Cadena con prefijo "modal-" concatenado con un string aleatorio
  */
 function idAleatorio() {
   return 'modal-' + Math.random().toString(36).substring(2)
@@ -128,7 +128,7 @@ defineExpose({
         <span
           class="pictograma-cerrar"
           aria-hidden="true"
-        />
+        ></span>
         <span class="a11y-solo-lectura"> Cerrar Modal. </span>
       </button>
     </div>

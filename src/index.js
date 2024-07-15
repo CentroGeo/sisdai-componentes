@@ -26,7 +26,7 @@ import {
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
-  // SisdaiModal,
+  SisdaiModal,
   // SisdaiNarrativa,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
@@ -61,7 +61,7 @@ const plugin = {
     // Vue.use(SisdaiNarrativa)
 
     Vue.use(SisdaiBotonFlotante)
-    // Vue.use(SisdaiModal)
+    Vue.use(SisdaiModal)
     Vue.use(SisdaiCampoBusqueda)
     Vue.use(SisdaiControlAcercarAlejar)
   },
@@ -81,7 +81,7 @@ export {
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   SisdaiMenuLateral,
-  // SisdaiModal,
+  SisdaiModal,
   // SisdaiNarrativa,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,

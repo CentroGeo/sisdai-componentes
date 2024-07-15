@@ -126,10 +126,10 @@ function sidebarDocumentacion(path) {
       link: `/${path}/menu-lateral/`,
       pre: true,
     },
-    // {
-    //   text: 'Modal',
-    //   link: `/${path}/modal/`,
-    // },
+    {
+      text: 'Modal',
+      link: `/${path}/modal/`,
+    },
     // {
     //   text: 'Narrativa',
     //   link: `/${path}/narrativa/`,
