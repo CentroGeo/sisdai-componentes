@@ -47,10 +47,10 @@ Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en
 
 ### Métodos
 
-- `abrirModal` Abre el modal y agrega la clase .overflow-hidden al elemento body del documento.
-- `cerrarModal` Cierra el modal y remueve la clase .overflow-hidden al elemento body del documento.
-- `siPresionaTeclaEscape` Si la tecla _Esc_ es presionada se remueve la clase .overflow-hidden al elemento body del documento.
-- `clickFueraDelModal` Si la usuaria da click fuera del modal mientras este esté abierto, este se cerrará.
+- **abrirModal** Abre el modal y agrega la clase .overflow-hidden al elemento body del documento.
+- **cerrarModal** Cierra el modal y remueve la clase .overflow-hidden al elemento body del documento.
+- **siPresionaTeclaEscape** Si la tecla _Esc_ es presionada se remueve la clase .overflow-hidden al elemento body del documento.
+- **clickFueraDelModal** Si la usuaria da click fuera del modal mientras este esté abierto, este se cerrará.
 
 ### Eventos
 

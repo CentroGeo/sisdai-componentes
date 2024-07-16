@@ -25,7 +25,7 @@ A continuación se enlistan las propiedades que admite el componente.
 
 #### Opcionales
 
-- `colapsado`: Corresponde al estado del componente. Por _default_ es `false` y corresponde al componente colapsado. Si se elige `true` el componente se mostrará desplegado.
+- `colapsado`: Corresponde al estado del componente. Si se elige `true` el componente se mostrará desplegado.
   - Tipo de dato: `Boolean`
   - Valor predeterminado: `false`
   - Requerido: opcional
@@ -36,7 +36,7 @@ A continuación se enlistan las propiedades que admite el componente.
 
 ### Slots
 
-- `'encabezado'`: En este se indica el título del encabezado de la lista con una etiqueta `<p></p>`. Por defecto tiene el siguiente `html` dentro del slot.
+- `'encabezado'`: En este se indica el título del encabezado de la lista con una etiqueta `<p></p>`. Tiene el siguiente `html` predeterminado dentro del slot.
 
 ```html
 <slot name="encabezado">
@@ -44,7 +44,7 @@ A continuación se enlistan las propiedades que admite el componente.
 </slot>
 ```
 
-- `'contenido'`: En este se indican los elementos de lista `<li></li>` que contendrá el elemento. Por defecto tiene el siguiente `html` dentro del slot.
+- `'contenido'`: En este se indican los elementos de lista `<li></li>` que contendrá el elemento. Tiene el siguiente `html` predeterminado dentro del slot.
 
 ```html
 <ul :id="id_aleatorio">
@@ -74,15 +74,11 @@ En caso que de que el menú esté desplegado por defecto el atributo se puede om
 
 ## Ejemplos
 
-**_Default_**
-
 Así se renderiza el componente sin especificar nada en los slots.
 
 <!-- <utils-ejemplo-doc ruta="colapsable-navegacion/default.vue"/> -->
 <EjemploDefault />
 <<< @/.vitepress/components/colapsable-navegacion/default.vue
-
-**Titulo y slot**
 
 Así se renderiza cuando especificamos un título en el slot de encabezado y contenido.
 
@@ -90,6 +86,6 @@ Así se renderiza cuando especificamos un título en el slot de encabezado y con
 <EjemploSlot />
 <<< @/.vitepress/components/colapsable-navegacion/slot.vue
 
-**Observación:** Este componente `<SisdaiColapsableNavegacion/>` tiene un estilo definido para el componente `<SisdaiMenuLateral/>`. Puedes consultar la [sección](../menu-lateral/index.md) de dicho componente para ver como pueden convivir.
+**Observación:** Este componente `<SisdaiColapsableNavegacion/>` tiene un estilo definido para el componente `<SisdaiMenuLateral/>`. Puedes consultar la [sección](../menu-lateral/index.md) de dicho componente para ver cómo pueden convivir.
 
 </section>

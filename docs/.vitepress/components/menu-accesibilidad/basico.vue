@@ -9,10 +9,7 @@ function alSeleccionarOpcion(opcion) {
 }
 </script>
 <template>
-  <div
-    class="contenerdor-panttalla-simulada"
-    :class="menuAccesibilidad?.clasesSelecciondas"
-  >
+  <div class="contenerdor-panttalla-simulada">
     <SisdaiMenuAccesibilidad
       ref="menuAccesibilidad"
       :id="'basico'"

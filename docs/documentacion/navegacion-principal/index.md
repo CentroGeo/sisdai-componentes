@@ -37,10 +37,7 @@ Este componente no dispara eventos externos.
 
 ### Slots
 
-##### default
-
-- Requerido: si
-- Contenido predeterminado: contenido de prueba
+##### predeterminado
 
 Slot para el contenido de navegación, son los links a las secciones disponibles en el sitio.
 
@@ -60,9 +57,9 @@ Slot para el contenido de navegación, son los links a las secciones disponibles
 </SisdaiNavegacionPrincipal>
 ```
 
-De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, los links deberán estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul)
+De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, los links deberán estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul).
 
-En caso de tener un [router](https://router.vuejs.org/), el elemento `<a>` podria ser remplazado por el componente `<RouterLink>` conservando las clases de estilo necesarias.
+En caso de tener un [router](https://router.vuejs.org/), el elemento `<a>` podria ser reemplazado por el componente `<RouterLink>` conservando las clases de estilo necesarias.
 
 Cuando se agregue contenido personalizado **es importante incluir** la clase css `nav-menu` al elemento `<ul>` y `nav-submenu` al otro elemento `<ul>` que maneja la subnavegación de 'abierto' para que la funcionalidad de enfocar con el teclado opere correctamente.
 
@@ -75,7 +72,7 @@ Se debe agregar el atributo `exact` al primer elemento de la lista de navegació
 
 Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.
 
-Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase **color-invertir** ayuda a que en la función vista oscura del menú de accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
+Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase `color-invertir` ayuda a que en la función vista oscura del menú de accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
 
 ```html
 <SisdaiNavegacionPrincipal>

@@ -8,14 +8,6 @@ El pie de página del gobierno de México es uno de los elementos específicos q
 
 Uso:
 
-El pie de página del gobierno de México se coloca debajo del pie de página del Conahcyt.
-
-El pie de página del gobierno de México sirve principalmente para:
-
-- Dar certeza de que el contenido es información oficial del gobierno de México
-- Ofrecer acceso rápido a sitios de interés del gobierno de México
-  Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados por el gobierno.
-
 ```html
 <SisdaiPiePaginaGobMx />
 ```
@@ -49,8 +41,6 @@ Este componente no utiliza slots.
 <section id="ejemplos">
 
 ## Ejemplos
-
-Usando el contenido por defecto.
 
 <!-- <utils-ejemplo-doc ruta="pie-pagina-gob-mx/basico.vue"/> -->
 <EjemploBasico />

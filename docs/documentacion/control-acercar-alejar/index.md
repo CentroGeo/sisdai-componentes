@@ -6,7 +6,7 @@ import EjemploBasico from "../../.vitepress/components/control-acercar-alejar/ba
 
 El Control para acercar y alejar es un elemento que se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web.
 
-Esta funcionalidad se emplea en el Sisdai en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
+Esta funcionalidad se emplea en el [Sisdai](https://sisdai.conahcyt.mx/) en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
 
 Uso:
 

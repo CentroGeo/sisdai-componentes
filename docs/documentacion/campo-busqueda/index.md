@@ -6,6 +6,7 @@ import EjemploCatalogoAnidado from "../../.vitepress/components/campo-busqueda/c
 # Campo de búsqueda
 
 El campo de búsqueda permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web.
+
 Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
 
 Uso:
@@ -36,14 +37,14 @@ Este componente admite las siguientes propiedades.
 ### Propiedades
 
 - `catalogo`: Corresponde a la lista de elementos sobre los que se desea aplicar la búsqueda.
-  - Tipo de dato: `Array`
+  - Tipo de dato: `Array<Object>`
   - Valor predeterminado: `[]`
   - Requerido: sí
-- `propiedadBusqueda`: corresponde al nombre de la propiedad de cada objeto en donde se aplicara la búsqueda.
+- `propiedadBusqueda`: corresponde al nombre de la propiedad de cada objeto en donde se aplicará la búsqueda.
   - Tipo de dato: `String`
   - Valor predeterminado: `'nombre'`
   - Requerido: opcional
-- `catalogoAnidado`: Indica si el catalogo tiene anidación o agrupación.
+- `catalogoAnidado`: Indica si el catálogo tiene anidación o agrupación.
   - Tipo de dato: `Boolean`
   - Valor predeterminado: `false`
   - Requerido: opcional
@@ -58,7 +59,7 @@ Este componente admite las siguientes propiedades.
 
 ### Eventos
 
-- `alFiltrar`: Evento que se dispara al momento de ejecutar la búsqueda. Como parámetro se obtiene la lista de elementos filtrada.
+- **alFiltrar**: Evento que se dispara al momento de ejecutar la búsqueda. Como parámetro se obtiene la lista de elementos filtrada.
 
 </section>
 

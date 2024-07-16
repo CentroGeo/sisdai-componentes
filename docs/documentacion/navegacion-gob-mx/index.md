@@ -20,10 +20,6 @@ Uso:
 
 Este componente no utiliza propiedades.
 
-### Métodos
-
-Este componente utiliza el método de `alternarMenuGob()` para abrir y cerrar la barra de navegación en su versión móvil.
-
 ### Slots
 
 Este componente no utiliza slots.
@@ -38,7 +34,7 @@ Este componente no utiliza slots.
 <EjemploBasico />
 <<< @/.vitepress/components/navegacion-gob-mx/basico.vue
 
-La barra de navegación del Gobierno de México sirve principalmente para:
+La barra de navegación del gobierno de México sirve principalmente para:
 
 - Dar certeza de que el contenido es información oficial del Gobierno de México
 - Ofrecer acceso rápido a sitios de interés del Gobierno de México

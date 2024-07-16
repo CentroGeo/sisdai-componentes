@@ -31,7 +31,7 @@ Uso:
   - Tipo de dato: `Number`
   - Valor predeterminado: `1`
   - Requerido: no
-- `posicion_inicial`: Número entre 0 y 1 que indica la posición inicial en la que aparecen las viñetas. Si es 1, entonces las viñetas tendrán una posición desplazada una altura de pantalla abajo. Si es 0, entonces las viñetas empiezan hasta arriba del contenedor que tiene la narrativa.
+- `posicion_inicial`: Número entre 0 y 1 que indica la posición inicial en la que aparecen las viñetas. Si es 1, entonces las viñetas tendrán una posición desplazada a una altura de pantalla abajo. Si es 0, entonces las viñetas empiezan hasta arriba del contenedor que tiene la narrativa.
   - Tipo de dato: `Number`
   - Valor predeterminado: `1`
   - Requerido: no

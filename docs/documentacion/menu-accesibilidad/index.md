@@ -3,7 +3,7 @@ import EjemploBasico from "../../.vitepress/components/menu-accesibilidad/basico
 import EjemploAgregandoOpciones from "../../.vitepress/components/menu-accesibilidad/agregando-opciones.vue";
 </script>
 
-# MenuAccesibilidad
+# Menu de accesibilidad
 
 El Menú de accesibilidad permite ejecutar a las funciones que agregan reglas de accesibilidad al sitio web. Consulte la [sección de accesibilidad del Sisdai](https://sisdai.conahcyt.mx/accesibilidad/) para más información.
 
@@ -20,7 +20,7 @@ Uso:
 <SisdaiMenuAccesibilidad />
 ```
 
-La función de Vista oscura transita entre el tema claro y el oscuro. Por defecto al entrar a la aplicación la vista muestra la función automática, esto es, dependiendo de los ajustes de tu navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú puedes cambiar entre clara u oscura.
+La función de Vista oscura transita entre el tema claro y el oscuro. De manera predeterminada al entrar a la aplicación la vista muestra la función automática. Esto es, dependiendo de los ajustes del navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú se puede cambiar entre clara u oscura.
 
 También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css).
 
@@ -36,8 +36,8 @@ Al utilizar el Menú de accesibilidad, el perfil de color predeterminado es el d
 
 ### Propiedades
 
-- `agregarOpciones` Lista de opciones que se agregará al Menú de accesibilidad.
-  - Tipo: `Array`
+- `agregarOpciones`: Lista de opciones que se agregará al Menú de accesibilidad.
+  - Tipo: `Array<Object>`
   - Valor predeterminado: `[]`
   - Requerido: no
 
@@ -52,39 +52,32 @@ Cada opción debe ser un objeto con los siguientes atributos:
 }
 ```
 
-- `objetoStore` Objeto store completo del proyecto.
-  - Tipo: `Object`
+- `objetoStore`: Objeto store completo del proyecto.
+  - Tipo de dato: `Object`
   - Valor predeterminado: `{}`
   - Requerido: no
-- `nombreModuloStore` Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
-  - Tipo: `String`
-  - Valor predeterminado: `accesibilidad`
-  - Requerido: no
-- `perfilColor` Seleciona el perfil o paleta de color desde la biblioteca de estilos. Los perfiles disponibles son: `predeterminada`, `gema`, `sisdai`.
-  - Tipo: `String`
+- `perfilColor`: Seleciona el perfil o paleta de color desde la biblioteca de estilos. Los perfiles disponibles son: `predeterminada`, `gema`, `sisdai`.
+  - Tipo de dato: `String`
   - Valor predeterminado: `predeterminada`
   - Requerido: no
 
-### Métodos
-
-- `alternarEstado` Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
-
-### Variables
+#### Variables expuestas
 
 - `clasesSelecciondas` Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable para facilitar la relación de interacción del menú de accesibilidad con la vista.
-  - Tipo: `Array<String>`
-  - Valor inicial: `[]`
-- `tema` Tema o modo de color con el que inicializa la aplicación. Los temas disponibles son: `auto`, `clara`, `oscura`.
-  - Tipo: `String`
-  - Valor inicial: `auto`
+  - Tipo de dato: `Array<String>`
+  - Valor predeterminado: `[]`
+
+### Métodos
+
+- **alternarEstado** Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
 
 ### Eventos
 
 - **@alSeleccionarOpcion**
-  Se ejecuta al dar click en una opción del menú de accesibilidad. Parametros:
+  Se ejecuta al dar click en una opción del menú de accesibilidad. Parámetros:
   - `Object`: Objeto que contiene los atributos de la opción seleccionada al dar click.
 - **@alRestablecer**
-  Se ejecuta cuanso se ha dado click en el botón "Restablecer"..
+  Se ejecuta cuanso se ha dado click en el botón "Restablecer".
 
 ### Slots
 
@@ -95,10 +88,6 @@ Este componente no permite contenido con slots.
 <section id="ejemplos">
 
 ## Ejemplos
-
-#### Opciones por default
-
-Para que se apliquen las reglas de accesibilidad definidas por la biblioteca sisdai-css, es necesario agregar las clases a11y en el contenedor de las vistas. Para proyectos con [Vue](https://vuejs.org/) se sugiere hacerlo en el archivo `src/App.vue` de la siguiente manera:
 
 <!-- <utils-ejemplo-doc ruta="menu-accesibilidad/basico.vue"/> -->
 <EjemploBasico />
@@ -131,7 +120,7 @@ Además de una acciòn extra que restablece los valores de todas las variables:
 
 ### Propiedades de store
 
-- `objetoStore` Objeto store completo del proytecto.
+- `objetoStore` Objeto store completo del proyecto.
   - Tipo: `Object`
   - Valor predeterminado: `{}`
   - Requerido: no

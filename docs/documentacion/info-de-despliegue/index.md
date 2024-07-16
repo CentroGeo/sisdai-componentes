@@ -8,12 +8,12 @@ La Información de despliegue es un componente que sirve para presentar la infor
 
 Uso:
 
-La información de despliegue se coloca al final de cada página del sitio encima del último elemento de esta como por ejemplo el Pie de página del Conahcyt.
+La información de despliegue se coloca al final de cada página del sitio encima del último elemento de esta. Por ejemplo el Pie de página del Conahcyt.
 
 La información de despliegue sirve principalmente para:
 
-- Dar certeza de la versión en la que se está desplegando actualmente el proyecto
-- Brindar información del ambiente ya sea de pruebas, desarrollo o producción
+- Dar certeza de la versión en la que se está desplegando actualmente el proyecto.
+- Brindar información del ambiente ya sea de pruebas, desarrollo o producción.
 
 ```html
 <SisdaiInfoDeDespliegue />
@@ -41,13 +41,13 @@ Es importante mencionar que el componente solo se mostrará cuando se despliegue
   - Tipo: `String`
   - Requerido: sí
 
-Para el proyecto en donde se instale este componente es necesario crear archivos `.env` con las variables de entorno para el ambiente de pruebas, desarrollo y producción según sea el caso. Estos deben contar al menos con la siguiente variable:
+Para el proyecto en donde se instale este componente es necesario crear archivos `.env` con las variables de entorno para el ambiente de pruebas, qa, desarrollo, preproducción y producción según sea el caso. Estos deben contar al menos con la siguiente variable:
 
 ```bash
 NODE_ENV = ambiente
 ```
 
-De esta manera la obtenemos por medio del `process.env.NODE_ENV` y la configuramos en el plugin del webpack en el archivo `vue.config.js`, así como la versión del package y la fecha de despliegue de la siguiente manera:
+<del>De esta manera la obtenemos por medio del `process.env.NODE_ENV` y la configuramos en el plugin del webpack en el archivo `vue.config.js`, así como la versión del package y la fecha de despliegue de la siguiente manera:</del>
 
 ```js
 const webpack = require('webpack')
@@ -80,7 +80,7 @@ module.exports = defineConfig({
 })
 ```
 
-Finalmente estas variables de entorno, se pueden utilizar al momento de asignar las props del componente de manera computada:
+<del>Finalmente estas variables de entorno, se pueden utilizar al momento de asignar las props del componente de manera computada:</del>
 
 ```js
 const versionProyecto = computed(() => {

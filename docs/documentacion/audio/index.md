@@ -28,11 +28,11 @@ Uso:
 ### Métodos
 
 - **metadatosCargados**
-  Esta función se ejecuta al cargar los metadatos. Una vez que ésto ocurre se obtiene la duración del audio y se muestra dicha duración.
+  Esta función se ejecuta al cargar los metadatos. Una vez que esto ocurre se obtiene la duración del audio y se muestra dicha duración.
 - **actualizacionTiempo**
-  Esta función se ejecuta conforme se actualiza el tiempo de la reproducción del audio. Cuando ésto ocurre se muestra actualiza el texto del tiempo transcurrido y los estilos del input[type='range']. También se actualiza la información del audio descargado.
+  Esta función se ejecuta conforme se actualiza el tiempo de la reproducción del audio. Cuando esto ocurre se actualiza el texto del tiempo transcurrido y los estilos del input[type='range']. También se actualiza la información del audio descargado.
 - **adelanta10**
-  Adelanta el el audio 10 segundos.
+  Adelanta el audio 10 segundos.
 - **retrasa10**
   Retrasa el el audio 10 segundos.
 
@@ -52,7 +52,7 @@ Este componente no dispara eventos externos.
 
 ### Ejemplo básico
 
-Únicamente se indica la ruta del archivo
+Únicamente se indica la ruta del archivo.
 
 <!-- <UtilsEjemploDoc ruta="audio/basico.vue"/> -->
 <EjemploBasico />
@@ -60,7 +60,7 @@ Este componente no dispara eventos externos.
 
 ### Ejemplo con slot
 
-Agregando el slot de encabezado
+Agregando el slot de encabezado.
 
 <!-- <utils-ejemplo-doc ruta="audio/con-slot.vue"/> -->
 <EjemploConSlot />

@@ -1,7 +1,5 @@
 <script setup>
-import EjemploDoc from "../../.vitepress/components/ejemplo-doc.vue";
 import EjemploBasico from "../../.vitepress/components/boton-flotante/basico.vue";
-import EjemploDecreto from "../../.vitepress/components/boton-flotante/decreto.vue";
 </script>
 
 # Botón flotante <span class="etiqueta">preliminar</span>
@@ -21,7 +19,7 @@ Uso:
 ### Propiedades
 
 - `enlaces` Lista de enlaces que se mostrarán en el Botón flotante abierto.
-  - Tipo: `Array`
+  - Tipo: `Array<Object>`
   - Valor predeterminado: `[]`
   - Requerido: si
 - `botonFlotanteAbierto` Indica si el Botón flotante estará abierto o no.
@@ -47,11 +45,11 @@ Cada opción debe ser un objeto con los siguientes atributos:
 
 ### Eventos
 
-Este componente no dispara eventos externos
+Este componente no dispara eventos externos.
 
 ### Slots
 
-Este componente no permite contenido con slots
+Este componente no permite contenido con slots.
 
 </section>
 
@@ -59,20 +57,8 @@ Este componente no permite contenido con slots
 
 ## Ejemplos
 
-#### Enlaces con fondo de color
-
-El color de fondo de cada enlace es transparente por defecto, si se desea agregar un color, se puede sobreescribir el estilo agregando una clase en cada elemento de la siguiente manera.
-
 <!-- <EjemploDoc ruta="boton-flotante/decreto.vue" /> -->
 <EjemploBasico />
 <<< @/.vitepress/components/boton-flotante/basico.vue
-
-#### Enlace con documento resaltado
-
-Para este ejemplo se hace uso de la clase `icono-resaltado` la cual ejecuta la animación `animacionResaltada` para resaltar el icono asignado.
-
-<!-- <utils-ejemplo-doc ruta="boton-flotante/decreto.vue"/> -->
-<EjemploDecreto />
-<<< @/.vitepress/components/boton-flotante/decreto.vue
 
 </section>

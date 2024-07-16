@@ -60,8 +60,6 @@ Se debe agregar el atributo `exact` al primer elemento de la lista de navegació
 
 ## Ejemplos
 
-**_Default_**
-
 Así se renderiza el componente sin especificar su slot
 
 <!-- <utils-ejemplo-doc ruta="menu-lateral/default.vue"/> -->

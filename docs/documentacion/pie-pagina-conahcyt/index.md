@@ -8,16 +8,6 @@ El pie de página del Conahcyt es un componente compartido en todos los Ecosiste
 
 Uso:
 
-El pie de página del Conahcyt se coloca al final de cada página del sitio.
-
-El pie de página del Conahcyt sirve principalmente para:
-
-- Dar certeza de que el contenido es información oficial del Conahcyt
-- Ofrecer acceso rápido a sitios de interés del Conahcyt
-- Brindar información de contacto del Conahcyt
-
-Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados.
-
 ```html
 <SisdaiPiePaginaConahcyt />
 ```
@@ -50,8 +40,6 @@ Este componente no utiliza slots.
 <section id="ejemplos">
 
 ## Ejemplos
-
-Usando el contenido por defecto.
 
 <!-- <utils-ejemplo-doc ruta="pie-pagina-conahcyt/basico.vue"/> -->
 <EjemploBasico />
