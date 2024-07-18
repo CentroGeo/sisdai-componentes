@@ -15,7 +15,6 @@
 
 <script>
 const propiedades = {
-  tituloModal: { type: String, default: '' },
   tamanioModal: {
     type: String,
     default: '',
@@ -105,11 +104,9 @@ defineExpose({
   >
     <div class="modal-contenedor">
       <div class="modal-cabecera">
-        <h1
-          id="titulo_modal"
-          class="modal-titulo"
-          v-html="tituloModal"
-        ></h1>
+        <slot name="encabezado">
+          <h1>Título del modal</h1>
+        </slot>
       </div>
 
       <div class="modal-cuerpo">
@@ -134,12 +131,3 @@ defineExpose({
     </div>
   </dialog>
 </template>
-
-<style lang="scss" scoped>
-.modal-cabecera {
-  h1.modal-titulo {
-    font-size: 1.5rem;
-    margin-top: 0;
-  }
-}
-</style>

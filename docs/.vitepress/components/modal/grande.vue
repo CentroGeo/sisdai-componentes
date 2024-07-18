@@ -7,9 +7,12 @@ const sisdaiModal = ref(null)
   <div>
     <SisdaiModal
       ref="sisdaiModal"
-      tituloModal="Título de modal grande"
       tamanioModal="modal-grande"
     >
+      <template #encabezado>
+        <h1 class="m-t-0">Título de modal grande</h1>
+      </template>
+
       <template #cuerpo>
         <div class="flex flex-contenido-equidistante">
           <div class="columna-5-esc"></div>
@@ -22,6 +25,7 @@ const sisdaiModal = ref(null)
         <button
           type="button"
           class="boton-primario"
+          @click="sisdaiModal?.cerrarModal()"
           value="acepta"
         >
           Aceptar
@@ -43,7 +47,7 @@ const sisdaiModal = ref(null)
   .flex {
     row-gap: 24px;
     div {
-      background-color: var(--detalle-fondo);
+      background-color: var(--fondo-neutro);
       height: 600px;
       border-radius: 20px;
       @media (max-width: 768px) {

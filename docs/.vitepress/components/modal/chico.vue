@@ -11,14 +11,17 @@ function descargaAlgo() {
 </script>
 <template>
   <div>
-    <SisdaiModal
-      ref="sisdaiModal"
-      :tituloModal="` <span
-            class='pictograma-archivo-descargar p-l-0 p-t-0'
-            aria-hidden='true'
+    <SisdaiModal ref="sisdaiModal">
+      <template #encabezado>
+        <h1 class="m-t-0 texto-tamanio-6">
+          <span
+            class="pictograma-archivo-descargar p-l-0 p-t-0"
+            aria-hidden="true"
           ></span
-          >Descargar datos con más de una línea`"
-    >
+          >Descargar datos con más de una línea
+        </h1>
+      </template>
+
       <template #cuerpo>
         <div class="grid">
           <div class="columna-16">

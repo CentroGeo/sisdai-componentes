@@ -38,9 +38,6 @@ Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en
   click.
   - Tipo: `String`
   - Requerido: si
-- `tituloModal` Título del modal, se pueden utilizar elementos html mediante la props dinámica. Se requiere para que los lectores de pantalla lo lean.
-  - Tipo: `String`
-  - Valor predeterminado: `''`
 - `tamanioModal` Se puede elegir entre un tamaño grande del modal.
   - Tipo: `String`
   - Requerido: no
@@ -58,6 +55,7 @@ Este componente no dispara eventos externos.
 
 ### Slots
 
+- `'encabezado'`: En este se indica el título del modal.
 - `'cuerpo'`: En este se indica el cuerpo del modal.
 - `'pie'`: En este se indican los elementos de pie del modal como botones.
 
