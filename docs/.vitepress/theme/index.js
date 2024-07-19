@@ -16,7 +16,7 @@ import Layout from './Layout.vue'
 
 export default {
   Layout,
-  async enhanceApp({ app }) {
+  async enhanceApp({ app /*, router, siteData*/ }) {
     // Pinia
     const pinia = createPinia()
     app.use(pinia)
