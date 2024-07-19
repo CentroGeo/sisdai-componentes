@@ -20,8 +20,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "vue": "^3.4.31"
+    "@popperjs/core": "^2.11.8"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.10.3",
@@ -40,7 +39,8 @@
     "vite": "^5.3.3",
     "vitepress": "^1.2.2",
     "vitest": "^1.6.0",
-    "volar-service-vetur": "^0.0.54"
+    "volar-service-vetur": "^0.0.54",
+    "vue": "^3.4.31"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
