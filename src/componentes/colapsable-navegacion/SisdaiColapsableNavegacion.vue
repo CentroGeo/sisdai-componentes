@@ -31,7 +31,7 @@ const _colapsado = ref(colapsado.value)
 watch(colapsado, nv => (_colapsado.value = nv))
 
 function idAleatorio() {
-  return Math.random().toString(36).substring(2)
+  return 'colapsable-navegacion-' + Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = idAleatorio()

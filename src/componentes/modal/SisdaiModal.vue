@@ -29,7 +29,7 @@ import useFocusTrap from '../../composables/useFocusTrap'
 const { trapRef } = useFocusTrap()
 
 const modal = ref()
-const idModal = idAleatorio()
+const id_aleatorio = idAleatorio()
 
 const props = defineProps(propiedades)
 const { tamanioModal } = toRefs(props)
@@ -46,14 +46,14 @@ function idAleatorio() {
 function cerrarModal() {
   document.querySelector('body').classList.remove('overflow-hidden')
 
-  modal.value = document.getElementById(idModal)
+  modal.value = document.getElementById(id_aleatorio)
   modal.value.close()
 }
 /** Abre el modal y agregar la clase overflow-hidden al body */
 function abrirModal() {
   document.querySelector('body').classList.add('overflow-hidden')
 
-  modal.value = document.getElementById(idModal)
+  modal.value = document.getElementById(id_aleatorio)
   modal.value.showModal()
 }
 
@@ -69,7 +69,7 @@ function siPresionaTeclaEscape(event) {
  * @param {Object} event
  */
 function clickFueraDelModal(event) {
-  modal.value = document.getElementById(idModal)
+  modal.value = document.getElementById(id_aleatorio)
   if (event.target === modal.value) {
     cerrarModal()
   }
@@ -88,13 +88,13 @@ onBeforeUnmount(() => {
 defineExpose({
   abrirModal,
   cerrarModal,
-  idModal,
+  id_aleatorio,
 })
 </script>
 
 <template>
   <dialog
-    :id="idModal"
+    :id="id_aleatorio"
     class="modal"
     :class="tamanioModal"
     ref="trapRef"

@@ -47,6 +47,12 @@ const props = defineProps({
   },
 })
 
+function idAleatorio() {
+  return 'campo-busqueda-' + Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
+
 const { catalogo } = toRefs(props)
 const textoBusqueda = ref('')
 const inputBusquedaRef = ref(null)
@@ -104,6 +110,7 @@ function limpiarBusqueda() {
 <template>
   <div class="campo-busqueda">
     <input
+      :id="id_aleatorio"
       type="search"
       class="campo-busqueda-entrada"
       ref="inputBusquedaRef"

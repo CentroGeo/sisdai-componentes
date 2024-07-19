@@ -25,7 +25,7 @@ if (typeof window !== 'undefined') {
 }
 
 function idAleatorio() {
-  return Math.random().toString(36).substring(2)
+  return 'menu-lateral-' + Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = idAleatorio()

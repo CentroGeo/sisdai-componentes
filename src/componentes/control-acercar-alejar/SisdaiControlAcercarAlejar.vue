@@ -33,6 +33,12 @@ const props = defineProps({
   },
 })
 
+function idAleatorio() {
+  return 'control-acercar-alejar-' + Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
+
 const emit = defineEmits(['update:modelValue'])
 
 const inputValue = computed({
@@ -96,6 +102,7 @@ function disminuir() {
     </button>
 
     <input
+      :id="id_aleatorio"
       type="text"
       maxlength="3"
       inputmode="numeric"

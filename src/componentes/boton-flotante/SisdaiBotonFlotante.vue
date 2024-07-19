@@ -63,7 +63,7 @@ function alternarEstado() {
 }
 
 function idAleatorio() {
-  return Math.random().toString(36).substring(2)
+  return 'boton-flotante-' + Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = idAleatorio()
