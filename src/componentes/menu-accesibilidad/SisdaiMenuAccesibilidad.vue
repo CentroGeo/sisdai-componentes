@@ -85,7 +85,7 @@ import opcionesDefault from './opcionesDefault'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, id, objetoStore, perfilColor } = toRefs(props)
+const { agregarOpciones, objetoStore, perfilColor } = toRefs(props)
 
 /** Opciones que se mostrarán en el menú de accesibilidad. */
 const opciones = computed(() => [...opcionesDefault, ...agregarOpciones.value])

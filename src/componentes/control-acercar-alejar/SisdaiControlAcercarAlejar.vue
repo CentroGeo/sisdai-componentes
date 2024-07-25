@@ -52,9 +52,9 @@ const inputValue = computed({
   },
 })
 
-const valor_porcentual = computed(() => {
-  return `${((inputValue.value - props.min) / (props.max - props.min)) * 100}%`
-})
+// const valor_porcentual = computed(() => {
+//   return `${((inputValue.value - props.min) / (props.max - props.min)) * 100}%`
+// })
 
 function aumentar() {
   inputValue.value = inputValue.value + props.step
