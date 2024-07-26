@@ -35,7 +35,7 @@
     "lint-staged": "^15.2.2",
     "pinia": "^2.1.7",
     "prettier": "^3.3.2",
-    "sisdai-css": "git+https://codigo.conahcyt.mx/sisdai/sisdai-css#v1.0.9",
+    "sisdai-css": "git+https://codigo.conahcyt.mx/sisdai/sisdai-css#v1.0.11",
     "vite": "^5.3.3",
     "vitepress": "^1.2.2",
     "vitest": "^1.6.0",

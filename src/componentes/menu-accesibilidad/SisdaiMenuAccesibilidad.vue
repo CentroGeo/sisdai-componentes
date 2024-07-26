@@ -308,7 +308,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
 
 <template>
   <div
-    class="menu-flotante menu-flotante-derecho"
+    class="menu-flotante menu-flotante-derecho menu-accesibilidad"
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
     <button
