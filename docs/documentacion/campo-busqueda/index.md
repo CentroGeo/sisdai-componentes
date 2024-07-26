@@ -5,11 +5,13 @@ import EjemploCatalogoAnidado from "../../.vitepress/components/campo-busqueda/c
 
 # Campo de búsqueda
 
-El campo de búsqueda permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web.
+El componente `SisdaiCampoBusqueda` permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web. Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
 
-Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
+Uso
 
-Uso:
+Para utilizar el componente `SisdaiCampoBusqueda`, se debe proporcionar una lista de elementos a través de la propiedad `catalogo`. Además, se puede manejar el resultado de la búsqueda mediante el evento `alFiltrar`, que devuelve una lista filtrada con los resultados de la búsqueda.
+
+A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiCampoBusqueda
@@ -19,8 +21,11 @@ Uso:
    listaElementos2 = listaFiltrada
   }"
 />
-...
-<!--mostrando los resultados de busqueda-->
+```
+
+Mostrando los resultados de búsqueda:
+
+```html
 <ul>
   <li v-for="elemento in listaElementos2">{{ elemento.nombre }}</li>
 </ul>
@@ -32,11 +37,11 @@ Donde `listaElementos` es la lista de elementos sobre los que se realiza la bús
 
 ## API
 
-Este componente admite las siguientes propiedades.
+Este componente admite las siguientes propiedades y eventos:
 
 ### Propiedades
 
-- `catalogo`: Corresponde a la lista de elementos sobre los que se desea aplicar la búsqueda.
+- `catalogo`: corresponde a la lista de elementos sobre los que se desea aplicar la búsqueda.
   - Tipo de dato: `Array<Object>`
   - Valor predeterminado: `[]`
   - Requerido: sí
@@ -44,32 +49,32 @@ Este componente admite las siguientes propiedades.
   - Tipo de dato: `String`
   - Valor predeterminado: `'nombre'`
   - Requerido: opcional
-- `catalogoAnidado`: Indica si el catálogo tiene anidación o agrupación.
+- `catalogoAnidado`: indica si el catálogo tiene anidación o agrupación.
   - Tipo de dato: `Boolean`
   - Valor predeterminado: `false`
   - Requerido: opcional
-- `catalogoAnidadoPropiedadElementos`: El nombre de la propiedad que contiene la lista de elementos de cada grupo.
+- `catalogoAnidadoPropiedadElementos`: el nombre de la propiedad que contiene la lista de elementos de cada grupo.
   - Tipo de dato: `String`
   - Valor predeterminado: `'elementos'`
   - Requerido: opcional
-- `etiqueta`: Corresponde a la etiqueta de búsqueda, comúnmente conocida como _placeholder_.
+- `etiqueta`: corresponde a la etiqueta de búsqueda, comúnmente conocida como _placeholder_.
   - Tipo de dato: `String`
   - Valor predeterminado: `'Buscar...'`
   - Requerido: opcional
 
+### Métodos
+
+Este componente no cuenta con métodos públicos.
+
 ### Eventos
 
-- **alFiltrar**: Evento que se dispara al momento de ejecutar la búsqueda. Como parámetro se obtiene la lista de elementos filtrada.
+- **alFiltrar**: evento que se dispara al momento de ejecutar la búsqueda. Como parámetro se obtiene la lista de elementos filtrada.
 
 </section>
 
 <section id="ejemplos">
 
 ## Ejemplos de uso
-
-</section>
-
-A continuación se presentan algunos ejemplos de uso del campo de búsqueda:
 
 ### Ejemplo básico
 
@@ -84,3 +89,5 @@ El siguiente ejemplo muestra cómo utilizar el campo de búsqueda de forma bási
 <!-- <utils-ejemplo-doc ruta="campo-busqueda/catalogo-anidado.vue"/> -->
 <EjemploCatalogoAnidado />
 <<< @/.vitepress/components/campo-busqueda/catalogo-anidado.vue
+
+</section>

@@ -5,9 +5,11 @@ import EjemploConSlot from "../../.vitepress/components/audio/con-slot.vue";
 
 # Audio
 
-Este componente permite reproducir audios en el navegador. Incluye un slot llamado "encabezado" para agregar información sobre el archivo, así como diversos controles de reproducción.
+El componente `SisdaiAudio` permite reproducir audios en el navegador. El componente incluye diversos controles de reproducción.
 
-Uso:
+Uso
+
+El componente `SisdaiAudio` permite reproducir un archivo de audio especificado mediante la propiedad archivo. Puedes incluir información adicional sobre el archivo utilizando el slot `encabezado`. A continuación, se muestra un ejemplo de uso con etiqueta simple:
 
 ```html
 <SisdaiAudio archivo="" />
@@ -19,21 +21,22 @@ Uso:
 
 ### Propiedades
 
-- **archivo**
-  Esta propiedad indica la ruta del archivo del audio. Es importante que si éste se consume de una url remota, el archivo cuente con los permisos de reproducción necesarios.
+Este componente admite las siguientes propiedades, métodos y slots:
+
+- `archivo`: esta propiedad indica la ruta del archivo del audio. Es importante que si este se consume de una URL remota, el archivo cuente con los permisos de reproducción necesarios.
   - Tipo: `String`
   - Valor predeterminado: `''`
-  - Requerido: si
+  - Requerido: sí
 
 ### Métodos
 
-- **metadatosCargados**
-  Esta función se ejecuta al cargar los metadatos. Una vez que esto ocurre se obtiene la duración del audio y se muestra dicha duración.
-- **actualizacionTiempo**
-  Esta función se ejecuta conforme se actualiza el tiempo de la reproducción del audio. Cuando esto ocurre se actualiza el texto del tiempo transcurrido y los estilos del input[type='range']. También se actualiza la información del audio descargado.
-- **adelanta10**
+- **metadatosCargados:**
+  Esta función se ejecuta al cargar los metadatos. Una vez que esto ocurre, se obtiene la duración del audio y se muestra dicha duración.
+- **actualizacionTiempo:**
+  Esta función se ejecuta conforme se actualiza el tiempo de la reproducción del audio. Actualiza el texto del tiempo transcurrido y los estilos del input[type='range']. También se actualiza la información del audio descargado.
+- **adelanta10:**
   Adelanta el audio 10 segundos.
-- **retrasa10**
+- **retrasa10:**
   Retrasa el el audio 10 segundos.
 
 ### Eventos
@@ -42,17 +45,17 @@ Este componente no dispara eventos externos.
 
 ### Slots
 
-- `'encabezado'`: Este es el único slot que contiene el componente. Permite agregar contenido arriba de los controles de audio y se suele usar para proporcionar información sobre el archivo.
+- `'encabezado'`: Este es el único slot que contiene el componente. Permite agregar contenido encima de los controles de audio y se suele usar para proporcionar información sobre el archivo.
 
 </section>
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
 
 ### Ejemplo básico
 
-Únicamente se indica la ruta del archivo.
+En este ejemplo, únicamente se indica la ruta del archivo:
 
 <!-- <UtilsEjemploDoc ruta="audio/basico.vue"/> -->
 <EjemploBasico />
@@ -60,7 +63,7 @@ Este componente no dispara eventos externos.
 
 ### Ejemplo con slot
 
-Agregando el slot de encabezado.
+En este ejemplo se agrega el slot de `encabezado` para proporcionar información adicional sobre el archivo de audio.
 
 <!-- <utils-ejemplo-doc ruta="audio/con-slot.vue"/> -->
 <EjemploConSlot />

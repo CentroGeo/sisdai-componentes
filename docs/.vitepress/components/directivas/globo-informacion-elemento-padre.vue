@@ -26,7 +26,7 @@ const posicionesDisponibles = [
       >
         <div>
           Un tooltip que se posiciona a partir del elemento #ElementoPadre, pero
-          que aparece/desaparece solo cuando el cursor esta en el boton
+          que aparece/desaparece solo cuando el cursor esta en el botón
         </div>
         <button
           v-globo-informacion:[posicion]="{
@@ -34,7 +34,7 @@ const posicionesDisponibles = [
             asignadoAElemento: '#elementoPadre',
           }"
         >
-          Pasa el cursor aqui
+          Pasa el cursor aquí
         </button>
         <div>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt

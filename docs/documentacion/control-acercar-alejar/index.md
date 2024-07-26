@@ -4,11 +4,11 @@ import EjemploBasico from "../../.vitepress/components/control-acercar-alejar/ba
 
 # Control para acercar y alejar
 
-El Control para acercar y alejar es un elemento que se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web.
+El componente `SisdaiControlAcercarAlejar` es un elemento que se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web. Esta funcionalidad se emplea en el [Sisdai](https://sisdai.conahcyt.mx/) en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
 
-Esta funcionalidad se emplea en el [Sisdai](https://sisdai.conahcyt.mx/) en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
+Uso
 
-Uso:
+Para utilizar el componente `SisdaiControlAcercarAlejar`, incorpora el componente en tu plantilla y enlaza la propiedad `v-model` a una variable que controle el nivel de zoom. A continuación, se muestra una ejemplo de etiqueta simple:
 
 ```html
 <SisdaiControlAcercarAlejar v-model="valor" />
@@ -18,25 +18,43 @@ Uso:
 
 ## API
 
+Este componente admite las siguientes propiedades:
+
 ### Propiedades
 
-- `v-model` El valor numerico del control.
+- `v-model`: el valor numérico del control.
   - Tipo de dato: `Number`
-  - Requerido: si
-- `min` El valor minimo del componente.
+  - Requerido: sí
+- `min`: el valor mínimo del componente.
   - Tipo de dato: `Number`
   - Valor predeterminado: `0`
   - Requerido: no
-- `max` El valor maximo del componente.
+- `max`: el valor máximo del componente.
   - Tipo de dato: `Number`
   - Valor predeterminado: `100`
   - Requerido: no
+
+### Métodos
+
+Este componente no cuenta con métodos públicos.
+
+### Eventos
+
+Este componente no dispara eventos externos.
+
+### Slots
+
+Este componente no utiliza slots.
 
 </section>
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
+
+### Ejemplo básico
+
+A continuación, se presenta un ejemplo de uso del control para acercar y alejar:
 
 <!-- <utils-ejemplo-doc ruta="control-acercar-alejar/basico.vue"/> -->
 <EjemploBasico />

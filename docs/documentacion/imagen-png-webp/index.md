@@ -4,9 +4,11 @@ import EjemploBasico from "../../.vitepress/components/imagen-png-webp/basico.vu
 
 # ImagenPngWebp
 
-Este componente permite indicar el nombre de dos archivos existentes como insumos del proyecto en formato png y webp.
+El componente `SisdaiImagenPngWebp` permite indicar el nombre de dos archivos existentes como insumos del proyecto en formato PNG y WebP.
 
-Uso:
+Uso
+
+Para utilizar el componente `SisdaiImagenPngWebp`, incorpora en tu plantilla y proporciona los atributos `dominio`, `ruta`, `textoAlternativo`, `leyenda` y `ancho_maximo` para definir los detalles de la imagen. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
 <SisdaiImagenPngWebp
@@ -22,25 +24,27 @@ Uso:
 
 ## API
 
+Este componente admite las siguientes propiedades:
+
 ### Propiedades
 
-- `dominio`: Propiedad que indica el dominio en el cual se encuentran las imágenes. Este se concatenará con la ruta del archivo, descrita a continuación.
+- `dominio`: propiedad que indica el dominio en el cual se encuentran las imágenes. Este se concatena con la ruta del archivo, descrita a continuación.
   - Tipo: `String`
   - Valor predeterminado: `''`
-  - Requerido: si
-- `ruta`: Ruta del archivo, incluyendo el nombre de este, que se concatena con el dominio.
+  - Requerido: sí
+- `ruta`: ruta del archivo, incluyendo el nombre de este, que se concatena con el dominio.
   - Tipo: `String`
   - Valor predeterminado: `''`
-  - Requerido: si
-- `textoAlternativo`: Este texto se puede especificar como atributo `alt` para describir la ímagen. Es una buena práctica de accesibilidad y de desarrollo indicarlo cuando la imagen lo requiere.
-  - Tipo: `String`
-  - Valor predeterminado: `''`
-  - Requerido: no
-- `leyenda`: Este texto descriptivo se inserta como `figcaption` de la imagen. Sirve para agregar un pie de imagen.
+  - Requerido: sí
+- `textoAlternativo`: este texto se puede especificar como atributo `alt` para describir la imagen. Es una buena práctica de accesibilidad y de desarrollo indicarlo cuando la imagen lo requiere.
   - Tipo: `String`
   - Valor predeterminado: `''`
   - Requerido: no
-- `ancho_maximo`: Indica el ancho máximo que puede ocupar la imagen. Es de ayuda cuando la imagen no debe superar una cantidad de pixeles de ancho.
+- `leyenda`: este texto descriptivo se inserta como `figcaption` de la imagen. Sirve para agregar un pie de imagen.
+  - Tipo: `String`
+  - Valor predeterminado: `''`
+  - Requerido: no
+- `ancho_maximo`: indica el ancho máximo que puede ocupar la imagen. Es de ayuda cuando la imagen no debe superar una cantidad de píxeles de ancho.
   - Tipo: `String`
   - Valor predeterminado: `'100%'`
   - Requerido: no
@@ -61,7 +65,7 @@ Este componente no permite contenido con slots.
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
 
 #### Imagen con leyenda y ancho máximo
 

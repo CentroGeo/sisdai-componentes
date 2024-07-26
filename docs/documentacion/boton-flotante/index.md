@@ -4,9 +4,11 @@ import EjemploBasico from "../../.vitepress/components/boton-flotante/basico.vue
 
 # Botón flotante <span class="etiqueta">preliminar</span>
 
-Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en el esquina inferior izquierda.
+El componente `SisdaiBotonFlotante` permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento fijo en la esquina inferior izquierda.
 
-Uso:
+Uso
+
+El componente `SisdaiBotonFlotante` se utiliza para agregar enlaces externos que estarán disponibles en todas las vistas del sitio web. Puedes especificar los enlaces mediante la propiedad enlaces, que debe ser un array de objetos con las propiedades `clasesCss`, `contenido` y `enlace`. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiBotonFlotante :enlaces="[...]" />
@@ -16,18 +18,20 @@ Uso:
 
 ## API
 
+Este componente admite las siguientes propiedades y métodos:
+
 ### Propiedades
 
-- `enlaces` Lista de enlaces que se mostrarán en el Botón flotante abierto.
+- `enlaces`: indica la lista de enlaces que serán mostrados en el botón flotante. Cada enlace debe ser un objeto con los atributos especificados a continuación.
   - Tipo: `Array<Object>`
   - Valor predeterminado: `[]`
-  - Requerido: si
-- `botonFlotanteAbierto` Indica si el Botón flotante estará abierto o no.
+  - Requerido: sí
+- `botonFlotanteAbierto`: indica si el Botón flotante estará abierto o cerrado inicialmente.
   - Tipo: `Boolean`
   - Valor predeterminado: `false`
   - Requerido: no
 
-Cada opción debe ser un objeto con los siguientes atributos:
+Cada opción del array `enlaces` debe tener los siguientes atributos:
 
 ```js
 {
@@ -40,8 +44,8 @@ Cada opción debe ser un objeto con los siguientes atributos:
 
 ### Métodos
 
-- **alternarEstado**
-  Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Botón flotante.
+- **alternarEstado:**
+  cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del botón flotante.
 
 ### Eventos
 
@@ -55,7 +59,11 @@ Este componente no permite contenido con slots.
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
+
+### Ejemplo básico
+
+En este ejemplo, se muestran dos enlaces en el botón flotante:
 
 <!-- <EjemploDoc ruta="boton-flotante/decreto.vue" /> -->
 <EjemploBasico />

@@ -4,9 +4,11 @@ import EjemploBasico from "../../.vitepress/components/pie-pagina-gob-mx/basico.
 
 # Pie de página del gobierno de México
 
-El pie de página del gobierno de México es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal al momento de realizar la maquetación de páginas web para información, trámites y servicios dentro o fuera de la página de gobierno.
+El componente `SisdaiPiePaginaGobMx` es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal al momento de realizar la maquetación de páginas web para información, trámites y servicios dentro o fuera de la página de gobierno.
 
-Uso:
+Uso
+
+Para utilizar el componente `SisdaiPiePaginaGobMx`, incorpora en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiPiePaginaGobMx />
@@ -40,7 +42,9 @@ Este componente no utiliza slots.
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
+
+### Ejemplo básico
 
 <!-- <utils-ejemplo-doc ruta="pie-pagina-gob-mx/basico.vue"/> -->
 <EjemploBasico />

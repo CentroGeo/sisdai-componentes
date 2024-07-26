@@ -5,9 +5,11 @@ import EjemploContenidoPersonalizado from "../../.vitepress/components/navegacio
 
 # Navegación principal
 
-Se trata del componente de barra de navegación principal del sitio, generalmente contiene la lista de enlaces a las secciones del sitio, identidad, etc.
+El componente `SisdaiNavegacionPrincipal` generalmente contiene la lista de enlaces a las secciones del sitio, identidad y otros enlaces relevantes.
 
-Uso:
+Uso
+
+Para utilizar el componente `SisdaiNavegacionPrincipal`, incorpora en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiNavegacionPrincipal> ...contenido </SisdaiNavegacionPrincipal>
@@ -19,11 +21,11 @@ Uso:
 
 ### Propiedades
 
-- `navInformacion` Para la versión mobile es el contenido que se muestra debajo de la barra de navegación, se usa generalmente para mostrar el nombre de la sección actual del sitio.
+- `navInformacion`: para la versión móvil, es el contenido que se muestra debajo de la barra de navegación. Se usa generalmente para mostrar el nombre de la sección actual del sitio.
   - Tipo: `String`
   - Valor predeterminado: `''`
   - Requerido: no
-- `ref` Referencia del componente que sirve como instancia para acceder a las variables o métodos expuestos de abrir o cerrar menús.
+- `ref`: referencia del componente que sirve como instancia para acceder a las variables o métodos expuestos de abrir o cerrar menús.
   - Tipo: `String`
   - Requerido: sí
 
@@ -57,22 +59,18 @@ Slot para el contenido de navegación, son los links a las secciones disponibles
 </SisdaiNavegacionPrincipal>
 ```
 
-De acuerdo a la semántica de html y las reglas de css definidas en Sisdai Css, los links deberán estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul).
+De acuerdo a la semántica de HTML y las reglas de CSS definidas en Sisdai Css, los enlaces deberán estar contenidos en un [elemento lista desordenada](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul).En caso de tener un router, el elemento `<a>` podría ser reemplazado por el componente `<RouterLink>`, conservando las clases de estilo necesarias.
 
-En caso de tener un [router](https://router.vuejs.org/), el elemento `<a>` podria ser reemplazado por el componente `<RouterLink>` conservando las clases de estilo necesarias.
+Cuando se agregue contenido personalizado, **es importante incluir** la clase CSS `nav-menu` al elemento `<ul>` y `nav-submenu` al otro elemento `<ul>` que maneja la subnavegación. Esto asegura que la funcionalidad de enfocar con el teclado opere correctamente.
 
-Cuando se agregue contenido personalizado **es importante incluir** la clase css `nav-menu` al elemento `<ul>` y `nav-submenu` al otro elemento `<ul>` que maneja la subnavegación de 'abierto' para que la funcionalidad de enfocar con el teclado opere correctamente.
-
-Se debe agregar el atributo `exact` al primer elemento de la lista de navegación para que el estilo de la sección actual en el menú se active exactamente cuando la ruta esté selecionada.
+Se debe agregar el atributo `exact` al primer elemento de la lista de navegación para que el estilo de la sección actual en el menú se active exactamente cuando la ruta esté seleccionada.
 
 ##### identidad
 
 - Requerido: no
 - Contenido predeterminado: Logotipo de Conahcyt
 
-Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.
-
-Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase `color-invertir` ayuda a que en la función vista oscura del menú de accesibilidad los colores del logo o imagen en formato svg se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
+Slot para el contenido de identidad del sitio, donde se despliegan los logos del mismo.Se recomienda usar las clases CSS de Sisdai Css. Por ejemplo, la clase `color-invertir` ayuda a que en la función vista oscura del menú de accesibilidad, los colores del logo o imagen en formato SVG se inviertan y contrasten en blanco con el fondo de la barra de navegación principal.
 
 ```html
 <SisdaiNavegacionPrincipal>
@@ -100,7 +98,7 @@ Se recomienda usar las clases css de Sisdai Css. Por ejemplo, la clase `color-in
 - Requerido: no
 - Contenido predeterminado: Vacío
 
-Slot para el contenido complementario del sitio, donde se colocan enlaces externos por ejemplo.
+Slot para contenido adicional del sitio, ideal para incluir enlaces externos u otros recursos complementarios.
 
 ```html
 <SisdaiNavegacionPrincipal>
@@ -121,9 +119,11 @@ Slot para el contenido complementario del sitio, donde se colocan enlaces extern
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
 
-Usando el contenido predeterminado.
+### Ejemplo básico
+
+Usando el contenido predeterminado:
 
 <!-- <utils-ejemplo-doc ruta="navegacion-principal/basico.vue"/> -->
 <EjemploBasico />
@@ -135,8 +135,10 @@ Agregando contenido personalizado.
 <EjemploContenidoPersonalizado />
 <<< @/.vitepress/components/navegacion-principal/contenido-personalizado.vue
 
-Para que la subnavegación en la versión móvil se abra y cierre, se deberá agregar al elemento de lista `ul` con el selector `nav-submenu` la clase dinámica css `abierto` con la condición de que la variable `submenuEstaAbierta`.
+Subnavegación en versión móvil
 
-Dicha alternancia se puede lograr mediante un evento de clic en los elementos `button` con los selectores `nav-boton-submenu` y `nav-boton-regresar` para llamar a la función `alternarSubmenu` y `regresarMenu` de la referencia o instancias expuestas del componente.
+Para que la subnavegación en la versión móvil se abra y cierre, se deberá agregar al elemento de lista `ul` con el selector `nav-submenu` la clase dinámica CSS `abierto`, basada en la condición de que la variable `submenuEstaAbierta` esté activa.
+
+Dicha alternancia se puede lograr mediante un evento de clic en los elementos `button` con los selectores `nav-boton-submenu` y `nav-boton-regresa`r para llamar a la función `alternarSubmenu` y `regresarMenu` de la referencia o instancias expuestas del componente.
 
 </section>

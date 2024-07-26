@@ -4,9 +4,11 @@ import EjemploBasico from "../../.vitepress/components/pie-pagina-conahcyt/basic
 
 # Pie de página del Conahcyt
 
-El pie de página del Conahcyt es un componente compartido en todos los Ecosistemas Nacionales Informáticos. El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conahcyt y enlaces de interés.
+El componente `SisdaiPiePaginaConahcyt` es compartido en todos los Ecosistemas Nacionales Informáticos (ENI). El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conahcyt y enlaces de interés.
 
-Uso:
+Uso
+
+Para utilizar el componente `SisdaiPiePaginaConahcyt`, incorpora en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiPiePaginaConahcyt />
@@ -39,7 +41,9 @@ Este componente no utiliza slots.
 </section>
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
+
+### Ejemplo básico
 
 <!-- <utils-ejemplo-doc ruta="pie-pagina-conahcyt/basico.vue"/> -->
 <EjemploBasico />

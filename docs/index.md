@@ -3,43 +3,46 @@ home: true
 title: Documentación
 ---
 
-# Documentación
+# Sisdai Componentes
 
-El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación [Sisdai](https://sisdai.conahcyt.mx/).
+El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación ([Sisdai](https://sisdai.conahcyt.mx/)). Esta biblioteca tiene como objetivo simplificar y acelerar el desarrollo de aplicaciones Vue, proporcionando componentes predefinidos que cumplen con los estándares de accesibilidad y diseño establecidos por Sisdai.
 
-Para el uso se recomienda utilizar Vue **3.4.30** y el soporte para [Composition Api](https://vuejs.org/api/composition-api-setup.html).
+**Requisitos para uso**
+
+Se recomienda utilizar Vue **3.4** y asegurarse de contar con el soporte para [Composition Api](https://vuejs.org/api/composition-api-setup.html).
 
 <section id="instalacion">
 
-## Instalación
+## Instalación:
 
-En la carpeta principal de tu proyecto Vue, instala la biblioteca en las dependencias de tu proyecto con el paquete de instalación npm de la siguiente manera:
+Para instalar la biblioteca en el proyecto Vue, sigue estos pasos:
+
+1. En la carpeta principal de tu proyecto Vue, abre una terminal.
+2. Instala la biblioteca en las dependencias de tu proyecto con el siguiente comando npm:
 
 ```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
 ```
 
-Dependiendo de la versión de la biblioteca a instalar, la instrucción anterior puede cambiar a:
+Dependiendo de la versión de la biblioteca que se desee instalar, el comando puede variar. Por ejemplo, para instalar una versión específica, usa el siguiente comando:
 
 ```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
 ```
 
-en donde N.N.N indica el número de versión, por ejemplo v1.0.0
+en donde N.N.N representa el número de versión, por ejemplo v1.0.0
 
-**Instalacion de estilos**
+**Instalación de estilos**
 
-Puesto que el estilo de los componentes está ligado a las reglas de [Sisdai](https://sisdai.conahcyt.mx/). Lo siguiente es dar de alta los estilos de [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css) en el archivo de inicialización del proyecto.
+Debido a que el estilo de los componentes está ligado a las reglas de [Sisdai](https://sisdai.conahcyt.mx/) es necesario incluir los estilos de [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css) en el archivo de inicialización de tu proyecto.
 
-Si su proyecto tiene configurado el preprocesador `sass` o `scss`
+Si tu proyecto tiene configurado el preprocesador `sass` o `scss`, generalmente el archivo es ‘src/main.js’. Añade la siguiente línea para importar los estilos:
 
 ```js
-//generalmente es el archivo src/main.js
-
 import 'sisdai-css/src/sisdai.scss'
 ```
 
-Adicionalmente deberán agregarse las tipografías de Montserrat y Atkinson Hyperlegible de Google fonts en el encabezado `<head></head>` del documento html base de su proyecto:
+Adicionalmente, debes agregar las tipografías de Montserrat y Atkinson Hyperlegible de Google Fonts en el encabezado `<head></head>` del documento HTML base de tu proyecto:
 
 ```html
 <link
@@ -59,17 +62,15 @@ Adicionalmente deberán agregarse las tipografías de Montserrat y Atkinson Hype
 
 **Uso de los componentes**
 
-Una vez instalada la biblioteca y los estilos hay varias maneras de empezar a usar los componentes en su proyecto:
+Una vez instalada la biblioteca y los estilos, hay varias maneras de empezar a usar los componentes en tu proyecto:
 
-**Opción 1**
+**Opción 1: Registro global de componentes**
 
-En el archivo de inicialización del proyecto de Vue se podrá dar de alta de manera global el componente que desees utilizar.
+En el archivo de inicialización del proyecto de Vue, puedes registrar globalmente los componentes que desees utilizar. Esta es la opción recomendada, ya que asegura que solo se registren los componentes que estás usando.
 
-Esta es la opción recomendada, así se asegura que el proyecto solo esté dando de alta lo que esté ocupando.
+Generalmente, el archivo es ‘src/main.js’:
 
 ```js
-//generalmente es el arhivo src/main.js
-
 import { createApp } from 'vue'
 import App from './App.vue'
 const app = createApp(App)
@@ -81,9 +82,11 @@ app.use(SisdaiNavegacionPrincipal)
 app.mount('#app')
 ```
 
-**Opción 2**
+**Opción 2: Registro local de componentes**
 
-En el componente o vista `.vue` en donde desees ocupar el componente, podrás darlos de alta de manera local en [Composition API](https://vuejs.org/api/composition-api-setup.html).:
+En el componente o vista `.vue` donde desees usar el componente, puedes registrarlo localmente utilizando [Composition API](https://vuejs.org/api/composition-api-setup.html) o [Options API](https://vuejs.org/api/options-state.html).
+
+Composition API:
 
 ```html
 <script setup>
@@ -95,7 +98,7 @@ import SisdaiNavegacionGobMx from 'sisdai-componentes/src/componentes/navegacion
 </template>
 ```
 
-ó en [Options API](https://vuejs.org/api/options-state.html):
+Options API:
 
 ```html
 <template>
@@ -113,18 +116,22 @@ export default {
 <script>
 ```
 
-**Opción 3**
+**Opción 3: Registro global de todos los componentes**
 
-También es posible dar de alta de manera global todos los componentes y directivas de la biblioteca.
+Es posible dar de alta de manera global todos los componentes y directivas de la biblioteca. Esta opción es la más limpia en el código, pero solo es recomendable si se usarán todos los componentes y directivas de la biblioteca en tu proyecto.
+
+Generalmente, el archivo es ‘src/main.js’:
 
 ```js
-//generalmente es el arhivo src/main.js
+import { createApp } from 'vue'
+import App from './App.vue'
+const app = createApp(App)
 
 import SisdaiComponentes from 'sisdai-componentes'
 
 Vue.use(SisdaiComponentes)
-```
 
-Aunque esta forma es la más limpia en el código (porque se ahorra dar de alta cada componente), solo es recomendable si se tiene claro que se están usando todos los componentes y directivas de la biblioteca en su proyecto.
+app.mount('#app')
+```
 
 </section>
