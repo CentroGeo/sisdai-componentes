@@ -77,8 +77,9 @@ function disminuir() {
     >
       <span
         class="pictograma-restar"
-        aria-label="Alejar"
+        aria-hidden="true"
       ></span>
+      <span class="a11y-solo-lectura"> Alejar. </span>
     </button>
 
     <input
@@ -97,8 +98,9 @@ function disminuir() {
     >
       <span
         class="pictograma-agregar"
-        aria-label="Acercar"
+        aria-hidden="true"
       ></span>
+      <span class="a11y-solo-lectura"> Acercar. </span>
     </button>
 
     <input
