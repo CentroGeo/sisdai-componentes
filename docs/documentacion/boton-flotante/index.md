@@ -16,6 +16,10 @@ El componente `SisdaiBotonFlotante` se utiliza para agregar enlaces externos que
 <SisdaiBotonFlotante :enlaces="[...]" />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiBotonFlotante` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

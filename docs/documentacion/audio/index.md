@@ -17,6 +17,10 @@ El componente `SisdaiAudio` permite reproducir un archivo de audio especificado 
 <SisdaiAudio archivo="" />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiAudio` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

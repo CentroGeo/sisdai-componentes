@@ -16,6 +16,10 @@ Para utilizar el componente `SisdaiNavegacionGobMx`, incorpora en tu plantilla. 
 <SisdaiNavegacionGobMx />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiNavegacionGobMx` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">
@@ -57,9 +61,5 @@ La barra de navegación del gobierno de México sirve principalmente para:
 - Lineamientos institucionales
 
 Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados por el gobierno.La barra de navegación de gobierno aparece siempre en la primera vista de Ecosistemas Nacionales Informáticos (ENI), capítulo y subcapítulo, una vez que se hace desplazamiento hacia abajo (scroll-down) desaparece.
-
-**Vista simplificada**
-
-En la vista simplificada la barra de navegación del gobierno de México no se modifica en diseño ni en comportamiento.
 
 </section>

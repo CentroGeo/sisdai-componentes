@@ -16,11 +16,11 @@ Para utilizar el componente `SisdaiPiePaginaConahcyt`, incorpora en tu plantilla
 <SisdaiPiePaginaConahcyt />
 ```
 
-</section>
-
 Vista simplificada
 
-En la vista simplificada el pie de página del Conahcyt no se modifica en diseño ni en comportamiento.
+En la vista simplificada el componente `SisdaiPiePaginaConahcyt` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 

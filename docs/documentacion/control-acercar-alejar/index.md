@@ -16,6 +16,10 @@ Para utilizar el componente `SisdaiControlAcercarAlejar`, incorpora el component
 <SisdaiControlAcercarAlejar v-model="valor" />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiControlAcercarAlejar` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

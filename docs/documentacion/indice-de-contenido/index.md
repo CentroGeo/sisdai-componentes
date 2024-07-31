@@ -17,6 +17,10 @@ Para utilizar el componente `SisdaiIndiceDeContenido`, incorpora el componente e
 <SisdaiIndiceDeContenido> ...contenido </SisdaiIndiceDeContenido>
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiIndiceDeContenido` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

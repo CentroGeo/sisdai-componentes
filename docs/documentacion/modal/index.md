@@ -32,6 +32,10 @@ Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en
 }
 ```
 
+Vista simplificada
+
+En la vista simplificada, el componente `SisdaiModal` funciona de la misma forma como lo hacen en la vista predeterminada. Solo el modal para visualizar imágenes a detalle no se utiliza, ya que en la vista simplificada no se muestran imágenes.
+
 </section>
 
 <section id="api">
@@ -100,9 +104,5 @@ Para salir del modal, la persona usuaria puede:
 - Dar clic sobre el botón de salir (ícono de tache) ubicado en la esquina superior derecha de los modales.
 - Presionar la tecla ESC.
 - Dar clic fuera del modal.
-
-## Vista simplificada
-
-En la vista simplificada, los modales funcionan de la misma forma como lo hacen en la vista predeterminada. Solo el modal para visualizar imágenes a detalle no se utiliza, ya que en la vista simplificada no se muestran imágenes.
 
 </section>

@@ -35,6 +35,10 @@ Mostrando los resultados de búsqueda:
 
 Donde `listaElementos` es la lista de elementos sobre los que se realiza la búsqueda y `listaElementos2` es la variable que recibe el resultado de la búsqueda.
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiCampoBusqueda` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

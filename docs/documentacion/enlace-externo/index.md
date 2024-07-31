@@ -19,6 +19,10 @@ Para utilizar el componente `SisdaiEnlaceExterno`, incorpora el componente en tu
 />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiEnlaceExterno` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

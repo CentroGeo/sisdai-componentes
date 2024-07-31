@@ -16,6 +16,10 @@ Para utilizar el componente `SisdaiNarrativa`, incorporalo en tu plantilla. A co
 <SisdaiNarrativa> ...contenido </SisdaiNarrativa>
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiNarrativa` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

@@ -16,10 +16,14 @@ El componente `SisdaiMenuLateral` consiste en un elemento `nav.menu-lateral` que
 <SisdaiMenuLateral />
 ```
 
-</section>
-
 <!-- <menu-lateral-basico/> -->
 <EjemploBasico />
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiMenuLateral` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 

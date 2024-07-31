@@ -18,7 +18,7 @@ Para utilizar el componente `SisdaiPiePaginaGobMx`, incorpora en tu plantilla. A
 
 Vista simplificada
 
-En la vista simplificada el pie de página del gobierno de México no se modifica en diseño ni en comportamiento.
+En la vista simplificada el componente `SisdaiPiePaginaGobMx` no se modifica en diseño ni en comportamiento.
 
 </section>
 

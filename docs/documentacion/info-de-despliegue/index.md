@@ -19,11 +19,11 @@ La información de despliegue se coloca al final de cada página del sitio, enci
 <SisdaiInfoDeDespliegue />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiInfoDeDespliegue` no se modifica en diseño ni en comportamiento, ya que solo sirve como referencia visual en los ambientes de desarrollo y pruebas, no en producción.
+
 </section>
-
-**Vista simplificada**
-
-En la vista simplificada la información de despliegue no se modifica en diseño ni en comportamiento, ya que solo sirve como referencia en los ambientes de desarrollo y pruebas. Es importante mencionar que el componente solo se mostrará cuando se despliegue únicamente en el ambiente de desarrollo y pruebas, no en producción.
 
 <section id="api">
 

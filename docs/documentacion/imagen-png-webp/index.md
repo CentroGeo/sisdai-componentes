@@ -22,6 +22,10 @@ Para utilizar el componente `SisdaiImagenPngWebp`, incorpora en tu plantilla y p
 />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiImagenPngWebp` responde a la regla de remover la imagen.
+
 </section>
 
 <section id="api">

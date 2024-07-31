@@ -17,6 +17,10 @@ Para utilizar el componente `SisdaiNavegacionPrincipal`, incorpora en tu plantil
 <SisdaiNavegacionPrincipal> ...contenido </SisdaiNavegacionPrincipal>
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiNavegacionPrincipal` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">

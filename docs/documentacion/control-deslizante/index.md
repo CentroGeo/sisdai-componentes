@@ -16,6 +16,10 @@ Para utilizar el componente `SisdaiControlDeslizante`, incorpora el componente e
 <SisdaiControlDeslizante />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiControlDeslizante` no se modifica en diseño ni en comportamiento.
+
 </section>
 
 <section id="api">
