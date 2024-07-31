@@ -7,14 +7,19 @@ import EjemploGrande from "../../.vitepress/components/modal/grande.vue";
 
 El componente `SisdaiModal` interrumpe el contenido y las interacciones principales de la página para colocar un elemento HTML `<dialog/>` de tipo modal encima que requiere toda la atención y acción de la persona usuaria. Consulte la [sección del elemento dialog](https://developer.mozilla.org/es/docs/Web/HTML/Element/dialog) para más información.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente , incorpora en tu plantilla y coloca el contenido que deseas mostrar dentro del modal. Puedes controlar la apertura del modal mediante una referencia al componente y un método de apertura. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
 <SisdaiModal ref="sisdaiModal"> ...contenido </SisdaiModal>
+```
 
-<!-- Botón que acciona el modal -->
+Botón que acciona el modal:
+
+```html
 <button @click="sisdaiModal?.abrirModal()">Abrir Modal</button>
 ```
 
@@ -26,6 +31,8 @@ Es importante colocar la clase `.overflow-hidden` con la propiedad _overflow_ en
   overflow: hidden;
 }
 ```
+
+</section>
 
 <section id="api">
 

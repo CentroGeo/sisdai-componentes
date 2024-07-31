@@ -6,13 +6,17 @@ import EjemploDefault from "../../.vitepress/components/control-deslizante/defau
 
 El componente `SisdaiControlDeslizante` consiste en un elemento `<input type="range">` al cual se le agrega una función de estilo en el cual el lado derecho del valor seleccionado queda de color gris.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiControlDeslizante`, incorpora el componente en tu plantilla y configura las propiedades como el valor mínimo y máximo, entrada inicial y el paso del deslizador. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
-
+<SisdaiControlDeslizante />
 ```
+
+</section>
 
 <section id="api">
 

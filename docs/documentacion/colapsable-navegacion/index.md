@@ -9,13 +9,17 @@ El componente `SisdaiColapsableNavegacion` consiste en un elemento `<div class="
 
 Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css), por lo cual es una dependencia de este componente. Los elementos de lista se especifican mediante `slots`.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiColapsableNavegacion`, incorpora el componente en tu plantilla y define los elementos de la lista a través de slots. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
-
+<SisdaiColapsableNavegacion> ...contenido </SisdaiColapsableNavegacion>
 ```
+
+</section>
 
 <section id="api">
 

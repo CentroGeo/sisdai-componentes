@@ -6,7 +6,9 @@ import EjemploBasico from "../../.vitepress/components/enlace-externo/basico.vue
 
 El componente `SisdaiEnlaceExterno` funciona para crear enlaces externos dentro de párrafos u otros elementos. Incluye los atributos `target="_blank"` y `rel="noopener noreferrer"`para asegurar que los enlaces se abran de una nueva pestaña y mantengan la seguridad del navegador.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiEnlaceExterno`, incorpora el componente en tu plantilla y proporciona los atributos `enlace` y `texto` para definir el URL y el texto del enlace, respectivamente. A continuación, se muestra un ejemplo de etiqueta simple:
 
@@ -16,6 +18,8 @@ Para utilizar el componente `SisdaiEnlaceExterno`, incorpora el componente en tu
   :texto="'...'"
 />
 ```
+
+</section>
 
 <section id="api">
 

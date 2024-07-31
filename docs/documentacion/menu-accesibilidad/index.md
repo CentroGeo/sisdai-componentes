@@ -14,13 +14,17 @@ El componente cuenta con cuatro opciones de accesibilidad predeterminadas:
 - Mostrar solo texto
 - Vista oscura
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiMenuAccesibilidad`, incorpora el componente en tu plantilla. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
 <SisdaiMenuAccesibilidad />
 ```
+
+</section>
 
 La función de “Vista oscura” transita entre el tema claro y el oscuro. De manera predeterminada al entrar a la aplicación la vista muestra la función automática. Esto significa que, dependiendo de los ajustes del navegador para la apariencia web, se muestra el tema elegido. Una vez que se interactúa con el menú, se puede cambiar entre clara u oscura.
 
@@ -98,7 +102,7 @@ Este componente no permite contenido con slots.
 <EjemploBasico />
 <<< @/.vitepress/components/menu-accesibilidad/basico.vue
 
-#### Agregando opciones de accesibilidad
+### Agregando opciones de accesibilidad
 
 Junto con el uso de la propiedad `agregarOpciones` para añadir reglas de accesibilidad, también es necesario declarar las reglas CSS de los elementos HTML que se deseen afectar:
 

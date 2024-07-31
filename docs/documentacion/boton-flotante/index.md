@@ -6,13 +6,17 @@ import EjemploBasico from "../../.vitepress/components/boton-flotante/basico.vue
 
 El componente `SisdaiBotonFlotante` permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento fijo en la esquina inferior izquierda.
 
-Uso
+<section id="uso">
+
+## Uso
 
 El componente `SisdaiBotonFlotante` se utiliza para agregar enlaces externos que estarán disponibles en todas las vistas del sitio web. Puedes especificar los enlaces mediante la propiedad enlaces, que debe ser un array de objetos con las propiedades `clasesCss`, `contenido` y `enlace`. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiBotonFlotante :enlaces="[...]" />
 ```
+
+</section>
 
 <section id="api">
 

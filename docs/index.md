@@ -13,7 +13,7 @@ Se recomienda utilizar Vue **3.4** y asegurarse de contar con el soporte para [C
 
 <section id="instalacion">
 
-## Instalación:
+## Instalación
 
 Para instalar la biblioteca en el proyecto Vue, sigue estos pasos:
 

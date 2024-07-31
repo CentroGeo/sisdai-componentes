@@ -6,13 +6,17 @@ import EjemploBasico from "../../.vitepress/components/narrativa/basico.vue";
 
 El componente `SisdaiNarrativa` detecta cuando se desplaza (scroll) en una sección y devuelve propiedades con la posición del cursor y la viñeta o bullet activo. Esto permite identificar y reaccionar a la posición actual de la persona usuaria dentro de una narrativa o contenido específico.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiNarrativa`, incorporalo en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
-<SisdaiNarrativa></SisdaiNarrativa>
+<SisdaiNarrativa> ...contenido </SisdaiNarrativa>
 ```
+
+</section>
 
 <section id="api">
 

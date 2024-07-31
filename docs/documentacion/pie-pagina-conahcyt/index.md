@@ -6,13 +6,17 @@ import EjemploBasico from "../../.vitepress/components/pie-pagina-conahcyt/basic
 
 El componente `SisdaiPiePaginaConahcyt` es compartido en todos los Ecosistemas Nacionales Informáticos (ENI). El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conahcyt y enlaces de interés.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiPiePaginaConahcyt`, incorpora en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiPiePaginaConahcyt />
 ```
+
+</section>
 
 Vista simplificada
 

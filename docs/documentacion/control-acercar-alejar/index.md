@@ -6,13 +6,17 @@ import EjemploBasico from "../../.vitepress/components/control-acercar-alejar/ba
 
 El componente `SisdaiControlAcercarAlejar` es un elemento que se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web. Esta funcionalidad se emplea en el [Sisdai](https://sisdai.conahcyt.mx/) en aplicaciones de mapas, visualizadores de imágenes, visualizaciones de datos y otras interfaces donde se manejan objetos o contenido visual.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiControlAcercarAlejar`, incorpora el componente en tu plantilla y enlaza la propiedad `v-model` a una variable que controle el nivel de zoom. A continuación, se muestra una ejemplo de etiqueta simple:
 
 ```html
 <SisdaiControlAcercarAlejar v-model="valor" />
 ```
+
+</section>
 
 <section id="api">
 

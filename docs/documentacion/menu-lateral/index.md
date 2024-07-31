@@ -8,11 +8,15 @@ import EjemploColapsable from "../../.vitepress/components/menu-lateral/colapsab
 
 El componente `SisdaiMenuLateral` consiste en un elemento `nav.menu-lateral` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En la versión de celular tiene un botón que muestra el contenido o lo colapsa.
 
-Uso
+<section id="uso">
+
+## Uso
 
 ```html
-
+<SisdaiMenuLateral />
 ```
+
+</section>
 
 <!-- <menu-lateral-basico/> -->
 <EjemploBasico />
