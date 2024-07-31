@@ -68,7 +68,6 @@ watch(clasesAccesibles, (nv, ov) => {
       aria-controls="colapsableboton"
       :aria-expanded="_colapsado"
       @click="_colapsado = !_colapsado"
-      :disabled="clasesAccesibles.includes('a11y-simplificada')"
       :tabindex="avisarMenuLateral ? undefined : -1"
     >
       <slot name="encabezado">
