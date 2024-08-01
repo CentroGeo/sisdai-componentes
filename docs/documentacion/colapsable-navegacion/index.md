@@ -21,7 +21,7 @@ Para utilizar el componente `SisdaiColapsableNavegacion`, incorpora el component
 
 Vista simplificada
 
-En la vista simplificada el componente `SisdaiColapsableNavegacion` se descolapsa la lista para ser visible el contenido.
+En la vista simplificada el componente `SisdaiColapsableNavegacion` no se modifica en diseño ni en comportamiento.
 
 </section>
 

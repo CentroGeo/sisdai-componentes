@@ -14,10 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { computed, ref, toRefs, watch } from 'vue'
-
-import { useAccesibilidadStore } from '../../stores'
-const store = useAccesibilidadStore()
+import { ref, toRefs, watch } from 'vue'
 
 const props = defineProps({
   colapsado: { type: Boolean, default: false },
@@ -36,25 +33,10 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-const clasesAccesibles = computed(() => {
-  return store.clasesAccesibles
-})
-
 const emits = defineEmits(['alAlternarColapsable'])
 
 watch(_colapsado, () => {
   emits('alAlternarColapsable', _colapsado.value)
-})
-
-watch(clasesAccesibles, (nv, ov) => {
-  // Descolapsa la navegación si la vista simplificada está activada
-  if (clasesAccesibles.value.includes('a11y-simplificada')) {
-    _colapsado.value = true
-  } else {
-    if (ov.includes('a11y-simplificada')) {
-      _colapsado.value = false
-    }
-  }
 })
 </script>
 
