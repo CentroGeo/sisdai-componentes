@@ -60,11 +60,17 @@ function filtroAnidado(texto) {
         const elementosFiltrados = {}
         elementosFiltrados[props.catalogoAnidadoPropiedadElementos] = grupo[
           props.catalogoAnidadoPropiedadElementos
-        ].filter(elemento =>
-          elemento[props.propiedadBusqueda]
+        ].filter(elemento => {
+          const propiedadBusquedaNormalizada = elemento[props.propiedadBusqueda]
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '')
+          const textoNormalizado = texto
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '')
+          return propiedadBusquedaNormalizada
             .toLowerCase()
-            .includes(texto.trim().toLowerCase())
-        )
+            .includes(textoNormalizado.trim().toLowerCase())
+        })
 
         return {
           ...grupo,
@@ -81,11 +87,17 @@ function filtro(texto) {
     return filtroAnidado(texto)
   }
   if (texto.trim().length >= 1) {
-    return catalogo.value.filter(elemento =>
-      elemento[props.propiedadBusqueda]
+    return catalogo.value.filter(elemento => {
+      const propiedadBusquedaNormalizada = elemento[props.propiedadBusqueda]
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+      const textoNormalizado = texto
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+      return propiedadBusquedaNormalizada
         .toLowerCase()
-        .includes(texto.trim().toLowerCase())
-    )
+        .includes(textoNormalizado.trim().toLowerCase())
+    })
   }
 
   return catalogo.value
