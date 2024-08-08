@@ -12,7 +12,7 @@ export default ({
   // ...apply enhancements to the app
   // import styles
   require('./theme/styles/index.scss')
-  require('../../node_modules/sisdai-css/src/sisdai.scss')
+  require('../../node_modules/sisdai-css/dist/sisdai.min.css')
   require('../../node_modules/sisdai-css/src/_variables.scss')
   require('../../node_modules/sisdai-css/src/_mixins.scss')
 
