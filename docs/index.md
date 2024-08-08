@@ -39,7 +39,7 @@ Debido a que el estilo de los componentes está ligado a las reglas de [Sisdai](
 Si tu proyecto tiene configurado el preprocesador `sass` o `scss`, generalmente el archivo es ‘src/main.js’. Añade la siguiente línea para importar los estilos:
 
 ```js
-import 'sisdai-css/src/sisdai.scss'
+import 'sisdai-css/dist/sisdai.min.css'
 ```
 
 Adicionalmente, debes agregar las tipografías de Montserrat y Atkinson Hyperlegible de Google Fonts en el encabezado `<head></head>` del documento HTML base de tu proyecto:
