@@ -122,7 +122,10 @@ function limpiarBusqueda() {
 </script>
 
 <template>
-  <form class="campo-busqueda">
+  <form
+    @submit.prevent
+    class="campo-busqueda"
+  >
     <label
       :for="id_aleatorio"
       class="a11y-solo-lectura"
