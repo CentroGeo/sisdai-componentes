@@ -49,6 +49,12 @@ const props = defineProps({
   },
 })
 
+function idAleatorio() {
+  return 'campo-busqueda-' + Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
+
 const { catalogo } = toRefs(props)
 const textoBusqueda = ref('')
 const inputBusquedaRef = ref(null)
@@ -116,8 +122,14 @@ function limpiarBusqueda() {
 </script>
 
 <template>
-  <div class="campo-busqueda">
+  <form class="campo-busqueda">
+    <label
+      :for="id_aleatorio"
+      class="a11y-solo-lectura"
+      >Campo de búsqueda</label
+    >
     <input
+      :id="id_aleatorio"
       type="search"
       class="campo-busqueda-entrada"
       ref="inputBusquedaRef"
@@ -127,6 +139,7 @@ function limpiarBusqueda() {
 
     <button
       class="boton-pictograma boton-sin-contenedor-secundario campo-busqueda-borrar"
+      aria-label="Limpiar campo de búsqueda"
       v-show="botonLimpiarBusquedaActivo"
       @click="limpiarBusqueda"
     >
@@ -134,15 +147,16 @@ function limpiarBusqueda() {
         class="pictograma-cerrar"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura">Limpiar campo de búsqueda</span>
     </button>
 
-    <button class="boton-primario boton-pictograma campo-busqueda-buscar">
+    <button
+      class="boton-primario boton-pictograma campo-busqueda-buscar"
+      aria-label="Buscar"
+    >
       <span
         class="pictograma-buscar"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura">Buscar</span>
     </button>
-  </div>
+  </form>
 </template>

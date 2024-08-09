@@ -40,7 +40,6 @@ const listaLanguagesFiltrada = ref(listaLanguages.value)
       etiqueta="Buscar lenguaje"
       @alFiltrar="r => (listaLanguagesFiltrada = r)"
     />
-    <hr />
     <ul style="max-height: 300px; overflow-y: auto">
       <li
         v-for="language in listaLanguagesFiltrada"
