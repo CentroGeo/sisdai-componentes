@@ -10,8 +10,8 @@ export default mergeConfig(
       globals: true,
       // simulate DOM with happy-dom
       // (requires installing happy-dom as a peer dependency)
-      environment: 'happy-dom',
-      // environment: 'jsdom',
+      // environment: 'happy-dom',
+      environment: 'jsdom',
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
     },
