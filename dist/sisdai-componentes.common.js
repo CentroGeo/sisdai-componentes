@@ -3708,13 +3708,18 @@ const audio_plugin = {
   }
 };
 /* harmony default export */ var audio = (audio_plugin);
-;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3eef0991-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/campo-busqueda/SisdaiCampoBusqueda.vue?vue&type=template&id=68326d38
-var SisdaiCampoBusquedavue_type_template_id_68326d38_render = function render() {
+;// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3eef0991-vue-loader-template"}!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??ruleSet[1].rules[3]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/campo-busqueda/SisdaiCampoBusqueda.vue?vue&type=template&id=987f5554
+var SisdaiCampoBusquedavue_type_template_id_987f5554_render = function render() {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
   return _c('form', {
-    staticClass: "campo-busqueda"
+    staticClass: "campo-busqueda",
+    on: {
+      "submit": function ($event) {
+        $event.preventDefault();
+      }
+    }
   }, [_c('label', {
     staticClass: "a11y-solo-lectura",
     attrs: {
@@ -3764,7 +3769,7 @@ var SisdaiCampoBusquedavue_type_template_id_68326d38_render = function render() 
     }
   })]), _vm._m(0)]);
 };
-var SisdaiCampoBusquedavue_type_template_id_68326d38_staticRenderFns = [function () {
+var SisdaiCampoBusquedavue_type_template_id_987f5554_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c,
     _setup = _vm._self._setupProxy;
@@ -3781,7 +3786,7 @@ var SisdaiCampoBusquedavue_type_template_id_68326d38_staticRenderFns = [function
   })]);
 }];
 
-;// CONCATENATED MODULE: ./src/componentes/campo-busqueda/SisdaiCampoBusqueda.vue?vue&type=template&id=68326d38
+;// CONCATENATED MODULE: ./src/componentes/campo-busqueda/SisdaiCampoBusqueda.vue?vue&type=template&id=987f5554
 
 ;// CONCATENATED MODULE: ./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib/index.js??clonedRuleSet-40.use[1]!./node_modules/cache-loader/dist/cjs.js??ruleSet[0].use[0]!./node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/componentes/campo-busqueda/SisdaiCampoBusqueda.vue?vue&type=script&setup=true&lang=js
 
@@ -3894,8 +3899,8 @@ const SisdaiCampoBusquedavue_type_script_setup_true_lang_js_eventos = {
 ;
 var SisdaiCampoBusqueda_component = normalizeComponent(
   campo_busqueda_SisdaiCampoBusquedavue_type_script_setup_true_lang_js,
-  SisdaiCampoBusquedavue_type_template_id_68326d38_render,
-  SisdaiCampoBusquedavue_type_template_id_68326d38_staticRenderFns,
+  SisdaiCampoBusquedavue_type_template_id_987f5554_render,
+  SisdaiCampoBusquedavue_type_template_id_987f5554_staticRenderFns,
   false,
   null,
   null,
