@@ -139,7 +139,7 @@ function limpiarBusqueda() {
 
     <button
       class="boton-pictograma boton-sin-contenedor-secundario campo-busqueda-borrar"
-      aria-label="Limpiar campo de búsqueda"
+      aria-label="Borrar"
       v-show="botonLimpiarBusquedaActivo"
       @click="limpiarBusqueda"
     >
