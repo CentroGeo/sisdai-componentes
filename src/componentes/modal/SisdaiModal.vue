@@ -119,6 +119,7 @@ defineExpose({
 
       <button
         class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
+        aria-label="Cerrar"
         value="cerrar"
         @click="cerrarModal()"
       >
@@ -126,7 +127,6 @@ defineExpose({
           class="pictograma-cerrar"
           aria-hidden="true"
         ></span>
-        <span class="a11y-solo-lectura"> Cerrar Modal. </span>
       </button>
     </div>
   </dialog>

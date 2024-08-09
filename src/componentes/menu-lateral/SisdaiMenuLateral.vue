@@ -54,7 +54,6 @@ watch(menu_abierto, () => {
         class="pictograma-angulo-izquierdo"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura"> Expandir o colapsar navegación</span>
     </button>
 
     <div

@@ -322,9 +322,6 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
         class="pictograma-accesibilidad"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura">
-        abrir y cerrar menú de accesibilidad
-      </span>
     </button>
 
     <menu

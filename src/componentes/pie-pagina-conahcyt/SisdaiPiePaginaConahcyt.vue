@@ -99,6 +99,7 @@ const anioActual = new Date().getFullYear()
             <a
               href="https://www.facebook.com/ConahcytMX"
               class="hipervinculo-conahcyt"
+              aria-label="feisbuk,"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -106,13 +107,13 @@ const anioActual = new Date().getFullYear()
                 class="pictograma-social-facebook"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">feisbuk,</span>
             </a>
           </li>
           <li>
             <a
               href="https://twitter.com/Conahcyt_Mex"
               class="hipervinculo-conahcyt"
+              aria-label="x,"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -120,13 +121,13 @@ const anioActual = new Date().getFullYear()
                 class="pictograma-social-x"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">x,</span>
             </a>
           </li>
           <li>
             <a
               href="https://www.instagram.com/conahcyt_mex/"
               class="hipervinculo-conahcyt"
+              aria-label="instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -134,13 +135,13 @@ const anioActual = new Date().getFullYear()
                 class="pictograma-social-instagram"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">instagram </span>
             </a>
           </li>
           <li>
             <a
               href="https://www.youtube.com/@Conahcytmx"
               class="hipervinculo-conahcyt"
+              aria-label="yutub"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -148,7 +149,6 @@ const anioActual = new Date().getFullYear()
                 class="pictograma-social-youtube"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">yutub</span>
             </a>
           </li>
         </ul>

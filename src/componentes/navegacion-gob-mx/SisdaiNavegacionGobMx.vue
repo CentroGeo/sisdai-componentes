@@ -120,10 +120,10 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         aria-label="Abrir/Cerrar menú de gobierno de México"
         aria-controls="menugobiernomexico"
       >
-        <span class="nav-icono-menu"></span>
-        <span class="a11y-solo-lectura"
-          >abrir y cerrar navegacion del gobierno de México</span
-        >
+        <span
+          class="nav-icono-menu"
+          aria-hidden="true"
+        ></span>
       </button>
     </div>
 
@@ -176,6 +176,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
             <a
               href="https://www.gob.mx/busqueda"
               class="nav-hipervinculo"
+              aria-label="Ir"
               target="_blank"
               rel="noopener"
               @mouseover="cerrarSubmenu()"
@@ -185,7 +186,6 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
                 class="pictograma-buscar"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">ir al buscador</span>
             </a>
           </li>
         </ul>

@@ -159,9 +159,6 @@ defineExpose({
           class="nav-icono-menu"
           aria-hidden="true"
         ></span>
-        <span class="a11y-solo-lectura"
-          >abrir y cerrar navegacion principal</span
-        >
       </button>
 
       <div

@@ -73,13 +73,13 @@ function disminuir() {
   >
     <button
       class="boton-pictograma boton-sin-contenedor-secundario"
+      aria-label="Alejar"
       @click="disminuir"
     >
       <span
         class="pictograma-restar"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura"> Alejar. </span>
     </button>
 
     <input
@@ -94,13 +94,13 @@ function disminuir() {
 
     <button
       class="boton-pictograma boton-sin-contenedor-secundario"
+      aria-label="Acercar"
       @click="aumentar"
     >
       <span
         class="pictograma-agregar"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura"> Acercar. </span>
     </button>
 
     <input
