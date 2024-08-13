@@ -251,7 +251,7 @@ Esta sección asume que has leído la sección de [Composables](https://vuejs.or
 
 Cuando se trata de probar composables, podemos divirlo en dos categorías: composables que no dependen en una instancia de componente host y los que sí lo hacen.
 
-Un composable dependen de una instancia de componente host cuando hace uso de las siguientes API:
+Un composable depende de una instancia de componente host cuando hace uso de las siguientes API:
 
 - Ganchos del ciclo de vida
 - Provide / Inject
@@ -288,7 +288,7 @@ test('useCounter', () => {
 })
 ```
 
-Un composable que depende de un gancho del ciclo de vida o Provide / Inject necesitar estar envuelto en un componente host para ser probado. Creamos un ayudante como el siguiente:
+Un composable que depende de un gancho del ciclo de vida o Provide / Inject necesita estar envuelto en un componente host para ser probado. Podemos crear un ayudante como el siguiente:
 
 ```js
 // test-utils.js
@@ -325,4 +325,4 @@ test('useFoo', () => {
 })
 ```
 
-Para composables más complejos pueden ser más fácil probados mediante pruebas contra el componente envoltorio o contenedor utilizando ténicas de [Component Testing](https://vuejs.org/guide/scaling-up/testing#component-testing).
+Para composables más complejos se pueden probar más fácil mediante pruebas contra el componente envoltorio o contenedor utilizando técnicas de [Component Testing](https://vuejs.org/guide/scaling-up/testing#component-testing).
