@@ -245,4 +245,84 @@ Finalmente, actualice `package.json` para agregar el script de prueba y ejecúte
 > npm test
 ```
 
-## Testing Composables
+### Testing Composables
+
+Esta sección asume que has leído la sección de [Composables](https://vuejs.org/guide/reusability/composables.html).
+
+Cuando se trata de probar composables, podemos divirlo en dos categorías: composables que no dependen en una instancia de componente host y los que sí lo hacen.
+
+Un composable dependen de una instancia de componente host cuando hace uso de las siguientes API:
+
+- Ganchos del ciclo de vida
+- Provide / Inject
+
+Si un composable solo utiliza la API de reactividad, se puede probar invocándolo directamente y afirmando su estado o métodos devueltos.
+
+```js
+// MyComponent.test.js
+import { render } from '@testing-library/vue'
+import MyComponent from './MyComponent.vue'
+
+test('it should work', () => {
+  const { getByText } = render(MyComponent, {
+    props: {
+      /* ... */
+    },
+  })
+
+  // assert output
+  getByText('...')
+})
+```
+
+```js
+// counter.test.js
+import { useCounter } from './counter.js'
+
+test('useCounter', () => {
+  const { count, increment } = useCounter()
+  expect(count.value).toBe(0)
+
+  increment()
+  expect(count.value).toBe(1)
+})
+```
+
+Un composable que depende de un gancho del ciclo de vida o Provide / Inject necesitar estar envuelto en un componente host para ser probado. Creamos un ayudante como el siguiente:
+
+```js
+// test-utils.js
+import { createApp } from 'vue'
+
+export function withSetup(composable) {
+  let result
+  const app = createApp({
+    setup() {
+      result = composable()
+      // suppress missing template warning
+      return () => {}
+    },
+  })
+  app.mount(document.createElement('div'))
+  // return the result and the app instance
+  // for testing provide/unmount
+  return [result, app]
+}
+```
+
+```js
+import { withSetup } from './test-utils'
+import { useFoo } from './foo'
+
+test('useFoo', () => {
+  const [result, app] = withSetup(() => useFoo(123))
+  // mock provide for testing injections
+  app.provide(...)
+  // run assertions
+  expect(result.foo.value).toBe(1)
+  // trigger onUnmounted hook if needed
+  app.unmount()
+})
+```
+
+Para composables más complejos pueden ser más fácil probados mediante pruebas contra el componente envoltorio o contenedor utilizando ténicas de [Component Testing](https://vuejs.org/guide/scaling-up/testing#component-testing).
