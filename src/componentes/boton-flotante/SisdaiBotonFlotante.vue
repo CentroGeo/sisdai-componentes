@@ -27,11 +27,22 @@ const propiedades = {
     type: Array,
     required: true,
   },
+
+  /**
+   * Indica si el Botón flotante estará abierto o no.
+   * - Abierto: `true`
+   * - Cerrado: `false`
+   * @type Boolean
+   */
+  botonFlotanteAbierto: {
+    type: Boolean,
+    default: false,
+  },
 }
 </script>
 
 <script setup>
-import { ref, toRefs, watch } from 'vue'
+import { ref, toRefs } from 'vue'
 
 const props = defineProps(propiedades)
 const { enlaces } = toRefs(props)
@@ -42,7 +53,7 @@ const { enlaces } = toRefs(props)
  * - Cerrado: `false`
  * @type Boolean
  */
-const botonFlotanteEstaAbierto = ref(true)
+const botonFlotanteEstaAbierto = ref(props.botonFlotanteAbierto)
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -54,70 +65,60 @@ function alternarEstado() {
 
 defineExpose({ alternarEstado })
 
-/**
- * Si el botón está abierto, remueve el atributo tabIndex.
- * Si está cerrado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-watch(botonFlotanteEstaAbierto, () => {
-  if (botonFlotanteEstaAbierto.value) {
-    enlaces.value.forEach((element, idx) => {
-      document
-        .getElementById(`boton_flotante_enlace_${idx}`)
-        .removeAttribute('tabIndex')
-    })
-  } else {
-    enlaces.value.forEach((element, idx) => {
-      document.getElementById(`boton_flotante_enlace_${idx}`).tabIndex = '-1'
-    })
-  }
-})
+function idAleatorio() {
+  return Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
 </script>
 
 <template>
   <div
-    class="contenedor-boton-flotante"
+    :id="id_aleatorio"
+    class="menu-flotante menu-flotante-izquierdo"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
-      :class="`boton-flotante-alternador borde-r-redondeado-20 borde-l-redondeado-${
-        botonFlotanteEstaAbierto ? '' : '2'
-      }0`"
+      class="menu-flotante-boton"
+      aria-controls="menuflotante"
+      aria-label="Abrir/Cerrar menu de enlaces"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
-      @click="alternarEstado"
+      @click="botonFlotanteEstaAbierto = !botonFlotanteEstaAbierto"
     >
       <span
-        :class="`icono ${
-          botonFlotanteEstaAbierto ? 'icono-restar' : 'icono-agregar'
-        } icono-3`"
+        :class="`${
+          botonFlotanteEstaAbierto
+            ? 'boton-flotante-pictograma-abierto pictograma-restar'
+            : 'boton-flotante-pictograma-cerrado pictograma-agregar'
+        }`"
         aria-hidden="true"
-      />
+      ></span>
       <span class="a11y-solo-lectura">abrir o cerrar botón flotante</span>
     </button>
 
-    <div
-      class="boton-flotante-contenido borde-l-redondeado-20"
-      :class="{ 'borde-l': botonFlotanteEstaAbierto }"
+    <menu
+      class="menu-flotante-contenedor"
+      id="menuflotantecuerpo"
+      :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
-        :key="`boton-flotante-enlace-${idx}`"
-        :id="`boton_flotante_enlace_${idx}`"
-        :href="enlace"
-        :class="`enlace p-x-1 borde-redondeado-0 ${
+        :key="`menu-flotante-enlace-${idx}`"
+        :id="`menu_flotante_enlace_${idx}`"
+        :class="`menu-flotante-hipervinculo m-t-2 ${
           clasesCss === undefined ? '' : clasesCss
         }`"
+        :href="enlace"
         target="_blank"
         rel="noopener noreferrer"
+        :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
       >
+        {{ contenido === undefined ? 'Ir a enlace externo' : contenido }}
         <span
-          :class="`icono ${
-            icono === undefined ? 'icono-enlace-externo' : icono
-          }`"
+          :class="`${icono === undefined ? 'pictograma-flecha-arriba-derecha' : icono}  m-l-1`"
           aria-hidden="true"
-        />
-        {{ contenido === undefined ? 'Enlace externo' : contenido }}
+        ></span>
       </a>
-    </div>
+    </menu>
   </div>
 </template>

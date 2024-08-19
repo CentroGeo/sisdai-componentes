@@ -31,19 +31,23 @@ const altura = ref(0.2)
             </div>
           </div>
         </div>`,
-          imagen: 'https://placekitten.com/1600/1080',
+          imagen:
+            'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/persi.jpg',
         },
         {
           html: '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus molestie nunc non blandit.</p>',
-          imagen: 'https://placekitten.com/1300/1090',
+          imagen:
+            'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/nilo.jpg',
         },
         {
           html: '<p>Lobortis elementum nibh tellus molestie nunc non blandit massa enim. Ultrices in iaculis nunc sed augue.</p>',
-          imagen: 'https://placekitten.com/1400/1042',
+          imagen:
+            'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/shuri-nezzie.jpg',
         },
         {
           html: '<p>bullet 3</p>',
-          imagen: 'https://placekitten.com/1000/1042',
+          imagen:
+            'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/guiza.jpg',
         },
       ]"
     ></SisdaiNarrativaScroll>

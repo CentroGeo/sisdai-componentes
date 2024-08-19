@@ -13,41 +13,12 @@
 <!--You should have received a copy of the GNU Lesser General Public License along-->
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
-<template>
-  <section
-    class="contenedor narrativa-scroll"
-    :id="id_scroll"
-  >
-    <div
-      :style="{ opacity: depurador ? 1 : 0, top: altura_sensor * 100 + 'vh' }"
-      class="depurador"
-    ></div>
-    <div class="contenedor-portada">
-      <img
-        v-for="(bullet, i) in bullets"
-        :key="i"
-        :class="`portada fondo-${i}`"
-        :srcset="bullet.imagen"
-        alt=""
-        :style="{ opacity: seccion_visible == i ? 1 : 0 }"
-      />
-    </div>
-    <article>
-      <div
-        v-for="(bullet, i) in bullets"
-        :key="i"
-        :class="`bullet`"
-        :data-step="i"
-        v-html="bullet.html"
-      ></div>
-    </article>
-  </section>
-</template>
-
 <script setup>
 import { onUnmounted, onMounted, ref } from 'vue'
+
 const lista_elementos = ref([])
 const seccion_visible = ref(0)
+
 const props = defineProps({
   id_scroll: { type: String, default: 'id-de-narrativa-scroll' },
   bullets: {
@@ -64,15 +35,18 @@ const props = defineProps({
             </div>
           </div>
         </div>`,
-        imagen: 'https://placekitten.com/1920/1080',
+        imagen:
+          'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/becka.jpg',
       },
       {
         html: '<p>bullet 1</p>',
-        imagen: 'https://placekitten.com/1920/1082',
+        imagen:
+          'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/burbuja-1.jpg',
       },
       {
         html: '<p>bullet 2</p>',
-        imagen: 'https://placekitten.com/1920/1042',
+        imagen:
+          'https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/nymeria.jpg',
       },
     ],
     type: Array,
@@ -93,7 +67,6 @@ const props = defineProps({
  * el último elemento al separar por el caracter '#', es decir
  * los id
  */
-
 const obtenerElementos = () => {
   lista_elementos.value = [
     ...document.querySelectorAll(
@@ -101,11 +74,11 @@ const obtenerElementos = () => {
     ),
   ]
 }
+
 /**
  * Esta funcion detecta la posición escroleada de la navegación y calcula cual es
  * la sección activa
  */
-
 function scroleando() {
   const posicion_sensor = document
     .querySelector(`section#${props.id_scroll}.narrativa-scroll div.depurador`)
@@ -113,6 +86,7 @@ function scroleando() {
 
   // Checando elementos activos
   let posicion_actual
+
   lista_elementos.value.forEach((el, i) => {
     if (
       el.getBoundingClientRect().top < posicion_sensor &&
@@ -130,15 +104,18 @@ function scroleando() {
       posicion_actual = lista_elementos.value.length - 1
     }
   })
+
   if (props.degradado_inicial) {
     let posicion_normalizada =
       (posicion_sensor -
         lista_elementos.value[0].getBoundingClientRect().bottom) /
       lista_elementos.value[0].getBoundingClientRect().height
+
     lista_elementos.value[0].querySelector(
       '.degradado-negro-abajo'
     ).style.background =
       'linear-gradient(transparent,rgba(0,0,0,' + -posicion_normalizada + '))'
+
     lista_elementos.value[1].style.background =
       'linear-gradient(rgba(0,0,0,' + -posicion_normalizada + '),transparent)'
   }
@@ -150,12 +127,47 @@ function scroleando() {
 
 onMounted(() => {
   obtenerElementos()
+
   window.addEventListener('scroll', scroleando)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', scroleando)
 })
 </script>
+
+<template>
+  <section
+    class="contenedor narrativa-scroll"
+    :id="id_scroll"
+  >
+    <div
+      :style="{ opacity: depurador ? 1 : 0, top: altura_sensor * 100 + 'vh' }"
+      class="depurador"
+    ></div>
+
+    <div class="contenedor-portada">
+      <img
+        v-for="(bullet, i) in bullets"
+        :key="i"
+        :class="`portada fondo-${i}`"
+        :srcset="bullet.imagen"
+        alt=""
+        :style="{ opacity: seccion_visible == i ? 1 : 0 }"
+      />
+    </div>
+
+    <article>
+      <div
+        v-for="(bullet, i) in bullets"
+        :key="i"
+        :class="`bullet`"
+        :data-step="i"
+        v-html="bullet.html"
+      ></div>
+    </article>
+  </section>
+</template>
 
 <style>
 section.narrativa-scroll .depurador {

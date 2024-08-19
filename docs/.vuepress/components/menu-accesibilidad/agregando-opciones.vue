@@ -19,6 +19,7 @@ const opcionCursiva = {
   >
     <SisdaiMenuAccesibilidad
       ref="menuAccesibilidad"
+      :id="'agregando-opciones'"
       :agregarOpciones="[opcionCursiva]"
     />
 

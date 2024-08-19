@@ -1,29 +1,31 @@
 <script setup>
 import store from './../../store'
-
-window.location.href = './documentacion'
+import { onMounted } from 'vue'
+onMounted(() => {
+  window.location.href = './documentacion'
+})
 </script>
 
 <template>
   <div
     class="theme-container"
-    :class="store.getters['accesibilidad/clasesAccesibles']"
+    :class="store.state.accesibilidad.clasesAccesibles"
   >
-    <SisdaiNavegacionGobMx />
+    <!-- <SisdaiNavegacionGobMx /> -->
 
-    <nav-navegacion-principal />
+    <!-- <nav-navegacion-principal /> -->
 
-    <main
+    <!-- <SisdaiMenuAccesibilidad :objetoStore="store" /> -->
+
+    <!-- <main
       role="main"
       class="contenedor m-y-maximo"
     >
       <Content />
-    </main>
+    </main> -->
 
-    <SisdaiPiePaginaConahcyt />
+    <!-- <SisdaiPiePaginaConahcyt /> -->
 
-    <SisdaiPiePaginaGobMx />
-
-    <SisdaiMenuAccesibilidad :objetoStore="store" />
+    <!-- <SisdaiPiePaginaGobMx /> -->
   </div>
 </template>

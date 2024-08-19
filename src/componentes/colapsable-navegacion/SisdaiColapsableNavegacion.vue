@@ -14,14 +14,18 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { ref, toRefs, watch } from 'vue'
 
 const props = defineProps({
-  titulo: { type: String, default: 'Titulo de colapsable' },
-  activo: { type: Boolean, default: false },
+  colapsado: { type: Boolean, default: false },
+  avisarMenuLateral: { type: Boolean, default: true },
 })
+
 // eslint-disable-next-line
-const esta_activo = ref(props.activo)
+const { colapsado, avisarMenuLateral } = toRefs(props)
+const _colapsado = ref(colapsado.value)
+
+watch(colapsado, nv => (_colapsado.value = nv))
 
 function idAleatorio() {
   return Math.random().toString(36).substring(2)
@@ -29,81 +33,56 @@ function idAleatorio() {
 
 const id_aleatorio = idAleatorio()
 
-const listadoContenido = ref({})
+const emits = defineEmits(['alAlternarColapsable'])
 
-/**
- * Agrega el atributo tabindex a los elementos de lista,
- * si la navegación está colapsada
- */
-function agregaAtributoTabIndex() {
-  if (esta_activo.value === false) {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-/**
- * Si el menú está desplegado, remueve el atributo tabIndex.
- * Si está colapsado, agrega el atributo tabIndex en -1 para
- * saltarse los enlaces con el teclado secuencial.
- */
-function actualizaAtributoTabIndex(estaAbierto) {
-  if (estaAbierto) {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.removeAttribute('tabIndex')
-    }
-  } else {
-    for (let index = 0; index < listadoContenido.value.length; index++) {
-      const elemento = listadoContenido.value[index]['children'][0]
-      elemento.tabIndex = '-1'
-    }
-  }
-}
-
-onMounted(() => {
-  listadoContenido.value = document.getElementById(id_aleatorio)['children']
-  agregaAtributoTabIndex()
-})
-
-watch(esta_activo, () => {
-  actualizaAtributoTabIndex(esta_activo.value)
+watch(_colapsado, () => {
+  emits('alAlternarColapsable', _colapsado.value)
 })
 </script>
 
 <template>
-  <li
-    :class="{ activo: esta_activo }"
-    class="colapsable-navegacion"
+  <div
+    class="colapsable"
+    :class="{ abierto: _colapsado }"
   >
     <button
-      :aria-expanded="esta_activo ? 'true' : 'false'"
-      class="colapsable-boton-submenu"
-      @click="esta_activo = !esta_activo"
+      class="colapsable-boton"
+      aria-controls="colapsableboton"
+      :aria-expanded="_colapsado"
+      @click="_colapsado = !_colapsado"
+      :tabindex="avisarMenuLateral ? undefined : -1"
     >
-      {{ props.titulo }}
+      <slot name="encabezado">
+        <p>Encabezado colapsable</p>
+      </slot>
+
       <span
         aria-hidden="true"
-        class="nav-boton-submenu"
+        class="pictograma-angulo-derecho"
       ></span>
+      <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span>
     </button>
-    <ul
-      :id="id_aleatorio"
-      class="colapsable-submenu"
+
+    <div
+      class="colapsable-contenedor"
+      id="colapsablecontenedor"
+      :aria-hidden="!_colapsado"
     >
-      <slot name="listado-contenido">
-        <li>
-          <a
-            href="https://github.com/salsa-community/sisdai-componentes/"
-            target="_blank"
-            tabindex="-1"
-          >
-            Elemento desplegado</a
-          >
-        </li>
+      <slot name="contenido">
+        <ul :id="id_aleatorio">
+          <li>
+            <a
+              href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+              target="_blank"
+              rel="noopener noreferrer"
+              exact
+              :tabindex="_colapsado ? undefined : -1"
+            >
+              Elemento desplegado</a
+            >
+          </li>
+        </ul>
       </slot>
-    </ul>
-  </li>
+    </div>
+  </div>
 </template>

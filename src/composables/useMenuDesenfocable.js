@@ -24,11 +24,15 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * @property {Ref<boolean>} menuEstaAbierto  Indica el estado del menu si esta abierto o no
  * @property {function} abrirMenu  pone `menuEstaAbierto = true`
  * @property {function} cerrarMenu  pone `menuEstaAbierto = false`
- * @property {function} alternarMenu  pone `menuEstaAbierto =  !menuEstaAbierto`
+ * @property {function} alternarMenu  pone `menuEstaAbierto =  !menuEstaAbierto` y cierra el submenu
  * @property {Ref<boolean>} submenuEstaAbierto  Indica el estado del submenu si esta abierto o no
  * @property {function} abrirSubmenu  pone `submenuEstaAbierto = true` y agrega el selector de estilo `abierto` al submenu
  * @property {function} cerrarSubmenu  pone `submenuEstaAbierto = false` y remueve el selector de estilo `abierto` al submenu
  * @property {function} alternarSubmenu  pone `submenuEstaAbierto =  !menuEstaAbierto`
+ * @property {Ref<boolean>} esColapsable Indica si el menú está en una posición de ser colapsable o no
+ * @property {function} regresarMenu pone `submenuEstaAbierto = !submenuEstaAbierto` y cierra o abre submenu según su valor
+ * @property {function} cerrarMenuSubmenu cierra el Menu y el Submenu
+ * @property {function} validarNavegacionColapsable valida si la navegación en colapsable o no al ancho de la navegación
  */
 
 /**
@@ -39,6 +43,8 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * elementos del menu colapsable `ref<HTMLElement>`. Debe ser enfocable, si es un div o algun elemento que no
  * tenga focus por si mismo, debe agregarse el atributo [tab-index](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex)
  *
+ * @param {<Number>} anchoNavegacion Indica el ancho de corte de navegación de la pnatalla
+ *
  * @returns {UseMenuDesenfocableObject} Metodos y propiedades del composable
  * - `menuEstaAbierto: ref<boolean>`
  * - `abrirMenu: function`
@@ -48,15 +54,23 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * - `abrirSubmenu: function`
  * - `cerrarSubmenu: function`
  * - `alternarSubmenu: function`
+ * - `esColapsable: ref<boolean>`
+ * - `regresarMenu: function`
+ * - `cerrarMenuSubmenu: function`
+ * - `validarNavegacionColapsable: function`
  */
-export function useMenuDesenfocable(elementoMenuEnfocable) {
+export function useMenuDesenfocable(
+  elementoMenuEnfocable,
+  anchoNavegacion = 768
+) {
   const menuEstaAbierto = ref(false)
 
   const submenuEstaAbierto = ref(false)
 
+  const esColapsable = ref(false)
+
   function updateBlur() {
     //revisar que no tengo foco ningun elemento hijo
-
     if (menuEstaAbierto.value || submenuEstaAbierto.value) {
       setTimeout(() => {
         if (
@@ -71,6 +85,9 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   }
 
   onMounted(() => {
+    validarNavegacionColapsable()
+    window.addEventListener('resize', validarNavegacionColapsable)
+
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.addEventListener('blur', updateBlur)
   })
@@ -84,19 +101,19 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
   }
 
   function alternarMenu() {
-    if (menuEstaAbierto.value === false && submenuEstaAbierto.value === true) {
-      cerrarSubmenu()
-    } else {
-      menuEstaAbierto.value = !menuEstaAbierto.value
-    }
+    cerrarSubmenu()
+    menuEstaAbierto.value = !menuEstaAbierto.value
   }
 
   function abrirSubmenu() {
-    if (document.querySelector('.nav-submenu')) {
-      const navSubmenu = document.querySelector('.nav-submenu')
-      const list = navSubmenu.classList
-      list.add('abierto')
-      submenuEstaAbierto.value = true
+    if (esColapsable.value === false) {
+      if (document.querySelector('.nav-submenu')) {
+        const navSubmenu = document.querySelector('.nav-submenu')
+        const list = navSubmenu.classList
+        list.add('abierto')
+        menuEstaAbierto.value = false
+        submenuEstaAbierto.value = true
+      }
     }
   }
 
@@ -114,25 +131,52 @@ export function useMenuDesenfocable(elementoMenuEnfocable) {
     submenuEstaAbierto.value ? abrirSubmenu() : cerrarSubmenu()
   }
 
+  function regresarMenu() {
+    cerrarSubmenu()
+    abrirMenu()
+  }
+
+  function cerrarMenuSubmenu() {
+    cerrarMenu()
+    cerrarSubmenu()
+  }
+
+  function validarNavegacionColapsable() {
+    esColapsable.value = anchoNavegacion > window.innerWidth ? true : false
+  }
+
   watch(
     [menuEstaAbierto, submenuEstaAbierto],
     (menuEstaAbierto, submenuEstaAbierto) => {
       if (menuEstaAbierto || submenuEstaAbierto) {
-        elementoMenuEnfocable.value.focus()
+        if (esColapsable.value) {
+          elementoMenuEnfocable.value.focus()
+        }
       }
     }
   )
 
   onUnmounted(() => {
+    window.removeEventListener('resize', validarNavegacionColapsable)
+
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.removeEventListener('blur', updateBlur)
   })
 
   return {
     menuEstaAbierto,
+    submenuEstaAbierto,
+    esColapsable,
+
     abrirMenu,
     cerrarMenu,
     alternarMenu,
+
+    abrirSubmenu,
+    cerrarSubmenu,
     alternarSubmenu,
+
+    cerrarMenuSubmenu,
+    regresarMenu,
   }
 }

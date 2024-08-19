@@ -13,33 +13,12 @@
 <!--You should have received a copy of the GNU Lesser General Public License along-->
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
-<template>
-  <div
-    class="indice-de-contenido"
-    :id="id_indice"
-  >
-    <p
-      id="indice"
-      class="titulo-indice"
-    >
-      {{ titulo }}
-    </p>
-    <nav aria-labelledby="indice">
-      <div class="contenedor-indice-de-contenido">
-        <slot name="contenido-indice-de-contenido">
-          <router-link to="#routerlink"> router link prueba </router-link>
-          <a href="#anchore"> anchore link prueba </a>
-        </slot>
-      </div>
-    </nav>
-  </div>
-</template>
-
 <script setup>
 import { onUnmounted, onMounted, ref, watch } from 'vue'
 
 const lista_elementos = ref([])
 const seccion_visible = ref()
+
 const props = defineProps({
   titulo: { type: String, default: 'Índice' },
   altura: { type: Number, default: 50 },
@@ -51,12 +30,9 @@ const props = defineProps({
  * el último elemento al separar por el caracter '#', es decir
  * los id
  */
-
 const obtenerRutas = () => {
   lista_elementos.value = [
-    ...document.querySelectorAll(
-      `div#${props.id_indice}.indice-de-contenido a`
-    ),
+    ...document.querySelectorAll(`div#${props.id_indice}.indice-contenido a`),
   ].map(d => {
     return { id: d.href.split('#').slice(-1).pop() }
   })
@@ -75,10 +51,11 @@ function scroleando() {
     } else {
       // eslint-disable-next-line
       console.warn(
-        'Los href que introdujiste en el slot "contenido-indice-de-contenido" no hacen referencia a ningún id de esta vista'
+        'Los href que introdujiste en el slot "contenido-indice-contenido" no hacen referencia a ningún id de esta vista'
       )
     }
   })
+
   let posicion_scroll_y = window.pageYOffset + 100
 
   lista_elementos.value.map(d => {
@@ -94,10 +71,9 @@ function scroleando() {
 /**
  * Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus
  */
-
 function autoScrollSuave() {
   document
-    .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
+    .querySelectorAll(`div#${props.id_indice}.indice-contenido a`)
     .forEach(anchor => {
       anchor.addEventListener('click', () => {
         seccion_visible.value = anchor.href.split('#').slice(-1).pop()
@@ -113,9 +89,10 @@ function autoScrollSuave() {
       })
     })
 }
+
 watch(seccion_visible, () => {
   document
-    .querySelectorAll(`div#${props.id_indice}.indice-de-contenido a`)
+    .querySelectorAll(`div#${props.id_indice}.indice-contenido a`)
     .forEach(d => {
       if (d.href.split('#').slice(-1).pop() === seccion_visible.value) {
         d.classList.add('link-activo')
@@ -129,9 +106,35 @@ watch(seccion_visible, () => {
 onMounted(() => {
   obtenerRutas()
   autoScrollSuave()
+
   window.addEventListener('scroll', scroleando)
 })
+
 onUnmounted(() => {
   window.removeEventListener('scroll', scroleando)
 })
 </script>
+
+<template>
+  <div
+    :id="id_indice"
+    class="indice-contenido"
+  >
+    <p
+      id="indicecontenido"
+      class="indice-contenido-titulo"
+    >
+      {{ titulo }}
+    </p>
+
+    <nav
+      aria-labelledby="indicecontenido"
+      class="indice-contenido-contenedor"
+    >
+      <slot name="contenido-indice-contenido">
+        <router-link to="#routerlink"> router link prueba </router-link>
+        <a href="#anchore"> anchore link prueba </a>
+      </slot>
+    </nav>
+  </div>
+</template>

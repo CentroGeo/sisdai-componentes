@@ -1,49 +1,130 @@
+<script setup>
+import { ref } from 'vue'
+
+const menuLateralAbierto = ref()
+const colapsableNavegacionAbierta = ref(false)
+
+if (typeof window !== 'undefined') {
+  menuLateralAbierto.value = window.innerWidth < 768 ? false : true
+}
+
+function alAlternarMenuLateral(navSecundariaAbierta) {
+  menuLateralAbierto.value = navSecundariaAbierta
+}
+
+function alAlternarColapsableNavegacion(d) {
+  colapsableNavegacionAbierta.value = d
+}
+</script>
 <template>
   <div>
-    <SisdaiMenuLateral>
-      <template slot="contenido-menu-lateral">
+    <SisdaiMenuLateral @alAlternarMenu="alAlternarMenuLateral">
+      <template #contenido-menu-lateral>
         <ul>
           <li>
             <router-link
               to="#api"
               exact
+              :tabindex="menuLateralAbierto ? undefined : -1"
             >
               API</router-link
             >
           </li>
           <li>
-            <router-link to="#slots"> Slots</router-link>
+            <router-link
+              to="#slots"
+              :tabindex="menuLateralAbierto ? undefined : -1"
+            >
+              Slots</router-link
+            >
           </li>
-          <SisdaiColapsableNavegacion
-            :titulo="'<SisdaiColapsableNavegacion> :D'"
-          >
-            <template v-slot:listado-contenido>
-              <li>
-                <router-link
-                  to="#ejemplos"
-                  tabindex="-1"
-                >
-                  Ejemplos
-                </router-link>
-              </li>
-              <li>
-                <a
-                  href="#menu-lateral"
-                  tabindex="-1"
-                >
-                  El mero inicio
-                </a>
-              </li>
-            </template>
-          </SisdaiColapsableNavegacion>
+          <li class="colapsable">
+            <SisdaiColapsableNavegacion
+              :avisarMenuLateral="menuLateralAbierto"
+              @alAlternarColapsable="alAlternarColapsableNavegacion"
+            >
+              <template #encabezado>
+                <span>Este es un colapsable</span>
+              </template>
+              <template #contenido>
+                <ul>
+                  <li>
+                    <router-link
+                      to="#ejemplos"
+                      :tabindex="
+                        colapsableNavegacionAbierta && menuLateralAbierto
+                          ? undefined
+                          : -1
+                      "
+                    >
+                      Ejemplos
+                    </router-link>
+                  </li>
+                  <li>
+                    <a
+                      href="#menu-lateral"
+                      :tabindex="
+                        colapsableNavegacionAbierta && menuLateralAbierto
+                          ? undefined
+                          : -1
+                      "
+                    >
+                      El mero inicio
+                    </a>
+                  </li>
+                  <li>
+                    <SisdaiColapsableNavegacion>
+                      <template #encabezado>
+                        <span>Este es un colapsable anidado</span>
+                      </template>
+                      <template #contenido>
+                        <ul>
+                          <li>
+                            <router-link
+                              to="#ejemplos"
+                              :tabindex="
+                                colapsableNavegacionAbierta &&
+                                menuLateralAbierto
+                                  ? undefined
+                                  : -1
+                              "
+                            >
+                              Ejemplos
+                            </router-link>
+                          </li>
+                          <li>
+                            <a
+                              href="#menu-lateral"
+                              :tabindex="
+                                colapsableNavegacionAbierta &&
+                                menuLateralAbierto
+                                  ? undefined
+                                  : -1
+                              "
+                            >
+                              Opcion anidada
+                            </a>
+                          </li>
+                        </ul>
+                      </template>
+                    </SisdaiColapsableNavegacion>
+                  </li>
+                </ul>
+              </template>
+            </SisdaiColapsableNavegacion>
+          </li>
+
           <li>
             <a
               href="##"
-              rel="noopener"
+              target="_blank"
+              rel="noopener noreferrer"
               style="display: grid"
+              :tabindex="menuLateralAbierto ? undefined : -1"
             >
               <span
-                class="icono-social-github titulo-eni"
+                style="font-size: 2rem"
+                class="pictograma-social-github pictograma-48"
                 aria-hidden="true"
               ></span>
               <span> ir a github</span>

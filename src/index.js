@@ -23,8 +23,16 @@ import {
   SisdaiIndiceDeContenido,
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
-  SisdaiNarrativaScroll,
+  // SisdaiNarrativaScroll,
   SisdaiBotonFlotante,
+  SisdaiModal,
+  SisdaiEnlaceExterno,
+  SisdaiImagenPngWebp,
+  SisdaiAudio,
+  SisdaiCampoBusqueda,
+  SisdaiControlAcercarAlejar,
+  SisdaiControlDeslizante,
+  SisdaiNarrativa,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -40,13 +48,24 @@ const plugin = {
     Vue.use(SisdaiMenuLateral)
     Vue.use(SisdaiIndiceDeContenido)
     Vue.use(SisdaiInfoDeDespliegue)
+    Vue.use(SisdaiEnlaceExterno)
+    Vue.use(SisdaiAudio)
+    Vue.use(SisdaiControlDeslizante)
+
     //accesibilidad
     Vue.use(SisdaiMenuAccesibilidad)
+    Vue.use(SisdaiImagenPngWebp)
+
     //auxiliares
     Vue.use(GlobosInformacion)
     //otros
-    Vue.use(SisdaiNarrativaScroll)
+    // Vue.use(SisdaiNarrativaScroll)
+    Vue.use(SisdaiNarrativa)
+
     Vue.use(SisdaiBotonFlotante)
+    Vue.use(SisdaiModal)
+    Vue.use(SisdaiCampoBusqueda)
+    Vue.use(SisdaiControlAcercarAlejar)
   },
 }
 
@@ -61,7 +80,16 @@ export {
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
   GlobosInformacion,
-  SisdaiNarrativaScroll,
+  // SisdaiNarrativaScroll,
+  SisdaiNarrativa,
+  SisdaiBotonFlotante,
+  SisdaiModal,
+  SisdaiEnlaceExterno,
+  SisdaiImagenPngWebp,
+  SisdaiAudio,
+  SisdaiCampoBusqueda,
+  SisdaiControlAcercarAlejar,
+  SisdaiControlDeslizante,
 }
 
 export default plugin
