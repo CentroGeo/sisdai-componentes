@@ -152,7 +152,7 @@ defineExpose({
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Abrir/Cerrar navegación principal"
+        aria-label="Navegación principal"
         aria-controls="navegacionprincipal"
       >
         <span

@@ -97,10 +97,8 @@ defineExpose({
     :id="id_aleatorio"
     class="modal"
     :class="tamanioModal"
-    ref="trapRef"
-    role="dialog"
     aria-labelledby="titulo_modal"
-    aria-modal="true"
+    ref="trapRef"
   >
     <div class="modal-contenedor">
       <div class="modal-cabecera">
@@ -118,8 +116,9 @@ defineExpose({
       </div>
 
       <button
+        type="button"
         class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
-        aria-label="Cerrar"
+        aria-label="Cerrar modal"
         value="cerrar"
         @click="cerrarModal()"
       >

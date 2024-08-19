@@ -46,6 +46,7 @@ watch(_colapsado, () => {
     :class="{ abierto: _colapsado }"
   >
     <button
+      type="button"
       class="colapsable-boton"
       aria-controls="colapsableboton"
       :aria-expanded="_colapsado"
@@ -60,7 +61,6 @@ watch(_colapsado, () => {
         aria-hidden="true"
         class="pictograma-angulo-derecho"
       ></span>
-      <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span>
     </button>
 
     <div

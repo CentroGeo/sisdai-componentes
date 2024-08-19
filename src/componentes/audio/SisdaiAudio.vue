@@ -254,8 +254,9 @@ function funcionInput() {
 
       <div class="audio-reproduccion">
         <button
+          type="button"
           class="boton-pictograma boton-sin-contenedor-primario"
-          aria-label="Regresar"
+          aria-label="Regresar 10 segundos"
           @click="retrasa10"
           :disabled="!(tiempo_transcurrido > 10)"
         >
@@ -266,6 +267,7 @@ function funcionInput() {
         </button>
 
         <button
+          type="button"
           class="boton-pictograma boton-sin-contenedor-primario"
           :aria-label="
             !reproduciendo ? 'Comenzar reproducción' : 'Pausar reproducción'
@@ -285,8 +287,9 @@ function funcionInput() {
         </button>
 
         <button
+          type="button"
           class="boton-pictograma boton-sin-contenedor-primario"
-          aria-label="Adelantar"
+          aria-label="Adelantar 10 segundos"
           @click="adelanta10"
           :disabled="!(tiempo_transcurrido < duracion - 10)"
         >
@@ -300,6 +303,7 @@ function funcionInput() {
       <div class="audio-volumen">
         <button
           v-if="controlVolumen?.valor_seleccionado > 0"
+          type="button"
           class="boton-pictograma boton-sin-contenedor-primario"
           aria-label="Apagar sonido"
           @click="
@@ -315,6 +319,7 @@ function funcionInput() {
         </button>
         <button
           v-if="controlVolumen?.valor_seleccionado == 0"
+          type="button"
           class="boton-pictograma boton-sin-contenedor-primario"
           aria-label="Encender sonido"
           @click="

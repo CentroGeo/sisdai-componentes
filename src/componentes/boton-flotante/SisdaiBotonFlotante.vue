@@ -78,6 +78,7 @@ defineExpose({ alternarEstado })
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
+      type="button"
       class="menu-flotante-boton"
       aria-controls="menuflotante"
       :aria-label="botonFlotanteEstaAbierto ? 'Abrir' : 'Cerrar'"

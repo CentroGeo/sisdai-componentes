@@ -41,17 +41,18 @@ watch(menu_abierto, () => {
   <nav
     class="menu-lateral"
     :class="{ abierto: menu_abierto }"
-    aria-label="Menú secundario"
+    aria-label="Navegación secundaria"
   >
     <button
+      type="button"
       class="menu-lateral-boton"
+      aria-label="Navegación secundaria"
       aria-controls="menulateral"
       :aria-expanded="menu_abierto ? 'true' : 'false'"
-      aria-label="Abrir/Cerrar navegación secundaria"
       @click="menu_abierto = !menu_abierto"
     >
       <span
-        class="pictograma-angulo-izquierdo"
+        class="pictograma-angulo-derecho"
         aria-hidden="true"
       ></span>
     </button>
