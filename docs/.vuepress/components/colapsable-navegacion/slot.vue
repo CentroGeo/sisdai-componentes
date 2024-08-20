@@ -1,8 +1,6 @@
 <template>
   <SisdaiColapsableNavegacion :colapsado="false">
-    <template #encabezado>
-      <p>Este es el título del colapsable</p>
-    </template>
+    <template #encabezado> Este es el título del colapsable </template>
     <template #contenido>
       <ul>
         <li>

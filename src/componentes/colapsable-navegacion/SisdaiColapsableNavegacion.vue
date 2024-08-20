@@ -101,14 +101,12 @@ function alternarTabIndex(val) {
       @click="_colapsado = !_colapsado"
       :tabindex="avisarMenuLateral ? undefined : -1"
     >
-      <slot name="encabezado">
-        <p>Encabezado colapsable</p>
-      </slot>
+      <slot name="encabezado"> Encabezado colapsable </slot>
 
       <span
         aria-hidden="true"
         class="pictograma-angulo-derecho"
-      />
+      ></span>
       <!-- <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span> -->
     </button>
 
