@@ -90,8 +90,8 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/audio"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Audio</router-link
-                >
+                  Audio
+                </router-link>
               </li>
               <li>
                 <router-link
@@ -194,8 +194,8 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                   to="/documentacion/modal"
                   :tabindex="menuLateralAbierto ? undefined : -1"
                 >
-                  Modal</router-link
-                >
+                  Modal
+                </router-link>
               </li>
               <li>
                 <router-link
@@ -258,7 +258,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
                     style="font-size: 2rem"
                     class="pictograma-social-github pictograma-48"
                     aria-hidden="true"
-                  ></span>
+                  />
                   <span> ir a github</span>
                 </a>
               </li>
@@ -274,7 +274,7 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
         >
           <div class="columna-4-esc columna-8-mov columna-orden-3-esc">
             <SisdaiIndiceDeContenido
-              :id_indice="'indice-template'"
+              id_indice="indice-template"
               class="m-l-3-mov"
               ref="componenteIndice"
             >

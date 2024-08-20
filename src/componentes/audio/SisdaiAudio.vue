@@ -268,43 +268,43 @@ function funcionInput() {
           class="boton-pictograma boton-sin-contenedor-primario"
           @click="retrasa10"
           :disabled="!(tiempo_transcurrido > 10)"
+          type="button"
+          role="button"
+          aria-label="Atrasar 10 segundos"
         >
           <span
             class="pictograma-regresar-10"
             aria-hidden="true"
-          ></span>
-          <span class="a11y-solo-lectura"> Regresar </span>
+          />
         </button>
 
         <button
           class="boton-pictograma boton-sin-contenedor-primario"
           @click="reproduciendo = !reproduciendo"
+          type="button"
+          role="button"
+          :aria-label="
+            reproduciendo ? 'Pausar reproducción' : 'Comenzar reproducción'
+          "
         >
           <span
-            class="pictograma-control-comenzar"
+            :class="`pictograma-control-${reproduciendo ? 'pausa' : 'comenzar'}`"
             aria-hidden="true"
-            v-if="!reproduciendo"
-          ></span>
-          <span class="a11y-solo-lectura"> Comenzar reproducción </span>
-
-          <span
-            class="pictograma-control-pausa"
-            aria-hidden="true"
-            v-if="reproduciendo"
-          ></span>
-          <span class="a11y-solo-lectura"> Pausar reproducción </span>
+          />
         </button>
 
         <button
           class="boton-pictograma boton-sin-contenedor-primario"
           @click="adelanta10"
           :disabled="!(tiempo_transcurrido < duracion - 10)"
+          type="button"
+          role="button"
+          aria-label="Adelantar 10 segundos"
         >
           <span
             class="pictograma-adelantar-10"
             aria-hidden="true"
-          ></span>
-          <span class="a11y-solo-lectura"> Adelantar </span>
+          />
         </button>
       </div>
 
@@ -316,20 +316,18 @@ function funcionInput() {
               ? (volumen_default = 100)
               : (volumen_default = 0)
           "
+          type="button"
+          role="button"
+          :aria-label="
+            controlVolumen?.valor_seleccionado > 0
+              ? 'Silenciar'
+              : 'Desactivar silencio'
+          "
         >
           <span
-            class="pictograma-volumen"
+            :class="`pictograma-${controlVolumen?.valor_seleccionado > 0 ? 'volumen' : 'silenciar'}`"
             aria-hidden="true"
-            v-if="controlVolumen?.valor_seleccionado > 0"
-          ></span>
-          <span class="a11y-solo-lectura"> Encender sonido </span>
-
-          <span
-            class="pictograma-silenciar"
-            aria-hidden="true"
-            v-if="controlVolumen?.valor_seleccionado == 0"
-          ></span>
-          <span class="a11y-solo-lectura"> Apagar sonido </span>
+          />
         </button>
 
         <SisdaiControlDeslizante
@@ -337,7 +335,7 @@ function funcionInput() {
           class="control-volumen m-y-1 m-x-0"
           aria-label="Nivel de volumen"
           :val_entrada="volumen_default"
-        ></SisdaiControlDeslizante>
+        />
       </div>
     </div>
   </div>

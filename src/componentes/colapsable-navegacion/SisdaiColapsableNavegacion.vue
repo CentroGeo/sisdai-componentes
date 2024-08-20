@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { ref, toRefs, watch } from 'vue'
+import { onMounted, ref, toRefs, watch } from 'vue'
 
 const props = defineProps({
   colapsado: { type: Boolean, default: false },
@@ -24,6 +24,11 @@ const props = defineProps({
 // eslint-disable-next-line
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
+
+const colapsablecontenedor = ref(null)
+onMounted(() => {
+  alternarTabIndex(colapsado.value)
+})
 
 watch(colapsado, nv => (_colapsado.value = nv))
 
@@ -35,9 +40,53 @@ const id_aleatorio = idAleatorio()
 
 const emits = defineEmits(['alAlternarColapsable'])
 
-watch(_colapsado, () => {
-  emits('alAlternarColapsable', _colapsado.value)
+watch(_colapsado, nv => {
+  emits('alAlternarColapsable', nv)
+  alternarTabIndex(nv)
 })
+
+function alternarTabIndex(val) {
+  // _ver(colapsablecontenedor?.value)
+  // _ver(colapsablecontenedor?.value.children[0])
+  // _ver(colapsablecontenedor?.value.children[0].children)
+
+  Array.from(colapsablecontenedor?.value.children[0].children).forEach(e => {
+    // _ver(e)
+    // _ver(e.children[0])
+
+    if (Array.from(e.children[0].classList).includes('colapsable')) {
+      // _ver('tab al botón')
+      e.children[0].firstChild.tabIndex = val ? 0 : -1
+      // _ver(e.children[0].firstChild)
+      // return
+    } else {
+      // _ver('tab al index')
+      e.children[0].tabIndex = val ? 0 : -1
+      // _ver(e.children[0])
+    }
+  })
+
+  // obtener los elementos interactivos hijos que no estén dentro de un class="colapsable" hijo de este componente
+  // const elementosInteractivos = [
+  //   ...Array.from(colapsablecontenedor?.value.getElementsByTagName('a')),
+  //   ...Array.from(colapsablecontenedor?.value.getElementsByTagName('button')),
+  // ]
+
+  // elementosInteractivos.forEach(elemento => {
+  //   elemento.tabIndex = val ? 0 : -1
+  //   // console.log(elemento)
+  // })
+
+  // for (let i = 0; i < enlaces.length; i++) {
+  //   enlaces[i].tabIndex = val ? 0 : -1
+  // }
+}
+
+// function _ver(msg) {
+//   if (props.ver) {
+//     console.log(msg)
+//   }
+// }
 </script>
 
 <template>
@@ -52,19 +101,18 @@ watch(_colapsado, () => {
       @click="_colapsado = !_colapsado"
       :tabindex="avisarMenuLateral ? undefined : -1"
     >
-      <slot name="encabezado">
-        <p>Encabezado colapsable</p>
-      </slot>
+      <slot name="encabezado"> Encabezado colapsable </slot>
 
       <span
         aria-hidden="true"
         class="pictograma-angulo-derecho"
       ></span>
-      <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span>
+      <!-- <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span> -->
     </button>
 
     <div
       class="colapsable-contenedor"
+      ref="colapsablecontenedor"
       id="colapsablecontenedor"
       :aria-hidden="!_colapsado"
     >
@@ -78,8 +126,8 @@ watch(_colapsado, () => {
               exact
               :tabindex="_colapsado ? undefined : -1"
             >
-              Elemento desplegado</a
-            >
+              Elemento desplegado
+            </a>
           </li>
         </ul>
       </slot>

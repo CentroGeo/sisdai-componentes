@@ -124,12 +124,14 @@ defineExpose({
         class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
         value="cerrar"
         @click="cerrarModal()"
+        type="button"
+        role="button"
+        aria-label="Cerrar Modal"
       >
         <span
           class="pictograma-cerrar"
           aria-hidden="true"
-        ></span>
-        <span class="a11y-solo-lectura"> Cerrar Modal. </span>
+        />
       </button>
     </div>
   </dialog>
