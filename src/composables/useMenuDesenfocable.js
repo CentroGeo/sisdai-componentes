@@ -32,7 +32,7 @@ import { onMounted, onUnmounted, ref, watch } from 'vue'
  * @property {Ref<boolean>} esColapsable Indica si el menú está en una posición de ser colapsable o no
  * @property {function} regresarMenu pone `submenuEstaAbierto = !submenuEstaAbierto` y cierra o abre submenu según su valor
  * @property {function} cerrarMenuSubmenu cierra el Menu y el Submenu
- * @property {function} validarNavegacionColapsable valida si la navegación en colapsable o no al ancho de la navegación
+ * @property {function} validarNavegacionColapsable valida si la navegación es colapsable o no al ancho de la navegación
  */
 
 /**
@@ -86,7 +86,7 @@ export function useMenuDesenfocable(
 
   onMounted(() => {
     validarNavegacionColapsable()
-    window.addEventListener('resize', validarNavegacionColapsable)
+    // window.addEventListener('resize', validarNavegacionColapsable)
 
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.addEventListener('blur', updateBlur)
@@ -141,8 +141,15 @@ export function useMenuDesenfocable(
     cerrarSubmenu()
   }
 
+  /**
+   * Valida si la navegación es colapsable o no al ancho de la navegación
+   */
   function validarNavegacionColapsable() {
     esColapsable.value = anchoNavegacion > window.innerWidth ? true : false
+
+    window
+      .matchMedia(`(min-width: ${anchoNavegacion}px)`)
+      .addEventListener('change', ev => (esColapsable.value = !ev.matches))
   }
 
   watch(
@@ -157,7 +164,7 @@ export function useMenuDesenfocable(
   )
 
   onUnmounted(() => {
-    window.removeEventListener('resize', validarNavegacionColapsable)
+    // window.removeEventListener('resize', validarNavegacionColapsable)
 
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.removeEventListener('blur', updateBlur)

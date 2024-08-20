@@ -120,10 +120,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         aria-label="Abrir/Cerrar menú de gobierno de México"
         aria-controls="menugobiernomexico"
       >
-        <span class="nav-icono-menu"></span>
-        <span class="a11y-solo-lectura"
-          >abrir y cerrar navegacion del gobierno de México</span
-        >
+        <span class="nav-icono-menu" />
       </button>
     </div>
 
@@ -135,7 +132,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
-        tabindex="0"
+        :tabindex="esColapsable ? 0 : -1"
       >
         <ul class="nav-menu">
           <li>
