@@ -46,12 +46,47 @@ watch(_colapsado, nv => {
 })
 
 function alternarTabIndex(val) {
-  const enlaces = colapsablecontenedor?.value.getElementsByTagName('a')
+  // _ver(colapsablecontenedor?.value)
+  // _ver(colapsablecontenedor?.value.children[0])
+  // _ver(colapsablecontenedor?.value.children[0].children)
 
-  for (let i = 0; i < enlaces.length; i++) {
-    enlaces[i].tabIndex = val ? 0 : -1
-  }
+  Array.from(colapsablecontenedor?.value.children[0].children).forEach(e => {
+    // _ver(e)
+    // _ver(e.children[0])
+
+    if (Array.from(e.children[0].classList).includes('colapsable')) {
+      // _ver('tab al botón')
+      e.children[0].firstChild.tabIndex = val ? 0 : -1
+      // _ver(e.children[0].firstChild)
+      // return
+    } else {
+      // _ver('tab al index')
+      e.children[0].tabIndex = val ? 0 : -1
+      // _ver(e.children[0])
+    }
+  })
+
+  // obtener los elementos interactivos hijos que no estén dentro de un class="colapsable" hijo de este componente
+  // const elementosInteractivos = [
+  //   ...Array.from(colapsablecontenedor?.value.getElementsByTagName('a')),
+  //   ...Array.from(colapsablecontenedor?.value.getElementsByTagName('button')),
+  // ]
+
+  // elementosInteractivos.forEach(elemento => {
+  //   elemento.tabIndex = val ? 0 : -1
+  //   // console.log(elemento)
+  // })
+
+  // for (let i = 0; i < enlaces.length; i++) {
+  //   enlaces[i].tabIndex = val ? 0 : -1
+  // }
 }
+
+// function _ver(msg) {
+//   if (props.ver) {
+//     console.log(msg)
+//   }
+// }
 </script>
 
 <template>
