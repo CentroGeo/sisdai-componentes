@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { ref, toRefs, watch } from 'vue'
+import { onMounted, ref, toRefs, watch } from 'vue'
 
 const props = defineProps({
   colapsado: { type: Boolean, default: false },
@@ -24,6 +24,11 @@ const props = defineProps({
 // eslint-disable-next-line
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
+
+const colapsablecontenedor = ref(null)
+onMounted(() => {
+  alternarTabIndex(colapsado.value)
+})
 
 watch(colapsado, nv => (_colapsado.value = nv))
 
@@ -35,9 +40,18 @@ const id_aleatorio = idAleatorio()
 
 const emits = defineEmits(['alAlternarColapsable'])
 
-watch(_colapsado, () => {
-  emits('alAlternarColapsable', _colapsado.value)
+watch(_colapsado, nv => {
+  emits('alAlternarColapsable', nv)
+  alternarTabIndex(nv)
 })
+
+function alternarTabIndex(val) {
+  const enlaces = colapsablecontenedor?.value.getElementsByTagName('a')
+
+  for (let i = 0; i < enlaces.length; i++) {
+    enlaces[i].tabIndex = val ? 0 : -1
+  }
+}
 </script>
 
 <template>
@@ -59,12 +73,13 @@ watch(_colapsado, () => {
       <span
         aria-hidden="true"
         class="pictograma-angulo-derecho"
-      ></span>
-      <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span>
+      />
+      <!-- <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span> -->
     </button>
 
     <div
       class="colapsable-contenedor"
+      ref="colapsablecontenedor"
       id="colapsablecontenedor"
       :aria-hidden="!_colapsado"
     >
@@ -78,8 +93,8 @@ watch(_colapsado, () => {
               exact
               :tabindex="_colapsado ? undefined : -1"
             >
-              Elemento desplegado</a
-            >
+              Elemento desplegado
+            </a>
           </li>
         </ul>
       </slot>
