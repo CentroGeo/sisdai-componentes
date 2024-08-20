@@ -78,6 +78,7 @@ defineExpose({ alternarEstado })
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
+      test="menu-flotante-boton"
       type="button"
       class="menu-flotante-boton"
       aria-controls="menuflotante"
@@ -101,6 +102,7 @@ defineExpose({ alternarEstado })
       :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
+        test="menu-flotante-hipervinculo"
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
         :key="`menu-flotante-enlace-${idx}`"
         :id="`menu_flotante_enlace_${idx}`"

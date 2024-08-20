@@ -48,7 +48,7 @@ const porcentaje_almacenado = ref('0%')
 const slider_activo = ref(false)
 //Elementos DOM
 const audio = ref()
-const contenedor_audio = ref()
+const contenedor_audio = ref({})
 const control_temporal = ref()
 
 onMounted(() => {
