@@ -110,8 +110,9 @@ watch(route, () => {
                   <span
                     v-if="item.pre"
                     class="etiqueta"
-                    >pre</span
                   >
+                    pre
+                  </span>
                 </a>
               </li>
             </ul>
@@ -126,7 +127,7 @@ watch(route, () => {
         >
           <div class="columna-4-esc columna-8-mov columna-orden-3-esc">
             <SisdaiIndiceDeContenido
-              :id_indice="'indice-template'"
+              id_indice="indice-template"
               class="m-l-3-mov"
               ref="componenteIndice"
             >

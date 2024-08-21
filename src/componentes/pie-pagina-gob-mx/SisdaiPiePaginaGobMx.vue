@@ -173,6 +173,7 @@
             <a
               href="https://www.facebook.com/gobmx"
               class="hipervinculo-gobmx"
+              aria-label="feisbuk"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -180,13 +181,13 @@
                 class="pictograma-social-facebook"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">feisbuk</span>
             </a>
           </li>
           <li>
             <a
               href="https://twitter.com/gobmx"
               class="hipervinculo-gobmx"
+              aria-label="x."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -194,7 +195,6 @@
                 class="pictograma-social-x"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">x.</span>
             </a>
           </li>
         </ul>

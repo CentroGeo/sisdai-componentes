@@ -97,10 +97,8 @@ defineExpose({
     :id="id_aleatorio"
     class="modal"
     :class="tamanioModal"
-    ref="trapRef"
-    role="dialog"
     aria-labelledby="titulo_modal"
-    aria-modal="true"
+    ref="trapRef"
   >
     <div class="modal-contenedor">
       <div class="modal-cabecera">
@@ -118,7 +116,10 @@ defineExpose({
       </div>
 
       <button
+        type="button"
+        role="button"
         class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
+        aria-label="Cerrar modal"
         value="cerrar"
         @click="cerrarModal()"
       >
@@ -126,7 +127,6 @@ defineExpose({
           class="pictograma-cerrar"
           aria-hidden="true"
         ></span>
-        <span class="a11y-solo-lectura"> Cerrar Modal. </span>
       </button>
     </div>
   </dialog>

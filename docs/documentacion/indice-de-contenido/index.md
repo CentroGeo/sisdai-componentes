@@ -7,13 +7,21 @@ import EjemploLista from "../../.vitepress/components/indice-de-contenido/lista.
 
 El componente `SisdaiIndiceDeContenido` se utiliza como un menú de navegación para el contenido de una vista. Mediante slots, se introducen enlaces, ya sean `<router-link/>` o `<a/>` cuya ruta sea simplemente un ID de algún elemento que exista dentro de la vista en la que se muestra el componente.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiIndiceDeContenido`, incorpora el componente en tu plantilla y define los enlaces dentro del slot. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
 <SisdaiIndiceDeContenido> ...contenido </SisdaiIndiceDeContenido>
 ```
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiIndiceDeContenido` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 

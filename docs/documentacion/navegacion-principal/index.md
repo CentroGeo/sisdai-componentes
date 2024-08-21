@@ -7,13 +7,21 @@ import EjemploContenidoPersonalizado from "../../.vitepress/components/navegacio
 
 El componente `SisdaiNavegacionPrincipal` generalmente contiene la lista de enlaces a las secciones del sitio, identidad y otros enlaces relevantes.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiNavegacionPrincipal`, incorpora en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiNavegacionPrincipal> ...contenido </SisdaiNavegacionPrincipal>
 ```
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiNavegacionPrincipal` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 
@@ -39,7 +47,7 @@ Este componente no dispara eventos externos.
 
 ### Slots
 
-##### predeterminado
+#### predeterminado
 
 Slot para el contenido de navegación, son los links a las secciones disponibles en el sitio.
 

@@ -1,3 +1,3 @@
 module.exports = {
-  '*.{js,jsx,vue,css,scss}': 'npm run format-lint',
+  '*.{js,jsx,vue,css,scss,md}': 'npm run format-lint',
 }

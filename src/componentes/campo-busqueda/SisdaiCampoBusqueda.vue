@@ -15,7 +15,9 @@
 
 <script>
 const eventos = {
-  /** Evento que se emite al empezar a escribir en el campo de búsqueda. */
+  /**
+   * Evento que se emite al empezar a escribir en el campo de búsqueda.
+   */
   alFiltrar: 'alFiltrar',
 }
 </script>
@@ -64,11 +66,17 @@ function filtroAnidado(texto) {
         const elementosFiltrados = {}
         elementosFiltrados[props.catalogoAnidadoPropiedadElementos] = grupo[
           props.catalogoAnidadoPropiedadElementos
-        ].filter(elemento =>
-          elemento[props.propiedadBusqueda]
+        ].filter(elemento => {
+          const propiedadBusquedaNormalizada = elemento[props.propiedadBusqueda]
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '')
+          const textoNormalizado = texto
+            .normalize('NFD')
+            .replace(/\p{Diacritic}/gu, '')
+          return propiedadBusquedaNormalizada
             .toLowerCase()
-            .includes(texto.trim().toLowerCase())
-        )
+            .includes(textoNormalizado.trim().toLowerCase())
+        })
 
         return {
           ...grupo,
@@ -85,11 +93,17 @@ function filtro(texto) {
     return filtroAnidado(texto)
   }
   if (texto.trim().length >= 1) {
-    return catalogo.value.filter(elemento =>
-      elemento[props.propiedadBusqueda]
+    return catalogo.value.filter(elemento => {
+      const propiedadBusquedaNormalizada = elemento[props.propiedadBusqueda]
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+      const textoNormalizado = texto
+        .normalize('NFD')
+        .replace(/\p{Diacritic}/gu, '')
+      return propiedadBusquedaNormalizada
         .toLowerCase()
-        .includes(texto.trim().toLowerCase())
-    )
+        .includes(textoNormalizado.trim().toLowerCase())
+    })
   }
 
   return catalogo.value
@@ -108,7 +122,15 @@ function limpiarBusqueda() {
 </script>
 
 <template>
-  <div class="campo-busqueda">
+  <form
+    class="campo-busqueda"
+    @submit.prevent
+  >
+    <label
+      :for="id_aleatorio"
+      class="a11y-solo-lectura"
+      >Campo de búsqueda</label
+    >
     <input
       :id="id_aleatorio"
       type="search"
@@ -119,7 +141,9 @@ function limpiarBusqueda() {
     />
 
     <button
+      type="button"
       class="boton-pictograma boton-sin-contenedor-secundario campo-busqueda-borrar"
+      aria-label="Borrar"
       v-show="botonLimpiarBusquedaActivo"
       @click="limpiarBusqueda"
     >
@@ -127,15 +151,17 @@ function limpiarBusqueda() {
         class="pictograma-cerrar"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura">Limpiar campo de búsqueda</span>
     </button>
 
-    <button class="boton-primario boton-pictograma campo-busqueda-buscar">
+    <button
+      type="button"
+      class="boton-primario boton-pictograma campo-busqueda-buscar"
+      aria-label="Buscar"
+    >
       <span
         class="pictograma-buscar"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura">Buscar</span>
     </button>
-  </div>
+  </form>
 </template>

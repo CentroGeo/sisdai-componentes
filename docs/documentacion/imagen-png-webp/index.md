@@ -6,7 +6,9 @@ import EjemploBasico from "../../.vitepress/components/imagen-png-webp/basico.vu
 
 El componente `SisdaiImagenPngWebp` permite indicar el nombre de dos archivos existentes como insumos del proyecto en formato PNG y WebP.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiImagenPngWebp`, incorpora en tu plantilla y proporciona los atributos `dominio`, `ruta`, `textoAlternativo`, `leyenda` y `ancho_maximo` para definir los detalles de la imagen. A continuación, se muestra un ejemplo de etiqueta simple:
 
@@ -19,6 +21,12 @@ Para utilizar el componente `SisdaiImagenPngWebp`, incorpora en tu plantilla y p
   :ancho_maximo="'..'"
 />
 ```
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiImagenPngWebp` responde a la regla de remover la imagen.
+
+</section>
 
 <section id="api">
 
@@ -67,7 +75,7 @@ Este componente no permite contenido con slots.
 
 ## Ejemplos de uso
 
-#### Imagen con leyenda y ancho máximo
+### Imagen con leyenda y ancho máximo
 
 En este caso se muestra una ímagen cuyo nombre es `'reticula_03'`. En la ruta resultante deben existir los archivos `'reticula_03.png'` y `'reticula_03.webp'`.
 

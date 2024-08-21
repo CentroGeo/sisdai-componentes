@@ -7,13 +7,21 @@ import EjemploConSlot from "../../.vitepress/components/audio/con-slot.vue";
 
 El componente `SisdaiAudio` permite reproducir audios en el navegador. El componente incluye diversos controles de reproducción.
 
-Uso
+<section id="uso">
+
+## Uso
 
 El componente `SisdaiAudio` permite reproducir un archivo de audio especificado mediante la propiedad archivo. Puedes incluir información adicional sobre el archivo utilizando el slot `encabezado`. A continuación, se muestra un ejemplo de uso con etiqueta simple:
 
 ```html
 <SisdaiAudio archivo="" />
 ```
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiAudio` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 

@@ -7,7 +7,9 @@ import EjemploCatalogoAnidado from "../../.vitepress/components/campo-busqueda/c
 
 El componente `SisdaiCampoBusqueda` permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web. Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiCampoBusqueda`, se debe proporcionar una lista de elementos a través de la propiedad `catalogo`. Además, se puede manejar el resultado de la búsqueda mediante el evento `alFiltrar`, que devuelve una lista filtrada con los resultados de la búsqueda.
 
@@ -32,6 +34,12 @@ Mostrando los resultados de búsqueda:
 ```
 
 Donde `listaElementos` es la lista de elementos sobre los que se realiza la búsqueda y `listaElementos2` es la variable que recibe el resultado de la búsqueda.
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiCampoBusqueda` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 

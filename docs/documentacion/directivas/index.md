@@ -12,7 +12,11 @@ import EjemploGloboInformacionDinamico from "../../.vitepress/components/directi
 
 Comúnmente conocidos como Tooltips, estas directivas funcionan para cualquier elemento HTML o componente de Vue, agregando la directiva `v-globo-informacion` o `v-globo-informacion-extendido`.
 
-Uso
+</section>
+
+<section id="uso">
+
+## Uso
 
 Para usar un globo de información básico en un elemento HTML, agrega la directiva `v-globo-informacion` especificando la posición y el contenido u opciones.
 
@@ -35,6 +39,10 @@ Para usar un globo de información básico en un elemento HTML, agrega la direct
 - Dependencia: para el posicionamiento de los tooltips se utiliza la dependencia [Popper js](https://www.npmjs.com/package/@popperjs/core). No es necesario instalarla por separado, ya que se incluye con las dependencias de esta biblioteca.
 - Posicionamiento: la posición del tooltip es definida por el parámetro `posicion` (top, left, bottom, etc.). Sin embargo, la asignación final dependerá de la disponibilidad de espacio en pantalla y de la posición del scroll.
 - Compatibilidad con elementos deshabilitados: cuando un elemento de formulario, como un `button`, tiene activado el atributo `disabled` algunos eventos de tipo `mouseenter` y `mouseleave` dejan de ser detectados por JavaScript. Por tal motivo, la directiva podría no funcionar correctamente. Se recomienda no cambiar el atributo `disabled` mientras el tooltip esté pasando por el ciclo de aparecer/desaparecer.
+
+Vista simplificada
+
+En la vista simplificada el directiva `v-globo-informacion` o `v-globo-informacion-extendido` no se modifica en diseño ni en comportamiento.
 
 </section>
 

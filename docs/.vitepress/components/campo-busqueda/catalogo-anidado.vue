@@ -38,7 +38,6 @@ const catalogoFiltrado = ref(catalogo.value)
       propiedad-busqueda="titulo"
       @alFiltrar="r => (catalogoFiltrado = r)"
     />
-    <hr />
     <p>Resultados:</p>
     <ul>
       <li

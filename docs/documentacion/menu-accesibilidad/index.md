@@ -14,7 +14,9 @@ El componente cuenta con cuatro opciones de accesibilidad predeterminadas:
 - Mostrar solo texto
 - Vista oscura
 
-Uso
+<section id="uso">
+
+## Uso
 
 Para utilizar el componente `SisdaiMenuAccesibilidad`, incorpora el componente en tu plantilla. A continuación, se muestra un ejemplo de etiqueta simple:
 
@@ -32,6 +34,12 @@ Al utilizar el Menú de accesibilidad, el perfil de color predeterminado es el d
 ```html
 <SisdaiMenuAccesibilidad perfilColor="sisdai" />
 ```
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiMenuAccesibilidad` responde a la regla de adaptar todos los elementos botón en forma e interacción de hipervínculos.
+
+</section>
 
 <section id="api">
 
@@ -98,7 +106,7 @@ Este componente no permite contenido con slots.
 <EjemploBasico />
 <<< @/.vitepress/components/menu-accesibilidad/basico.vue
 
-#### Agregando opciones de accesibilidad
+### Agregando opciones de accesibilidad
 
 Junto con el uso de la propiedad `agregarOpciones` para añadir reglas de accesibilidad, también es necesario declarar las reglas CSS de los elementos HTML que se deseen afectar:
 

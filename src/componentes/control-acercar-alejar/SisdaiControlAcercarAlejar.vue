@@ -72,12 +72,14 @@ function disminuir() {
     aria-label="Controles para ajustar el nivel de acercamiento"
   >
     <button
+      type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
+      aria-label="Alejar un paso"
       @click="disminuir"
     >
       <span
         class="pictograma-restar"
-        aria-label="Alejar"
+        aria-hidden="true"
       ></span>
     </button>
 
@@ -92,12 +94,14 @@ function disminuir() {
     />
 
     <button
+      type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
+      aria-label="Acercar un paso"
       @click="aumentar"
     >
       <span
         class="pictograma-agregar"
-        aria-label="Acercar"
+        aria-hidden="true"
       ></span>
     </button>
 

@@ -6,7 +6,9 @@ import EjemploBasico from "../../.vitepress/components/info-de-despliegue/basico
 
 El componente `SisdaiInfoDeDespliegue` sirve para presentar la información acerca del versionamiento, el ambiente y la fecha de despliegue.
 
-Uso
+<section id="uso">
+
+## Uso
 
 La información de despliegue se coloca al final de cada página del sitio, encima del último elemento de esta, como el pie de página del Conahcyt. Este componente sirve principalmente para:
 
@@ -17,9 +19,11 @@ La información de despliegue se coloca al final de cada página del sitio, enci
 <SisdaiInfoDeDespliegue />
 ```
 
-**Vista simplificada**
+Vista simplificada
 
-En la vista simplificada la información de despliegue no se modifica en diseño ni en comportamiento, ya que solo sirve como referencia en los ambientes de desarrollo y pruebas. Es importante mencionar que el componente solo se mostrará cuando se despliegue únicamente en el ambiente de desarrollo y pruebas, no en producción.
+En la vista simplificada el componente `SisdaiInfoDeDespliegue` no se modifica en diseño ni en comportamiento, ya que solo sirve como referencia visual en los ambientes de desarrollo y pruebas, no en producción.
+
+</section>
 
 <section id="api">
 

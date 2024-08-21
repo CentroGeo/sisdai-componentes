@@ -312,6 +312,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
     <button
+      type="button"
       class="menu-flotante-boton"
       aria-label="Abrir y cerrar menú de accesibilidad"
       aria-controls="menua11y"
@@ -322,9 +323,6 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
         class="pictograma-accesibilidad"
         aria-hidden="true"
       ></span>
-      <span class="a11y-solo-lectura">
-        abrir y cerrar menú de accesibilidad
-      </span>
     </button>
 
     <menu
@@ -355,6 +353,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       </div>
 
       <button
+        type="button"
         class="boton-secundario boton-chico m-t-2"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"
