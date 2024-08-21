@@ -120,17 +120,17 @@ defineExpose({ lista_elementos, seccion_visible, autoScrollSuave })
     :id="id_indice"
     class="indice-contenido"
   >
-    <p
+    <div
       id="indicecontenido"
       class="indice-contenido-titulo"
+      aria-level="2"
+      role="heading"
     >
       {{ titulo }}
-    </p>
+    </div>
 
-    <nav
-      aria-labelledby="indicecontenido"
-      class="indice-contenido-contenedor"
-    >
+
+    <nav class="indice-contenido-contenedor">
       <slot name="contenido-indice-contenido">
         <a href="#anchore"> anchore link prueba </a>
       </slot>

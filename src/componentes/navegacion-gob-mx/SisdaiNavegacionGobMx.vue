@@ -117,7 +117,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Menú de gobierno de México"
+        aria-label="Abrir/Cerrar menú de gobierno de México"
         aria-controls="menugobiernomexico"
       >
         <span
@@ -135,7 +135,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
-        tabindex="0"
+        :tabindex="esColapsable ? 0 : -1"
       >
         <ul class="nav-menu">
           <li>
@@ -176,7 +176,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
             <a
               href="https://www.gob.mx/busqueda"
               class="nav-hipervinculo"
-              aria-label="Ir"
+              aria-label="Ir a búsqueda"
               target="_blank"
               rel="noopener"
               @mouseover="cerrarSubmenu()"

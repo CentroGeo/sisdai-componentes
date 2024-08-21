@@ -152,7 +152,7 @@ defineExpose({
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Navegación principal"
+        aria-label="Abrir/Cerrar navegación principal"
         aria-controls="navegacionprincipal"
       >
         <span
@@ -183,7 +183,7 @@ defineExpose({
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
-        tabindex="0"
+        :tabindex="esColapsable ? 0 : -1"
       >
         <slot>
           <ul class="nav-menu">
@@ -194,8 +194,9 @@ defineExpose({
                 exact
                 @mouseover="cerrarSubmenu()"
                 @click="cerrarMenuSubmenu()"
-                >Menú</a
               >
+                Menú
+              </a>
             </li>
             <li class="nav-contenedor-submenu">
               <button
@@ -226,16 +227,18 @@ defineExpose({
                     href="#eje"
                     class="nav-hipervinculo"
                     @click="cerrarMenuSubmenu()"
-                    >Submenu uno</a
                   >
+                    Submenu uno
+                  </a>
                 </li>
                 <li>
                   <a
                     href="#aja"
                     class="nav-hipervinculo"
                     @click="cerrarMenuSubmenu()"
-                    >Submenu dos</a
                   >
+                    Submenu dos
+                  </a>
                 </li>
               </ul>
             </li>
