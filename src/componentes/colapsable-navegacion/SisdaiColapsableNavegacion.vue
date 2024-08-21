@@ -21,7 +21,7 @@ const props = defineProps({
   avisarMenuLateral: { type: Boolean, default: true },
 })
 
-// eslint-disable-next-line
+ 
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
 

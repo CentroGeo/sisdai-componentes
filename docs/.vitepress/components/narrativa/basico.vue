@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch, computed } from 'vue'
+import { ref, watch } from 'vue'
 
 const miNarrativa = ref()
 const depurador = ref(true)
@@ -9,9 +9,9 @@ const posicion_inicial = ref(1)
 
 // cuando se cambia a una viñeta par, se colorean de azul
 watch(
-  d => miNarrativa.value?.seccion_visible,
+  () => miNarrativa.value?.seccion_visible,
   nv => {
-    if (nv % 2 == 0) {
+    if (nv % 2 === 0) {
       miNarrativa.value?.lista_elementos.forEach(element => {
         element.style.backgroundColor = '#8889ff'
       })

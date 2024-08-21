@@ -1,6 +1,6 @@
 <script setup>
-import EjemploChico from "../../.vitepress/components/modal/chico.vue";
-import EjemploGrande from "../../.vitepress/components/modal/grande.vue";
+import EjemploChico from "../../.vitepress/components/modal/ejemplo-chico.vue";
+import EjemploGrande from "../../.vitepress/components/modal/ejemplo-grande.vue";
 </script>
 
 # Modal
@@ -82,7 +82,7 @@ Su ancho máximo es de 462 px equivalentes a 6 columnas.
 
 <!-- <utils-ejemplo-doc ruta="modal/chico.vue"/> -->
 <EjemploChico />
-<<< @/.vitepress/components/modal/chico.vue
+<<< @/.vitepress/components/modal/ejemplo-chico.vue
 
 #### Modal grande
 
@@ -90,7 +90,7 @@ Su ancho máximo es de 1110 px equivalentes a 14 columnas.
 
 <!-- <utils-ejemplo-doc ruta="modal/grande.vue"/> -->
 <EjemploGrande />
-<<< @/.vitepress/components/modal/grande.vue
+<<< @/.vitepress/components/modal/ejemplo-grande.vue
 
 ## Mejores prácticas
 
