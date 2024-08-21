@@ -148,8 +148,8 @@ export function useMenuDesenfocable(
     esColapsable.value = anchoNavegacion > window.innerWidth ? true : false
 
     window
-    .matchMedia(`(min-width: ${anchoNavegacion}px)`)
-    .addEventListener('change', ev => (esColapsable.value = !ev.matches))
+      .matchMedia(`(min-width: ${anchoNavegacion}px)`)
+      .addEventListener('change', ev => (esColapsable.value = !ev.matches))
   }
 
   watch(

@@ -21,7 +21,6 @@ const props = defineProps({
   avisarMenuLateral: { type: Boolean, default: true },
 })
 
- 
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
 
@@ -87,7 +86,6 @@ function alternarTabIndex(val) {
 //     console.log(msg)
 //   }
 // }
-
 </script>
 
 <template>

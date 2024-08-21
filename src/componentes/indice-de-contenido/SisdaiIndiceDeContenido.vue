@@ -49,7 +49,6 @@ function scroleando() {
       d.y_min = d.elemento.offsetTop
       d.y_max = d.elemento.offsetTop + d.elemento.offsetHeight
     } else {
-       
       console.warn(
         'Los href que introdujiste en el slot "contenido-indice-contenido" no hacen referencia a ningún id de esta vista'
       )
@@ -128,7 +127,6 @@ defineExpose({ lista_elementos, seccion_visible, autoScrollSuave })
     >
       {{ titulo }}
     </div>
-
 
     <nav class="indice-contenido-contenedor">
       <slot name="contenido-indice-contenido">
