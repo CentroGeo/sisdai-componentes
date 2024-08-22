@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it } from 'vitest'
 import SisdaiControlDeslizante from '../../../src/componentes/control-deslizante/SisdaiControlDeslizante.vue'
+import indexJS from '../../../src/componentes/control-deslizante/index.js'
 
 describe('SisdaiControlDeslizante.vue', () => {
   const wrapper = shallowMount(SisdaiControlDeslizante, {

@@ -1,6 +1,9 @@
 import { describe, it } from 'vitest'
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import SisdaiAudio from '../../../src/componentes/audio/SisdaiAudio.vue'
+import indexJS from '../../../src/componentes/audio/index.js'
+
+// import Foo from '@/Foo.vue'
 
 describe('SisdaiAudio.vue', () => {
   // const wrapper = mount(SisdaiAudio, {
@@ -8,6 +11,9 @@ describe('SisdaiAudio.vue', () => {
   //     archivo: '',
   //   },
   // })
+  // obteniendo los componentes que usa SisdaiAudio
+  // wrapper.getComponent(Foo) // returns a VueWrapper
+
   it('props', () => {
     // archivo
     // --

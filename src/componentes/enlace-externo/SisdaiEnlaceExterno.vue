@@ -28,6 +28,7 @@ defineProps({
 
 <template>
   <a
+    testid="enlace-externo"
     :href="enlace"
     target="_blank"
     rel="noopener noreferrer"

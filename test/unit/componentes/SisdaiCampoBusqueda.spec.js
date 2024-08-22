@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it } from 'vitest'
 import SisdaiCampoBusqueda from '../../../src/componentes/campo-busqueda/SisdaiCampoBusqueda.vue'
+import indexJS from '../../../src/componentes/campo-busqueda/index.js'
 
 describe('SisdaiCampoBusqueda.vue', () => {
   const wrapper = shallowMount(SisdaiCampoBusqueda, {

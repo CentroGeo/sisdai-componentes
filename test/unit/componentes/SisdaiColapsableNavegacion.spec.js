@@ -1,6 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it } from 'vitest'
 import SisdaiColapsableNavegacion from '../../../src/componentes/colapsable-navegacion/SisdaiColapsableNavegacion.vue'
+import indexJS from '../../../src/componentes/colapsable-navegacion/index.js'
 
 describe('SisdaiColapsableNavegacion.vue', () => {
   const wrapper = shallowMount(SisdaiColapsableNavegacion, {
