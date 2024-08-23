@@ -8,6 +8,7 @@ describe('SisdaiCampoBusqueda.vue', () => {
     props: {},
   })
   it('props', () => {
+    // TODO v-model
     // catalogo
     // catalogoAnidado
     // catalogoAnidadoPropiedadElementos

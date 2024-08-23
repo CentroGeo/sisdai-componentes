@@ -25,7 +25,13 @@ const propiedades = {
    */
   enlaces: {
     type: Array,
-    required: true,
+    default: () => [
+      {
+        clasesCss: 'sisdai',
+        contenido: 'Ir a Sisdai',
+        enlace: 'https://sisdai.conacyt.mx/',
+      },
+    ],
   },
   /**
    * Indica si el Botón flotante estará abierto o no.
@@ -33,7 +39,7 @@ const propiedades = {
    * - Cerrado: `false`
    * @type Boolean
    */
-  botonFlotanteAbierto: {
+  botonFlotanteAbiertos: {
     type: Boolean,
     default: false,
   },
@@ -52,7 +58,7 @@ const { enlaces } = toRefs(props)
  * - Cerrado: `false`
  * @type Boolean
  */
-const botonFlotanteEstaAbierto = ref(props.botonFlotanteAbierto)
+const botonFlotanteEstaAbierto = ref(props.botonFlotanteAbiertos)
 
 /**
  * Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del
@@ -73,18 +79,19 @@ defineExpose({ alternarEstado })
 
 <template>
   <div
+    testid="menu-flotante"
     :id="id_aleatorio"
     class="menu-flotante menu-flotante-izquierdo"
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
-      test="menu-flotante-boton"
+      testid="menu-flotante-boton"
       type="button"
       class="menu-flotante-boton"
       aria-controls="menuflotante"
       :aria-label="botonFlotanteEstaAbierto ? 'Abrir' : 'Cerrar'"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
-      @click="botonFlotanteEstaAbierto = !botonFlotanteEstaAbierto"
+      @click="alternarEstado()"
     >
       <span
         :class="`${
@@ -102,7 +109,7 @@ defineExpose({ alternarEstado })
       :aria-hidden="!botonFlotanteEstaAbierto"
     >
       <a
-        test="menu-flotante-hipervinculo"
+        testid="menu-flotante-hipervinculo"
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
         :key="`menu-flotante-enlace-${idx}`"
         :id="`menu_flotante_enlace_${idx}`"
@@ -112,7 +119,7 @@ defineExpose({ alternarEstado })
         :href="enlace"
         target="_blank"
         rel="noopener noreferrer"
-        :tabindex="botonFlotanteEstaAbierto ? undefined : -1"
+        :tabindex="botonFlotanteEstaAbierto ? 0 : -1"
       >
         {{ contenido === undefined ? 'Ir a enlace externo' : contenido }}
         <span
