@@ -5,10 +5,10 @@ import SisdaiImagenPngWebp from '../../../src/componentes/imagen-png-webp/Sisdai
 import indexJS from '../../../src/componentes/imagen-png-webp/index.js'
 
 // selectores de elemento html por atributo
-const sourceWebpSelector = '[testid=source-webp]'
-const sourcePngSelector = '[testid=source-png]'
-const srcImgSelector = '[testid=src-img]'
-const ficaptionSelector = '[testid=figcaption]'
+const sourceWebpSelector = '[testid="source-webp"]'
+const sourcePngSelector = '[testid="source-png"]'
+const srcImgSelector = '[testid="src-img"]'
+const ficaptionSelector = '[testid="figcaption"]'
 
 const props = {
   dominio: 'https://cdn.conahcyt.mx/',
@@ -35,7 +35,6 @@ describe('SisdaiImagenPngWebp.vue', () => {
         ancho_maximo: props.ancho_maximo,
       },
     })
-    // const index = mount(indexJS)
 
     // obteniendo los elementos de prueba
     // retorna un DOMWrapper si lo encuentra. Si no, lanza un error

@@ -2,6 +2,7 @@ import { shallowMount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 
 import SisdaiInfoDeDespliegue from '../../../src/componentes/info-de-despliegue/SisdaiInfoDeDespliegue.vue'
+import indexJS from '../../../src/componentes/info-de-despliegue/index.js'
 
 const ddVersionSelector = '[testid="version"]'
 const ddEntornoSelector = '[testid="entorno"]'

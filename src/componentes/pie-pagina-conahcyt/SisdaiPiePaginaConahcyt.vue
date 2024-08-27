@@ -36,7 +36,7 @@ const anioActual = new Date().getFullYear()
           Ciudad de México Tel: (55) 5322-7700
         </p>
         <p>
-          ©<span>{{ anioActual }}</span>
+          ©<span testid="anio-actual-span">{{ anioActual }}</span>
           Conahcyt Derechos Reservados en trámite
         </p>
       </div>

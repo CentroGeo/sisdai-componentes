@@ -9,7 +9,7 @@ const props = {
 }
 
 describe('SisdaiEnlaceExterno.vue', () => {
-  const hrefASelector = '[testid=enlace-externo]'
+  const hrefASelector = '[testid="enlace-externo"]'
 
   const wrapper = shallowMount(SisdaiEnlaceExterno, {
     props: {

@@ -1,7 +1,7 @@
 import { shallowMount } from '@vue/test-utils'
 import { describe, it } from 'vitest'
 import SisdaiControlAcercarAlejar from '../../../src/componentes/control-acercar-alejar/SisdaiControlAcercarAlejar.vue'
-import indexJS from '../../../src/componentes/control-acercar-alejar/index.js'
+// import indexJS from '../../../src/componentes/control-acercar-alejar/index.js'
 
 describe('SisdaiControlAcercarAlejar.vue', () => {
   const wrapper = shallowMount(SisdaiControlAcercarAlejar, {

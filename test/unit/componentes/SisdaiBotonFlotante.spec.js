@@ -6,7 +6,7 @@ import indexJS from '../../../src/componentes/boton-flotante/index.js'
 
 // selectores de elemento html por atributo
 const menuFlotanteSelector = '[testid="menu-flotante"]'
-const buttonSelector = '[testid=menu-flotante-boton]'
+const buttonSelector = '[testid="menu-flotante-boton"]'
 const hipervinculoSelector = '[testid="menu-flotante-hipervinculo"]'
 
 const props = {
@@ -15,6 +15,7 @@ const props = {
       clasesCss: 'sisdai',
       contenido: 'Ir a Sisdai',
       enlace: 'https://sisdai.conacyt.mx/',
+      icono: 'pictograma-flecha-arriba-derecha',
     },
   ],
   botonFlotanteAbiertos: false,
@@ -54,6 +55,10 @@ describe('SisdaiBotonFlotante.vue', () => {
       // afirmar el enlace
       expect(anchorElement.attributes('href')).toContain(
         props.enlaces.map(d => d.enlace)
+      )
+      // afirmar el icono
+      expect(anchorElement.get('span').attributes().class).toContain(
+        props.enlaces.map(d => d.icono)
       )
 
       // afirmar valores de atributos de tabindex y class por determinado

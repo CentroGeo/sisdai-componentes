@@ -30,6 +30,7 @@ const propiedades = {
         clasesCss: 'sisdai',
         contenido: 'Ir a Sisdai',
         enlace: 'https://sisdai.conacyt.mx/',
+        icono: 'pictograma-flecha-arriba-derecha',
       },
     ],
   },
@@ -113,17 +114,15 @@ defineExpose({ alternarEstado })
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
         :key="`menu-flotante-enlace-${idx}`"
         :id="`menu_flotante_enlace_${idx}`"
-        :class="`menu-flotante-hipervinculo m-t-2 ${
-          clasesCss === undefined ? '' : clasesCss
-        }`"
+        :class="`menu-flotante-hipervinculo m-t-2 ${clasesCss}`"
         :href="enlace"
         target="_blank"
         rel="noopener noreferrer"
         :tabindex="botonFlotanteEstaAbierto ? 0 : -1"
       >
-        {{ contenido === undefined ? 'Ir a enlace externo' : contenido }}
+        {{ contenido }}
         <span
-          :class="`${icono === undefined ? 'pictograma-flecha-arriba-derecha' : icono}  m-l-1`"
+          :class="`${icono}  m-l-1`"
           aria-hidden="true"
         ></span>
       </a>
