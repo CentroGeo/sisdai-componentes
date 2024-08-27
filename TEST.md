@@ -129,8 +129,8 @@ Las pruebas de componentes deben centrarse en las interfaces públicas del compo
   No sabemos nada sobre la implementación de Stepper, solo que la "entrada" es el apoyo `max` y la "salida" es el estado del DOM como lo verá el usuario.
 
 ```js
-const valueSelector = '[data-testid=stepper-value]'
-const buttonSelector = '[data-testid=increment]'
+const valueSelector = '[data-testid="stepper-value"]'
+const buttonSelector = '[data-testid="increment"]'
 
 const wrapper = mount(Stepper, {
   props: {
