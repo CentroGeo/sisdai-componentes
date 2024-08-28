@@ -131,16 +131,38 @@ function limpiarBusqueda() {
       class="a11y-solo-lectura"
       >Campo de búsqueda</label
     >
-    <input
+    <!-- <input
+      testid="input-campo-busqueda"
       :id="id_aleatorio"
       type="search"
       class="campo-busqueda-entrada"
       ref="inputBusquedaRef"
       :placeholder="props.etiqueta"
       v-model="textoBusqueda"
+    /> -->
+    <!-- <input
+      testid="input-campo-busqueda"
+      :id="id_aleatorio"
+      type="search"
+      class="campo-busqueda-entrada"
+      ref="inputBusquedaRef"
+      :placeholder="props.etiqueta"
+      v-model="textoBusqueda"
+      @input="emits(eventos.alFiltrar, filtro(textoBusqueda))"
+    /> -->
+    <input
+      testid="input-campo-busqueda"
+      :id="id_aleatorio"
+      type="search"
+      class="campo-busqueda-entrada"
+      ref="inputBusquedaRef"
+      :placeholder="props.etiqueta"
+      v-model="textoBusqueda"
+      @input="emits(eventos.alFiltrar, filtro($event.target.value))"
     />
 
     <button
+      testid="btn-limpiar-busqueda"
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario campo-busqueda-borrar"
       aria-label="Borrar"
