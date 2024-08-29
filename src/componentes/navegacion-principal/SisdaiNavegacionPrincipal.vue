@@ -93,13 +93,16 @@ function alternarTabIndex() {
 }
 
 onMounted(() => {
-  navMenu.value = document.querySelectorAll(
-    '#navegacionprincipal .nav-menu'
-  )[0]['children']
+  // navMenu.value = document.querySelectorAll(
+  //   '#navegacionprincipal .nav-menu'
+  // )[0]['children']
 
-  if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
-    navSubmenu.value =
-      document.getElementsByClassName('nav-submenu')[0]['children']
+  navMenu.value =
+    cuadroElementosMenuRef.value.querySelectorAll('.nav-menu')[0]['children']
+
+  // if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
+  //   navSubmenu.value =
+  //     document.getElementsByClassName('nav-submenu')[0]['children']
 
   alternarTabIndex()
 })
@@ -129,24 +132,27 @@ defineExpose({
     @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
-      <slot name="identidad">
-        <a
-          href="https://conahcyt.mx/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="nav-hiperviculo-logo"
-        >
-          <img
-            class="nav-logo color-invertir"
-            src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-azul.svg"
-            alt="Conahcyt."
-            width="130"
-            height="38"
-          />
-        </a>
-      </slot>
+      <div testid="slot-identidad">
+        <slot name="identidad">
+          <a
+            href="https://conahcyt.mx/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-hiperviculo-logo"
+          >
+            <img
+              class="nav-logo color-invertir"
+              src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-azul.svg"
+              alt="Conahcyt."
+              width="130"
+              height="38"
+            />
+          </a>
+        </slot>
+      </div>
 
       <button
+        testid="nav-boton-menu-principal"
         type="button"
         @click="alternarMenu"
         class="nav-boton-menu"
@@ -162,6 +168,7 @@ defineExpose({
       </button>
 
       <div
+        testid="nav-informacion"
         v-if="esColapsable"
         class="nav-informacion"
         v-html="navInformacion"
@@ -169,6 +176,7 @@ defineExpose({
     </div>
 
     <div
+      testid="nav-menu-contenedor-principal"
       id="navegacionprincipal"
       class="nav-menu-contenedor"
       :class="{
@@ -176,7 +184,10 @@ defineExpose({
         'submenu-abierto': submenuEstaAbierto,
       }"
     >
-      <div class="nav-menu-complementario">
+      <div
+        testid="slot-complementario"
+        class="nav-menu-complementario"
+      >
         <slot name="complementario"></slot>
       </div>
 
@@ -189,6 +200,7 @@ defineExpose({
           <ul class="nav-menu">
             <li>
               <a
+                testid="nav-hipervinculo-principal"
                 href="#"
                 class="nav-hipervinculo"
                 exact

@@ -63,7 +63,7 @@ function agregarTabIndex(menu) {
  * y la disposición del tamaño de pantalla: movil o escritorio.
  */
 function alternarTabIndex() {
-  if (window.innerWidth < props.anchoNavegacion) {
+  if (props.anchoNavegacion > window.innerWidth) {
     // movil
     if (menuEstaAbierto.value) {
       removerTabIndex(navMenuGobMx.value)
@@ -77,9 +77,11 @@ function alternarTabIndex() {
 }
 
 onMounted(() => {
-  navMenuGobMx.value = document.querySelectorAll(
-    '#menugobiernomexico .nav-menu'
-  )[0]['children']
+  // navMenuGobMx.value = document?.querySelectorAll(
+  //   '#menugobiernomexico .nav-menu'
+  // )[0]['children']
+  navMenuGobMx.value =
+    cuadroElementosMenuRef.value.querySelectorAll('.nav-menu')[0]['children']
   alternarTabIndex()
 })
 
@@ -112,6 +114,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
       </a>
 
       <button
+        testid="nav-boton-menu"
         type="button"
         @click="alternarMenu"
         class="nav-boton-menu"
@@ -128,6 +131,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
     </div>
 
     <div
+      testid="nav-menu-contenedor"
       id="menugobiernomexico"
       class="nav-menu-contenedor"
       :class="{ abierto: menuEstaAbierto }"
@@ -140,6 +144,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         <ul class="nav-menu">
           <li>
             <a
+              testid="nav-hipervinculo"
               href="https://coronavirus.gob.mx/"
               class="nav-hipervinculo"
               target="_blank"

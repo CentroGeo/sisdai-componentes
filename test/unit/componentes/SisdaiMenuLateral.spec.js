@@ -7,6 +7,7 @@ describe('SisdaiMenuLateral.vue', () => {
     props: {},
   })
   it('instancias de propiedades y variables', () => {
+    // TODO ❌
     // menu_abierto
     // contenidoMenuLateral
     // id_aleatorio

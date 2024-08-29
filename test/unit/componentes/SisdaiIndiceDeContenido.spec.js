@@ -7,6 +7,7 @@ describe('SisdaiIndiceDeContenido.vue', () => {
     props: {},
   })
   it('props', () => {
+    // TODO ❌
     // titulo
     // altura
     // id_indice

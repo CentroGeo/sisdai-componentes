@@ -8,6 +8,7 @@ describe('SisdaiColapsableNavegacion.vue', () => {
     props: {},
   })
   it('props', () => {
+    // TODO ❌
     // colapsado
     // avisarMenuLateral
     // --
