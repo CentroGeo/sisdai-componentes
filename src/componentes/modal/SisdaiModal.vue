@@ -13,15 +13,6 @@
 <!--You should have received a copy of the GNU Lesser General Public License along-->
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
-<script>
-const propiedades = {
-  tamanioModal: {
-    type: String,
-    default: '',
-  },
-}
-</script>
-
 <script setup>
 import { onBeforeMount, onBeforeUnmount, ref, toRefs } from 'vue'
 import useFocusTrap from '../../composables/useFocusTrap'
@@ -31,7 +22,12 @@ const { trapRef } = useFocusTrap()
 const modal = ref()
 const id_aleatorio = idAleatorio()
 
-const props = defineProps(propiedades)
+const props = defineProps({
+  tamanioModal: {
+    type: String,
+    default: '',
+  },
+})
 const { tamanioModal } = toRefs(props)
 
 /**
@@ -46,14 +42,16 @@ function idAleatorio() {
 function cerrarModal() {
   document.querySelector('body').classList.remove('overflow-hidden')
 
-  modal.value = document.getElementById(id_aleatorio)
+  // modal.value = document.getElementById(id_aleatorio)
+  modal.value = trapRef.value
   modal.value.close()
 }
 /** Abre el modal y agregar la clase overflow-hidden al body */
 function abrirModal() {
   document.querySelector('body').classList.add('overflow-hidden')
 
-  modal.value = document.getElementById(id_aleatorio)
+  // modal.value = document.getElementById(id_aleatorio)
+  modal.value = trapRef.value
   modal.value.showModal()
 }
 
@@ -94,6 +92,7 @@ defineExpose({
 
 <template>
   <dialog
+    testid="dialog-modal"
     :id="id_aleatorio"
     class="modal"
     :class="tamanioModal"
@@ -101,21 +100,31 @@ defineExpose({
     ref="trapRef"
   >
     <div class="modal-contenedor">
-      <div class="modal-cabecera">
+      <div
+        testid="slot-modal-cabecera"
+        class="modal-cabecera"
+      >
         <slot name="encabezado">
           <h1>Título del modal</h1>
         </slot>
       </div>
 
-      <div class="modal-cuerpo">
+      <div
+        testid="slot-modal-cuerpo"
+        class="modal-cuerpo"
+      >
         <slot name="cuerpo"></slot>
       </div>
 
-      <div class="modal-pie">
+      <div
+        testid="slot-modal-pie"
+        class="modal-pie"
+      >
         <slot name="pie"></slot>
       </div>
 
       <button
+        testid="button-cerrar-modal"
         type="button"
         class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
         aria-label="Cerrar modal"
