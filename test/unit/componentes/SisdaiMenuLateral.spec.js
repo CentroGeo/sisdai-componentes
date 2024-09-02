@@ -1,18 +1,15 @@
 import { mount } from '@vue/test-utils'
 import { describe, it } from 'vitest'
 import SisdaiMenuLateral from '../../../src/componentes/menu-lateral/SisdaiMenuLateral.vue'
+import indexJs from '../../../src/componentes/menu-lateral/index.js'
 
 describe('SisdaiMenuLateral.vue', () => {
-  const wrapper = mount(SisdaiMenuLateral, {
-    props: {},
-  })
+  // TODO ❌
+  const wrapper = mount(SisdaiMenuLateral)
   it('instancias de propiedades y variables', () => {
-    // TODO ❌
     // menu_abierto
     // contenidoMenuLateral
     // id_aleatorio
-    // --
-    // simular que de descolpasa y colpasa el menú en versión móvil
   })
   it('emits', () => {
     // alAlternarMenu

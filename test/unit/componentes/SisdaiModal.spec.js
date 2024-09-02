@@ -1,6 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import SisdaiModal from '../../../src/componentes/modal/SisdaiModal.vue'
+import indexJs from '../../../src/componentes/modal/index.js'
 
 const dialogModalSelector = '[testid="dialog-modal"]'
 const slotCabeceraSelector = '[testid="slot-modal-cabecera"]'
