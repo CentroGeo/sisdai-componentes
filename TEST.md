@@ -249,7 +249,11 @@ Finalmente, actualice `package.json` para agregar el script de prueba y ejecúte
 
 Esta sección asume que has leído la sección de [Composables](https://vuejs.org/guide/reusability/composables.html).
 
-Cuando se trata de probar composables, podemos divirlo en dos categorías: composables que no dependen en una instancia de componente host y los que sí lo hacen.
+Los composables en Vue son composiciones de funciones reusables que encapulsan y manejan el estado y la lógica de manera reactiva. Son una forma flexible de organizar y reusar el código a través de componentes mejorando la modularidad y el mantenimiento.
+
+Cuando se trata de probar composables, podemos divirlo en dos categorías: composables que no dependen en una instancia de componente host y los que sí dependen.
+
+Un composable independiente de una instancia de componente utiliza la API de reactividad de Vue: ref, watch, computed ...
 
 Un composable depende de una instancia de componente host cuando hace uso de las siguientes API:
 
