@@ -23,6 +23,9 @@ const narrativa = ref()
 let posicion_actual = -1
 const posicion_normalizada = ref(0)
 
+// const vinetas = ref(null)
+const narrativaGraficas = ref(null)
+
 const props = defineProps({
   id: {
     type: String,
@@ -46,9 +49,11 @@ const props = defineProps({
 })
 
 const obtenerElementos = () => {
-  narrativa.value = document.querySelector(
-    `section#${props.id}.narrativa-graficas `
-  )
+  // narrativa.value = document.querySelector(
+  //   `section#${props.id}.narrativa-graficas `
+  // )
+  narrativa.value = narrativaGraficas.value
+
   lista_elementos.value = [...narrativa.value.querySelectorAll(` .vineta`)]
 
   narrativa.value.style.height =
@@ -117,6 +122,7 @@ defineExpose({ seccion_visible, posicion_normalizada, lista_elementos })
 
 <template>
   <section
+    ref="narrativaGraficas"
     class="narrativa-graficas"
     :id="id"
   >
@@ -133,7 +139,7 @@ defineExpose({ seccion_visible, posicion_normalizada, lista_elementos })
       <slot name="contenido-fondo-sticky"> </slot>
     </div>
 
-    <slot></slot>
+    <slot> </slot>
   </section>
 </template>
 
