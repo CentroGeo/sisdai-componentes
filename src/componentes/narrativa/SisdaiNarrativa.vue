@@ -135,11 +135,16 @@ defineExpose({ seccion_visible, posicion_normalizada, lista_elementos })
         Posicion depurador: {{ posicion_normalizada }}</span
       >
     </div>
-    <div class="contenido-fondo-sticky">
+    <div
+      testid="slot-contenido-fondo-sticky"
+      class="contenido-fondo-sticky"
+    >
       <slot name="contenido-fondo-sticky"> </slot>
     </div>
 
-    <slot> </slot>
+    <div testid="slot-default">
+      <slot> </slot>
+    </div>
   </section>
 </template>
 

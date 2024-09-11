@@ -15,6 +15,9 @@ const controlDeslizante = ref()
       id="identificador"
       step="10"
       ref="controlDeslizante"
+      @update:val_entrada="
+        $event => (controlDeslizante.valor_seleccionado = $event)
+      "
     >
     </SisdaiControlDeslizante>
   </div>

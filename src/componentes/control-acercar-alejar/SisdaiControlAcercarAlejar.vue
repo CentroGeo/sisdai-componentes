@@ -72,10 +72,11 @@ function disminuir() {
     aria-label="Controles para ajustar el nivel de acercamiento"
   >
     <button
+      testid="boton-alejar"
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
       aria-label="Alejar un paso"
-      @click="disminuir"
+      @click="disminuir()"
     >
       <span
         class="pictograma-restar"
@@ -84,6 +85,7 @@ function disminuir() {
     </button>
 
     <input
+      testid="control-acercar-alejar-rango"
       type="range"
       class="control-acercar-alejar-rango"
       aria-label="Ajustar el nivel de acercamiento"
@@ -94,10 +96,11 @@ function disminuir() {
     />
 
     <button
+      testid="boton-acercar"
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
       aria-label="Acercar un paso"
-      @click="aumentar"
+      @click="aumentar()"
     >
       <span
         class="pictograma-agregar"
@@ -106,6 +109,7 @@ function disminuir() {
     </button>
 
     <input
+      testid="control-acercar-alejar-porcentaje"
       :id="id_aleatorio"
       type="text"
       maxlength="3"
