@@ -36,7 +36,7 @@ function idAleatorio() {
   return Math.random().toString(36).substring(2)
 }
 
-const id_aleatorio = idAleatorio()
+const id_aleatorio = 'colapsable' + idAleatorio()
 
 const emits = defineEmits(['alAlternarColapsable'])
 
@@ -45,6 +45,8 @@ watch(_colapsado, nv => {
   alternarTabIndex(nv)
 })
 
+// NOTA:
+// creo que lo del tabindex no es necesario si ocultamos/mostrarmos el bloque entero del area colapsable
 function alternarTabIndex(val) {
   // _ver(colapsablecontenedor?.value)
   // _ver(colapsablecontenedor?.value.children[0])
@@ -96,28 +98,26 @@ function alternarTabIndex(val) {
   >
     <button
       class="colapsable-boton"
-      aria-controls="colapsableboton"
-      :aria-expanded="_colapsado"
+      :aria-controls="id_aleatorio"
+      :aria-expanded="_colapsado ? 'true' : 'false'"
       @click="_colapsado = !_colapsado"
       :tabindex="avisarMenuLateral ? undefined : -1"
     >
       <slot name="encabezado"> Encabezado colapsable </slot>
-
       <span
         aria-hidden="true"
         class="pictograma-angulo-derecho"
       ></span>
-      <!-- <span class="a11y-solo-lectura">Abrir o cerrar colapsable</span> -->
     </button>
 
     <div
+      :id="id_aleatorio"
       class="colapsable-contenedor"
       ref="colapsablecontenedor"
-      id="colapsablecontenedor"
-      :aria-hidden="!_colapsado"
+      :aria-hidden="_colapsado ? 'false' : 'true'"
     >
       <slot name="contenido">
-        <ul :id="id_aleatorio">
+        <ul>
           <li>
             <a
               href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
