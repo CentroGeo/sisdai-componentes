@@ -22,10 +22,11 @@
     <button
       class="boton-pictograma boton-sin-contenedor-secundario"
       @click="disminuir"
+      aria-label="Alejar"
     >
       <span
         class="pictograma-restar"
-        aria-label="Alejar"
+        aria-hidden="true"
       ></span>
     </button>
 
@@ -42,10 +43,11 @@
     <button
       class="boton-pictograma boton-sin-contenedor-secundario"
       @click="aumentar"
+      aria-label="Acercar"
     >
       <span
         class="pictograma-agregar"
-        aria-label="Acercar"
+        aria-hidden="true"
       ></span>
     </button>
 
