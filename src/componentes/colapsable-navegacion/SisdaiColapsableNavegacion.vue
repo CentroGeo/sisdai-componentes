@@ -35,7 +35,7 @@ function idAleatorio() {
   return 'colapsable-navegacion-' + Math.random().toString(36).substring(2)
 }
 
-const id_aleatorio = idAleatorio()
+const id_aleatorio = 'colapsable' + idAleatorio()
 
 const emits = defineEmits(['alAlternarColapsable'])
 
@@ -96,13 +96,12 @@ function alternarTabIndex(val) {
     <button
       type="button"
       class="colapsable-boton"
-      aria-controls="colapsableboton"
-      :aria-expanded="_colapsado"
+      :aria-controls="id_aleatorio"
+      :aria-expanded="_colapsado ? 'true' : 'false'"
       @click="_colapsado = !_colapsado"
       :tabindex="avisarMenuLateral ? undefined : -1"
     >
       <slot name="encabezado"> Encabezado colapsable </slot>
-
       <span
         aria-hidden="true"
         class="pictograma-angulo-derecho"
@@ -110,13 +109,13 @@ function alternarTabIndex(val) {
     </button>
 
     <div
-      id="colapsablecontenedor"
+      :id="id_aleatorio"
       class="colapsable-contenedor"
       ref="colapsablecontenedor"
-      :aria-hidden="!_colapsado"
+      :aria-hidden="_colapsado ? 'false' : 'true'"
     >
       <slot name="contenido">
-        <ul :id="id_aleatorio">
+        <ul>
           <li>
             <a
               href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"

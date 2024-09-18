@@ -74,7 +74,7 @@ function disminuir() {
     <button
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
-      aria-label="Alejar un paso"
+      aria-label="Alejar"
       @click="disminuir"
     >
       <span
@@ -96,7 +96,7 @@ function disminuir() {
     <button
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
-      aria-label="Acercar un paso"
+      aria-label="Acercar"
       @click="aumentar"
     >
       <span

@@ -272,7 +272,7 @@ function funcionInput() {
           role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
           :aria-label="
-            reproduciendo ? 'Pausar reproducción' : 'Comenzar reproducción'
+            reproduciendo ? 'Pausar' : 'Comenzar'
           "
           @click="reproduciendo = !reproduciendo"
         >

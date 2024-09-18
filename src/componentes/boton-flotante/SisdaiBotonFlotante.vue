@@ -66,7 +66,7 @@ function idAleatorio() {
   return 'boton-flotante-' + Math.random().toString(36).substring(2)
 }
 
-const id_aleatorio = idAleatorio()
+const id_aleatorio = 'menuflotante' + idAleatorio()
 
 defineExpose({ alternarEstado })
 </script>
@@ -80,7 +80,7 @@ defineExpose({ alternarEstado })
     <button
       type="button"
       class="menu-flotante-boton"
-      aria-controls="menuflotante"
+      :aria-controls="id_aleatorio"
       :aria-label="botonFlotanteEstaAbierto ? 'Abrir' : 'Cerrar'"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
       @click="botonFlotanteEstaAbierto = !botonFlotanteEstaAbierto"
@@ -95,16 +95,16 @@ defineExpose({ alternarEstado })
       ></span>
     </button>
 
-    <menu
+    <div
       class="menu-flotante-contenedor"
-      id="menuflotantecuerpo"
-      :aria-hidden="!botonFlotanteEstaAbierto"
+      :id="id_aleatorio"
+      :aria-hidden="botonFlotanteEstaAbierto ? 'false' : 'true'"
     >
       <a
         v-for="({ enlace, clasesCss, icono, contenido }, idx) in enlaces"
         :key="`menu-flotante-enlace-${idx}`"
         :id="`menu_flotante_enlace_${idx}`"
-        :class="`menu-flotante-hipervinculo m-t-2 ${
+        :class="`menu-flotante-hipervinculo ${
           clasesCss === undefined ? '' : clasesCss
         }`"
         :href="enlace"
@@ -118,6 +118,6 @@ defineExpose({ alternarEstado })
           aria-hidden="true"
         ></span>
       </a>
-    </menu>
+    </div>
   </div>
 </template>
