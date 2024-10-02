@@ -41,7 +41,7 @@ watch(menu_abierto, () => {
   <nav
     class="menu-lateral"
     :class="{ abierto: menu_abierto }"
-    aria-label="Navegación secundaria"
+    aria-label="Menú secundario"
   >
     <button
       type="button"

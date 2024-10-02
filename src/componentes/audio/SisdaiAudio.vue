@@ -198,7 +198,7 @@ function funcionInput() {
     :id="id_aleatorio"
     class="audio"
     role="toolbar"
-    aria-label="Controles para reproducir audio"
+    aria-label="Reproductor de audio"
   >
     <slot name="encabezado"> </slot>
 
@@ -225,7 +225,7 @@ function funcionInput() {
     <input
       type="range"
       class="control-tiempo"
-      aria-label="Barra de progreso de la reproducción"
+      aria-label="Barra de reproducción"
       :max="Math.floor(duracion)"
       v-model.number="tiempo_transcurrido"
       @change="slider_activo = false"
@@ -237,7 +237,7 @@ function funcionInput() {
         <select
           name="velocidad-reproduccion"
           class="velocidad-reproduccion"
-          aria-label="Selecciona la velocidad de reproducción"
+          aria-label="Velocidad de reproducción"
           v-model="velocidad_reproduccion"
         >
           <optgroup label="Velocidad de reproducción">
@@ -272,7 +272,7 @@ function funcionInput() {
           role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
           :aria-label="
-            reproduciendo ? 'Pausar' : 'Comenzar'
+            reproduciendo ? 'Pausar' : 'Reproducir'
           "
           @click="reproduciendo = !reproduciendo"
         >
@@ -322,7 +322,7 @@ function funcionInput() {
         <SisdaiControlDeslizante
           ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
-          aria-label="Nivel de volumen"
+          aria-label="Volumen"
           :val_entrada="volumen_default"
         />
       </div>

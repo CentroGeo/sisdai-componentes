@@ -18,9 +18,9 @@ const anioActual = new Date().getFullYear()
 </script>
 
 <template>
-  <footer
+  <div
     class="contenedor piepagina-conahcyt"
-    aria-label="Conahcyt"
+    aria-label="Pie de página de Conahcyt"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-8-esc">
@@ -99,7 +99,8 @@ const anioActual = new Date().getFullYear()
             <a
               href="https://www.facebook.com/ConahcytMX"
               class="hipervinculo-conahcyt"
-              aria-label="feisbuk,"
+              lang="en"
+              aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -113,7 +114,8 @@ const anioActual = new Date().getFullYear()
             <a
               href="https://twitter.com/Conahcyt_Mex"
               class="hipervinculo-conahcyt"
-              aria-label="x,"
+              lang="en"
+              aria-label="X"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -127,7 +129,8 @@ const anioActual = new Date().getFullYear()
             <a
               href="https://www.instagram.com/conahcyt_mex/"
               class="hipervinculo-conahcyt"
-              aria-label="instagram"
+              lang="en"
+              aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -141,7 +144,8 @@ const anioActual = new Date().getFullYear()
             <a
               href="https://www.youtube.com/@Conahcytmx"
               class="hipervinculo-conahcyt"
-              aria-label="yutub"
+              lang="en"
+              aria-label="Youtube"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -154,5 +158,5 @@ const anioActual = new Date().getFullYear()
         </ul>
       </div>
     </div>
-  </footer>
+  </div>
 </template>

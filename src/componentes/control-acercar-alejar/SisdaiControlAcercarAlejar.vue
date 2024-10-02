@@ -86,7 +86,7 @@ function disminuir() {
     <input
       type="range"
       class="control-acercar-alejar-rango"
-      aria-label="Ajustar el nivel de acercamiento"
+      aria-label="Nivel de acercamiento"
       :min="min"
       :max="max"
       :step="step"
