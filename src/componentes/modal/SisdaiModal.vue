@@ -119,7 +119,7 @@ defineExpose({
         type="button"
         role="button"
         class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
-        aria-label="Cerrar modal"
+        aria-label="Cerrar"
         value="cerrar"
         @click="cerrarModal()"
       >

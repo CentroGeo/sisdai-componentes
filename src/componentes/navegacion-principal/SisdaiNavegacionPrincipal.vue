@@ -93,9 +93,9 @@ function alternarTabIndex() {
 }
 
 onMounted(() => {
-  navMenu.value = document.querySelectorAll(
-    '#navegacionprincipal .nav-menu'
-  )[0]['children']
+  navMenu.value = document.querySelectorAll('#menuprincipal .nav-menu')[0][
+    'children'
+  ]
 
   if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
     navSubmenu.value =
@@ -125,7 +125,7 @@ defineExpose({
   <nav
     class="navegacion navegacion-conahcyt navegacion-pegada"
     :class="{ 'navegacion-extendida': !esColapsable }"
-    aria-label="Navegación principal"
+    aria-label="Menú principal"
     @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
@@ -152,8 +152,8 @@ defineExpose({
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Abrir/Cerrar navegación principal"
-        aria-controls="navegacionprincipal"
+        aria-label="Menú Principal"
+        aria-controls="menuprincipal"
       >
         <span
           class="nav-icono-menu"
@@ -169,7 +169,7 @@ defineExpose({
     </div>
 
     <div
-      id="navegacionprincipal"
+      id="menuprincipal"
       class="nav-menu-contenedor"
       :class="{
         abierto: menuEstaAbierto,

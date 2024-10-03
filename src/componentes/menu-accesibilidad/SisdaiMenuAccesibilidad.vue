@@ -314,7 +314,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
     <button
       type="button"
       class="menu-flotante-boton"
-      aria-label="Menú de accesibilidad"
+      aria-labelledby="herramientasaccesibilidad"
       aria-controls="menua11y"
       :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
       @click="alternarAbiertoCerrado"
@@ -330,7 +330,12 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       class="menu-flotante-contenedor"
       :aria-hidden="menuAccesibilidadEstaAbierto ? 'false' : 'true'"
     >
-      <p class="menu-flotante-titulo">Herramientas de accesibilidad</p>
+      <p
+        id="herramientasaccesibilidad"
+        class="menu-flotante-titulo"
+      >
+        Herramientas de accesibilidad
+      </p>
 
       <div
         v-for="opcion in opciones"

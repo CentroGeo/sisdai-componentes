@@ -117,7 +117,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Abrir/Cerrar menú de gobierno de México"
+        aria-label="Menú de Gobierno"
         aria-controls="menugobiernomexico"
       >
         <span
