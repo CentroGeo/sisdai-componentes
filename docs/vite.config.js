@@ -1,11 +1,10 @@
-// vite.config.js
 export default {
-    // config options
+  // config options
   css: {
     preprocessorOptions: {
       scss: {
-        api: "modern-compiler"
-      }
-    }
-  }
+        api: 'modern-compiler',
+      },
+    },
+  },
 }

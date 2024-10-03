@@ -93,9 +93,9 @@ function alternarTabIndex() {
 }
 
 onMounted(() => {
-  navMenu.value = document.querySelectorAll(
-    '#navegacionprincipal .nav-menu'
-  )[0]['children']
+  navMenu.value = document.querySelectorAll('#menuprincipal .nav-menu')[0][
+    'children'
+  ]
 
   if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
     navSubmenu.value =

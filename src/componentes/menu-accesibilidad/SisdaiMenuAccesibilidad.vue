@@ -330,7 +330,12 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       class="menu-flotante-contenedor"
       :aria-hidden="menuAccesibilidadEstaAbierto ? 'false' : 'true'"
     >
-      <p id="herramientasaccesibilidad" class="menu-flotante-titulo">Herramientas de accesibilidad</p>
+      <p
+        id="herramientasaccesibilidad"
+        class="menu-flotante-titulo"
+      >
+        Herramientas de accesibilidad
+      </p>
 
       <div
         v-for="opcion in opciones"

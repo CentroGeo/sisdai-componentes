@@ -271,9 +271,7 @@ function funcionInput() {
           type="button"
           role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
-          :aria-label="
-            reproduciendo ? 'Pausar' : 'Reproducir'
-          "
+          :aria-label="reproduciendo ? 'Pausar' : 'Reproducir'"
           @click="reproduciendo = !reproduciendo"
         >
           <span
