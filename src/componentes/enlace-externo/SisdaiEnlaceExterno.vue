@@ -36,6 +36,6 @@ defineProps({
     <span
       class="pictograma-enlace-externo"
       aria-hidden="true"
-    />
+    ></span>
   </a>
 </template>

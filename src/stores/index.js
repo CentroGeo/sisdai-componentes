@@ -13,4 +13,4 @@
 //   You should have received a copy of the GNU Lesser General Public License along
 //   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
 
-export { default as accesibilidad } from './accesibilidad'
+export { useAccesibilidadStore } from './accesibilidad'

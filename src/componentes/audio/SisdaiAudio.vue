@@ -131,9 +131,7 @@ function mostrarCantidadAlmacenada() {
   }
 }
 
-/**
- * Adelanta el el audio 10 segundos
- */
+/** Adelanta el el audio 10 segundos */
 function adelanta10() {
   if (tiempo_transcurrido.value < duracion.value - 10) {
     tiempo_transcurrido.value = Math.floor(audio.value.currentTime + 10)
@@ -144,9 +142,7 @@ function adelanta10() {
   }
 }
 
-/**
- * Retrasa el el audio 10 segundos
- */
+/** Retrasa el el audio 10 segundos */
 function retrasa10() {
   if (10 < tiempo_transcurrido.value) {
     tiempo_transcurrido.value = Math.floor(audio.value.currentTime - 10)
@@ -158,9 +154,7 @@ function retrasa10() {
   }
 }
 
-/**
- * Watcha el botón de reproducción para pausar o reproducir
- */
+/** Watcha el botón de reproducción para pausar o reproducir */
 watch(reproduciendo, nv => {
   if (nv) {
     audio.value.play()
@@ -180,17 +174,12 @@ watch(slider_activo, (nv, ov) => {
   }
 })
 
-/**
- * Watcha al selector de velocidad de reproducción para modificar la velocidad
- * del audio
- */
+/** Watcha al selector de velocidad de reproducción para modificar la velocidad del audio */
 watch(velocidad_reproduccion, nv => {
   audio.value.playbackRate = nv
 })
 
-/**
- * Watcha el input de volumen para actualizar el volumen del audio
- */
+/** Watcha el input de volumen para actualizar el volumen del audio */
 watch(
   () => controlVolumen.value?.valor_seleccionado,
   nv => {
@@ -209,7 +198,7 @@ function funcionInput() {
     :id="id_aleatorio"
     class="audio"
     role="toolbar"
-    aria-label="Controles para reproducir audio"
+    aria-label="Reproductor de audio"
   >
     <slot name="encabezado"> </slot>
 
@@ -219,7 +208,7 @@ function funcionInput() {
       :src="archivo"
     ></audio>
 
-    <div class="flex flex-contenido-separado texto-color-secundario">
+    <div class="flex flex-contenido-separado texto-color-2">
       <div
         role="timer"
         aria-label="Tiempo transcurrido"
@@ -236,7 +225,7 @@ function funcionInput() {
     <input
       type="range"
       class="control-tiempo"
-      aria-label="Barra de progreso de la reproducción"
+      aria-label="Barra de reproducción"
       :max="Math.floor(duracion)"
       v-model.number="tiempo_transcurrido"
       @change="slider_activo = false"
@@ -248,7 +237,7 @@ function funcionInput() {
         <select
           name="velocidad-reproduccion"
           class="velocidad-reproduccion"
-          aria-label="Selecciona la velocidad de reproducción"
+          aria-label="Velocidad de reproducción"
           v-model="velocidad_reproduccion"
         >
           <optgroup label="Velocidad de reproducción">
@@ -265,73 +254,73 @@ function funcionInput() {
 
       <div class="audio-reproduccion">
         <button
-          class="boton-pictograma boton-sin-contenedor-primario"
-          @click="retrasa10"
-          :disabled="!(tiempo_transcurrido > 10)"
           type="button"
           role="button"
+          class="boton-pictograma boton-sin-contenedor-primario"
           aria-label="Atrasar 10 segundos"
+          @click="retrasa10"
+          :disabled="!(tiempo_transcurrido > 10)"
         >
           <span
             class="pictograma-regresar-10"
             aria-hidden="true"
-          />
+          ></span>
         </button>
 
         <button
-          class="boton-pictograma boton-sin-contenedor-primario"
-          @click="reproduciendo = !reproduciendo"
           type="button"
           role="button"
-          :aria-label="reproduciendo ? 'Pausar' : 'Comenzar'"
+          class="boton-pictograma boton-sin-contenedor-primario"
+          :aria-label="reproduciendo ? 'Pausar' : 'Reproducir'"
+          @click="reproduciendo = !reproduciendo"
         >
           <span
             :class="`pictograma-control-${reproduciendo ? 'pausa' : 'comenzar'}`"
             aria-hidden="true"
-          />
+          ></span>
         </button>
 
         <button
-          class="boton-pictograma boton-sin-contenedor-primario"
-          @click="adelanta10"
-          :disabled="!(tiempo_transcurrido < duracion - 10)"
           type="button"
           role="button"
+          class="boton-pictograma boton-sin-contenedor-primario"
           aria-label="Adelantar 10 segundos"
+          @click="adelanta10"
+          :disabled="!(tiempo_transcurrido < duracion - 10)"
         >
           <span
             class="pictograma-adelantar-10"
             aria-hidden="true"
-          />
+          ></span>
         </button>
       </div>
 
       <div class="audio-volumen">
         <button
-          class="boton-pictograma boton-sin-contenedor-primario"
-          @click="
-            controlVolumen?.valor_seleccionado == 0
-              ? (volumen_default = 100)
-              : (volumen_default = 0)
-          "
           type="button"
           role="button"
+          class="boton-pictograma boton-sin-contenedor-primario"
           :aria-label="
             controlVolumen?.valor_seleccionado > 0
               ? 'Silenciar'
               : 'Desactivar silencio'
           "
+          @click="
+            controlVolumen?.valor_seleccionado == 0
+              ? (volumen_default = 100)
+              : (volumen_default = 0)
+          "
         >
           <span
             :class="`pictograma-${controlVolumen?.valor_seleccionado > 0 ? 'volumen' : 'silenciar'}`"
             aria-hidden="true"
-          />
+          ></span>
         </button>
 
         <SisdaiControlDeslizante
           ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
-          aria-label="Nivel de volumen"
+          aria-label="Volumen"
           :val_entrada="volumen_default"
         />
       </div>

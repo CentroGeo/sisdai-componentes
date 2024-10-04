@@ -28,9 +28,7 @@ const propiedades = {
     default: () => [],
   },
 
-  /**
-   * Objeto store completo del proyecto.
-   */
+  /** Objeto store completo del proyecto. */
   objetoStore: {
     type: Object,
     default: () => {},
@@ -68,9 +66,7 @@ const eventos = {
    */
   alSeleccionarOpcion: 'alSeleccionarOpcion',
 
-  /**
-   * Se ejecuta cuando se ha dado click en el botón "Restablecer".
-   */
+  /** Se ejecuta cuando se ha dado click en el botón "Restablecer". */
   alRestablecer: 'alRestablecer',
 }
 </script>
@@ -78,10 +74,10 @@ const eventos = {
 <script setup>
 import {
   computed,
-  ref,
-  toRefs,
   onBeforeMount,
   onMounted,
+  ref,
+  toRefs,
   watch,
   onUnmounted,
 } from 'vue'
@@ -89,12 +85,9 @@ import opcionesDefault from './opcionesDefault'
 
 const props = defineProps(propiedades)
 const emits = defineEmits(Object.values(eventos))
-const { agregarOpciones, objetoStore, perfilColor, nombreModuloStore } =
-  toRefs(props)
+const { agregarOpciones, objetoStore, perfilColor } = toRefs(props)
 
-/**
- * Opciones que se mostrarán en el menú de accesibilidad.
- */
+/** Opciones que se mostrarán en el menú de accesibilidad. */
 const opciones = computed(() => [...opcionesDefault, ...agregarOpciones.value])
 
 /**
@@ -121,15 +114,22 @@ const clasesSelecciondas = ref([])
 function ejecutarEnStore(accion, valor) {
   if (
     objetoStore.value !== undefined &&
-    Object.prototype.hasOwnProperty.call(objetoStore.value, 'commit')
+    Object.prototype.hasOwnProperty.call(objetoStore.value, accion)
   ) {
-    objetoStore.value.commit(`${nombreModuloStore.value}/${accion}`, valor)
+    // Modifica y/o restablece las clasesAccesibles del objectoStore
+    switch (accion) {
+      case 'restablecer':
+        objetoStore.value.restablecer()
+        break
+      case 'modificarClasesAccesibles':
+        objetoStore.value.modificarClasesAccesibles(valor)
+        break
+    }
   }
+  // console.log('objetoStore.value', objetoStore.value)
 }
 
-/**
- * Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú.
- */
+/** Desencadena el emit 'alRestablecer' al mismo tiempo que cierra el menú. */
 function restablecer() {
   clasesSelecciondas.value = []
   emits(eventos.alRestablecer)
@@ -143,9 +143,8 @@ watch(clasesSelecciondas, (nv, ov) => {
 
   asignarTemaClaroUOscuro(nv, ov)
 })
-/**
- * Alterna las clases accesibles seleccionadas en el body.
- */
+
+/** Alterna las clases accesibles seleccionadas en el body. */
 function alternarClasesBody() {
   clasesSelecciondas.value.includes('a11y-tipografia')
     ? body.classList.add('a11y-tipografia')
@@ -168,10 +167,7 @@ function alternarClasesBody() {
 const tema = ref('auto') // 'oscura' | 'clara' | 'auto'
 let body = {}
 
-/**
- * Agrega el atributo para asignar el tema y el perfil
- * de color predeterminados.
- */
+/** Agrega el atributo para asignar el tema y el perfil de color predeterminados. */
 function agregarPerfilTemaPredeterminados() {
   body.setAttribute('data-perfil', perfilColor.value)
   body.setAttribute('data-tema', 'claro')
@@ -190,6 +186,7 @@ function setTemaClaro() {
 function setTemaOscuro() {
   body.setAttribute(`data-tema`, 'oscuro')
 }
+
 /**
  * Asigna el tema claro u oscuro,
  * si en las clasesSeleccionadas están el valor de a11y-oscura o no.
@@ -212,9 +209,8 @@ function asignarTemaClaroUOscuro(nv, ov) {
     setTemaClaro()
   }
 }
-/**
- * Devuelve el tema del documento según la configuración del dispositivo.
- */
+
+/** Devuelve el tema del documento según la configuración del dispositivo. */
 function getTemaDispositivo() {
   if (
     (window.matchMedia &&
@@ -226,6 +222,7 @@ function getTemaDispositivo() {
   }
   return 'clara'
 }
+
 /**
  * Agrega la clase `.a11y-oscura` para la selección
  * de la vistas oscura.
@@ -247,6 +244,7 @@ function setClaseA11yOscura(temaClaroUOscuro) {
     )
   }
 }
+
 /**
  * Elige el tema en el documento (clara u oscura)
  * y la key local `theme` del navegador.
@@ -314,8 +312,9 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
     <button
+      type="button"
       class="menu-flotante-boton"
-      aria-label="Menú de accesibilidad"
+      aria-labelledby="herramientasaccesibilidad"
       aria-controls="menua11y"
       :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
       @click="alternarAbiertoCerrado"
@@ -323,7 +322,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       <span
         class="pictograma-accesibilidad"
         aria-hidden="true"
-      />
+      ></span>
     </button>
 
     <div
@@ -331,7 +330,12 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       class="menu-flotante-contenedor"
       :aria-hidden="menuAccesibilidadEstaAbierto ? 'false' : 'true'"
     >
-      <p class="menu-flotante-titulo">Herramientas de accesibilidad</p>
+      <p
+        id="herramientasaccesibilidad"
+        class="menu-flotante-titulo"
+      >
+        Herramientas de accesibilidad
+      </p>
 
       <div
         v-for="opcion in opciones"
@@ -354,6 +358,7 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       </div>
 
       <button
+        type="button"
         class="boton-secundario boton-chico m-t-2"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         @click="restablecer"

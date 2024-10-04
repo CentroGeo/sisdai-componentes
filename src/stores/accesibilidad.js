@@ -13,17 +13,19 @@
 //   You should have received a copy of the GNU Lesser General Public License along
 //   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
 
-export default {
-  namespaced: true,
-  state: {
-    clasesAccesibles: [],
-  },
-  mutations: {
-    modificarClasesAccesibles(state, valor) {
-      state.clasesAccesibles = valor
+import { defineStore } from 'pinia'
+
+export const useAccesibilidadStore = defineStore('accesibilidad', {
+  state: () => ({ clasesAccesibles: [] }),
+  // state: () => {
+  //   return { clasesAccesibles: [] }
+  // },
+  actions: {
+    modificarClasesAccesibles(valor) {
+      this.clasesAccesibles = valor
     },
-    restablecer(state) {
-      state.clasesAccesibles = []
+    restablecer() {
+      this.clasesAccesibles = []
     },
   },
-}
+})

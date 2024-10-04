@@ -27,7 +27,6 @@ const propiedades = {
     type: Array,
     required: true,
   },
-
   /**
    * Indica si el Botón flotante estará abierto o no.
    * - Abierto: `true`
@@ -63,13 +62,13 @@ function alternarEstado() {
   botonFlotanteEstaAbierto.value = !botonFlotanteEstaAbierto.value
 }
 
-defineExpose({ alternarEstado })
-
 function idAleatorio() {
-  return Math.random().toString(36).substring(2)
+  return 'boton-flotante-' + Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = 'menuflotante' + idAleatorio()
+
+defineExpose({ alternarEstado })
 </script>
 
 <template>
@@ -78,9 +77,10 @@ const id_aleatorio = 'menuflotante' + idAleatorio()
     :class="{ abierto: botonFlotanteEstaAbierto }"
   >
     <button
+      type="button"
       class="menu-flotante-boton"
       :aria-controls="id_aleatorio"
-      aria-label="Abrir/Cerrar menu de enlaces"
+      :aria-label="botonFlotanteEstaAbierto ? 'Abrir' : 'Cerrar'"
       :aria-expanded="botonFlotanteEstaAbierto ? 'true' : 'false'"
       @click="botonFlotanteEstaAbierto = !botonFlotanteEstaAbierto"
     >

@@ -1,23 +1,16 @@
----
-layout: LayoutDocumentacion
-sectionName: pie-pagina-conahcyt
----
+<script setup>
+import EjemploBasico from "../../.vitepress/components/pie-pagina-conahcyt/basico.vue";
+</script>
 
 # Pie de página del Conahcyt
 
-El pie de página del Conahcyt es un componente compartido en todos los Ecosistemas Nacionales Informáticos. El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conahcyt y enlaces de interés.
+El componente `SisdaiPiePaginaConahcyt` es compartido en todos los Ecosistemas Nacionales Informáticos (ENI). El pie de página sirve para identificar a la institución autora del sitio web, así mismo brinda información de contacto del Conahcyt y enlaces de interés.
 
-Uso:
+<section id="uso">
 
-El pie de página del Conahcyt se coloca al final de cada página del sitio.
+## Uso
 
-El pie de página del Conahcyt sirve principalmente para:
-
-- Dar certeza de que el contenido es información oficial del Conahcyt
-- Ofrecer acceso rápido a sitios de interés del Conahcyt
-- Brindar información de contacto del Conahcyt
-
-Al tratarse de un componente institucional se deben respetar los lineamientos de identidad proporcionados.
+Para utilizar el componente `SisdaiPiePaginaConahcyt`, incorpora en tu plantilla. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiPiePaginaConahcyt />
@@ -25,7 +18,9 @@ Al tratarse de un componente institucional se deben respetar los lineamientos de
 
 Vista simplificada
 
-En la vista simplificada el pie de página del Conahcyt no se modifica en diseño ni en comportamiento.
+En la vista simplificada el componente `SisdaiPiePaginaConahcyt` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 
@@ -50,10 +45,12 @@ Este componente no utiliza slots.
 </section>
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
 
-Usando el contenido por defecto.
+### Ejemplo básico
 
-<utils-ejemplo-doc ruta="pie-pagina-conahcyt/basico.vue"/>
+<!-- <utils-ejemplo-doc ruta="pie-pagina-conahcyt/basico.vue"/> -->
+<EjemploBasico />
+<<< @/.vitepress/components/pie-pagina-conahcyt/basico.vue
 
 </section>

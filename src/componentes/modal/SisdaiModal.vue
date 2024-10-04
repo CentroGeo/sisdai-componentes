@@ -15,7 +15,6 @@
 
 <script>
 const propiedades = {
-  tituloModal: { type: String, default: '' },
   tamanioModal: {
     type: String,
     default: '',
@@ -30,14 +29,14 @@ import useFocusTrap from '../../composables/useFocusTrap'
 const { trapRef } = useFocusTrap()
 
 const modal = ref()
-const idModal = idAleatorio()
+const id_aleatorio = idAleatorio()
 
 const props = defineProps(propiedades)
 const { tamanioModal } = toRefs(props)
 
 /**
  * Esta función nos sirve para obtener un id aleatorio para el componente
- * @returns {String} Cadena con prefijo "modal-" contatenado con un string aleatorio
+ * @returns {String} Cadena con prefijo "modal-" concatenado con un string aleatorio
  */
 function idAleatorio() {
   return 'modal-' + Math.random().toString(36).substring(2)
@@ -47,14 +46,14 @@ function idAleatorio() {
 function cerrarModal() {
   document.querySelector('body').classList.remove('overflow-hidden')
 
-  modal.value = document.getElementById(idModal)
+  modal.value = document.getElementById(id_aleatorio)
   modal.value.close()
 }
 /** Abre el modal y agregar la clase overflow-hidden al body */
 function abrirModal() {
   document.querySelector('body').classList.add('overflow-hidden')
 
-  modal.value = document.getElementById(idModal)
+  modal.value = document.getElementById(id_aleatorio)
   modal.value.showModal()
 }
 
@@ -70,7 +69,7 @@ function siPresionaTeclaEscape(event) {
  * @param {Object} event
  */
 function clickFueraDelModal(event) {
-  modal.value = document.getElementById(idModal)
+  modal.value = document.getElementById(id_aleatorio)
   if (event.target === modal.value) {
     cerrarModal()
   }
@@ -89,59 +88,46 @@ onBeforeUnmount(() => {
 defineExpose({
   abrirModal,
   cerrarModal,
-  idModal,
+  id_aleatorio,
 })
 </script>
 
 <template>
   <dialog
-    :id="idModal"
+    :id="id_aleatorio"
     class="modal"
     :class="tamanioModal"
-    ref="trapRef"
-    role="dialog"
     aria-labelledby="titulo_modal"
-    aria-modal="true"
+    ref="trapRef"
   >
     <div class="modal-contenedor">
       <div class="modal-cabecera">
-        <h1
-          id="titulo_modal"
-          class="modal-titulo"
-          v-html="tituloModal"
-        ></h1>
+        <slot name="encabezado">
+          <h1>Título del modal</h1>
+        </slot>
       </div>
 
       <div class="modal-cuerpo">
-        <slot name="cuerpo" />
+        <slot name="cuerpo"></slot>
       </div>
 
       <div class="modal-pie">
-        <slot name="pie" />
+        <slot name="pie"></slot>
       </div>
 
       <button
-        class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
-        value="cerrar"
-        @click="cerrarModal()"
         type="button"
         role="button"
-        aria-label="Cerrar Modal"
+        class="boton-pictograma boton-sin-contenedor-secundario modal-cerrar"
+        aria-label="Cerrar"
+        value="cerrar"
+        @click="cerrarModal()"
       >
         <span
           class="pictograma-cerrar"
           aria-hidden="true"
-        />
+        ></span>
       </button>
     </div>
   </dialog>
 </template>
-
-<style lang="scss" scoped>
-.modal-cabecera {
-  h1.modal-titulo {
-    font-size: 1.5rem;
-    margin-top: 0;
-  }
-}
-</style>

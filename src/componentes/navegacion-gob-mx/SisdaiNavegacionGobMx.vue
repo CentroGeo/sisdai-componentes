@@ -92,7 +92,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
   <nav
     class="navegacion navegacion-gobmx"
     :class="{ 'navegacion-extendida': !esColapsable }"
-    aria-label="Menú Gobierno de México"
+    aria-label="Menú de Gobierno"
     @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
@@ -117,10 +117,13 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Abrir/Cerrar menú de gobierno de México"
+        aria-label="Menú de Gobierno"
         aria-controls="menugobiernomexico"
       >
-        <span class="nav-icono-menu" />
+        <span
+          class="nav-icono-menu"
+          aria-hidden="true"
+        ></span>
       </button>
     </div>
 
@@ -173,6 +176,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
             <a
               href="https://www.gob.mx/busqueda"
               class="nav-hipervinculo"
+              aria-label="Ir a búsqueda"
               target="_blank"
               rel="noopener"
               @mouseover="cerrarSubmenu()"
@@ -182,7 +186,6 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
                 class="pictograma-buscar"
                 aria-hidden="true"
               ></span>
-              <span class="a11y-solo-lectura">ir al buscador</span>
             </a>
           </li>
         </ul>

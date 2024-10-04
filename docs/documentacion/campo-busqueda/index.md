@@ -1,15 +1,19 @@
----
-layout: LayoutDocumentacion
-sectionName: campo-busqueda
----
+<script setup>
+import EjemploBasico from "../../.vitepress/components/campo-busqueda/basico.vue";
+import EjemploCatalogoAnidado from "../../.vitepress/components/campo-busqueda/catalogo-anidado.vue";
+</script>
 
 # Campo de búsqueda
 
-El campo de búsqueda permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web.
+El componente `SisdaiCampoBusqueda` permite a las personas usuarias encontrar rápidamente contenido específico dentro de una aplicación o un sitio web. Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
 
-Al proporcionar un campo de búsqueda, las personas usuarias pueden escribir términos o frases relevantes y obtener resultados que coincidan con la consulta.
+<section id="uso">
 
-Uso:
+## Uso
+
+Para utilizar el componente `SisdaiCampoBusqueda`, se debe proporcionar una lista de elementos a través de la propiedad `catalogo`. Además, se puede manejar el resultado de la búsqueda mediante el evento `alFiltrar`, que devuelve una lista filtrada con los resultados de la búsqueda.
+
+A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiCampoBusqueda
@@ -19,32 +23,60 @@ Uso:
    listaElementos2 = listaFiltrada
   }"
 />
-...
-<!--mostrando los resultados de busqueda-->
+```
+
+Mostrando los resultados de búsqueda:
+
+```html
 <ul>
   <li v-for="elemento in listaElementos2">{{ elemento.nombre }}</li>
 </ul>
 ```
 
-_Donde `listaElementos` es la lista de elementos sobre los que se realiza la búsqueda y `listaElementos2` es la variable que recibe el resultado de la búsqueda._
+Donde `listaElementos` es la lista de elementos sobre los que se realiza la búsqueda y `listaElementos2` es la variable que recibe el resultado de la búsqueda.
+
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiCampoBusqueda` no se modifica en diseño ni en comportamiento.
+
+</section>
 
 <section id="api">
 
 ## API
 
-Este componente admite las siguientes propiedades
+Este componente admite las siguientes propiedades y eventos:
 
 ### Propiedades
 
-- `catalogo`: (_Array_) Propiedad requerida. Corresponde a la lista de elementos sobre los que se desea aplicar la busqueda. Por _default_ tiene el valor `[]`
-- `propiedadBusqueda`: (_String_) Propiedad opcional. corresponde al nombre de la propiedad de cada objeto en donde se aplicara la busqueda. Por _default_ tiene el valor `'nombre'`
-- `catalogoAnidado`: Propiedad opcional. (_Boolean_) Indica si el catalogo tiene anidación o agrupacion. Por _default_ tiene el valor `false`
-- `catalogoAnidadoPropiedadElementos`: Propiedad opcional. (_String_) El nombre de la propiedad que contiene la lista de elementos de cada grupo. por default tiene el valor `'elementos'`
-- `etiqueta`: (_String_) Propiedad opcional. Corresponde a la etiqueta de búsqueda, comúnmente conocida como placeholder. Por default tiene el valor `'Buscar...'`
+- `catalogo`: corresponde a la lista de elementos sobre los que se desea aplicar la búsqueda.
+  - Tipo de dato: `Array<Object>`
+  - Valor predeterminado: `[]`
+  - Requerido: sí
+- `propiedadBusqueda`: corresponde al nombre de la propiedad de cada objeto en donde se aplicará la búsqueda.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `'nombre'`
+  - Requerido: opcional
+- `catalogoAnidado`: indica si el catálogo tiene anidación o agrupación.
+  - Tipo de dato: `Boolean`
+  - Valor predeterminado: `false`
+  - Requerido: opcional
+- `catalogoAnidadoPropiedadElementos`: el nombre de la propiedad que contiene la lista de elementos de cada grupo.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `'elementos'`
+  - Requerido: opcional
+- `etiqueta`: corresponde a la etiqueta de búsqueda, comúnmente conocida como _placeholder_.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `'Buscar...'`
+  - Requerido: opcional
+
+### Métodos
+
+Este componente no cuenta con métodos públicos.
 
 ### Eventos
 
-- `alFiltrar`: Evento que se dispara al momento de ejecutar la busqueda. Como parametro se obtiene la lista de elementos filtrada.
+- **alFiltrar**: evento que se dispara al momento de ejecutar la búsqueda. Como parámetro se obtiene la lista de elementos filtrada.
 
 </section>
 
@@ -52,16 +84,18 @@ Este componente admite las siguientes propiedades
 
 ## Ejemplos de uso
 
-</section>
-
-A continuación se presentan algunos ejemplos de uso del campo de búsqueda:
-
 ### Ejemplo básico
 
 El siguiente ejemplo muestra cómo utilizar el campo de búsqueda de forma básica:
 
-<utils-ejemplo-doc ruta="campo-busqueda/basico.vue"/>
+<!-- <utils-ejemplo-doc ruta="campo-busqueda/basico.vue"/> -->
+<EjemploBasico />
+<<< @/.vitepress/components/campo-busqueda/basico.vue
 
 ### Ejemplo con lista anidada
 
-<utils-ejemplo-doc ruta="campo-busqueda/catalogo-anidado.vue"/>
+<!-- <utils-ejemplo-doc ruta="campo-busqueda/catalogo-anidado.vue"/> -->
+<EjemploCatalogoAnidado />
+<<< @/.vitepress/components/campo-busqueda/catalogo-anidado.vue
+
+</section>

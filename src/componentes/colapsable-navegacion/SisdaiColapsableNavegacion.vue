@@ -21,7 +21,6 @@ const props = defineProps({
   avisarMenuLateral: { type: Boolean, default: true },
 })
 
-// eslint-disable-next-line
 const { colapsado, avisarMenuLateral } = toRefs(props)
 const _colapsado = ref(colapsado.value)
 
@@ -33,7 +32,7 @@ onMounted(() => {
 watch(colapsado, nv => (_colapsado.value = nv))
 
 function idAleatorio() {
-  return Math.random().toString(36).substring(2)
+  return 'colapsable-navegacion-' + Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = 'colapsable' + idAleatorio()
@@ -45,8 +44,6 @@ watch(_colapsado, nv => {
   alternarTabIndex(nv)
 })
 
-// NOTA:
-// creo que lo del tabindex no es necesario si ocultamos/mostrarmos el bloque entero del area colapsable
 function alternarTabIndex(val) {
   // _ver(colapsablecontenedor?.value)
   // _ver(colapsablecontenedor?.value.children[0])
@@ -97,6 +94,7 @@ function alternarTabIndex(val) {
     :class="{ abierto: _colapsado }"
   >
     <button
+      type="button"
       class="colapsable-boton"
       :aria-controls="id_aleatorio"
       :aria-expanded="_colapsado ? 'true' : 'false'"

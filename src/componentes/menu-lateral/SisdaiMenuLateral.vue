@@ -25,7 +25,7 @@ if (typeof window !== 'undefined') {
 }
 
 function idAleatorio() {
-  return Math.random().toString(36).substring(2)
+  return 'menu-lateral-' + Math.random().toString(36).substring(2)
 }
 
 const id_aleatorio = 'menulateral' + idAleatorio()
@@ -44,22 +44,23 @@ watch(menu_abierto, () => {
     aria-label="Menú secundario"
   >
     <button
+      type="button"
       class="menu-lateral-boton"
+      aria-label="Navegación secundaria"
       :aria-controls="id_aleatorio"
       :aria-expanded="menu_abierto ? 'true' : 'false'"
-      aria-label="Abrir/Cerrar navegación secundaria"
       @click="menu_abierto = !menu_abierto"
     >
       <span
-        class="pictograma-angulo-izquierdo"
+        class="pictograma-angulo-derecho"
         aria-hidden="true"
       ></span>
     </button>
 
     <div
       :id="id_aleatorio"
-      :aria-hidden="menu_abierto ? 'false' : 'true'"
       class="menu-lateral-contenedor"
+      :aria-hidden="menu_abierto ? 'false' : 'true'"
       ref="contenidoMenuLateral"
     >
       <slot name="contenido-menu-lateral">
@@ -83,8 +84,9 @@ watch(menu_abierto, () => {
               <span
                 class="pictograma-social-github"
                 aria-hidden="true"
-              ></span>
-              ejemplo github
+              >
+                ejemplo github
+              </span>
             </a>
           </li>
         </ul>

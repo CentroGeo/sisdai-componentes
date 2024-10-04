@@ -1,11 +1,11 @@
----
-layout: LayoutDocumentacion
-sectionName: menu-accesibilidad
----
+<script setup>
+import EjemploBasico from "../../.vitepress/components/menu-accesibilidad/basico.vue";
+import EjemploAgregandoOpciones from "../../.vitepress/components/menu-accesibilidad/agregando-opciones.vue";
+</script>
 
-# Menú de accesibilidad
+# Menu de accesibilidad
 
-El Menú de accesibilidad permite ejecutar a las funciones que agregan reglas de accesibilidad al sitio web. Consulte la [sección de accesibilidad del Sisdai](https://sisdai.conahcyt.mx/accesibilidad/) para más información.
+El componente `SisdaiMenuAccesibilidad` permite ejecutar las funciones que agregan reglas de accesibilidad al sitio web. Consulte la [sección de accesibilidad del Sisdai](https://sisdai.conahcyt.mx/accesibilidad/) para más información.
 
 El componente cuenta con cuatro opciones de accesibilidad predeterminadas:
 
@@ -14,30 +14,43 @@ El componente cuenta con cuatro opciones de accesibilidad predeterminadas:
 - Mostrar solo texto
 - Vista oscura
 
-Uso:
+<section id="uso">
+
+## Uso
+
+Para utilizar el componente `SisdaiMenuAccesibilidad`, incorpora el componente en tu plantilla. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
 <SisdaiMenuAccesibilidad />
 ```
 
-La función de Vista oscura transita entre el tema claro y el oscuro. De manera predeterminada al entrar a la aplicación la vista muestra la función automática. Esto es, dependiendo de los ajustes del navegador para la apariencia web se muestra el tema elegido. Una vez que se interactúa con el menú se puede cambiar entre clara u oscura.
+La función de “Vista oscura” transita entre el tema claro y el oscuro. De manera predeterminada al entrar a la aplicación la vista muestra la función automática. Esto significa que, dependiendo de los ajustes del navegador para la apariencia web, se muestra el tema elegido. Una vez que se interactúa con el menú, se puede cambiar entre clara u oscura.
 
-También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas html y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css).
+También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas HTML y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca
+[Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css).
 
-Al utilizar el Menú de accesibilidad, el perfil de color por defecto es el de la paleta de `eni`. Esta se puede modificar mediante la propiedad `perfilColor` del componente con los valores disponibles de `gema` o `sisdai`. Como se muestra a continuación:
+Al utilizar el Menú de accesibilidad, el perfil de color predeterminado es el de la paleta `predeterminada`. Esta se puede modificar mediante la propiedad `perfilColor` del componente con los valores disponibles de `gema` o `sisdai`. Como se muestra a continuación:
 
 ```html
 <SisdaiMenuAccesibilidad perfilColor="sisdai" />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiMenuAccesibilidad` responde a la regla de adaptar todos los elementos botón en forma e interacción de hipervínculos.
+
+</section>
+
 <section id="api">
 
 ## API
 
+Este componente admite las siguientes propiedades, métodos y eventos:
+
 ### Propiedades
 
-- `agregarOpciones` Lista de opciones que se agregará al Menú de accesibilidad.
-  - Tipo: `Array`
+- `agregarOpciones`: lista de opciones que se agrega al Menú de accesibilidad.
+  - Tipo: `Array<Object>`
   - Valor predeterminado: `[]`
   - Requerido: no
 
@@ -52,39 +65,32 @@ Cada opción debe ser un objeto con los siguientes atributos:
 }
 ```
 
-- `objetoStore` Objeto store completo del proyecto.
-  - Tipo: `Object`
+- `objetoStore`: objeto store completo del proyecto.
+  - Tipo de dato: `Object`
   - Valor predeterminado: `{}`
   - Requerido: no
-- `nombreModuloStore` Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
-  - Tipo: `String`
-  - Valor predeterminado: `accesibilidad`
+- `perfilColor`: seleciona el perfil o paleta de color desde la biblioteca de estilos. Los perfiles disponibles son: `predeterminada`, `gema`, `sisdai`.
+  - Tipo de dato: `String`
+  - Valor predeterminado: `predeterminada`
   - Requerido: no
-- `perfilColor` Seleciona el perfil o paleta de color desde la biblioteca de estilos. Los perfiles disponibles son: `eni`, `gema`, `sisdai`.
-  - Tipo: `String`
-  - Valor predeterminado: `eni`
-  - Requerido: no
+
+#### Variables expuestas
+
+- `clasesSelecciondas`: arreglo de clases que se mantienen activas con el menú de accesibilidad. Use esta variable para facilitar la relación de interacción del menú de accesibilidad con la vista.
+  - Tipo de dato: `Array<String>`
+  - Valor predeterminado: `[]`
 
 ### Métodos
 
-- `alternarEstado` Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
-
-### Variables
-
-- `clasesSelecciondas` Arreglo de clases que se mantienen activas con el menú de accesibilidad, use esta variable para facilitar la relación de interacción del menú de accesibilidad con la vista.
-  - Tipo: `Array<String>`
-  - Valor inicial: `[]`
-- `tema` Tema o modo de color con el que inicializa la aplicación. Los temas disponibles son: `auto`, `clara`, `oscura`.
-  - Tipo: `String`
-  - Valor inicial: `auto`
+- **alternarEstado:** cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Menú de accesibilidad.
 
 ### Eventos
 
 - **@alSeleccionarOpcion**
-  Se ejecuta al dar click en una opción del menú de accesibilidad. Parametros:
-  - `Object`: Objeto que contiene los atributos de la opción seleccionada al dar click.
+  - Descripción: se ejecuta al dar clic en una opción del menú de accesibilidad.
+  - Parámetros: `Object`: objeto que contiene los atributos de la opción seleccionada al dar clic.
 - **@alRestablecer**
-  Se ejecuta cuanso se ha dado click en el botón "Restablecer".
+  - Descripción: se ejecuta cuando se ha dado clic en el botón "Restablecer".
 
 ### Slots
 
@@ -94,19 +100,19 @@ Este componente no permite contenido con slots.
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
 
-#### Opciones por default
+<!-- <utils-ejemplo-doc ruta="menu-accesibilidad/basico.vue"/> -->
+<EjemploBasico />
+<<< @/.vitepress/components/menu-accesibilidad/basico.vue
 
-Para que se apliquen las reglas de accesibilidad definidas por la biblioteca sisdai-css, es necesario agregar las clases a11y en el contenedor de las vistas. Para proyectos con [Vue](https://vuejs.org/) se sugiere hacerlo en el archivo `src/App.vue` de la siguiente manera:
+### Agregando opciones de accesibilidad
 
-<utils-ejemplo-doc ruta="menu-accesibilidad/basico.vue"/>
+Junto con el uso de la propiedad `agregarOpciones` para añadir reglas de accesibilidad, también es necesario declarar las reglas CSS de los elementos HTML que se deseen afectar:
 
-#### Agregando opciones de accesibilidad
-
-Junto con el uso de la propiedad `agregarOpciones` para añadir reglas de accesibilidad, también es necesario declarar las reglas css de los elementos html que se deseen afectar:
-
-<utils-ejemplo-doc ruta="menu-accesibilidad/agregando-opciones.vue"/>
+<!-- <utils-ejemplo-doc ruta="menu-accesibilidad/agregando-opciones.vue"/> -->
+<EjemploAgregandoOpciones />
+<<< @/.vitepress/components/menu-accesibilidad/agregando-opciones.vue
 
 </section>
 
@@ -114,111 +120,94 @@ Junto con el uso de la propiedad `agregarOpciones` para añadir reglas de accesi
 
 ## Store
 
-Este componente puede o no contar con un módulo de store en estructura de [Vuex](https://vuex.vuejs.org/) con variables y mutaciones para cada una de las opciones predeterminadas:
+Este componente puede o no contar con un módulo de store en estructura de [Pinia](https://pinia.vuejs.org/) con variables de estado y acciones para cada una de las opciones predeterminadas:
 
-- Clases accesibles
-  - Variable: `clasesAccesibles` (de tipo Array en `[]` por defecto).
-  - Mutación: `modificarClasesAccesibles` (con parámetro `valor` para el Array que modifica).
+- Módulo: `useAccesibilidadStore`
+  - Variable: `clasesAccesibles` (de tipo Array en `[]` predeterminado).
+  - Acción: `modificarClasesAccesibles` (con parámetro `valor` para el Array que modifica).
 
-Además de una mutación extra que restablece los valores de todas las variables:
+Además de una acción extra que restablece los valores de todas las variables:
 
 - `restablecer`:
   Cambia el valor de todas la variables de `clasesAccesibles` a `[]` (sin parámetros).
 
 ### Propiedades de store
 
-- `objetoStore` Objeto store completo del proytecto.
+- `objetoStore`: objeto store completo del proyecto.
   - Tipo: `Object`
   - Valor predeterminado: `{}`
-  - Requerido: no
-- `nombreModuloStore` Si el nombre del modulo de accesibilidad en el store del proyecto es diferente de `accesibilidad`, se debe introducir el nombre del modulo en esta propiedad.
-  - Tipo: `String`
-  - Valor predeterminado: `accesibilidad`
   - Requerido: no
 
 </section>
 
 <section id="ejemplos-con-store">
 
-## Ejemplos con store
+## Ejemplos de uso
 
-#### Conectar con store
+### Ejemplo con uso de store
 
-Guardar el estado de las variables de accesibilidad en el store, permite que interactúen con la reactividad de componentes complejos que estén a un nivel profundo en la organización del proyecto.
+**Conectar con store**
+
+Guardar el estado de las variables de accesibilidad en el store permite que interactúen con la reactividad de componentes complejos que estén a un nivel profundo en la organización del proyecto.
 
 Por ejemplo, si en una visualización se requiere que la vista muestre una configuración definida cuando se active la funcionalidad de "Mostrar solo texto", se puede acceder al estado de esa variable importando el módulo de accesibilidad en el store:
 
 ```html
 <script setup>
-  import store from '@/store'
+  import { useAccesibilidadStore } from '@/store'
+  const store = useAccesibilidadStore()
 </script>
 
 <SisdaiVisualizacion>
   <SisdaiGrafico
-    v-show="!store.state.accesibilidad.clasesAccesibles.includes('a11y-simplificada')"
+    v-show="!store.clasesAccesibles.includes('a11y-simplificada')"
   />
 
-  <table
-    v-show="store.state.accesibilidad.clasesAccesibles.includes('a11y-simplificada')"
-  />
+  <table v-show="store.clasesAccesibles.includes('a11y-simplificada')" />
 </SisdaiVisualizacion>
 ```
 
-<br />
-
 **Accesibilidad en el store**
 
-Para hacer uso del módulo de accesibilidad en el store [Vuex](https://vuex.vuejs.org/), se necesita la siguiente configuración en el archivo `@/store/index`:
+Para hacer uso del módulo de accesibilidad en el store [Pinia](https://pinia.vuejs.org/), se necesita la siguiente configuración en el archivo `@/store/index`:
 
 ```js
-import accesibilidad from 'sisdai-componentes/src/stores'
-
-export default new Vuex.Store({
-  modules: {
-    accesibilidad,
-    ...
-  },
-  ...
-})
+import { useAccesibilidadStore } from 'sisdai-componentes/src/stores'
 ```
-
-<br />
 
 **Conectar componente con store**
 
-Para conectar los eventos del Menú de accesibilidad con el store [Vuex](https://vuex.vuejs.org/), se puede usar la siguiente configuración:
+Para conectar los eventos del Menú de accesibilidad con el store [Pinia](https://pinia.vuejs.org/) , se puede usar la siguiente configuración:
 
 ```html
 <script setup>
-  import store from '@/store'
+  import { useAccesibilidadStore } from '@/store'
+  const store = useAccesibilidadStore()
 </script>
 
 <template>
-  <div :class="store.state.accesibilidad.clasesAccesibles">
+  <div :class="store.clasesAccesibles">
     <SisdaiSisdaiMenuAccesibilidad
       @alSeleccionarOpcion="
-        ({ accion }) => store.commit(`accesibilidad/${accion}`)
+        ({ claseCss }) => store.modificarClasesAccesibles(claseCss)
       "
-      @restablecer="store.commit('accesibilidad/restablecer')"
+      @restablecer="store.restablecer"
     />
     ...
   </div>
 </template>
 ```
 
-<br />
-
 **Propiedad objetoStore**
-
-Si el nombre del módulo de accesibilidad en el store del proyecto es diferente de **accesibilidad** de debe usar la propiedad `nombreModuloStore` para que funcione correctamente.
 
 ```html
 <script setup>
-  import store from '@/store'
+  import { useAccesibilidadStore } from '@/store'
+  const store = useAccesibilidadStore()
 </script>
 
 <template>
-  <div :class="store.state.accesibilidad.clasesAccesibles">
+  <div :class="store.clasesAccesibles">
     <SisdaiSisdaiMenuAccesibilidad :objetoStore="store" />
     ...
   </div>

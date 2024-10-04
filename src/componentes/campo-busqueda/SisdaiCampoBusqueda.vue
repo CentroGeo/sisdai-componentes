@@ -123,8 +123,8 @@ function limpiarBusqueda() {
 
 <template>
   <form
-    v-on:submit.prevent
     class="campo-busqueda"
+    @submit.prevent
   >
     <label
       :for="id_aleatorio"
@@ -141,6 +141,7 @@ function limpiarBusqueda() {
     />
 
     <button
+      type="button"
       class="boton-pictograma boton-sin-contenedor-secundario campo-busqueda-borrar"
       aria-label="Borrar"
       v-show="botonLimpiarBusquedaActivo"
@@ -153,6 +154,7 @@ function limpiarBusqueda() {
     </button>
 
     <button
+      type="button"
       class="boton-primario boton-pictograma campo-busqueda-buscar"
       aria-label="Buscar"
     >

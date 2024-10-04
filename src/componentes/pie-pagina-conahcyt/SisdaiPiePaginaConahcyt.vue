@@ -18,9 +18,9 @@ const anioActual = new Date().getFullYear()
 </script>
 
 <template>
-  <footer
+  <div
     class="contenedor piepagina-conahcyt"
-    aria-label="Conahcyt"
+    aria-label="Pie de página de Conahcyt"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-8-esc">
@@ -99,60 +99,64 @@ const anioActual = new Date().getFullYear()
             <a
               href="https://www.facebook.com/ConahcytMX"
               class="hipervinculo-conahcyt"
+              lang="en"
+              aria-label="Facebook"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span
                 class="pictograma-social-facebook"
                 aria-hidden="true"
-              />
-              <span class="a11y-solo-lectura">feisbuk,</span>
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="https://twitter.com/Conahcyt_Mex"
               class="hipervinculo-conahcyt"
+              lang="en"
+              aria-label="X"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span
                 class="pictograma-social-x"
                 aria-hidden="true"
-              />
-              <span class="a11y-solo-lectura">x,</span>
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="https://www.instagram.com/conahcyt_mex/"
               class="hipervinculo-conahcyt"
+              lang="en"
+              aria-label="Instagram"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span
                 class="pictograma-social-instagram"
                 aria-hidden="true"
-              />
-              <span class="a11y-solo-lectura">instagram </span>
+              ></span>
             </a>
           </li>
           <li>
             <a
               href="https://www.youtube.com/@Conahcytmx"
               class="hipervinculo-conahcyt"
+              lang="en"
+              aria-label="Youtube"
               target="_blank"
               rel="noopener noreferrer"
             >
               <span
                 class="pictograma-social-youtube"
                 aria-hidden="true"
-              />
-              <span class="a11y-solo-lectura">yutub</span>
+              ></span>
             </a>
           </li>
         </ul>
       </div>
     </div>
-  </footer>
+  </div>
 </template>

@@ -13,6 +13,58 @@
 <!--You should have received a copy of the GNU Lesser General Public License along-->
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
+<script setup>
+import { computed } from 'vue'
+
+const value = defineModel()
+
+const props = defineProps({
+  min: {
+    type: Number,
+    default: 0,
+  },
+  max: {
+    type: Number,
+    default: 100,
+  },
+  step: {
+    type: Number,
+    default: 5,
+  },
+})
+
+function idAleatorio() {
+  return 'control-acercar-alejar-' + Math.random().toString(36).substring(2)
+}
+
+const id_aleatorio = idAleatorio()
+
+const emit = defineEmits(['update:modelValue'])
+
+const inputValue = computed({
+  // getter
+  get() {
+    return Math.round(value.value)
+  },
+  // setter
+  set(newValue) {
+    emit('update:modelValue', Number(newValue))
+  },
+})
+
+// const valor_porcentual = computed(() => {
+//   return `${((inputValue.value - props.min) / (props.max - props.min)) * 100}%`
+// })
+
+function aumentar() {
+  inputValue.value = inputValue.value + props.step
+}
+
+function disminuir() {
+  inputValue.value = inputValue.value - props.step
+}
+</script>
+
 <template>
   <div
     class="control-acercar-alejar"
@@ -20,9 +72,10 @@
     aria-label="Controles para ajustar el nivel de acercamiento"
   >
     <button
+      type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
-      @click="disminuir"
       aria-label="Alejar"
+      @click="disminuir"
     >
       <span
         class="pictograma-restar"
@@ -33,7 +86,7 @@
     <input
       type="range"
       class="control-acercar-alejar-rango"
-      aria-label="Ajustar el nivel de acercamiento"
+      aria-label="Nivel de acercamiento"
       :min="min"
       :max="max"
       :step="step"
@@ -41,9 +94,10 @@
     />
 
     <button
+      type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
-      @click="aumentar"
       aria-label="Acercar"
+      @click="aumentar"
     >
       <span
         class="pictograma-agregar"
@@ -52,6 +106,7 @@
     </button>
 
     <input
+      :id="id_aleatorio"
       type="text"
       maxlength="3"
       inputmode="numeric"
@@ -64,48 +119,3 @@
     />
   </div>
 </template>
-<script>
-export default {
-  name: 'SisdaiControlAcercarAlejar',
-  props: {
-    value: Number,
-    min: {
-      type: Number,
-      default: 0,
-    },
-    max: {
-      type: Number,
-      default: 100,
-    },
-    step: {
-      type: Number,
-      default: 5,
-    },
-  },
-  model: {
-    prop: 'value',
-    event: 'change',
-  },
-  computed: {
-    inputValue: {
-      get() {
-        return Math.round(this.value)
-      },
-      set(value) {
-        this.$emit('change', Number(value))
-      },
-    },
-    valor_porcentual() {
-      return `${((this.inputValue - this.min) / (this.max - this.min)) * 100}%`
-    },
-  },
-  methods: {
-    aumentar() {
-      this.inputValue = this.inputValue + this.step
-    },
-    disminuir() {
-      this.inputValue = this.inputValue - this.step
-    },
-  },
-}
-</script>

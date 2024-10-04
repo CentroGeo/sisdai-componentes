@@ -1,34 +1,45 @@
----
-layout: LayoutDocumentacion
-sectionName: boton-flotante
----
+<script setup>
+import EjemploBasico from "../../.vitepress/components/boton-flotante/basico.vue";
+</script>
 
 # Botón flotante <span class="etiqueta">preliminar</span>
 
-Este Botón flotante permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento `fixed` en la esquina inferior izquierda.
+El componente `SisdaiBotonFlotante` permite tener enlaces externos en todas las vistas del sitio, posicionado como un elemento fijo en la esquina inferior izquierda.
 
-Uso:
+<section id="uso">
+
+## Uso
+
+El componente `SisdaiBotonFlotante` se utiliza para agregar enlaces externos que estarán disponibles en todas las vistas del sitio web. Puedes especificar los enlaces mediante la propiedad enlaces, que debe ser un array de objetos con las propiedades `clasesCss`, `contenido` y `enlace`. A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
 <SisdaiBotonFlotante :enlaces="[...]" />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiBotonFlotante` no se modifica en diseño ni en comportamiento.
+
+</section>
+
 <section id="api">
 
 ## API
 
+Este componente admite las siguientes propiedades y métodos:
+
 ### Propiedades
 
-- `enlaces` Lista de enlaces que se mostrarán en el Botón flotante abierto.
-  - Tipo: `Array`
+- `enlaces`: indica la lista de enlaces que serán mostrados en el botón flotante. Cada enlace debe ser un objeto con los atributos especificados a continuación.
+  - Tipo: `Array<Object>`
   - Valor predeterminado: `[]`
-  - Requerido: si
-- `botonFlotanteAbierto` Indica si el Botón flotante estará abierto o no.
+  - Requerido: sí
+- `botonFlotanteAbierto`: indica si el Botón flotante estará abierto o cerrado inicialmente.
   - Tipo: `Boolean`
   - Valor predeterminado: `false`
   - Requerido: no
 
-Cada opción debe ser un objeto con los siguientes atributos:
+Cada opción del array `enlaces` debe tener los siguientes atributos:
 
 ```js
 {
@@ -41,33 +52,29 @@ Cada opción debe ser un objeto con los siguientes atributos:
 
 ### Métodos
 
-- `alternarEstado`
-  Cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del Botón flotante.
+- **alternarEstado:**
+  cambia el estado (contrario de su valor actual al ejecutar el evento, abierto o cerrado) del botón flotante.
 
 ### Eventos
 
-Este componente no dispara eventos externos
+Este componente no dispara eventos externos.
 
 ### Slots
 
-Este componente no permite contenido con slots
+Este componente no permite contenido con slots.
 
 </section>
 
 <section id="ejemplos">
 
-## Ejemplos
+## Ejemplos de uso
 
-#### Enlaces con fondo de color
+### Ejemplo básico
 
-El color de fondo de cada enlace es transparente por defecto, si se desea agregar un color, se puede sobreescribir el estilo agregando una clase en cada elemento de la siguiente manera.
+En este ejemplo, se muestran dos enlaces en el botón flotante:
 
-<utils-ejemplo-doc ruta="boton-flotante/basico.vue"/>
-
-#### Enlace con documento resaltado
-
-Para este ejemplo se hace uso de la clase `icono-resaltado` la cual ejecuta la animación `animacionResaltada` para resaltar el icono asignado.
-
-<utils-ejemplo-doc ruta="boton-flotante/decreto.vue"/>
+<!-- <EjemploDoc ruta="boton-flotante/decreto.vue" /> -->
+<EjemploBasico />
+<<< @/.vitepress/components/boton-flotante/basico.vue
 
 </section>
