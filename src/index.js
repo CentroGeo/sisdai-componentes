@@ -14,32 +14,31 @@
 //   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
 
 import {
-  SisdaiNavegacionGobMx,
-  SisdaiNavegacionPrincipal,
-  SisdaiPiePaginaGobMx,
-  SisdaiPiePaginaConahcyt,
+  SisdaiAudio,
+  SisdaiBotonFlotante,
+  SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
-  SisdaiMenuLateral,
+  SisdaiControlAcercarAlejar,
+  SisdaiControlDeslizante,
+  SisdaiEnlaceExterno,
+  SisdaiImagenPngWebp,
   SisdaiIndiceDeContenido,
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
-  // SisdaiNarrativaScroll,
-  SisdaiBotonFlotante,
+  SisdaiMenuLateral,
   SisdaiModal,
-  SisdaiEnlaceExterno,
-  SisdaiImagenPngWebp,
-  SisdaiAudio,
-  SisdaiCampoBusqueda,
-  SisdaiControlAcercarAlejar,
-  SisdaiControlDeslizante,
   SisdaiNarrativa,
+  SisdaiNavegacionGobMx,
+  SisdaiNavegacionPrincipal,
+  SisdaiPiePaginaConahcyt,
+  SisdaiPiePaginaGobMx,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
 
 const plugin = {
   install: function (Vue) {
-    //UI base
+    // //UI base
     Vue.use(SisdaiNavegacionGobMx)
     Vue.use(SisdaiNavegacionPrincipal)
     Vue.use(SisdaiPiePaginaGobMx)
@@ -52,14 +51,13 @@ const plugin = {
     Vue.use(SisdaiAudio)
     Vue.use(SisdaiControlDeslizante)
 
-    //accesibilidad
+    // //accesibilidad
     Vue.use(SisdaiMenuAccesibilidad)
     Vue.use(SisdaiImagenPngWebp)
 
-    //auxiliares
+    // //auxiliares
     Vue.use(GlobosInformacion)
-    //otros
-    // Vue.use(SisdaiNarrativaScroll)
+    // //otros
     Vue.use(SisdaiNarrativa)
 
     Vue.use(SisdaiBotonFlotante)
@@ -70,26 +68,25 @@ const plugin = {
 }
 
 export {
-  SisdaiNavegacionGobMx,
-  SisdaiNavegacionPrincipal,
-  SisdaiPiePaginaGobMx,
-  SisdaiPiePaginaConahcyt,
+  SisdaiAudio,
+  GlobosInformacion,
+  SisdaiBotonFlotante,
+  SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
-  SisdaiMenuLateral,
+  SisdaiControlAcercarAlejar,
+  SisdaiControlDeslizante,
+  SisdaiEnlaceExterno,
+  SisdaiImagenPngWebp,
   SisdaiIndiceDeContenido,
   SisdaiInfoDeDespliegue,
   SisdaiMenuAccesibilidad,
-  GlobosInformacion,
-  // SisdaiNarrativaScroll,
-  SisdaiNarrativa,
-  SisdaiBotonFlotante,
+  SisdaiMenuLateral,
   SisdaiModal,
-  SisdaiEnlaceExterno,
-  SisdaiImagenPngWebp,
-  SisdaiAudio,
-  SisdaiCampoBusqueda,
-  SisdaiControlAcercarAlejar,
-  SisdaiControlDeslizante,
+  SisdaiNarrativa,
+  SisdaiNavegacionGobMx,
+  SisdaiNavegacionPrincipal,
+  SisdaiPiePaginaConahcyt,
+  SisdaiPiePaginaGobMx,
 }
 
 export default plugin

@@ -28,7 +28,7 @@ const props = defineProps({
   },
 })
 
-// Que el menu se pueda cerrar automaticamente al enfocar otra cosa
+//Que el menu se pueda cerrar automaticamente al enfocar otra cosa
 const cuadroElementosMenuRef = ref(null)
 
 const {
@@ -49,18 +49,14 @@ const {
 const navMenu = ref({})
 const navSubmenu = ref({})
 
-/**
- * Remueve el atributo tabindex a los elementos de lista para que enfoque.
- */
+/** Remueve el atributo tabindex a los elementos de lista para que enfoque. */
 function removerTabIndex(menu) {
   for (let i = 0; i < menu.length; i++) {
     const elemento = menu[i]['children'][0]
     elemento.removeAttribute('tabIndex')
   }
 }
-/**
- * Agrega el atributo tabindex a los elementos de lista para que no enfoque.
- */
+/** Agrega el atributo tabindex a los elementos de lista para que no enfoque. */
 function agregarTabIndex(menu) {
   for (let j = 0; j < menu.length; j++) {
     const elemento = menu[j]['children'][0]
@@ -97,9 +93,9 @@ function alternarTabIndex() {
 }
 
 onMounted(() => {
-  navMenu.value = document.querySelectorAll(
-    '#navegacionprincipal .nav-menu'
-  )[0]['children']
+  navMenu.value = document.querySelectorAll('#menuprincipal .nav-menu')[0][
+    'children'
+  ]
 
   if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
     navSubmenu.value =
@@ -129,7 +125,7 @@ defineExpose({
   <nav
     class="navegacion navegacion-conahcyt navegacion-pegada"
     :class="{ 'navegacion-extendida': !esColapsable }"
-    aria-label="Navegación principal"
+    aria-label="Menú principal"
     @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
@@ -156,13 +152,13 @@ defineExpose({
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Abrir/Cerrar navegación principal"
-        aria-controls="navegacionprincipal"
+        aria-label="Menú Principal"
+        aria-controls="menuprincipal"
       >
         <span
           class="nav-icono-menu"
           aria-hidden="true"
-        />
+        ></span>
       </button>
 
       <div
@@ -173,7 +169,7 @@ defineExpose({
     </div>
 
     <div
-      id="navegacionprincipal"
+      id="menuprincipal"
       class="nav-menu-contenedor"
       :class="{
         abierto: menuEstaAbierto,

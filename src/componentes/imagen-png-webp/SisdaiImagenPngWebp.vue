@@ -60,6 +60,6 @@ defineProps({
     <figcaption
       aria-hidden="true"
       v-html="leyenda"
-    />
+    ></figcaption>
   </figure>
 </template>

@@ -20,7 +20,7 @@ globalThis[GLOBAL_NAME] = globalThis[GLOBAL_NAME] || {}
 
 const globo_informacion = {
   name: 'globo-informacion',
-  bind(el, binding) {
+  beforeMount(el, binding) {
     const unique_id = Math.random().toString(36).substring(4)
     el.setAttribute('host-tooltip-id', unique_id)
 
@@ -46,7 +46,7 @@ const globo_informacion = {
       interactable: interactable,
     }
   },
-  update(el, binding) {
+  updated(el, binding) {
     let unique_id = el.getAttribute('host-tooltip-id')
 
     //volviendo a leer lo que haya cambiado del binding
@@ -66,7 +66,7 @@ const globo_informacion = {
 
     updateTooltipElement(unique_id, props.value)
   },
-  unbind(el) {
+  unmounted(el) {
     let unique_id = el.getAttribute('host-tooltip-id')
     const props = globalThis[GLOBAL_NAME][unique_id]
     el.removeEventListener('focusin', props.mouseEnterListener)
@@ -79,7 +79,7 @@ const globo_informacion = {
 
 const globo_informacion_extendido = {
   name: 'globo-informacion-extendido',
-  bind(el, binding) {
+  beforeMount(el, binding) {
     const unique_id = 'info-' + Math.random().toString(36).substring(4)
     el.setAttribute('host-tooltip-id', unique_id)
 
@@ -105,7 +105,7 @@ const globo_informacion_extendido = {
       interactable: interactable,
     }
   },
-  update(el, binding) {
+  updated(el, binding) {
     let unique_id = el.getAttribute('host-tooltip-id')
 
     //volviendo a leer lo que haya cambiado del binding
@@ -125,7 +125,7 @@ const globo_informacion_extendido = {
 
     updateTooltipElement(unique_id, props.value)
   },
-  unbind(el) {
+  unmounted(el) {
     let unique_id = el.getAttribute('host-tooltip-id')
     const props = globalThis[GLOBAL_NAME][unique_id]
     el.removeEventListener('focusin', props.mouseEnterListener)
@@ -282,14 +282,11 @@ function getTooltipElement(id, value, classTooltip, elemento) {
   const tooltip = document.createElement('div')
   tooltip.setAttribute('tooltip-id', id)
 
-  tooltip.setAttribute('role', 'tooltip')
-
   // tooltip.classList.add(classTooltip)
   classTooltip.forEach(classCss => {
     tooltip.classList.add(classCss)
   })
   let contenido = typeof value === 'object' ? value['contenido'] : value
-  // tooltip.innerHTML = `<div class="cuerpo-globo-info">${contenido}</div>`
   tooltip.innerHTML = `<div class="globo-informacion-cuerpo">${contenido}</div>`
   //document.body.appendChild(tooltip)
   elemento.parentNode.insertBefore(tooltip, elemento.nextSibling)
@@ -301,7 +298,6 @@ function updateTooltipElement(id, value) {
   if (document.querySelector("[tooltip-id='" + id + "']")) {
     const tooltip = document.querySelector("[tooltip-id='" + id + "']")
     let contenido = typeof value === 'object' ? value['contenido'] : value
-    // tooltip.innerHTML = `<div class="cuerpo">${contenido}</div>`
     tooltip.innerHTML = `<div class="globo-informacion-cuerpo">${contenido}</div>`
   }
 }

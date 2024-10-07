@@ -71,6 +71,7 @@ export function useMenuDesenfocable(
 
   function updateBlur() {
     //revisar que no tengo foco ningun elemento hijo
+
     if (menuEstaAbierto.value || submenuEstaAbierto.value) {
       setTimeout(() => {
         if (
@@ -86,7 +87,6 @@ export function useMenuDesenfocable(
 
   onMounted(() => {
     validarNavegacionColapsable()
-    // window.addEventListener('resize', validarNavegacionColapsable)
 
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.addEventListener('blur', updateBlur)
@@ -164,8 +164,6 @@ export function useMenuDesenfocable(
   )
 
   onUnmounted(() => {
-    // window.removeEventListener('resize', validarNavegacionColapsable)
-
     if (elementoMenuEnfocable.value)
       elementoMenuEnfocable.value.removeEventListener('blur', updateBlur)
   })

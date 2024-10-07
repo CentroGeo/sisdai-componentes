@@ -1,13 +1,16 @@
----
-layout: LayoutDocumentacion
-sectionName: enlace-externo
----
+<script setup>
+import EjemploBasico from "../../.vitepress/components/enlace-externo/basico.vue";
+</script>
 
 # Enlace externo
 
-Este pequeño componente funciona para crear enlaces externos dentro de párrafos u otros elementos, el cual incluye los atributos `target="_blank" rel="noopener noreferrer"`.
+El componente `SisdaiEnlaceExterno` funciona para crear enlaces externos dentro de párrafos u otros elementos. Incluye los atributos `target="_blank"` y `rel="noopener noreferrer"`para asegurar que los enlaces se abran de una nueva pestaña y mantengan la seguridad del navegador.
 
-Uso:
+<section id="uso">
+
+## Uso
+
+Para utilizar el componente `SisdaiEnlaceExterno`, incorpora el componente en tu plantilla y proporciona los atributos `enlace` y `texto` para definir el URL y el texto del enlace, respectivamente. A continuación, se muestra un ejemplo de etiqueta simple:
 
 ```html
 <SisdaiEnlaceExterno
@@ -16,20 +19,28 @@ Uso:
 />
 ```
 
+Vista simplificada
+
+En la vista simplificada el componente `SisdaiEnlaceExterno` no se modifica en diseño ni en comportamiento.
+
+</section>
+
 <section id="api">
 
 ## API
 
+Este componente admite las siguientes propiedades:
+
 ### Propiedades
 
-- `enlace` Indica la ruta o el enlace al que dirige el componente.
+- `enlace`: indica la ruta o el enlace al que se dirige el componente.
   - Tipo: `String`
   - Valor predeterminado: `'#'`
-  - Requerido: si
-- `texto` Indica el texto clickeable para acceder al enlace.
+  - Requerido: sí
+- `texto`: indica el texto que se debe pulsar para acceder al enlace.
   - Tipo: `String`
   - Valor predeterminado: `'Enlace externo'`
-  - Requerido: si
+  - Requerido: sí
 
 ### Métodos
 
@@ -47,12 +58,16 @@ Este componente no permite contenido con slots.
 
 <section id="ejemplos">
 
-## Ejemplo
+## Ejemplos de uso
+
+### Ejemplo básico
 
 #### Enlace
 
-El color del enlace se hereda de sisdai-css y el pictograma que lo acompaña viene de la fuente de pictogramas sisdai-pictogramas.
+El color del enlace se hereda de Sisdai Css y el pictograma que lo acompaña viene de la fuente de pictogramas sisdai-pictogramas.
 
-<utils-ejemplo-doc ruta="enlace-externo/basico.vue"/>
+<!-- <utils-ejemplo-doc ruta="enlace-externo/basico.vue"/> -->
+<EjemploBasico />
+<<< @/.vitepress/components/enlace-externo/basico.vue
 
 </section>

@@ -52,7 +52,7 @@ Visita [eslint.org](https://eslint.org) para más información
 
 ### Configuración ESlint
 
-- Se ejecutó el siguiente comando para instalar las dependencias necesarias para la cinfiguración de eslint con formateo de prettier:
+- Se ejecutó el siguiente comando para instalar las dependencias necesarias para la configuración de eslint con formateo de prettier:
 
 ```sh
 vue add @vue/cli-plugin-eslint
@@ -64,7 +64,7 @@ vue add @vue/cli-plugin-eslint
 npm run lint
 ```
 
-- Además, se habilitó el siguiente git hook con la opción de formatear y ejecutar el `linter` en cada `commit` en el archivo `packaje.json`:
+- Además, se habilitó el siguiente git hook con la opción de formatear y ejecutar el `linter` en cada `commit` en el archivo `package.json`:
 
 ```json
   "gitHooks": {

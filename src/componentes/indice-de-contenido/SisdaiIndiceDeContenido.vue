@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { onUnmounted, onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 
 const lista_elementos = ref([])
 const seccion_visible = ref()
@@ -49,7 +49,6 @@ function scroleando() {
       d.y_min = d.elemento.offsetTop
       d.y_max = d.elemento.offsetTop + d.elemento.offsetHeight
     } else {
-      // eslint-disable-next-line
       console.warn(
         'Los href que introdujiste en el slot "contenido-indice-contenido" no hacen referencia a ningún id de esta vista'
       )
@@ -68,9 +67,7 @@ function scroleando() {
   })
 }
 
-/**
- * Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus
- */
+/** Caracteristicas del autoscroll suave al clickear un link. Además modifica el focus */
 function autoScrollSuave() {
   document
     .querySelectorAll(`div#${props.id_indice}.indice-contenido a`)
@@ -113,6 +110,8 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', scroleando)
 })
+
+defineExpose({ lista_elementos, seccion_visible, autoScrollSuave })
 </script>
 
 <template>
@@ -131,7 +130,6 @@ onUnmounted(() => {
 
     <nav class="indice-contenido-contenedor">
       <slot name="contenido-indice-contenido">
-        <router-link to="#routerlink"> router link prueba </router-link>
         <a href="#anchore"> anchore link prueba </a>
       </slot>
     </nav>

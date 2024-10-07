@@ -49,7 +49,6 @@ const obtenerElementos = () => {
   narrativa.value = document.querySelector(
     `section#${props.id}.narrativa-graficas `
   )
-
   lista_elementos.value = [...narrativa.value.querySelectorAll(` .vineta`)]
 
   narrativa.value.style.height =
@@ -103,7 +102,6 @@ function scroleando() {
 
 onMounted(() => {
   obtenerElementos()
-
   window.addEventListener('scroll', scroleando)
 })
 
