@@ -225,6 +225,7 @@ function funcionInput() {
     <input
       type="range"
       class="control-tiempo"
+      role="slider"
       aria-label="Barra de reproducción"
       :max="Math.floor(duracion)"
       v-model.number="tiempo_transcurrido"
@@ -238,6 +239,7 @@ function funcionInput() {
           name="velocidad-reproduccion"
           class="velocidad-reproduccion"
           aria-label="Velocidad de reproducción"
+          role="combobox"
           v-model="velocidad_reproduccion"
         >
           <optgroup label="Velocidad de reproducción">
