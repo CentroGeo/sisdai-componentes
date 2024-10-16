@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Biblioteca de componentes de Vue reutilizables",
   "license": "LGPL-3.0-only",
   "main": "./src/index.js",
