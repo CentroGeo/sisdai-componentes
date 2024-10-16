@@ -29,12 +29,13 @@ const posicionesDisponibles = [
           que aparece/desaparece solo cuando el cursor esta en el botón
         </div>
         <button
+          class="boton-primario m-y-1"
           v-globo-informacion:[posicion]="{
             contenido: `<b>soy un tooltip</b> de #ElementoPadre`,
             asignadoAElemento: '#elementoPadre',
           }"
         >
-          Pasa el cursor aquí
+          Pasa el cursor o haz foco aquí
         </button>
         <div>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt

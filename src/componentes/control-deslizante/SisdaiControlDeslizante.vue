@@ -49,6 +49,7 @@ defineExpose({
     class="control-deslizante"
     :min="val_min"
     :max="val_max"
+    role="slider"
     v-model="valor_seleccionado"
   />
 </template>
