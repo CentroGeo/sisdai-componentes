@@ -29,14 +29,14 @@ function descargaAlgo() {
             <input
               id="radio1"
               type="radio"
-              name="radioses1"
+              name="datos"
             />
             <label for="radio1">Todos los datos</label>
             <br />
             <input
               id="radio2"
               type="radio"
-              name="radioses2"
+              name="datos"
             />
             <label for="radio2">Mi selección de datos</label>
 
@@ -44,14 +44,14 @@ function descargaAlgo() {
             <input
               id="radio3"
               type="radio"
-              name="radioses3"
+              name="archivo"
             />
             <label for="radio3">.csv (Valores separados por comas)</label>
             <br />
             <input
               id="radio4"
               type="radio"
-              name="radioses4"
+              name="archivo"
             />
             <label for="radio4">.xls (Archivo de Excel)</label>
           </div>
