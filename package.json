@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Biblioteca de componentes de Vue reutilizables",
   "type": "module",
   "license": "LGPL-3.0-only",
