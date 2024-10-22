@@ -50,11 +50,11 @@ const propiedades = {
 
   /**
    * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
-   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'sisdai'`.
+   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'eni'`, `'sisdai'`.
    */
   perfilColor: {
     type: String,
-    default: 'predeterminada', // 'predeterminada' | 'sisdai' | 'gema'
+    default: 'predeterminada', // 'predeterminada' | 'gema' | 'eni' | 'sisdai'
   },
 }
 
