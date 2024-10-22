@@ -1,6 +1,6 @@
 <template>
-  <div class="elementos-ejemplo m-x-2 p-b-8">
-    <div class="tarjeta m-b-2">
+  <div class="m-3">
+    <div class="tarjeta m-b-3">
       <img
         class="tarjeta-imagen"
         src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/kale-3.jpg"
@@ -25,26 +25,28 @@
       <div class="tarjeta-degradado">
         <div class="tarjeta-cuerpo">
           <p>Este es un ejemplo de hipervínculo externo con forma de tarjeta</p>
-          <p class="h2">Titulo del hipervínculo externo</p>
+          <p class="h1">
+            Titulo del hipervínculo
+            <span class="pictograma-enlace-externo"></span>
+          </p>
         </div>
       </div>
     </a>
 
-    <p>
-      Parrafo normal, <b>Negritas, </b> <i>Cursiva,</i>
+    <p class="m-b-10">
+      Parrafo normal, <b>Negritas, </b> <i>Cursivas, </i>
       <button
         type="button"
         class="boton-secundario boton-chico"
       >
-        botón</button
-      >,
+        ejemplo de botón
+      </button>, 
       <a
-        class="boton-secundario boton-chico"
-        role="button"
+        href="#"
         target="_blank"
         rel="noopener noreferrer"
       >
-        enlace con estilo de botón
+        ejemplo de enlace a ningun lado
       </a>
     </p>
 
@@ -60,20 +62,7 @@
 </template>
 
 <style>
-.contenerdor-panttalla-simulada #btnflotante {
-  position: relative;
-  top: 8px;
-  left: 16px;
-}
-.contenerdor-panttalla-simulada .menu-flotante.menu-flotante-derecho {
+.contenerdor-panttalla-simulada .menu-flotante {
   position: absolute;
-}
-.contenerdor-panttalla-simulada {
-  position: relative;
-  border-right: solid gray 10px;
-  border-bottom: solid #000 1px;
-  min-height: 350px;
-  width: 100%;
-  overflow-y: hidden;
 }
 </style>
