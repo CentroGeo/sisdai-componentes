@@ -26,6 +26,7 @@ sisdai-css v1.3.3
 ## [4.1.0] - 2024-10-15 - Release
 
 A partir de esta versión contiene la dentidad gráfica del gobierno federal para el periodo 2024-2030
+
 sisdai-css v1.3.0 ó v1.3.1
 
 ### Cambiado (Changed)
@@ -35,6 +36,7 @@ sisdai-css v1.3.0 ó v1.3.1
 ## [4.0.0] - 2024-10-07 - Release
 
 Contiene la dentidad gráfica deprecada del gobierno federal para el periodo 2018-2024
+
 sisdai.css v1.2.6 ó v1.2.7
 
 ### Cambiado (Changed)
@@ -69,20 +71,24 @@ sisdai.css v1.2.6 ó v1.2.7
 
 ### Cambiado (Changed)
 
-sisdai-css v1.3.1. ó v1.3.2
 Versiones deprecadas de Vue 2 con la identidad gráfica del gobierno federal
 para el periodo 2024-2030
+
+sisdai-css v1.3.1. ó v1.3.2
+
 
 ### Cambiado (Changed)
 - Corrección de errores de Sass
 
 ## [3.1.5] - 2024-09-23
 
-sisdai-css v1.2.7
 Versiones deprecadas de Vue 2 con la identidad gráfica del gobierno federal
 para el periodo 2018-2024
 
-## [3.0.0] 2024-07-08
+sisdai-css v1.2.7
+
+
+## [3.0.0] - 2024-07-08
 
 sisdai-css v1.0.4
 
@@ -90,11 +96,16 @@ sisdai-css v1.0.4
 
 - Refactorización en base a la versión v1.0.0 de sisdai-componentes, que incluye refactorización de color y nombres de clases
 
-## [2.0.0]
+## [2.0.0] - 2023-04-18
+
+sisdai-css v0.37.3
 
 Segunda versión estable
 
-## [1.0.0]
+## [1.0.0] - 2023-04-04
+
+sisdai-css v0.37.3
+
 
 Primera versión estable
 
