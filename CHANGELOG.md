@@ -67,7 +67,7 @@ sisdai.css v1.2.6 ó v1.2.7
 
 - Componente de Narrativa Scroll
 
-## [3.2.1] - 2024-10-21
+## [3.2.1] - 2024-10-21 - Release
 
 ### Cambiado (Changed)
 
@@ -88,7 +88,7 @@ para el periodo 2018-2024
 sisdai-css v1.2.7
 
 
-## [3.0.0] - 2024-07-08
+## [3.0.0] - 2024-07-08 - Release
 
 sisdai-css v1.0.4
 
@@ -96,13 +96,13 @@ sisdai-css v1.0.4
 
 - Refactorización en base a la versión v1.0.0 de sisdai-componentes, que incluye refactorización de color y nombres de clases
 
-## [2.0.0] - 2023-04-18
+## [2.0.0] - 2023-04-18 - Release
 
 sisdai-css v0.37.3
 
 Segunda versión estable
 
-## [1.0.0] - 2023-04-04
+## [1.0.0] - 2023-04-04 - Release
 
 sisdai-css v0.37.3
 
