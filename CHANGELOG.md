@@ -117,4 +117,4 @@ Primera versión estable
 [3.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.1.5...v3.0.0
 [3.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.0.0...v2.0.0
 [2.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v2.0.0...v1.0.0
-[1.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-css/-/releases/v1.0.0
+[1.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/-/releases/v1.0.0
