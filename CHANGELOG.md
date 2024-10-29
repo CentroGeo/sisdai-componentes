@@ -95,6 +95,14 @@ sisdai-css v1.0.4
 ### Cambiado (Changed)
 
 - Refactorización en base a la versión v1.0.0 de sisdai-componentes, que incluye refactorización de color y nombres de clases
+- Refactorización de las clases de estilo css
+- Actualización de la plantilla de vuepress a estos cambios
+- Mejora de la accesibilidad en los componentes
+
+### Agreagado (Added)
+
+- Implementación del nuevo modelo de color
+- Licencias
 
 ## [2.0.0] - 2023-04-18 - Release
 
