@@ -21,7 +21,7 @@ sisdai-css v1.3.3
 
 ### Cambiado (Changed)
 
-- La pestaña del navegador decía SISDAI-COMPONENTES. Se corrige a sisdai-graficas
+- La pestaña del navegador decía SISDAI-COMPONENTES. Se corrige a sisdai-componentes
 
 ## [4.1.5] - 2024-10-22
 
