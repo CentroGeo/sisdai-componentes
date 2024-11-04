@@ -50,11 +50,11 @@ const propiedades = {
 
   /**
    * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
-   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'sisdai'`.
+   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'eni'`, `'sisdai'`.
    */
   perfilColor: {
     type: String,
-    default: 'predeterminada', // 'predeterminada' | 'sisdai' | 'gema'
+    default: 'predeterminada', // 'predeterminada' | 'gema' | 'eni' | 'sisdai'
   },
 }
 
@@ -314,9 +314,9 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
     <button
       type="button"
       class="menu-flotante-boton"
-      aria-labelledby="herramientasaccesibilidad"
-      aria-controls="menua11y"
-      :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
+      aria-labelledby="herramientasaccesibilidadej"
+      aria-controls="menua11yej"
+      :aria-expanded="menuAccesibilidadEstaAbierto"
       @click="alternarAbiertoCerrado"
     >
       <span
@@ -326,16 +326,11 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
     </button>
 
     <div
-      id="menua11y"
-      class="menu-flotante-contenedor"
-      :aria-hidden="menuAccesibilidadEstaAbierto ? 'false' : 'true'"
+      class="menu-flotante-contenedor" 
+      id="menua11yej"
+      :aria-hidden="!menuAccesibilidadEstaAbierto"
     >
-      <p
-        id="herramientasaccesibilidad"
-        class="menu-flotante-titulo"
-      >
-        Herramientas de accesibilidad
-      </p>
+    <p id="herramientasaccesibilidadej" class="menu-flotante-titulo">Herramientas de accesibilidad</p>
 
       <div
         v-for="opcion in opciones"

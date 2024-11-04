@@ -1,6 +1,7 @@
 <template>
   <div class="contenerdor-panttalla-simulada">
     <SisdaiInfoDeDespliegue
+      id="ejemplodespliegue"
       :entornoProyecto="entornoProyecto"
       :versionProyecto="versionProyecto"
       :actualizacionProyecto="actualizacionProyecto"
@@ -31,3 +32,9 @@ const actualizacionProyecto = computed(() => {
   })
 })
 </script>
+
+<style>
+.contenerdor-panttalla-simulada #ejemplodespliegue{
+  position: absolute;
+}
+</style>
