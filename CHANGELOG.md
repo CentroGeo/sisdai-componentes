@@ -11,6 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.2.0] - 2024-11-04
+
+### Agregado (Added)
+
+- Script y archivos de variable de entorno para seguimiento de analíticas en Matomo
+
 ## [4.1.6] - 2024-11-04
 
 sisdai-css v1.3.3
@@ -129,6 +135,7 @@ sisdai-css v0.37.3
 
 Primera versión estable
 
+[4.2.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.2.0...v4.1.6
 [4.1.6]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.6...v4.1.5
 [4.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.5...v4.1.0
 [4.1.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.0...v4.0.0
