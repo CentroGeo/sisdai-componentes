@@ -48,7 +48,7 @@ export default {
         _paq.push(['trackPageView']);
         _paq.push(['enableLinkTracking']);
         (function() {
-          var u="https://retru.conacyt.mx";
+          var u="https://retru.conacyt.mx/";
           _paq.push(['setTrackerUrl', u + 'matomo.php']);
           _paq.push(['setSiteId', '${process.env.VITE_MATOMO_ID}']);
           var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
