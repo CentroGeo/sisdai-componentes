@@ -11,6 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.2.2] - 2024-11-06
+
+Arreglado (Fixed)
+
+- Se cambia la manera en la que se configura el id de matomo para las analíticas
+
 ## [4.2.1] - 2024-11-06
 
 ### Agregado (Added)
