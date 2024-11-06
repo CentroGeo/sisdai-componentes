@@ -2,9 +2,6 @@
 home: true
 title: Documentación
 ---
-
-**La presente documentación está en construcción. Agradecemos tu paciencia mientras la completamos.**
-
 # Sisdai Componentes
 
 El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación ([Sisdai](https://sisdai.conahcyt.mx/)). Esta biblioteca tiene como objetivo simplificar y acelerar el desarrollo de aplicaciones Vue, proporcionando componentes predefinidos que cumplen con los estándares de accesibilidad y diseño establecidos por Sisdai.
