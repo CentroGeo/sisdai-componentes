@@ -1,7 +1,7 @@
 <script setup>
 import EjemploDefault from "../../.vitepress/components/menu-lateral/default.vue";
 import EjemploBasico from "../../.vitepress/components/menu-lateral/basico.vue";
-import EjemploColapsable from "../../.vitepress/components/menu-lateral/colapsable.vue";
+import EjemploColapsable from "../../.vitepress/components/menu-lateral/ejemplo-colapsable.vue";
 </script>
 
 # Menú lateral <span class="etiqueta">preliminar</span>
@@ -112,6 +112,6 @@ El siguiente ejemplo contiene los mismos enlaces que el anterior, sin embargo, s
 
 <!-- <utils-ejemplo-doc ruta="menu-lateral/colapsable.vue"/> -->
 <EjemploColapsable />
-<<< @/.vitepress/components/menu-lateral/colapsable.vue
+<<< @/.vitepress/components/menu-lateral/ejemplo-colapsable.vue
 
 </section>

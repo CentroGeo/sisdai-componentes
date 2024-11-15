@@ -198,7 +198,7 @@ function funcionInput() {
     :id="id_aleatorio"
     class="audio"
     role="toolbar"
-    aria-label="Controles para reproducir audio"
+    aria-label="Reproductor de audio"
   >
     <slot name="encabezado"> </slot>
 
@@ -225,7 +225,8 @@ function funcionInput() {
     <input
       type="range"
       class="control-tiempo"
-      aria-label="Barra de progreso de la reproducción"
+      role="slider"
+      aria-label="Barra de reproducción"
       :max="Math.floor(duracion)"
       v-model.number="tiempo_transcurrido"
       @change="slider_activo = false"
@@ -237,7 +238,8 @@ function funcionInput() {
         <select
           name="velocidad-reproduccion"
           class="velocidad-reproduccion"
-          aria-label="Selecciona la velocidad de reproducción"
+          aria-label="Velocidad de reproducción"
+          role="combobox"
           v-model="velocidad_reproduccion"
         >
           <optgroup label="Velocidad de reproducción">
@@ -255,8 +257,9 @@ function funcionInput() {
       <div class="audio-reproduccion">
         <button
           type="button"
+          role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
-          aria-label="Regresar 10 segundos"
+          aria-label="Atrasar 10 segundos"
           @click="retrasa10"
           :disabled="!(tiempo_transcurrido > 10)"
         >
@@ -268,26 +271,20 @@ function funcionInput() {
 
         <button
           type="button"
+          role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
-          :aria-label="
-            !reproduciendo ? 'Comenzar reproducción' : 'Pausar reproducción'
-          "
+          :aria-label="reproduciendo ? 'Pausar' : 'Reproducir'"
           @click="reproduciendo = !reproduciendo"
         >
           <span
-            v-if="!reproduciendo"
-            class="pictograma-control-comenzar"
-            aria-hidden="true"
-          ></span>
-          <span
-            v-if="reproduciendo"
-            class="pictograma-control-pausa"
+            :class="`pictograma-control-${reproduciendo ? 'pausa' : 'comenzar'}`"
             aria-hidden="true"
           ></span>
         </button>
 
         <button
           type="button"
+          role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
           aria-label="Adelantar 10 segundos"
           @click="adelanta10"
@@ -302,10 +299,14 @@ function funcionInput() {
 
       <div class="audio-volumen">
         <button
-          v-if="controlVolumen?.valor_seleccionado > 0"
           type="button"
+          role="button"
           class="boton-pictograma boton-sin-contenedor-primario"
-          aria-label="Apagar sonido"
+          :aria-label="
+            controlVolumen?.valor_seleccionado > 0
+              ? 'Silenciar'
+              : 'Desactivar silencio'
+          "
           @click="
             controlVolumen?.valor_seleccionado == 0
               ? (volumen_default = 100)
@@ -313,23 +314,7 @@ function funcionInput() {
           "
         >
           <span
-            class="pictograma-volumen"
-            aria-hidden="true"
-          ></span>
-        </button>
-        <button
-          v-if="controlVolumen?.valor_seleccionado == 0"
-          type="button"
-          class="boton-pictograma boton-sin-contenedor-primario"
-          aria-label="Encender sonido"
-          @click="
-            controlVolumen?.valor_seleccionado == 0
-              ? (volumen_default = 100)
-              : (volumen_default = 0)
-          "
-        >
-          <span
-            class="pictograma-silenciar"
+            :class="`pictograma-${controlVolumen?.valor_seleccionado > 0 ? 'volumen' : 'silenciar'}`"
             aria-hidden="true"
           ></span>
         </button>
@@ -337,9 +322,9 @@ function funcionInput() {
         <SisdaiControlDeslizante
           ref="controlVolumen"
           class="control-volumen m-y-1 m-x-0"
-          aria-label="Ajustar nivel de volumen"
+          aria-label="Volumen"
           :val_entrada="volumen_default"
-        ></SisdaiControlDeslizante>
+        />
       </div>
     </div>
   </div>

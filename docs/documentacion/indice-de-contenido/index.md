@@ -1,6 +1,6 @@
 <script setup>
 import EjemploBasico from "../../.vitepress/components/indice-de-contenido/basico.vue";
-import EjemploLista from "../../.vitepress/components/indice-de-contenido/lista.vue";
+import EjemploLista from "../../.vitepress/components/indice-de-contenido/ejemplo-lista.vue";
 </script>
 
 # Índice de contenido <span class="etiqueta">preliminar</span>
@@ -76,6 +76,6 @@ Este ejemplo es análogo al anterior. La diferencia es que los enlaces se ingres
 
 <!-- <utils-ejemplo-doc ruta="indice-de-contenido/lista.vue"/> -->
 <EjemploLista />
-<<< @/.vitepress/components/indice-de-contenido/lista.vue
+<<< @/.vitepress/components/indice-de-contenido/ejemplo-lista.vue
 
 </section>

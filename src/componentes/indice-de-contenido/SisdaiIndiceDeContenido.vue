@@ -49,7 +49,6 @@ function scroleando() {
       d.y_min = d.elemento.offsetTop
       d.y_max = d.elemento.offsetTop + d.elemento.offsetHeight
     } else {
-      // eslint-disable-next-line
       console.warn(
         'Los href que introdujiste en el slot "contenido-indice-contenido" no hacen referencia a ningún id de esta vista'
       )
@@ -120,17 +119,16 @@ defineExpose({ lista_elementos, seccion_visible, autoScrollSuave })
     :id="id_indice"
     class="indice-contenido"
   >
-    <p
+    <div
       id="indicecontenido"
       class="indice-contenido-titulo"
+      aria-level="2"
+      role="heading"
     >
       {{ titulo }}
-    </p>
+    </div>
 
-    <nav
-      aria-labelledby="indicecontenido"
-      class="indice-contenido-contenedor"
-    >
+    <nav class="indice-contenido-contenedor">
       <slot name="contenido-indice-contenido">
         <a href="#anchore"> anchore link prueba </a>
       </slot>

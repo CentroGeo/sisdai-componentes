@@ -14,17 +14,17 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <template>
-  <footer
+  <div
     class="contenedor piepagina-gobmx"
     aria-label="Gobierno de México"
   >
     <div class="flex flex-wrap">
       <div class="columna-8 columna-4-esc">
         <img
-          src="https://cdn.conacyt.mx/sisdai/recursos/gobmx.svg"
+          src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
           alt="Gobierno de México"
-          width="200px"
-          height="60px"
+          width="207px"
+          height="75px"
         />
       </div>
 
@@ -35,10 +35,10 @@
           <li>
             <a
               class="hipervinculo-gobmx"
-              href="https://participa.gob.mx/"
+              href="https://datos.gob.mx/"
               target="_blank"
               rel="noopener noreferrer"
-              >Participa</a
+              >Datos</a
             >
           </li>
           <li>
@@ -47,25 +47,52 @@
               href="https://www.gob.mx/publicaciones"
               target="_blank"
               rel="noopener noreferrer"
-              >Publicaciones Oficiales</a
+              >Publicaciones</a
             >
           </li>
           <li>
             <a
               class="hipervinculo-gobmx"
-              href="http://www.ordenjuridico.gob.mx/"
+              href="https://consultapublicamx.plataformadetransparencia.org.mx"
               target="_blank"
               rel="noopener noreferrer"
-              >Marco Jurídico</a
+              >Portal de Obligaciones de Transparencia</a
             >
           </li>
           <li>
             <a
               class="hipervinculo-gobmx"
-              href="https://consultapublicamx.inai.org.mx/vut-web/faces/view/consultaPublica.xhtml"
+              href="https://www.infomex.org.mx/gobiernofederal/home.action"
               target="_blank"
               rel="noopener noreferrer"
-              >Plataforma Nacional de Transparencia</a
+              >PNT</a
+            >
+          </li>
+          <li>
+            <a
+              class="hipervinculo-gobmx"
+              href="http://www.inai.org.mx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >INAI</a
+            >
+          </li>
+          <li>
+            <a
+              class="hipervinculo-gobmx"
+              href="http://alertadores.funcionpublica.gob.mx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Alerta</a
+            >
+          </li>
+          <li>
+            <a
+              class="hipervinculo-gobmx"
+              href="http://sidec.funcionpublica.gob.mx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Denuncia</a
             >
           </li>
         </ul>
@@ -89,10 +116,10 @@
           <li>
             <a
               class="hipervinculo-gobmx"
-              href="https://datos.gob.mx/"
+              href="https://www.gob.mx/amlo"
               target="_blank"
               rel="noopener noreferrer"
-              >Portal de datos abiertos</a
+              >Administraciones anteriores</a
             >
           </li>
           <li>
@@ -101,16 +128,16 @@
               href="https://www.gob.mx/accesibilidad"
               target="_blank"
               rel="noopener noreferrer"
-              >Declaración de accesibilidad</a
+              >Declaración de Accesibilidad</a
             >
           </li>
           <li>
             <a
               class="hipervinculo-gobmx"
-              href="https://www.gob.mx/aviso_de_privacidad"
+              href="https://www.gob.mx/privacidadintegral"
               target="_blank"
               rel="noopener noreferrer"
-              >Aviso de privacidad integral</a
+              >Aviso de privacidad</a
             >
           </li>
           <li>
@@ -138,6 +165,15 @@
               target="_blank"
               rel="noopener noreferrer"
               >Política de seguridad</a
+            >
+          </li>
+          <li>
+            <a
+              class="hipervinculo-gobmx"
+              href="http://www.ordenjuridico.gob.mx/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Marco jurídico</a
             >
           </li>
           <li>
@@ -171,9 +207,10 @@
         <ul class="piepagina-social">
           <li>
             <a
-              href="https://www.facebook.com/gobmx"
+              lang="en"
+              href="https://www.facebook.com/gobmexico"
+              hreflang="es"
               class="hipervinculo-gobmx"
-              aria-label="feisbuk"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -181,13 +218,15 @@
                 class="pictograma-social-facebook"
                 aria-hidden="true"
               ></span>
+              <span class="a11y-solo-lectura">feisbuk</span>
             </a>
           </li>
           <li>
             <a
-              href="https://twitter.com/gobmx"
+              lang="en"
+              hreflang="es"
+              href="https://x.com/GobiernoMX"
               class="hipervinculo-gobmx"
-              aria-label="x."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -195,10 +234,39 @@
                 class="pictograma-social-x"
                 aria-hidden="true"
               ></span>
+              <span class="a11y-solo-lectura">x.</span>
+            </a>
+          </li>
+          <li>
+            <a
+              lang="en"
+              hreflang="es"
+              href="https://www.instagram.com/gobmexico"
+              aria-label="instagram"
+              class="hipervinculo-gobmx"
+            >
+              <span
+                aria-hidden="true"
+                class="pictograma-social-instagram"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              lang="en"
+              hreflang="es"
+              href="https://www.youtube.com/@gobiernodemexico"
+              aria-label="youtube"
+              class="hipervinculo-gobmx"
+            >
+              <span
+                aria-hidden="true"
+                class="pictograma-social-youtube"
+              />
             </a>
           </li>
         </ul>
       </div>
     </div>
-  </footer>
+  </div>
 </template>

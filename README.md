@@ -16,7 +16,7 @@ en su equipo a través del **protocolo HTTPS**.
 
 ## Instalación y uso
 
-Si tu proyecto esta creado con [sisdai-proyecto-base](https://codigo.conahcyt.mx/sisdai/sisdai-proyecto-base) tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
+Si tu proyecto está creado con [sisdai-proyecto-base](https://codigo.conahcyt.mx/sisdai/sisdai-proyecto-base), tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
 
 ### Instala la biblioteca
 
@@ -72,36 +72,36 @@ donde N.N.N indica el número de versión, por ejemplo v1.0.0
 
 ## Listado de componentes
 
-| Componente                 | Descripcion                                                                                                                                                      | Propiedades                                                                                                                                     | Secciones (v-slot)                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| SisdaiAudio                | Este componente de audio permite reproducir audios en el navegador.                                                                                              | archivo="`texto`"                                                                                                                               | `<template v-slot:encabezado>`                                   |
-| SisdaiBotonFlotante        | Botón circular fijo en la pantalla que se expande para mostrar múltiples enlaces.                                                                                | :enlaces="`[{arreglo de objetos}]`"                                                                                                             | NA                                                               |
-| SisdaiCampoBusqueda        | Permite a las personas usuarias encontrar rápidamente contenido específico.                                                                                      | :catalogo="`[arreglo]`" :catalogoAnidado="`boleano`" catalogoAnidadoPropiedadElementos="`texto`" propiedadBusqueda="`texto`" etiqueta="`texto`" | NA                                                               |
-| SisdaiColapsableNavegacion | Lista de enlaces, y/o sublistas de enlaces con titulo.                                                                                                           | titulo="`texto`" :colapsado="`boleano`" :avisarMenuLateral="`boleano`"                                                                          | `<template v-slot:encabezado>` `<template v-slot:contenido>`     |
-| SisdaiControlAcercarAlejar | Se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web.                                                           | value="`número entero`" min="`número entero`" max="`número entero`" step="`número entero`"                                                      | NA                                                               |
-| SisdaiControlDeslizante    | consiste en un elemento `<input type="range">` al cual se le agrega una función de estilo en el cual el lado derecho del valor seleccionado queda de color gris. | val_min="`número entero`" val_max="`número entero`" val_entrada="`número entero`"                                                               | NA                                                               |
-| SisdaiEnlaceExterno        | Este pequeño componente funciona para crear enlaces externos dentro de párrafos u otros elementos.                                                               | enlace="`texto`" texto="`texto`"                                                                                                                | NA                                                               |
-| SisdaiImagenPngWebp        | Este componente permite indicar el nombre de dos archivos existentes como insumos del proyecto en formato png y webp.                                            | dominio="`texto`" ruta="`texto`" textoAlternativo="`texto`" leyenda="`texto`" ancho_maximo="`porcentaje%`"                                      | NA                                                               |
-| SisdaiIndiceDeContenido    | Menú de navegación para el contenido de una vista.                                                                                                               | titulo="`texo`" :altura="`número entero`" id_indice="`texto`"                                                                                   | `<template slot="contenido-indice-contenido">`                   |
-| SisdaiInfoDeDespliegue     | Información acerca del versionamiento, el ambiente y la fecha de despliegue.                                                                                     | versionProyecto="`texto`" entornoProyecto="`texto`" actualizacionProyecto="`texto`"                                                             | NA                                                               |
-| SisdaiMenuAccesibilidad    | El Menú de accesibilidad para activar/desactivar funciones de accesibilidad en el sitio web.                                                                     | :agregarOpciones="`[arreglo]`" nombreModuloStore="`texto`" :objetoStore="`{objeto} `" perfilColor="`texto`"                                     | NA                                                               |
-| SisdaiMenuLateral          | Menú fijo lateralmente que se colapsa en dispositivos pequeños.                                                                                                  | NA                                                                                                                                              | `<template slot="contenido-menu-lateral">`                       |
-| SisdaiModal                | Ventana emergente de información variada que bloquea el resto del contenido de la vista hasta que se cierre.                                                     | tituloModal="`texto`" (puede ser con elementos html) tamanioModal="`nombre de clase`" (el nombre de la clase puede modal-grande)                | `<template v-slot:cuerpo>` `<template v-slot:pie>`               |
-| SisdaiNarrativa            | Sección que muestra contenido y cambia la imagen de fondo, dependiendo de la posición del scroll.                                                                | id="`texto`" :depurador="`boleano`" :altura_sensor="`número decimal`" :separacion="`número entero`" :posicion_inicial="`número entero`"         | NA                                                               |
-| SisdaiNavegacionGobMx      | Barra de navegación del Gobierno de México.                                                                                                                      | NA                                                                                                                                              | NA                                                               |
-| SisdaiNavegacionPrincipal  | Barra de navegación principal del sitio. Dentro de sus etiquetas se agrega el menú principal del sitio.                                                          | navInformacion="`html`" :fija="`boleano`"                                                                                                       | `<template v-slot:identidad>` `<template v-slot:complementario>` |
-| SisdaiPiePaginaConahcyt    | El pie de página del Conahcyt es un componente compartido en todos los Ecosistemas Nacionales de Información.                                                    | NA                                                                                                                                              | NA                                                               |
-| SisdaiPiePaginaGobMx       | El pie de página del Gobierno de México es uno de los elementos específicos que deben de cumplir Dependencias y Organismos de la Administración Pública Federal. | NA                                                                                                                                              | NA                                                               |
+| Componente                 | Descripción                                                                                                                                                     | Propiedades                                                                                                                                     | Secciones (v-slot)                                               |
+| -------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| SisdaiAudio                | Permite reproducir audios en el navegador.                                                                                                                      | archivo="`texto`"                                                                                                                               | `<template v-slot:encabezado>`                                   |
+| SisdaiBotonFlotante        | Botón circular fijo en la pantalla que se expande para mostrar múltiples enlaces.                                                                               | :enlaces="`[{arreglo de objetos}]`"                                                                                                             | NA                                                               |
+| SisdaiCampoBusqueda        | Permite a las personas usuarias encontrar rápidamente contenido específico.                                                                                     | :catalogo="`[arreglo]`" :catalogoAnidado="`boleano`" catalogoAnidadoPropiedadElementos="`texto`" propiedadBusqueda="`texto`" etiqueta="`texto`" | NA                                                               |
+| SisdaiColapsableNavegacion | Lista de enlaces, y/o sublistas de enlaces con título.                                                                                                          | titulo="`texto`" :colapsado="`boleano`" :avisarMenuLateral="`boleano`"                                                                          | `<template v-slot:encabezado>` `<template v-slot:contenido>`     |
+| SisdaiControlAcercarAlejar | Se utiliza para manipular la escala visual de un elemento o área dentro de una aplicación o sitio web.                                                          | value="`número entero`" min="`número entero`" max="`número entero`" step="`número entero`"                                                      | NA                                                               |
+| SisdaiControlDeslizante    | Consiste en un elemento `<input type="range">` con el que la usuaria puede estableer un valor dentro de un rango moviendo un indicador a lo largo de una barra. | val_min="`número entero`" val_max="`número entero`" val_entrada="`número entero`"                                                               | NA                                                               |
+| SisdaiEnlaceExterno        | Funciona para crear enlaces externos dentro de párrafos u otros elementos.                                                                                      | enlace="`texto`" texto="`texto`"                                                                                                                | NA                                                               |
+| SisdaiImagenPngWebp        | Permite indicar el nombre de dos archivos existentes como insumos del proyecto en formato png y webp.                                                           | dominio="`texto`" ruta="`texto`" textoAlternativo="`texto`" leyenda="`texto`" ancho_maximo="`porcentaje%`"                                      | NA                                                               |
+| SisdaiIndiceDeContenido    | Menú de navegación para el contenido de una vista.                                                                                                              | titulo="`texo`" :altura="`número entero`" id_indice="`texto`"                                                                                   | `<template slot="contenido-indice-contenido">`                   |
+| SisdaiInfoDeDespliegue     | Información acerca del versionamiento, el ambiente y la fecha de despliegue.                                                                                    | versionProyecto="`texto`" entornoProyecto="`texto`" actualizacionProyecto="`texto`"                                                             | NA                                                               |
+| SisdaiMenuAccesibilidad    | El Menú de accesibilidad para activar/desactivar funciones de accesibilidad en el sitio web.                                                                    | :agregarOpciones="`[arreglo]`" nombreModuloStore="`texto`" :objetoStore="`{objeto} `" perfilColor="`texto`"                                     | NA                                                               |
+| SisdaiMenuLateral          | Menú lateral fijo que se colapsa en dispositivos pequeños.                                                                                                      | NA                                                                                                                                              | `<template slot="contenido-menu-lateral">`                       |
+| SisdaiModal                | Ventana emergente con información variada que bloquea el resto del contenido de la vista hasta que se cierre.                                                   | tituloModal="`texto`" (puede ser con elementos html) tamanioModal="`nombre de clase`" (el nombre de la clase puede modal-grande)                | `<template v-slot:cuerpo>` `<template v-slot:pie>`               |
+| SisdaiNarrativa            | Sección que muestra contenido y cambia la imagen de fondo y/o textos, dependiendo de la posición del scroll.                                                    | id="`texto`" :depurador="`boleano`" :altura_sensor="`número decimal`" :separacion="`número entero`" :posicion_inicial="`número entero`"         | NA                                                               |
+| SisdaiNavegacionGobMx      | Barra de navegación del Gobierno de México.                                                                                                                     | NA                                                                                                                                              | NA                                                               |
+| SisdaiNavegacionPrincipal  | Barra de navegación principal del sitio. Dentro de sus etiquetas se agrega el menú principal del sitio.                                                         | navInformacion="`html`" :fija="`boleano`"                                                                                                       | `<template v-slot:identidad>` `<template v-slot:complementario>` |
+| SisdaiPiePaginaConahcyt    | El pie de página del Conahcyt                                                                                                                                   | NA                                                                                                                                              | NA                                                               |
+| SisdaiPiePaginaGobMx       | El pie de página del Gobierno de México.                                                                                                                        | NA                                                                                                                                              | NA                                                               |
 
 ## Uso local del proyecto
 
 ### Pasos previos recomendados
 
-Para desarrollar este proyecto se usó [node.js](https://nodejs.org/en) como
+Para desarrollar este proyecto se usa [node.js](https://nodejs.org/en) como
 entorno de ejecución de JavaScript. La opción recomendada para instalarlo es
 [vía nvm](https://github.com/nvm-sh/nvm) que es el manejador de versiones de
 node. Siguiendo este camino, también se instalará el manejador de paquetes
-[npm](https://www.npmjs.com/). Dado lo anterior las instrucciones de instalación
+[npm](https://www.npmjs.com/). Las instrucciones de instalación
 y dependencias del proyecto se muestran aquí usando tanto npm, como nvm.
 
 ### Dependencias
@@ -155,7 +155,7 @@ artículo 63 se explicita que "cuando se trate
 de desarrollos basados en software libre, se respetarán las condiciones de su
 licenciamiento original [...]".
 
-Considerando lo anterior sisdai-componentes se publica bajo la licencia
+Considerando lo anterior, sisdai-componentes se publica bajo la licencia
 [LGPLv3](https://www.gnu.org/licenses/lgpl-3.0.html). Dicha licencia se puede
 consultar en el archivo _LICENSE_ de este repositorio.
 Esta licencia se encuentra disponible en inglés porque aunque el Sisdai privilegia
@@ -166,18 +166,18 @@ el idioma español se respeta la versión original de acuerdo al proyecto
 
 Por el momento sólo quienes sean
 parte de un equipo de investigación del capítulo de un [ENI](https://eni.conahcyt.mx)
-podrán levantar issues en este repositorio. Mientras que el equipo del sistema de diseño [Sisdai](https://sisdai.conahcyt.mx/acerca-de) se encargará de mantenerlo.
+podrán levantar issues en este repositorio. El equipo del [Sisdai](https://sisdai.conahcyt.mx/acerca-de) se encargará de mantenerlo.
 
 ---
 
-### ¿Como agregar nuevos componentes?
+### ¿Cómo agregar nuevos componentes?
 
 #### Estructura
 
 - Los nuevos componentes se agregan en la carpeta `src/componentes`.
 - Cada componente se agrega en su propio
   directorio `src/componentes/nuevo-componente`.
-- Dentro la carpeta de cada componente deberan existir todos los archivos
+- Dentro la carpeta de cada componente deberán existir todos los archivos
   necesarios para dar funcionalidad a ese componente.
 - El archivo con extensión `.vue` y un `index.js` son necesarios
 
@@ -194,19 +194,18 @@ sisdai-componentes/
 
 #### Componente .vue
 
-- Para el desarrollo se
-  usa [Composition API](https://vuejs.org/guide/introduction.html#composition-api)
-- Se evita el uso de preprocesadores de estilos, se usa css en vez de scss o
+- Usa [Composition API](https://vuejs.org/guide/introduction.html#composition-api) para el desarrollo
+- Evita el uso de preprocesadores de estilos, usa css en vez de scss o
   sass
 - En la medida de lo posible se evita la llamada de métodos al router de vue, si
   un componente por su funcionalidad requiere de esta dependencia o de otra
-  similar debera especificarlo en la documentación de uso del componente.
-- Apegarse a los estilos de código definidos en las configuraciones del
-  proyecto: _eslint, prettier,editorconfig y vscode-settings_.
+  similar deberás especificarlo en la documentación de uso del componente
+- Apégate a los estilos de código definidos en las configuraciones del
+  proyecto: _eslint, prettier,editorconfig y vscode-settings_
 
 #### Script de instalación en index.js
 
-Dentro del archivo `index.js` que acompaña al componente se agregara un código
+Dentro del archivo `index.js` que acompaña al componente, agrega un código
 de instalación como el siguiente:
 
 ```javascript
@@ -223,7 +222,7 @@ const plugin = {
 export default plugin
 ```
 
-Para que funcione el archivo anterior debera integrarse con los
+Para que funcione el archivo anterior, deberá integrarse con los
 archivos `src/index.js` y `src/componentes/index.js`. Cuando se agregue un nuevo
 componente también deberán de modificarse estos mismos.
 
@@ -254,7 +253,7 @@ ComponenteNuevo, // agregar al final de las exportaciones
 
 ```
 
-Finalmente en el siguiente archivo se agrega el nuevo componente al script
+Finalmente, en el siguiente archivo se agrega el nuevo componente al script
 global de instalación
 
 ```js
@@ -282,12 +281,12 @@ export default plugin
 
 Los componentes que hagan uso de variables de estado globales podrán hacerlo,
 pero sin comprometer o condicionar el funcionamiento de la biblioteca en general
-a tener un _store_ de requisito, es decir, si la aplicación no ocupa estos
-componentes (que usan el store) el usuario de la biblioteca no debería necesitar
-instalar un store. Por el contrario, si desea ocuparlos si es un requisito.
+al tener un _store_ como requisito. Es decir, si la aplicación no ocupa estos
+componentes que usan el store, la persona usuaria de la biblioteca no debería necesitar
+instalar un store.
 
 Las variables y métodos del store que usen los componentes de esta biblioteca se
-implementaran de tal manera que solo se ofrezca la estructura del mismo, sin
+implementarán de tal manera que solo se ofrezca la estructura del mismo, sin
 tener dependencia directa con la biblioteca de _store_.
 
 **Ejemplo, teniendo estos componentes**
@@ -302,7 +301,7 @@ tener dependencia directa con la biblioteca de _store_.
   perfectamente sin ninguna instalación adicional.
 
   En caso contrario, que el _ComponenteA_ sea utilizado, entonces es requisito
-  instalar un store (en este momento [VUEX](https://vuex.vuejs.org/)) y en la
+  instalar un store ([VUEX](https://vuex.vuejs.org/)) y en la
   definición del mismo dar de alta la estructura que esta misma biblioteca
   ofrece.
 
@@ -311,12 +310,12 @@ es `/src/stores/nombre-del-nuevo-store.js`
 
 **NOTA**
 
-En la primera version el único módulo que ocupa esta biblioteca es el de **
+En la primera versión el único módulo que ocupa esta biblioteca es el de **
 Accesibilidad**
 
-#### Agregando el componente a la documentacion vuepress
+#### Agregando el componente a la documentación vuepress
 
-Cada componente ofrecido por la presente biblioteca debera contar con 3
+Cada componente ofrecido por la presente biblioteca deberá contar con 3
 secciones de documentación indispensables:
 
 - Breve descripción del componente
@@ -331,8 +330,8 @@ de [VuePress](https://vuepress.vuejs.org/) para desplegar la documentación.
 Cada componente agregado en la biblioteca también debe ser agregado en la
 carpeta `docs`.
 
-- **1.-** Se creara una carpeta `docs/documentacion/nombre-nuevo-componente` y
-  dentro de la misma se agregara un archivo index.md en donde se agregara toda la
+- **1.-** Crea una carpeta `docs/documentacion/nombre-nuevo-componente` y
+  dentro de la misma agrega un archivo index.md en donde se integre toda la
   documentación necesaria del componente y sus ejemplos.
 
 - **2.-** Dentro del archivo `docs/.vuepress/theme/LayoutDocumentacion.vue` debe
@@ -354,12 +353,12 @@ carpeta `docs`.
   </SisdaiMenuLateral>
   ```
 
-- **3.-** Los ejemplos del componente se realizarán en archivos `.vue` y
-  depositarán en una carpeta
-  nueva: `docs/.vuepress/components/nombre-nuevo-componente/`. Se agregarán todos
+- **3.-** Crea los ejemplos del componente en archivos `.vue` y
+  deposítalos en una carpeta
+  nueva: `docs/.vuepress/components/nombre-nuevo-componente/`. Agrega todos
   los que se considere necesarios.
 
-  Para la integración de los ejemplos en los archivos _markdown_, se hace via el
+  Para la integración de los ejemplos en los archivos _markdown_, se hace vía el
   componente `utils-ejemplo-doc`, dentro de la sección para este mismo propósito
 
   ```md

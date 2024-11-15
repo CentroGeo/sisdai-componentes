@@ -94,7 +94,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
   <nav
     class="navegacion navegacion-gobmx"
     :class="{ 'navegacion-extendida': !esColapsable }"
-    aria-label="Menú Gobierno de México"
+    aria-label="Menú de Gobierno de México"
     @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
@@ -106,9 +106,9 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
       >
         <img
           class="nav-logo"
-          src="https://cdn.conacyt.mx/sisdai/recursos/gobmx.svg"
+          src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
           alt="Gobierno de México."
-          width="128"
+          width="104.8"
           height="38"
         />
       </a>
@@ -120,7 +120,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Menú de gobierno de México"
+        aria-label="Menú de Gobierno"
         aria-controls="menugobiernomexico"
       >
         <span
@@ -139,24 +139,12 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
-        tabindex="0"
+        :tabindex="esColapsable ? 0 : -1"
       >
         <ul class="nav-menu">
           <li>
             <a
-              testid="nav-hipervinculo"
-              href="https://coronavirus.gob.mx/"
-              class="nav-hipervinculo"
-              target="_blank"
-              rel="noopener"
-              exact
-              @mouseover="cerrarSubmenu()"
-              @click="cerrarMenuSubmenu()"
-              >Información sobre COVID-19</a
-            >
-          </li>
-          <li>
-            <a
+              testid="nav-hipervinculo"              
               href="https://www.gob.mx/tramites"
               class="nav-hipervinculo"
               target="_blank"
@@ -181,7 +169,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
             <a
               href="https://www.gob.mx/busqueda"
               class="nav-hipervinculo"
-              aria-label="Ir"
+              aria-label="Ir a búsqueda"
               target="_blank"
               rel="noopener"
               @mouseover="cerrarSubmenu()"

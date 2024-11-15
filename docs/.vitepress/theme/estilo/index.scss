@@ -31,3 +31,10 @@ code {
   background-color: rgba(255, 0, 0, 0.3333333333);
   color: var(--texto-primario);
 }
+
+.contenerdor-panttalla-simulada {
+  position: relative;
+  border: solid var(--borde-secundario) 2px;
+  border-radius: 8px;
+  overflow: hidden;
+}

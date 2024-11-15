@@ -75,7 +75,7 @@ function disminuir() {
       testid="boton-alejar"
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
-      aria-label="Alejar un paso"
+      aria-label="Alejar"
       @click="disminuir()"
     >
       <span
@@ -88,7 +88,7 @@ function disminuir() {
       testid="control-acercar-alejar-rango"
       type="range"
       class="control-acercar-alejar-rango"
-      aria-label="Ajustar el nivel de acercamiento"
+      aria-label="Nivel de acercamiento"
       :min="min"
       :max="max"
       :step="step"
@@ -99,7 +99,7 @@ function disminuir() {
       testid="boton-acercar"
       type="button"
       class="boton-pictograma boton-sin-contenedor-secundario"
-      aria-label="Acercar un paso"
+      aria-label="Acercar"
       @click="aumentar()"
     >
       <span

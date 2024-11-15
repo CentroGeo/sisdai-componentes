@@ -93,16 +93,16 @@ function alternarTabIndex() {
 }
 
 onMounted(() => {
-  // navMenu.value = document.querySelectorAll(
-  //   '#navegacionprincipal .nav-menu'
-  // )[0]['children']
+  // navMenu.value = document.querySelectorAll('#menuprincipal .nav-menu')[0][
+  //   'children'
+  // ]
 
   navMenu.value =
     cuadroElementosMenuRef.value.querySelectorAll('.nav-menu')[0]['children']
 
-  // if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
-  //   navSubmenu.value =
-  //     document.getElementsByClassName('nav-submenu')[0]['children']
+  if (document.getElementsByClassName('nav-submenu')[0] !== undefined)
+    navSubmenu.value =
+      document.getElementsByClassName('nav-submenu')[0]['children']
 
   alternarTabIndex()
 })
@@ -128,7 +128,7 @@ defineExpose({
   <nav
     class="navegacion navegacion-conahcyt navegacion-pegada"
     :class="{ 'navegacion-extendida': !esColapsable }"
-    aria-label="Navegación principal"
+    aria-label="Menú principal"
     @mouseleave="cerrarSubmenu()"
   >
     <div class="nav-contenedor-identidad">
@@ -158,8 +158,8 @@ defineExpose({
         class="nav-boton-menu"
         :class="{ abierto: menuEstaAbierto || submenuEstaAbierto }"
         :aria-expanded="menuEstaAbierto || submenuEstaAbierto"
-        aria-label="Navegación principal"
-        aria-controls="navegacionprincipal"
+        aria-label="Menú Principal"
+        aria-controls="menuprincipal"
       >
         <span
           class="nav-icono-menu"
@@ -172,29 +172,26 @@ defineExpose({
         v-if="esColapsable"
         class="nav-informacion"
         v-html="navInformacion"
-      ></div>
+      />
     </div>
 
     <div
-      testid="nav-menu-contenedor-principal"
-      id="navegacionprincipal"
+      testid="nav-menu-contenedor-principal"      
+      id="menuprincipal"
       class="nav-menu-contenedor"
       :class="{
         abierto: menuEstaAbierto,
         'submenu-abierto': submenuEstaAbierto,
       }"
     >
-      <div
-        testid="slot-complementario"
-        class="nav-menu-complementario"
-      >
-        <slot name="complementario"></slot>
+      <div testid="slot-complementario" class="nav-menu-complementario">
+        <slot name="complementario" />
       </div>
 
       <div
         class="nav-menu-principal"
         ref="cuadroElementosMenuRef"
-        tabindex="0"
+        :tabindex="esColapsable ? 0 : -1"
       >
         <slot>
           <ul class="nav-menu">
@@ -206,8 +203,9 @@ defineExpose({
                 exact
                 @mouseover="cerrarSubmenu()"
                 @click="cerrarMenuSubmenu()"
-                >Menú</a
               >
+                Menú
+              </a>
             </li>
             <li class="nav-contenedor-submenu">
               <button
@@ -238,16 +236,18 @@ defineExpose({
                     href="#eje"
                     class="nav-hipervinculo"
                     @click="cerrarMenuSubmenu()"
-                    >Submenu uno</a
                   >
+                    Submenu uno
+                  </a>
                 </li>
                 <li>
                   <a
                     href="#aja"
                     class="nav-hipervinculo"
                     @click="cerrarMenuSubmenu()"
-                    >Submenu dos</a
                   >
+                    Submenu dos
+                  </a>
                 </li>
               </ul>
             </li>

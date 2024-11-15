@@ -2,40 +2,59 @@
   <div class="contenedor flex">
     <client-only>
       <!--Un globo de informacion basico -->
-      <button v-globo-informacion="'soy un globo de información'">botón</button>
+      <button
+        class="boton-primario"
+        v-globo-informacion="'Globo de información derecha (por defecto)'"
+      >
+        Globo de información derecha (por defecto)
+      </button>
 
       <!--Un globo de informacion posicionado a la izquierda -->
-      <button v-globo-informacion:izquierda="'soy un globo de información'">
-        botón
+      <button
+        class="boton-primario"
+        v-globo-informacion:izquierda="'Globo de información izquierda'"
+      >
+        Globo de información izquierda
       </button>
 
-      <!--Un globo de informacion extendido  posicionado arriba a la derecha -->
+      <!--Un globo de informacion extendido  posicionado arriba -->
       <button
-        v-globo-informacion-extendido:arriba-final="
-          'soy un globo de información extendido'
+        class="boton-primario"
+        v-globo-informacion-extendido:arriba="
+          'Globo de información extendido arriba'
         "
       >
-        botón
+        Globo de información extendido arriba
       </button>
 
-      <!--Un globo de informacion extendido  posicionado abajo, con desplazamiento personalizado (50 pixeles abajo del elemento) -->
+      <!--Un globo de informacion extendido  posicionado arriba -->
       <button
-        v-globo-informacion-extendido:abajo="{
-          contenido:
-            'soy un globo de información desplazado 50 pixeles hacia abajo',
+        class="boton-primario"
+        v-globo-informacion-extendido:abajo="
+          'Globo de información extendido abajo'
+        "
+      >
+        Globo de información extendido abajo
+      </button>
+      <!--Un globo de informacion  posicionado abajo, con desplazamiento personalizado (50 pixeles abajo del elemento) -->
+      <button
+        class="boton-primario"
+        v-globo-informacion:abajo="{
+          contenido: 'Globo de información abajo trasladado 50px',
           desfase: [0, 50],
         }"
       >
-        botón
+        Globo de información abajo trasladado 50px
       </button>
 
-      <!--Un globo de informacion extendido  posicionado a la izquierda, con "interactable" activado, es decir que el globo de informacion se queda para interactuar (y tiene elementos para ello)-->
+      <!--Un globo de informacion extendido  posicionado arriba, con "interactable" activado, es decir que el globo de informacion se queda para interactuar (y tiene elementos para ello)-->
       <button
-        v-globo-informacion-extendido:izquierda.interactivo="{
-          contenido: `soy un globo de información <a  target='_blank'href='https://conacyt.mx/'>con un enlace</a>`,
+        class="boton-primario"
+        v-globo-informacion-extendido:arriba.interactivo="{
+          contenido: `Globo de información interactivo arriba <a href='#ejemplos'>con un enlace</a>`,
         }"
       >
-        botón
+        Globo de información interactivo arriba
       </button>
     </client-only>
   </div>

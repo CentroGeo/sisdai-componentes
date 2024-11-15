@@ -2,12 +2,12 @@
 // import Prism from 'prismjs'
 import { onMounted, ref } from 'vue'
 
-const props = defineProps({
-  ruta: {
-    type: String,
-    requiere: true,
-  },
-})
+// const props = defineProps({
+//   ruta: {
+//     type: String,
+//     requiere: true,
+//   },
+// })
 
 const codigoResaltado = ref('')
 // const componenteEjemplo = defineAsyncComponent(() => import(`./${props.ruta}.vue`))

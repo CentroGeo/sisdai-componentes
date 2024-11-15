@@ -52,6 +52,7 @@ defineExpose({
     class="control-deslizante"
     :min="val_min"
     :max="val_max"
+    role="slider"
     v-model="valor_seleccionado"
     @input="emit('update:val_entrada', $event.target.value)"
   />

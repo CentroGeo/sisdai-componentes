@@ -50,11 +50,11 @@ const propiedades = {
 
   /**
    * Seleciona el perfil o paleta de color desde la biblioteca de estilos.
-   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'sisdai'`.
+   * Los perfiles disponibles son: `'predeterminada'`, `'gema'`, `'eni'`, `'sisdai'`.
    */
   perfilColor: {
     type: String,
-    default: 'predeterminada', // 'predeterminada' | 'sisdai' | 'gema'
+    default: 'predeterminada', // 'predeterminada' | 'gema' | 'eni' | 'sisdai'
   },
 }
 
@@ -316,9 +316,9 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       testid="menu-flotante-boton"
       type="button"
       class="menu-flotante-boton"
-      aria-label="Abrir y cerrar menú de accesibilidad"
-      aria-controls="menua11y"
-      :aria-expanded="menuAccesibilidadEstaAbierto ? 'true' : 'false'"
+      aria-labelledby="herramientasaccesibilidadej"
+      aria-controls="menua11yej"
+      :aria-expanded="menuAccesibilidadEstaAbierto"
       @click="alternarAbiertoCerrado()"
     >
       <span
@@ -327,12 +327,12 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       ></span>
     </button>
 
-    <menu
-      id="menua11y"
-      class="menu-flotante-contenedor"
+    <div
+      class="menu-flotante-contenedor" 
+      id="menua11yej"
       :aria-hidden="!menuAccesibilidadEstaAbierto"
     >
-      <p class="menu-flotante-titulo">Herramientas de accesibilidad</p>
+    <p id="herramientasaccesibilidadej" class="menu-flotante-titulo">Herramientas de accesibilidad</p>
 
       <div
         testid="menu-flotante-opciones"
@@ -369,6 +369,6 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       >
         Restablecer
       </button>
-    </menu>
+    </div>
   </div>
 </template>
