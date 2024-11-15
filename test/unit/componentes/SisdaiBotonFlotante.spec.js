@@ -70,10 +70,6 @@ describe('SisdaiBotonFlotante.vue', () => {
       // accediendo a las variables
       expect(wrapper.vm.botonFlotanteEstaAbierto).toBe(false)
 
-      // esto no tiene sentido porque solo está invocando el método o no sé
-      // expect(menuFlotanteElement.attributes('class')).not.toContain('abierto')
-      // expect(anchorElement.attributes('tabindex')).toContain(-1)
-
       // accediendo al método
       wrapper.vm.alternarEstado()
 

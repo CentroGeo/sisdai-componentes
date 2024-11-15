@@ -3,19 +3,10 @@ import { mount } from '@vue/test-utils'
 import SisdaiAudio from '../../../src/componentes/audio/SisdaiAudio.vue'
 import indexJS from '../../../src/componentes/audio/index.js'
 
-// import Foo from '@/Foo.vue'
-
 describe('SisdaiAudio.vue', () => {
-  // const wrapper = mount(SisdaiAudio, {
-  //   props: {
-  //     archivo: '',
-  //   },
-  // })
-  // obteniendo los componentes que usa SisdaiAudio
-  // wrapper.getComponent(Foo) // returns a VueWrapper
 
   it('props', () => {
-    // archivo
+    // TODO 🛠
     // --
     // simular que se reproduce un audio
     // simular que se pausa un audio

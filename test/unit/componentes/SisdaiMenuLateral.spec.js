@@ -4,7 +4,7 @@ import SisdaiMenuLateral from '../../../src/componentes/menu-lateral/SisdaiMenuL
 import indexJs from '../../../src/componentes/menu-lateral/index.js'
 
 describe('SisdaiMenuLateral.vue', () => {
-  // TODO ❌
+  // TODO 🛠
   const wrapper = mount(SisdaiMenuLateral)
   it('instancias de propiedades y variables', () => {
     // menu_abierto

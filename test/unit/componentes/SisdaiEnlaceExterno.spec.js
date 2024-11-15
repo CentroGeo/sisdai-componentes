@@ -28,7 +28,6 @@ describe('SisdaiEnlaceExterno.vue', () => {
     expect(component.text()).toBe(props.texto)
     expect(component.text()).toContain('Sisdai')
 
-    // expect(wrapper.text('https://sisdai.conahcyt.mx/'))
     expect(wrapper.text(props.enlace))
     expect(component.attributes().href).toBe(props.enlace)
     expect(AElement.attributes().href).toBe(props.enlace)

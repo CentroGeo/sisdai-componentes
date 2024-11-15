@@ -52,7 +52,7 @@ describe('SisdaiControlAcercarAlejar.vue', () => {
 
     await botonAlejarElement.trigger('click')
     expect(disminuirSpy).toHaveBeenCalledTimes(1)
-    // expect(wrapper.html()).toContain('45')
+    
     wrapper.vm.disminuir()
     expect(disminuirSpy).toHaveBeenCalledTimes(2)
 

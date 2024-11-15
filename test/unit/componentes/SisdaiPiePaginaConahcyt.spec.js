@@ -20,7 +20,6 @@ describe('SisdaiPiePaginaConahcyt.vue', () => {
     const anioActualInstancia = wrapper.vm.anioActual
 
     // afirmando anioActual
-    // expect(anioActualInstancia).toBe(2024)
     expect(anioActualInstancia).toBe(fechaReciente)
 
     // afirmando que está en el html

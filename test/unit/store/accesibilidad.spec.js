@@ -1,32 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { shallowMount } from '@vue/test-utils'
 
-import { setActivePinia, createPinia, defineStore } from 'pinia'
+import { setActivePinia, createPinia } from 'pinia'
 
 import { useAccesibilidadStore } from '../../../src/stores/accesibilidad.js'
 import indexJS from '../../../src/stores/index.js'
-
-// import { createApp } from 'vue'
-// const app = createApp({})
-
-// const AppComponent = {
-//   template: '<div id="app" class="">Hola</div>',
-//   props: ['msg'],
-// }
-
-// const storePinia = defineStore('useStorePinia', {
-//   state: () => {
-//     return { clasesAccesibles: [] }
-//   },
-//   actions: {
-//     modificarClasesAccesibles(valor) {
-//       this.clasesAccesibles = valor
-//     },
-//     restablecer() {
-//       this.clasesAccesibles = []
-//     },
-//   },
-// })
 
 describe('useAccesibilidadStore', () => {
   // TODO ✅
@@ -36,29 +13,19 @@ describe('useAccesibilidadStore', () => {
   // simular que se restablecen los valores de `clasesSeleccionadas`
   // mediante la acción `restablecer`
   // ---
+  // TODO 🛠
   // simular que hace un store interno y lo comparas con el global
   // simular interacciones en un app local con el atributo class="" y
   // botones, montarla, asginarle el global: plugin [store]
 
-  // Registrando una llamada antes de realizar las
-  // pruebas en el contexto actual
+  // Registro de llamada antes de las pruebas 
+  // en el contexto actual
   beforeEach(() => {
-    // crea un nuevo pinia y lo activa para que pueda
-    // ser utilizada por cualquier llamada useStore()
-    // sin tener que pasársela: `useStore(pinia)`
+    // crea un nuevo pinia y lo activa para ser utilizada 
+    // por useStore() sin tener que pasársela: `useStore(pinia)`
     // https://pinia.vuejs.org/cookbook/testing.html#Unit-testing-a-store
     setActivePinia(createPinia())
-
-    // const pinia = createPinia().use(storePinias)
-    // const pinia = createPinia()
-    // app.use(pinia)
-    // setActivePinia(pinia)
   })
-
-  // montando el componente con el store
-  // const wrapper = shallowMount(AppComponent, {
-  //   global: { plugin: [storePinia] },
-  // })
 
   it('estados del store', () => {
     // instanciando módulo del store
@@ -69,14 +36,12 @@ describe('useAccesibilidadStore', () => {
     // afirmando que el objeto está vacío
     expect(clasesAccesibles).toBeTypeOf('object')
     expect(clasesAccesibles).toHaveLength(0)
-    // console.log('store.clasesAccesibles', store.clasesAccesibles)
 
     // manipulando el estado directamente desde el store
     store.clasesAccesibles = [...store.clasesAccesibles, ...['a11y-oscura']]
     // afirmando que se agregó un valor
     expect(store.clasesAccesibles).toHaveLength(1)
     expect(store.clasesAccesibles).toStrictEqual(['a11y-oscura'])
-    // console.log('store.clasesAccesibles', store.clasesAccesibles)
 
     // agregando valor mediante patch
     store.$patch({

@@ -45,8 +45,6 @@ describe('SisdaiImagenPngWebp.vue', () => {
 
     // Define el conjunto de relaciones esperadas
     it('afirmando las props con los valores de los atributos de los elementos html', () => {
-      // TODO: organizar elementos en array de objetos
-      // expect(elements.sourceWebp.attributes())
 
       // afirmando que el srcset del source tenga el valor del props
       expect(sourceWebpElement.attributes('srcset')).toBe(
