@@ -152,31 +152,31 @@ Adicionalmente puedes ejecutar el siguiente comando para evaluar el porcentaje d
 npm run coverage
 ```
 
-Hasta la versión v4.2.2, las pruebas unitarias que se han implementado son en los siguientes componentes:
+Hasta la versión v4.2.2, las pruebas unitarias que se han implementado son las siguientes:
 
-Las pruebas realizadas en los componentes son:
+Las pruebas realizadas en los **componentes** son:
 
 - Renderizado del componente
 - Manejo de props
-- Redenrizado de slots
-- Interacciones de la usuaria (movimiento de click)
+- Renderizado de slots
+- Interacciones de la usuaria (click)
 - Emisión de eventos
-- Afirmación de atributos, valores, texto y contenido
+- Afirmación de atributos, valores y texto
 - Manejo de propiedades y métodos
 - Intercepción de funciones
 - Creación de selectores html por atributo `testid=""`
 
-Las pruebas realizadas en los composables son:
+Las pruebas realizadas en los **composables** son:
 
 - Renderizado de mock en app
 - Manejo de instancias en propiedades y métodos
 
-Las pruebas realizadas en el store son:
+Las pruebas realizadas en el **store** son:
 
 - Instanciado del módulo de accesibilidad
 - Manejo de estados y acciones
 
-Si deseas conocer más acerca de [TEST.md](./TEST.md).
+Si deseas conocer más acerca de [TEST.md](./TEST.md)
 
 ## Licencia
 
