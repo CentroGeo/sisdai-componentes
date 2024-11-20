@@ -11,6 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.3.0] - 2024-11-20
+
+### Agregado (Added)
+
+- Pruebas unitarias para componentes, composables y store
+
 ## [4.2.2] - 2024-11-06
 
 Arreglado (Fixed)
