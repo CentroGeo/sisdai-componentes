@@ -1,6 +1,6 @@
 {
   "name": "sisdai-componentes",
-  "version": "4.2.2",
+  "version": "4.2.3",
   "description": "Biblioteca de componentes de Vue reutilizables",
   "type": "module",
   "license": "LGPL-3.0-only",
@@ -62,5 +62,5 @@
   "bugs": {
     "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes/issues"
   },
-  "homepage": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes#readme"
+  "homepage": "https://sisdai-componentes.conahcyt.mx"
 }

@@ -4,35 +4,39 @@ El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de
 Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
 ([Sisdai](https://sisdai.conahcyt.mx)).
 
+Para leer la documentación de la biblioteca, puedes visitar el sitio [sisdai-componentes.conahcyt.mx](https://sisdai-componentes.conahcyt.mx/) ó levantar la documentación localmente siguiendo las instrucciones escritas en la sección [Uso local del proyecto](#uso-local-del-proyecto) de este documento.
+
 Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla
-en su equipo a través del **protocolo HTTPS**.
+en su equipo a través del **protocolo HTTPS** o bien instalándola mediante [npm/sisdai](https://www.npmjs.com/~sisdai).
 
 ## Utilidades
 
 - Homologa los estilos utilizando el sistema de diseño [Sisdai](https://sisdai.conahcyt.mx).
-- Mejora la accesibilidad mediante el uso de html semántico y aplicando las reglas establecidad en [Sisdai](https://sisdai.conahcyt.mx).
+- Mejora la accesibilidad mediante el uso de html semántico y aplicando las reglas establecidas en [Sisdai](https://sisdai.conahcyt.mx).
 - Facilita la actualización de elementos institucionales requeridos como cabeceras y pies de páginas que se editan cada año.
 - Facilita y reduce el código de elementos de uso común como barras de navegación, menús, tarjetas, etc.
 
 ## Instalación y uso
 
-Si tu proyecto está creado con [sisdai-proyecto-base](https://codigo.conahcyt.mx/sisdai/sisdai-proyecto-base), tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
+Si tu proyecto está creado con el [proyecto-base](https://codigo.conahcyt.mx/eni/proyecto-base), tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
 
 ### Instala la biblioteca
 
-En la carpeta principal de tu proyecto Vue, instala la biblioteca a las dependencias de tu proyecto con:
+En la carpeta principal de tu proyecto Vue puedes instalar la última versión de sisdai-componentes mediante dos opciones:
 
+**Opción A.** Desde el repositorio del [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+
+En la línea de comando escribe
+```bash
+npm i sisdai-componentes
+```
+
+**Opción B.** Desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
+
+En la línea de comando escribe
 ```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
 ```
-
-Dependiendo de la versión de la biblioteca a instalar, la instrucción anterior puede cambiar a:
-
-```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
-```
-
-donde N.N.N indica el número de versión, por ejemplo v1.0.0
 
 ### Importa la biblioteca
 
@@ -62,13 +66,23 @@ _Para un uso avanzado revisa la documentación._
 
 ## Actualización de la biblioteca
 
-Si actualmente utilizas la biblioteca y necesitas utilizar otra versión de los componentes, en la carpeta del proyecto en donde necesitas la actualización instala la versión que requieres nuevamente
+Si necesitas utilizar otra versión, ubícate en la carpeta del proyecto en donde necesitas la actualización e instala la versión que requieres nuevamente usando una de estas dos opciones
 
+**Opción A.** Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+
+```bash
+npm i sisdai-componentes@vN.N.N
+```
+
+**Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
 ```bash
 npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
 ```
 
 donde N.N.N indica el número de versión, por ejemplo v1.0.0
+
+Consulta el archivo `CHANGELOG.md` del repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes) para conocer las nuevas características y cambios que sufre la biblioteca en cada una de sus versiones.
+
 
 ## Listado de componentes
 
@@ -121,7 +135,7 @@ git clone https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git
 Establece la versión adecuada de npm y nvm (previamente instaladas).
 
 ```bash
-nvm use 18
+nvm use 22
 ```
 
 Instala las dependencias de la biblioteca.
@@ -130,11 +144,7 @@ Instala las dependencias de la biblioteca.
 npm install
 ```
 
-### Documentación
-
-Este proyecto cuenta con una documentación más extensa que aún está
-en proceso de desarrollo. Es posible levantarla en un ambiente local con la
-instrucción:
+Opcionalmente levanta en local la documentación.
 
 ```bash
 npm run docs
