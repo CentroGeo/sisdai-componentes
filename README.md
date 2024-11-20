@@ -71,7 +71,7 @@ Si necesitas utilizar otra versión, ubícate en la carpeta del proyecto en dond
 **Opción A.** Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
 
 ```bash
-npm i sidai-componentes@vN.N.N
+npm i sisdai-componentes@vN.N.N
 ```
 
 **Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
