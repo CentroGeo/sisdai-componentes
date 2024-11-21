@@ -33,7 +33,7 @@ Si tu proyecto está creado con el [proyecto-base](https://codigo.conahcyt.mx/en
 
 En la carpeta principal de tu proyecto Vue puedes instalar la última versión de sisdai-componentes mediante dos opciones:
 
-**Opción A.** Desde el repositorio del [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+**Opción A.** Desde el repositorio del [sisdai-componentes en npm](https://www.npmjs.com/package/@centrogeomx/sisdai-componentes).
 
 En la línea de comando escribe
 ```bash
@@ -77,7 +77,7 @@ _Para un uso avanzado revisa la documentación._
 
 Si necesitas utilizar otra versión, ubícate en la carpeta del proyecto en donde necesitas la actualización e instala la versión que requieres nuevamente usando una de estas dos opciones
 
-**Opción A.** Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+**Opción A.** Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/@centrogeomx/sisdai-componentes).
 
 ```bash
 npm i @centrogeomx/sisdai-componentes@vN.N.N
