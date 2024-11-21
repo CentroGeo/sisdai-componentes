@@ -308,16 +308,18 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
 
 <template>
   <div
+    testid="menu-flotante"
     class="menu-flotante menu-flotante-derecho menu-accesibilidad"
     :class="{ abierto: menuAccesibilidadEstaAbierto }"
   >
     <button
+      testid="menu-flotante-boton"
       type="button"
       class="menu-flotante-boton"
       aria-labelledby="herramientasaccesibilidadej"
       aria-controls="menua11yej"
       :aria-expanded="menuAccesibilidadEstaAbierto"
-      @click="alternarAbiertoCerrado"
+      @click="alternarAbiertoCerrado()"
     >
       <span
         class="pictograma-accesibilidad"
@@ -333,17 +335,22 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
     <p id="herramientasaccesibilidadej" class="menu-flotante-titulo">Herramientas de accesibilidad</p>
 
       <div
+        testid="menu-flotante-opciones"
         v-for="opcion in opciones"
         :key="opcion.titulo"
       >
         <input
+          testid="menu-flotante-input"
           :id="opcion.claseCss"
           type="checkbox"
           :value="opcion.claseCss"
           v-model="clasesSelecciondas"
           :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
         />
-        <label :for="opcion.claseCss">
+        <label
+          testid="menu-flotante-label"
+          :for="opcion.claseCss"
+        >
           <span
             :class="opcion.icono"
             aria-hidden="true"
@@ -353,10 +360,11 @@ defineExpose({ alternarAbiertoCerrado, clasesSelecciondas })
       </div>
 
       <button
+        testid="boton-restablecer"
         type="button"
         class="boton-secundario boton-chico m-t-2"
         :tabindex="menuAccesibilidadEstaAbierto ? undefined : -1"
-        @click="restablecer"
+        @click="restablecer()"
         :disabled="!clasesSelecciondas.length"
       >
         Restablecer

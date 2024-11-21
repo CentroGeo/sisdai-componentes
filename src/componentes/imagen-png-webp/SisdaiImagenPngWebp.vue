@@ -42,14 +42,17 @@ defineProps({
   <figure>
     <picture>
       <source
+        testid="source-webp"
         :srcset="`${dominio}${ruta}.webp`"
         type="image/webp"
       />
       <source
+        testid="source-png"
         type="image/png"
         :srcset="`${dominio}${ruta}.png`"
       />
       <img
+        testid="src-img"
         :style="{ maxWidth: ancho_maximo, width: '100%' }"
         loading="lazy"
         :src="`${dominio}${ruta}.png`"
@@ -58,6 +61,7 @@ defineProps({
     </picture>
 
     <figcaption
+      testid="figcaption"
       aria-hidden="true"
       v-html="leyenda"
     ></figcaption>

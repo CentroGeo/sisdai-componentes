@@ -1,13 +1,22 @@
 # sisdai-componentes
 
 El proyecto sisdai-componentes es una biblioteca de componentes reutilizables de
-Vue alineada al Sistema de Diseño y Accesibilidad para la Investigación
-([Sisdai](https://sisdai.conahcyt.mx)).
+Vue alineada al Sistema de Diseño y Accesibilidad para la
+Investigación ([Sisdai](https://sisdai.conahcyt.mx/)). El Sisdai es un proyecto
+de investigación desarrollado por el
+Centro de Investigación en Ciencias de Información Geoespacial, A.C.
+([CentroGeo](https://www.centrogeo.org.mx/)) y coordinado por el Consejo
+Nacional de Humanidades, Ciencias y Tecnologías
+([Conahcyt](https://conahcyt.mx)) del Gobierno de México.
 
-Para leer la documentación de la biblioteca, puedes visitar el sitio [sisdai-componentes.conahcyt.mx](https://sisdai-componentes.conahcyt.mx/) ó levantar la documentación localmente siguiendo las instrucciones escritas en la sección [Uso local del proyecto](#uso-local-del-proyecto) de este documento.
+Para leer la documentación de la biblioteca, puedes visitar el sitio
+[sisdai-componentes.conahcyt.mx](https://sisdai-componentes.conahcyt.mx)
+o levantar la documentación localmente siguiendo las instrucciones escritas en
+la sección [Uso local del proyecto](#uso-local-del-proyecto) de este
+documento.
 
-Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla
-en su equipo a través del **protocolo HTTPS** o bien instalándola mediante [npm/sisdai](https://www.npmjs.com/~sisdai).
+Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla en su equipo a través del
+**protocolo HTTPS** o bien instalándola mediante [npm](https://www.npmjs.com/~centrogeomx).
 
 ## Utilidades
 
@@ -28,7 +37,7 @@ En la carpeta principal de tu proyecto Vue puedes instalar la última versión d
 
 En la línea de comando escribe
 ```bash
-npm i sisdai-componentes
+npm i @centrogeomx/sisdai-componentes
 ```
 
 **Opción B.** Desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
@@ -71,7 +80,7 @@ Si necesitas utilizar otra versión, ubícate en la carpeta del proyecto en dond
 **Opción A.** Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
 
 ```bash
-npm i sidai-componentes@vN.N.N
+npm i @centrogeomx/sisdai-componentes@vN.N.N
 ```
 
 **Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
@@ -149,6 +158,44 @@ Opcionalmente levanta en local la documentación.
 ```bash
 npm run docs
 ```
+## Testing
+
+Si deseas correr el testing puedes ejecutar el siguiente comando, el cual implementará las pruebas unitarias:
+
+```bash
+npm run test
+```
+
+Adicionalmente puedes ejecutar el siguiente comando para evaluar el porcentaje de código que se ha testeado y visualizar el avance en un servidor local.
+```bash
+npm run coverage
+```
+
+Hasta la versión v4.2.2, las pruebas unitarias que se han implementado son las siguientes:
+
+Las pruebas realizadas en los **componentes** son:
+
+- Renderizado del componente
+- Manejo de props
+- Renderizado de slots
+- Interacciones de la usuaria (click)
+- Emisión de eventos
+- Afirmación de atributos, valores y texto
+- Manejo de propiedades y métodos
+- Intercepción de funciones
+- Creación de selectores html por atributo `testid=""`
+
+Las pruebas realizadas en los **composables** son:
+
+- Renderizado de mock en app
+- Manejo de instancias en propiedades y métodos
+
+Las pruebas realizadas en el **store** son:
+
+- Instanciado del módulo de accesibilidad
+- Manejo de estados y acciones
+
+Si deseas conocer más acerca de [TEST.md](./TEST.md)
 
 ## Licencia
 

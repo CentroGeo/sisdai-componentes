@@ -37,12 +37,12 @@ defineProps({
     v-if="entornoProyecto !== 'production'"
   >
     <dt>Versión:</dt>
-    <dd>{{ versionProyecto }}</dd>
+    <dd testid="version">{{ versionProyecto }}</dd>
 
     <dt>Ambiente:</dt>
-    <dd>{{ entornoProyecto }}</dd>
+    <dd testid="entorno">{{ entornoProyecto }}</dd>
 
     <dt>Actualización:</dt>
-    <dd>{{ actualizacionProyecto }}</dd>
+    <dd testid="actualizacion">{{ actualizacionProyecto }}</dd>
   </dl>
 </template>

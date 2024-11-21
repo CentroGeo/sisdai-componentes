@@ -22,6 +22,8 @@ const props = defineProps({
   val_entrada: { default: 50, type: Number },
 })
 
+const emit = defineEmits(['update:val_entrada'])
+
 const valor_seleccionado = ref(props.val_entrada)
 
 const valor_porcentual = computed(() => {
@@ -45,12 +47,14 @@ defineExpose({
 
 <template>
   <input
+    testid="control-deslizante-input"
     type="range"
     class="control-deslizante"
     :min="val_min"
     :max="val_max"
     role="slider"
     v-model="valor_seleccionado"
+    @input="emit('update:val_entrada', $event.target.value)"
   />
 </template>
 
