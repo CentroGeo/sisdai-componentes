@@ -11,6 +11,13 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.3.1] - 2024-11-21
+
+### Cambiado (Changed)
+
+- El nombre del proyecto en el `package.json` pasa a ser @centrogeomx/sisdai-componentes para su publicación en el repositorio de npm
+- Se ajusta documentación de acuerdo a lo anterior
+
 ## [4.3.0] - 2024-11-20
 
 ### Agregado (Added)
