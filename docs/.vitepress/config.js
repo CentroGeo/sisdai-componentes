@@ -99,6 +99,10 @@ function sidebarDocumentacion(path) {
       pre: true,
     },
     {
+      text: 'Campo Base',
+      link: `/${path}/campo-base/`,
+    },
+    {
       text: 'Campo Búsqueda',
       link: `/${path}/campo-busqueda/`,
     },

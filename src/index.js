@@ -16,6 +16,7 @@
 import {
   SisdaiAudio,
   SisdaiBotonFlotante,
+  SisdaiCampoBase,
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
@@ -62,6 +63,7 @@ const plugin = {
 
     Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
+    Vue.use(SisdaiCampoBase)
     Vue.use(SisdaiCampoBusqueda)
     Vue.use(SisdaiControlAcercarAlejar)
   },
@@ -71,6 +73,7 @@ export {
   SisdaiAudio,
   GlobosInformacion,
   SisdaiBotonFlotante,
+  SisdaiCampoBase,
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
