@@ -11,6 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.4.0] - 2024-11-25
+
+### Agregado (Added)
+
+- Se agrega el componente SisdaiCampoBase para uso general de la mayoría de los campos del formulario
+
 ## [4.3.2] - 2024-11-21
 
 Arreglado (Fixed)
@@ -169,6 +175,7 @@ sisdai-css v0.37.3
 
 Primera versión estable
 
+[4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.4.0...v4.3.2
 [4.3.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.2...v4.3.1
 [4.3.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.1...v4.2.1
 [4.2.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.2.1...v4.2.0
