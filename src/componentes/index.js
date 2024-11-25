@@ -15,6 +15,7 @@
 
 export { default as SisdaiAudio } from './audio'
 export { default as SisdaiBotonFlotante } from './boton-flotante'
+export { default as SisdaiCampoBase } from './campo-base'
 export { default as SisdaiCampoBusqueda } from './campo-busqueda'
 export { default as SisdaiColapsableNavegacion } from './colapsable-navegacion'
 export { default as SisdaiControlAcercarAlejar } from './control-acercar-alejar'
