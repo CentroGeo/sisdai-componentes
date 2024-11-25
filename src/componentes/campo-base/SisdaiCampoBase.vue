@@ -31,7 +31,6 @@ defineProps({
   },
   tipo: {
     type: String,
-    required: true,
     default: 'text'
   },
   ejemplo: {
@@ -52,12 +51,10 @@ defineProps({
   },
   es_etiqueta_visible: {
     type: Boolean,
-    required: true,
     default: true
   },
   es_obligatorio: {
     type: Boolean,
-    required: true,
     default: false
   },
 })

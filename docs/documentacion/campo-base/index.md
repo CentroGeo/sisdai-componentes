@@ -47,7 +47,7 @@ Este componente admite las siguientes propiedades y eventos:
 - `tipo`: corresponde al tipo de campo.
   - Tipo de dato: `String`
   - Valor predeterminado: `'text'`
-  - Requerido: sí
+  - Requerido: opcional
 - `ejemplo`: texto de ejemplo del campo que se muestra dentro del campo cuando está vacío.
   - Tipo de dato: `String`
   - Valor predeterminado: `''`
@@ -59,11 +59,11 @@ Este componente admite las siguientes propiedades y eventos:
 - `es_etiqueta_visible`: para declarar si la etiqueta es visible o no en la vista.
   - Tipo de dato: `Boolean`
   - Valor predeterminado: `true`
-  - Requerido: sí
+  - Requerido: opcional
 - `es_obligatorio`: para declarar si el campo es obligatorio u opcional.
   - Tipo de dato: `Boolean`
   - Valor predeterminado: `false`
-  - Requerido: sí
+  - Requerido: opcional
 
 ### Métodos
 
