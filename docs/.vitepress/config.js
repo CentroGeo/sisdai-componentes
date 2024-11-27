@@ -177,5 +177,9 @@ function sidebarDocumentacion(path) {
       text: 'Pie Página GobMx',
       link: `/${path}/pie-pagina-gob-mx/`,
     },
+    {
+      text: 'Selector',
+      link: `/${path}/selector/`,
+    },
   ]
 }

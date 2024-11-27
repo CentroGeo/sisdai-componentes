@@ -34,6 +34,7 @@ import {
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaConahcyt,
   SisdaiPiePaginaGobMx,
+  SisdaiSelector,
 } from './componentes'
 
 import { GlobosInformacion } from './directivas'
@@ -58,6 +59,7 @@ const plugin = {
     Vue.use(SisdaiCampoBusqueda)
     Vue.use(SisdaiControlAcercarAlejar)
     Vue.use(SisdaiControlDeslizante)
+    Vue.use(SisdaiSelector)
 
     // accesibilidad
     Vue.use(SisdaiMenuAccesibilidad)
@@ -94,6 +96,7 @@ export {
   SisdaiNavegacionPrincipal,
   SisdaiPiePaginaConahcyt,
   SisdaiPiePaginaGobMx,
+  SisdaiSelector,
 }
 
 export default plugin
