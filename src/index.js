@@ -14,6 +14,7 @@
 //   with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.
 
 import {
+  SisdaiAreaTexto,
   SisdaiAudio,
   SisdaiBotonFlotante,
   SisdaiCampoBase,
@@ -39,7 +40,7 @@ import { GlobosInformacion } from './directivas'
 
 const plugin = {
   install: function (Vue) {
-    // //UI base
+    // UI base
     Vue.use(SisdaiNavegacionGobMx)
     Vue.use(SisdaiNavegacionPrincipal)
     Vue.use(SisdaiPiePaginaGobMx)
@@ -50,26 +51,29 @@ const plugin = {
     Vue.use(SisdaiInfoDeDespliegue)
     Vue.use(SisdaiEnlaceExterno)
     Vue.use(SisdaiAudio)
-    Vue.use(SisdaiControlDeslizante)
 
-    // //accesibilidad
-    Vue.use(SisdaiMenuAccesibilidad)
-    Vue.use(SisdaiImagenPngWebp)
-
-    // //auxiliares
-    Vue.use(GlobosInformacion)
-    // //otros
-    Vue.use(SisdaiNarrativa)
-
-    Vue.use(SisdaiBotonFlotante)
-    Vue.use(SisdaiModal)
+    // formularios
+    Vue.use(SisdaiAreaTexto)
     Vue.use(SisdaiCampoBase)
     Vue.use(SisdaiCampoBusqueda)
     Vue.use(SisdaiControlAcercarAlejar)
+    Vue.use(SisdaiControlDeslizante)
+
+    // accesibilidad
+    Vue.use(SisdaiMenuAccesibilidad)
+    Vue.use(SisdaiImagenPngWebp)
+
+    // auxiliares
+    Vue.use(GlobosInformacion)
+    // otros
+    Vue.use(SisdaiNarrativa)
+    Vue.use(SisdaiBotonFlotante)
+    Vue.use(SisdaiModal)
   },
 }
 
 export {
+  SisdaiAreaTexto,
   SisdaiAudio,
   GlobosInformacion,
   SisdaiBotonFlotante,

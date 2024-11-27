@@ -90,6 +90,10 @@ function sidebarDocumentacion(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
     {
+      text: 'Area Texto',
+      link: `/${path}/area-texto/`,
+    },
+    {
       text: 'Audio',
       link: `/${path}/audio/`,
     },

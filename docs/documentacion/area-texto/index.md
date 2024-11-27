@@ -1,42 +1,40 @@
 <script setup>
-import EjemploBasico from "../../.vitepress/components/campo-base/basico.vue";
+import EjemploBasico from "../../.vitepress/components/area-texto/basico.vue";
 </script>
 
-# Campo base
+# Area de Texto
 
-El componente `SisdaiCampoBase` permite tener campos de entrada vinculados siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio, agregar un texto de ejemplo y un mensaje de ayuda para que la persona usuaria comprenda como debe llenarse el campo. 
+El componente `SisdaiAreaTexto` permite tener campos de entrada multilínea vinculados siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio, agregar un texto de ejemplo y un mensaje de ayuda para que la persona usuaria comprenda como debe llenarse el campo. 
 
 <section id="uso">
 
 ## Uso
 
-Para utilizar el componente `SisdaiCampoBase`, se necesita proporcionar el texto que aparecerá en la `etiqueta`, 
+Para utilizar el componente `SisdaiAreaTexto`, se necesita proporcionar el texto que aparecerá en la `etiqueta`, 
 
 A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
-<SisdaiCampoBase 
+<SisdaiAreaTexto 
   etiqueta="Nombre de la etiqueta"
   ejemplo="Ejemplo"
-  tipo="text"
   texto_ayuda="Texto de ayuda."
   :es_obligatorio="false"
   :es_etiqueta_visible="true"
-  v-model="campoEjemplo"
+  v-model="areaEjemplo"
 />
 ```
-
 ## Accesibilidad
 
-Al utilizar el componente `SisdaiCampoBase` nos aseguramos que la etiqueta y el área de texto siempre estén vinculados, ya sea visible su etiqueta o no. 
+Al utilizar el componente `SisdaiAreaTexto` nos aseguramos que la etiqueta y el área de texto siempre estén vinculados, ya sea visible su etiqueta o no. 
 
 ### Validaciones
 
-Actualmente el componente `SisdaiCampoBase` valida automáticamente cuando es requerido, mostrando el mensaje de error `'Este campo no puede quedar vacío. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso. 
+Actualmente el componente `SisdaiAreaTexto` valida automáticamente cuando es requerido, mostrando el mensaje de error `'Este campo no puede quedar vacío. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso. 
 
 ### Vista simplificada
 
-En la vista simplificada el componente `SisdaiCampoBase` no se modifica en diseño ni en comportamiento.
+En la vista simplificada el componente `SisdaiAreaTexto` no se modifica en diseño ni en comportamiento.
 
 </section>
 
@@ -52,10 +50,6 @@ Este componente admite las siguientes propiedades y eventos:
   - Tipo de dato: `String`
   - Valor predeterminado: `''`
   - Requerido: sí
-- `tipo`: corresponde al tipo de campo.
-  - Tipo de dato: `String`
-  - Valor predeterminado: `'text'`
-  - Requerido: opcional
 - `ejemplo`: texto de ejemplo del campo que se muestra dentro del campo cuando está vacío.
   - Tipo de dato: `String`
   - Valor predeterminado: `''`
@@ -91,8 +85,8 @@ Este componente no permite contenido con slots.
 
 ## Ejemplos de uso
 
-El siguiente ejemplo muestra cómo utilizar el campo base:
+El siguiente ejemplo muestra cómo utilizar el area de texto:
 
 <EjemploBasico />
-<<< @/.vitepress/components/campo-base/basico.vue
+<<< @/.vitepress/components/area-texto/basico.vue
 </section>
