@@ -11,6 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.7.0] - 2024-11-29
+
+### Agregado (Added)
+
+- Se agrega el componente SisdaiCasillaVerificacion y SisdaiCasillasVerificacionGrupo para mejorar la accesibilidad en elementos de casillas de verificación
+
 ## [4.6.0] - 2024-11-25
 
 ### Agregado (Added)
@@ -187,6 +193,7 @@ sisdai-css v0.37.3
 
 Primera versión estable
 
+[4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.7.0...v4.6.0
 [4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.0...v4.5.0
 [4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.5.0...v4.4.0
 [4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.4.0...v4.3.2
