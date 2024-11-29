@@ -85,7 +85,7 @@ Adicionalmente, debes agregar las tipografías de Montserrat y Atkinson Hyperleg
 
 Una vez instalada la biblioteca y los estilos, hay varias maneras de empezar a usar los componentes en tu proyecto:
 
-**Opción 1: Registro global de componentes**
+**Opción 1a: Registro global de componentes**
 
 En el archivo de inicialización del proyecto de Vue, puedes registrar globalmente los componentes que desees utilizar. Esta es la opción recomendada, ya que asegura que solo se registren los componentes que estás usando.
 
@@ -103,7 +103,23 @@ app.use(SisdaiNavegacionPrincipal)
 app.mount('#app')
 ```
 
-**Opción 2: Registro local de componentes**
+**Opción 1b: Registro global de componentes**
+
+Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+const app = createApp(App)
+
+import { SisdaiNavegacionPrincipal } from '@centrogeomx/sisdai-componentes/src/componentes'
+
+app.use(SisdaiNavegacionPrincipal)
+
+app.mount('#app')
+```
+
+**Opción 2a: Registro local de componentes**
 
 En el componente o vista `.vue` donde desees usar el componente, puedes registrarlo localmente utilizando [Composition API](https://vuejs.org/api/composition-api-setup.html) o [Options API](https://vuejs.org/api/options-state.html).
 
@@ -137,7 +153,41 @@ export default {
 <script>
 ```
 
-**Opción 3: Registro global de todos los componentes**
+**Opción 2b: Registro local de componentes**
+
+Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+
+Composition API:
+
+```html
+<script setup>
+import SisdaiNavegacionGobMx from '@centrogeomx/sisdai-componentes/src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue'
+<script>
+
+<template>
+  <SisdaiNavegacionGobMx/>
+</template>
+```
+
+Options API:
+
+```html
+<template>
+  <SisdaiNavegacionGobMx/>
+</template>
+
+<script>
+import SisdaiNavegacionGobMx from '@centrogeomx/sisdai-componentes/src/componentes/navegacion-gob-mx/SisdaiNavegacionGobMx.vue'
+
+export default {
+  components:{
+    SisdaiNavegacionGobMx
+  }
+}
+<script>
+```
+
+**Opción 3a: Registro global de todos los componentes**
 
 Es posible dar de alta de manera global todos los componentes y directivas de la biblioteca. Esta opción es la más limpia en el código, pero solo es recomendable si se usarán todos los componentes y directivas de la biblioteca en tu proyecto.
 
@@ -149,6 +199,22 @@ import App from './App.vue'
 const app = createApp(App)
 
 import SisdaiComponentes from 'sisdai-componentes'
+
+Vue.use(SisdaiComponentes)
+
+app.mount('#app')
+```
+
+**Opción 3b: Registro global de todos los componentes**
+
+Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+const app = createApp(App)
+
+import SisdaiComponentes from '@centrogeomx/sisdai-componentes'
 
 Vue.use(SisdaiComponentes)
 
