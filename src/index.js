@@ -17,6 +17,8 @@ import {
   SisdaiAreaTexto,
   SisdaiAudio,
   SisdaiBotonFlotante,
+  SisdaiBotonRadio,
+  SisdaiBotonesRadioGrupo,
   SisdaiCampoBase,
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
@@ -55,6 +57,8 @@ const plugin = {
 
     // formularios
     Vue.use(SisdaiAreaTexto)
+    Vue.use(SisdaiBotonRadio)
+    Vue.use(SisdaiBotonesRadioGrupo)
     Vue.use(SisdaiCampoBase)
     Vue.use(SisdaiCampoBusqueda)
     Vue.use(SisdaiControlAcercarAlejar)
@@ -79,6 +83,8 @@ export {
   SisdaiAudio,
   GlobosInformacion,
   SisdaiBotonFlotante,
+  SisdaiBotonRadio,
+  SisdaiBotonesRadioGrupo,
   SisdaiCampoBase,
   SisdaiCampoBusqueda,
   SisdaiColapsableNavegacion,
