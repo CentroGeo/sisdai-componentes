@@ -11,6 +11,16 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.6.1] - 2024-11-29
+
+sisdai-css v1.5.0
+
+### Cambiado (Changed)
+
+- Cambiamos algunas partes de la documentación para especificar que la importación debe ser de `@centrogeomx/sisdai-componentes` en lugar de `sisdai-componentes`.
+- Se agregó la clase css 'pie-logo' a las imágenes de los pies para que evitar que se oculten al activar Mostrar solo texto en el menú de accesibilidad.
+- Se actualizó la versión de `sisdai-css` a la v1.5.0
+
 ## [4.6.0] - 2024-11-25
 
 ### Agregado (Added)
@@ -187,8 +197,9 @@ sisdai-css v0.37.3
 
 Primera versión estable
 
-[4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.0...v4.5.0
-[4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.5.0...v4.4.0
+[4.6.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.1...v4.6.0
+[4.6.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.0...v4.5.0
+[4.5.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.5.0...v4.4.0
 [4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.4.0...v4.3.2
 [4.3.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.2...v4.3.1
 [4.3.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.1...v4.2.1
@@ -197,7 +208,7 @@ Primera versión estable
 [4.1.6]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.6...v4.1.5
 [4.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.5...v4.1.0
 [4.1.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.0...v4.0.0
-[4.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.0...v3.2.1
+[4.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.0.0...v3.2.1
 [3.2.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.2.1...v3.1.5
 [3.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.1.5...v3.0.0
 [3.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.0.0...v2.0.0
