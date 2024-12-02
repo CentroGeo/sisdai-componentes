@@ -115,6 +115,10 @@ function sidebarDocumentacion(path) {
       link: `/${path}/campo-busqueda/`,
     },
     {
+      text: 'Casilla Verificacion',
+      link: `/${path}/casilla-verificacion/`,
+    },
+    {
       text: 'Colapsable Navegación',
       link: `/${path}/colapsable-navegacion/`,
       pre: true,

@@ -21,6 +21,8 @@ import {
   SisdaiBotonesRadioGrupo,
   SisdaiCampoBase,
   SisdaiCampoBusqueda,
+  SisdaiCasillaVerificacion,
+  SisdaiCasillasVerificacionGrupo,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
   SisdaiControlDeslizante,
@@ -61,6 +63,8 @@ const plugin = {
     Vue.use(SisdaiBotonesRadioGrupo)
     Vue.use(SisdaiCampoBase)
     Vue.use(SisdaiCampoBusqueda)
+    Vue.use(SisdaiCasillaVerificacion)
+    Vue.use(SisdaiCasillasVerificacionGrupo)
     Vue.use(SisdaiControlAcercarAlejar)
     Vue.use(SisdaiControlDeslizante)
     Vue.use(SisdaiSelector)
@@ -87,6 +91,8 @@ export {
   SisdaiBotonesRadioGrupo,
   SisdaiCampoBase,
   SisdaiCampoBusqueda,
+  SisdaiCasillaVerificacion,
+  SisdaiCasillasVerificacionGrupo,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
   SisdaiControlDeslizante,

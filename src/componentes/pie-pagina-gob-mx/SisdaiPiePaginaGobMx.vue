@@ -21,6 +21,7 @@
     <div class="flex flex-wrap">
       <div class="columna-8 columna-4-esc">
         <img
+          class="pie-logo"
           src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
           alt="Gobierno de México"
           width="207px"

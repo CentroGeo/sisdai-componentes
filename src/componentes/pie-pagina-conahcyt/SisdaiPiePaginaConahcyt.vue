@@ -25,6 +25,7 @@ const anioActual = new Date().getFullYear()
     <div class="flex flex-wrap">
       <div class="columna-8 columna-8-esc">
         <img
+          class="pie-logo"
           src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-blanco.svg"
           alt="Conahcyt"
           width="200px"
