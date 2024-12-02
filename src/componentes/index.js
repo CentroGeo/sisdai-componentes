@@ -16,6 +16,8 @@
 export { default as SisdaiAreaTexto } from './area-texto'
 export { default as SisdaiAudio } from './audio'
 export { default as SisdaiBotonFlotante } from './boton-flotante'
+export { default as SisdaiBotonRadio } from './boton-radio'
+export { default as SisdaiBotonesRadioGrupo } from './boton-radio-grupo'
 export { default as SisdaiCampoBase } from './campo-base'
 export { default as SisdaiCampoBusqueda } from './campo-busqueda'
 export { default as SisdaiCasillaVerificacion } from './casilla-verificacion'

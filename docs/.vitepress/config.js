@@ -103,6 +103,10 @@ function sidebarDocumentacion(path) {
       pre: true,
     },
     {
+      text: 'Botón Radio',
+      link: `/${path}/boton-radio/`,
+    },
+    {
       text: 'Campo Base',
       link: `/${path}/campo-base/`,
     },
