@@ -19,6 +19,8 @@ import {
   SisdaiBotonFlotante,
   SisdaiCampoBase,
   SisdaiCampoBusqueda,
+  SisdaiCasillaVerificacion,
+  SisdaiCasillasVerificacionGrupo,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
   SisdaiControlDeslizante,
@@ -57,6 +59,8 @@ const plugin = {
     Vue.use(SisdaiAreaTexto)
     Vue.use(SisdaiCampoBase)
     Vue.use(SisdaiCampoBusqueda)
+    Vue.use(SisdaiCasillaVerificacion)
+    Vue.use(SisdaiCasillasVerificacionGrupo)
     Vue.use(SisdaiControlAcercarAlejar)
     Vue.use(SisdaiControlDeslizante)
     Vue.use(SisdaiSelector)
@@ -81,6 +85,8 @@ export {
   SisdaiBotonFlotante,
   SisdaiCampoBase,
   SisdaiCampoBusqueda,
+  SisdaiCasillaVerificacion,
+  SisdaiCasillasVerificacionGrupo,
   SisdaiColapsableNavegacion,
   SisdaiControlAcercarAlejar,
   SisdaiControlDeslizante,
