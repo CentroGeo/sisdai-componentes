@@ -46,8 +46,8 @@ export default {
     nav: nav(),
 
     sidebar: {
-      '/': sidebarDocumentacion('documentacion'),
-      '/documentacion/': sidebarDocumentacion('documentacion'),
+      '/comienza': sidebarComienza('comienza'),
+      '/componentes/': sidebarComponentes('componentes'),
     },
 
     socialLinks: [
@@ -72,9 +72,19 @@ export default {
 function nav() {
   return [
     {
-      text: 'Documentación',
+      text: 'Inicio',
       link: '/',
       activeMatch: '/',
+    },
+    {
+      text: 'Comienza',
+      link: '/comienza',
+      activeMatch: '/comienza/',
+    },
+    {
+      text: 'Componentes',
+      link: '/componentes/audio/',
+      activeMatch: '/componentes/audio/',
     },
     {
       text: `v${pkg.version}`,
@@ -86,13 +96,9 @@ function nav() {
   ]
 }
 
-function sidebarDocumentacion(path) {
+function sidebarComponentes(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
-    {
-      text: 'Area Texto',
-      link: `/${path}/area-texto/`,
-    },
     {
       text: 'Audio',
       link: `/${path}/audio/`,
@@ -103,20 +109,8 @@ function sidebarDocumentacion(path) {
       pre: true,
     },
     {
-      text: 'Botón Radio',
-      link: `/${path}/boton-radio/`,
-    },
-    {
-      text: 'Campo Base',
-      link: `/${path}/campo-base/`,
-    },
-    {
       text: 'Campo Búsqueda',
       link: `/${path}/campo-busqueda/`,
-    },
-    {
-      text: 'Casilla Verificacion',
-      link: `/${path}/casilla-verificacion/`,
     },
     {
       text: 'Colapsable Navegación',
@@ -185,9 +179,23 @@ function sidebarDocumentacion(path) {
       text: 'Pie Página GobMx',
       link: `/${path}/pie-pagina-gob-mx/`,
     },
+  ]
+}
+
+function sidebarComienza(path) {
+  // Agrega aquí las rutas de los nuevos componentes
+  return [
     {
-      text: 'Selector',
-      link: `/${path}/selector/`,
+      text: 'Comienza',
+      link: `/${path}/`,
     },
+    {
+      text: 'Instalación',
+      link: `/${path}/instalacion/`,
+    },
+    {
+      text: 'Uso de los componentes',
+      link: `/${path}/uso/`,
+    }
   ]
 }

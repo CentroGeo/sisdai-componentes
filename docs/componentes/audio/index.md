@@ -1,7 +1,13 @@
+---
+home: True
+title: Audio
+---
+
 <script setup>
 import EjemploBasico from "../../.vitepress/components/audio/basico.vue";
 import EjemploConSlot from "../../.vitepress/components/audio/con-slot.vue";
 </script>
+
 
 # Audio
 

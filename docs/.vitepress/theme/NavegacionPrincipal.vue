@@ -34,7 +34,7 @@ const navegacionPrincipal = ref(null)
             'router-link-exact-active router-link-active': isActive(
               page.relativePath,
               nav.activeMatch || nav.link,
-              !!nav.activeMatch
+              // !!nav.activeMatch
             ),
           }"
           :href="nav.link"
