@@ -36,6 +36,7 @@ import {
   SisdaiNarrativa,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
+  SisdaiPestanias,
   SisdaiPiePaginaConahcyt,
   SisdaiPiePaginaGobMx,
   SisdaiSelector,
@@ -79,6 +80,7 @@ const plugin = {
     Vue.use(SisdaiNarrativa)
     Vue.use(SisdaiBotonFlotante)
     Vue.use(SisdaiModal)
+    Vue.use(SisdaiPestanias)
   },
 }
 
@@ -106,6 +108,7 @@ export {
   SisdaiNarrativa,
   SisdaiNavegacionGobMx,
   SisdaiNavegacionPrincipal,
+  SisdaiPestanias,
   SisdaiPiePaginaConahcyt,
   SisdaiPiePaginaGobMx,
   SisdaiSelector,
