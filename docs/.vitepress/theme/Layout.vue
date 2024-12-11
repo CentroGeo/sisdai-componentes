@@ -50,12 +50,16 @@ if (typeof window !== 'undefined') {
 function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
-
-function listaSidebar({ sidebar }, { relativePath }) {
-  return sidebar[
-    Object.keys(sidebar).find(side => isActive(relativePath, side, !!side))
-  ]
-}
+//Error 404 page not found
+  function listaSidebar({ sidebar }, { relativePath }) {
+    return sidebar[
+     Object.keys(sidebar).find(side => isActive(relativePath, side, !!side))
+    ]
+ }
+// function listaSidebar({ sidebar }, { relativePath }) {
+//   let ruta_inicial = `/${relativePath.split('/')[0]}/` || '/'
+//   return sidebar[ruta_inicial]
+// }
 
 onMounted(() => {
   setTimeout(() => actualizaContenidoIndice(), 200)
