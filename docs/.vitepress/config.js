@@ -46,7 +46,7 @@ export default {
     nav: nav(),
 
     sidebar: {
-      '/comienza': sidebarComienza('comienza'),
+      '/comienza/': sidebarComienza('comienza'),
       '/componentes/': sidebarComponentes('componentes'),
     },
 
@@ -74,17 +74,17 @@ function nav() {
     {
       text: 'Inicio',
       link: '/',
-      activeMatch: '/',
+      activeMatch: '',
     },
     {
       text: 'Comienza',
       link: '/comienza',
-      activeMatch: '/comienza/',
+      activeMatch: 'comienza',
     },
     {
       text: 'Componentes',
       link: '/componentes/audio/',
-      activeMatch: '/componentes/audio/',
+      activeMatch: 'componentes',
     },
     {
       text: `v${pkg.version}`,
@@ -196,6 +196,6 @@ function sidebarComienza(path) {
     {
       text: 'Uso de los componentes',
       link: `/${path}/uso/`,
-    }
+    },
   ]
 }

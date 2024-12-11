@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useData } from 'vitepress'
-import { isActive } from 'vitepress/dist/client/shared'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { theme, page } = useData()

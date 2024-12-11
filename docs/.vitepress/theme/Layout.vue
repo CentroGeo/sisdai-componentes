@@ -15,7 +15,7 @@ const route = useRoute()
 // Identificar si se encuentra en la vista inicio para desactivar menú lateral e indice
 const esInicio = computed(() => route.path === '/')
 const esComienzo = computed(() => route.path === '/comienza/')
-
+esComienzo
 const lista_elementos = ref([])
 
 const componenteIndice = ref(null)
@@ -51,15 +51,16 @@ function alAlternarMenuLateral(navSecundariaAbierta) {
   menuLateralAbierto.value = navSecundariaAbierta
 }
 //Error 404 page not found
-  function listaSidebar({ sidebar }, { relativePath }) {
-    return sidebar[
-     Object.keys(sidebar).find(side => isActive(relativePath, side, !!side))
-    ]
- }
-// function listaSidebar({ sidebar }, { relativePath }) {
-//   let ruta_inicial = `/${relativePath.split('/')[0]}/` || '/'
-//   return sidebar[ruta_inicial]
+//  function listaSidebar({ sidebar }, { relativePath }) {
+//    return sidebar[
+//     Object.keys(sidebar).find(side => isActive(relativePath, side, !!side))
+//    ]
 // }
+function listaSidebar({ sidebar }, { relativePath }) {
+  let ruta_inicial = `/${relativePath.split('/')[0]}/` 
+  ruta_inicial = ruta_inicial || '/'
+  return sidebar[ruta_inicial]
+}
 
 onMounted(() => {
   setTimeout(() => actualizaContenidoIndice(), 200)
@@ -104,6 +105,12 @@ watch(route, () => {
                 <a
                   :href="item.link"
                   :tabindex="menuLateralAbierto ? undefined : -1"
+                  :class="{
+                    'router-link-exact-active router-link-active': isActive(
+                      page.relativePath,
+                      item.link
+                    ),
+                  }"
                 >
                   {{ item.text }}
                   <span
@@ -126,7 +133,7 @@ watch(route, () => {
           class="flex"
         >
           <div class="columna-4-esc columna-8-mov columna-orden-3-esc"
-          :class="{ 'inactivo': esInicio }, { 'inactivo': esComienzo}"
+          :class="{ 'inactivo': esInicio || esComienzo}"
           >
             <SisdaiIndiceDeContenido
               id_indice="indice-template"
@@ -139,7 +146,13 @@ watch(route, () => {
                     v-for="elemento in lista_elementos"
                     :key="elemento.texto"
                   >
-                    <a :href="'#' + elemento.id"> {{ elemento.texto }}</a>
+                    <a :href="'#' + elemento.id"
+                    :class="{
+                    'router-link-exact-active router-link-active': isActive(
+                      page.relativePath,
+                      item.link
+                    ),
+                  }"> {{ elemento.texto }}</a>
                   </li>
                 </ul>
               </template>
