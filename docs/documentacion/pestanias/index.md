@@ -189,7 +189,6 @@ Este componente no dispara eventos externos.
 
 ### Ejemplo básico
 
-<utils-ejemplo-doc ruta="pie-pagina-conahcyt/basico.vue"/>
 <EjemploBasico />
 <<< @/.vitepress/components/pestanias/basico.vue
 
