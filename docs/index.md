@@ -5,13 +5,13 @@ title: Inicio
 <div class="contenedor ancho-lectura">
   <h1 class="texto-centrado">sisdai-componentes</h1>
   <p>
-    Ésta es la documentación para personas desarrolladoras de la biblioteca 
-    de estilos del Sistema de Diseño y Accesibilidad para la Investigación  
-    (<a href="https://sisdai.conacyt.mx/" target="_blank">Sisdai</a>).      
+    Ésta es la documentación para personas desarrolladoras de la biblioteca
+    de estilos del Sistema de Diseño y Accesibilidad para la Investigación
+    (<a href="https://sisdai.conacyt.mx/" target="_blank">Sisdai</a>).
   </p>
 
 </div>
- 
+
 
 
 <div class="contenedor ancho-fijo p-b-maximo">
@@ -40,7 +40,7 @@ title: Inicio
     </div>
   </div>
   <div>
-    <h2>Otros sitios de Sisdai</h2>
+    <h2 class="texto-centrado">Otros sitios de Sisdai</h2>
     <div class="flex">
       <div class="columna-8">
         <div class="tarjeta tarjeta-horizontal">
@@ -50,15 +50,15 @@ title: Inicio
             <p>Biblioteca donde se definen las hojas de estilos usados en el Sisdai. Está construida en scss con sass.</p>
           </div>
           <div class="tarjeta-pie">
-            <SisdaiEnlaceExterno 
-              class="boton boton-primario boton-chico" 
-              enlace="https://sisdai-css.conahcyt.mx/" 
-              texto="Ir a documentación" 
+            <SisdaiEnlaceExterno
+              class="boton boton-primario boton-chico"
+              enlace="https://sisdai-css.conahcyt.mx/"
+              texto="Ir a documentación"
               aria-label="Ir a documentación de sisdai-css"/>
-            <SisdaiEnlaceExterno 
-              class="boton boton-secundario boton-chico" 
-              enlace="https://codigo.conahcyt.mx/sisdai/sisdai-css" 
-              texto="Ir a repositorio" 
+            <SisdaiEnlaceExterno
+              class="boton boton-secundario boton-chico"
+              enlace="https://codigo.conahcyt.mx/sisdai/sisdai-css"
+              texto="Ir a repositorio"
               aria-label="Ir a repositorio de sisdai-css"/>
           </div>
         </div>
@@ -71,15 +71,15 @@ title: Inicio
             <p>Biblioteca de componentes de código abierto para la construcción de mapas interactivos.</p>
           </div>
           <div class="tarjeta-pie">
-            <SisdaiEnlaceExterno 
-              class="boton boton-primario boton-chico" 
-              enlace="https://sisdai-mapas.conahcyt.mx/" 
-              texto="Ir a documentación" 
+            <SisdaiEnlaceExterno
+              class="boton boton-primario boton-chico"
+              enlace="https://sisdai-mapas.conahcyt.mx/"
+              texto="Ir a documentación"
               aria-label="Ir a documentación de sisdai-mapas"/>
-            <SisdaiEnlaceExterno 
-              class="boton boton-secundario boton-chico" 
-              enlace="https://codigo.conahcyt.mx/sisdai/sisdai-mapas" 
-              texto="Ir a repositorio" 
+            <SisdaiEnlaceExterno
+              class="boton boton-secundario boton-chico"
+              enlace="https://codigo.conahcyt.mx/sisdai/sisdai-mapas"
+              texto="Ir a repositorio"
               aria-label="Ir a repositorio de sisdai-mapas"/>
           </div>
         </div>
@@ -92,15 +92,15 @@ title: Inicio
             <p>Biblioteca de componentes de código abierto para la construcción de visualizaciones de datos.</p>
           </div>
           <div class="tarjeta-pie">
-            <SisdaiEnlaceExterno 
-              class="boton boton-primario boton-chico" 
-              enlace="https://sisdai-graficas.conahcyt.mx/" 
-              texto="Ir a documentación" 
+            <SisdaiEnlaceExterno
+              class="boton boton-primario boton-chico"
+              enlace="https://sisdai-graficas.conahcyt.mx/"
+              texto="Ir a documentación"
               aria-label="Ir a documentación de sisdai-graficas"/>
-            <SisdaiEnlaceExterno 
-              class="boton boton-secundario boton-chico" 
-              enlace="https://codigo.conahcyt.mx/sisdai/sisdai-graficas" 
-              texto="Ir a repositorio" 
+            <SisdaiEnlaceExterno
+              class="boton boton-secundario boton-chico"
+              enlace="https://codigo.conahcyt.mx/sisdai/sisdai-graficas"
+              texto="Ir a repositorio"
               aria-label="Ir a repositorio de sisdai-graficas"/>
           </div>
         </div>
@@ -113,10 +113,10 @@ title: Inicio
             <p>Fundamentos, elementos, componentes, visualizaciones de datos y plantillas de diseño.</p>
           </div>
           <div class="tarjeta-pie">
-            <SisdaiEnlaceExterno 
-              class="boton boton-primario boton-chico" 
-              enlace="https://sisdai.conahcyt.mx/" 
-              texto="Ir a Sisdai" 
+            <SisdaiEnlaceExterno
+              class="boton boton-primario boton-chico"
+              enlace="https://sisdai.conahcyt.mx/"
+              texto="Ir a Sisdai"
               aria-label="Ir a pagina de Sisdai"/>
           </div>
         </div>
