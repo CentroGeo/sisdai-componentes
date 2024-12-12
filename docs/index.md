@@ -17,7 +17,7 @@ title: Inicio
 <div class="contenedor ancho-fijo p-b-maximo">
   <div class="flex">
     <div class="columna-8">
-      <a class="tarjeta tarjeta-hipervinculo-interno" href="/accesibilidad/cambio-fuente/">
+      <a class="tarjeta tarjeta-hipervinculo-interno" href="/comienza/">
       <img loading="lazy" class="tarjeta-imagen" src="https://cdn.conahcyt.mx/sisdai/sisdai-componentes/comienza.webp" alt=""/>
       <div class="tarjeta-cuerpo">
         <h4>Comienza</h4>
@@ -28,7 +28,7 @@ title: Inicio
       </a>
     </div>
     <div class="columna-8">
-      <a class="tarjeta tarjeta-hipervinculo-interno" href="/accesibilidad/cambio-fuente/">
+      <a class="tarjeta tarjeta-hipervinculo-interno" href="/componentes/audio/">
       <img loading="lazy" class="tarjeta-imagen" src="https://cdn.conahcyt.mx/sisdai/sisdai-componentes/componentes.png" alt=""/>
       <div class="tarjeta-cuerpo">
         <h4>Componentes</h4>

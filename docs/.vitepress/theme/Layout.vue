@@ -150,7 +150,7 @@ watch(route, () => {
                     :class="{
                     'router-link-exact-active router-link-active': isActive(
                       page.relativePath,
-                      item.link
+                      item?.link
                     ),
                   }"> {{ elemento.texto }}</a>
                   </li>

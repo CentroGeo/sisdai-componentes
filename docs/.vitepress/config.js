@@ -78,7 +78,7 @@ function nav() {
     },
     {
       text: 'Comienza',
-      link: '/comienza',
+      link: '/comienza/',
       activeMatch: 'comienza',
     },
     {
