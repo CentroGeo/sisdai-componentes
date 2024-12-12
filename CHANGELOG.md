@@ -11,6 +11,18 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.10.0] - 2024-12-12
+
+### Cambiado (Changed)
+
+- Se actualiza sisdai-css v1.7.2
+
+## [4.9.0] - 2024-12-12
+
+### Cambiado (Changed)
+
+- Se actualiza maqueta de documentación
+
 ## [4.8.0] - 2024-11-29
 
 ### Agregado (Added)
@@ -94,7 +106,6 @@ Arreglado (Fixed)
 
 ## [4.1.6] - 2024-11-04
 
-
 ### Agregado (Added)
 
 - Se agrega aviso de que la documentación se encuentra en construcción para poderla desplegar en una versión "beta"
@@ -168,8 +179,8 @@ para el periodo 2024-2030
 
 sisdai-css v1.3.1. ó v1.3.2
 
-
 ### Cambiado (Changed)
+
 - Corrección de errores de Sass
 
 ## [3.1.5] - 2024-09-23
@@ -178,7 +189,6 @@ Versiones deprecadas de Vue 2 con la identidad gráfica del gobierno federal
 para el periodo 2018-2024
 
 sisdai-css v1.2.7
-
 
 ## [3.0.0] - 2024-07-08 - Release
 
@@ -206,9 +216,10 @@ Segunda versión estable
 
 sisdai-css v0.37.3
 
-
 Primera versión estable
 
+[4.10.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.0...v4.9.0
+[4.9.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.9.0...v4.8.0
 [4.8.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.8.0...v4.7.0
 [4.7.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.7.0...v4.6.1
 [4.6.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.1...v4.6.0
