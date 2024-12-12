@@ -3,7 +3,7 @@ home: true
 title: Inicio
 ---
 <div class="contenedor ancho-lectura">
-  <h1>sisdai-componentes</h1>
+  <h1 class="texto-centrado">sisdai-componentes</h1>
   <p>
     Ésta es la documentación para personas desarrolladoras de la biblioteca 
     de estilos del Sistema de Diseño y Accesibilidad para la Investigación  
