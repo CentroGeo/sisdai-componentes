@@ -11,11 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
-## [4.10.1] - 2024-12-12
+## [4.10.2] - 2024-12-12
 
 ## Arreglado (Fixed)
 
 - Se recupera la documentación del vitepress en las secciones de Instalación y Uso de componentes
+- Se arregla la propiedad idefinida item en el Ìndice de contenido en el Layout
 
 ## [4.10.0] - 2024-12-12
 
@@ -224,7 +225,7 @@ sisdai-css v0.37.3
 
 Primera versión estable
 
-[4.10.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.1...v4.10.0
+[4.10.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.2...v4.10.1
 [4.10.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.0...v4.9.0
 [4.9.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.9.0...v4.8.0
 [4.8.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.8.0...v4.7.0

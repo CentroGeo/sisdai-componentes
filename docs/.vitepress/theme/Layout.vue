@@ -149,8 +149,7 @@ watch(route, () => {
                     <a :href="'#' + elemento.id"
                     :class="{
                     'router-link-exact-active router-link-active': isActive(
-                      page.relativePath,
-                      item?.link
+                      page.relativePath
                     ),
                   }"> {{ elemento.texto }}</a>
                   </li>
