@@ -46,8 +46,8 @@ export default {
     nav: nav(),
 
     sidebar: {
-      '/': sidebarDocumentacion('documentacion'),
-      '/documentacion/': sidebarDocumentacion('documentacion'),
+      '/comienza/': sidebarComienza('comienza'),
+      '/componentes/': sidebarComponentes('componentes'),
     },
 
     socialLinks: [
@@ -72,9 +72,19 @@ export default {
 function nav() {
   return [
     {
-      text: 'Documentación',
+      text: 'Inicio',
       link: '/',
-      activeMatch: '/',
+      activeMatch: '',
+    },
+    {
+      text: 'Comienza',
+      link: '/comienza/',
+      activeMatch: 'comienza',
+    },
+    {
+      text: 'Componentes',
+      link: '/componentes/area-texto/',
+      activeMatch: 'componentes',
     },
     {
       text: `v${pkg.version}`,
@@ -86,11 +96,11 @@ function nav() {
   ]
 }
 
-function sidebarDocumentacion(path) {
+function sidebarComponentes(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
     {
-      text: 'Area Texto',
+      text: 'Área texto',
       link: `/${path}/area-texto/`,
     },
     {
@@ -107,7 +117,7 @@ function sidebarDocumentacion(path) {
       link: `/${path}/boton-radio/`,
     },
     {
-      text: 'Campo Base',
+      text: 'Campo base',
       link: `/${path}/campo-base/`,
     },
     {
@@ -115,7 +125,7 @@ function sidebarDocumentacion(path) {
       link: `/${path}/campo-busqueda/`,
     },
     {
-      text: 'Casilla Verificacion',
+      text: 'Casilla verificación',
       link: `/${path}/casilla-verificacion/`,
     },
     {
@@ -192,6 +202,24 @@ function sidebarDocumentacion(path) {
     {
       text: 'Selector',
       link: `/${path}/selector/`,
+    },
+  ]
+}
+
+function sidebarComienza(path) {
+  // Agrega aquí las rutas de los nuevos componentes
+  return [
+    {
+      text: 'Comienza',
+      link: `/${path}/`,
+    },
+    {
+      text: 'Instalación',
+      link: `/${path}/instalacion/`,
+    },
+    {
+      text: 'Uso de los componentes',
+      link: `/${path}/uso/`,
     },
   ]
 }
