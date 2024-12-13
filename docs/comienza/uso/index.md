@@ -109,7 +109,7 @@ export default {
 
 ## Opción 3: Registro global de todos los componentes
 
-c. Es posible dar de alta de manera global todos los componentes y directivas de la biblioteca. Esta opción es la más limpia en el código, pero solo es recomendable si se usarán todos los componentes y directivas de la biblioteca en tu proyecto.
+a. Es posible dar de alta de manera global todos los componentes y directivas de la biblioteca. Esta opción es la más limpia en el código, pero solo es recomendable si se usarán todos los componentes y directivas de la biblioteca en tu proyecto.
 
 Generalmente, el archivo es ‘src/main.js’:
 
@@ -125,7 +125,7 @@ Vue.use(SisdaiComponentes)
 app.mount('#app')
 ```
 
-c. Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
+b. Para versiones publicadas en el repositorio de [sisdai-componentes en npm](https://www.npmjs.com/package/sisdai-componentes).
 
 ```js
 import { createApp } from 'vue'

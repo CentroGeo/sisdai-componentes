@@ -197,7 +197,7 @@ function sidebarComponentes(path) {
     },
     {
       text: 'Selector',
-      link: `/${path}/pie-pagina-gob-mx/`,
+      link: `/${path}/selector/`,
     },
   ]
 }
