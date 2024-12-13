@@ -83,7 +83,7 @@ function nav() {
     },
     {
       text: 'Componentes',
-      link: '/componentes/audio/',
+      link: '/componentes/area-texto/',
       activeMatch: 'componentes',
     },
     {
@@ -100,6 +100,10 @@ function sidebarComponentes(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
     {
+      text: 'Área texto',
+      link: `/${path}/area-texto/`,
+    },
+    {
       text: 'Audio',
       link: `/${path}/audio/`,
     },
@@ -109,8 +113,20 @@ function sidebarComponentes(path) {
       pre: true,
     },
     {
+      text: 'Botón Radio',
+      link: `/${path}/boton-radio/`,
+    },
+    {
+      text: 'Campo base',
+      link: `/${path}/campo-base/`,
+    },
+    {
       text: 'Campo Búsqueda',
       link: `/${path}/campo-busqueda/`,
+    },
+    {
+      text: 'Casilla verificación',
+      link: `/${path}/casilla-verificacion/`,
     },
     {
       text: 'Colapsable Navegación',
@@ -177,6 +193,10 @@ function sidebarComponentes(path) {
     },
     {
       text: 'Pie Página GobMx',
+      link: `/${path}/pie-pagina-gob-mx/`,
+    },
+    {
+      text: 'Selector',
       link: `/${path}/pie-pagina-gob-mx/`,
     },
   ]
