@@ -11,16 +11,28 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.11.0] - 2024-12-16
+
+### Agregado (Added)
+
+- Se agregaron metadatos de información para compartir la página de documentación.
+- Se agregaron variables de entorno.
+
+### Fixed (Changed)
+
+- Se ajustó la orientación de las tarjetas del inicio.
+- Se ajustaron rutas de imágenes.
+
 ## [4.10.2] - 2024-12-12
 
-## Arreglado (Fixed)
+### Arreglado (Fixed)
 
 - Se recupera la documentación del vitepress en las secciones de Instalación y Uso de componentes
-- Se arregla la propiedad idefinida item en el Ìndice de contenido en el Layout
+- Se arregla la propiedad indefinida item en el Ìndice de contenido en el Layout
 
 ## [4.10.1] - 2024-12-13
 
-## Arreglado (Fixed)
+### Arreglado (Fixed)
 
 - Se arreglo la ruta hacia los componentes area-texto, boton-radio, campo-base, casilla-verificacion y selector
 
@@ -230,27 +242,27 @@ Segunda versión estable
 sisdai-css v0.37.3
 
 Primera versión estable
-
-[4.10.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.2...v4.10.1
-[4.10.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.1...v4.10.0
-[4.10.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.0...v4.9.0
-[4.9.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.9.0...v4.8.0
-[4.8.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.8.0...v4.7.0
-[4.7.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.7.0...v4.6.1
-[4.6.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.1...v4.6.0
-[4.6.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.0...v4.5.0
-[4.5.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.5.0...v4.4.0
-[4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.4.0...v4.3.2
-[4.3.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.2...v4.3.1
-[4.3.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.1...v4.2.1
-[4.2.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.2.1...v4.2.0
-[4.2.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.2.0...v4.1.6
-[4.1.6]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.6...v4.1.5
-[4.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.5...v4.1.0
-[4.1.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.0...v4.0.0
+[4.11.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.2...v4.11.0
+[4.10.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.1...v4.10.2
+[4.10.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.0...v4.10.1
+[4.10.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.9.0...v4.10.0
+[4.9.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.8.0...v4.9.0
+[4.8.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.7.0...v4.8.0
+[4.7.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.1...v4.7.0
+[4.6.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.6.0...v4.6.1
+[4.6.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.5.0...v4.6.0
+[4.5.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.4.0...v4.5.0
+[4.4.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.2...v4.4.0
+[4.3.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.3.1...v4.3.2
+[4.3.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.2.1...v4.3.1
+[4.2.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.2.0...v4.2.1
+[4.2.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.6...v4.2.0
+[4.1.6]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.5...v4.1.6
+[4.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.1.0...v4.1.5
+[4.1.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.0.0...v4.1.0
 [4.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.0.0...v3.2.1
-[3.2.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.2.1...v3.1.5
-[3.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.1.5...v3.0.0
-[3.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.0.0...v2.0.0
-[2.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v2.0.0...v1.0.0
+[3.2.1]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.1.5...v3.2.1
+[3.1.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v3.0.0...v3.1.5
+[3.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v2.0.0...v3.0.0
+[2.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v1.0.0...v2.0.0
 [1.0.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/-/releases/v1.0.0

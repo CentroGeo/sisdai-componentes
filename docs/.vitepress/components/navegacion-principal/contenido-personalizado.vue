@@ -5,6 +5,8 @@ const route = useRoute()
 
 import { ref } from 'vue'
 const SisdaiNavPpal = ref('')
+
+const cdn = import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 <template>
   <div class="contenedor">
@@ -21,7 +23,7 @@ const SisdaiNavPpal = ref('')
           class="nav-hiperviculo-logo"
         >
           <img
-            src="https://cdn.conacyt.mx/sisdai-archivos/to-examples/logo-conacyt-gema.svg"
+            :src="`${cdn}navegacion/conahcyt-gema.svg`"
             class="nav-logo color-invertir"
             alt="Gema."
             width="232"

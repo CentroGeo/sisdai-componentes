@@ -122,6 +122,8 @@ defineExpose({
   cerrarSubmenu,
   cerrarMenuSubmenu,
 })
+
+const cdn = import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 
 <template>
@@ -142,7 +144,7 @@ defineExpose({
           >
             <img
               class="nav-logo color-invertir"
-              src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-azul.svg"
+              :src="`${cdn}navegacion/conahcyt-azul.svg`"
               alt="Conahcyt."
               width="130"
               height="38"
@@ -176,7 +178,7 @@ defineExpose({
     </div>
 
     <div
-      testid="nav-menu-contenedor-principal"      
+      testid="nav-menu-contenedor-principal"
       id="menuprincipal"
       class="nav-menu-contenedor"
       :class="{

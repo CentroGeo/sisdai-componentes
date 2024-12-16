@@ -88,6 +88,8 @@ onMounted(() => {
 watch([menuEstaAbierto, submenuEstaAbierto], () => {
   alternarTabIndex()
 })
+
+const cdn = import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 
 <template>
@@ -106,7 +108,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
       >
         <img
           class="nav-logo"
-          src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
+          :src="`${cdn}navegacion/gobmx-2024.svg`"
           alt="Gobierno de México."
           width="104.8"
           height="38"
@@ -144,7 +146,7 @@ watch([menuEstaAbierto, submenuEstaAbierto], () => {
         <ul class="nav-menu">
           <li>
             <a
-              testid="nav-hipervinculo"              
+              testid="nav-hipervinculo"
               href="https://www.gob.mx/tramites"
               class="nav-hipervinculo"
               target="_blank"
