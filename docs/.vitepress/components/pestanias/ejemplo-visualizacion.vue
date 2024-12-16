@@ -66,7 +66,6 @@
                         <th>Encabezado A</th>
                         <th>Encabezado B</th>
                         <th>Encabezado C</th>
-                        <th>Encabezado D</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -74,19 +73,16 @@
                         <td>Celda 1</td>
                         <td>Celda 2</td>
                         <td>Celda 3</td>
-                        <td>Celda 4</td>
                       </tr>
                       <tr>
+                        <td>Celda 4</td>
                         <td>Celda 5</td>
                         <td>Celda 6</td>
-                        <td>Celda 7</td>
-                        <td>Celda 8</td>
                       </tr>
                       <tr>
+                        <td>Celda 7</td>
+                        <td>Celda 8</td>
                         <td>Celda 9</td>
-                        <td>Celda 10</td>
-                        <td>Celda 11</td>
-                        <td>Celda 12</td>
                       </tr>
                     </tbody>
                     <tfoot>
@@ -94,7 +90,6 @@
                         <td>Pie 1</td>
                         <td>Pie 2</td>
                         <td>Pie 3</td>
-                        <td>Pie 4</td>
                       </tr>
                     </tfoot>
                   </table>
