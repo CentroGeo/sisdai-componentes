@@ -14,7 +14,7 @@
 <!--with sisdai-componentes. If not, see <https://www.gnu.org/licenses/>.-->
 
 <script setup>
-import { onMounted, onUnmounted, ref, toRefs } from 'vue';
+import { onMounted, ref, toRefs } from 'vue';
 
 const props = defineProps({
   idAriaLabelledby: {
@@ -162,11 +162,7 @@ function cargarTablist() {
 }
 onMounted(() => {
   // Inicializa tablist
-  window.addEventListener('load', cargarTablist);
-})
-
-onUnmounted(() => {
-  window.removeEventListener('load', cargarTablist);
+  cargarTablist()
 })
 </script>
 
