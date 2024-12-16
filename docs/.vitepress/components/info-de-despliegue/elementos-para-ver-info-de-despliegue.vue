@@ -3,7 +3,7 @@
     <div class="portada">
       <img
         class="portada-imagen"
-        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/rayo.jpg"
+        :src="`${cdn}documentacion/rayo.jpg`"
         alt=""
       />
       <div class="portada-degradado">
@@ -18,7 +18,7 @@
       <div class="tarjeta m-b-2">
         <img
           class="tarjeta-imagen"
-          src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/latke.jpg"
+          :src="`${cdn}documentacion/latke.jpg`"
           alt=""
         />
         <div class="tarjeta-cuerpo">
@@ -37,3 +37,6 @@
   </div>
 </template>
 
+<script setup>
+  const cdn = import.meta.env.VITE_CDN_ARCHIVOS
+</script>

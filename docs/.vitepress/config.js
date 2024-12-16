@@ -39,6 +39,25 @@ export default {
         rel: 'stylesheet',
       },
     ],
+    ['meta', { property: 'og:title', content: 'sisdai-componentes' }],
+    ['meta', { property: 'og:description', content: '%VITE_DESCRIPCION%' }],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: '%VITE_CDN_ARCHIVOS%redes/miniatura-sisdaicomponentes.png',
+      },
+    ],
+    ['meta', { property: 'og:url', content: '%VITE_DOMINIO%%VITE_URL_BASE%' }],
+    ['meta', { name: 'twitter:title', content: 'sisdai-componentes' }],
+    ['meta', { name: 'twitter:description', content: '%VITE_DESCRIPCION%' }],
+    [
+      'meta',
+      {
+        name: 'twitter:image',
+        content: '%VITE_CDN_ARCHIVOS%redes/miniatura-sisdaicomponentes.png',
+      },
+    ],
   ],
 
   themeConfig: {
@@ -85,14 +104,14 @@ function nav() {
       text: 'Componentes',
       link: '/componentes/area-texto/',
       activeMatch: 'componentes',
-    },
-    {
-      text: `v${pkg.version}`,
-      link: pkg.repository.url,
-      rel: 'noopener noreferrer',
-      target: '_blank',
-      img: 'https://cdn.conahcyt.mx/sisdai-archivos/gitlab-logo-500.png',
-    },
+    }
+    // {
+    //   text: `v${pkg.version}`,
+    //   link: pkg.repository.url,
+    //   rel: 'noopener noreferrer',
+    //   target: '_blank',
+    //   img: 'https://cdn.conahcyt.mx/sisdai-archivos/gitlab-logo-500.png',
+    // },
   ]
 }
 

@@ -15,6 +15,7 @@
 
 <script setup>
 const anioActual = new Date().getFullYear()
+const cdn=import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 
 <template>
@@ -26,7 +27,7 @@ const anioActual = new Date().getFullYear()
       <div class="columna-8 columna-8-esc">
         <img
           class="pie-logo"
-          src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-blanco.svg"
+          :src="`${cdn}navegacion/conahcyt-blanco.svg`"
           alt="Conahcyt"
           width="200px"
           height="60px"

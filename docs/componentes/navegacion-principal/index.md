@@ -1,6 +1,7 @@
 <script setup>
 import EjemploBasico from "../../.vitepress/components/navegacion-principal/basico.vue";
 import EjemploContenidoPersonalizado from "../../.vitepress/components/navegacion-principal/contenido-personalizado.vue";
+const cdn = import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 
 # Navegación principal
@@ -93,7 +94,7 @@ Slot para el contenido de identidad del sitio, donde se despliegan los logos del
         class="nav-logo invertir"
         width="130"
         height="38"
-        src="https://cdn.conacyt.mx/sisdai-archivos/conahcyt-azul.svg"
+        :src="`${cdn}navegacion/conahcyt-azul.svg`"
         alt="Conahcyt."
       />
     </a>

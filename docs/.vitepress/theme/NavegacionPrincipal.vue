@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 import { useData } from 'vitepress'
+import pkg from '../../../package.json'
 
 // https://vitepress.dev/reference/runtime-api#usedata
 const { theme, page } = useData()
 const navegacionPrincipal = ref(null)
+const cdn = import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 
 <template>
@@ -13,6 +15,7 @@ const navegacionPrincipal = ref(null)
     ref="navegacionPrincipal"
   >
     <template #complementario>
+      <div class="nav-menu-contenedor">
       <a
         class="nav-hipervinculo"
         href="https://sisdai.conahcyt.mx"
@@ -21,6 +24,19 @@ const navegacionPrincipal = ref(null)
       >
         <b>IR A SISDAI</b>
       </a>
+      <a
+          class="nav-hipervinculo"
+          :href="pkg.repository.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="nav-logo"
+            :src="`${cdn}gitlab-logo-500.png`"
+            alt="Repositorio de código sisdai-mapas"
+          /><b> {{ `v${pkg.version}` }} </b>
+        </a>
+    </div>
     </template>
     <ul class="nav-menu">
       <li
