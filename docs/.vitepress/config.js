@@ -207,6 +207,10 @@ function sidebarComponentes(path) {
       link: `/${path}/navegacion-principal/`,
     },
     {
+      text: 'Pestañas',
+      link: `/${path}/pestanias/`,
+    },
+    {
       text: 'Pie Página Conahcyt',
       link: `/${path}/pie-pagina-conahcyt/`,
     },
