@@ -21,7 +21,8 @@
     <div class="flex flex-wrap">
       <div class="columna-8 columna-4-esc">
         <img
-          src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
+          class="pie-logo"
+          :src="`${cdn}navegacion/gobmx-2024.svg`"
           alt="Gobierno de México"
           width="207px"
           height="75px"
@@ -270,3 +271,8 @@
     </div>
   </div>
 </template>
+
+
+<script setup>
+const cdn = import.meta.env.VITE_CDN_ARCHIVOS
+</script>

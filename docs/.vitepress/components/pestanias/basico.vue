@@ -1,0 +1,3 @@
+<template>
+  <SisdaiPestanias></SisdaiPestanias>
+</template>

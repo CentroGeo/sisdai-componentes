@@ -39,6 +39,25 @@ export default {
         rel: 'stylesheet',
       },
     ],
+    ['meta', { property: 'og:title', content: 'sisdai-componentes' }],
+    ['meta', { property: 'og:description', content: '%VITE_DESCRIPCION%' }],
+    [
+      'meta',
+      {
+        property: 'og:image',
+        content: '%VITE_CDN_ARCHIVOS%redes/miniatura-sisdaicomponentes.png',
+      },
+    ],
+    ['meta', { property: 'og:url', content: '%VITE_DOMINIO%%VITE_URL_BASE%' }],
+    ['meta', { name: 'twitter:title', content: 'sisdai-componentes' }],
+    ['meta', { name: 'twitter:description', content: '%VITE_DESCRIPCION%' }],
+    [
+      'meta',
+      {
+        name: 'twitter:image',
+        content: '%VITE_CDN_ARCHIVOS%redes/miniatura-sisdaicomponentes.png',
+      },
+    ],
   ],
 
   themeConfig: {
@@ -46,8 +65,8 @@ export default {
     nav: nav(),
 
     sidebar: {
-      '/': sidebarDocumentacion('documentacion'),
-      '/documentacion/': sidebarDocumentacion('documentacion'),
+      '/comienza/': sidebarComienza('comienza'),
+      '/componentes/': sidebarComponentes('componentes'),
     },
 
     socialLinks: [
@@ -72,23 +91,37 @@ export default {
 function nav() {
   return [
     {
-      text: 'Documentación',
+      text: 'Inicio',
       link: '/',
-      activeMatch: '/',
+      activeMatch: '',
     },
     {
-      text: `v${pkg.version}`,
-      link: pkg.repository.url,
-      rel: 'noopener noreferrer',
-      target: '_blank',
-      img: 'https://cdn.conahcyt.mx/sisdai-archivos/gitlab-logo-500.png',
+      text: 'Comienza',
+      link: '/comienza/',
+      activeMatch: 'comienza',
     },
+    {
+      text: 'Componentes',
+      link: '/componentes/area-texto/',
+      activeMatch: 'componentes',
+    }
+    // {
+    //   text: `v${pkg.version}`,
+    //   link: pkg.repository.url,
+    //   rel: 'noopener noreferrer',
+    //   target: '_blank',
+    //   img: 'https://cdn.conahcyt.mx/sisdai-archivos/gitlab-logo-500.png',
+    // },
   ]
 }
 
-function sidebarDocumentacion(path) {
+function sidebarComponentes(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
+    {
+      text: 'Área texto',
+      link: `/${path}/area-texto/`,
+    },
     {
       text: 'Audio',
       link: `/${path}/audio/`,
@@ -99,8 +132,20 @@ function sidebarDocumentacion(path) {
       pre: true,
     },
     {
+      text: 'Botón Radio',
+      link: `/${path}/boton-radio/`,
+    },
+    {
+      text: 'Campo base',
+      link: `/${path}/campo-base/`,
+    },
+    {
       text: 'Campo Búsqueda',
       link: `/${path}/campo-busqueda/`,
+    },
+    {
+      text: 'Casilla verificación',
+      link: `/${path}/casilla-verificacion/`,
     },
     {
       text: 'Colapsable Navegación',
@@ -162,12 +207,38 @@ function sidebarDocumentacion(path) {
       link: `/${path}/navegacion-principal/`,
     },
     {
+      text: 'Pestañas',
+      link: `/${path}/pestanias/`,
+    },
+    {
       text: 'Pie Página Conahcyt',
       link: `/${path}/pie-pagina-conahcyt/`,
     },
     {
       text: 'Pie Página GobMx',
       link: `/${path}/pie-pagina-gob-mx/`,
+    },
+    {
+      text: 'Selector',
+      link: `/${path}/selector/`,
+    },
+  ]
+}
+
+function sidebarComienza(path) {
+  // Agrega aquí las rutas de los nuevos componentes
+  return [
+    {
+      text: 'Comienza',
+      link: `/${path}/`,
+    },
+    {
+      text: 'Instalación',
+      link: `/${path}/instalacion/`,
+    },
+    {
+      text: 'Uso de los componentes',
+      link: `/${path}/uso/`,
     },
   ]
 }

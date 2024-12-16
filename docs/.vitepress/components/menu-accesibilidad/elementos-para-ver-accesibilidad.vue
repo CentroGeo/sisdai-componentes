@@ -3,7 +3,7 @@
     <div class="tarjeta m-b-3">
       <img
         class="tarjeta-imagen"
-        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/kale-3.jpg"
+        :src="`${cdn}documentacion/kale-3.jpg`"
         alt=""
       />
       <div class="tarjeta-cuerpo">
@@ -19,7 +19,7 @@
     >
       <img
         class="tarjeta-imagen"
-        src="https://cdn.conahcyt.mx/sisdai/recursos/imagenes/documentacion/puca.jpg"
+        :src="`${cdn}documentacion/puca.jpg`"
         alt=""
       />
       <div class="tarjeta-degradado">
@@ -40,7 +40,7 @@
         class="boton-secundario boton-chico"
       >
         ejemplo de botón
-      </button>, 
+      </button>,
       <a
         href="#"
         target="_blank"
@@ -66,3 +66,7 @@
   position: absolute;
 }
 </style>
+
+<script setup>
+  const cdn = import.meta.env.VITE_CDN_ARCHIVOS
+</script>
