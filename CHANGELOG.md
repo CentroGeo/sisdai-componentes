@@ -11,6 +11,12 @@ de la biblioteca. Por lo tanto no se listan aquí todos los tags existentes.
 Al principio de cada entrada se lista la versión de la biblioteca de sisdai-css con la
 que la versión indicada de sisdai-componentes es compatible y tiene instalada.
 
+## [4.12.5] - 2024-12-17
+
+### Arreglado (Fixed)
+
+- Se arreglan las variables de entorno en el config de la docs para que las identifique cuando se haga el build
+
 ## [4.12.4] - 2024-12-17
 
 ### Arreglado (Fixed)
@@ -262,6 +268,7 @@ sisdai-css v0.37.3
 
 Primera versión estable
 
+[4.12.5]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.12.4...v4.12.5
 [4.12.4]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.12.3...v4.12.4
 [4.12.3]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.12.0...v4.12.3
 [4.12.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.11.0...v4.12.0

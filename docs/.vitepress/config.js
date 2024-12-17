@@ -1,4 +1,9 @@
 import { createRequire } from 'module'
+import * as dotenv from 'dotenv'
+
+const { VITE_CDN_ARCHIVOS, VITE_DOMINIO, VITE_URL_BASE, VITE_DESCRIPCION } = dotenv.config({
+  path: 'docs/.env',
+}).parsed
 
 const require = createRequire(import.meta.url)
 const pkg = require('../../package.json')
@@ -40,22 +45,22 @@ export default {
       },
     ],
     ['meta', { property: 'og:title', content: 'sisdai-componentes' }],
-    ['meta', { property: 'og:description', content: '%VITE_DESCRIPCION%' }],
+    ['meta', { property: 'og:description', content: `${VITE_DESCRIPCION}` }],
     [
       'meta',
       {
         property: 'og:image',
-        content: '%VITE_CDN_ARCHIVOS%redes/miniatura-sisdaicomponentes.png',
+        content: `${VITE_CDN_ARCHIVOS}redes/miniatura-sisdaicomponentes.png`,
       },
     ],
-    ['meta', { property: 'og:url', content: '%VITE_DOMINIO%%VITE_URL_BASE%' }],
+    ['meta', { property: 'og:url', content: `${VITE_DOMINIO}${VITE_URL_BASE}` }],
     ['meta', { name: 'twitter:title', content: 'sisdai-componentes' }],
-    ['meta', { name: 'twitter:description', content: '%VITE_DESCRIPCION%' }],
+    ['meta', { name: 'twitter:description', content: `${VITE_DESCRIPCION}` }],
     [
       'meta',
       {
         name: 'twitter:image',
-        content: '%VITE_CDN_ARCHIVOS%redes/miniatura-sisdaicomponentes.png',
+        content: `${VITE_CDN_ARCHIVOS}redes/miniatura-sisdaicomponentes.png`,
       },
     ],
   ],
