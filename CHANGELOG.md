@@ -254,7 +254,8 @@ Segunda versión estable
 sisdai-css v0.37.3
 
 Primera versión estable
-[4.12.3]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.12.0...v4.12.1
+
+[4.12.3]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.12.0...v4.12.3
 [4.12.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.11.0...v4.12.0
 [4.11.0]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.2...v4.11.0
 [4.10.2]: https://codigo.conahcyt.mx/sisdai/sisdai-componentes/compare/v4.10.1...v4.10.2
