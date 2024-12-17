@@ -4,9 +4,9 @@ import EjemploCompleto from "../../.vitepress/components/casilla-verificacion/ca
 import EjemploAgrupado from "../../.vitepress/components/casilla-verificacion/casilla-agrupada.vue";
 </script>
 
-# Casilla Verificacion
+# Casilla de verificación
 
-  El componente `SisdaiCasillaVerificacion` permite tener casillas de verificación vinculadas siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio, agregar un texto de ejemplo, un mensaje de ayuda para que la persona usuaria comprenda como debe llenarse el campo y un título independiente de la etiqueta. 
+  El componente `SisdaiCasillaVerificacion` permite tener casillas de verificación vinculadas siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio, agregar un texto de ejemplo, un mensaje de ayuda para que la persona usuaria comprenda como debe llenarse el campo y un título independiente de la etiqueta.
 
 <section id="uso">
 
@@ -17,7 +17,7 @@ import EjemploAgrupado from "../../.vitepress/components/casilla-verificacion/ca
   A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
   ```html
-  <SisdaiCasillaVerificacion 
+  <SisdaiCasillaVerificacion
     etiqueta="Nombre de la etiqueta"
     v-model="campoEjemplo"
   />
@@ -25,11 +25,11 @@ import EjemploAgrupado from "../../.vitepress/components/casilla-verificacion/ca
 
   ## Accesibilidad
 
-  Al utilizar el componente `SisdaiCasillaVerificacion` nos aseguramos que la etiqueta y el área de texto siempre estén vinculados. 
+  Al utilizar el componente `SisdaiCasillaVerificacion` nos aseguramos que la etiqueta y el área de texto siempre estén vinculados.
 
   ### Validaciones
 
-  El componente `SisdaiCasillaVerificacion` valida automáticamente cuando es requerido, mostrando el mensaje de error `'Esta casilla necesita estar verificada. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso. 
+  El componente `SisdaiCasillaVerificacion` valida automáticamente cuando es requerido, mostrando el mensaje de error `'Esta casilla necesita estar verificada. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso.
 
   ### Vista simplificada
 
@@ -85,7 +85,7 @@ import EjemploAgrupado from "../../.vitepress/components/casilla-verificacion/ca
   ## Ejemplos de uso
 
   ### Casilla única de verificación
-  
+
   El siguiente ejemplo muestra cómo utilizar la casilla de verificación de la manera más sencilla cuando es un campo único.
 
   <EjemploBasico />
