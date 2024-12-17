@@ -2,20 +2,20 @@
 import EjemploBasico from "../../.vitepress/components/area-texto/basico.vue";
 </script>
 
-# Area de Texto
+# Area de texto
 
-El componente `SisdaiAreaTexto` permite tener campos de entrada multilínea vinculados siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio, agregar un texto de ejemplo y un mensaje de ayuda para que la persona usuaria comprenda como debe llenarse el campo. 
+El componente `SisdaiAreaTexto` permite tener campos de entrada multilínea vinculados siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio, agregar un texto de ejemplo y un mensaje de ayuda para que la persona usuaria comprenda como debe llenarse el campo.
 
 <section id="uso">
 
 ## Uso
 
-Para utilizar el componente `SisdaiAreaTexto`, se necesita proporcionar el texto que aparecerá en la `etiqueta`, 
+Para utilizar el componente `SisdaiAreaTexto`, se necesita proporcionar el texto que aparecerá en la `etiqueta`,
 
 A continuación, se muestra un ejemplo de uso de etiqueta simple:
 
 ```html
-<SisdaiAreaTexto 
+<SisdaiAreaTexto
   etiqueta="Nombre de la etiqueta"
   ejemplo="Ejemplo"
   texto_ayuda="Texto de ayuda."
@@ -26,11 +26,11 @@ A continuación, se muestra un ejemplo de uso de etiqueta simple:
 ```
 ## Accesibilidad
 
-Al utilizar el componente `SisdaiAreaTexto` nos aseguramos que la etiqueta y el área de texto siempre estén vinculados, ya sea visible su etiqueta o no. 
+Al utilizar el componente `SisdaiAreaTexto` nos aseguramos que la etiqueta y el área de texto siempre estén vinculados, ya sea visible su etiqueta o no.
 
 ### Validaciones
 
-Actualmente el componente `SisdaiAreaTexto` valida automáticamente cuando es requerido, mostrando el mensaje de error `'Este campo no puede quedar vacío. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso. 
+Actualmente el componente `SisdaiAreaTexto` valida automáticamente cuando es requerido, mostrando el mensaje de error `'Este campo no puede quedar vacío. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso.
 
 ### Vista simplificada
 

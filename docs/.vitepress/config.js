@@ -119,7 +119,7 @@ function sidebarComponentes(path) {
   // Agrega aquí las rutas de los nuevos componentes
   return [
     {
-      text: 'Área texto',
+      text: 'Área de texto',
       link: `/${path}/area-texto/`,
     },
     {
@@ -127,12 +127,12 @@ function sidebarComponentes(path) {
       link: `/${path}/audio/`,
     },
     {
-      text: 'Botón Flotante',
+      text: 'Botón flotante',
       link: `/${path}/boton-flotante/`,
       pre: true,
     },
     {
-      text: 'Botón Radio',
+      text: 'Botón de radio',
       link: `/${path}/boton-radio/`,
     },
     {
@@ -140,24 +140,24 @@ function sidebarComponentes(path) {
       link: `/${path}/campo-base/`,
     },
     {
-      text: 'Campo Búsqueda',
+      text: 'Campo de búsqueda',
       link: `/${path}/campo-busqueda/`,
     },
     {
-      text: 'Casilla verificación',
+      text: 'Casilla de verificación',
       link: `/${path}/casilla-verificacion/`,
     },
     {
-      text: 'Colapsable Navegación',
+      text: 'Colapsable de navegación',
       link: `/${path}/colapsable-navegacion/`,
       pre: true,
     },
     {
-      text: 'Control Acercar Alejar',
+      text: 'Control para acercar y alejar',
       link: `/${path}/control-acercar-alejar/`,
     },
     {
-      text: 'Control Deslizante',
+      text: 'Control deslizante',
       link: `/${path}/control-deslizante/`,
     },
     {
@@ -165,7 +165,7 @@ function sidebarComponentes(path) {
       link: `/${path}/directivas/`,
     },
     {
-      text: 'Enlace Externo',
+      text: 'Enlace externo',
       link: `/${path}/enlace-externo/`,
     },
     {
@@ -173,20 +173,20 @@ function sidebarComponentes(path) {
       link: `/${path}/imagen-png-webp/`,
     },
     {
-      text: 'Índice de Contenido',
+      text: 'Índice de contenido',
       link: `/${path}/indice-de-contenido/`,
       pre: true,
     },
     {
-      text: 'Info de Despliegue',
+      text: 'Información de despliegue',
       link: `/${path}/info-de-despliegue/`,
     },
     {
-      text: 'Menú de Accesibilidad',
+      text: 'Menú de accesibilidad',
       link: `/${path}/menu-accesibilidad/`,
     },
     {
-      text: 'Menú Lateral',
+      text: 'Menú lateral',
       link: `/${path}/menu-lateral/`,
       pre: true,
     },
@@ -203,7 +203,7 @@ function sidebarComponentes(path) {
       link: `/${path}/navegacion-gob-mx/`,
     },
     {
-      text: 'Navegación Principal',
+      text: 'Navegación principal',
       link: `/${path}/navegacion-principal/`,
     },
     {
@@ -211,11 +211,11 @@ function sidebarComponentes(path) {
       link: `/${path}/pestanias/`,
     },
     {
-      text: 'Pie Página Conahcyt',
+      text: 'Pie de página Conahcyt',
       link: `/${path}/pie-pagina-conahcyt/`,
     },
     {
-      text: 'Pie Página GobMx',
+      text: 'Pie de página GobMx',
       link: `/${path}/pie-pagina-gob-mx/`,
     },
     {
