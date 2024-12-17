@@ -1,6 +1,6 @@
 {
   "name": "@centrogeomx/sisdai-componentes",
-  "version": "4.12.2",
+  "version": "4.12.3",
   "peerDependencies": {
     "vue": "^3.5.13",
     "@centrogeomx/sisdai-css": "^1.7.3"
