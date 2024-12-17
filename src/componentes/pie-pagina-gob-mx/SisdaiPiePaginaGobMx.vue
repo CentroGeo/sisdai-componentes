@@ -22,7 +22,7 @@
       <div class="columna-8 columna-4-esc">
         <img
           class="pie-logo"
-          :src="`${cdn}navegacion/gobmx-2024.svg`"
+          src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
           alt="Gobierno de México"
           width="207px"
           height="75px"

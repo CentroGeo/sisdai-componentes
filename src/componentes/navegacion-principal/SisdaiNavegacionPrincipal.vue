@@ -144,7 +144,7 @@ const cdn = import.meta.env.VITE_CDN_ARCHIVOS
           >
             <img
               class="nav-logo color-invertir"
-              :src="`${cdn}navegacion/conahcyt-azul.svg`"
+              src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-azul.svg"
               alt="Conahcyt."
               width="130"
               height="38"

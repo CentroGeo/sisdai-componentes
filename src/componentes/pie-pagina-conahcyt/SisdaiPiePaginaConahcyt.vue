@@ -27,7 +27,7 @@ const cdn=import.meta.env.VITE_CDN_ARCHIVOS
       <div class="columna-8 columna-8-esc">
         <img
           class="pie-logo"
-          :src="`${cdn}navegacion/conahcyt-blanco.svg`"
+          src="https://cdn.conacyt.mx/sisdai/recursos/conahcyt-blanco.svg"
           alt="Conahcyt"
           width="200px"
           height="60px"
