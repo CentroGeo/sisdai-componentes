@@ -2,7 +2,7 @@
 import EjemploGrupo from "../../.vitepress/components/boton-radio/radio-grupo.vue";
 </script>
 
-# Botón Radio
+# Botón de radio
 
 El componente `SisdaiBotonRadio` permite tener botones de radio vinculados siempre a una etiqueta corrigiendo así el error más común de accesibilidad. Opcionalmente podemos definir si es obligatorio u opcional.
 
@@ -20,13 +20,13 @@ A continuación, se muestra un ejemplo de uso:
 <SisdaiBotonesRadioGrupo
   leyenda="Grupo de botones de radio"
 >
-  <SisdaiBotonRadio 
+  <SisdaiBotonRadio
     etiqueta="boton radio uno"
     v-model="botonRadio"
     value="Uno"
     name="nombredelgrupo"
   />
-  <SisdaiBotonRadio 
+  <SisdaiBotonRadio
     etiqueta="boton radio dos"
     v-model="botonRadio"
     value="Dos"
@@ -41,7 +41,7 @@ Al utilizar el componente `SisdaiBotonRadio` nos aseguramos que la etiqueta y el
 
 ### Validaciones
 
-El componente `SisdaiBotonesRadioGrupo` valida automáticamente cuando tiene elementos requeridos, mostrando el mensaje de error `'Un botón de radio necesita estar seleccionado. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso. 
+El componente `SisdaiBotonesRadioGrupo` valida automáticamente cuando tiene elementos requeridos, mostrando el mensaje de error `'Un botón de radio necesita estar seleccionado. '`. Las implementaciones de otros tipos de error deberán crearse en el momento de su uso.
 
 ### Vista simplificada
 
@@ -78,7 +78,7 @@ Este componente admite las siguientes propiedades y eventos:
 - `name`: nombre que comparten todos los botones de radio del grupo.
   - Tipo de dato: `String`
   - Valor predeterminado: `''`
-  - Requerido: sí 
+  - Requerido: sí
 
 #### SisdaiBotonesRadioGrupo
 
