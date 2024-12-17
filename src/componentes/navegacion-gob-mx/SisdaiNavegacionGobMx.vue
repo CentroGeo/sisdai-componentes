@@ -108,7 +108,7 @@ const cdn = import.meta.env.VITE_CDN_ARCHIVOS
       >
         <img
           class="nav-logo"
-          :src="`${cdn}navegacion/gobmx-2024.svg`"
+          src="https://cdn.conahcyt.mx/sisdai-archivos/gobmx-2024.svg"
           alt="Gobierno de México."
           width="104.8"
           height="38"
