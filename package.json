@@ -8,6 +8,23 @@
   "type": "module",
   "license": "LGPL-3.0-only",
   "main": "./src/index.js",
+  "keywords": [
+    "vue",
+    "js",
+    "Sisdai",
+    "CentroGeo",
+    "Conahcyt"
+  ],
+  "contributors": [
+    "Alonso Cortés Solís <alo.acs@gmail.com> (https://github.com/AlonsoCortes)",
+    "Andrés Martínez González <andres.geotec@gmail.com> (https://github.com/andres-geotec)",
+    "Daniel Gómez Hernández <gomezhernandez.dan@gmail.com> (https://github.com/jdanielgoh)",
+    "Diana Elizabeth Minor <deminore@hotmail.com> (https://github.com/deminore)",
+    "Eric Torres <erictorres.velasco@hotmail.com> (https://github.com/ciretorres)",
+    "Flkt <flkt.crnpio@gmail.com> (https://github.com/flkt-crnpio)",
+    "Miguel Ángel Martínez <migueldnt.dev@gmail.com> (https://github.com/migueldnt)",
+    "Paulina Pradel <pradel.paulina@gmail.com> (https://github.com/paupradel)"
+  ],
   "files": [
     "src",
     "README.md"
@@ -63,10 +80,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+    "url": "https://github.com/CentroGeo/sisdai-componentes"
   },
   "bugs": {
-    "url": "https://codigo.conahcyt.mx/sisdai/sisdai-componentes/issues"
+    "url": "https://github.com/CentroGeo/sisdai-componentes/issues"
   },
   "homepage": "https://sisdai-componentes.conahcyt.mx"
 }
