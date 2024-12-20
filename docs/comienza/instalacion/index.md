@@ -20,12 +20,12 @@ En la línea de comando escribe
 npm i @centrogeomx/sisdai-componentes
 ```
 
-**Opción B.** Desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
+**Opción B.** Desde el repositorio de [sisdai-componentes en github.com](https://github.com/CentroGeo/sisdai-componentes).
 
 En la línea de comando escribe
 
 ```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
+npm install git+https://github.com/CentroGeo/sisdai-componentes
 ```
 
 ## Actualización
@@ -38,17 +38,17 @@ Dependiendo de la versión de la biblioteca que se desee instalar, el comando pu
 npm i @centrogeomx/sisdai-componentes@vN.N.N
 ```
 
-**Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes)
+**Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en github.com](https://github.com/CentroGeo/sisdai-componentes)
 
 ```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
+npm install git+https://github.com/CentroGeo/sisdai-componentes#vN.N.N
 ```
 
 en donde N.N.N representa el número de versión, por ejemplo v1.0.0
 
 ## Instalación de estilos
 
-Debido a que el estilo de los componentes está ligado a las reglas de [Sisdai](https://sisdai.conahcyt.mx/) es necesario incluir los estilos de [Sisdai Css](https://codigo.conahcyt.mx/sisdai/sisdai-css) en el archivo de inicialización de tu proyecto.
+Debido a que el estilo de los componentes está ligado a las reglas de [Sisdai](https://sisdai.conahcyt.mx/) es necesario incluir los estilos de [Sisdai Css](https://github.com/CentroGeo/sisdai-css) en el archivo de inicialización de tu proyecto.
 
 Si tu proyecto tiene configurado el preprocesador `sass` o `scss`, generalmente el archivo es ‘src/main.js’. Añade la siguiente línea para importar los estilos:
 

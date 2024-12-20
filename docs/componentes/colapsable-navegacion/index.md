@@ -7,7 +7,7 @@ import EjemploSlot from "../../.vitepress/components/colapsable-navegacion/slot.
 
 El componente `SisdaiColapsableNavegacion` consiste en un elemento `<div class="colapsable"></div>` que contiene en su interior un botón y una lista no ordenada `<ul></ul>`, que usualmente contendrá enlaces `<a></a>` en sus elementos de lista `<li></li>`. Al dar clic en el botón, se agrega una clase `.activo` al elemento `div.colapsable`, haciendo visible la lista ordenada.
 
-Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css), por lo cual es una dependencia de este componente. Los elementos de lista se especifican mediante `slots`.
+Los estilos de las clases mencionadas anteriormente provienen de la biblioteca de estilos [sisdai-css](https://github.com/CentroGeo/sisdai-css), por lo cual es una dependencia de este componente. Los elementos de lista se especifican mediante `slots`.
 
 <section id="uso">
 
@@ -68,7 +68,7 @@ Este componente no dispara eventos externos.
 <ul :id="id_aleatorio">
   <li>
     <a
-      href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+      href="https://github.com/CentroGeo/sisdai-componentes"
       target="_blank"
       rel="noopener noreferrer"
       exact
