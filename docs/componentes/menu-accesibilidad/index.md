@@ -27,7 +27,7 @@ Para utilizar el componente `SisdaiMenuAccesibilidad`, incorpora el componente e
 La función de “Vista oscura” transita entre el tema claro y el oscuro. De manera predeterminada al entrar a la aplicación la vista muestra la función automática. Esto significa que, dependiendo de los ajustes del navegador para la apariencia web, se muestra el tema elegido. Una vez que se interactúa con el menú, se puede cambiar entre clara u oscura.
 
 También se cuenta con perfiles o paletas de color para los estilos de las etiquetas básicas HTML y componentes del Sisdai. Estos perfiles se actualizan desde las variables de la biblioteca
-[Sisdai CSS](https://codigo.conahcyt.mx/sisdai/sisdai-css).
+[Sisdai CSS](https://github.com/CentroGeo/sisdai-css).
 
 Al utilizar el Menú de accesibilidad, el perfil de color predeterminado es el de la paleta `sisdai`. Esta se puede modificar mediante la propiedad `perfilColor` del componente con los valores disponibles de `sisdai`, `gema` o `eni`. Como se muestra a continuación:
 

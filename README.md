@@ -27,7 +27,7 @@ Cualquier persona puede hacer uso de esta biblioteca al clonarla e instalarla en
 
 ## Instalación y uso
 
-Si tu proyecto está creado con el [proyecto-base](https://codigo.conahcyt.mx/eni/proyecto-base), tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
+Si tu proyecto está creado con el [proyecto-base](https://github.com/CentroGeo/sisdai-proyecto-base), tiene incluida una versión estable de sisdai-componentes y no requiere ningún paso de instalación ni importación.
 
 ### Instala la biblioteca
 
@@ -40,11 +40,11 @@ En la línea de comando escribe
 npm i @centrogeomx/sisdai-componentes
 ```
 
-**Opción B.** Desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
+**Opción B.** Desde el repositorio de [sisdai-componentes en github.com](https://github.com/CentroGeo/sisdai-componentes).
 
 En la línea de comando escribe
 ```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes
+npm install git+https://github.com/CentroGeo/sisdai-componentes
 ```
 
 ### Importa la biblioteca
@@ -83,14 +83,14 @@ Si necesitas utilizar otra versión, ubícate en la carpeta del proyecto en dond
 npm i @centrogeomx/sisdai-componentes@vN.N.N
 ```
 
-**Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes).
+**Opción B.** Para cualquier versión desde el repositorio de [sisdai-componentes en github.com](https://github.com/CentroGeo/sisdai-componentes).
 ```bash
-npm install git+https://codigo.conahcyt.mx/sisdai/sisdai-componentes#vN.N.N
+npm install git+https://github.com/CentroGeo/sisdai-componentes#vN.N.N
 ```
 
 donde N.N.N indica el número de versión, por ejemplo v1.0.0
 
-Consulta el archivo `CHANGELOG.md` del repositorio de [sisdai-componentes en código.conahcyt.mx](https://codigo.conahcyt.mx/sisdai/sisdai-componentes) para conocer las nuevas características y cambios que sufre la biblioteca en cada una de sus versiones.
+Consulta el archivo `CHANGELOG.md` del repositorio de [sisdai-componentes en github.com](https://github.com/CentroGeo/sisdai-componentes) para conocer las nuevas características y cambios que sufre la biblioteca en cada una de sus versiones.
 
 
 ## Listado de componentes
@@ -145,7 +145,7 @@ Se puede clonar e instalar este proyecto en tu equipo
 utilizando **sólo el protocolo HTTPS**, es decir:
 
 ```bash
-git clone https://codigo.conahcyt.mx/sisdai/sisdai-componentes.git
+git clone https://github.com/CentroGeo/sisdai-componentes.git
 ```
 
 Establece la versión adecuada de npm y nvm (previamente instaladas).

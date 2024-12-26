@@ -118,7 +118,7 @@ function alternarTabIndex(val) {
         <ul>
           <li>
             <a
-              href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
+              href="https://github.com/CentroGeo/sisdai-componentes"
               target="_blank"
               rel="noopener noreferrer"
               exact

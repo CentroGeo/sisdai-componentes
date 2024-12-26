@@ -6,7 +6,6 @@ import pkg from '../../../package.json'
 // https://vitepress.dev/reference/runtime-api#usedata
 const { theme, page } = useData()
 const navegacionPrincipal = ref(null)
-const cdn = import.meta.env.VITE_CDN_ARCHIVOS
 </script>
 
 <template>
@@ -27,14 +26,15 @@ const cdn = import.meta.env.VITE_CDN_ARCHIVOS
       <a
           class="nav-hipervinculo"
           :href="pkg.repository.url"
+          :aria-label="`Repositorio de código sisdai-componentes versión ${pkg.version}`"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            class="nav-logo"
-            :src="`${cdn}gitlab-logo-500.png`"
-            alt="Repositorio de código sisdai-mapas"
-          /><b> {{ `v${pkg.version}` }} </b>
+          <span 
+            class="pictograma-social-github m-r-1" 
+            aria-hidden="true"
+          ></span>
+          <b> {{ `v${pkg.version}` }} </b>
         </a>
     </div>
     </template>
@@ -64,34 +64,5 @@ const cdn = import.meta.env.VITE_CDN_ARCHIVOS
         </a>
       </li>
     </ul>
-
-    <!-- <ul class="nav-menu">
-      <li
-        v-for="nav in theme.nav"
-        :key="nav.text"
-      >
-        <a
-          class="nav-hipervinculo"
-          :class="{
-            'router-link-exact-active router-link-active': isActive(
-              page.relativePath,
-              nav.activeMatch || nav.link,
-              //!!nav.activeMatch
-            ),
-          }"
-          :href="nav.link"
-          :target="nav.target"
-          :rel="nav.rel"
-        >
-          <img
-            v-if="nav.img"
-            class="nav-logo"
-            :src="nav.img"
-            alt=""
-          />
-          {{ nav.text }}
-        </a>
-      </li>
-    </ul> -->
   </SisdaiNavegacionPrincipal>
 </template>

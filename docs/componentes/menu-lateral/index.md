@@ -6,7 +6,7 @@ import EjemploColapsable from "../../.vitepress/components/menu-lateral/ejemplo-
 
 # Menú lateral <span class="etiqueta">preliminar</span>
 
-El componente `SisdaiMenuLateral` consiste en un elemento `nav.menu-lateral` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://codigo.conahcyt.mx/sisdai/sisdai-css). En la versión de celular tiene un botón que muestra el contenido o lo colapsa.
+El componente `SisdaiMenuLateral` consiste en un elemento `nav.menu-lateral` que usualmente contiene enlaces de navegación. Sus estilos provienen de la biblioteca de estilos [sisdai-css](https://github.com/CentroGeo/sisdai-css). En la versión de celular tiene un botón que muestra el contenido o lo colapsa.
 
 <section id="uso">
 
@@ -67,12 +67,13 @@ El contenido predeterminado del slot es el siguiente:
   <li><a href="#anchore"> anchore link prueba </a></li>
   <li>
     <a
-      href="https://codigo.conahcyt.mx/sisdai/sisdai-componentes"
-      rel="noopener"
+      href="https://github.com/CentroGeo/sisdai-componentes"
+      aria-label=""
+      rel="noopener noreferrer"
       target="_blank"
     >
       <span
-        class="icono-social-github"
+        class="pictograma-social-github"
         aria-hidden="true"
       ></span>
       ejemplo github
