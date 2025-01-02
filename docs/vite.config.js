@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [vue(),
+  plugins: [
     {
       name: 'html-transform',
       transformIndexHtml(html) {
