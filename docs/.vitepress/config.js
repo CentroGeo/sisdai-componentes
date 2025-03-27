@@ -1,7 +1,7 @@
 import { createRequire } from 'module'
 import * as dotenv from 'dotenv'
 
-const { VITE_CDN_ARCHIVOS, VITE_DOMINIO, VITE_URL_BASE, VITE_DESCRIPCION } = dotenv.config({
+const { VITE_CDN_ARCHIVOS, VITE_DOMINIO, VITE_URL_BASE, VITE_DESCRIPCION, VITE_GOOGLE_ANALYTICS_ID } = dotenv.config({
   path: 'docs/.env',
 }).parsed
 
@@ -63,6 +63,18 @@ export default {
         content: `${VITE_CDN_ARCHIVOS}redes/miniatura-sisdaicomponentes.png`,
       },
     ],
+    [
+      'script',
+      { async: '', src: `https://www.googletagmanager.com/gtag/js?id=${VITE_GOOGLE_ANALYTICS_ID}` }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${VITE_GOOGLE_ANALYTICS_ID}');`
+    ]
   ],
 
   themeConfig: {
