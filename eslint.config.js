@@ -1,62 +1,48 @@
-import globals from 'globals'
-import pluginJs from '@eslint/js'
+import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
-
-import eslintConfigPrettier from 'eslint-config-prettier'
-
-import html from '@html-eslint/eslint-plugin'
-import htmlParser from '@html-eslint/parser'
+import globals from 'globals'
+import pluginVitest from '@vitest/eslint-plugin'
+import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
 export default [
-  { files: ['**/*.{js,mjs,cjs,vue}'] },
   {
+    name: 'app/files-to-lint',
+    files: ['**/*.{js,mjs,jsx,vue}'],
+  },
+
+  {
+    name: 'app/files-to-ignore',
     ignores: [
-      '**/node_modules',
+      '**/node_modules/**',
       '**/package.json',
       '**/package-lock.json',
-      '.git',
-      '**/dist',
-      'docs/.vuepress/dist',
-      'docs/.vitepress/dist',
-      'docs/.vitepress/cache',
-      '**/coverage',
-      '**/libs',
-      '**/deprecated',
+      '**/dist/**',
+      '**/dist-ssr/**',
+      '**/docs/.vitepress/components/**',
+      '**/docs/.vitepress/cache/**',
+      '**/docs/.vitepress/src/**',
+      '**/coverage/**',
+      '**/confDep/**',
+      '**/deprecated/**',
+      '**/libs/**',
     ],
   },
+  
   {
     languageOptions: {
-      ecmaVersion: 'latest',
-      sourceType: 'module',
       globals: {
-        ...globals.node,
-        globalThis: 'readonly',
+        ...globals.browser,
       },
-      parser: htmlParser,
     },
   },
-  {
-    plugins: {
-      '@html-eslint': html,
-    },
-  },
-  {
-    rules: {
-      eqeqeq: 'error',
-      'no-new': 0,
-      'no-console': 'off',
-      'no-debugger': 'off',
-      // 'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-      // 'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-      'vue/multi-word-component-names': [
-        'error',
-        {
-          ignores: ['Layout', 'basico', 'default'],
-        },
-      ],
-    },
-  },
-  pluginJs.configs.recommended,
+
+  js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
-  eslintConfigPrettier,
+  
+  {
+    ...pluginVitest.configs.recommended,
+    files: ['src/**/__tests__/*'],
+  },
+
+  skipFormatting,
 ]

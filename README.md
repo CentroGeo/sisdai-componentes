@@ -54,7 +54,7 @@ En el archivo `main.js` de tu proyecto Vue, importa todos los componentes de la 
 ```js
 // src/main.js
 
-import SisdaiComponentes from 'sisdai-componentes/src/index'
+import SisdaiComponentes from '@centrogeomx/sisdai-componentes/src/index'
 
 Vue.use(SisdaiComponentes)
 ```

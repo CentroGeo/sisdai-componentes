@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-/// <reference types="vitest" />
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
@@ -8,14 +8,8 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      // '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  test: {
-    // enable jest-like global test APIs
-    globals: true,
-    // simulate DOM with happy-dom
-    // (requires installing happy-dom as a peer dependency)
-    environment: 'happy-dom',
-  },
+  css: { preprocessorOptions: { scss: { api: 'modern-compiler' } } },
 })

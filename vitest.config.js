@@ -19,7 +19,6 @@ export default mergeConfig(
       exclude: [
         ...configDefaults.exclude,
         'e2e/**',
-        '**/{lint-staged, volar}.config.*',
       ],
       root: fileURLToPath(new URL('./', import.meta.url)),
     },
