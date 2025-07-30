@@ -45,7 +45,7 @@
     "@popperjs/core": "^2.11.8"
   },
   "peerDependencies": {
-    "@centrogeomx/sisdai-css": "^1.7.4",
+    "@centrogeomx/sisdai-css": "github:CentroGeo/sisdai-css#v1.9.1",
     "pinia": "^3.0.1",
     "vue": "^3.5.13"
   },
